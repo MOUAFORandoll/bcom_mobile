@@ -1,10 +1,8 @@
-import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
-import 'package:Bcom/utils/Services/validators.dart';
+import 'package:Bcom/presentation/components/Widget/k_home_info.dart'; 
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../components/exportcomponent.dart';
-import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/presentation/components/Widget/HomeModuleComponent.dart';
+import 'package:Bcom/application/export_bloc.dart'; 
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();

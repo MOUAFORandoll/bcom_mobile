@@ -19,47 +19,45 @@ mixin _$BikerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -67,34 +65,35 @@ mixin _$BikerEvent {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,13 +157,13 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
     return getListMissionBiker();
   }
@@ -173,13 +172,13 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
     return getListMissionBiker?.call();
   }
@@ -188,13 +187,13 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (getListMissionBiker != null) {
@@ -207,10 +206,8 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -218,6 +215,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return getListMissionBiker(this);
   }
@@ -226,15 +224,15 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return getListMissionBiker?.call(this);
   }
@@ -243,15 +241,15 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (getListMissionBiker != null) {
@@ -266,38 +264,38 @@ abstract class GetListMissionBiker implements BikerEvent {
 }
 
 /// @nodoc
-abstract class _$$GetListMissionBikerDoneImplCopyWith<$Res> {
-  factory _$$GetListMissionBikerDoneImplCopyWith(
-          _$GetListMissionBikerDoneImpl value,
-          $Res Function(_$GetListMissionBikerDoneImpl) then) =
-      __$$GetListMissionBikerDoneImplCopyWithImpl<$Res>;
+abstract class _$$GetListMissionBikerEffectueImplCopyWith<$Res> {
+  factory _$$GetListMissionBikerEffectueImplCopyWith(
+          _$GetListMissionBikerEffectueImpl value,
+          $Res Function(_$GetListMissionBikerEffectueImpl) then) =
+      __$$GetListMissionBikerEffectueImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetListMissionBikerDoneImplCopyWithImpl<$Res>
-    extends _$BikerEventCopyWithImpl<$Res, _$GetListMissionBikerDoneImpl>
-    implements _$$GetListMissionBikerDoneImplCopyWith<$Res> {
-  __$$GetListMissionBikerDoneImplCopyWithImpl(
-      _$GetListMissionBikerDoneImpl _value,
-      $Res Function(_$GetListMissionBikerDoneImpl) _then)
+class __$$GetListMissionBikerEffectueImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$GetListMissionBikerEffectueImpl>
+    implements _$$GetListMissionBikerEffectueImplCopyWith<$Res> {
+  __$$GetListMissionBikerEffectueImplCopyWithImpl(
+      _$GetListMissionBikerEffectueImpl _value,
+      $Res Function(_$GetListMissionBikerEffectueImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetListMissionBikerDoneImpl implements GetListMissionBikerDone {
-  const _$GetListMissionBikerDoneImpl();
+class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
+  const _$GetListMissionBikerEffectueImpl();
 
   @override
   String toString() {
-    return 'BikerEvent.getListMissionBikerDone()';
+    return 'BikerEvent.getListMissionBikerEffectue()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetListMissionBikerDoneImpl);
+            other is _$GetListMissionBikerEffectueImpl);
   }
 
   @override
@@ -307,47 +305,47 @@ class _$GetListMissionBikerDoneImpl implements GetListMissionBikerDone {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
-    return getListMissionBikerDone();
+    return getListMissionBikerEffectue();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
-    return getListMissionBikerDone?.call();
+    return getListMissionBikerEffectue?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
-    if (getListMissionBikerDone != null) {
-      return getListMissionBikerDone();
+    if (getListMissionBikerEffectue != null) {
+      return getListMissionBikerEffectue();
     }
     return orElse();
   }
@@ -356,10 +354,8 @@ class _$GetListMissionBikerDoneImpl implements GetListMissionBikerDone {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -367,200 +363,53 @@ class _$GetListMissionBikerDoneImpl implements GetListMissionBikerDone {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
-    return getListMissionBikerDone(this);
+    return getListMissionBikerEffectue(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
-    return getListMissionBikerDone?.call(this);
+    return getListMissionBikerEffectue?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
-    if (getListMissionBikerDone != null) {
-      return getListMissionBikerDone(this);
+    if (getListMissionBikerEffectue != null) {
+      return getListMissionBikerEffectue(this);
     }
     return orElse();
   }
 }
 
-abstract class GetListMissionBikerDone implements BikerEvent {
-  const factory GetListMissionBikerDone() = _$GetListMissionBikerDoneImpl;
-}
-
-/// @nodoc
-abstract class _$$GetListMissionBikerEncoursImplCopyWith<$Res> {
-  factory _$$GetListMissionBikerEncoursImplCopyWith(
-          _$GetListMissionBikerEncoursImpl value,
-          $Res Function(_$GetListMissionBikerEncoursImpl) then) =
-      __$$GetListMissionBikerEncoursImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetListMissionBikerEncoursImplCopyWithImpl<$Res>
-    extends _$BikerEventCopyWithImpl<$Res, _$GetListMissionBikerEncoursImpl>
-    implements _$$GetListMissionBikerEncoursImplCopyWith<$Res> {
-  __$$GetListMissionBikerEncoursImplCopyWithImpl(
-      _$GetListMissionBikerEncoursImpl _value,
-      $Res Function(_$GetListMissionBikerEncoursImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetListMissionBikerEncoursImpl implements GetListMissionBikerEncours {
-  const _$GetListMissionBikerEncoursImpl();
-
-  @override
-  String toString() {
-    return 'BikerEvent.getListMissionBikerEncours()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetListMissionBikerEncoursImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
-    required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
-    required TResult Function() savePositionForMissionBiker,
-    required TResult Function(dynamic index) setIndexHistoryBiker,
-    required TResult Function(Mission mission) selectMission,
-  }) {
-    return getListMissionBikerEncours();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
-    TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
-    TResult? Function()? savePositionForMissionBiker,
-    TResult? Function(dynamic index)? setIndexHistoryBiker,
-    TResult? Function(Mission mission)? selectMission,
-  }) {
-    return getListMissionBikerEncours?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
-    TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
-    TResult Function()? savePositionForMissionBiker,
-    TResult Function(dynamic index)? setIndexHistoryBiker,
-    TResult Function(Mission mission)? selectMission,
-    required TResult orElse(),
-  }) {
-    if (getListMissionBikerEncours != null) {
-      return getListMissionBikerEncours();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
-    required TResult Function(StartMissionBiker value) startMissionBiker,
-    required TResult Function(EndMissionBiker value) endMissionBiker,
-    required TResult Function(SavePositionForMissionBiker value)
-        savePositionForMissionBiker,
-    required TResult Function(SetIndexHistoryBikerEvent value)
-        setIndexHistoryBiker,
-    required TResult Function(SelectMission value) selectMission,
-  }) {
-    return getListMissionBikerEncours(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
-    TResult? Function(StartMissionBiker value)? startMissionBiker,
-    TResult? Function(EndMissionBiker value)? endMissionBiker,
-    TResult? Function(SavePositionForMissionBiker value)?
-        savePositionForMissionBiker,
-    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
-    TResult? Function(SelectMission value)? selectMission,
-  }) {
-    return getListMissionBikerEncours?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
-    TResult Function(StartMissionBiker value)? startMissionBiker,
-    TResult Function(EndMissionBiker value)? endMissionBiker,
-    TResult Function(SavePositionForMissionBiker value)?
-        savePositionForMissionBiker,
-    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
-    TResult Function(SelectMission value)? selectMission,
-    required TResult orElse(),
-  }) {
-    if (getListMissionBikerEncours != null) {
-      return getListMissionBikerEncours(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetListMissionBikerEncours implements BikerEvent {
-  const factory GetListMissionBikerEncours() = _$GetListMissionBikerEncoursImpl;
+abstract class GetListMissionBikerEffectue implements BikerEvent {
+  const factory GetListMissionBikerEffectue() =
+      _$GetListMissionBikerEffectueImpl;
 }
 
 /// @nodoc
@@ -602,13 +451,13 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
     return startMissionBiker();
   }
@@ -617,13 +466,13 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
     return startMissionBiker?.call();
   }
@@ -632,13 +481,13 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (startMissionBiker != null) {
@@ -651,10 +500,8 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -662,6 +509,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return startMissionBiker(this);
   }
@@ -670,15 +518,15 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return startMissionBiker?.call(this);
   }
@@ -687,15 +535,15 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (startMissionBiker != null) {
@@ -714,8 +562,6 @@ abstract class _$$EndMissionBikerImplCopyWith<$Res> {
   factory _$$EndMissionBikerImplCopyWith(_$EndMissionBikerImpl value,
           $Res Function(_$EndMissionBikerImpl) then) =
       __$$EndMissionBikerImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int missionsession_id});
 }
 
 /// @nodoc
@@ -725,98 +571,72 @@ class __$$EndMissionBikerImplCopyWithImpl<$Res>
   __$$EndMissionBikerImplCopyWithImpl(
       _$EndMissionBikerImpl _value, $Res Function(_$EndMissionBikerImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? missionsession_id = null,
-  }) {
-    return _then(_$EndMissionBikerImpl(
-      missionsession_id: null == missionsession_id
-          ? _value.missionsession_id
-          : missionsession_id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$EndMissionBikerImpl implements EndMissionBiker {
-  const _$EndMissionBikerImpl({required this.missionsession_id});
-
-  @override
-  final int missionsession_id;
+  const _$EndMissionBikerImpl();
 
   @override
   String toString() {
-    return 'BikerEvent.endMissionBiker(missionsession_id: $missionsession_id)';
+    return 'BikerEvent.endMissionBiker()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EndMissionBikerImpl &&
-            (identical(other.missionsession_id, missionsession_id) ||
-                other.missionsession_id == missionsession_id));
+        (other.runtimeType == runtimeType && other is _$EndMissionBikerImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, missionsession_id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EndMissionBikerImplCopyWith<_$EndMissionBikerImpl> get copyWith =>
-      __$$EndMissionBikerImplCopyWithImpl<_$EndMissionBikerImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
-    return endMissionBiker(missionsession_id);
+    return endMissionBiker();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
-    return endMissionBiker?.call(missionsession_id);
+    return endMissionBiker?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (endMissionBiker != null) {
-      return endMissionBiker(missionsession_id);
+      return endMissionBiker();
     }
     return orElse();
   }
@@ -825,10 +645,8 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -836,6 +654,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return endMissionBiker(this);
   }
@@ -844,15 +663,15 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return endMissionBiker?.call(this);
   }
@@ -861,15 +680,15 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (endMissionBiker != null) {
@@ -880,13 +699,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
 }
 
 abstract class EndMissionBiker implements BikerEvent {
-  const factory EndMissionBiker({required final int missionsession_id}) =
-      _$EndMissionBikerImpl;
-
-  int get missionsession_id;
-  @JsonKey(ignore: true)
-  _$$EndMissionBikerImplCopyWith<_$EndMissionBikerImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory EndMissionBiker() = _$EndMissionBikerImpl;
 }
 
 /// @nodoc
@@ -931,13 +744,13 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
     return savePositionForMissionBiker();
   }
@@ -946,13 +759,13 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
     return savePositionForMissionBiker?.call();
   }
@@ -961,13 +774,13 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (savePositionForMissionBiker != null) {
@@ -980,10 +793,8 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -991,6 +802,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return savePositionForMissionBiker(this);
   }
@@ -999,15 +811,15 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return savePositionForMissionBiker?.call(this);
   }
@@ -1016,15 +828,15 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (savePositionForMissionBiker != null) {
@@ -1108,13 +920,13 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
     return setIndexHistoryBiker(index);
   }
@@ -1123,13 +935,13 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
     return setIndexHistoryBiker?.call(index);
   }
@@ -1138,13 +950,13 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (setIndexHistoryBiker != null) {
@@ -1157,10 +969,8 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -1168,6 +978,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return setIndexHistoryBiker(this);
   }
@@ -1176,15 +987,15 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return setIndexHistoryBiker?.call(this);
   }
@@ -1193,15 +1004,15 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (setIndexHistoryBiker != null) {
@@ -1286,13 +1097,13 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionBiker,
-    required TResult Function() getListMissionBikerDone,
-    required TResult Function() getListMissionBikerEncours,
+    required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
-    required TResult Function(int missionsession_id) endMissionBiker,
+    required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
   }) {
     return selectMission(mission);
   }
@@ -1301,13 +1112,13 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionBiker,
-    TResult? Function()? getListMissionBikerDone,
-    TResult? Function()? getListMissionBikerEncours,
+    TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
-    TResult? Function(int missionsession_id)? endMissionBiker,
+    TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
   }) {
     return selectMission?.call(mission);
   }
@@ -1316,13 +1127,13 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionBiker,
-    TResult Function()? getListMissionBikerDone,
-    TResult Function()? getListMissionBikerEncours,
+    TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
-    TResult Function(int missionsession_id)? endMissionBiker,
+    TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
     required TResult orElse(),
   }) {
     if (selectMission != null) {
@@ -1335,10 +1146,8 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetListMissionBiker value) getListMissionBiker,
-    required TResult Function(GetListMissionBikerDone value)
-        getListMissionBikerDone,
-    required TResult Function(GetListMissionBikerEncours value)
-        getListMissionBikerEncours,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
@@ -1346,6 +1155,7 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
   }) {
     return selectMission(this);
   }
@@ -1354,15 +1164,15 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult? Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult? Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
   }) {
     return selectMission?.call(this);
   }
@@ -1371,15 +1181,15 @@ class _$SelectMissionImpl implements SelectMission {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetListMissionBiker value)? getListMissionBiker,
-    TResult Function(GetListMissionBikerDone value)? getListMissionBikerDone,
-    TResult Function(GetListMissionBikerEncours value)?
-        getListMissionBikerEncours,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
     required TResult orElse(),
   }) {
     if (selectMission != null) {
@@ -1400,10 +1210,189 @@ abstract class SelectMission implements BikerEvent {
 }
 
 /// @nodoc
+abstract class _$$ListSessionMissionImplCopyWith<$Res> {
+  factory _$$ListSessionMissionImplCopyWith(_$ListSessionMissionImpl value,
+          $Res Function(_$ListSessionMissionImpl) then) =
+      __$$ListSessionMissionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MissionBiker mission});
+}
+
+/// @nodoc
+class __$$ListSessionMissionImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$ListSessionMissionImpl>
+    implements _$$ListSessionMissionImplCopyWith<$Res> {
+  __$$ListSessionMissionImplCopyWithImpl(_$ListSessionMissionImpl _value,
+      $Res Function(_$ListSessionMissionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? mission = null,
+  }) {
+    return _then(_$ListSessionMissionImpl(
+      mission: null == mission
+          ? _value.mission
+          : mission // ignore: cast_nullable_to_non_nullable
+              as MissionBiker,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListSessionMissionImpl implements ListSessionMission {
+  const _$ListSessionMissionImpl({required this.mission});
+
+  @override
+  final MissionBiker mission;
+
+  @override
+  String toString() {
+    return 'BikerEvent.listSessionMission(mission: $mission)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListSessionMissionImpl &&
+            (identical(other.mission, mission) || other.mission == mission));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, mission);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListSessionMissionImplCopyWith<_$ListSessionMissionImpl> get copyWith =>
+      __$$ListSessionMissionImplCopyWithImpl<_$ListSessionMissionImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+  }) {
+    return listSessionMission(mission);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+  }) {
+    return listSessionMission?.call(mission);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    required TResult orElse(),
+  }) {
+    if (listSessionMission != null) {
+      return listSessionMission(mission);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+  }) {
+    return listSessionMission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+  }) {
+    return listSessionMission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    required TResult orElse(),
+  }) {
+    if (listSessionMission != null) {
+      return listSessionMission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListSessionMission implements BikerEvent {
+  const factory ListSessionMission({required final MissionBiker mission}) =
+      _$ListSessionMissionImpl;
+
+  MissionBiker get mission;
+  @JsonKey(ignore: true)
+  _$$ListSessionMissionImplCopyWith<_$ListSessionMissionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$BikerState {
   LatLng? get position => throw _privateConstructorUsedError;
   Mission? get mission => throw _privateConstructorUsedError;
   MissionSession? get missionSession => throw _privateConstructorUsedError;
+  int? get missionsession_id => throw _privateConstructorUsedError;
   List<Mission>? get list_mission => throw _privateConstructorUsedError;
   List<MissionSession>? get list_mission_session =>
       throw _privateConstructorUsedError;
@@ -1414,7 +1403,9 @@ mixin _$BikerState {
   int? get load_list_mission => throw _privateConstructorUsedError;
   int? get load_list_mission_done => throw _privateConstructorUsedError;
   int? get load_list_mission_encours => throw _privateConstructorUsedError;
+  bool? get sendPosition => throw _privateConstructorUsedError;
   int? get load_list_mission_session => throw _privateConstructorUsedError;
+  int? get time => throw _privateConstructorUsedError;
   List<MissionBiker>? get list_mission_encours =>
       throw _privateConstructorUsedError;
 
@@ -1433,6 +1424,7 @@ abstract class $BikerStateCopyWith<$Res> {
       {LatLng? position,
       Mission? mission,
       MissionSession? missionSession,
+      int? missionsession_id,
       List<Mission>? list_mission,
       List<MissionSession>? list_mission_session,
       List<MissionBiker>? list_mission_done,
@@ -1441,7 +1433,9 @@ abstract class $BikerStateCopyWith<$Res> {
       int? load_list_mission,
       int? load_list_mission_done,
       int? load_list_mission_encours,
+      bool? sendPosition,
       int? load_list_mission_session,
+      int? time,
       List<MissionBiker>? list_mission_encours});
 }
 
@@ -1461,6 +1455,7 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
     Object? position = freezed,
     Object? mission = freezed,
     Object? missionSession = freezed,
+    Object? missionsession_id = freezed,
     Object? list_mission = freezed,
     Object? list_mission_session = freezed,
     Object? list_mission_done = freezed,
@@ -1469,7 +1464,9 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
     Object? load_list_mission = freezed,
     Object? load_list_mission_done = freezed,
     Object? load_list_mission_encours = freezed,
+    Object? sendPosition = freezed,
     Object? load_list_mission_session = freezed,
+    Object? time = freezed,
     Object? list_mission_encours = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1485,6 +1482,10 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
           ? _value.missionSession
           : missionSession // ignore: cast_nullable_to_non_nullable
               as MissionSession?,
+      missionsession_id: freezed == missionsession_id
+          ? _value.missionsession_id
+          : missionsession_id // ignore: cast_nullable_to_non_nullable
+              as int?,
       list_mission: freezed == list_mission
           ? _value.list_mission
           : list_mission // ignore: cast_nullable_to_non_nullable
@@ -1517,9 +1518,17 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
           ? _value.load_list_mission_encours
           : load_list_mission_encours // ignore: cast_nullable_to_non_nullable
               as int?,
+      sendPosition: freezed == sendPosition
+          ? _value.sendPosition
+          : sendPosition // ignore: cast_nullable_to_non_nullable
+              as bool?,
       load_list_mission_session: freezed == load_list_mission_session
           ? _value.load_list_mission_session
           : load_list_mission_session // ignore: cast_nullable_to_non_nullable
+              as int?,
+      time: freezed == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
               as int?,
       list_mission_encours: freezed == list_mission_encours
           ? _value.list_mission_encours
@@ -1541,6 +1550,7 @@ abstract class _$$BikerStateImplCopyWith<$Res>
       {LatLng? position,
       Mission? mission,
       MissionSession? missionSession,
+      int? missionsession_id,
       List<Mission>? list_mission,
       List<MissionSession>? list_mission_session,
       List<MissionBiker>? list_mission_done,
@@ -1549,7 +1559,9 @@ abstract class _$$BikerStateImplCopyWith<$Res>
       int? load_list_mission,
       int? load_list_mission_done,
       int? load_list_mission_encours,
+      bool? sendPosition,
       int? load_list_mission_session,
+      int? time,
       List<MissionBiker>? list_mission_encours});
 }
 
@@ -1567,6 +1579,7 @@ class __$$BikerStateImplCopyWithImpl<$Res>
     Object? position = freezed,
     Object? mission = freezed,
     Object? missionSession = freezed,
+    Object? missionsession_id = freezed,
     Object? list_mission = freezed,
     Object? list_mission_session = freezed,
     Object? list_mission_done = freezed,
@@ -1575,7 +1588,9 @@ class __$$BikerStateImplCopyWithImpl<$Res>
     Object? load_list_mission = freezed,
     Object? load_list_mission_done = freezed,
     Object? load_list_mission_encours = freezed,
+    Object? sendPosition = freezed,
     Object? load_list_mission_session = freezed,
+    Object? time = freezed,
     Object? list_mission_encours = freezed,
   }) {
     return _then(_$BikerStateImpl(
@@ -1591,6 +1606,10 @@ class __$$BikerStateImplCopyWithImpl<$Res>
           ? _value.missionSession
           : missionSession // ignore: cast_nullable_to_non_nullable
               as MissionSession?,
+      missionsession_id: freezed == missionsession_id
+          ? _value.missionsession_id
+          : missionsession_id // ignore: cast_nullable_to_non_nullable
+              as int?,
       list_mission: freezed == list_mission
           ? _value._list_mission
           : list_mission // ignore: cast_nullable_to_non_nullable
@@ -1623,9 +1642,17 @@ class __$$BikerStateImplCopyWithImpl<$Res>
           ? _value.load_list_mission_encours
           : load_list_mission_encours // ignore: cast_nullable_to_non_nullable
               as int?,
+      sendPosition: freezed == sendPosition
+          ? _value.sendPosition
+          : sendPosition // ignore: cast_nullable_to_non_nullable
+              as bool?,
       load_list_mission_session: freezed == load_list_mission_session
           ? _value.load_list_mission_session
           : load_list_mission_session // ignore: cast_nullable_to_non_nullable
+              as int?,
+      time: freezed == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
               as int?,
       list_mission_encours: freezed == list_mission_encours
           ? _value._list_mission_encours
@@ -1642,6 +1669,7 @@ class _$BikerStateImpl implements _BikerState {
       {required this.position,
       required this.mission,
       required this.missionSession,
+      required this.missionsession_id,
       required final List<Mission>? list_mission,
       required final List<MissionSession>? list_mission_session,
       required final List<MissionBiker>? list_mission_done,
@@ -1650,7 +1678,9 @@ class _$BikerStateImpl implements _BikerState {
       required this.load_list_mission,
       required this.load_list_mission_done,
       required this.load_list_mission_encours,
+      required this.sendPosition,
       required this.load_list_mission_session,
+      required this.time,
       required final List<MissionBiker>? list_mission_encours})
       : _list_mission = list_mission,
         _list_mission_session = list_mission_session,
@@ -1663,6 +1693,8 @@ class _$BikerStateImpl implements _BikerState {
   final Mission? mission;
   @override
   final MissionSession? missionSession;
+  @override
+  final int? missionsession_id;
   final List<Mission>? _list_mission;
   @override
   List<Mission>? get list_mission {
@@ -1706,7 +1738,11 @@ class _$BikerStateImpl implements _BikerState {
   @override
   final int? load_list_mission_encours;
   @override
+  final bool? sendPosition;
+  @override
   final int? load_list_mission_session;
+  @override
+  final int? time;
   final List<MissionBiker>? _list_mission_encours;
   @override
   List<MissionBiker>? get list_mission_encours {
@@ -1720,7 +1756,7 @@ class _$BikerStateImpl implements _BikerState {
 
   @override
   String toString() {
-    return 'BikerState(position: $position, mission: $mission, missionSession: $missionSession, list_mission: $list_mission, list_mission_session: $list_mission_session, list_mission_done: $list_mission_done, indexHistory: $indexHistory, isRequest: $isRequest, load_list_mission: $load_list_mission, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, load_list_mission_session: $load_list_mission_session, list_mission_encours: $list_mission_encours)';
+    return 'BikerState(position: $position, mission: $mission, missionSession: $missionSession, missionsession_id: $missionsession_id, list_mission: $list_mission, list_mission_session: $list_mission_session, list_mission_done: $list_mission_done, indexHistory: $indexHistory, isRequest: $isRequest, load_list_mission: $load_list_mission, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, sendPosition: $sendPosition, load_list_mission_session: $load_list_mission_session, time: $time, list_mission_encours: $list_mission_encours)';
   }
 
   @override
@@ -1733,6 +1769,8 @@ class _$BikerStateImpl implements _BikerState {
             (identical(other.mission, mission) || other.mission == mission) &&
             (identical(other.missionSession, missionSession) ||
                 other.missionSession == missionSession) &&
+            (identical(other.missionsession_id, missionsession_id) ||
+                other.missionsession_id == missionsession_id) &&
             const DeepCollectionEquality()
                 .equals(other._list_mission, _list_mission) &&
             const DeepCollectionEquality()
@@ -1750,9 +1788,12 @@ class _$BikerStateImpl implements _BikerState {
             (identical(other.load_list_mission_encours,
                     load_list_mission_encours) ||
                 other.load_list_mission_encours == load_list_mission_encours) &&
+            (identical(other.sendPosition, sendPosition) ||
+                other.sendPosition == sendPosition) &&
             (identical(other.load_list_mission_session,
                     load_list_mission_session) ||
                 other.load_list_mission_session == load_list_mission_session) &&
+            (identical(other.time, time) || other.time == time) &&
             const DeepCollectionEquality()
                 .equals(other._list_mission_encours, _list_mission_encours));
   }
@@ -1763,6 +1804,7 @@ class _$BikerStateImpl implements _BikerState {
       position,
       mission,
       missionSession,
+      missionsession_id,
       const DeepCollectionEquality().hash(_list_mission),
       const DeepCollectionEquality().hash(_list_mission_session),
       const DeepCollectionEquality().hash(_list_mission_done),
@@ -1771,7 +1813,9 @@ class _$BikerStateImpl implements _BikerState {
       load_list_mission,
       load_list_mission_done,
       load_list_mission_encours,
+      sendPosition,
       load_list_mission_session,
+      time,
       const DeepCollectionEquality().hash(_list_mission_encours));
 
   @JsonKey(ignore: true)
@@ -1786,6 +1830,7 @@ abstract class _BikerState implements BikerState {
           {required final LatLng? position,
           required final Mission? mission,
           required final MissionSession? missionSession,
+          required final int? missionsession_id,
           required final List<Mission>? list_mission,
           required final List<MissionSession>? list_mission_session,
           required final List<MissionBiker>? list_mission_done,
@@ -1794,7 +1839,9 @@ abstract class _BikerState implements BikerState {
           required final int? load_list_mission,
           required final int? load_list_mission_done,
           required final int? load_list_mission_encours,
+          required final bool? sendPosition,
           required final int? load_list_mission_session,
+          required final int? time,
           required final List<MissionBiker>? list_mission_encours}) =
       _$BikerStateImpl;
 
@@ -1804,6 +1851,8 @@ abstract class _BikerState implements BikerState {
   Mission? get mission;
   @override
   MissionSession? get missionSession;
+  @override
+  int? get missionsession_id;
   @override
   List<Mission>? get list_mission;
   @override
@@ -1821,7 +1870,11 @@ abstract class _BikerState implements BikerState {
   @override
   int? get load_list_mission_encours;
   @override
+  bool? get sendPosition;
+  @override
   int? get load_list_mission_session;
+  @override
+  int? get time;
   @override
   List<MissionBiker>? get list_mission_encours;
   @override

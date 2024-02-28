@@ -7,7 +7,6 @@ environment:
 
 dependencies:
   cached_network_image: ^3.3.1
-  carousel_slider: ^4.2.1
   connectivity: ^3.0.6
   custom_navigation_bar: ^0.8.2
   flexible_text_editing_controller: ^1.0.0+2
@@ -34,18 +33,12 @@ dependencies:
   objectbox_flutter_libs: any
   path_provider: any
   permission_handler: any
-  pinput: any
+  webview_flutter: ^4.2.3
+  carousel_slider: ^4.2.1
   provider: ^6.0.5
-  qr_code_scanner: ^1.0.1
-  qr_flutter: ^4.0.0
-  screenshot: ^2.0.0
-  share_plus: ^7.1.0
   shimmer: ^3.0.0
   socket_io_client: any
   toast: ^0.3.0
-  uni_links: ^0.5.1
-  webview_flutter: ^4.2.3
-
   auto_route: ^7.8.3
   flutter_bloc: ^8.0.1
   freezed_annotation: ^2.0.3
@@ -67,7 +60,7 @@ dependencies:
 
   flutter_rating_stars: ^1.0.3+4
   rxdart: ^0.27.7
-
+  cron: ^0.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -109,12 +102,6 @@ flutter:
     - assets/logo/logo.png
     - assets/images/bg_white.jpeg
     - assets/logo/logo.png
-    - assets/om.png
-    - assets/login.png
-    - assets/register.png
-    - assets/payement/om.png
-    - assets/payement/momo.png
-    - assets/payement/paycard.png
     - assets/svg_icones/user.svg
     - assets/svg_icones/callreceive.svg
     - assets/svg_icones/mapTagUser.svg

@@ -4,10 +4,10 @@ part of 'tcontroller_bloc.dart';
 class TcontrollerEvent with _$TcontrollerEvent {
   const factory TcontrollerEvent.getListMissionTcontroller() = GetListMissionTcontroller;
   const factory TcontrollerEvent.getListMissionTcontrollerDone() = GetListMissionTcontrollerDone;
-  const factory TcontrollerEvent.startMissionTcontroller({required int mission}) =
-      StartMissionTcontroller;
-  const factory TcontrollerEvent.endMissionTcontroller({required int mission}) =
-      EndMissionTcontroller;
-  const factory TcontrollerEvent.savePositionForMissionTcontroller() =
-      SavePositionForMissionTcontroller;
+  const factory TcontrollerEvent.startControl({required int mission}) =
+      StartControl;
+  const factory TcontrollerEvent.endControl({required int mission}) =
+      EndControl;
+  const factory TcontrollerEvent.notationControl() =
+      NotationControl;
 }

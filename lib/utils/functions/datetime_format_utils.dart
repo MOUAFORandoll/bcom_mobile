@@ -34,4 +34,14 @@ class FormatDateTime {
     final clockString = format.format(dateTime);
     return clockString;
   }
+
+  String formatTimeNew(int totalMinutes) {
+    int hours = totalMinutes ~/
+        60; // Utilise la division entière pour obtenir les heures
+    int minutes = totalMinutes %
+        60; // Utilise le modulo pour obtenir le reste des minutes
+
+    // Formatte le résultat pour s'assurer qu'il y a toujours deux chiffres pour les minutes
+    return "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}";
+  }
 }

@@ -48,6 +48,11 @@ class UserRepo {
 
     return a;
   }
+  Future completeBikerInfo(data) async {
+    Response a = await apiClient.postRequest(ApiRoutes.InfoBiker, body: data);
+
+    return a;
+  }
 
   Future newConnexion() async {
     var getU = await dababase.getKey();

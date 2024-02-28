@@ -1,19 +1,13 @@
 import 'package:Bcom/presentation/biker/first_biker_view.dart';
 import 'package:Bcom/presentation/biker/list_missions_view.dart';
-import 'package:Bcom/presentation/components/Button/themeButton.dart';
-import 'package:Bcom/presentation/tcontroller/first_view.dart';
-import 'package:Bcom/routes/app_router.gr.dart';
-import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/utils/constants/assets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_version_plus/new_version_plus.dart';
 import '../components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
- 
+
 class BikerHomePage extends StatefulWidget {
   const BikerHomePage({super.key});
   @override
@@ -39,7 +33,7 @@ class _BikerHomePageState extends State<BikerHomePage>
               strokeColor: Color(0x300c18fb),
               unSelectedColor: Colors.grey[600],
               backgroundColor:
-                  /*     state.index == 2 ? ColorsApp.primary : */ ColorsApp.bg,
+                  /*     state.index == 2 ? ColorsApp.second : */ ColorsApp.bg,
               // borderRadius: Radius.circular(15.0),
               // isFloating: true,
               // blurEffect: true,
@@ -54,7 +48,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                         height: 90,
                         // ignore: deprecated_member_use
                         color: state.index == 0
-                            ? ColorsApp.primary
+                            ? ColorsApp.second
                             : ColorsApp.grey,
                       ),
                     ),
@@ -64,7 +58,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                             border: Border(
                                 bottom: state.index == 0
                                     ? BorderSide(
-                                        color: ColorsApp.primary, width: 2)
+                                        color: ColorsApp.second, width: 2)
                                     : BorderSide.none,
                                 top: BorderSide.none)),
                         child: Text('home'.tr(),
@@ -72,7 +66,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                               fontSize: kMin,
                               fontWeight: FontWeight.w600,
                               color: state.index == 0
-                                  ? ColorsApp.primary
+                                  ? ColorsApp.second
                                   : ColorsApp.grey,
                             )))), // CustomNavigationBarItem(
 
@@ -86,7 +80,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                       height: 80,
                       // ignore: deprecated_member_use
                       color:
-                          state.index == 1 ? ColorsApp.primary : ColorsApp.grey,
+                          state.index == 1 ? ColorsApp.second : ColorsApp.grey,
                     ),
                   ),
                   title: Container(
@@ -95,7 +89,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                           border: Border(
                               bottom: state.index == 1
                                   ? BorderSide(
-                                      color: ColorsApp.primary, width: 2)
+                                      color: ColorsApp.second, width: 2)
                                   : BorderSide.none,
                               top: BorderSide.none)),
                       child: Text('historique'.tr(),
@@ -103,7 +97,7 @@ class _BikerHomePageState extends State<BikerHomePage>
                             fontSize: kMin,
                             fontWeight: FontWeight.w600,
                             color: state.index == 1
-                                ? ColorsApp.primary
+                                ? ColorsApp.second
                                 : ColorsApp.grey,
                           ))),
                 ),

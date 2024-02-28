@@ -1,3 +1,4 @@
+import 'package:Bcom/presentation/biker/mission_page.dart';
 import 'package:Bcom/presentation/home/home_page.dart';
 import 'package:Bcom/presentation/layer/onboardingpage.dart';
 import 'package:Bcom/presentation/user/auth_page.dart';
@@ -21,6 +22,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(
             page: ForgotPasswordRoute.page, path: ForgotPasswordPage.routeName),
         AutoRoute(page: HomeRoute.page, path: HomePage.routeName),
+        AutoRoute(page:  MissionSessionRoute.page, path: MissionSessionPage.routeName),
       
       ];
 }

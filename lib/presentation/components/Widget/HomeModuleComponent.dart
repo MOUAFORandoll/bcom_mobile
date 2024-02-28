@@ -23,8 +23,7 @@ class HomeModuleComponent extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: kMarginX),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             width: getWith(context) * .55,
@@ -48,14 +47,18 @@ class HomeModuleComponent extends StatelessWidget {
             ),
           ),
           Container(
-            width: getWith(context) * .3,
-            height: 100,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(image),
-              ),
-            ),
-          ),
+              width: getWith(context) * .3,
+              height: 100,
+              // decoration: BoxDecoration(
+              //   image: DecorationImage(
+              //     image: AssetImage(image),
+              //   ),
+              // ),
+              child: Icon(
+                Icons.motorcycle_outlined,
+                size: 60,
+                color: ColorsApp.second,
+              )),
         ],
       ),
     );

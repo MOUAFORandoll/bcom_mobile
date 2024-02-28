@@ -43,6 +43,8 @@ class User {
 
   @Property()
   int typeUser;
+  @Property()
+  bool infoComplete;
 
   User({
     required this.userId,
@@ -52,6 +54,7 @@ class User {
     required this.email,
     required this.profile,
     required this.phone,
+    required this.infoComplete,
     required this.dateCreated,
   });
   Map<String, dynamic> toMap() {
@@ -63,6 +66,7 @@ class User {
       'email': email,
       'profile': profile,
       'phone': phone,
+      'infoComplete': infoComplete,
       'dateCreated': dateCreated,
     };
   }
@@ -76,6 +80,7 @@ class User {
       email: json['email'],
       profile: json['profile'],
       phone: json['phone'],
+      infoComplete: json['infoComplete'],
       dateCreated: json['date_created'],
     );
   }

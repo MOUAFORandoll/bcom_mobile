@@ -37,6 +37,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<UpdateUserInfo>(_UpdateData);
     on<GetVilleQuartier>(_getVilleQuartier);
     on<UpdateUserImage>(_updateUserProfile);
+    on<CompleteBikerInfo>(_CompleteBikerInfo);
   }
 
   Future<void> _getVilleQuartier(
@@ -104,6 +105,36 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         await database.saveUser(_UserSave);
       }
     }).catchError((error) {});
+  }
+
+  _CompleteBikerInfo(CompleteBikerInfo event, Emitter<UserState> emit) async {
+    var key = await database.getKey();
+    var data = Map.from(event.data);
+    data['keySecret'] = key;
+
+    print(data);
+
+    emit(state.copyWith(isLoading: null));
+    emit(state.copyWith(isLoading: 1));
+    await userRepo.completeBikerInfo(data).then((response) async {
+      if (response.statusCode == 201) {
+        if (response.data['data'] != null) {
+          emit(state.copyWith(
+              updating: false, isLoading: 2, authenticationFailedMessage: ''));
+          emit(UserState.authenticated());
+
+          var _UserSave = User.fromJson(response.data['data']);
+
+          await database.saveUser(_UserSave);
+        }
+      }
+    }).onError((error, s) {
+      // print('----${s}-----');
+      // print('------${error}---');
+      emit(state.copyWith(
+          isLoading: 3,
+          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+    });
   }
 
   _UpdateData(UpdateUserInfo event, Emitter<UserState> emit) async {

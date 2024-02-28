@@ -1,12 +1,9 @@
 import 'package:Bcom/presentation/biker/biker_home_page.dart';
 import 'package:Bcom/presentation/components/Button/themeButton.dart';
 import 'package:Bcom/presentation/tcontroller/tcontroller_home_page.dart';
-import 'package:Bcom/routes/app_router.gr.dart';
-import 'package:Bcom/utils/Services/validators.dart';
-import 'package:Bcom/utils/constants/assets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:custom_navigation_bar/custom_navigation_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:Bcom/presentation/user/complete_biker_info_page.dart';
+import 'package:Bcom/routes/app_router.gr.dart'; 
+import 'package:cached_network_image/cached_network_image.dart'; 
 import 'package:new_version_plus/new_version_plus.dart';
 import '../../presentation/components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
@@ -65,7 +62,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             drawer: CustomDrawer(user: state.user),
             body: SafeArea(
                 child: state.user!.typeUser == 4
-                    ? BikerHomePage()
+                    ? state.user!.infoComplete
+                        ? BikerHomePage()
+                        : CompleteBikerInfoPage()
                     : state.user!.typeUser == 3
                         ? TcontrollerHomePage()
                         : Container())));

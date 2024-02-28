@@ -1,20 +1,9 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
-import 'package:Bcom/application/model/exportmodel.dart';
-import 'package:Bcom/core.dart';
-import 'package:Bcom/infrastructure/_commons/network/env_config.dart';
 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-import 'package:Bcom/utils/Services/SocketService.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:dio/dio.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 part 'tcontroller_event.dart';
 part 'tcontroller_state.dart';
@@ -28,19 +17,18 @@ class TcontrollerBloc extends Bloc<TcontrollerEvent, TcontrollerState> {
       : super(TcontrollerState.initial()) {
     on<GetListMissionTcontroller>(_getListMissionTcontroller);
     on<GetListMissionTcontrollerDone>(_getListMissionTcontrollerDone);
-    on<StartMissionTcontroller>(_startMissionTcontroller);
-    on<EndMissionTcontroller>(_endMissionTcontroller);
-    on<SavePositionForMissionTcontroller>(_savePositionForMissionTcontroller);
+    on<StartControl>(startControl);
+    on<EndControl>(endControl);
+    on<NotationControl>(notationControl);
   }
-  _endMissionTcontroller(
-      EndMissionTcontroller event, Emitter<TcontrollerState> emit) async {}
-  _startMissionTcontroller(
-      StartMissionTcontroller event, Emitter<TcontrollerState> emit) async {}
   _getListMissionTcontroller(
       GetListMissionTcontroller event, Emitter<TcontrollerState> emit) async {}
   _getListMissionTcontrollerDone(GetListMissionTcontrollerDone event,
       Emitter<TcontrollerState> emit) async {}
-  _savePositionForMissionTcontroller(SavePositionForMissionTcontroller event,
-      Emitter<TcontrollerState> emit) async {}
+  startControl(StartControl event, Emitter<TcontrollerState> emit) async {}
+  endControl(EndControl event, Emitter<TcontrollerState> emit) async {}
+
+  notationControl(
+      NotationControl event, Emitter<TcontrollerState> emit) async {}
 }
   // context.read<TcontrollerBloc>().add(GetImageColisGalerie()) 

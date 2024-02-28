@@ -20,27 +20,27 @@ mixin _$TcontrollerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,12 +50,9 @@ mixin _$TcontrollerEvent {
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,10 +61,9 @@ mixin _$TcontrollerEvent {
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,10 +72,9 @@ mixin _$TcontrollerEvent {
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,9 +142,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) {
     return getListMissionTcontroller();
   }
@@ -159,9 +154,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) {
     return getListMissionTcontroller?.call();
   }
@@ -171,9 +166,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontroller != null) {
@@ -189,12 +184,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) {
     return getListMissionTcontroller(this);
   }
@@ -206,10 +198,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) {
     return getListMissionTcontroller?.call(this);
   }
@@ -221,10 +212,9 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontroller != null) {
@@ -283,9 +273,9 @@ class _$GetListMissionTcontrollerDoneImpl
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) {
     return getListMissionTcontrollerDone();
   }
@@ -295,9 +285,9 @@ class _$GetListMissionTcontrollerDoneImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) {
     return getListMissionTcontrollerDone?.call();
   }
@@ -307,9 +297,9 @@ class _$GetListMissionTcontrollerDoneImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontrollerDone != null) {
@@ -325,12 +315,9 @@ class _$GetListMissionTcontrollerDoneImpl
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) {
     return getListMissionTcontrollerDone(this);
   }
@@ -342,10 +329,9 @@ class _$GetListMissionTcontrollerDoneImpl
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) {
     return getListMissionTcontrollerDone?.call(this);
   }
@@ -357,10 +343,9 @@ class _$GetListMissionTcontrollerDoneImpl
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontrollerDone != null) {
@@ -376,22 +361,20 @@ abstract class GetListMissionTcontrollerDone implements TcontrollerEvent {
 }
 
 /// @nodoc
-abstract class _$$StartMissionTcontrollerImplCopyWith<$Res> {
-  factory _$$StartMissionTcontrollerImplCopyWith(
-          _$StartMissionTcontrollerImpl value,
-          $Res Function(_$StartMissionTcontrollerImpl) then) =
-      __$$StartMissionTcontrollerImplCopyWithImpl<$Res>;
+abstract class _$$StartControlImplCopyWith<$Res> {
+  factory _$$StartControlImplCopyWith(
+          _$StartControlImpl value, $Res Function(_$StartControlImpl) then) =
+      __$$StartControlImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int mission});
 }
 
 /// @nodoc
-class __$$StartMissionTcontrollerImplCopyWithImpl<$Res>
-    extends _$TcontrollerEventCopyWithImpl<$Res, _$StartMissionTcontrollerImpl>
-    implements _$$StartMissionTcontrollerImplCopyWith<$Res> {
-  __$$StartMissionTcontrollerImplCopyWithImpl(
-      _$StartMissionTcontrollerImpl _value,
-      $Res Function(_$StartMissionTcontrollerImpl) _then)
+class __$$StartControlImplCopyWithImpl<$Res>
+    extends _$TcontrollerEventCopyWithImpl<$Res, _$StartControlImpl>
+    implements _$$StartControlImplCopyWith<$Res> {
+  __$$StartControlImplCopyWithImpl(
+      _$StartControlImpl _value, $Res Function(_$StartControlImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -399,7 +382,7 @@ class __$$StartMissionTcontrollerImplCopyWithImpl<$Res>
   $Res call({
     Object? mission = null,
   }) {
-    return _then(_$StartMissionTcontrollerImpl(
+    return _then(_$StartControlImpl(
       mission: null == mission
           ? _value.mission
           : mission // ignore: cast_nullable_to_non_nullable
@@ -410,22 +393,22 @@ class __$$StartMissionTcontrollerImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
-  const _$StartMissionTcontrollerImpl({required this.mission});
+class _$StartControlImpl implements StartControl {
+  const _$StartControlImpl({required this.mission});
 
   @override
   final int mission;
 
   @override
   String toString() {
-    return 'TcontrollerEvent.startMissionTcontroller(mission: $mission)';
+    return 'TcontrollerEvent.startControl(mission: $mission)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StartMissionTcontrollerImpl &&
+            other is _$StartControlImpl &&
             (identical(other.mission, mission) || other.mission == mission));
   }
 
@@ -435,20 +418,19 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StartMissionTcontrollerImplCopyWith<_$StartMissionTcontrollerImpl>
-      get copyWith => __$$StartMissionTcontrollerImplCopyWithImpl<
-          _$StartMissionTcontrollerImpl>(this, _$identity);
+  _$$StartControlImplCopyWith<_$StartControlImpl> get copyWith =>
+      __$$StartControlImplCopyWithImpl<_$StartControlImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) {
-    return startMissionTcontroller(mission);
+    return startControl(mission);
   }
 
   @override
@@ -456,11 +438,11 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) {
-    return startMissionTcontroller?.call(mission);
+    return startControl?.call(mission);
   }
 
   @override
@@ -468,13 +450,13 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) {
-    if (startMissionTcontroller != null) {
-      return startMissionTcontroller(mission);
+    if (startControl != null) {
+      return startControl(mission);
     }
     return orElse();
   }
@@ -486,14 +468,11 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) {
-    return startMissionTcontroller(this);
+    return startControl(this);
   }
 
   @override
@@ -503,12 +482,11 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) {
-    return startMissionTcontroller?.call(this);
+    return startControl?.call(this);
   }
 
   @override
@@ -518,45 +496,42 @@ class _$StartMissionTcontrollerImpl implements StartMissionTcontroller {
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) {
-    if (startMissionTcontroller != null) {
-      return startMissionTcontroller(this);
+    if (startControl != null) {
+      return startControl(this);
     }
     return orElse();
   }
 }
 
-abstract class StartMissionTcontroller implements TcontrollerEvent {
-  const factory StartMissionTcontroller({required final int mission}) =
-      _$StartMissionTcontrollerImpl;
+abstract class StartControl implements TcontrollerEvent {
+  const factory StartControl({required final int mission}) = _$StartControlImpl;
 
   int get mission;
   @JsonKey(ignore: true)
-  _$$StartMissionTcontrollerImplCopyWith<_$StartMissionTcontrollerImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$StartControlImplCopyWith<_$StartControlImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndMissionTcontrollerImplCopyWith<$Res> {
-  factory _$$EndMissionTcontrollerImplCopyWith(
-          _$EndMissionTcontrollerImpl value,
-          $Res Function(_$EndMissionTcontrollerImpl) then) =
-      __$$EndMissionTcontrollerImplCopyWithImpl<$Res>;
+abstract class _$$EndControlImplCopyWith<$Res> {
+  factory _$$EndControlImplCopyWith(
+          _$EndControlImpl value, $Res Function(_$EndControlImpl) then) =
+      __$$EndControlImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int mission});
 }
 
 /// @nodoc
-class __$$EndMissionTcontrollerImplCopyWithImpl<$Res>
-    extends _$TcontrollerEventCopyWithImpl<$Res, _$EndMissionTcontrollerImpl>
-    implements _$$EndMissionTcontrollerImplCopyWith<$Res> {
-  __$$EndMissionTcontrollerImplCopyWithImpl(_$EndMissionTcontrollerImpl _value,
-      $Res Function(_$EndMissionTcontrollerImpl) _then)
+class __$$EndControlImplCopyWithImpl<$Res>
+    extends _$TcontrollerEventCopyWithImpl<$Res, _$EndControlImpl>
+    implements _$$EndControlImplCopyWith<$Res> {
+  __$$EndControlImplCopyWithImpl(
+      _$EndControlImpl _value, $Res Function(_$EndControlImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -564,7 +539,7 @@ class __$$EndMissionTcontrollerImplCopyWithImpl<$Res>
   $Res call({
     Object? mission = null,
   }) {
-    return _then(_$EndMissionTcontrollerImpl(
+    return _then(_$EndControlImpl(
       mission: null == mission
           ? _value.mission
           : mission // ignore: cast_nullable_to_non_nullable
@@ -575,22 +550,22 @@ class __$$EndMissionTcontrollerImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
-  const _$EndMissionTcontrollerImpl({required this.mission});
+class _$EndControlImpl implements EndControl {
+  const _$EndControlImpl({required this.mission});
 
   @override
   final int mission;
 
   @override
   String toString() {
-    return 'TcontrollerEvent.endMissionTcontroller(mission: $mission)';
+    return 'TcontrollerEvent.endControl(mission: $mission)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndMissionTcontrollerImpl &&
+            other is _$EndControlImpl &&
             (identical(other.mission, mission) || other.mission == mission));
   }
 
@@ -600,20 +575,19 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndMissionTcontrollerImplCopyWith<_$EndMissionTcontrollerImpl>
-      get copyWith => __$$EndMissionTcontrollerImplCopyWithImpl<
-          _$EndMissionTcontrollerImpl>(this, _$identity);
+  _$$EndControlImplCopyWith<_$EndControlImpl> get copyWith =>
+      __$$EndControlImplCopyWithImpl<_$EndControlImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) {
-    return endMissionTcontroller(mission);
+    return endControl(mission);
   }
 
   @override
@@ -621,11 +595,11 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) {
-    return endMissionTcontroller?.call(mission);
+    return endControl?.call(mission);
   }
 
   @override
@@ -633,13 +607,13 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) {
-    if (endMissionTcontroller != null) {
-      return endMissionTcontroller(mission);
+    if (endControl != null) {
+      return endControl(mission);
     }
     return orElse();
   }
@@ -651,14 +625,11 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) {
-    return endMissionTcontroller(this);
+    return endControl(this);
   }
 
   @override
@@ -668,12 +639,11 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) {
-    return endMissionTcontroller?.call(this);
+    return endControl?.call(this);
   }
 
   @override
@@ -683,64 +653,57 @@ class _$EndMissionTcontrollerImpl implements EndMissionTcontroller {
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) {
-    if (endMissionTcontroller != null) {
-      return endMissionTcontroller(this);
+    if (endControl != null) {
+      return endControl(this);
     }
     return orElse();
   }
 }
 
-abstract class EndMissionTcontroller implements TcontrollerEvent {
-  const factory EndMissionTcontroller({required final int mission}) =
-      _$EndMissionTcontrollerImpl;
+abstract class EndControl implements TcontrollerEvent {
+  const factory EndControl({required final int mission}) = _$EndControlImpl;
 
   int get mission;
   @JsonKey(ignore: true)
-  _$$EndMissionTcontrollerImplCopyWith<_$EndMissionTcontrollerImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$EndControlImplCopyWith<_$EndControlImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SavePositionForMissionTcontrollerImplCopyWith<$Res> {
-  factory _$$SavePositionForMissionTcontrollerImplCopyWith(
-          _$SavePositionForMissionTcontrollerImpl value,
-          $Res Function(_$SavePositionForMissionTcontrollerImpl) then) =
-      __$$SavePositionForMissionTcontrollerImplCopyWithImpl<$Res>;
+abstract class _$$NotationControlImplCopyWith<$Res> {
+  factory _$$NotationControlImplCopyWith(_$NotationControlImpl value,
+          $Res Function(_$NotationControlImpl) then) =
+      __$$NotationControlImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SavePositionForMissionTcontrollerImplCopyWithImpl<$Res>
-    extends _$TcontrollerEventCopyWithImpl<$Res,
-        _$SavePositionForMissionTcontrollerImpl>
-    implements _$$SavePositionForMissionTcontrollerImplCopyWith<$Res> {
-  __$$SavePositionForMissionTcontrollerImplCopyWithImpl(
-      _$SavePositionForMissionTcontrollerImpl _value,
-      $Res Function(_$SavePositionForMissionTcontrollerImpl) _then)
+class __$$NotationControlImplCopyWithImpl<$Res>
+    extends _$TcontrollerEventCopyWithImpl<$Res, _$NotationControlImpl>
+    implements _$$NotationControlImplCopyWith<$Res> {
+  __$$NotationControlImplCopyWithImpl(
+      _$NotationControlImpl _value, $Res Function(_$NotationControlImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SavePositionForMissionTcontrollerImpl
-    implements SavePositionForMissionTcontroller {
-  const _$SavePositionForMissionTcontrollerImpl();
+class _$NotationControlImpl implements NotationControl {
+  const _$NotationControlImpl();
 
   @override
   String toString() {
-    return 'TcontrollerEvent.savePositionForMissionTcontroller()';
+    return 'TcontrollerEvent.notationControl()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SavePositionForMissionTcontrollerImpl);
+        (other.runtimeType == runtimeType && other is _$NotationControlImpl);
   }
 
   @override
@@ -751,11 +714,11 @@ class _$SavePositionForMissionTcontrollerImpl
   TResult when<TResult extends Object?>({
     required TResult Function() getListMissionTcontroller,
     required TResult Function() getListMissionTcontrollerDone,
-    required TResult Function(int mission) startMissionTcontroller,
-    required TResult Function(int mission) endMissionTcontroller,
-    required TResult Function() savePositionForMissionTcontroller,
+    required TResult Function(int mission) startControl,
+    required TResult Function(int mission) endControl,
+    required TResult Function() notationControl,
   }) {
-    return savePositionForMissionTcontroller();
+    return notationControl();
   }
 
   @override
@@ -763,11 +726,11 @@ class _$SavePositionForMissionTcontrollerImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getListMissionTcontroller,
     TResult? Function()? getListMissionTcontrollerDone,
-    TResult? Function(int mission)? startMissionTcontroller,
-    TResult? Function(int mission)? endMissionTcontroller,
-    TResult? Function()? savePositionForMissionTcontroller,
+    TResult? Function(int mission)? startControl,
+    TResult? Function(int mission)? endControl,
+    TResult? Function()? notationControl,
   }) {
-    return savePositionForMissionTcontroller?.call();
+    return notationControl?.call();
   }
 
   @override
@@ -775,13 +738,13 @@ class _$SavePositionForMissionTcontrollerImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getListMissionTcontroller,
     TResult Function()? getListMissionTcontrollerDone,
-    TResult Function(int mission)? startMissionTcontroller,
-    TResult Function(int mission)? endMissionTcontroller,
-    TResult Function()? savePositionForMissionTcontroller,
+    TResult Function(int mission)? startControl,
+    TResult Function(int mission)? endControl,
+    TResult Function()? notationControl,
     required TResult orElse(),
   }) {
-    if (savePositionForMissionTcontroller != null) {
-      return savePositionForMissionTcontroller();
+    if (notationControl != null) {
+      return notationControl();
     }
     return orElse();
   }
@@ -793,14 +756,11 @@ class _$SavePositionForMissionTcontrollerImpl
         getListMissionTcontroller,
     required TResult Function(GetListMissionTcontrollerDone value)
         getListMissionTcontrollerDone,
-    required TResult Function(StartMissionTcontroller value)
-        startMissionTcontroller,
-    required TResult Function(EndMissionTcontroller value)
-        endMissionTcontroller,
-    required TResult Function(SavePositionForMissionTcontroller value)
-        savePositionForMissionTcontroller,
+    required TResult Function(StartControl value) startControl,
+    required TResult Function(EndControl value) endControl,
+    required TResult Function(NotationControl value) notationControl,
   }) {
-    return savePositionForMissionTcontroller(this);
+    return notationControl(this);
   }
 
   @override
@@ -810,12 +770,11 @@ class _$SavePositionForMissionTcontrollerImpl
         getListMissionTcontroller,
     TResult? Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult? Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult? Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult? Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult? Function(StartControl value)? startControl,
+    TResult? Function(EndControl value)? endControl,
+    TResult? Function(NotationControl value)? notationControl,
   }) {
-    return savePositionForMissionTcontroller?.call(this);
+    return notationControl?.call(this);
   }
 
   @override
@@ -825,22 +784,20 @@ class _$SavePositionForMissionTcontrollerImpl
         getListMissionTcontroller,
     TResult Function(GetListMissionTcontrollerDone value)?
         getListMissionTcontrollerDone,
-    TResult Function(StartMissionTcontroller value)? startMissionTcontroller,
-    TResult Function(EndMissionTcontroller value)? endMissionTcontroller,
-    TResult Function(SavePositionForMissionTcontroller value)?
-        savePositionForMissionTcontroller,
+    TResult Function(StartControl value)? startControl,
+    TResult Function(EndControl value)? endControl,
+    TResult Function(NotationControl value)? notationControl,
     required TResult orElse(),
   }) {
-    if (savePositionForMissionTcontroller != null) {
-      return savePositionForMissionTcontroller(this);
+    if (notationControl != null) {
+      return notationControl(this);
     }
     return orElse();
   }
 }
 
-abstract class SavePositionForMissionTcontroller implements TcontrollerEvent {
-  const factory SavePositionForMissionTcontroller() =
-      _$SavePositionForMissionTcontrollerImpl;
+abstract class NotationControl implements TcontrollerEvent {
+  const factory NotationControl() = _$NotationControlImpl;
 }
 
 /// @nodoc

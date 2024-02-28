@@ -19,44 +19,49 @@ class TextForm extends StatelessWidget {
       this.onTap});
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      onChanged: (String value) {
-        if (onChange != null) onChange!(value);
-      },
-      controller: controller,
-      validator: (value) {
-        return value!.isEmpty ? 'veillez remplir se champs' : null;
-      },
-      keyboardType: type,
-      obscureText: obscureText!,
-      decoration: new InputDecoration(
-        fillColor: ColorsApp.tird,
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: kMarginY),
+      child: TextFormField(
+        onChanged: (String value) {
+          if (onChange != null) onChange!(value);
+        },
+        minLines: 5,
+        maxLines: 15,
+        controller: controller,
+        validator: (value) {
+          return value!.isEmpty ? 'veillez remplir se champs' : null;
+        },
+        keyboardType: type,
+        obscureText: obscureText!,
+        decoration: new InputDecoration(
+          fillColor: ColorsApp.tird,
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: BorderSide(
+                color: ColorsApp.tird,
+              )),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
               color: ColorsApp.tird,
-            )),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: ColorsApp.tird,
+            ),
           ),
-        ),
-        contentPadding: EdgeInsets.only(
-          left: 15,
-          bottom: 11,
-          top: 15,
-          right: 15,
-        ),
-        hintText: hint,
-        hintStyle: TextStyle(
-          color: Colors.grey,
-        ),
-        suffixIcon: InkWell(
-          onTap: () => onTap,
-          child: Icon(
-            icon,
+          contentPadding: EdgeInsets.only(
+            left: 15,
+            bottom: 11,
+            top: 15,
+            right: 15,
+          ),
+          hintText: hint,
+          hintStyle: TextStyle(
             color: Colors.grey,
+          ),
+          suffixIcon: InkWell(
+            onTap: () => onTap,
+            child: Icon(
+              icon,
+              color: Colors.grey,
+            ),
           ),
         ),
       ),

@@ -1,6 +1,5 @@
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-
-import 'application/export_bloc.dart';
+ 
 
 @RoutePage()
 class MyTestPage extends StatefulWidget {
@@ -12,11 +11,7 @@ class MyTestPage extends StatefulWidget {
   @override
   State<MyTestPage> createState() => _MyTestPageState();
 }
-
-//  var fn = new ViewFunctions();
-//                 fn.loading(
-//                     'Eiusmod ex quis deserunt ex eiusmod adipisicing duis fugiat excepteur non velit fugiat id id. ',
-//                     '');
+ 
 class _MyTestPageState extends State<MyTestPage> {
   @override
   Widget build(BuildContext context) {

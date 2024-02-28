@@ -18,6 +18,7 @@ class UserModel {
     this.status = true,
     required this.profile,
     required this.dateCreated,
+    required this.infoComplete,
     required this.typeUser,
   });
 
@@ -27,6 +28,7 @@ class UserModel {
   var email;
   String phone;
   bool status;
+  bool infoComplete;
   String dateCreated;
   String profile;
   int typeUser;
@@ -38,6 +40,7 @@ class UserModel {
         email: json['email'],
         phone: json['phone'].toString(),
         typeUser: json['typeUser'],
+        infoComplete: json['infoComplete'],
         profile: json['profile'],
         dateCreated: json['dateCreated'],
       );
@@ -48,6 +51,7 @@ class UserModel {
         'prenom': prenom,
         'email': email,
         'phone': phone,
+        'infoComplete': infoComplete,
         'status': status,
         'dateCreated': dateCreated,
         'profile': profile,

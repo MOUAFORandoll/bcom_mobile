@@ -1,8 +1,6 @@
 import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -36,20 +34,25 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                     if (stateH.user!.typeUser == 3) {
                       initLoadTControl(context);
                     }
-                    if (stateH.user!.typeUser == 4) {
+                    if (stateH.user!.typeUser == 4 ||
+                        stateH.user!.typeUser == '4') {
+                      print('**------------initLoadBiker');
                       initLoadBiker(context);
                     }
+                  } else {
+                    print(
+                        '**------------                AutoRouter.of(context).replace(state.route);');
                   }
                 }
-                // final HomeBloc h = BlocProvider.of<HomeBloc>(context);
-                // h.add(UserDataEvent());
+
                 print('**----');
                 AutoRouter.of(context).replace(state.route);
               }
             },
             builder: (context, state) {
               return Scaffold(
-                  backgroundColor: ColorsApp.white,
+                  backgroundColor:
+                      ColorsApp.white, // const Color.fromARGB(255, 18, 17, 17),
                   body: SingleChildScrollView(
                     child: Container(
                         alignment: Alignment.center,

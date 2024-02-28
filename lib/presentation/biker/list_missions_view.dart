@@ -1,6 +1,5 @@
-import 'package:Bcom/application/biker/biker_bloc.dart';
-import 'package:Bcom/presentation/biker/list_missions_termine.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:Bcom/presentation/biker/mission_page.dart';
+import 'package:Bcom/routes/app_router.gr.dart';
 
 import '../components/exportcomponent.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
@@ -8,6 +7,11 @@ import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 import 'package:Bcom/utils/constants/assets.dart';
 
 import 'package:flutter_svg/svg.dart';
+import 'package:Bcom/presentation/components/Widget/EmptyMissionComponent.dart';
+import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
+import 'package:Bcom/presentation/components/Widget/missionsUserComponent.dart';
+import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:Bcom/application/export_bloc.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
 
@@ -17,11 +21,24 @@ class ListMissionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BikerBloc, BikerState>(
+    return BlocConsumer<BikerBloc, BikerState>(
+        listener: (context, state) {
+          // if (state.load_list_mission_session == 0) {
+          //   loader.open(context);
+          // } else if (state.load_list_mission_session == 2) {
+          //   AutoRouter.of(context).pop();
+          //   showError('Une erreur est survenue, veuillez reeessayer', context);
+          // } else if (state.load_list_mission_session == 1) {
+          //   AutoRouter.of(context).push(MissionSessionRoute());
+          // }
+        },
         builder: (context, state) => SafeArea(
             child: RefreshIndicator(
                 color: ColorsApp.second,
-                onRefresh: () => Future.delayed(Duration(seconds: 5), () {}),
+                onRefresh: () => Future.delayed(Duration(seconds: 5), () {
+                      BlocProvider.of<BikerBloc>(context)
+                          .add(GetListMissionBikerEffectue());
+                    }),
                 child:
                     CustomScrollView(controller: _scrollController, slivers: [
                   SliverAppBar(
@@ -38,7 +55,7 @@ class ListMissionsView extends StatelessWidget {
                           onTap: () => Scaffold.of(context).openDrawer());
                     }),
                     title: Text(
-                      'yList'.tr() +' Terminee',
+                      'yList'.tr() + ' Effectuee',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           fontFamily: 'Lato', fontWeight: FontWeight.w600),
@@ -56,19 +73,31 @@ class ListMissionsView extends StatelessWidget {
                     pinned: true,
                   ),
                   SliverToBoxAdapter(
-                      child: Container(
-                    height: getHeight(context),
-                    padding: EdgeInsets.symmetric(
-                        vertical: kMarginY, horizontal: kMarginX),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         
-                          Expanded(
-                              child: SingleChildScrollView(
-                                  child: ListMissionsTerminee())),
-                        ]),
-                  ))
+                    child: Container(
+                        height: getHeight(context),
+                        padding: EdgeInsets.symmetric(
+                            vertical: kMarginY, horizontal: kMarginX),
+                        child: SingleChildScrollView(
+                            child: state.load_list_mission_done == 0
+                                ? ShimmerData()
+                                : state.list_mission_done == 2
+                                    ? Text('Error')
+                                    : state.list_mission!.length == 0
+                                        ? EmptyMissionComponent()
+                                        : ListView.builder(
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            shrinkWrap: true,
+                                            itemCount:
+                                                state.list_mission_done!.length,
+                                            // controller: state,
+                                            itemBuilder: (_, index) =>
+                                                MissionsUserComponent(
+                                                  mission:
+                                                      state.list_mission_done![
+                                                          index],
+                                                )))),
+                  )
                 ]))));
   }
 }

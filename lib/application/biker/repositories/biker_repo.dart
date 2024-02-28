@@ -43,7 +43,7 @@ class BikerRepo {
     return a;
   }
 
-  Future getlistMissionBikerDone(keySecret) async {
+  Future getListMissionBikerEffectue(keySecret) async {
     Response a = await apiClient.getRequest(
         ApiRoutes.Biker + '/list-mission-done?keySecret=${keySecret}');
 

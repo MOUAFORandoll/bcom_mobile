@@ -47,19 +47,17 @@ Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context)
     ..add(GetUserEvent())
     ..add(GetVilleQuartier());
+  initLoadBiker(context);
 }
 
 Future<void> initLoadTControl(context) async {
-  BlocProvider.of<BikerBloc>(context)
-    ..add(GetListMissionBiker())
-    ..add(GetListMissionBikerDone())
-    ..add(GetListMissionBikerEncours());
+  BlocProvider.of<BikerBloc>(context)..add(GetListMissionBiker());
 }
+
 Future<void> initLoadBiker(context) async {
   BlocProvider.of<BikerBloc>(context)
     ..add(GetListMissionBiker())
-    ..add(GetListMissionBikerDone())
-    ..add(GetListMissionBikerEncours());
+    ..add(GetListMissionBikerEffectue());
 }
 
 Future<void> requestPermission() async {

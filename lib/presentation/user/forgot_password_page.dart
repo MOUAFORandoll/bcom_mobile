@@ -5,7 +5,7 @@ import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
-import 'package:pinput/pinput.dart';
+// import 'package:pinput/pinput.dart';
 import 'package:Bcom/routes/app_router.gr.dart';
 
 @RoutePage()
@@ -21,15 +21,15 @@ class ForgotPasswordPage extends StatelessWidget {
 
   final focusedBorderColor = ColorsApp.primary;
   final fillColor = ColorsApp.primary;
-  final defaultPinTheme = PinTheme(
-    width: 56,
-    height: 56,
-    textStyle: const TextStyle(fontSize: 22, color: ColorsApp.white),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(8),
-      border: Border.all(color: ColorsApp.second),
-    ),
-  );
+  // final defaultPinTheme = PinTheme(
+  //   width: 56,
+  //   height: 56,
+  //   textStyle: const TextStyle(fontSize: 22, color: ColorsApp.white),
+  //   decoration: BoxDecoration(
+  //     borderRadius: BorderRadius.circular(8),
+  //     border: Border.all(color: ColorsApp.second),
+  //   ),
+  // );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,7 +163,7 @@ class ForgotPasswordPage extends StatelessWidget {
                                       //             color: ColorsApp.primary,
                                       //             fontWeight:
                                       //                 FontWeight.w600))),
-                                      Container(
+                                      /*   Container(
                                           child: Pinput(
                                         length: 4,
                                         focusedPinTheme:
@@ -197,6 +197,7 @@ class ForgotPasswordPage extends StatelessWidget {
                                         ),
                                         onCompleted: (pin) async {},
                                       ))
+                                   */
                                     ])),
                               if (state.isCorrectCode == 1)
                                 AppInputPassword(

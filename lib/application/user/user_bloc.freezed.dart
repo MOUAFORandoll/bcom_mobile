@@ -30,6 +30,7 @@ mixin _$UserEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +47,7 @@ mixin _$UserEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +64,7 @@ mixin _$UserEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +80,7 @@ mixin _$UserEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +95,7 @@ mixin _$UserEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,6 +110,7 @@ mixin _$UserEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -212,6 +218,7 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return chooseExperience(phone, password);
   }
@@ -231,6 +238,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return chooseExperience?.call(phone, password);
   }
@@ -250,6 +258,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
@@ -271,6 +280,7 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return chooseExperience(this);
   }
@@ -288,6 +298,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return chooseExperience?.call(this);
   }
@@ -305,6 +316,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
@@ -448,6 +460,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return register(name, phone, password, re_password, typeCompte);
   }
@@ -467,6 +480,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return register?.call(name, phone, password, re_password, typeCompte);
   }
@@ -486,6 +500,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -507,6 +522,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return register(this);
   }
@@ -524,6 +540,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return register?.call(this);
   }
@@ -541,6 +558,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -644,6 +662,7 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return sendCode(data);
   }
@@ -663,6 +682,7 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return sendCode?.call(data);
   }
@@ -682,6 +702,7 @@ class _$SendCodeImpl implements SendCode {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -703,6 +724,7 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return sendCode(this);
   }
@@ -720,6 +742,7 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return sendCode?.call(this);
   }
@@ -737,6 +760,7 @@ class _$SendCodeImpl implements SendCode {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -839,6 +863,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return updateUserInfo(data);
   }
@@ -858,6 +883,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return updateUserInfo?.call(data);
   }
@@ -877,6 +903,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserInfo != null) {
@@ -898,6 +925,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return updateUserInfo(this);
   }
@@ -915,6 +943,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return updateUserInfo?.call(this);
   }
@@ -932,6 +961,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserInfo != null) {
@@ -1035,6 +1065,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return verifyCode(data, code);
   }
@@ -1054,6 +1085,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return verifyCode?.call(data, code);
   }
@@ -1073,6 +1105,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -1094,6 +1127,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return verifyCode(this);
   }
@@ -1111,6 +1145,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return verifyCode?.call(this);
   }
@@ -1128,6 +1163,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -1234,6 +1270,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return resetpassword(data, password);
   }
@@ -1253,6 +1290,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return resetpassword?.call(data, password);
   }
@@ -1272,6 +1310,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (resetpassword != null) {
@@ -1293,6 +1332,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return resetpassword(this);
   }
@@ -1310,6 +1350,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return resetpassword?.call(this);
   }
@@ -1327,6 +1368,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (resetpassword != null) {
@@ -1424,6 +1466,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return signOut(context);
   }
@@ -1443,6 +1486,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return signOut?.call(context);
   }
@@ -1462,6 +1506,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -1483,6 +1528,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return signOut(this);
   }
@@ -1500,6 +1546,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return signOut?.call(this);
   }
@@ -1517,6 +1564,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -1586,6 +1634,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return getUserEvent();
   }
@@ -1605,6 +1654,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return getUserEvent?.call();
   }
@@ -1624,6 +1674,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getUserEvent != null) {
@@ -1645,6 +1696,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return getUserEvent(this);
   }
@@ -1662,6 +1714,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return getUserEvent?.call(this);
   }
@@ -1679,6 +1732,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getUserEvent != null) {
@@ -1742,6 +1796,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return getVilleQuartier();
   }
@@ -1761,6 +1816,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return getVilleQuartier?.call();
   }
@@ -1780,6 +1836,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getVilleQuartier != null) {
@@ -1801,6 +1858,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return getVilleQuartier(this);
   }
@@ -1818,6 +1876,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return getVilleQuartier?.call(this);
   }
@@ -1835,6 +1894,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getVilleQuartier != null) {
@@ -1898,6 +1958,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
   }) {
     return updateUserImage();
   }
@@ -1917,6 +1978,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
   }) {
     return updateUserImage?.call();
   }
@@ -1936,6 +1998,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserImage != null) {
@@ -1957,6 +2020,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return updateUserImage(this);
   }
@@ -1974,6 +2038,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return updateUserImage?.call(this);
   }
@@ -1991,6 +2056,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserImage != null) {
@@ -2002,6 +2068,208 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
 
 abstract class UpdateUserImage implements UserEvent {
   const factory UpdateUserImage() = _$UpdateUserImageImpl;
+}
+
+/// @nodoc
+abstract class _$$CompleteBikerInfoImplCopyWith<$Res> {
+  factory _$$CompleteBikerInfoImplCopyWith(_$CompleteBikerInfoImpl value,
+          $Res Function(_$CompleteBikerInfoImpl) then) =
+      __$$CompleteBikerInfoImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<dynamic, dynamic> data});
+}
+
+/// @nodoc
+class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$CompleteBikerInfoImpl>
+    implements _$$CompleteBikerInfoImplCopyWith<$Res> {
+  __$$CompleteBikerInfoImplCopyWithImpl(_$CompleteBikerInfoImpl _value,
+      $Res Function(_$CompleteBikerInfoImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$CompleteBikerInfoImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<dynamic, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
+  const _$CompleteBikerInfoImpl({required final Map<dynamic, dynamic> data})
+      : _data = data;
+
+  final Map<dynamic, dynamic> _data;
+  @override
+  Map<dynamic, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'UserEvent.completeBikerInfo(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteBikerInfoImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompleteBikerInfoImplCopyWith<_$CompleteBikerInfoImpl> get copyWith =>
+      __$$CompleteBikerInfoImplCopyWithImpl<_$CompleteBikerInfoImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone, String password) chooseExperience,
+    required TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)
+        register,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(String data, String password) resetpassword,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function() getVilleQuartier,
+    required TResult Function() updateUserImage,
+    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+  }) {
+    return completeBikerInfo(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String phone, String password)? chooseExperience,
+    TResult? Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(String data, String password)? resetpassword,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function()? getVilleQuartier,
+    TResult? Function()? updateUserImage,
+    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+  }) {
+    return completeBikerInfo?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone, String password)? chooseExperience,
+    TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(String data, String password)? resetpassword,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function()? getVilleQuartier,
+    TResult Function()? updateUserImage,
+    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (completeBikerInfo != null) {
+      return completeBikerInfo(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(ResetPassword value) resetpassword,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(GetVilleQuartier value) getVilleQuartier,
+    required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+  }) {
+    return completeBikerInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(ResetPassword value)? resetpassword,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+  }) {
+    return completeBikerInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(ResetPassword value)? resetpassword,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (completeBikerInfo != null) {
+      return completeBikerInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CompleteBikerInfo implements UserEvent {
+  const factory CompleteBikerInfo({required final Map<dynamic, dynamic> data}) =
+      _$CompleteBikerInfoImpl;
+
+  Map<dynamic, dynamic> get data;
+  @JsonKey(ignore: true)
+  _$$CompleteBikerInfoImplCopyWith<_$CompleteBikerInfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

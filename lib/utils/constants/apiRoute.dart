@@ -16,6 +16,7 @@ class ApiRoutes {
   static const SIGNUP = '/auth/create-user';
 
   static const UPDATE_USER = '/auth/user-update';
+  static const InfoBiker = '/info-biker';
 
   static const Refresh = '/api/token/refresh';
   static const SEARCH = '/search';

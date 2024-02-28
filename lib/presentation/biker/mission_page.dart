@@ -1,15 +1,8 @@
 import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/application/home/home_bloc.dart';
-import 'package:Bcom/presentation/biker/list_missions_dispo.dart';
 import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
-import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:Bcom/presentation/components/Widget/missionSessionComponent.dart';
-import 'package:Bcom/presentation/components/Widget/missionsComponent.dart';
-import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/utils/constants/assets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../components/exportcomponent.dart';
-import 'package:Bcom/presentation/components/Widget/HomeModuleComponent.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
@@ -30,51 +23,29 @@ class _MissionSessionPageState extends State<MissionSessionPage> {
     return BlocBuilder<BikerBloc, BikerState>(
         builder: (context, state) => Scaffold(
             backgroundColor: ColorsApp.bg,
-            floatingActionButton: state.load_list_mission_session == 1 &&
-                    (state.list_mission_session!.length == 0 ||
-                        state.list_mission_session!.last.date_end == null)
-                ? FloatingActionButton(
-                    onPressed: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: ColorsApp.white,
-                      ),
-                      margin: EdgeInsets.only(right: kMarginX),
-                      padding: EdgeInsets.all(kMarginX / 2),
-                      child: Icon(
-                        Icons.play_arrow,
-                        color: ColorsApp.second,
-                        size: 30,
-                      ),
-                    ),
-                  )
-                : Container(),
-            body: Container(
-                child: CustomScrollView(slivers: [
+            body: CustomScrollView(slivers: [
               SliverAppBar(
-                automaticallyImplyLeading: false,
-                leading: Builder(builder: (context) {
-                  return InkWell(
-                      child: Container(
-                        width: 10,
-                        height: 10,
-                        child: SvgPicture.asset(Assets.menu,
-                            color: ColorsApp.white, fit: BoxFit.none),
-                      ),
-                      onTap: () => Scaffold.of(context).openDrawer());
-                }),
+                leading: InkWell(
+                    onTap: () {
+                      loader.close();
+                      AutoRouter.of(context).pop();
+                    },
+                    child: Container(
+                      margin: EdgeInsets.zero,
+                      // padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+
+                          // borderRadius: BorderRadius.circular(20),
+                          ),
+                      child: Icon(Icons.arrow_back_ios_new, size: 25.0),
+                    )),
                 title: Text(
-                  'Mission Session',
+                  'Liste des Sessions de la Mission',
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      color: ColorsApp.white,
-                      fontFamily: 'Lato',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
                 ),
                 centerTitle: true,
-
+                pinned: true,
                 actions: [
                   InkWell(
                       child: Container(
@@ -89,37 +60,32 @@ class _MissionSessionPageState extends State<MissionSessionPage> {
                 ],
 
                 elevation: 10.0,
-                backgroundColor: ColorsApp.second, //
+                backgroundColor: ColorsApp.white, //
               ),
               SliverToBoxAdapter(
                   child: Container(
-                      height: getHeight(context),
                       padding: EdgeInsets.symmetric(
                           vertical: kMarginY, horizontal: kMarginX),
-                      child: Column(children: [
-                        state.load_list_mission_session == 0
-                            ? ShimmerData()
-                            : state.load_list_mission_session == 2
-                                ? Text('Error')
-                                : state.list_mission_session!.length == 0
-                                    ? Container()
-                                    : Container(
-                                        child: SingleChildScrollView(
-                                            child: ListView.builder(
-                                                physics:
-                                                    NeverScrollableScrollPhysics(),
-                                                shrinkWrap: true,
-                                                itemCount: state
-                                                    .list_mission_session!
-                                                    .length,
-                                                // controller: state,
-                                                itemBuilder: (_, index) =>
-                                                    MissionSessionComponent(
-                                                        missionSession: state
-                                                                .list_mission_session![
-                                                            index],
-                                                        index: index))))
-                      ])))
-            ]))));
+                      child: state.load_list_mission_session == 0
+                          ? ShimmerData()
+                          : state.load_list_mission_session == 2
+                              ? Text('Error')
+                              : state.list_mission_session!.length == 0
+                                  ? Container()
+                                  : Container(
+                                      child: SingleChildScrollView(
+                                          child: ListView.builder(
+                                              physics:
+                                                  NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount: state
+                                                  .list_mission_session!.length,
+                                              itemBuilder: (_, index) =>
+                                                  MissionSessionComponent(
+                                                      missionSession: state
+                                                              .list_mission_session![
+                                                          index],
+                                                      index: index))))))
+            ])));
   }
 }

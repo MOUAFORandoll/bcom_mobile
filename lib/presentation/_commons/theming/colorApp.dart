@@ -6,6 +6,7 @@ abstract class ColorsApp {
   static const Color second = Color.fromARGB(255, 11, 120, 188);
   static const Color tird = Color(0xFFFFC107);
   static const Color bg = Color.fromARGB(255, 241, 242, 242);
+  static const Color green = Color.fromARGB(255, 161, 222, 222);
 
   static const Color grey = Color(0xffD7D7D7);
   static const Color white = Color(0xFFFFFFFF);
