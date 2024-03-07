@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:Bcom/application/database/database_cubit.dart';
 
 import 'package:Bcom/application/user/repositories/user_repository.dart';
@@ -38,6 +39,21 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<GetVilleQuartier>(_getVilleQuartier);
     on<UpdateUserImage>(_updateUserProfile);
     on<CompleteBikerInfo>(_CompleteBikerInfo);
+    on<SetCniImageAvant>(setCniImageAvant);
+    on<SetCniImageArriere>(setCniImageArriere);
+    on<SetCGImage>(setCGImage);
+  }
+
+  setCniImageArriere(SetCniImageArriere event, Emitter<UserState> emit) async {
+    emit(state.copyWith(cniImageArriere: event.image));
+  }
+
+  setCniImageAvant(SetCniImageAvant event, Emitter<UserState> emit) async {
+    emit(state.copyWith(cniImageAvant: event.image));
+  }
+
+  setCGImage(SetCGImage event, Emitter<UserState> emit) async {
+    emit(state.copyWith(cartegriseImage: event.image));
   }
 
   Future<void> _getVilleQuartier(
@@ -108,15 +124,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   }
 
   _CompleteBikerInfo(CompleteBikerInfo event, Emitter<UserState> emit) async {
-    var key = await database.getKey();
-    var data = Map.from(event.data);
-    data['keySecret'] = key;
-
-    print(data);
+    print(event.data);
 
     emit(state.copyWith(isLoading: null));
     emit(state.copyWith(isLoading: 1));
-    await userRepo.completeBikerInfo(data).then((response) async {
+    await userRepo.completeBikerInfo(event.data).then((response) async {
       if (response.statusCode == 201) {
         if (response.data['data'] != null) {
           emit(state.copyWith(
@@ -127,13 +139,17 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
           await database.saveUser(_UserSave);
         }
+      } else {
+        emit(state.copyWith(
+            isLoading: 3,
+            authenticationFailedMessage: 'Une erreur s\'est produite'));
       }
     }).onError((error, s) {
-      // print('----${s}-----');
-      // print('------${error}---');
+      print('----${s}-----');
+      print('------${error}---');
       emit(state.copyWith(
           isLoading: 3,
-          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+          authenticationFailedMessage: 'Une erreur s\'est produite'));
     });
   }
 

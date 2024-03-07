@@ -16,7 +16,6 @@ part 'biker_bloc.freezed.dart';
 
 class BikerBloc extends Bloc<BikerEvent, BikerState> {
   final BikerRepo bikerRepo;
-  Timer? _timer;
   final DatabaseCubit database;
   BikerBloc({required this.bikerRepo, required this.database})
       : super(BikerState.initial()) {
@@ -27,6 +26,8 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
     on<EndMissionBiker>(_endMissionBiker);
     on<SavePositionForMissionBiker>(_savePositionForMissionBiker);
     on<ListSessionMission>(_listSessionMission);
+    on<IncrementTimer>(_incrementTimer);
+
     on<SetIndexHistoryBikerEvent>((event, emit) async {
       print('-----------------SetindexHistory');
       emit(state.copyWith(indexHistory: event.index));
@@ -63,11 +64,15 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
     emit(state.copyWith(mission: event.mission));
   }
 
+  var time = 0;
+
+  late Timer _timer;
   _startMissionBiker(StartMissionBiker event, Emitter<BikerState> emit) async {
     var key = await database.getKey();
     var data = {'mission_id': state.mission!.id, 'keySecret': key};
     emit(state.copyWith(
       isRequest: 0,
+      time: 0,
     ));
     await bikerRepo.startMissionBiker(data).then((response) async {
       print('-------------------------------------------------');
@@ -84,17 +89,30 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
           time: 0,
           isRequest: null,
         ));
+        _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+          add(IncrementTimer());
+          print('Exécution chaque time');
+
+          // Vérifie si le temps est un multiple de 60
+          if ((state.time! % 300) == 0) {
+            add(SavePositionForMissionBiker());
+            print('Position envoyée');
+          }
+        });
       } else {
+        emit(state.copyWith(mission: null));
         // await cron.close();
         emit(state.copyWith(isRequest: 2));
         emit(state.copyWith(sendPosition: null));
       }
     }).onError((e, s) async {
+      emit(state.copyWith(mission: null));
       // await cron.close();
       emit(state.copyWith(isRequest: 2));
       emit(state.copyWith(sendPosition: null));
     }).catchError((e) async {
       // await cron.close();
+      emit(state.copyWith(mission: null));
       print('---------------${e}');
       emit(state.copyWith(isRequest: 2));
       emit(state.copyWith(sendPosition: null));
@@ -119,6 +137,7 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
         emit(state.copyWith(sendPosition: false));
         emit(state.copyWith(sendPosition: null));
         emit(state.copyWith(mission: null));
+        _timer.cancel();
 
         emit(state.copyWith(
           isRequest: null,
@@ -135,12 +154,18 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
     });
   }
 
+  _incrementTimer(IncrementTimer event, Emitter<BikerState> emit) async {
+    if (state.sendPosition == true) {
+      var time = state.time! + 1;
+      emit(state.copyWith(isRequest: null, time: time));
+    }
+  }
+
   _savePositionForMissionBiker(
       SavePositionForMissionBiker event, Emitter<BikerState> emit) async {
     if (state.sendPosition == true) {
       var position;
-      var time = state.time! + 1;
-      emit(state.copyWith(isRequest: null, time: time));
+
       bool serviceEnabled;
       LocationPermission permission;
 
@@ -163,7 +188,7 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
       );
       position = await Geolocator.getCurrentPosition();
       var data = {
-        'missionSession': 1,
+        'missionSession': state.missionsession_id,
         'longitude': position.longitude,
         'latitude': position.latitude,
       };

@@ -15,25 +15,22 @@ class HomeModuleComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: kMarginY * 2),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 231, 229, 229),
         borderRadius: BorderRadius.circular(10),
       ),
       padding: EdgeInsets.symmetric(horizontal: kMarginX),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: getWith(context) * .55,
+            // width: getWith(context) * .55,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  width: getWith(context) * .55,
-                  child: Text(
+              child: Text(
                     title,
                     maxLines: 4,
                     style: TextStyle(
@@ -46,19 +43,19 @@ class HomeModuleComponent extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-              width: getWith(context) * .3,
-              height: 100,
-              // decoration: BoxDecoration(
-              //   image: DecorationImage(
-              //     image: AssetImage(image),
-              //   ),
-              // ),
-              child: Icon(
-                Icons.motorcycle_outlined,
-                size: 60,
-                color: ColorsApp.second,
-              )),
+          // Container(
+          //     width: getWith(context) * .3,
+          //     height: 100,
+          //     // decoration: BoxDecoration(
+          //     //   image: DecorationImage(
+          //     //     image: AssetImage(image),
+          //     //   ),
+          //     // ),
+          //     child: Icon(
+          //       Icons.motorcycle_outlined,
+          //       size: 60,
+          //       color: ColorsApp.second,
+          //     )),
         ],
       ),
     );

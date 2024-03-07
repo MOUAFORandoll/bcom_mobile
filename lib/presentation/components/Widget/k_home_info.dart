@@ -119,7 +119,11 @@ class KHomeInfo extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: kMarginY / 4),
                   child: Text(
                       'Hey, ' +
-                          (user.typeUser == 3 ? 'Controller ' : 'Biker ') +
+                          (user.typeUser == 3
+                              ? 'Controller '
+                              : user.typeUser == 4
+                                  ? 'Biker '
+                                  : '') +
                           user.nom,
                       style: TextStyle(
                         color: ColorsApp.white,

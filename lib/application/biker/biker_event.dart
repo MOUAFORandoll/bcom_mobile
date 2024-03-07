@@ -7,7 +7,8 @@ class BikerEvent with _$BikerEvent {
   const factory BikerEvent.startMissionBiker() = StartMissionBiker;
   const factory BikerEvent.endMissionBiker() = EndMissionBiker;
   const factory BikerEvent.savePositionForMissionBiker() =
-      SavePositionForMissionBiker;
+      SavePositionForMissionBiker;  const factory BikerEvent.incrementTimer() =
+      IncrementTimer;
   const factory BikerEvent.setIndexHistoryBiker({required dynamic index}) =
       SetIndexHistoryBikerEvent;
   const factory BikerEvent.selectMission({required Mission mission}) =

@@ -84,27 +84,49 @@ class MissionsComponent extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            Container(
-                              margin:
-                                  EdgeInsets.symmetric(vertical: kMarginY / 3),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: ColorsApp.white,
+                            // Container(
+                            //   margin:
+                            //       EdgeInsets.symmetric(vertical: kMarginY / 3),
+                            //   decoration: BoxDecoration(
+                            //     borderRadius: BorderRadius.circular(30),
+                            //     color: ColorsApp.white,
+                            //   ),
+                            //   width: getWith(context) * .30,
+                            //   alignment: Alignment.center,
+                            //   padding: EdgeInsets.all(15),
+                            //   child: Text(
+                            //       '${FormatDateTime().formatTimeFromSeconds(state.time!)}',
+                            //       overflow: TextOverflow.ellipsis,
+                            //       style: TextStyle(
+                            //         color: ColorsApp.second,
+                            //         fontWeight: FontWeight.w600,
+                            //         overflow: TextOverflow.ellipsis,
+                            //         fontSize: 12,
+                            //       )),
+                            // ),
+                            if (state.mission != null
+                                ? state.mission!.id == mission.id
+                                : false)
+                              Container(
+                                margin: EdgeInsets.symmetric(
+                                    vertical: kMarginY / 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: ColorsApp.white,
+                                ),
+                                width: getWith(context) * .30,
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.all(5),
+                                child: Container(
+                                  height: 30,
+                                  width: 30,
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: kMarginY / 4),
+                                  child: CircularProgressIndicator(
+                                    color: ColorsApp.primary,
+                                  ),
+                                ),
                               ),
-                              width: getWith(context) * .30,
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.all(15),
-                              child: Text(
-                                  '${FormatDateTime().formatTimeNew(state.time!)}',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: ColorsApp.second,
-                                    fontWeight: FontWeight.w600,
-                                    overflow: TextOverflow.ellipsis,
-                                    fontSize: 12,
-                                  )),
-                            ),
-
                             if (state.mission == null ||
                                 (state.mission != null
                                     ? state.mission!.id != mission.id
@@ -115,7 +137,7 @@ class MissionsComponent extends StatelessWidget {
                                       vertical: kMarginY / 3),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    color: ColorsApp.white,
+                                    color: ColorsApp.second,
                                   ),
                                   alignment: Alignment.center,
                                   width: getWith(context) * .30,
@@ -123,7 +145,7 @@ class MissionsComponent extends StatelessWidget {
                                   child: Text('Demarer',
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        color: ColorsApp.second,
+                                        color: ColorsApp.white,
                                         fontWeight: FontWeight.w600,
                                         overflow: TextOverflow.ellipsis,
                                         fontSize: 12,
@@ -133,13 +155,13 @@ class MissionsComponent extends StatelessWidget {
                                   if (state.mission != null) {
                                     if (mission.id != state.mission!.id) {
                                       BlocProvider.of<BikerBloc>(context)
-                                          .add(EndMissionBiker());
+                                        ..add(EndMissionBiker())
+                                        ..add(GetListMissionBikerEffectue());
                                     }
                                   }
                                   BlocProvider.of<BikerBloc>(context)
-                                      .add(SelectMission(mission: mission));
-                                  BlocProvider.of<BikerBloc>(context)
-                                      .add(StartMissionBiker());
+                                    ..add(SelectMission(mission: mission))
+                                    ..add(StartMissionBiker());
                                 },
                               ),
                             if (state.mission != null)
@@ -150,8 +172,8 @@ class MissionsComponent extends StatelessWidget {
                                     margin: EdgeInsets.symmetric(
                                         vertical: kMarginY / 3),
                                     decoration: BoxDecoration(
+                                      color: ColorsApp.red,
                                       borderRadius: BorderRadius.circular(30),
-                                      color: ColorsApp.white,
                                     ),
                                     alignment: Alignment.center,
                                     width: getWith(context) * .30,
@@ -159,7 +181,7 @@ class MissionsComponent extends StatelessWidget {
                                     child: Text('Stop',
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
-                                          color: ColorsApp.red,
+                                          color: ColorsApp.white,
                                           fontWeight: FontWeight.w600,
                                           overflow: TextOverflow.ellipsis,
                                           fontSize: 12,
@@ -167,7 +189,8 @@ class MissionsComponent extends StatelessWidget {
                                   ),
                                   onTap: () {
                                     BlocProvider.of<BikerBloc>(context)
-                                        .add(EndMissionBiker());
+                                      ..add(EndMissionBiker())
+                                      ..add(GetListMissionBikerEffectue());
                                   },
                                 ),
                             // Container(

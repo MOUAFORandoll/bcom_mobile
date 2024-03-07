@@ -23,6 +23,7 @@ mixin _$BikerEvent {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -35,6 +36,7 @@ mixin _$BikerEvent {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -47,6 +49,7 @@ mixin _$BikerEvent {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -62,6 +65,7 @@ mixin _$BikerEvent {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -77,6 +81,7 @@ mixin _$BikerEvent {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -91,6 +96,7 @@ mixin _$BikerEvent {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -161,6 +167,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -176,6 +183,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -191,6 +199,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -212,6 +221,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -230,6 +240,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -247,6 +258,7 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -309,6 +321,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -324,6 +337,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -339,6 +353,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -360,6 +375,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -378,6 +394,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -395,6 +412,7 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -455,6 +473,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -470,6 +489,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -485,6 +505,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -506,6 +527,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -524,6 +546,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -541,6 +564,7 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -600,6 +624,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -615,6 +640,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -630,6 +656,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -651,6 +678,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -669,6 +697,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -686,6 +715,7 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -748,6 +778,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -763,6 +794,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -778,6 +810,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -799,6 +832,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -817,6 +851,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -834,6 +869,7 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -849,6 +885,157 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
 abstract class SavePositionForMissionBiker implements BikerEvent {
   const factory SavePositionForMissionBiker() =
       _$SavePositionForMissionBikerImpl;
+}
+
+/// @nodoc
+abstract class _$$IncrementTimerImplCopyWith<$Res> {
+  factory _$$IncrementTimerImplCopyWith(_$IncrementTimerImpl value,
+          $Res Function(_$IncrementTimerImpl) then) =
+      __$$IncrementTimerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$IncrementTimerImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$IncrementTimerImpl>
+    implements _$$IncrementTimerImplCopyWith<$Res> {
+  __$$IncrementTimerImplCopyWithImpl(
+      _$IncrementTimerImpl _value, $Res Function(_$IncrementTimerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$IncrementTimerImpl implements IncrementTimer {
+  const _$IncrementTimerImpl();
+
+  @override
+  String toString() {
+    return 'BikerEvent.incrementTimer()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$IncrementTimerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+  }) {
+    return incrementTimer();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+  }) {
+    return incrementTimer?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    required TResult orElse(),
+  }) {
+    if (incrementTimer != null) {
+      return incrementTimer();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+  }) {
+    return incrementTimer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+  }) {
+    return incrementTimer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    required TResult orElse(),
+  }) {
+    if (incrementTimer != null) {
+      return incrementTimer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IncrementTimer implements BikerEvent {
+  const factory IncrementTimer() = _$IncrementTimerImpl;
 }
 
 /// @nodoc
@@ -924,6 +1111,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -939,6 +1127,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -954,6 +1143,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -975,6 +1165,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -993,6 +1184,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -1010,6 +1202,7 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -1101,6 +1294,7 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -1116,6 +1310,7 @@ class _$SelectMissionImpl implements SelectMission {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -1131,6 +1326,7 @@ class _$SelectMissionImpl implements SelectMission {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -1152,6 +1348,7 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -1170,6 +1367,7 @@ class _$SelectMissionImpl implements SelectMission {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -1187,6 +1385,7 @@ class _$SelectMissionImpl implements SelectMission {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
@@ -1279,6 +1478,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
     required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
@@ -1294,6 +1494,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
     TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
@@ -1309,6 +1510,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
     TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
@@ -1330,6 +1532,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     required TResult Function(EndMissionBiker value) endMissionBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryBikerEvent value)
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
@@ -1348,6 +1551,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult? Function(EndMissionBiker value)? endMissionBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
@@ -1365,6 +1569,7 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult Function(EndMissionBiker value)? endMissionBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,

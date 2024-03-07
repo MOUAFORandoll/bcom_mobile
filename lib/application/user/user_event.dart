@@ -30,6 +30,12 @@ class UserEvent with _$UserEvent {
   const factory UserEvent.getVilleQuartier() = GetVilleQuartier;
   const factory UserEvent.updateUserImage() = UpdateUserImage;
 
-  const factory UserEvent.completeBikerInfo({required Map data}) =
+  const factory UserEvent.setCniImageAvant({required File? image}) =
+      SetCniImageAvant;
+  const factory UserEvent.setCniImageArriere({required File? image}) =
+      SetCniImageArriere;
+
+  const factory UserEvent.setCGImage({required File? image}) = SetCGImage;
+  const factory UserEvent.completeBikerInfo({required FormData data}) =
       CompleteBikerInfo;
 }

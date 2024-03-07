@@ -23,7 +23,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await EnvManager().init(env: Environment.prod);
+  await EnvManager().init(env: Environment.dev);
 
   co.init();
 
@@ -42,46 +42,6 @@ var supportedLocales = const [
   Locale('en', 'US'),
   Locale('fr', 'FR'),
 ];
-
-// class MyApp extends StatefulWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   State<MyApp> createState() => _MyAppState();
-// }
-
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MultiBlocProvider(providers: [
-//       BlocProvider(create: (_) => sl<ConnectedBloc>()),
-//       BlocProvider<AppActionCubit>(
-//         create: (BuildContext context) => AppActionCubit(),
-//       ),
-//       BlocProvider<DatabaseCubit>(
-//         create: (BuildContext context) => DatabaseCubit(),
-//       ),
-//       BlocProvider<Biker>(
-//         create: (BuildContext context) => Biker(
-//           livraisonRepo: sl.get<LivraisonRepo>(),
-//           database: sl.get<DatabaseCubit>(),
-//         ),
-//       ),
-//       BlocProvider<UserBloc>(
-//         create: (BuildContext context) => UserBloc(
-//             userRepo: sl.get<UserRepo>(), database: sl.get<DatabaseCubit>()),
-//       ),
-//       BlocProvider<SplashBloc>(
-//         create: (BuildContext context) =>
-//             SplashBloc(database: sl.get<DatabaseCubit>()),
-//       ),
-//       BlocProvider<HomeBloc>(
-//         create: (BuildContext context) =>
-//             HomeBloc(database: sl.get<DatabaseCubit>()),
-//       ),
-//     ], child: AppContent());
-//   }
-// }
 
 class AppContent extends StatelessWidget {
   AppContent({super.key});
@@ -140,33 +100,5 @@ class AppContent extends StatelessWidget {
       },
       theme: lightTheme(context),
     );
-
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   title: 'Bcom',
-    //   darkTheme: AppThemes().darkTheme,
-    //   themeMode: ThemeMode.light,
-    //   localizationsDelegates: context.localizationDelegates,
-    //   supportedLocales: context.supportedLocales,
-    //   locale: context.locale,
-    //   home: SplashScreenPage(), // Replace with your initial screen widget
-    //   // Alternatively, you can use 'routes' to define named routes.
-    //   routes: {
-    //     '/anotherPage': (context) => AuthPage(), // Example of a named route
-    //     // Define other routes as needed
-    //   },
-    //   builder: (context, widget) {
-    //     return ResponsiveBreakpoints.builder(
-    //       breakpoints: const [
-    //         Breakpoint(start: 0, end: 450, name: MOBILE),
-    //         Breakpoint(start: 451, end: 800, name: TABLET),
-    //         Breakpoint(start: 801, end: 1920, name: DESKTOP),
-    //         Breakpoint(start: 1921, end: double.infinity, name: 'XL'),
-    //       ],
-    //       child: ClampingScrollWrapper.builder(context, widget!),
-    //     );
-    //   },
-    //   theme: lightTheme(context),
-    // );
   }
 }

@@ -1,12 +1,17 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:io';
+
+import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/presentation/components/Form/textform.dart';
+import 'package:Bcom/presentation/components/Widget/bottom_sheet_choose_picture.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
+import 'package:dio/dio.dart';
 
 @RoutePage()
 class CompleteBikerInfoPage extends StatefulWidget {
@@ -41,45 +46,28 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Completer vos informations de biker'.tr(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          centerTitle: true,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
-        body: BlocConsumer<UserBloc, UserState>(
-          listener: (context, state) {
-            if (state.isLoading == 1) {
-              loader.open(context);
-            } else if (state.isLoading == 3) {
-              loader.close();
-              showError(state.authenticationFailedMessage!, context);
-            } else if (state.isLoading == 2) {
-              loader.close();
+    return BlocConsumer<UserBloc, UserState>(
+        listener: (context, state) {
+          if (state.isLoading == 1) {
+            loader.open(context);
+          } else if (state.isLoading == 3) {
+            loader.close();
+            showError(state.authenticationFailedMessage!, context);
+          } else if (state.isLoading == 2) {
+            loader.close();
 
-              showSuccess('Mise a jour effectuee', context);
-              initLoad(context);
-              print('-----44--------*********');
-            }
-          },
-          builder: (context, state) {
-            // if (state is InitialDataState) {
-            //   InitialDataState _userState = state as InitialDataState;
-
-            return Container(
-              margin: EdgeInsets.symmetric(horizontal: kMarginX),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: statePage == 0
+            showSuccess('Mise a jour effectuee', context);
+            initLoad(context);
+            print('-----44--------*********');
+          }
+        },
+        builder: (context, state) => Container(
+                child: Column(children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                child: Column(
+                  children: [
+                    statePage == 0
                         ? SingleChildScrollView(
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -139,6 +127,158 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                               return Validators.isValidUsername(
                                                   value!);
                                             },
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: kMarginX,
+                                                vertical: kMarginY / 2),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    child: Text(
+                                                        'Face avant de la CNI')),
+                                                Container(
+                                                  // margin: EdgeInsets.symmetric(
+                                                  //     horizontal: kMarginX,
+                                                  //     vertical: kMarginY),
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: kMarginX,
+                                                      vertical: kMarginY),
+                                                  alignment: Alignment.center,
+                                                  decoration: BoxDecoration(
+                                                    border: Border.all(
+                                                        color: ColorsApp.grey),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    color: Colors.transparent,
+                                                  ),
+                                                  child: InkWell(
+                                                      onTap: () => bottomSheetChoosePicture(
+                                                          context: context,
+                                                          action: (File file) =>
+                                                              BlocProvider.of<
+                                                                          UserBloc>(
+                                                                      context)
+                                                                  .add(SetCniImageAvant(
+                                                                      image:
+                                                                          file))),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          state.cniImageAvant ==
+                                                                  null
+                                                              ? Container(
+                                                                  child: Text(
+                                                                      'Charger une photo avant de la CNI'))
+                                                              : Container(
+                                                                  width: getWith(
+                                                                          context) *
+                                                                      .7,
+                                                                  child: Text(
+                                                                    state
+                                                                        .cniImageAvant!
+                                                                        .path
+                                                                        .split(
+                                                                            '/')
+                                                                        .last,
+                                                                    overflow:
+                                                                        TextOverflow
+                                                                            .ellipsis,
+                                                                  )),
+                                                          Icon(
+                                                            Icons.upload,
+                                                            size: 30,
+                                                            color: ColorsApp
+                                                                .primary,
+                                                          )
+                                                        ],
+                                                      )),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: kMarginX,
+                                                vertical: kMarginY / 2),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    child: Text(
+                                                        'Face arriere de la CNI')),
+                                                Container(
+                                                  // margin: EdgeInsets.symmetric(
+                                                  //     horizontal: kMarginX,
+                                                  //     vertical: kMarginY),
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: kMarginX,
+                                                      vertical: kMarginY),
+                                                  alignment: Alignment.center,
+                                                  decoration: BoxDecoration(
+                                                    border: Border.all(
+                                                        color: ColorsApp.grey),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    color: Colors.transparent,
+                                                  ),
+                                                  child: InkWell(
+                                                      onTap: () => bottomSheetChoosePicture(
+                                                          context: context,
+                                                          action: (File file) =>
+                                                              BlocProvider.of<
+                                                                          UserBloc>(
+                                                                      context)
+                                                                  .add(SetCniImageArriere(
+                                                                      image:
+                                                                          file))),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          state.cniImageArriere ==
+                                                                  null
+                                                              ? Container(
+                                                                  child: Text(
+                                                                      'Charger une photo arriere de la CNI'))
+                                                              : Container(
+                                                                  width: getWith(
+                                                                          context) *
+                                                                      .7,
+                                                                  child: Text(
+                                                                    state
+                                                                        .cniImageArriere!
+                                                                        .path
+                                                                        .split(
+                                                                            '/')
+                                                                        .last,
+                                                                    overflow:
+                                                                        TextOverflow
+                                                                            .ellipsis,
+                                                                  )),
+                                                          Icon(
+                                                            Icons.upload,
+                                                            size: 30,
+                                                            color: ColorsApp
+                                                                .primary,
+                                                          )
+                                                        ],
+                                                      )),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                           Container(
                                             margin: EdgeInsets.symmetric(
@@ -490,83 +630,174 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                 ),
                               ),
                               Container(
-                                margin:
-                                    EdgeInsets.symmetric(horizontal: kMarginX),
                                 alignment: Alignment.centerLeft,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(
-                                        top: kMarginY,
-                                      ),
+                                      margin: EdgeInsets.symmetric(
+                                          horizontal: kMarginX),
                                       child: Text(
                                           'Etes vous proprietaire de moto ?'
                                               .tr()),
                                     ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Radio(
-                                              value: 0,
-                                              activeColor: ColorsApp.second,
-                                              groupValue: havemoto,
-                                              onChanged: (int? value) {
-                                                setState(() {
-                                                  havemoto = value!;
-                                                });
-                                                // BlocProvider.of<AlerteBloc>(
-                                                //         context)
-                                                //     .add(FieldChangedAlerte(
-                                                //         'sexeUser', '0'));
-                                              },
-                                            ),
-                                            Text('Oui'.tr()),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Radio(
-                                              value: 3,
-                                              activeColor: ColorsApp.second,
-                                              groupValue: havemoto,
-                                              onChanged: (int? value) {
-                                                setState(() {
-                                                  havemoto = value!;
-                                                });
-                                                // BlocProvider.of<AlerteBloc>(
-                                                //         context)
-                                                //     .add(FieldChangedAlerte(
-                                                //         'sexeUser', '1'));
-                                              },
-                                            ),
-                                            Text('Non'.tr()),
-                                          ],
-                                        ),
-                                      ],
+                                    Container(
+                                      margin: EdgeInsets.symmetric(
+                                          horizontal: kMarginX),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Radio(
+                                                value: 0,
+                                                activeColor: ColorsApp.second,
+                                                groupValue: havemoto,
+                                                onChanged: (int? value) {
+                                                  setState(() {
+                                                    havemoto = value!;
+                                                  });
+                                                  // BlocProvider.of<AlerteBloc>(
+                                                  //         context)
+                                                  //     .add(FieldChangedAlerte(
+                                                  //         'sexeUser', '0'));
+                                                },
+                                              ),
+                                              Text('Oui'.tr()),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Radio(
+                                                value: 3,
+                                                activeColor: ColorsApp.second,
+                                                groupValue: havemoto,
+                                                onChanged: (int? value) {
+                                                  setState(() {
+                                                    havemoto = value!;
+                                                  });
+                                                  // BlocProvider.of<AlerteBloc>(
+                                                  //         context)
+                                                  //     .add(FieldChangedAlerte(
+                                                  //         'sexeUser', '1'));
+                                                },
+                                              ),
+                                              Text('Non'.tr()),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     if (havemoto == 0)
+                                      AppInput(
+                                        controller: cartegrise,
+                                        textInputType: TextInputType.number,
+                                        onChanged: (value) {},
+                                        placeholder:
+                                            'Numero de carte grise de la moto ?'
+                                                .tr(),
+                                        validator: (value) {
+                                          return Validators.isValidUsername(
+                                              value!);
+                                        },
+                                      ),
+                                    if (havemoto == 0)
                                       Container(
-                                          alignment: Alignment.centerLeft,
-                                          child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Container(
-                                                  child: Text(
-                                                      'Numero de carte grise de la moto ?'
-                                                          .tr()),
-                                                ),
-                                                TextForm(
-                                                  controller: cartegrise,
-                                                )
-                                              ])),
+                                        margin: EdgeInsets.symmetric(
+                                            vertical: kMarginY / 2,
+                                            horizontal: kMarginX),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                                child: Text(
+                                                    'Une photo de la carte grise de la moto ')),
+                                            Container(
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: kMarginY),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: kMarginX,
+                                                  vertical: kMarginY),
+                                              alignment: Alignment.center,
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: ColorsApp.grey),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                color: Colors.transparent,
+                                              ),
+                                              child: InkWell(
+                                                  onTap: () => bottomSheetChoosePicture(
+                                                      context: context,
+                                                      action: (File file) =>
+                                                          BlocProvider.of<
+                                                                      UserBloc>(
+                                                                  context)
+                                                              .add(SetCGImage(
+                                                                  image:
+                                                                      file))),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      state.cartegriseImage ==
+                                                              null
+                                                          ? Container(
+                                                              width: getWith(
+                                                                      context) *
+                                                                  .7,
+                                                              child: Text(
+                                                                  'Charger une photo de votre carte grise'))
+                                                          : Container(
+                                                              width: getWith(
+                                                                      context) *
+                                                                  .7,
+                                                              child: Text(
+                                                                state
+                                                                    .cartegriseImage!
+                                                                    .path
+                                                                    .split('/')
+                                                                    .last,
+                                                                overflow:
+                                                                    TextOverflow
+                                                                        .ellipsis,
+                                                              )),
+                                                      Icon(
+                                                        Icons.upload,
+                                                        size: 30,
+                                                        color:
+                                                            ColorsApp.primary,
+                                                      )
+                                                    ],
+                                                  )),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+
+                                    // Container(
+                                    //     alignment: Alignment.centerLeft,
+                                    //     child: Column(
+                                    //         mainAxisAlignment:
+                                    //             MainAxisAlignment.start,
+                                    //         crossAxisAlignment:
+                                    //             CrossAxisAlignment.start,
+                                    //         children: [
+                                    //           Container(
+                                    //             child: Text(
+                                    //                 'Numero de carte grise de la moto ?'
+                                    //                     .tr()),
+                                    //           ),
+                                    //           TextForm(
+                                    //             controller: cartegrise,
+                                    //           )
+                                    //         ])),
                                   ],
                                 ),
                               ),
@@ -654,92 +885,117 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                               ),
                             ]),
                           ),
-                  ),
-                  statePage == 0
-                      ? AppButton(
-                          size: MainAxisSize.max,
-                          // bgColor: (age.text.isEmpty ||
-                          //         nationalite.text.isEmpty ||
-                          //         cni.text.isEmpty)
-                          //     ? ColorsApp.grey
-                          //     : ColorsApp.second,
-                          text: 'Poursuivre'.tr(),
-                          onTap: () async {
-                            if (age.text.isEmpty ||
-                                nationalite.text.isEmpty ||
-                                cni.text.isEmpty ||
-                                (handicat == 0 && handicatText.text.isEmpty)) {
-                              showError(
-                                  'Veuillez remplir tous les champs', context);
-                            } else {
-                              setState(() {
-                                statePage = 1;
-                              });
-                            }
-                            if (formKey.currentState!.validate()) {}
-                          })
-                      : Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                              AppButton(
-                                  size: MainAxisSize.max,
-                                  bgColor: ColorsApp.primary,
-                                  text: 'Retour'.tr(),
-                                  onTap: () async {
-                                    setState(() {
-                                      statePage = 0;
-                                    });
-                                    if (formKey.currentState!.validate()) {}
-                                  }),
-                              AppButton(
-                                  size: MainAxisSize.max,
-                                  // bgColor: ColorsApp.primary,
-                                  text: 'Terminer'.tr(),
-                                  onTap: () async {
-                                    if ((motoman == 0 &&
-                                            zoneActivite.text.isEmpty) ||
-                                        (motoman == 1 &&
-                                            activite.text.isEmpty) ||
-                                        (havemoto == 0 &&
-                                            cartegrise.text.isEmpty) ||
-                                        (symdicat == 0 &&
-                                            symdicatText.text.isEmpty)) {
-                                      showError(
-                                          'Veuillez remplir tous les champs',
-                                          context);
-                                    } else {
-                                      print('ok');
-                                      var data = {
-                                        'age': age.text,
-                                        'gender':
-                                            _genre == 0 ? 'Homme' : 'Femme',
-                                        'cni': cni.text,
-                                        'handicap': handicat == 0,
-                                        'handicap_description':
-                                            handicatText.text,
-                                        'is_biker': motoman == 0,
-                                        'is_biker_yes': zoneActivite.text,
-                                        'is_biker_no': activite.text,
-                                        'is_syndicat': symdicat == 0,
-                                        'is_syndicat_yes': age.text,
-                                        'have_moto': havemoto == 0,
-                                        'num_carte_grise_moto': age.text,
-                                        'bike_work_time': timework
-                                      };
-                                      print(data);
-                                      context
-                                          .read<UserBloc>()
-                                          .add(CompleteBikerInfo(data: data));
-                                    }
-                                  })
-                            ]),
-                ],
-              ),
-            );
-            // } else {
-            //   return Container();
-            // }
-          },
-        ));
+                    statePage == 0
+                        ? AppButton(
+                            size: MainAxisSize.max,
+                            // bgColor: (age.text.isEmpty ||
+                            //         nationalite.text.isEmpty ||
+                            //         cni.text.isEmpty)
+                            //     ? ColorsApp.grey
+                            //     : ColorsApp.second,
+                            text: 'Poursuivre'.tr(),
+                            onTap: () async {
+                              if (age.text.isEmpty ||
+                                  nationalite.text.isEmpty ||
+                                  cni.text.isEmpty ||
+                                  (handicat == 0 &&
+                                      handicatText.text.isEmpty)) {
+                                showError('Veuillez remplir tous les champs',
+                                    context);
+                              } else {
+                                setState(() {
+                                  statePage = 1;
+                                });
+                              }
+                              if (formKey.currentState!.validate()) {}
+                            })
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                                AppButton(
+                                    size: MainAxisSize.max,
+                                    bgColor: ColorsApp.primary,
+                                    text: 'Retour'.tr(),
+                                    onTap: () async {
+                                      setState(() {
+                                        statePage = 0;
+                                      });
+                                      if (formKey.currentState!.validate()) {}
+                                    }),
+                                AppButton(
+                                    size: MainAxisSize.max,
+                                    // bgColor: ColorsApp.primary,
+                                    text: 'Terminer'.tr(),
+                                    onTap: () async {
+                                      if ((motoman == 0 &&
+                                              zoneActivite.text.isEmpty) ||
+                                          (motoman == 1 &&
+                                              activite.text.isEmpty) ||
+                                          (havemoto == 0 &&
+                                              cartegrise.text.isEmpty) ||
+                                          (symdicat == 0 &&
+                                              symdicatText.text.isEmpty) ||
+                                          state.cniImageAvant == null ||
+                                          state.cniImageArriere == null ||
+                                          state.cartegriseImage == null) {
+                                        showError(
+                                            'Veuillez remplir tous les champs',
+                                            context);
+                                      } else {
+                                        print('ok');
+
+                                        final DatabaseCubit database =
+                                            sl.get<DatabaseCubit>();
+                                        var key = await database.getKey();
+                                        print(key);
+                                        FormData formData = FormData.fromMap({
+                                          'age': age.text,
+                                          'gender':
+                                              _genre == 0 ? 'Homme' : 'Femme',
+                                          'cni': cni.text,
+                                          'handicap': handicat == 0,
+                                          'handicap_description':
+                                              handicatText.text,
+                                          'is_biker': motoman == 0,
+                                          'is_biker_yes': zoneActivite.text,
+                                          'is_biker_no': activite.text,
+                                          'is_syndicat': symdicat == 0,
+                                          'is_syndicat_yes': age.text,
+                                          'have_moto': havemoto == 0,
+                                          'num_carte_grise_moto': age.text,
+                                          'bike_work_time': timework,
+                                          'keySecret': key
+                                        });
+                                        if (state.cniImageAvant != null)
+                                          formData.files.add(MapEntry(
+                                              'cni_avant',
+                                              await MultipartFile.fromFile(
+                                                state.cniImageAvant!.path,
+                                                filename: 'cni_avant.jpg',
+                                              )));
+                                        if (state.cniImageArriere != null)
+                                          formData.files.add(MapEntry(
+                                              'cni_arriere',
+                                              await MultipartFile.fromFile(
+                                                state.cniImageArriere!.path,
+                                                filename: 'cni_arriere.jpg',
+                                              )));
+                                        if (state.cartegriseImage != null)
+                                          formData.files.add(MapEntry(
+                                              'carte_grise',
+                                              await MultipartFile.fromFile(
+                                                state.cartegriseImage!.path,
+                                                filename: 'carte_grise.jpg',
+                                              )));
+                                        print(formData);
+                                        context.read<UserBloc>().add(
+                                            CompleteBikerInfo(data: formData));
+                                      }
+                                    })
+                              ]),
+                  ],
+                ),
+              )
+            ])));
   }
 }

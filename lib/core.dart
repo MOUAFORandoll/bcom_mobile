@@ -4,6 +4,7 @@ import 'package:Bcom/application/export_bloc.dart';
 
 import 'package:Bcom/application/biker/repositories/biker_repo.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
+import 'package:Bcom/application/tcontroller/tcontroller_bloc.dart';
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
 import 'package:get_it/get_it.dart';
@@ -51,7 +52,9 @@ Future<void> initLoad(context) async {
 }
 
 Future<void> initLoadTControl(context) async {
-  BlocProvider.of<BikerBloc>(context)..add(GetListMissionBiker());
+  BlocProvider.of<TcontrollerBloc>(context)
+    ..add(GetListMissionTcontroller())
+    ..add(GetListMissionTcontrollerDone());
 }
 
 Future<void> initLoadBiker(context) async {

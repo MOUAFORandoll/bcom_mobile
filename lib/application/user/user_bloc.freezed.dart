@@ -30,7 +30,10 @@ mixin _$UserEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +50,10 @@ mixin _$UserEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,7 +70,10 @@ mixin _$UserEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +89,9 @@ mixin _$UserEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
@@ -95,6 +107,9 @@ mixin _$UserEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) =>
       throw _privateConstructorUsedError;
@@ -110,6 +125,9 @@ mixin _$UserEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) =>
@@ -218,7 +236,10 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return chooseExperience(phone, password);
   }
@@ -238,7 +259,10 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return chooseExperience?.call(phone, password);
   }
@@ -258,7 +282,10 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
@@ -280,6 +307,9 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return chooseExperience(this);
@@ -298,6 +328,9 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return chooseExperience?.call(this);
@@ -316,6 +349,9 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -460,7 +496,10 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return register(name, phone, password, re_password, typeCompte);
   }
@@ -480,7 +519,10 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return register?.call(name, phone, password, re_password, typeCompte);
   }
@@ -500,7 +542,10 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -522,6 +567,9 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return register(this);
@@ -540,6 +588,9 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return register?.call(this);
@@ -558,6 +609,9 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -662,7 +716,10 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return sendCode(data);
   }
@@ -682,7 +739,10 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return sendCode?.call(data);
   }
@@ -702,7 +762,10 @@ class _$SendCodeImpl implements SendCode {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -724,6 +787,9 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return sendCode(this);
@@ -742,6 +808,9 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return sendCode?.call(this);
@@ -760,6 +829,9 @@ class _$SendCodeImpl implements SendCode {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -863,7 +935,10 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return updateUserInfo(data);
   }
@@ -883,7 +958,10 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return updateUserInfo?.call(data);
   }
@@ -903,7 +981,10 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserInfo != null) {
@@ -925,6 +1006,9 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return updateUserInfo(this);
@@ -943,6 +1027,9 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return updateUserInfo?.call(this);
@@ -961,6 +1048,9 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1065,7 +1155,10 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return verifyCode(data, code);
   }
@@ -1085,7 +1178,10 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return verifyCode?.call(data, code);
   }
@@ -1105,7 +1201,10 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -1127,6 +1226,9 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return verifyCode(this);
@@ -1145,6 +1247,9 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return verifyCode?.call(this);
@@ -1163,6 +1268,9 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1270,7 +1378,10 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return resetpassword(data, password);
   }
@@ -1290,7 +1401,10 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return resetpassword?.call(data, password);
   }
@@ -1310,7 +1424,10 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (resetpassword != null) {
@@ -1332,6 +1449,9 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return resetpassword(this);
@@ -1350,6 +1470,9 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return resetpassword?.call(this);
@@ -1368,6 +1491,9 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1466,7 +1592,10 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return signOut(context);
   }
@@ -1486,7 +1615,10 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return signOut?.call(context);
   }
@@ -1506,7 +1638,10 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -1528,6 +1663,9 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return signOut(this);
@@ -1546,6 +1684,9 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return signOut?.call(this);
@@ -1564,6 +1705,9 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1634,7 +1778,10 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return getUserEvent();
   }
@@ -1654,7 +1801,10 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return getUserEvent?.call();
   }
@@ -1674,7 +1824,10 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getUserEvent != null) {
@@ -1696,6 +1849,9 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return getUserEvent(this);
@@ -1714,6 +1870,9 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return getUserEvent?.call(this);
@@ -1732,6 +1891,9 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1796,7 +1958,10 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return getVilleQuartier();
   }
@@ -1816,7 +1981,10 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return getVilleQuartier?.call();
   }
@@ -1836,7 +2004,10 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (getVilleQuartier != null) {
@@ -1858,6 +2029,9 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return getVilleQuartier(this);
@@ -1876,6 +2050,9 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return getVilleQuartier?.call(this);
@@ -1894,6 +2071,9 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -1958,7 +2138,10 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return updateUserImage();
   }
@@ -1978,7 +2161,10 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return updateUserImage?.call();
   }
@@ -1998,7 +2184,10 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (updateUserImage != null) {
@@ -2020,6 +2209,9 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return updateUserImage(this);
@@ -2038,6 +2230,9 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return updateUserImage?.call(this);
@@ -2056,6 +2251,9 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -2071,12 +2269,649 @@ abstract class UpdateUserImage implements UserEvent {
 }
 
 /// @nodoc
+abstract class _$$SetCniImageAvantImplCopyWith<$Res> {
+  factory _$$SetCniImageAvantImplCopyWith(_$SetCniImageAvantImpl value,
+          $Res Function(_$SetCniImageAvantImpl) then) =
+      __$$SetCniImageAvantImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File? image});
+}
+
+/// @nodoc
+class __$$SetCniImageAvantImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$SetCniImageAvantImpl>
+    implements _$$SetCniImageAvantImplCopyWith<$Res> {
+  __$$SetCniImageAvantImplCopyWithImpl(_$SetCniImageAvantImpl _value,
+      $Res Function(_$SetCniImageAvantImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_$SetCniImageAvantImpl(
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetCniImageAvantImpl implements SetCniImageAvant {
+  const _$SetCniImageAvantImpl({required this.image});
+
+  @override
+  final File? image;
+
+  @override
+  String toString() {
+    return 'UserEvent.setCniImageAvant(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetCniImageAvantImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetCniImageAvantImplCopyWith<_$SetCniImageAvantImpl> get copyWith =>
+      __$$SetCniImageAvantImplCopyWithImpl<_$SetCniImageAvantImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone, String password) chooseExperience,
+    required TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)
+        register,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(String data, String password) resetpassword,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function() getVilleQuartier,
+    required TResult Function() updateUserImage,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
+  }) {
+    return setCniImageAvant(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String phone, String password)? chooseExperience,
+    TResult? Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(String data, String password)? resetpassword,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function()? getVilleQuartier,
+    TResult? Function()? updateUserImage,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
+  }) {
+    return setCniImageAvant?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone, String password)? chooseExperience,
+    TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(String data, String password)? resetpassword,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function()? getVilleQuartier,
+    TResult Function()? updateUserImage,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCniImageAvant != null) {
+      return setCniImageAvant(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(ResetPassword value) resetpassword,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(GetVilleQuartier value) getVilleQuartier,
+    required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+  }) {
+    return setCniImageAvant(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(ResetPassword value)? resetpassword,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+  }) {
+    return setCniImageAvant?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(ResetPassword value)? resetpassword,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCniImageAvant != null) {
+      return setCniImageAvant(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetCniImageAvant implements UserEvent {
+  const factory SetCniImageAvant({required final File? image}) =
+      _$SetCniImageAvantImpl;
+
+  File? get image;
+  @JsonKey(ignore: true)
+  _$$SetCniImageAvantImplCopyWith<_$SetCniImageAvantImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetCniImageArriereImplCopyWith<$Res> {
+  factory _$$SetCniImageArriereImplCopyWith(_$SetCniImageArriereImpl value,
+          $Res Function(_$SetCniImageArriereImpl) then) =
+      __$$SetCniImageArriereImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File? image});
+}
+
+/// @nodoc
+class __$$SetCniImageArriereImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$SetCniImageArriereImpl>
+    implements _$$SetCniImageArriereImplCopyWith<$Res> {
+  __$$SetCniImageArriereImplCopyWithImpl(_$SetCniImageArriereImpl _value,
+      $Res Function(_$SetCniImageArriereImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_$SetCniImageArriereImpl(
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetCniImageArriereImpl implements SetCniImageArriere {
+  const _$SetCniImageArriereImpl({required this.image});
+
+  @override
+  final File? image;
+
+  @override
+  String toString() {
+    return 'UserEvent.setCniImageArriere(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetCniImageArriereImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetCniImageArriereImplCopyWith<_$SetCniImageArriereImpl> get copyWith =>
+      __$$SetCniImageArriereImplCopyWithImpl<_$SetCniImageArriereImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone, String password) chooseExperience,
+    required TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)
+        register,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(String data, String password) resetpassword,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function() getVilleQuartier,
+    required TResult Function() updateUserImage,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
+  }) {
+    return setCniImageArriere(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String phone, String password)? chooseExperience,
+    TResult? Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(String data, String password)? resetpassword,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function()? getVilleQuartier,
+    TResult? Function()? updateUserImage,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
+  }) {
+    return setCniImageArriere?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone, String password)? chooseExperience,
+    TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(String data, String password)? resetpassword,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function()? getVilleQuartier,
+    TResult Function()? updateUserImage,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCniImageArriere != null) {
+      return setCniImageArriere(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(ResetPassword value) resetpassword,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(GetVilleQuartier value) getVilleQuartier,
+    required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+  }) {
+    return setCniImageArriere(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(ResetPassword value)? resetpassword,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+  }) {
+    return setCniImageArriere?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(ResetPassword value)? resetpassword,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCniImageArriere != null) {
+      return setCniImageArriere(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetCniImageArriere implements UserEvent {
+  const factory SetCniImageArriere({required final File? image}) =
+      _$SetCniImageArriereImpl;
+
+  File? get image;
+  @JsonKey(ignore: true)
+  _$$SetCniImageArriereImplCopyWith<_$SetCniImageArriereImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetCGImageImplCopyWith<$Res> {
+  factory _$$SetCGImageImplCopyWith(
+          _$SetCGImageImpl value, $Res Function(_$SetCGImageImpl) then) =
+      __$$SetCGImageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File? image});
+}
+
+/// @nodoc
+class __$$SetCGImageImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$SetCGImageImpl>
+    implements _$$SetCGImageImplCopyWith<$Res> {
+  __$$SetCGImageImplCopyWithImpl(
+      _$SetCGImageImpl _value, $Res Function(_$SetCGImageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_$SetCGImageImpl(
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetCGImageImpl implements SetCGImage {
+  const _$SetCGImageImpl({required this.image});
+
+  @override
+  final File? image;
+
+  @override
+  String toString() {
+    return 'UserEvent.setCGImage(image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetCGImageImpl &&
+            (identical(other.image, image) || other.image == image));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, image);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetCGImageImplCopyWith<_$SetCGImageImpl> get copyWith =>
+      __$$SetCGImageImplCopyWithImpl<_$SetCGImageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone, String password) chooseExperience,
+    required TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)
+        register,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(String data, String password) resetpassword,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function() getVilleQuartier,
+    required TResult Function() updateUserImage,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
+  }) {
+    return setCGImage(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String phone, String password)? chooseExperience,
+    TResult? Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(String data, String password)? resetpassword,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function()? getVilleQuartier,
+    TResult? Function()? updateUserImage,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
+  }) {
+    return setCGImage?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone, String password)? chooseExperience,
+    TResult Function(String name, String phone, String password,
+            String re_password, int typeCompte)?
+        register,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(String data, String password)? resetpassword,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function()? getVilleQuartier,
+    TResult Function()? updateUserImage,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCGImage != null) {
+      return setCGImage(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(ResetPassword value) resetpassword,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(GetVilleQuartier value) getVilleQuartier,
+    required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
+    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+  }) {
+    return setCGImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(ResetPassword value)? resetpassword,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
+    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+  }) {
+    return setCGImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(ResetPassword value)? resetpassword,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
+    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    required TResult orElse(),
+  }) {
+    if (setCGImage != null) {
+      return setCGImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetCGImage implements UserEvent {
+  const factory SetCGImage({required final File? image}) = _$SetCGImageImpl;
+
+  File? get image;
+  @JsonKey(ignore: true)
+  _$$SetCGImageImplCopyWith<_$SetCGImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$CompleteBikerInfoImplCopyWith<$Res> {
   factory _$$CompleteBikerInfoImplCopyWith(_$CompleteBikerInfoImpl value,
           $Res Function(_$CompleteBikerInfoImpl) then) =
       __$$CompleteBikerInfoImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Map<dynamic, dynamic> data});
+  $Res call({FormData data});
 }
 
 /// @nodoc
@@ -2094,9 +2929,9 @@ class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
   }) {
     return _then(_$CompleteBikerInfoImpl(
       data: null == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>,
+              as FormData,
     ));
   }
 }
@@ -2104,16 +2939,10 @@ class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
-  const _$CompleteBikerInfoImpl({required final Map<dynamic, dynamic> data})
-      : _data = data;
+  const _$CompleteBikerInfoImpl({required this.data});
 
-  final Map<dynamic, dynamic> _data;
   @override
-  Map<dynamic, dynamic> get data {
-    if (_data is EqualUnmodifiableMapView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_data);
-  }
+  final FormData data;
 
   @override
   String toString() {
@@ -2125,12 +2954,11 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CompleteBikerInfoImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -2154,7 +2982,10 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     required TResult Function() getUserEvent,
     required TResult Function() getVilleQuartier,
     required TResult Function() updateUserImage,
-    required TResult Function(Map<dynamic, dynamic> data) completeBikerInfo,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeBikerInfo,
   }) {
     return completeBikerInfo(data);
   }
@@ -2174,7 +3005,10 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult? Function()? getUserEvent,
     TResult? Function()? getVilleQuartier,
     TResult? Function()? updateUserImage,
-    TResult? Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeBikerInfo,
   }) {
     return completeBikerInfo?.call(data);
   }
@@ -2194,7 +3028,10 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult Function()? getUserEvent,
     TResult Function()? getVilleQuartier,
     TResult Function()? updateUserImage,
-    TResult Function(Map<dynamic, dynamic> data)? completeBikerInfo,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeBikerInfo,
     required TResult orElse(),
   }) {
     if (completeBikerInfo != null) {
@@ -2216,6 +3053,9 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     required TResult Function(GetUserEvent value) getUserEvent,
     required TResult Function(GetVilleQuartier value) getVilleQuartier,
     required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteBikerInfo value) completeBikerInfo,
   }) {
     return completeBikerInfo(this);
@@ -2234,6 +3074,9 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult? Function(GetUserEvent value)? getUserEvent,
     TResult? Function(GetVilleQuartier value)? getVilleQuartier,
     TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
   }) {
     return completeBikerInfo?.call(this);
@@ -2252,6 +3095,9 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult Function(GetUserEvent value)? getUserEvent,
     TResult Function(GetVilleQuartier value)? getVilleQuartier,
     TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteBikerInfo value)? completeBikerInfo,
     required TResult orElse(),
   }) {
@@ -2263,10 +3109,10 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
 }
 
 abstract class CompleteBikerInfo implements UserEvent {
-  const factory CompleteBikerInfo({required final Map<dynamic, dynamic> data}) =
+  const factory CompleteBikerInfo({required final FormData data}) =
       _$CompleteBikerInfoImpl;
 
-  Map<dynamic, dynamic> get data;
+  FormData get data;
   @JsonKey(ignore: true)
   _$$CompleteBikerInfoImplCopyWith<_$CompleteBikerInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2281,6 +3127,9 @@ mixin _$UserState {
   String? get quartierUser => throw _privateConstructorUsedError;
   String? get newPassword => throw _privateConstructorUsedError;
   int? get isCode => throw _privateConstructorUsedError;
+  File? get cniImageAvant => throw _privateConstructorUsedError;
+  File? get cniImageArriere => throw _privateConstructorUsedError;
+  File? get cartegriseImage => throw _privateConstructorUsedError;
   int? get isLoadingForgot => throw _privateConstructorUsedError;
   int? get isUpdateUserImage => throw _privateConstructorUsedError;
   int? get isCorrectCode => throw _privateConstructorUsedError;
@@ -2306,6 +3155,9 @@ abstract class $UserStateCopyWith<$Res> {
       String? quartierUser,
       String? newPassword,
       int? isCode,
+      File? cniImageAvant,
+      File? cniImageArriere,
+      File? cartegriseImage,
       int? isLoadingForgot,
       int? isUpdateUserImage,
       int? isCorrectCode,
@@ -2334,6 +3186,9 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? quartierUser = freezed,
     Object? newPassword = freezed,
     Object? isCode = freezed,
+    Object? cniImageAvant = freezed,
+    Object? cniImageArriere = freezed,
+    Object? cartegriseImage = freezed,
     Object? isLoadingForgot = freezed,
     Object? isUpdateUserImage = freezed,
     Object? isCorrectCode = freezed,
@@ -2370,6 +3225,18 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.isCode
           : isCode // ignore: cast_nullable_to_non_nullable
               as int?,
+      cniImageAvant: freezed == cniImageAvant
+          ? _value.cniImageAvant
+          : cniImageAvant // ignore: cast_nullable_to_non_nullable
+              as File?,
+      cniImageArriere: freezed == cniImageArriere
+          ? _value.cniImageArriere
+          : cniImageArriere // ignore: cast_nullable_to_non_nullable
+              as File?,
+      cartegriseImage: freezed == cartegriseImage
+          ? _value.cartegriseImage
+          : cartegriseImage // ignore: cast_nullable_to_non_nullable
+              as File?,
       isLoadingForgot: freezed == isLoadingForgot
           ? _value.isLoadingForgot
           : isLoadingForgot // ignore: cast_nullable_to_non_nullable
@@ -2414,6 +3281,9 @@ abstract class _$$UserStateImplCopyWith<$Res>
       String? quartierUser,
       String? newPassword,
       int? isCode,
+      File? cniImageAvant,
+      File? cniImageArriere,
+      File? cartegriseImage,
       int? isLoadingForgot,
       int? isUpdateUserImage,
       int? isCorrectCode,
@@ -2440,6 +3310,9 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? quartierUser = freezed,
     Object? newPassword = freezed,
     Object? isCode = freezed,
+    Object? cniImageAvant = freezed,
+    Object? cniImageArriere = freezed,
+    Object? cartegriseImage = freezed,
     Object? isLoadingForgot = freezed,
     Object? isUpdateUserImage = freezed,
     Object? isCorrectCode = freezed,
@@ -2476,6 +3349,18 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.isCode
           : isCode // ignore: cast_nullable_to_non_nullable
               as int?,
+      cniImageAvant: freezed == cniImageAvant
+          ? _value.cniImageAvant
+          : cniImageAvant // ignore: cast_nullable_to_non_nullable
+              as File?,
+      cniImageArriere: freezed == cniImageArriere
+          ? _value.cniImageArriere
+          : cniImageArriere // ignore: cast_nullable_to_non_nullable
+              as File?,
+      cartegriseImage: freezed == cartegriseImage
+          ? _value.cartegriseImage
+          : cartegriseImage // ignore: cast_nullable_to_non_nullable
+              as File?,
       isLoadingForgot: freezed == isLoadingForgot
           ? _value.isLoadingForgot
           : isLoadingForgot // ignore: cast_nullable_to_non_nullable
@@ -2515,6 +3400,9 @@ class _$UserStateImpl implements _UserState {
       this.quartierUser,
       this.newPassword,
       this.isCode,
+      this.cniImageAvant,
+      this.cniImageArriere,
+      this.cartegriseImage,
       this.isLoadingForgot,
       this.isUpdateUserImage,
       this.isCorrectCode,
@@ -2537,6 +3425,12 @@ class _$UserStateImpl implements _UserState {
   @override
   final int? isCode;
   @override
+  final File? cniImageAvant;
+  @override
+  final File? cniImageArriere;
+  @override
+  final File? cartegriseImage;
+  @override
   final int? isLoadingForgot;
   @override
   final int? isUpdateUserImage;
@@ -2551,7 +3445,7 @@ class _$UserStateImpl implements _UserState {
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, authenticationFailedMessage: $authenticationFailedMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating)';
+    return 'UserState(isLoading: $isLoading, authenticationFailedMessage: $authenticationFailedMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating)';
   }
 
   @override
@@ -2574,6 +3468,12 @@ class _$UserStateImpl implements _UserState {
             (identical(other.newPassword, newPassword) ||
                 other.newPassword == newPassword) &&
             (identical(other.isCode, isCode) || other.isCode == isCode) &&
+            (identical(other.cniImageAvant, cniImageAvant) ||
+                other.cniImageAvant == cniImageAvant) &&
+            (identical(other.cniImageArriere, cniImageArriere) ||
+                other.cniImageArriere == cniImageArriere) &&
+            (identical(other.cartegriseImage, cartegriseImage) ||
+                other.cartegriseImage == cartegriseImage) &&
             (identical(other.isLoadingForgot, isLoadingForgot) ||
                 other.isLoadingForgot == isLoadingForgot) &&
             (identical(other.isUpdateUserImage, isUpdateUserImage) ||
@@ -2598,6 +3498,9 @@ class _$UserStateImpl implements _UserState {
       quartierUser,
       newPassword,
       isCode,
+      cniImageAvant,
+      cniImageArriere,
+      cartegriseImage,
       isLoadingForgot,
       isUpdateUserImage,
       isCorrectCode,
@@ -2621,6 +3524,9 @@ abstract class _UserState implements UserState {
       final String? quartierUser,
       final String? newPassword,
       final int? isCode,
+      final File? cniImageAvant,
+      final File? cniImageArriere,
+      final File? cartegriseImage,
       final int? isLoadingForgot,
       final int? isUpdateUserImage,
       final int? isCorrectCode,
@@ -2642,6 +3548,12 @@ abstract class _UserState implements UserState {
   String? get newPassword;
   @override
   int? get isCode;
+  @override
+  File? get cniImageAvant;
+  @override
+  File? get cniImageArriere;
+  @override
+  File? get cartegriseImage;
   @override
   int? get isLoadingForgot;
   @override

@@ -16,12 +16,12 @@ export 'package:Bcom/application/home/home_bloc.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
 
-class FirstBikerView extends StatefulWidget {
+class FirstControllerView extends StatefulWidget {
   @override
-  State<FirstBikerView> createState() => _FirstBikerViewState();
+  State<FirstControllerView> createState() => _FirstControllerViewState();
 }
 
-class _FirstBikerViewState extends State<FirstBikerView> {
+class _FirstControllerViewState extends State<FirstControllerView> {
   var time = 0;
 
   late Timer _timer;
@@ -45,26 +45,6 @@ class _FirstBikerViewState extends State<FirstBikerView> {
                 AutoRouter.of(context).pop();
               }
 
-              // if (state0.sendPosition != null) {
-              //   if (state0.sendPosition!) {
-              //     // Exécute périodiquement toutes les 1 secondes
-              //     _timer = Timer.periodic(Duration(minutes: 1), (Timer t) {
-              //       BlocProvider.of<BikerBloc>(context).add(IncrementTimer());
-              //       print('Exécution chaque time');
-
-              //       // Vérifie si le temps est un multiple de 60
-              //       if ((state0.time! % 300) == 0) {
-              //         BlocProvider.of<BikerBloc>(context)
-              //             .add(SavePositionForMissionBiker());
-              //         print('Position envoyée');
-              //       }
-              //     });
-              //   } else {
-              //     _stopTimer();
-              //     // Une fois que sendPosition devient faux, affiche "Mission Terminée"
-              //     showSuccess('Mission Terminée', context);
-              //     print('Mission Terminée');
-              //   }
               // }
             },
             builder: (context0, state0) => RefreshIndicator(
@@ -76,7 +56,7 @@ class _FirstBikerViewState extends State<FirstBikerView> {
                 child: Container(
                     child: Column(children: [
                   HomeModuleComponent(
-                    title: 'Listes des missions disponibles '.tr(),
+                    title: 'Listes de vos missions de control '.tr(),
                     image: Assets.shop2,
                     onTap: () => print(''),
                   ),

@@ -46,13 +46,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 }
 
                 print('**----');
-                AutoRouter.of(context).replace(state.route);
+                 AutoRouter.of(context).replace(state.route);
               }
             },
             builder: (context, state) {
               return Scaffold(
                   backgroundColor:
-                      ColorsApp.white, // const Color.fromARGB(255, 18, 17, 17),
+                      ColorsApp.white, 
                   body: SingleChildScrollView(
                     child: Container(
                         alignment: Alignment.center,
@@ -61,15 +61,34 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Container(
-                                  margin: EdgeInsets.only(
-                                      top: getHeight(context) * .45),
-                                  child: SvgPicture.asset(
-                                    Assets.babana,
-                                    color: ColorsApp.second,
+                                margin: EdgeInsets.only(
+                                    top: getHeight(context) * .35),
+                                height: getHeight(context) * .20,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(Assets.logo),
+                                    // fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                  decoration: BoxDecoration(
+                                    border: Border(top: BorderSide.none),
+                                  ),
+                                  padding: EdgeInsets.all(kMarginX),
+                                  // margin: EdgeInsets.symmetric(
+                                  //     vertical: kMarginY, horizontal: kMarginX * 3),
+                                  child: Text(
+                                    '',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: ColorsApp.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w600),
                                   )),
                               Container(
                                   margin: EdgeInsets.only(
-                                      top: getHeight(context) * .25),
+                                      top: getHeight(context) * .20),
                                   child: Container(
                                       height: 30,
                                       width: 30,

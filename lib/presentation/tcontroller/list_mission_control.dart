@@ -17,7 +17,7 @@ import 'package:Bcom/presentation/components/Widget/HomeModuleComponent.dart';
 var loader = AppLoader.bounceLargeColorLoaderController();
 
 // ignore: must_be_immutable
-class ListMissionsView extends StatelessWidget {
+class ListMissionsControlView extends StatelessWidget {
   ScrollController _scrollController = new ScrollController();
 
   @override

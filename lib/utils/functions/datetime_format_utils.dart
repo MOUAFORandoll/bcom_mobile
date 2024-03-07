@@ -35,13 +35,21 @@ class FormatDateTime {
     return clockString;
   }
 
-  String formatTimeNew(int totalMinutes) {
-    int hours = totalMinutes ~/
-        60; // Utilise la division entière pour obtenir les heures
-    int minutes = totalMinutes %
-        60; // Utilise le modulo pour obtenir le reste des minutes
+  String formatTimeFromSeconds(int totalSeconds) {
+    int hours = totalSeconds ~/ 3600; // Obtient les heures
+    int remainingSeconds = totalSeconds %
+        3600; // Obtient le reste des secondes après avoir calculé les heures
 
-    // Formatte le résultat pour s'assurer qu'il y a toujours deux chiffres pour les minutes
-    return "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}";
+    int minutes = remainingSeconds ~/ 60; // Obtient les minutes
+    int seconds = remainingSeconds % 60; // Obtient les secondes restantes
+
+    // Construit la chaîne de format en fonction des heures, des minutes et des secondes
+    String formattedTime = hours > 0
+        ? '${hours.toString().padLeft(2, '0')}:'
+        : ''; // Ajoute les heures si elles sont supérieures à zéro
+    formattedTime +=
+        '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}'; // Ajoute les minutes et les secondes
+
+    return formattedTime;
   }
 }
