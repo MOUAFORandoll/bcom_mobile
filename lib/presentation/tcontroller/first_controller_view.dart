@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
+import 'package:Bcom/presentation/components/Widget/controlBikerComponent.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:Bcom/presentation/components/Widget/missionsComponent.dart';
 import 'package:Bcom/routes/app_router.gr.dart';
@@ -33,7 +34,8 @@ class _FirstControllerViewState extends State<FirstControllerView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) => BlocConsumer<BikerBloc, BikerState>(
+        builder: (context, state) => BlocConsumer<TcontrollerBloc,
+                TcontrollerState>(
             listener: (context0, state0) {
               if (state0.isRequest == 0) {
                 loader.open(context);
@@ -43,15 +45,24 @@ class _FirstControllerViewState extends State<FirstControllerView> {
               } else if (state0.isRequest == 1) {
                 AutoRouter.of(context).pop();
                 AutoRouter.of(context).pop();
+                showSuccess('Operation effectuee avec succes', context);
               }
-
+              // if (state0.isRequestNote == 0) {
+              //   loader.open(context);
+              // } else if (state0.isRequestNote == 2) {
+              //   AutoRouter.of(context).pop();
+              //   showError('Une erreur est survenue', context);
+              // } else if (state0.isRequestNote == 1) {
+              //   AutoRouter.of(context).pop();
+              //   showSuccess('Operation effectuee avec succes', context);
+              // }
               // }
             },
             builder: (context0, state0) => RefreshIndicator(
                 color: ColorsApp.second,
                 onRefresh: () => Future.delayed(Duration(seconds: 5), () {
-                      BlocProvider.of<BikerBloc>(context)
-                          .add(GetListMissionBiker());
+                      BlocProvider.of<TcontrollerBloc>(context)
+                          .add(GetListMissionTcontroller());
                     }),
                 child: Container(
                     child: Column(children: [
@@ -80,8 +91,8 @@ class _FirstControllerViewState extends State<FirstControllerView> {
                                                     state0.list_mission!.length,
                                                 // controller: state0,
                                                 itemBuilder: (_, index) =>
-                                                    MissionsComponent(
-                                                      mission: state0
+                                                    ControlBikerComponent(
+                                                      mission_control: state0
                                                           .list_mission![index],
                                                     ))))),
                   ),

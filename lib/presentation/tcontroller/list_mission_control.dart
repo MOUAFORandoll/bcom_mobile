@@ -1,4 +1,6 @@
 import 'package:Bcom/presentation/biker/mission_page.dart';
+import 'package:Bcom/presentation/components/Widget/controlBikerComponent.dart';
+import 'package:Bcom/presentation/components/Widget/controlDoneBikerComponent.dart';
 import 'package:Bcom/routes/app_router.gr.dart';
 
 import '../components/exportcomponent.dart';
@@ -22,15 +24,16 @@ class ListMissionsControlView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<BikerBloc, BikerState>(
-        listener: (context, state) {
-          // if (state.load_list_mission_session == 0) {
+    return BlocConsumer<TcontrollerBloc, TcontrollerState>(
+        listener: (context0, state0) {
+          // if (state0.isRequestNote == 0) {
           //   loader.open(context);
-          // } else if (state.load_list_mission_session == 2) {
+          // } else if (state0.isRequestNote == 2) {
           //   AutoRouter.of(context).pop();
-          //   showError('Une erreur est survenue, veuillez reeessayer', context);
-          // } else if (state.load_list_mission_session == 1) {
-          //   AutoRouter.of(context).push(MissionSessionRoute());
+          //   showError('Une erreur est survenue', context);
+          // } else if (state0.isRequestNote == 1) {
+          //   AutoRouter.of(context).pop();
+          //   showSuccess('Operation effectuee avec succes', context);
           // }
         },
         builder: (context, state) => SafeArea(
@@ -56,7 +59,7 @@ class ListMissionsControlView extends StatelessWidget {
                               ? ShimmerData()
                               : state.list_mission_done == 2
                                   ? Text('Error')
-                                  : state.list_mission!.length == 0
+                                  : state.list_mission_done!.length == 0
                                       ? EmptyMissionComponent()
                                       : ListView.builder(
                                           physics:
@@ -66,8 +69,8 @@ class ListMissionsControlView extends StatelessWidget {
                                               state.list_mission_done!.length,
                                           // controller: state,
                                           itemBuilder: (_, index) =>
-                                              MissionsUserComponent(
-                                                mission: state
+                                              ControlDoneBikerComponent(
+                                                mission_control: state
                                                     .list_mission_done![index],
                                               )))),
                 ])))));

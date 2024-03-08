@@ -97,6 +97,7 @@ class _AuthPageState extends State<AuthPage> {
                                 ),
                                 child: AppInput(
                                   controller: phone,
+                                  textInputType: TextInputType.phone,
                                   onChanged: (value) {},
                                   placeholder: 'labelphone'.tr(),
                                   validator: (value) {

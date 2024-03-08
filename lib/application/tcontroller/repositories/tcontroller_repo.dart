@@ -31,14 +31,14 @@ class TcontrollerRepo {
 
   Future getlistMissionTcontroller(keySecret) async {
     Response a = await apiClient.getRequest(
-        ApiRoutes.Tcontroller + '/list-mission?keySecret=${keySecret}');
+        ApiRoutes.Tcontroller + '/list-mission?keySecretCterrain=${keySecret}');
 
     return a;
   }
 
   Future getlistMissionTcontrollerDone(keySecret) async {
-    Response a = await apiClient.getRequest(
-        ApiRoutes.Tcontroller + '/list-mission-done?keySecret=${keySecret}');
+    Response a = await apiClient.getRequest(ApiRoutes.Tcontroller +
+        '/list-mission-done?keySecretCterrain=${keySecret}');
 
     return a;
   }

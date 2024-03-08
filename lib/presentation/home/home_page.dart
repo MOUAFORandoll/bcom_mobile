@@ -92,13 +92,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                           .add(GetListMissionBikerEffectue());
                     }
                   }
-                  if (state.user!.typeUser == 5) {
+                  if (state.user!.typeUser == 3) {
                     if (state.index == 0) {
-                      BlocProvider.of<BikerBloc>(context)
-                          .add(GetListMissionBiker());
+                      BlocProvider.of<TcontrollerBloc>(context)
+                          .add(GetListMissionTcontroller());
                     } else {
-                      BlocProvider.of<BikerBloc>(context)
-                          .add(GetListMissionBikerEffectue());
+                      BlocProvider.of<TcontrollerBloc>(context)
+                          .add(GetListMissionTcontrollerDone());
                     }
                   }
                 }),

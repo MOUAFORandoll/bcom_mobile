@@ -11,6 +11,7 @@ import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
 
 import 'package:Bcom/infrastructure/_commons/network/network_info.dart';
 
@@ -35,6 +36,10 @@ Future<void> init() async {
   sl
     ..registerFactory(() => BikerBloc(bikerRepo: sl(), database: sl()))
     ..registerLazySingleton(() => BikerRepo(apiClient: sl()));
+  sl
+    ..registerFactory(
+        () => TcontrollerBloc(tcontrollerRepo: sl(), database: sl()))
+    ..registerLazySingleton(() => TcontrollerRepo(apiClient: sl()));
   requestPermission();
   initConnected();
 }
@@ -49,6 +54,7 @@ Future<void> initLoad(context) async {
     ..add(GetUserEvent())
     ..add(GetVilleQuartier());
   initLoadBiker(context);
+  initLoadTControl(context);
 }
 
 Future<void> initLoadTControl(context) async {

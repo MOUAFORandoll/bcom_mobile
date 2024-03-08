@@ -30,29 +30,34 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               if (state is Loaded) {
                 if (state.isLogin == true) {
                   initLoad(context);
-                  if (stateH.user != null) {
-                    if (stateH.user!.typeUser == 3) {
-                      initLoadTControl(context);
-                    }
-                    if (stateH.user!.typeUser == 4 ||
-                        stateH.user!.typeUser == '4') {
-                      print('**------------initLoadBiker');
-                      initLoadBiker(context);
-                    }
-                  } else {
-                    print(
-                        '**------------                AutoRouter.of(context).replace(state.route);');
-                  }
+                //   if (stateH.user != null) {
+                //     if (stateH.user!.typeUser == 3 ||
+                //         stateH.user!.typeUser == '3') {
+                //       print(
+                //           '**------------stateH.user!.typeUser   ${stateH.user!.typeUser}');
+                //       initLoadTControl(context);
+                //     }
+                //     if (stateH.user!.typeUser == 4 ||
+                //         stateH.user!.typeUser == '4') {
+                //       print('**------------initLoadBiker');
+                //       initLoadBiker(context);
+                //     }
+                //   } else {
+                //     print(
+                //         '**------------stateH.user!.typeUser   ${stateH.user!.typeUser}');
+
+                //     print(
+                //         '**------------                AutoRouter.of(context).replace(state.route);');
+                //   }
                 }
 
                 print('**----');
-                 AutoRouter.of(context).replace(state.route);
+                AutoRouter.of(context).replace(state.route);
               }
             },
             builder: (context, state) {
               return Scaffold(
-                  backgroundColor:
-                      ColorsApp.white, 
+                  backgroundColor: ColorsApp.white,
                   body: SingleChildScrollView(
                     child: Container(
                         alignment: Alignment.center,

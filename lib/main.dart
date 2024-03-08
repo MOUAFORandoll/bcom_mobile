@@ -14,6 +14,8 @@ import 'routes/app_router.dart';
 import 'core.dart' as co;
 import 'core.dart';
 import 'package:Bcom/application/export_bloc.dart';
+import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
+import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
 
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -85,6 +87,11 @@ class AppContent extends StatelessWidget {
                   create: (BuildContext context) => UserBloc(
                       userRepo: sl.get<UserRepo>(),
                       database: sl.get<DatabaseCubit>()),
+                ), BlocProvider<TcontrollerBloc>(
+                  create: (BuildContext context) => TcontrollerBloc(
+                    tcontrollerRepo: sl.get<TcontrollerRepo>(),
+                    database: sl.get<DatabaseCubit>(),
+                  ),
                 ),
                 BlocProvider<SplashBloc>(
                   create: (BuildContext context) =>
