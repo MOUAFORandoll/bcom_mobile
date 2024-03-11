@@ -15,6 +15,7 @@ import 'package:Bcom/presentation/components/Widget/missionsUserComponent.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/Widget/HomeModuleComponent.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
 
@@ -27,7 +28,8 @@ class ListMissionsControlView extends StatelessWidget {
     return BlocConsumer<TcontrollerBloc, TcontrollerState>(
         listener: (context0, state0) {
           // if (state0.isRequestNote == 0) {
-          //   loader.open(context);
+          //     EasyLoading.show(
+                    // status: 'En cours', maskType: EasyLoadingMaskType.black);
           // } else if (state0.isRequestNote == 2) {
           //   AutoRouter.of(context).pop();
           //   showError('Une erreur est survenue', context);

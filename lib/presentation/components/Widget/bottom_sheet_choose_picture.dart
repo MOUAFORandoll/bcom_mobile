@@ -65,37 +65,31 @@ class _ChooseLogoWidgetState extends State<ChooseLogoWidget> {
               )),
           Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(vertical: kMarginY),
+              margin: EdgeInsets.only(bottom: kMarginY),
               child: Text(
-                'selectsize'.tr(),
+                'Selectionner une option'.tr(),
                 style: TextStyle(fontWeight: FontWeight.w500),
               )),
           Container(
               child: Column(
             children: [
-              Material(
-                elevation: 5.0,
-                child: AppButton(
-                  text: 'Camera'.tr(),
-                  size: MainAxisSize.max,
-                  iconData: Icons.camera_alt_rounded,
-                  onTap: () async {
-                    chooseLogo(type: 'camera');
-                  },
-                ),
+              AppButton(
+                text: 'Camera'.tr(),
+                size: MainAxisSize.max,
+                iconData: Icons.camera_alt_rounded,
+                onTap: () async {
+                  chooseLogo(type: 'camera');
+                },
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: Material(
-                  elevation: 5.0,
-                  child: AppButton(
-                      text: 'Galerie'.tr(),
-                      size: MainAxisSize.max,
-                      iconData: Icons.camera_front,
-                      onTap: () async {
-                        chooseLogo(type: 'gallery');
-                      }),
-                ),
+                child: AppButton(
+                    text: 'Galerie'.tr(),
+                    size: MainAxisSize.max,
+                    iconData: Icons.camera_front,
+                    onTap: () async {
+                      chooseLogo(type: 'gallery');
+                    }),
               ),
             ],
           ))

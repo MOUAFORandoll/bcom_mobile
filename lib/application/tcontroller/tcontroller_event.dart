@@ -10,6 +10,6 @@ class TcontrollerEvent with _$TcontrollerEvent {
   const factory TcontrollerEvent.endControl() = EndControl;
   const factory TcontrollerEvent.selectMissionControl(
       {required MissionControl mission_control}) = SelectMissionControl;
-  const factory TcontrollerEvent.notationControl({required double note}) =
-      NotationControl;
+  const factory TcontrollerEvent.notationControl(
+      {required double note, required String badge}) = NotationControl;
 }

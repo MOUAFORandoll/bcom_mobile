@@ -118,8 +118,10 @@ class TcontrollerBloc extends Bloc<TcontrollerEvent, TcontrollerState> {
     var data = {
       'idControl': state.mission_control!.id,
     };
+    emit(state.copyWith(isRequestNote: null));
+    emit(state.copyWith(isRequest: null));
     emit(state.copyWith(
-      isRequest: 0,
+      isRequestNote: 0,
     ));
     await tcontrollerRepo.endMissionTcontroller(data).then((response) async {
       print('-------------------------------------------------');
@@ -127,21 +129,21 @@ class TcontrollerBloc extends Bloc<TcontrollerEvent, TcontrollerState> {
 
       if (response.statusCode == 201) {
         print(response.data);
-        emit(state.copyWith(isRequest: 1));
-        emit(state.copyWith(isRequest: null));
+        emit(state.copyWith(isRequestNote: 1));
+        emit(state.copyWith(isRequestNote: null));
         emit(state.copyWith(mission_control: null));
       } else {
-        emit(state.copyWith(isRequest: 2));
-        emit(state.copyWith(isRequest: null));
+        emit(state.copyWith(isRequestNote: 2));
+        emit(state.copyWith(isRequestNote: null));
       }
     }).onError((e, s) async {
-      emit(state.copyWith(isRequest: 2));
-      emit(state.copyWith(isRequest: null));
+      emit(state.copyWith(isRequestNote: 2));
+      emit(state.copyWith(isRequestNote: null));
     }).catchError((e) async {
       // await cron.close();
-      ;
-      emit(state.copyWith(isRequest: 2));
-      emit(state.copyWith(isRequest: null));
+
+      emit(state.copyWith(isRequestNote: 2));
+      emit(state.copyWith(isRequestNote: null));
     });
   }
 
@@ -149,6 +151,7 @@ class TcontrollerBloc extends Bloc<TcontrollerEvent, TcontrollerState> {
     var data = {
       'idControl': state.mission_control!.id,
       'note': event.note,
+      'num_badge': event.badge,
     };
     emit(state.copyWith(
       isRequestNote: 0,

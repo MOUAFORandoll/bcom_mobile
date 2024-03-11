@@ -7,6 +7,28 @@ class BikerRepo {
   final IAppRequests apiClient;
   BikerRepo({required this.apiClient});
   final key = 'AIzaSyB2lLkho9yRrZ9DgZ4btFOZ6x22-zZTJ38';
+
+  Future demandeMission(keySecret) async {
+    Response a = await apiClient
+        .getRequest(ApiRoutes.Biker + '/demande?keySecret=${keySecret}');
+
+    return a;
+  }
+
+  Future startDisponibiliteBiker(data) async {
+    Response a = await apiClient
+        .postRequest(ApiRoutes.Biker + '/start-disponibilite', body: data);
+
+    return a;
+  }
+
+  Future endDisponibiliteBiker(data) async {
+    Response a = await apiClient
+        .postRequest(ApiRoutes.Biker + '/end-disponibilite', body: data);
+
+    return a;
+  }
+
   Future startMissionBiker(data) async {
     Response a = await apiClient.postRequest(ApiRoutes.Biker + '/start-mission',
         body: data);
@@ -32,6 +54,12 @@ class BikerRepo {
   Future getlistMissionBiker(keySecret) async {
     Response a = await apiClient
         .getRequest(ApiRoutes.Biker + '/list-mission?keySecret=${keySecret}');
+
+    return a;
+  }
+
+  Future getlistSecteurBiker() async {
+    Response a = await apiClient.getRequest('/secteur/read');
 
     return a;
   }
@@ -224,7 +252,7 @@ class BikerRepo {
       _placeTexteController.text = text;
 
       update();
-      loader.close();
+      EasyLoading.dismiss();
     }
 
     return {'longitude': longitude, 'latitude': latitude};

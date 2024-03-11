@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:Bcom/application/export_bloc.dart';
+import 'package:Bcom/presentation/components/Widget/ContactAdminMissionComponent.dart';
 import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
 import 'package:Bcom/presentation/components/Widget/controlBikerComponent.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../components/exportcomponent.dart';
 import 'package:Bcom/presentation/components/Widget/HomeModuleComponent.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
 
@@ -27,7 +29,6 @@ class _FirstControllerViewState extends State<FirstControllerView> {
 
   late Timer _timer;
   void _stopTimer() {
-    // Cancel the timer
     _timer.cancel();
   }
 
@@ -38,25 +39,30 @@ class _FirstControllerViewState extends State<FirstControllerView> {
                 TcontrollerState>(
             listener: (context0, state0) {
               if (state0.isRequest == 0) {
-                loader.open(context);
+                print('......');
+                EasyLoading.show(
+                    status: 'En cours', maskType: EasyLoadingMaskType.black);
               } else if (state0.isRequest == 2) {
+                EasyLoading.dismiss();
                 AutoRouter.of(context).pop();
                 showError('Une erreur est survenue', context);
               } else if (state0.isRequest == 1) {
-                AutoRouter.of(context).pop();
-                AutoRouter.of(context).pop();
+                EasyLoading.dismiss();
                 showSuccess('Operation effectuee avec succes', context);
               }
-              // if (state0.isRequestNote == 0) {
-              //   loader.open(context);
-              // } else if (state0.isRequestNote == 2) {
-              //   AutoRouter.of(context).pop();
-              //   showError('Une erreur est survenue', context);
-              // } else if (state0.isRequestNote == 1) {
-              //   AutoRouter.of(context).pop();
-              //   showSuccess('Operation effectuee avec succes', context);
-              // }
-              // }
+              if (state0.isRequestNote == 0) {
+                print('......');
+                EasyLoading.show(
+                    status: 'En cours', maskType: EasyLoadingMaskType.black);
+              } else if (state0.isRequestNote == 2) {
+                EasyLoading.dismiss();
+                showError('Une erreur est survenue', context);
+              }
+              if (state0.isRequestNote == 1) {
+                EasyLoading.dismiss();
+                AutoRouter.of(context).pop();
+                showSuccess('Notation effectuee avec succes', context);
+              }
             },
             builder: (context0, state0) => RefreshIndicator(
                 color: ColorsApp.second,
@@ -80,7 +86,7 @@ class _FirstControllerViewState extends State<FirstControllerView> {
                             : state0.load_list_mission == 2
                                 ? Text('Error')
                                 : state0.list_mission!.length == 0
-                                    ? Container()
+                                    ? ContactAdminMissionComponent()
                                     : Container(
                                         child: SingleChildScrollView(
                                             child: ListView.builder(

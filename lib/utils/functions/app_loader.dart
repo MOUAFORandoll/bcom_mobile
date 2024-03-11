@@ -1,3 +1,4 @@
+
 import 'dart:async';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'bounce_loader.dart';
@@ -66,14 +67,11 @@ class _LoaderDialog extends StatefulWidget {
   final Widget loader;
   final StreamController<String> controller;
 
-  /// Create a loader dialog that cannot be
-  /// dismissed by pressing the back button.
   const _LoaderDialog({required this.loader, required this.controller});
 
   @override
   _LoaderDialogState createState() => _LoaderDialogState();
 
-  /// Show the dialog loader.
   void open(BuildContext context) {
     showDialog(
         context: context, barrierDismissible: false, builder: (ctx) => this);
@@ -126,13 +124,13 @@ class LoaderDialogController {
 
   LoaderDialogController({required this.loader});
 
-  /// Show the dialog
+
   void open(BuildContext context) {
     _streamController = StreamController<String>();
     _LoaderDialog(loader: loader, controller: _streamController).open(context);
   }
 
-  /// Close the dialog
+
   StreamController<String> close() {
     if (_streamController.isClosed) {
       _streamController = StreamController<String>();

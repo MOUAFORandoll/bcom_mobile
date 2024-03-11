@@ -66,7 +66,8 @@ Future<void> initLoadTControl(context) async {
 Future<void> initLoadBiker(context) async {
   BlocProvider.of<BikerBloc>(context)
     ..add(GetListMissionBiker())
-    ..add(GetListMissionBikerEffectue());
+    ..add(GetListMissionBikerEffectue())
+    ..add(GetListSecteurBiker());
 }
 
 Future<void> requestPermission() async {

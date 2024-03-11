@@ -3,7 +3,6 @@ class MissionControl {
   final int status;
   final int? note;
   final Mission mission;
-  final Biker biker;
   final Controller controller;
   final String dateCreated;
   final Map<String, dynamic>? bikerPosition;
@@ -15,7 +14,6 @@ class MissionControl {
     required this.status,
     this.note,
     required this.mission,
-    required this.biker,
     required this.controller,
     required this.dateCreated,
     this.bikerPosition,
@@ -28,7 +26,6 @@ class MissionControl {
         status: json['status'],
         note: json['note'],
         mission: Mission.fromJson(json['mission']),
-        biker: Biker.fromJson(json['biker']),
         controller: Controller.fromJson(json['controller']),
         dateCreated: json['date_created'],
         bikerPosition: json['biker_position'],
@@ -44,7 +41,6 @@ class Mission {
   final String description;
   final String nbrePoint;
   final bool status;
-  final int nbreSession;
 
   Mission({
     required this.id,
@@ -53,7 +49,6 @@ class Mission {
     required this.description,
     required this.nbrePoint,
     required this.status,
-    required this.nbreSession,
   });
 
   factory Mission.fromJson(Map<String, dynamic> json) => Mission(
@@ -63,28 +58,6 @@ class Mission {
         description: json['description'],
         nbrePoint: json['nbre_point'],
         status: json['status'],
-        nbreSession: json['nbre_session'],
-      );
-}
-
-class Biker {
-  final int id;
-  final String name;
-  final String image;
-  final String phone;
-
-  Biker({
-    required this.id,
-    required this.name,
-    required this.image,
-    required this.phone,
-  });
-
-  factory Biker.fromJson(Map<String, dynamic> json) => Biker(
-        id: json['id'],
-        name: json['name'],
-        image: json['image'],
-        phone: json['phone'],
       );
 }
 

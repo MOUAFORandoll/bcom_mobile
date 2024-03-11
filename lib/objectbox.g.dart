@@ -176,7 +176,7 @@ final _entities = <ModelEntity>[
   ModelEntity(
       id: const IdUid(7, 3111042122288968254),
       name: 'User',
-      lastPropertyId: const IdUid(11, 4088015423610740637),
+      lastPropertyId: const IdUid(12, 1288215193080885177),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
@@ -227,6 +227,11 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(11, 4088015423610740637),
             name: 'infoComplete',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(12, 1288215193080885177),
+            name: 'disponibilite',
             type: 1,
             flags: 0)
       ],
@@ -510,7 +515,7 @@ ModelDefinition getObjectBoxModel() {
           final profileOffset = fbb.writeString(object.profile);
           final phoneOffset = fbb.writeString(object.phone);
           final dateCreatedOffset = fbb.writeString(object.dateCreated);
-          fbb.startTable(12);
+          fbb.startTable(13);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.userId);
           fbb.addOffset(2, nomOffset);
@@ -521,6 +526,7 @@ ModelDefinition getObjectBoxModel() {
           fbb.addOffset(7, dateCreatedOffset);
           fbb.addInt64(8, object.typeUser);
           fbb.addBool(10, object.infoComplete);
+          fbb.addBool(11, object.disponibilite);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -546,6 +552,8 @@ ModelDefinition getObjectBoxModel() {
           final dateCreatedParam =
               const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 18, '');
+          final disponibiliteParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 26, false);
           final object = User(
               userId: userIdParam,
               nom: nomParam,
@@ -555,7 +563,8 @@ ModelDefinition getObjectBoxModel() {
               profile: profileParam,
               phone: phoneParam,
               infoComplete: infoCompleteParam,
-              dateCreated: dateCreatedParam)
+              dateCreated: dateCreatedParam,
+              disponibilite: disponibiliteParam)
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 
           return object;
@@ -714,6 +723,10 @@ class User_ {
   /// see [User.infoComplete]
   static final infoComplete =
       QueryBooleanProperty<User>(_entities[6].properties[9]);
+
+  /// see [User.disponibilite]
+  static final disponibilite =
+      QueryBooleanProperty<User>(_entities[6].properties[10]);
 }
 
 /// [YourDataModel] entity fields to define ObjectBox queries.

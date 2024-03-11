@@ -22,11 +22,16 @@ mixin _$BikerEvent {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,11 +40,16 @@ mixin _$BikerEvent {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,11 +58,16 @@ mixin _$BikerEvent {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +78,10 @@ mixin _$BikerEvent {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -70,6 +89,9 @@ mixin _$BikerEvent {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,12 +101,17 @@ mixin _$BikerEvent {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,12 +121,17 @@ mixin _$BikerEvent {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -166,11 +198,16 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return getListMissionBiker();
   }
@@ -182,11 +219,16 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return getListMissionBiker?.call();
   }
@@ -198,11 +240,16 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (getListMissionBiker != null) {
@@ -219,6 +266,10 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -226,6 +277,9 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return getListMissionBiker(this);
   }
@@ -238,12 +292,17 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return getListMissionBiker?.call(this);
   }
@@ -256,12 +315,17 @@ class _$GetListMissionBikerImpl implements GetListMissionBiker {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (getListMissionBiker != null) {
@@ -320,11 +384,16 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return getListMissionBikerEffectue();
   }
@@ -336,11 +405,16 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return getListMissionBikerEffectue?.call();
   }
@@ -352,11 +426,16 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (getListMissionBikerEffectue != null) {
@@ -373,6 +452,10 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -380,6 +463,9 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return getListMissionBikerEffectue(this);
   }
@@ -392,12 +478,17 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return getListMissionBikerEffectue?.call(this);
   }
@@ -410,12 +501,17 @@ class _$GetListMissionBikerEffectueImpl implements GetListMissionBikerEffectue {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (getListMissionBikerEffectue != null) {
@@ -472,11 +568,16 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return startMissionBiker();
   }
@@ -488,11 +589,16 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return startMissionBiker?.call();
   }
@@ -504,11 +610,16 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (startMissionBiker != null) {
@@ -525,6 +636,10 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -532,6 +647,9 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return startMissionBiker(this);
   }
@@ -544,12 +662,17 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return startMissionBiker?.call(this);
   }
@@ -562,12 +685,17 @@ class _$StartMissionBikerImpl implements StartMissionBiker {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (startMissionBiker != null) {
@@ -623,11 +751,16 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return endMissionBiker();
   }
@@ -639,11 +772,16 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return endMissionBiker?.call();
   }
@@ -655,11 +793,16 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (endMissionBiker != null) {
@@ -676,6 +819,10 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -683,6 +830,9 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return endMissionBiker(this);
   }
@@ -695,12 +845,17 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return endMissionBiker?.call(this);
   }
@@ -713,12 +868,17 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (endMissionBiker != null) {
@@ -730,6 +890,377 @@ class _$EndMissionBikerImpl implements EndMissionBiker {
 
 abstract class EndMissionBiker implements BikerEvent {
   const factory EndMissionBiker() = _$EndMissionBikerImpl;
+}
+
+/// @nodoc
+abstract class _$$StartDisponibiliteBikerImplCopyWith<$Res> {
+  factory _$$StartDisponibiliteBikerImplCopyWith(
+          _$StartDisponibiliteBikerImpl value,
+          $Res Function(_$StartDisponibiliteBikerImpl) then) =
+      __$$StartDisponibiliteBikerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StartDisponibiliteBikerImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$StartDisponibiliteBikerImpl>
+    implements _$$StartDisponibiliteBikerImplCopyWith<$Res> {
+  __$$StartDisponibiliteBikerImplCopyWithImpl(
+      _$StartDisponibiliteBikerImpl _value,
+      $Res Function(_$StartDisponibiliteBikerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StartDisponibiliteBikerImpl implements StartDisponibiliteBiker {
+  const _$StartDisponibiliteBikerImpl();
+
+  @override
+  String toString() {
+    return 'BikerEvent.startDisponibiliteBiker()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StartDisponibiliteBikerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return startDisponibiliteBiker();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return startDisponibiliteBiker?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (startDisponibiliteBiker != null) {
+      return startDisponibiliteBiker();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return startDisponibiliteBiker(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return startDisponibiliteBiker?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (startDisponibiliteBiker != null) {
+      return startDisponibiliteBiker(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StartDisponibiliteBiker implements BikerEvent {
+  const factory StartDisponibiliteBiker() = _$StartDisponibiliteBikerImpl;
+}
+
+/// @nodoc
+abstract class _$$EndDisponibiliteBikerImplCopyWith<$Res> {
+  factory _$$EndDisponibiliteBikerImplCopyWith(
+          _$EndDisponibiliteBikerImpl value,
+          $Res Function(_$EndDisponibiliteBikerImpl) then) =
+      __$$EndDisponibiliteBikerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EndDisponibiliteBikerImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$EndDisponibiliteBikerImpl>
+    implements _$$EndDisponibiliteBikerImplCopyWith<$Res> {
+  __$$EndDisponibiliteBikerImplCopyWithImpl(_$EndDisponibiliteBikerImpl _value,
+      $Res Function(_$EndDisponibiliteBikerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EndDisponibiliteBikerImpl implements EndDisponibiliteBiker {
+  const _$EndDisponibiliteBikerImpl();
+
+  @override
+  String toString() {
+    return 'BikerEvent.endDisponibiliteBiker()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EndDisponibiliteBikerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return endDisponibiliteBiker();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return endDisponibiliteBiker?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (endDisponibiliteBiker != null) {
+      return endDisponibiliteBiker();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return endDisponibiliteBiker(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return endDisponibiliteBiker?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (endDisponibiliteBiker != null) {
+      return endDisponibiliteBiker(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EndDisponibiliteBiker implements BikerEvent {
+  const factory EndDisponibiliteBiker() = _$EndDisponibiliteBikerImpl;
 }
 
 /// @nodoc
@@ -777,11 +1308,16 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return savePositionForMissionBiker();
   }
@@ -793,11 +1329,16 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return savePositionForMissionBiker?.call();
   }
@@ -809,11 +1350,16 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (savePositionForMissionBiker != null) {
@@ -830,6 +1376,10 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -837,6 +1387,9 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return savePositionForMissionBiker(this);
   }
@@ -849,12 +1402,17 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return savePositionForMissionBiker?.call(this);
   }
@@ -867,12 +1425,17 @@ class _$SavePositionForMissionBikerImpl implements SavePositionForMissionBiker {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (savePositionForMissionBiker != null) {
@@ -929,11 +1492,16 @@ class _$IncrementTimerImpl implements IncrementTimer {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return incrementTimer();
   }
@@ -945,11 +1513,16 @@ class _$IncrementTimerImpl implements IncrementTimer {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return incrementTimer?.call();
   }
@@ -961,11 +1534,16 @@ class _$IncrementTimerImpl implements IncrementTimer {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (incrementTimer != null) {
@@ -982,6 +1560,10 @@ class _$IncrementTimerImpl implements IncrementTimer {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -989,6 +1571,9 @@ class _$IncrementTimerImpl implements IncrementTimer {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return incrementTimer(this);
   }
@@ -1001,12 +1586,17 @@ class _$IncrementTimerImpl implements IncrementTimer {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return incrementTimer?.call(this);
   }
@@ -1019,12 +1609,17 @@ class _$IncrementTimerImpl implements IncrementTimer {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (incrementTimer != null) {
@@ -1110,11 +1705,16 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return setIndexHistoryBiker(index);
   }
@@ -1126,11 +1726,16 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return setIndexHistoryBiker?.call(index);
   }
@@ -1142,11 +1747,16 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (setIndexHistoryBiker != null) {
@@ -1163,6 +1773,10 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -1170,6 +1784,9 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return setIndexHistoryBiker(this);
   }
@@ -1182,12 +1799,17 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return setIndexHistoryBiker?.call(this);
   }
@@ -1200,12 +1822,17 @@ class _$SetIndexHistoryBikerEventImpl implements SetIndexHistoryBikerEvent {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (setIndexHistoryBiker != null) {
@@ -1293,11 +1920,16 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return selectMission(mission);
   }
@@ -1309,11 +1941,16 @@ class _$SelectMissionImpl implements SelectMission {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return selectMission?.call(mission);
   }
@@ -1325,11 +1962,16 @@ class _$SelectMissionImpl implements SelectMission {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (selectMission != null) {
@@ -1346,6 +1988,10 @@ class _$SelectMissionImpl implements SelectMission {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -1353,6 +1999,9 @@ class _$SelectMissionImpl implements SelectMission {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return selectMission(this);
   }
@@ -1365,12 +2014,17 @@ class _$SelectMissionImpl implements SelectMission {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return selectMission?.call(this);
   }
@@ -1383,12 +2037,17 @@ class _$SelectMissionImpl implements SelectMission {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (selectMission != null) {
@@ -1477,11 +2136,16 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     required TResult Function() getListMissionBikerEffectue,
     required TResult Function() startMissionBiker,
     required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
     required TResult Function() savePositionForMissionBiker,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryBiker,
     required TResult Function(Mission mission) selectMission,
     required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
   }) {
     return listSessionMission(mission);
   }
@@ -1493,11 +2157,16 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult? Function()? getListMissionBikerEffectue,
     TResult? Function()? startMissionBiker,
     TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
     TResult? Function()? savePositionForMissionBiker,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryBiker,
     TResult? Function(Mission mission)? selectMission,
     TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
   }) {
     return listSessionMission?.call(mission);
   }
@@ -1509,11 +2178,16 @@ class _$ListSessionMissionImpl implements ListSessionMission {
     TResult Function()? getListMissionBikerEffectue,
     TResult Function()? startMissionBiker,
     TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
     TResult Function()? savePositionForMissionBiker,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryBiker,
     TResult Function(Mission mission)? selectMission,
     TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
     if (listSessionMission != null) {
@@ -1530,6 +2204,10 @@ class _$ListSessionMissionImpl implements ListSessionMission {
         getListMissionBikerEffectue,
     required TResult Function(StartMissionBiker value) startMissionBiker,
     required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
     required TResult Function(SavePositionForMissionBiker value)
         savePositionForMissionBiker,
     required TResult Function(IncrementTimer value) incrementTimer,
@@ -1537,6 +2215,9 @@ class _$ListSessionMissionImpl implements ListSessionMission {
         setIndexHistoryBiker,
     required TResult Function(SelectMission value) selectMission,
     required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
   }) {
     return listSessionMission(this);
   }
@@ -1549,12 +2230,17 @@ class _$ListSessionMissionImpl implements ListSessionMission {
         getListMissionBikerEffectue,
     TResult? Function(StartMissionBiker value)? startMissionBiker,
     TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult? Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult? Function(SelectMission value)? selectMission,
     TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
     return listSessionMission?.call(this);
   }
@@ -1567,12 +2253,17 @@ class _$ListSessionMissionImpl implements ListSessionMission {
         getListMissionBikerEffectue,
     TResult Function(StartMissionBiker value)? startMissionBiker,
     TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
     TResult Function(SavePositionForMissionBiker value)?
         savePositionForMissionBiker,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
     TResult Function(SelectMission value)? selectMission,
     TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
     if (listSessionMission != null) {
@@ -1589,6 +2280,588 @@ abstract class ListSessionMission implements BikerEvent {
   MissionBiker get mission;
   @JsonKey(ignore: true)
   _$$ListSessionMissionImplCopyWith<_$ListSessionMissionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DemandeMissionImplCopyWith<$Res> {
+  factory _$$DemandeMissionImplCopyWith(_$DemandeMissionImpl value,
+          $Res Function(_$DemandeMissionImpl) then) =
+      __$$DemandeMissionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DemandeMissionImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$DemandeMissionImpl>
+    implements _$$DemandeMissionImplCopyWith<$Res> {
+  __$$DemandeMissionImplCopyWithImpl(
+      _$DemandeMissionImpl _value, $Res Function(_$DemandeMissionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DemandeMissionImpl implements DemandeMission {
+  const _$DemandeMissionImpl();
+
+  @override
+  String toString() {
+    return 'BikerEvent.demandeMission()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DemandeMissionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return demandeMission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return demandeMission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (demandeMission != null) {
+      return demandeMission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return demandeMission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return demandeMission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (demandeMission != null) {
+      return demandeMission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DemandeMission implements BikerEvent {
+  const factory DemandeMission() = _$DemandeMissionImpl;
+}
+
+/// @nodoc
+abstract class _$$GetListSecteurBikerImplCopyWith<$Res> {
+  factory _$$GetListSecteurBikerImplCopyWith(_$GetListSecteurBikerImpl value,
+          $Res Function(_$GetListSecteurBikerImpl) then) =
+      __$$GetListSecteurBikerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetListSecteurBikerImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$GetListSecteurBikerImpl>
+    implements _$$GetListSecteurBikerImplCopyWith<$Res> {
+  __$$GetListSecteurBikerImplCopyWithImpl(_$GetListSecteurBikerImpl _value,
+      $Res Function(_$GetListSecteurBikerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetListSecteurBikerImpl implements GetListSecteurBiker {
+  const _$GetListSecteurBikerImpl();
+
+  @override
+  String toString() {
+    return 'BikerEvent.getListSecteurBiker()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetListSecteurBikerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return getListSecteurBiker();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return getListSecteurBiker?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (getListSecteurBiker != null) {
+      return getListSecteurBiker();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return getListSecteurBiker(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return getListSecteurBiker?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (getListSecteurBiker != null) {
+      return getListSecteurBiker(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetListSecteurBiker implements BikerEvent {
+  const factory GetListSecteurBiker() = _$GetListSecteurBikerImpl;
+}
+
+/// @nodoc
+abstract class _$$SelectSecteurImplCopyWith<$Res> {
+  factory _$$SelectSecteurImplCopyWith(
+          _$SelectSecteurImpl value, $Res Function(_$SelectSecteurImpl) then) =
+      __$$SelectSecteurImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Secteur secteur});
+}
+
+/// @nodoc
+class __$$SelectSecteurImplCopyWithImpl<$Res>
+    extends _$BikerEventCopyWithImpl<$Res, _$SelectSecteurImpl>
+    implements _$$SelectSecteurImplCopyWith<$Res> {
+  __$$SelectSecteurImplCopyWithImpl(
+      _$SelectSecteurImpl _value, $Res Function(_$SelectSecteurImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? secteur = null,
+  }) {
+    return _then(_$SelectSecteurImpl(
+      secteur: null == secteur
+          ? _value.secteur
+          : secteur // ignore: cast_nullable_to_non_nullable
+              as Secteur,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectSecteurImpl implements SelectSecteur {
+  const _$SelectSecteurImpl({required this.secteur});
+
+  @override
+  final Secteur secteur;
+
+  @override
+  String toString() {
+    return 'BikerEvent.selectSecteur(secteur: $secteur)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectSecteurImpl &&
+            (identical(other.secteur, secteur) || other.secteur == secteur));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, secteur);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectSecteurImplCopyWith<_$SelectSecteurImpl> get copyWith =>
+      __$$SelectSecteurImplCopyWithImpl<_$SelectSecteurImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListMissionBiker,
+    required TResult Function() getListMissionBikerEffectue,
+    required TResult Function() startMissionBiker,
+    required TResult Function() endMissionBiker,
+    required TResult Function() startDisponibiliteBiker,
+    required TResult Function() endDisponibiliteBiker,
+    required TResult Function() savePositionForMissionBiker,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryBiker,
+    required TResult Function(Mission mission) selectMission,
+    required TResult Function(MissionBiker mission) listSessionMission,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurBiker,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return selectSecteur(secteur);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListMissionBiker,
+    TResult? Function()? getListMissionBikerEffectue,
+    TResult? Function()? startMissionBiker,
+    TResult? Function()? endMissionBiker,
+    TResult? Function()? startDisponibiliteBiker,
+    TResult? Function()? endDisponibiliteBiker,
+    TResult? Function()? savePositionForMissionBiker,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryBiker,
+    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(MissionBiker mission)? listSessionMission,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurBiker,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return selectSecteur?.call(secteur);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListMissionBiker,
+    TResult Function()? getListMissionBikerEffectue,
+    TResult Function()? startMissionBiker,
+    TResult Function()? endMissionBiker,
+    TResult Function()? startDisponibiliteBiker,
+    TResult Function()? endDisponibiliteBiker,
+    TResult Function()? savePositionForMissionBiker,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryBiker,
+    TResult Function(Mission mission)? selectMission,
+    TResult Function(MissionBiker mission)? listSessionMission,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurBiker,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (selectSecteur != null) {
+      return selectSecteur(secteur);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListMissionBiker value) getListMissionBiker,
+    required TResult Function(GetListMissionBikerEffectue value)
+        getListMissionBikerEffectue,
+    required TResult Function(StartMissionBiker value) startMissionBiker,
+    required TResult Function(EndMissionBiker value) endMissionBiker,
+    required TResult Function(StartDisponibiliteBiker value)
+        startDisponibiliteBiker,
+    required TResult Function(EndDisponibiliteBiker value)
+        endDisponibiliteBiker,
+    required TResult Function(SavePositionForMissionBiker value)
+        savePositionForMissionBiker,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryBikerEvent value)
+        setIndexHistoryBiker,
+    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(ListSessionMission value) listSessionMission,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurBiker value) getListSecteurBiker,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return selectSecteur(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult? Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult? Function(StartMissionBiker value)? startMissionBiker,
+    TResult? Function(EndMissionBiker value)? endMissionBiker,
+    TResult? Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult? Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult? Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(ListSessionMission value)? listSessionMission,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return selectSecteur?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListMissionBiker value)? getListMissionBiker,
+    TResult Function(GetListMissionBikerEffectue value)?
+        getListMissionBikerEffectue,
+    TResult Function(StartMissionBiker value)? startMissionBiker,
+    TResult Function(EndMissionBiker value)? endMissionBiker,
+    TResult Function(StartDisponibiliteBiker value)? startDisponibiliteBiker,
+    TResult Function(EndDisponibiliteBiker value)? endDisponibiliteBiker,
+    TResult Function(SavePositionForMissionBiker value)?
+        savePositionForMissionBiker,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryBikerEvent value)? setIndexHistoryBiker,
+    TResult Function(SelectMission value)? selectMission,
+    TResult Function(ListSessionMission value)? listSessionMission,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurBiker value)? getListSecteurBiker,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (selectSecteur != null) {
+      return selectSecteur(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectSecteur implements BikerEvent {
+  const factory SelectSecteur({required final Secteur secteur}) =
+      _$SelectSecteurImpl;
+
+  Secteur get secteur;
+  @JsonKey(ignore: true)
+  _$$SelectSecteurImplCopyWith<_$SelectSecteurImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1611,6 +2884,10 @@ mixin _$BikerState {
   bool? get sendPosition => throw _privateConstructorUsedError;
   int? get load_list_mission_session => throw _privateConstructorUsedError;
   int? get time => throw _privateConstructorUsedError;
+  bool? get updateData => throw _privateConstructorUsedError;
+  List<Secteur>? get list_secteur => throw _privateConstructorUsedError;
+  int? get load_list_secteur => throw _privateConstructorUsedError;
+  Secteur? get secteur => throw _privateConstructorUsedError;
   List<MissionBiker>? get list_mission_encours =>
       throw _privateConstructorUsedError;
 
@@ -1641,6 +2918,10 @@ abstract class $BikerStateCopyWith<$Res> {
       bool? sendPosition,
       int? load_list_mission_session,
       int? time,
+      bool? updateData,
+      List<Secteur>? list_secteur,
+      int? load_list_secteur,
+      Secteur? secteur,
       List<MissionBiker>? list_mission_encours});
 }
 
@@ -1672,6 +2953,10 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
     Object? sendPosition = freezed,
     Object? load_list_mission_session = freezed,
     Object? time = freezed,
+    Object? updateData = freezed,
+    Object? list_secteur = freezed,
+    Object? load_list_secteur = freezed,
+    Object? secteur = freezed,
     Object? list_mission_encours = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1735,6 +3020,22 @@ class _$BikerStateCopyWithImpl<$Res, $Val extends BikerState>
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as int?,
+      updateData: freezed == updateData
+          ? _value.updateData
+          : updateData // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      list_secteur: freezed == list_secteur
+          ? _value.list_secteur
+          : list_secteur // ignore: cast_nullable_to_non_nullable
+              as List<Secteur>?,
+      load_list_secteur: freezed == load_list_secteur
+          ? _value.load_list_secteur
+          : load_list_secteur // ignore: cast_nullable_to_non_nullable
+              as int?,
+      secteur: freezed == secteur
+          ? _value.secteur
+          : secteur // ignore: cast_nullable_to_non_nullable
+              as Secteur?,
       list_mission_encours: freezed == list_mission_encours
           ? _value.list_mission_encours
           : list_mission_encours // ignore: cast_nullable_to_non_nullable
@@ -1767,6 +3068,10 @@ abstract class _$$BikerStateImplCopyWith<$Res>
       bool? sendPosition,
       int? load_list_mission_session,
       int? time,
+      bool? updateData,
+      List<Secteur>? list_secteur,
+      int? load_list_secteur,
+      Secteur? secteur,
       List<MissionBiker>? list_mission_encours});
 }
 
@@ -1796,6 +3101,10 @@ class __$$BikerStateImplCopyWithImpl<$Res>
     Object? sendPosition = freezed,
     Object? load_list_mission_session = freezed,
     Object? time = freezed,
+    Object? updateData = freezed,
+    Object? list_secteur = freezed,
+    Object? load_list_secteur = freezed,
+    Object? secteur = freezed,
     Object? list_mission_encours = freezed,
   }) {
     return _then(_$BikerStateImpl(
@@ -1859,6 +3168,22 @@ class __$$BikerStateImplCopyWithImpl<$Res>
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as int?,
+      updateData: freezed == updateData
+          ? _value.updateData
+          : updateData // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      list_secteur: freezed == list_secteur
+          ? _value._list_secteur
+          : list_secteur // ignore: cast_nullable_to_non_nullable
+              as List<Secteur>?,
+      load_list_secteur: freezed == load_list_secteur
+          ? _value.load_list_secteur
+          : load_list_secteur // ignore: cast_nullable_to_non_nullable
+              as int?,
+      secteur: freezed == secteur
+          ? _value.secteur
+          : secteur // ignore: cast_nullable_to_non_nullable
+              as Secteur?,
       list_mission_encours: freezed == list_mission_encours
           ? _value._list_mission_encours
           : list_mission_encours // ignore: cast_nullable_to_non_nullable
@@ -1886,10 +3211,15 @@ class _$BikerStateImpl implements _BikerState {
       required this.sendPosition,
       required this.load_list_mission_session,
       required this.time,
+      required this.updateData,
+      required final List<Secteur>? list_secteur,
+      required this.load_list_secteur,
+      required this.secteur,
       required final List<MissionBiker>? list_mission_encours})
       : _list_mission = list_mission,
         _list_mission_session = list_mission_session,
         _list_mission_done = list_mission_done,
+        _list_secteur = list_secteur,
         _list_mission_encours = list_mission_encours;
 
   @override
@@ -1948,6 +3278,22 @@ class _$BikerStateImpl implements _BikerState {
   final int? load_list_mission_session;
   @override
   final int? time;
+  @override
+  final bool? updateData;
+  final List<Secteur>? _list_secteur;
+  @override
+  List<Secteur>? get list_secteur {
+    final value = _list_secteur;
+    if (value == null) return null;
+    if (_list_secteur is EqualUnmodifiableListView) return _list_secteur;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? load_list_secteur;
+  @override
+  final Secteur? secteur;
   final List<MissionBiker>? _list_mission_encours;
   @override
   List<MissionBiker>? get list_mission_encours {
@@ -1961,7 +3307,7 @@ class _$BikerStateImpl implements _BikerState {
 
   @override
   String toString() {
-    return 'BikerState(position: $position, mission: $mission, missionSession: $missionSession, missionsession_id: $missionsession_id, list_mission: $list_mission, list_mission_session: $list_mission_session, list_mission_done: $list_mission_done, indexHistory: $indexHistory, isRequest: $isRequest, load_list_mission: $load_list_mission, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, sendPosition: $sendPosition, load_list_mission_session: $load_list_mission_session, time: $time, list_mission_encours: $list_mission_encours)';
+    return 'BikerState(position: $position, mission: $mission, missionSession: $missionSession, missionsession_id: $missionsession_id, list_mission: $list_mission, list_mission_session: $list_mission_session, list_mission_done: $list_mission_done, indexHistory: $indexHistory, isRequest: $isRequest, load_list_mission: $load_list_mission, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, sendPosition: $sendPosition, load_list_mission_session: $load_list_mission_session, time: $time, updateData: $updateData, list_secteur: $list_secteur, load_list_secteur: $load_list_secteur, secteur: $secteur, list_mission_encours: $list_mission_encours)';
   }
 
   @override
@@ -1999,29 +3345,41 @@ class _$BikerStateImpl implements _BikerState {
                     load_list_mission_session) ||
                 other.load_list_mission_session == load_list_mission_session) &&
             (identical(other.time, time) || other.time == time) &&
+            (identical(other.updateData, updateData) ||
+                other.updateData == updateData) &&
+            const DeepCollectionEquality()
+                .equals(other._list_secteur, _list_secteur) &&
+            (identical(other.load_list_secteur, load_list_secteur) ||
+                other.load_list_secteur == load_list_secteur) &&
+            (identical(other.secteur, secteur) || other.secteur == secteur) &&
             const DeepCollectionEquality()
                 .equals(other._list_mission_encours, _list_mission_encours));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      position,
-      mission,
-      missionSession,
-      missionsession_id,
-      const DeepCollectionEquality().hash(_list_mission),
-      const DeepCollectionEquality().hash(_list_mission_session),
-      const DeepCollectionEquality().hash(_list_mission_done),
-      indexHistory,
-      isRequest,
-      load_list_mission,
-      load_list_mission_done,
-      load_list_mission_encours,
-      sendPosition,
-      load_list_mission_session,
-      time,
-      const DeepCollectionEquality().hash(_list_mission_encours));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        position,
+        mission,
+        missionSession,
+        missionsession_id,
+        const DeepCollectionEquality().hash(_list_mission),
+        const DeepCollectionEquality().hash(_list_mission_session),
+        const DeepCollectionEquality().hash(_list_mission_done),
+        indexHistory,
+        isRequest,
+        load_list_mission,
+        load_list_mission_done,
+        load_list_mission_encours,
+        sendPosition,
+        load_list_mission_session,
+        time,
+        updateData,
+        const DeepCollectionEquality().hash(_list_secteur),
+        load_list_secteur,
+        secteur,
+        const DeepCollectionEquality().hash(_list_mission_encours)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2047,6 +3405,10 @@ abstract class _BikerState implements BikerState {
           required final bool? sendPosition,
           required final int? load_list_mission_session,
           required final int? time,
+          required final bool? updateData,
+          required final List<Secteur>? list_secteur,
+          required final int? load_list_secteur,
+          required final Secteur? secteur,
           required final List<MissionBiker>? list_mission_encours}) =
       _$BikerStateImpl;
 
@@ -2080,6 +3442,14 @@ abstract class _BikerState implements BikerState {
   int? get load_list_mission_session;
   @override
   int? get time;
+  @override
+  bool? get updateData;
+  @override
+  List<Secteur>? get list_secteur;
+  @override
+  int? get load_list_secteur;
+  @override
+  Secteur? get secteur;
   @override
   List<MissionBiker>? get list_mission_encours;
   @override

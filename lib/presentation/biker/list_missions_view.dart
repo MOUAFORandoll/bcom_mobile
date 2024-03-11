@@ -25,7 +25,8 @@ class ListMissionsView extends StatelessWidget {
     return BlocConsumer<BikerBloc, BikerState>(
         listener: (context, state) {
           // if (state.load_list_mission_session == 0) {
-          //   loader.open(context);
+          //     EasyLoading.show(
+                    // status: 'En cours', maskType: EasyLoadingMaskType.black);
           // } else if (state.load_list_mission_session == 2) {
           //   AutoRouter.of(context).pop();
           //   showError('Une erreur est survenue, veuillez reeessayer', context);

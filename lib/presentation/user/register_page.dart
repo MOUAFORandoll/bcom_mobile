@@ -6,6 +6,7 @@ import 'package:Bcom/utils/Services/validators.dart';
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:Bcom/core.dart';
 
@@ -36,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return PopScope(
         onPopInvoked: (value) {
-          loader.close();
+          EasyLoading.dismiss();
           AutoRouter.of(context).pop();
         },
         child: Scaffold(
@@ -52,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
             centerTitle: true,
             leading: InkWell(
                 onTap: () {
-                  loader.close();
+                  EasyLoading.dismiss();
                   AutoRouter.of(context).pop();
                 },
                 child: Container(
@@ -70,12 +71,13 @@ class _RegisterPageState extends State<RegisterPage> {
           body: BlocConsumer<UserBloc, UserState>(
             listener: (context, state) {
               if (state.isLoading == 1) {
-                loader.open(context);
+                EasyLoading.show(
+                    status: 'En cours', maskType: EasyLoadingMaskType.black);
               } else if (state.isLoading == 3) {
-                loader.close();
+                EasyLoading.dismiss();
                 showError(state.authenticationFailedMessage!, context);
               } else if (state.isLoading == 2) {
-                loader.close();
+                EasyLoading.dismiss();
                 AutoRouter.of(context).replaceAll([HomeRoute()]);
 
                 showSuccess('Connecte', context);
@@ -231,7 +233,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                           context.read<UserBloc>().add(
                                               RegisterEvent(
                                                   name: name.text,
-                                                  typeCompte :_typeCompte,
+                                                  typeCompte: _typeCompte,
                                                   phone: phone.text,
                                                   password: password.text,
                                                   re_password:

@@ -18,6 +18,7 @@ class ControlBikerComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController note = TextEditingController();
+    TextEditingController badge = TextEditingController();
 
     return InkWell(
         child: BlocBuilder<TcontrollerBloc, TcontrollerState>(
@@ -48,14 +49,14 @@ class ControlBikerComponent extends StatelessWidget {
                               //           color: ColorsApp.primary,
                               //           fontSize: 9)),
                               // ) ,
-                              Container(
-                                child: Text(mission_control.biker.name,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color: ColorsApp.primary,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600)),
-                              ),
+                              // Container(
+                              //   child: Text(mission_control.biker.name,
+                              //       overflow: TextOverflow.ellipsis,
+                              //       style: TextStyle(
+                              //           color: ColorsApp.primary,
+                              //           fontSize: 12,
+                              //           fontWeight: FontWeight.w600)),
+                              // ),
 
                               Container(
                                 child: Text(
@@ -141,11 +142,28 @@ class ControlBikerComponent extends StatelessWidget {
                                     GlobalBottomSheet.show(
                                         context: context,
                                         widget: Container(
-                                            height: getHeight(context) * .4,
+                                            height: getHeight(context) * .7,
                                             padding: EdgeInsets.symmetric(
                                               vertical: kMarginY * 2,
                                             ),
                                             child: Column(children: [
+                                              Text('Numero de badge'),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  vertical: kMarginY * 2,
+                                                ),
+                                                child: AppInput(
+                                                  controller: badge,
+                                                  onChanged: (value) {},
+                                                  textInputType:
+                                                      TextInputType.number,
+                                                  placeholder: 'Badge'.tr(),
+                                                  validator: (value) {
+                                                    return Validators
+                                                        .usNumeriqValid(value!);
+                                                  },
+                                                ),
+                                              ),
                                               Text('Attribuez lui  une note'),
                                               Padding(
                                                 padding: EdgeInsets.symmetric(
@@ -165,7 +183,8 @@ class ControlBikerComponent extends StatelessWidget {
                                               ),
                                               AppButton(
                                                   size: MainAxisSize.max,
-                                                  // loading: _userState.isLoading,
+                                                  loading:
+                                                      state.isRequestNote == 1,
                                                   // bgColor: ColorsApp.primary,
                                                   text: 'Noter'.tr(),
                                                   onTap: () async {
@@ -176,6 +195,8 @@ class ControlBikerComponent extends StatelessWidget {
                                                           .add(NotationControl(
                                                             note: double.parse(
                                                                 note.text),
+                                                            badge: 
+                                                                badge.text,
                                                           ));
                                                     }
                                                   }),

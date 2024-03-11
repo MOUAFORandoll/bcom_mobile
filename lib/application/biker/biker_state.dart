@@ -18,12 +18,20 @@ class BikerState with _$BikerState {
       required bool? sendPosition,
       required int? load_list_mission_session,
       required int? time,
+      required bool? updateData,
+      required List<Secteur>? list_secteur,
+      required int? load_list_secteur,
+      required Secteur? secteur,
       required List<MissionBiker>? list_mission_encours}) = _BikerState;
 
   factory BikerState.initial() => BikerState(
+      list_secteur: [],
+      load_list_secteur: null,
+      secteur: null,
       missionsession_id: null,
       time: 0,
       sendPosition: null,
+      updateData: null,
       load_list_mission: 0,
       missionSession: null,
       load_list_mission_done: 0,

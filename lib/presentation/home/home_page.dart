@@ -31,6 +31,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 var loader = AppLoader.bounceLargeColorLoaderController();
 
 @RoutePage()
@@ -79,227 +81,275 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) => RefreshIndicator(
-            color: ColorsApp.second,
-            onRefresh: () => Future.delayed(Duration(seconds: 5), () {
-                  if (state.user!.typeUser == 4) {
-                    if (state.index == 0) {
-                      BlocProvider.of<BikerBloc>(context)
-                          .add(GetListMissionBiker());
-                    } else {
-                      BlocProvider.of<BikerBloc>(context)
-                          .add(GetListMissionBikerEffectue());
-                    }
-                  }
-                  if (state.user!.typeUser == 3) {
-                    if (state.index == 0) {
-                      BlocProvider.of<TcontrollerBloc>(context)
-                          .add(GetListMissionTcontroller());
-                    } else {
-                      BlocProvider.of<TcontrollerBloc>(context)
-                          .add(GetListMissionTcontrollerDone());
-                    }
-                  }
-                }),
-            child: Scaffold(
-                backgroundColor: ColorsApp.bg,
-                drawer: CustomDrawer(user: state.user),
-                bottomNavigationBar: state.user == null ||
-                        !state.user!.infoComplete
-                    ? null
-                    : state.user!.typeUser == 4 || state.user!.typeUser == 3
-                        ? CustomNavigationBar(
-                            iconSize: 30.0,
-                            // elevation: 0.0,
-                            scaleFactor: 0.4,
-                            selectedColor: Color(0xff0c18fb),
-                            strokeColor: Color(0x300c18fb),
-                            unSelectedColor: Colors.grey[600],
-                            backgroundColor:
-                                /*     state.index == 2 ? ColorsApp.second : */ ColorsApp
-                                    .bg,
-                            // borderRadius: Radius.circular(15.0),
-                            // isFloating: true,
-                            // blurEffect: true,
-                            items: [
-                              CustomNavigationBarItem(
-                                  icon: Container(
-                                    height: getHeight(context) / 1.7,
-                                    width: getWith(context) / 4.2,
-                                    child: SvgPicture.asset(
-                                      Assets.home,
-                                      width: 90,
-                                      height: 90,
-                                      // ignore: deprecated_member_use
-                                      color: state.index == 0
-                                          ? ColorsApp.second
-                                          : ColorsApp.grey,
-                                    ),
-                                  ),
-                                  title: Container(
-                                      padding: EdgeInsets.only(bottom: 3),
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              bottom: state.index == 0
-                                                  ? BorderSide(
-                                                      color: ColorsApp.second,
-                                                      width: 2)
-                                                  : BorderSide.none,
-                                              top: BorderSide.none)),
-                                      child: Text('home'.tr(),
-                                          style: TextStyle(
-                                            fontSize: kMin,
-                                            fontWeight: FontWeight.w600,
-                                            color: state.index == 0
-                                                ? ColorsApp.second
-                                                : ColorsApp.grey,
-                                          )))), // CustomNavigationBarItem(
+    return BlocConsumer<BikerBloc, BikerState>(
+        listener: (context0, state0) {
+          if (state0.updateData == true) {
+            print('---------8888');
+            BlocProvider.of<HomeBloc>(context0).add(UserDataEvent());
+          }
+          if (state0.updateData == false) {}
 
-                              CustomNavigationBarItem(
-                                icon: Container(
-                                  height: getHeight(context) / 1.7,
-                                  width: getWith(context) / 4.2,
-                                  child: SvgPicture.asset(
-                                    Assets.grid1,
-                                    width: 80,
-                                    height: 80,
-                                    // ignore: deprecated_member_use
-                                    color: state.index == 1
-                                        ? ColorsApp.second
-                                        : ColorsApp.grey,
-                                  ),
-                                ),
-                                title: Container(
-                                    padding: EdgeInsets.only(bottom: 3),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            bottom: state.index == 1
-                                                ? BorderSide(
-                                                    color: ColorsApp.second,
-                                                    width: 2)
-                                                : BorderSide.none,
-                                            top: BorderSide.none)),
-                                    child: Text('historique'.tr(),
-                                        style: TextStyle(
-                                          fontSize: kMin,
-                                          fontWeight: FontWeight.w600,
-                                          color: state.index == 1
+          if (state0.isRequest == 0) {
+            EasyLoading.show(
+                status: 'En cours', maskType: EasyLoadingMaskType.black);
+          } else if (state0.isRequest == 2) {
+            EasyLoading.dismiss();
+            showError('Une erreur est survenue', context);
+          } else if (state0.isRequest == 1) {
+            showSuccess('Operation reussi', context);
+            EasyLoading.dismiss();
+          }
+        },
+        builder: (context0, state0) => BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) => RefreshIndicator(
+                color: ColorsApp.second,
+                onRefresh: () => Future.delayed(Duration(seconds: 5), () {
+                      if (state.user!.typeUser == 4) {
+                        if (state.index == 0) {
+                          BlocProvider.of<BikerBloc>(context)
+                            ..add(GetListMissionBiker())
+                            ..add(GetListSecteurBiker());
+                        } else {
+                          BlocProvider.of<BikerBloc>(context)
+                              .add(GetListMissionBikerEffectue());
+                        }
+                      }
+                      if (state.user!.typeUser == 3) {
+                        if (state.index == 0) {
+                          BlocProvider.of<TcontrollerBloc>(context)
+                              .add(GetListMissionTcontroller());
+                        } else {
+                          BlocProvider.of<TcontrollerBloc>(context)
+                              .add(GetListMissionTcontrollerDone());
+                        }
+                      }
+                    }),
+                child: Scaffold(
+                    backgroundColor: ColorsApp.bg,
+                    drawer: CustomDrawer(user: state.user),
+                    bottomNavigationBar: state.user == null ||
+                            !state.user!.infoComplete
+                        ? null
+                        : state.user!.typeUser == 4 || state.user!.typeUser == 3
+                            ? CustomNavigationBar(
+                                iconSize: 30.0,
+                                // elevation: 0.0,
+                                scaleFactor: 0.4,
+                                selectedColor: Color(0xff0c18fb),
+                                strokeColor: Color(0x300c18fb),
+                                unSelectedColor: Colors.grey[600],
+                                backgroundColor:
+                                    /*     state.index == 2 ? ColorsApp.second : */ ColorsApp
+                                        .bg,
+                                // borderRadius: Radius.circular(15.0),
+                                // isFloating: true,
+                                // blurEffect: true,
+                                items: [
+                                  CustomNavigationBarItem(
+                                      icon: Container(
+                                        height: getHeight(context) / 1.7,
+                                        width: getWith(context) / 4.2,
+                                        child: SvgPicture.asset(
+                                          Assets.home,
+                                          width: 90,
+                                          height: 90,
+                                          // ignore: deprecated_member_use
+                                          color: state.index == 0
                                               ? ColorsApp.second
                                               : ColorsApp.grey,
-                                        ))),
-                              ),
-                            ],
-                            currentIndex: state.index,
-                            onTap: (index) {
-                              print(index);
-                              context
-                                  .read<HomeBloc>()
-                                  .add(SetIndexEvent(index: index));
-                            },
-                          )
-                        : null,
-                body: Container(
-                    child: CustomScrollView(slivers: [
-                  SliverAppBar(
-                    automaticallyImplyLeading: false,
-                    leading: Builder(builder: (context) {
-                      return GestureDetector(
-                        child: Container(
-                          width: 10,
-                          height: 10,
-                          child: SvgPicture.asset(Assets.menu,
-                              color: ColorsApp.white, fit: BoxFit.none),
-                        ),
-                        onTap: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                      );
-                    }),
-                    title: Text(
-                      'Bcom',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: ColorsApp.white,
-                          fontFamily: 'Lato',
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    centerTitle: true,
-                    // flexibleSpace: Container(
-                    //   margin:
-                    //       EdgeInsets.symmetric(horizontal: getWith(context) / 2.5,
-                    //       vertical: getHeight(context)/2.5),
-                    //   child: Text(
-                    //     'Bcom',
-                    //     overflow: TextOverflow.ellipsis,
-                    //     style: TextStyle(
-                    //         color: ColorsApp.white,
-                    //         fontFamily: 'Lato',
-                    //         fontSize: 20,
-                    //         fontWeight: FontWeight.w600),
-                    //   ),
-                    // ),
-                    actions: [
-                      InkWell(
-                          child: Container(
-                              margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: SvgIcon(
-                                icon: Assets.bell,
-                                color: ColorsApp.white,
-                              )),
-                          onTap: () => showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) => SafeArea(
-                                    minimum: EdgeInsets.only(top: 30),
-                                    child: Container(
-                                        height: getHeight(context) * .9,
-                                        width: getWith(context),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(30),
-                                            topRight: Radius.circular(30),
-                                          ),
-                                          color: ColorsApp.white,
                                         ),
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: kMarginX),
-                                        child: Column(children: [
-                                          Expanded(
-                                              child: SingleChildScrollView(
-                                                  child: Container(
-                                                      child: Text(
-                                                          'Module en cours de developpement')))),
-                                        ])),
-                                  ))),
-                    ],
-                    bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(getHeight(context) * .10),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: kMarginX,
-                        ).add(EdgeInsets.only(
-                          bottom: kMarginY * 3,
-                          right: kMarginX,
-                        )),
-                        child: KHomeInfo(user: state.user),
+                                      ),
+                                      title: Container(
+                                          padding: EdgeInsets.only(bottom: 3),
+                                          decoration: BoxDecoration(
+                                              border: Border(
+                                                  bottom: state.index == 0
+                                                      ? BorderSide(
+                                                          color:
+                                                              ColorsApp.second,
+                                                          width: 2)
+                                                      : BorderSide.none,
+                                                  top: BorderSide.none)),
+                                          child: Text('home'.tr(),
+                                              style: TextStyle(
+                                                fontSize: kMin,
+                                                fontWeight: FontWeight.w600,
+                                                color: state.index == 0
+                                                    ? ColorsApp.second
+                                                    : ColorsApp.grey,
+                                              )))), // CustomNavigationBarItem(
+
+                                  CustomNavigationBarItem(
+                                    icon: Container(
+                                      height: getHeight(context) / 1.7,
+                                      width: getWith(context) / 4.2,
+                                      child: SvgPicture.asset(
+                                        Assets.grid1,
+                                        width: 80,
+                                        height: 80,
+                                        // ignore: deprecated_member_use
+                                        color: state.index == 1
+                                            ? ColorsApp.second
+                                            : ColorsApp.grey,
+                                      ),
+                                    ),
+                                    title: Container(
+                                        padding: EdgeInsets.only(bottom: 3),
+                                        decoration: BoxDecoration(
+                                            border: Border(
+                                                bottom: state.index == 1
+                                                    ? BorderSide(
+                                                        color: ColorsApp.second,
+                                                        width: 2)
+                                                    : BorderSide.none,
+                                                top: BorderSide.none)),
+                                        child: Text('historique'.tr(),
+                                            style: TextStyle(
+                                              fontSize: kMin,
+                                              fontWeight: FontWeight.w600,
+                                              color: state.index == 1
+                                                  ? ColorsApp.second
+                                                  : ColorsApp.grey,
+                                            ))),
+                                  ),
+                                ],
+                                currentIndex: state.index,
+                                onTap: (index) {
+                                  print(index);
+                                  context
+                                      .read<HomeBloc>()
+                                      .add(SetIndexEvent(index: index));
+                                },
+                              )
+                            : null,
+                    floatingActionButton:
+                        state.user == null || !state.user!.infoComplete
+                            ? null
+                            : state.user!.typeUser == 4
+                                ? state.user!.disponibilite == false
+                                    ? FloatingActionButton(
+                                        backgroundColor: ColorsApp.second,
+                                        child: Icon(
+                                          Icons.play_arrow,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          BlocProvider.of<BikerBloc>(context)
+                                              .add(StartDisponibiliteBiker());
+                                        })
+                                    : FloatingActionButton(
+                                        backgroundColor: Colors.red,
+                                        child: Icon(
+                                          Icons.stop,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          BlocProvider.of<BikerBloc>(context)
+                                              .add(EndDisponibiliteBiker());
+                                        })
+                                : null,
+                    body: Container(
+                        child: CustomScrollView(slivers: [
+                      SliverAppBar(
+                        automaticallyImplyLeading: false,
+                        leading: Builder(builder: (context) {
+                          return GestureDetector(
+                            child: Container(
+                              width: 10,
+                              height: 10,
+                              child: SvgPicture.asset(Assets.menu,
+                                  color: ColorsApp.white, fit: BoxFit.none),
+                            ),
+                            onTap: () {
+                              Scaffold.of(context).openDrawer();
+                            },
+                          );
+                        }),
+                        title: Text(
+                          'Bcom ',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: ColorsApp.white,
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        centerTitle: true,
+                        // flexibleSpace: Container(
+                        //   margin:
+                        //       EdgeInsets.symmetric(horizontal: getWith(context) / 2.5,
+                        //       vertical: getHeight(context)/2.5),
+                        //   child: Text(
+                        //     'Bcom',
+                        //     overflow: TextOverflow.ellipsis,
+                        //     style: TextStyle(
+                        //         color: ColorsApp.white,
+                        //         fontFamily: 'Lato',
+                        //         fontSize: 20,
+                        //         fontWeight: FontWeight.w600),
+                        //   ),
+                        // ),
+                        actions: [
+                          InkWell(
+                              child: Container(
+                                  margin: EdgeInsets.only(right: kMarginX * 2),
+                                  child: SvgIcon(
+                                    icon: Assets.bell,
+                                    color: ColorsApp.white,
+                                  )),
+                              onTap: () => showModalBottomSheet(
+                                  context: context,
+                                  builder: (BuildContext context) => SafeArea(
+                                        minimum: EdgeInsets.only(top: 30),
+                                        child: Container(
+                                            height: getHeight(context) * .9,
+                                            width: getWith(context),
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(30),
+                                                topRight: Radius.circular(30),
+                                              ),
+                                              color: ColorsApp.white,
+                                            ),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: kMarginX),
+                                            child: Column(children: [
+                                              Expanded(
+                                                  child: SingleChildScrollView(
+                                                      child: Container(
+                                                          child: Text(
+                                                              'Module en cours de developpement')))),
+                                            ])),
+                                      ))),
+                        ],
+                        bottom: PreferredSize(
+                          preferredSize:
+                              Size.fromHeight(getHeight(context) * .10),
+                          child: Container(
+                            margin: EdgeInsets.symmetric(
+                              horizontal: kMarginX,
+                            ).add(EdgeInsets.only(
+                              bottom: kMarginY * 3,
+                              right: kMarginX,
+                            )),
+                            child: KHomeInfo(user: state.user),
+                          ),
+                        ),
+                        pinned: true,
+                        expandedHeight: getHeight(context) * .22,
+                        elevation: 10.0,
+                        backgroundColor: ColorsApp.primary, //
                       ),
-                    ),
-                    pinned: true,
-                    expandedHeight: getHeight(context) * .22,
-                    elevation: 10.0,
-                    backgroundColor: ColorsApp.primary, //
-                  ),
-                  SliverToBoxAdapter(
-                      child: SafeArea(
-                          child: state.user!.typeUser == 4
-                              ? state.user!.infoComplete
-                                  ? BikerHomePage()
-                                  : CompleteBikerInfoPage()
-                              : state.user!.typeUser == 3
-                                  ? TcontrollerHomePage()
-                                  : NoAuthorisation()))
-                ])))));
+                      SliverToBoxAdapter(
+                          child: SafeArea(
+                              child: state.user!.typeUser == 4
+                                  ? state.user!.infoComplete
+                                      ? BikerHomePage()
+                                      : CompleteBikerInfoPage()
+                                  : state.user!.typeUser == 3
+                                      ? TcontrollerHomePage()
+                                      : NoAuthorisation()))
+                    ]))))));
   }
 }
 
@@ -312,14 +362,15 @@ class CustomDrawer extends StatelessWidget {
     return BlocConsumer<UserBloc, UserState>(
       listener: (context, state) {
         if (state.isUpdateUserImage == 1) {
-          loader.open(context);
+          EasyLoading.show(
+              status: 'En cours', maskType: EasyLoadingMaskType.black);
         } else if (state.isUpdateUserImage == 3) {
-          loader.close();
+          EasyLoading.dismiss();
           showError(state.authenticationFailedMessage!, context);
         } else if (state.isUpdateUserImage == 2) {
           showSuccess('Profil mis a jour', context);
 
-          loader.close();
+          EasyLoading.dismiss();
           BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
           print('-----44------find noe--446465465*******');
         }
@@ -383,7 +434,7 @@ class CustomDrawer extends StatelessWidget {
                       Container(
                         // margin: EdgeInsets.only(top: kMarginY),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               ViewFunctions().capitalizeFirstLetter(user.nom),
@@ -392,7 +443,7 @@ class CustomDrawer extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600),
                             ),
-                            ThemeButtonWidget()
+                            // ThemeButtonWidget()
                           ],
                         ),
                       ),
@@ -411,15 +462,15 @@ class CustomDrawer extends StatelessWidget {
                         ),
                       ),
                     ]))),
-            ListTile(
-              // leading: Icon(Icons.home),
-              title: AppLangButton(),
-              onTap: () {},
-            ),
+            // ListTile(
+            //   // leading: Icon(Icons.home),
+            //   title: AppLangButton(),
+            //   onTap: () {},
+            // ),
             ListTile(
               leading: Icon(Icons.home),
               title: Text(
-                'Home',
+                'Acceuil',
                 style: TextStyle(color: ColorsApp.primary, fontSize: kBasics),
               ),
               onTap: () {
@@ -430,7 +481,7 @@ class CustomDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text(
-                'Settings',
+                'Parametres',
                 style: TextStyle(color: ColorsApp.primary, fontSize: kBasics),
               ),
               onTap: () {

@@ -116,6 +116,7 @@ class KHomeInfo extends StatelessWidget {
                     color: ColorsApp.white,
                     width: 2,
                   ))),
+                  width: getWith(context) * .35,
                   padding: EdgeInsets.symmetric(vertical: kMarginY / 4),
                   child: Text(
                       'Hey, ' +

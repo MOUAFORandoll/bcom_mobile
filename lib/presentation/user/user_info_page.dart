@@ -3,6 +3,7 @@ import 'package:Bcom/presentation/user/register_page.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:Bcom/core.dart';
 import 'package:Bcom/routes/app_router.gr.dart';
@@ -44,15 +45,16 @@ class _UserInfoPageState extends State<UserInfoPage> {
       body: BlocConsumer<UserBloc, UserState>(
         listener: (context, state) {
           if (state.isLoading == 1) {
-            loader.open(context);
+            EasyLoading.show(
+                status: 'En cours', maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
-            loader.close();
+            EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);
           } else if (state.isLoading == 2) {
             AutoRouter.of(context).replaceAll([HomeRoute()]);
             showSuccess('Connecte', context);
             initLoad(context);
-            loader.close();
+            EasyLoading.dismiss();
             print('-----44--------*********');
           }
         },

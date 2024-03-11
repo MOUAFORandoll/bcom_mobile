@@ -48,14 +48,14 @@ class ControlDoneBikerComponent extends StatelessWidget {
                               //           color: ColorsApp.primary,
                               //           fontSize: 9)),
                               // ) ,
-                              Container(
-                                child: Text(mission_control.biker.name,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color: ColorsApp.primary,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600)),
-                              ),
+                              // Container(
+                              //   child: Text(mission_control.biker.name,
+                              //       overflow: TextOverflow.ellipsis,
+                              //       style: TextStyle(
+                              //           color: ColorsApp.primary,
+                              //           fontSize: 12,
+                              //           fontWeight: FontWeight.w600)),
+                              // ),
 
                               Container(
                                 child: Text(
@@ -169,30 +169,30 @@ class ControlDoneBikerComponent extends StatelessWidget {
                                               },
                                             ),
                                           ),
-                                          AppButton(
-                                              size: MainAxisSize.max,
-                                              // loading: _userState.isLoading,
-                                              // bgColor: ColorsApp.primary,
-                                              text: 'Noter'.tr(),
-                                              onTap: () async {
-                                                if (note.text.isNotEmpty) {
-                                                  context
-                                                      .read<TcontrollerBloc>()
-                                                      .add(SelectMissionControl(
-                                                          mission_control:
-                                                              mission_control));
-                                                  context
-                                                      .read<TcontrollerBloc>()
-                                                      .add(NotationControl(
-                                                          note: double.parse(
-                                                              note.text)));
-                                                  context
-                                                      .read<TcontrollerBloc>()
-                                                      .add(
-                                                        GetListMissionTcontrollerDone(),
-                                                      );
-                                                }
-                                              }),
+                                          // AppButton(
+                                          //     size: MainAxisSize.max,
+                                          //     // loading: _userState.isLoading,
+                                          //     // bgColor: ColorsApp.primary,
+                                          //     text: 'Noter'.tr(),
+                                          //     onTap: () async {
+                                          //       if (note.text.isNotEmpty) {
+                                          //         context
+                                          //             .read<TcontrollerBloc>()
+                                          //             .add(SelectMissionControl(
+                                          //                 mission_control:
+                                          //                     mission_control));
+                                          //         context
+                                          //             .read<TcontrollerBloc>()
+                                          //             .add(NotationControl(
+                                          //                 note: double.parse(
+                                          //                     note.text)));
+                                          //         context
+                                          //             .read<TcontrollerBloc>()
+                                          //             .add(
+                                          //               GetListMissionTcontrollerDone(),
+                                          //             );
+                                          //       }
+                                          //     }),
                                         ])));
                               },
                             ),

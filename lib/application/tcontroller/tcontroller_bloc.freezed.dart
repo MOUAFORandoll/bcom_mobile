@@ -24,7 +24,7 @@ mixin _$TcontrollerEvent {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,7 +34,7 @@ mixin _$TcontrollerEvent {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,7 +44,7 @@ mixin _$TcontrollerEvent {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,7 +153,7 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
     return getListMissionTcontroller();
   }
@@ -166,7 +166,7 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
     return getListMissionTcontroller?.call();
   }
@@ -179,7 +179,7 @@ class _$GetListMissionTcontrollerImpl implements GetListMissionTcontroller {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontroller != null) {
@@ -291,7 +291,7 @@ class _$GetListMissionTcontrollerDoneImpl
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
     return getListMissionTcontrollerDone();
   }
@@ -304,7 +304,7 @@ class _$GetListMissionTcontrollerDoneImpl
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
     return getListMissionTcontrollerDone?.call();
   }
@@ -317,7 +317,7 @@ class _$GetListMissionTcontrollerDoneImpl
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (getListMissionTcontrollerDone != null) {
@@ -425,7 +425,7 @@ class _$StartControlImpl implements StartControl {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
     return startControl();
   }
@@ -438,7 +438,7 @@ class _$StartControlImpl implements StartControl {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
     return startControl?.call();
   }
@@ -451,7 +451,7 @@ class _$StartControlImpl implements StartControl {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (startControl != null) {
@@ -558,7 +558,7 @@ class _$EndControlImpl implements EndControl {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
     return endControl();
   }
@@ -571,7 +571,7 @@ class _$EndControlImpl implements EndControl {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
     return endControl?.call();
   }
@@ -584,7 +584,7 @@ class _$EndControlImpl implements EndControl {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (endControl != null) {
@@ -720,7 +720,7 @@ class _$SelectMissionControlImpl implements SelectMissionControl {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
     return selectMissionControl(mission_control);
   }
@@ -733,7 +733,7 @@ class _$SelectMissionControlImpl implements SelectMissionControl {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
     return selectMissionControl?.call(mission_control);
   }
@@ -746,7 +746,7 @@ class _$SelectMissionControlImpl implements SelectMissionControl {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (selectMissionControl != null) {
@@ -822,7 +822,7 @@ abstract class _$$NotationControlImplCopyWith<$Res> {
           $Res Function(_$NotationControlImpl) then) =
       __$$NotationControlImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({double note});
+  $Res call({double note, String badge});
 }
 
 /// @nodoc
@@ -837,12 +837,17 @@ class __$$NotationControlImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? note = null,
+    Object? badge = null,
   }) {
     return _then(_$NotationControlImpl(
       note: null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as double,
+      badge: null == badge
+          ? _value.badge
+          : badge // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -850,14 +855,16 @@ class __$$NotationControlImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NotationControlImpl implements NotationControl {
-  const _$NotationControlImpl({required this.note});
+  const _$NotationControlImpl({required this.note, required this.badge});
 
   @override
   final double note;
+  @override
+  final String badge;
 
   @override
   String toString() {
-    return 'TcontrollerEvent.notationControl(note: $note)';
+    return 'TcontrollerEvent.notationControl(note: $note, badge: $badge)';
   }
 
   @override
@@ -865,11 +872,12 @@ class _$NotationControlImpl implements NotationControl {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotationControlImpl &&
-            (identical(other.note, note) || other.note == note));
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.badge, badge) || other.badge == badge));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, note);
+  int get hashCode => Object.hash(runtimeType, note, badge);
 
   @JsonKey(ignore: true)
   @override
@@ -887,9 +895,9 @@ class _$NotationControlImpl implements NotationControl {
     required TResult Function() endControl,
     required TResult Function(MissionControl mission_control)
         selectMissionControl,
-    required TResult Function(double note) notationControl,
+    required TResult Function(double note, String badge) notationControl,
   }) {
-    return notationControl(note);
+    return notationControl(note, badge);
   }
 
   @override
@@ -900,9 +908,9 @@ class _$NotationControlImpl implements NotationControl {
     TResult? Function()? startControl,
     TResult? Function()? endControl,
     TResult? Function(MissionControl mission_control)? selectMissionControl,
-    TResult? Function(double note)? notationControl,
+    TResult? Function(double note, String badge)? notationControl,
   }) {
-    return notationControl?.call(note);
+    return notationControl?.call(note, badge);
   }
 
   @override
@@ -913,11 +921,11 @@ class _$NotationControlImpl implements NotationControl {
     TResult Function()? startControl,
     TResult Function()? endControl,
     TResult Function(MissionControl mission_control)? selectMissionControl,
-    TResult Function(double note)? notationControl,
+    TResult Function(double note, String badge)? notationControl,
     required TResult orElse(),
   }) {
     if (notationControl != null) {
-      return notationControl(note);
+      return notationControl(note, badge);
     }
     return orElse();
   }
@@ -973,10 +981,12 @@ class _$NotationControlImpl implements NotationControl {
 }
 
 abstract class NotationControl implements TcontrollerEvent {
-  const factory NotationControl({required final double note}) =
-      _$NotationControlImpl;
+  const factory NotationControl(
+      {required final double note,
+      required final String badge}) = _$NotationControlImpl;
 
   double get note;
+  String get badge;
   @JsonKey(ignore: true)
   _$$NotationControlImplCopyWith<_$NotationControlImpl> get copyWith =>
       throw _privateConstructorUsedError;

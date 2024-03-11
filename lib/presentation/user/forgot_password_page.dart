@@ -3,6 +3,7 @@
 import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:Bcom/core.dart';
 // import 'package:pinput/pinput.dart';
@@ -49,12 +50,13 @@ class ForgotPasswordPage extends StatelessWidget {
       body: BlocConsumer<UserBloc, UserState>(
         listener: (context, state) {
           if (state.isLoadingForgot == 1) {
-            loader.open(context);
+            EasyLoading.show(
+                status: 'En cours', maskType: EasyLoadingMaskType.black);
           } else if (state.isLoadingForgot == 3) {
-            loader.close();
+            EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);
           } else if (state.isLoadingForgot == 2) {
-            loader.close();
+            EasyLoading.dismiss();
             if (state.successReset! == true) {
               AutoRouter.of(context).replaceAll([HomeRoute()]);
               showSuccess('Connecte', context);

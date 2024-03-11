@@ -6,6 +6,7 @@ import '../components/exportcomponent.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
 
@@ -27,7 +28,7 @@ class _MissionSessionPageState extends State<MissionSessionPage> {
               SliverAppBar(
                 leading: InkWell(
                     onTap: () {
-                      loader.close();
+                      EasyLoading.dismiss();
                       AutoRouter.of(context).pop();
                     },
                     child: Container(

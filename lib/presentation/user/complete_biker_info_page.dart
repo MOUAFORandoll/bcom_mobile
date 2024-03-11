@@ -11,7 +11,9 @@ import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
 class CompleteBikerInfoPage extends StatefulWidget {
@@ -49,12 +51,13 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
     return BlocConsumer<UserBloc, UserState>(
         listener: (context, state) {
           if (state.isLoading == 1) {
-            loader.open(context);
+            EasyLoading.show(
+                status: 'En cours', maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
-            loader.close();
+            EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);
           } else if (state.isLoading == 2) {
-            loader.close();
+            EasyLoading.dismiss();
 
             showSuccess('Mise a jour effectuee', context);
             initLoad(context);
@@ -140,7 +143,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                               children: [
                                                 Container(
                                                     child: Text(
-                                                        'Face avant de la CNI')),
+                                                        'Face avant de la CNI / Récépissé')),
                                                 Container(
                                                   // margin: EdgeInsets.symmetric(
                                                   //     horizontal: kMarginX,
@@ -158,15 +161,21 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                     color: Colors.transparent,
                                                   ),
                                                   child: InkWell(
-                                                      onTap: () => bottomSheetChoosePicture(
-                                                          context: context,
-                                                          action: (File file) =>
-                                                              BlocProvider.of<
-                                                                          UserBloc>(
-                                                                      context)
-                                                                  .add(SetCniImageAvant(
-                                                                      image:
-                                                                          file))),
+                                                      onTap: () =>
+                                                          bottomSheetChoosePicture(
+                                                              context: context,
+                                                              action:
+                                                                  (File file) {
+                                                                BlocProvider.of<
+                                                                            UserBloc>(
+                                                                        context)
+                                                                    .add(SetCniImageAvant(
+                                                                        image:
+                                                                            file));
+                                                                AutoRouter.of(
+                                                                        context)
+                                                                    .pop();
+                                                              }),
                                                       child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -176,7 +185,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                                   null
                                                               ? Container(
                                                                   child: Text(
-                                                                      'Charger une photo avant de la CNI'))
+                                                                      'Une photo avant de la CNI / Récépissé'))
                                                               : Container(
                                                                   width: getWith(
                                                                           context) *
@@ -216,7 +225,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                               children: [
                                                 Container(
                                                     child: Text(
-                                                        'Face arriere de la CNI')),
+                                                        'Face arriere de la CNI / Récépissé')),
                                                 Container(
                                                   // margin: EdgeInsets.symmetric(
                                                   //     horizontal: kMarginX,
@@ -234,15 +243,21 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                     color: Colors.transparent,
                                                   ),
                                                   child: InkWell(
-                                                      onTap: () => bottomSheetChoosePicture(
-                                                          context: context,
-                                                          action: (File file) =>
-                                                              BlocProvider.of<
-                                                                          UserBloc>(
-                                                                      context)
-                                                                  .add(SetCniImageArriere(
-                                                                      image:
-                                                                          file))),
+                                                      onTap: () =>
+                                                          bottomSheetChoosePicture(
+                                                              context: context,
+                                                              action:
+                                                                  (File file) {
+                                                                BlocProvider.of<
+                                                                            UserBloc>(
+                                                                        context)
+                                                                    .add(SetCniImageArriere(
+                                                                        image:
+                                                                            file));
+                                                                AutoRouter.of(
+                                                                        context)
+                                                                    .pop();
+                                                              }),
                                                       child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -252,7 +267,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                                   null
                                                               ? Container(
                                                                   child: Text(
-                                                                      'Charger une photo arriere de la CNI'))
+                                                                      'Une photo arriere de la CNI / Récépissé'))
                                                               : Container(
                                                                   width: getWith(
                                                                           context) *
@@ -732,15 +747,20 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                 color: Colors.transparent,
                                               ),
                                               child: InkWell(
-                                                  onTap: () => bottomSheetChoosePicture(
-                                                      context: context,
-                                                      action: (File file) =>
-                                                          BlocProvider.of<
-                                                                      UserBloc>(
-                                                                  context)
-                                                              .add(SetCGImage(
-                                                                  image:
-                                                                      file))),
+                                                  onTap: () =>
+                                                      bottomSheetChoosePicture(
+                                                          context: context,
+                                                          action: (File file) {
+                                                            BlocProvider.of<
+                                                                        UserBloc>(
+                                                                    context)
+                                                                .add(SetCGImage(
+                                                                    image:
+                                                                        file));
+                                                            AutoRouter.of(
+                                                                    context)
+                                                                .pop();
+                                                          }),
                                                   child: Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -753,7 +773,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                                       context) *
                                                                   .7,
                                                               child: Text(
-                                                                  'Charger une photo de votre carte grise'))
+                                                                  'Une photo de votre carte grise'))
                                                           : Container(
                                                               width: getWith(
                                                                       context) *
@@ -780,24 +800,75 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                           ],
                                         ),
                                       ),
-
-                                    // Container(
-                                    //     alignment: Alignment.centerLeft,
-                                    //     child: Column(
-                                    //         mainAxisAlignment:
-                                    //             MainAxisAlignment.start,
-                                    //         crossAxisAlignment:
-                                    //             CrossAxisAlignment.start,
-                                    //         children: [
-                                    //           Container(
-                                    //             child: Text(
-                                    //                 'Numero de carte grise de la moto ?'
-                                    //                     .tr()),
-                                    //           ),
-                                    //           TextForm(
-                                    //             controller: cartegrise,
-                                    //           )
-                                    //         ])),
+                                    Container(
+                                      margin: EdgeInsets.symmetric(
+                                          vertical: kMarginY / 2,
+                                          horizontal: kMarginX),
+                                      child: Column(
+                                        // mainAxisAlignment:
+                                        //     MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                              child: Text('Une photo de vous')),
+                                          BlocBuilder<HomeBloc, HomeState>(
+                                            builder: (context, state) =>
+                                                CircleAvatar(
+                                              radius: 50,
+                                              backgroundColor: Colors.white,
+                                              child: InkWell(
+                                                onTap: () =>
+                                                    BlocProvider.of<UserBloc>(
+                                                            context)
+                                                        .add(UpdateUserImage()),
+                                                child: CachedNetworkImage(
+                                                  height:
+                                                      getHeight(context) / 10,
+                                                  width:
+                                                      getHeight(context) / 10,
+                                                  fit: BoxFit.cover,
+                                                  imageUrl: state.user!.profile,
+                                                  imageBuilder:
+                                                      (context, imageProvider) {
+                                                    return Container(
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: DecorationImage(
+                                                          image: imageProvider,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  placeholder: (context, url) {
+                                                    return Container(
+                                                      decoration: BoxDecoration(
+                                                          color: ColorsApp.grey,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      50)),
+                                                      child: Center(
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                                  color: ColorsApp
+                                                                      .second)),
+                                                    );
+                                                  },
+                                                  errorWidget:
+                                                      (context, url, error) {
+                                                    return CircleAvatar(
+                                                        // backgroundColor: ColorsApp.tird,
+                                                        radius: 150,
+                                                        backgroundImage: AssetImage(
+                                                            'assets/images/user.jpg'));
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -899,8 +970,11 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                   nationalite.text.isEmpty ||
                                   cni.text.isEmpty ||
                                   (handicat == 0 &&
-                                      handicatText.text.isEmpty)) {
-                                showError('Veuillez remplir tous les champs',
+                                      handicatText.text.isEmpty) ||
+                                  (state.cniImageAvant == null ||
+                                      state.cniImageArriere == null)) {
+                                showError(
+                                    'Veuillez remplir tous les champs, y compris les images',
                                     context);
                               } else {
                                 setState(() {
@@ -912,86 +986,98 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                         : Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                                AppButton(
-                                    size: MainAxisSize.max,
-                                    bgColor: ColorsApp.primary,
-                                    text: 'Retour'.tr(),
-                                    onTap: () async {
-                                      setState(() {
-                                        statePage = 0;
-                                      });
-                                      if (formKey.currentState!.validate()) {}
-                                    }),
-                                AppButton(
-                                    size: MainAxisSize.max,
-                                    // bgColor: ColorsApp.primary,
-                                    text: 'Terminer'.tr(),
-                                    onTap: () async {
-                                      if ((motoman == 0 &&
-                                              zoneActivite.text.isEmpty) ||
-                                          (motoman == 1 &&
-                                              activite.text.isEmpty) ||
-                                          (havemoto == 0 &&
-                                              cartegrise.text.isEmpty) ||
-                                          (symdicat == 0 &&
-                                              symdicatText.text.isEmpty) ||
-                                          state.cniImageAvant == null ||
-                                          state.cniImageArriere == null ||
-                                          state.cartegriseImage == null) {
-                                        showError(
-                                            'Veuillez remplir tous les champs',
-                                            context);
-                                      } else {
-                                        print('ok');
-
-                                        final DatabaseCubit database =
-                                            sl.get<DatabaseCubit>();
-                                        var key = await database.getKey();
-                                        print(key);
-                                        FormData formData = FormData.fromMap({
-                                          'age': age.text,
-                                          'gender':
-                                              _genre == 0 ? 'Homme' : 'Femme',
-                                          'cni': cni.text,
-                                          'handicap': handicat == 0,
-                                          'handicap_description':
-                                              handicatText.text,
-                                          'is_biker': motoman == 0,
-                                          'is_biker_yes': zoneActivite.text,
-                                          'is_biker_no': activite.text,
-                                          'is_syndicat': symdicat == 0,
-                                          'is_syndicat_yes': age.text,
-                                          'have_moto': havemoto == 0,
-                                          'num_carte_grise_moto': age.text,
-                                          'bike_work_time': timework,
-                                          'keySecret': key
+                                Container(
+                                  width: getWith(context) * .4,
+                                  child: AppButton(
+                                      size: MainAxisSize.max,
+                                      bgColor: ColorsApp.primary,
+                                      text: 'Retour'.tr(),
+                                      onTap: () async {
+                                        setState(() {
+                                          statePage = 0;
                                         });
-                                        if (state.cniImageAvant != null)
-                                          formData.files.add(MapEntry(
-                                              'cni_avant',
-                                              await MultipartFile.fromFile(
-                                                state.cniImageAvant!.path,
-                                                filename: 'cni_avant.jpg',
-                                              )));
-                                        if (state.cniImageArriere != null)
-                                          formData.files.add(MapEntry(
-                                              'cni_arriere',
-                                              await MultipartFile.fromFile(
-                                                state.cniImageArriere!.path,
-                                                filename: 'cni_arriere.jpg',
-                                              )));
-                                        if (state.cartegriseImage != null)
-                                          formData.files.add(MapEntry(
-                                              'carte_grise',
-                                              await MultipartFile.fromFile(
-                                                state.cartegriseImage!.path,
-                                                filename: 'carte_grise.jpg',
-                                              )));
-                                        print(formData);
-                                        context.read<UserBloc>().add(
-                                            CompleteBikerInfo(data: formData));
-                                      }
-                                    })
+                                        if (formKey.currentState!.validate()) {}
+                                      }),
+                                ),
+                                Container(
+                                  width: getWith(context) * .4,
+                                  child: AppButton(
+                                      size: MainAxisSize.max,
+                                      // bgColor: ColorsApp.primary,
+                                      text: 'Terminer'.tr(),
+                                      onTap: () async {
+                                        if ((motoman == 0 &&
+                                                zoneActivite.text.isEmpty) ||
+                                            (motoman == 1 &&
+                                                activite.text.isEmpty) ||
+                                            (havemoto == 0 &&
+                                                cartegrise.text.isEmpty) ||
+                                            (symdicat == 0 &&
+                                                symdicatText.text.isEmpty) ||
+                                            (state.cniImageAvant == null ||
+                                                state.cniImageArriere ==
+                                                    null /* ||
+                                                state.cartegriseImage ==
+                                                    null */
+                                            )) {
+                                          showError(
+                                              'Veuillez remplir tous les champs',
+                                              context);
+                                        } else {
+                                          print('ok');
+
+                                          final DatabaseCubit database =
+                                              sl.get<DatabaseCubit>();
+                                          var key = await database.getKey();
+                                          print(key);
+                                          FormData formData = FormData.fromMap({
+                                            'age': age.text,
+                                            'gender':
+                                                _genre == 0 ? 'Homme' : 'Femme',
+                                            'cni': cni.text,
+                                            'handicap': handicat == 0,
+                                            'handicap_description':
+                                                handicatText.text,
+                                            'is_biker': motoman == 0,
+                                            'is_biker_yes': zoneActivite.text,
+                                            'is_biker_no': activite.text,
+                                            'is_syndicat': symdicat == 0,
+                                            'is_syndicat_yes': age.text,
+                                            'have_moto': havemoto == 0,
+                                            'num_carte_grise_moto': age.text,
+                                            'bike_work_time': timework,
+                                            'keySecret': key
+                                          });
+                                          if (state.cniImageAvant != null)
+                                            formData.files.add(MapEntry(
+                                                'cni_avant',
+                                                await MultipartFile.fromFile(
+                                                  state.cniImageAvant!.path,
+                                                  filename: 'cni_avant.jpg',
+                                                )));
+                                          if (state.cniImageArriere != null)
+                                            formData.files.add(MapEntry(
+                                                'cni_arriere',
+                                                await MultipartFile.fromFile(
+                                                  state.cniImageArriere!.path,
+                                                  filename: 'cni_arriere.jpg',
+                                                )));
+                                          if (state.cartegriseImage != null)
+                                            formData.files.add(MapEntry(
+                                                'carte_grise',
+                                                await MultipartFile.fromFile(
+                                                  state.cartegriseImage!.path,
+                                                  filename: 'carte_grise.jpg',
+                                                )));
+                                          print(formData);
+                                          context.read<UserBloc>().add(
+                                              CompleteBikerInfo(
+                                                  data: formData));
+                                          BlocProvider.of<HomeBloc>(context)
+                                              .add(UserDataEvent());
+                                        }
+                                      }),
+                                )
                               ]),
                   ],
                 ),

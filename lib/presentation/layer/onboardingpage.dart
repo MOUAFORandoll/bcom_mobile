@@ -36,7 +36,7 @@ class OnBoardingPage extends StatelessWidget {
                   AppCarrousselItem(
                       title: 'ctitle2'.tr(),
                       description: 'cdescription2'.tr(),
-                      image: Assets.onb2,
+                      image: Assets.onb1,
                       index: state.index)
                 ],
                 options: CarouselOptions(
@@ -60,7 +60,7 @@ class OnBoardingPage extends StatelessWidget {
                     scrollDirection: Axis.horizontal),
               ),
               Positioned(
-                  bottom: getHeight(context) / 10,
+                  bottom: getHeight(context) / 8,
                   left: 0,
                   right: 0,
                   child: Container(

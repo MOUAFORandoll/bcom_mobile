@@ -19,6 +19,7 @@ import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart'
 
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -30,7 +31,7 @@ Future<void> main() async {
   co.init();
 
   // NotificationService().initializePlatformNotifications();
-
+  configLoading();
   runApp(
     EasyLocalization(
         supportedLocales: supportedLocales,
@@ -38,6 +39,42 @@ Future<void> main() async {
         fallbackLocale: const Locale('fr', 'FR'),
         child: Phoenix(child: AppContent())),
   );
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.yellow
+    ..backgroundColor = Colors.green
+    ..indicatorColor = Colors.yellow
+    ..textColor = Colors.yellow
+    ..maskColor = Colors.blue.withOpacity(0.5)
+    ..userInteractions = true
+    ..dismissOnTap = false
+    ..customAnimation = CustomAnimation();
+}
+
+class CustomAnimation extends EasyLoadingAnimation {
+  CustomAnimation();
+
+  @override
+  Widget buildWidget(
+    Widget child,
+    AnimationController controller,
+    AlignmentGeometry alignment,
+  ) {
+    return Opacity(
+      opacity: controller.value,
+      child: RotationTransition(
+        turns: controller,
+        child: child,
+      ),
+    );
+  }
 }
 
 var supportedLocales = const [
@@ -51,61 +88,64 @@ class AppContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _appRouter.config(),
-      debugShowCheckedModeBanner: false,
-      title: 'Bcom',
-      darkTheme: darkTheme,
-      themeMode: ThemeMode.light,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      builder: (_, router) {
-        return ResponsiveBreakpoints.builder(
-            breakpoints: const [
-              Breakpoint(start: 0, end: 450, name: MOBILE),
-              Breakpoint(start: 451, end: 800, name: TABLET),
-              Breakpoint(start: 801, end: 1920, name: DESKTOP),
-              Breakpoint(start: 1921, end: double.infinity, name: 'XL'),
-            ],
-            child: MultiBlocProvider(
-              providers: [
-                BlocProvider(create: (_) => sl<ConnectedBloc>()),
-                BlocProvider<AppActionCubit>(
-                  create: (BuildContext context) => AppActionCubit(),
-                ),
-                BlocProvider<DatabaseCubit>(
-                  create: (BuildContext context) => DatabaseCubit(),
-                ),
-                BlocProvider<BikerBloc>(
-                  create: (BuildContext context) => BikerBloc(
-                    bikerRepo: sl.get<BikerRepo>(),
-                    database: sl.get<DatabaseCubit>(),
-                  ),
-                ),
-                BlocProvider<UserBloc>(
-                  create: (BuildContext context) => UserBloc(
-                      userRepo: sl.get<UserRepo>(),
-                      database: sl.get<DatabaseCubit>()),
-                ), BlocProvider<TcontrollerBloc>(
-                  create: (BuildContext context) => TcontrollerBloc(
-                    tcontrollerRepo: sl.get<TcontrollerRepo>(),
-                    database: sl.get<DatabaseCubit>(),
-                  ),
-                ),
-                BlocProvider<SplashBloc>(
-                  create: (BuildContext context) =>
-                      SplashBloc(database: sl.get<DatabaseCubit>()),
-                ),
-                BlocProvider<HomeBloc>(
-                  create: (BuildContext context) =>
-                      HomeBloc(database: sl.get<DatabaseCubit>()),
-                ),
-              ],
-              child: ClampingScrollWrapper.builder(context, router!),
-            ));
-      },
-      theme: lightTheme(context),
-    );
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => sl<ConnectedBloc>()),
+          BlocProvider<AppActionCubit>(
+            create: (BuildContext context) => AppActionCubit(),
+          ),
+          BlocProvider<DatabaseCubit>(
+            create: (BuildContext context) => DatabaseCubit(),
+          ),
+          BlocProvider<BikerBloc>(
+            create: (BuildContext context) => BikerBloc(
+              bikerRepo: sl.get<BikerRepo>(),
+              database: sl.get<DatabaseCubit>(),
+            ),
+          ),
+          BlocProvider<UserBloc>(
+            create: (BuildContext context) => UserBloc(
+                userRepo: sl.get<UserRepo>(),
+                database: sl.get<DatabaseCubit>()),
+          ),
+          BlocProvider<TcontrollerBloc>(
+            create: (BuildContext context) => TcontrollerBloc(
+              tcontrollerRepo: sl.get<TcontrollerRepo>(),
+              database: sl.get<DatabaseCubit>(),
+            ),
+          ),
+          BlocProvider<SplashBloc>(
+            create: (BuildContext context) =>
+                SplashBloc(database: sl.get<DatabaseCubit>()),
+          ),
+          BlocProvider<HomeBloc>(
+            create: (BuildContext context) =>
+                HomeBloc(database: sl.get<DatabaseCubit>()),
+          ),
+        ],
+        child: MaterialApp.router(
+          routerConfig: _appRouter.config(),
+          debugShowCheckedModeBanner: false,
+          title: 'Bcom',
+          darkTheme: darkTheme,
+          themeMode: ThemeMode.light,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          builder: (_, router) {
+            return EasyLoading.init()(
+                context,
+                ResponsiveBreakpoints.builder(
+                  breakpoints: const [
+                    Breakpoint(start: 0, end: 450, name: MOBILE),
+                    Breakpoint(start: 451, end: 800, name: TABLET),
+                    Breakpoint(start: 801, end: 1920, name: DESKTOP),
+                    Breakpoint(start: 1921, end: double.infinity, name: 'XL'),
+                  ],
+                  child: ClampingScrollWrapper.builder(context, router!),
+                ));
+          },
+          theme: lightTheme(context),
+        ));
   }
 }

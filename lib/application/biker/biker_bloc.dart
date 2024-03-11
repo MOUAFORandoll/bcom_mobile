@@ -4,7 +4,9 @@ import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/biker/repositories/biker_repo.dart';
 import 'package:Bcom/application/model/data/MissionBiker.dart';
 import 'package:Bcom/application/model/data/MissionSession.dart';
+import 'package:Bcom/application/model/data/Secteur.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:cron/cron.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +22,8 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
   BikerBloc({required this.bikerRepo, required this.database})
       : super(BikerState.initial()) {
     on<GetListMissionBiker>(_getListMissionBiker);
+
+    on<GetListSecteurBiker>(_getListSecteurBiker);
     on<SelectMission>(_selectMission);
     on<GetListMissionBikerEffectue>(_getListMissionBikerEffectue);
     on<StartMissionBiker>(_startMissionBiker);
@@ -27,12 +31,161 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
     on<SavePositionForMissionBiker>(_savePositionForMissionBiker);
     on<ListSessionMission>(_listSessionMission);
     on<IncrementTimer>(_incrementTimer);
-
+    on<StartDisponibiliteBiker>(_startDisponibiliteBiker);
+    on<EndDisponibiliteBiker>(_endDisponibiliteBiker);
+    on<DemandeMission>(_demandeMission);
+    on<SelectSecteur>(selectSecteur);
     on<SetIndexHistoryBikerEvent>((event, emit) async {
       print('-----------------SetindexHistory');
       emit(state.copyWith(indexHistory: event.index));
     });
   }
+
+  selectSecteur(SelectSecteur event, Emitter<BikerState> emit) async {
+    emit(state.copyWith(
+      secteur: event.secteur,
+    ));
+  }
+
+  _demandeMission(DemandeMission event, Emitter<BikerState> emit) async {
+    var key = await database.getKey();
+
+    emit(state.copyWith(
+      isRequest: 0,
+    ));
+    await bikerRepo.demandeMission(key).then((response) async {
+      print('-------------------------------------------------');
+      print(response.data);
+
+      if (response.statusCode == 200) {
+        print(response.data);
+
+        emit(state.copyWith(
+          isRequest: 1,
+        ));
+        emit(state.copyWith(
+          isRequest: null,
+        ));
+      } else {
+        emit(state.copyWith(isRequest: 2));
+      }
+    }).onError((e, s) async {
+      emit(state.copyWith(isRequest: 2));
+    }).catchError((e) async {
+      // await cron.close();
+
+      emit(state.copyWith(isRequest: 2));
+    });
+  }
+
+  _startDisponibiliteBiker(
+      StartDisponibiliteBiker event, Emitter<BikerState> emit) async {
+    var key = await database.getKey();
+    var position;
+
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {}
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.always ||
+          permission == LocationPermission.unableToDetermine ||
+          permission == LocationPermission.whileInUse) {
+        position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.high,
+        );
+      }
+    }
+    position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    position = await Geolocator.getCurrentPosition();
+    var data = {
+      'missionSession': state.missionsession_id,
+      'long': position.longitude,
+      'lat': position.latitude,
+      'keySecret': key
+    };
+    emit(state.copyWith(
+      isRequest: 0,
+    ));
+    await bikerRepo.startDisponibiliteBiker(data).then((response) async {
+      print('-------------------------------------------------');
+      print(response.data);
+
+      if (response.statusCode == 201) {
+        print(response.data);
+        var _UserSave = User.fromJson(response.data['data']);
+
+        await database.saveUser(_UserSave);
+
+        emit(state.copyWith(
+          updateData: true,
+        ));
+        emit(state.copyWith(
+          updateData: null,
+        ));
+        emit(state.copyWith(
+          isRequest: 1,
+        ));
+        emit(state.copyWith(
+          isRequest: null,
+        ));
+      } else {
+        emit(state.copyWith(isRequest: 2));
+      }
+    }).onError((e, s) async {
+      emit(state.copyWith(isRequest: 2));
+    }).catchError((e) async {
+      // await cron.close();
+
+      emit(state.copyWith(isRequest: 2));
+    });
+  }
+
+  _endDisponibiliteBiker(
+      EndDisponibiliteBiker event, Emitter<BikerState> emit) async {
+    var key = await database.getKey();
+    var data = {'keySecret': key};
+
+    emit(state.copyWith(isRequest: 0));
+
+    await bikerRepo.endDisponibiliteBiker(data).then((response) async {
+      print(response.data);
+
+      if (response.statusCode == 201) {
+        print(response.data);
+        var _UserSave = User.fromJson(response.data['data']);
+
+        await database.saveUser(_UserSave);
+        emit(state.copyWith(
+          updateData: true,
+        ));
+        emit(state.copyWith(
+          updateData: null,
+        ));
+        emit(state.copyWith(
+          isRequest: 1,
+        ));
+        emit(state.copyWith(
+          isRequest: null,
+        ));
+      } else {
+        emit(state.copyWith(isRequest: 2));
+      }
+    }).onError((e, s) async {
+      emit(state.copyWith(isRequest: 2));
+    }).catchError((e) async {
+      // await cron.close();
+
+      emit(state.copyWith(isRequest: 2));
+    });
+  }
+
   _listSessionMission(
       ListSessionMission event, Emitter<BikerState> emit) async {
     var key = await database.getKey();
@@ -46,8 +199,10 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
             list_mission_session: (response.data['data'] as List)
                 .map((e) => MissionSession.fromJson(e))
                 .toList()));
-
-        emit(state.copyWith(missionSession: state.list_mission_session!.last));
+        if (state.list_mission_session!.isNotEmpty) {
+          emit(
+              state.copyWith(missionSession: state.list_mission_session!.last));
+        }
       } else {
         emit(state.copyWith(
           load_list_mission_session: 2,
@@ -69,7 +224,11 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
   late Timer _timer;
   _startMissionBiker(StartMissionBiker event, Emitter<BikerState> emit) async {
     var key = await database.getKey();
-    var data = {'mission_id': state.mission!.id, 'keySecret': key};
+    var data = {
+      'mission_id': state.mission!.id,
+      'secteur_id': state.mission!.id,
+      'keySecret': key
+    };
     emit(state.copyWith(
       isRequest: 0,
       time: 0,
@@ -230,6 +389,30 @@ class BikerBloc extends Bloc<BikerEvent, BikerState> {
     }).onError((e, s) {
       emit(state.copyWith(
         load_list_mission: 2,
+      ));
+    });
+  }
+
+  _getListSecteurBiker(
+      GetListSecteurBiker event, Emitter<BikerState> emit) async {
+    emit(state.copyWith(
+      load_list_secteur: 0,
+    ));
+    await bikerRepo.getlistSecteurBiker().then((response) {
+      if (response.data != null) {
+        emit(state.copyWith(
+            load_list_secteur: 1,
+            list_secteur: (response.data['data'] as List)
+                .map((e) => Secteur.fromJson(e))
+                .toList()));
+      } else {
+        emit(state.copyWith(
+          load_list_secteur: 2,
+        ));
+      }
+    }).onError((e, s) {
+      emit(state.copyWith(
+        load_list_secteur: 2,
       ));
     });
   }

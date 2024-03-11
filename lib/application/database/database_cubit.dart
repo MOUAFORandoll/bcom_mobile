@@ -52,8 +52,11 @@ class DatabaseCubit extends Cubit<DatabaseState> {
 
   Future<bool> saveUser(User user) async {
     try {
+      final userBox = _store.box<User>();
       print('----------------saveeeeeee');
       _store.box<User>().put(user);
+      final users = userBox.getAll();
+      print(users);
       return true;
     } catch (e) {
       print('Error saving user: $e');
