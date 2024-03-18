@@ -51,8 +51,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
     return BlocConsumer<UserBloc, UserState>(
         listener: (context, state) {
           if (state.isLoading == 1) {
-            EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
+            EasyLoading.show(    status: 'En cours', maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);
