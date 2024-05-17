@@ -22,12 +22,14 @@ class _RegisterPageState extends State<RegisterPage> {
   var loader = AppLoader.bounceLargeColorLoaderController();
 
   TextEditingController phone = TextEditingController();
+  TextEditingController nationnalite = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
   TextEditingController password = TextEditingController();
 
-  TextEditingController name = TextEditingController();
+  TextEditingController nom = TextEditingController();
+  TextEditingController prenom = TextEditingController();
 
   TextEditingController re_password = TextEditingController();
 
@@ -122,7 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       top: kMarginY,
                                     ),
                                     child: AppInput(
-                                      controller: name,
+                                      controller: nom,
                                       onChanged: (value) {},
                                       placeholder: 'labelname'.tr(),
                                       validator: (value) {
@@ -132,11 +134,28 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ),
                                   ),
                                   AppInput(
+                                    controller: prenom,
+                                    onChanged: (value) {},
+                                    placeholder: 'labelsurname'.tr(),
+                                    validator: (value) {
+                                      return Validators.isValidUsername(value!);
+                                    },
+                                  ),
+                                  AppInput(
                                     controller: phone,
+                                    textInputType: TextInputType.phone,
                                     onChanged: (value) {},
                                     placeholder: 'labelphone'.tr(),
                                     validator: (value) {
                                       return Validators.usPhoneValid(value!);
+                                    },
+                                  ),
+                                  AppInput(
+                                    controller: nationnalite,
+                                    onChanged: (value) {},
+                                    placeholder: 'Nationalite'.tr(),
+                                    validator: (value) {
+                                      return Validators.isValidUsername(value!);
                                     },
                                   ),
                                   AppInputPassword(
@@ -158,53 +177,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                       return Validators.required(
                                           'Mot de passe', value!);
                                     },
-                                  ),
-                                  Container(
-                                    alignment: Alignment.centerLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Radio(
-                                              value: 4,
-                                              activeColor: ColorsApp.second,
-                                              groupValue: _typeCompte,
-                                              onChanged: (int? value) {
-                                                setState(() {
-                                                  _typeCompte = value!;
-                                                });
-                                                // BlocProvider.of<AlerteBloc>(
-                                                //         context)
-                                                //     .add(FieldChangedAlerte(
-                                                //         'sexeUser', '0'));
-                                              },
-                                            ),
-                                            Text('biker_account'.tr()),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Radio(
-                                              value: 3,
-                                              activeColor: ColorsApp.second,
-                                              groupValue: _typeCompte,
-                                              onChanged: (int? value) {
-                                                setState(() {
-                                                  _typeCompte = value!;
-                                                });
-                                                // BlocProvider.of<AlerteBloc>(
-                                                //         context)
-                                                //     .add(FieldChangedAlerte(
-                                                //         'sexeUser', '1'));
-                                              },
-                                            ),
-                                            Text('ct_account'.tr()),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(bottom: kMarginY),
@@ -232,8 +204,10 @@ class _RegisterPageState extends State<RegisterPage> {
                                         if (formKey.currentState!.validate()) {
                                           context.read<UserBloc>().add(
                                               RegisterEvent(
-                                                  name: name.text,
-                                                  typeCompte: _typeCompte,
+                                                  nom: nom.text,
+                                                  prenom: prenom.text,
+                                                  nationnalite:
+                                                      nationnalite.text,
                                                   phone: phone.text,
                                                   password: password.text,
                                                   re_password:

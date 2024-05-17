@@ -30,7 +30,7 @@ class HomeModuleComponent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-              child: Text(
+                  child: Text(
                     title,
                     maxLines: 4,
                     style: TextStyle(

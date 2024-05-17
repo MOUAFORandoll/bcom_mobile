@@ -1,4 +1,3 @@
- 
 class ViewFunctions {
   String capitalizeFirstLetter(String text) {
     if (text.isEmpty) {

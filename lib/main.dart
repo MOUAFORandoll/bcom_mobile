@@ -1,7 +1,7 @@
 import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
-import 'package:Bcom/application/biker/repositories/biker_repo.dart';
+import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 
@@ -14,9 +14,6 @@ import 'routes/app_router.dart';
 import 'core.dart' as co;
 import 'core.dart';
 import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
-import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
-
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -26,7 +23,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await EnvManager().init(env: Environment.prod);
+  await EnvManager().init(env: Environment.dev_bureau);
 
   co.init();
 
@@ -97,9 +94,9 @@ class AppContent extends StatelessWidget {
           BlocProvider<DatabaseCubit>(
             create: (BuildContext context) => DatabaseCubit(),
           ),
-          BlocProvider<BikerBloc>(
-            create: (BuildContext context) => BikerBloc(
-              bikerRepo: sl.get<BikerRepo>(),
+          BlocProvider<DevisBloc>(
+            create: (BuildContext context) => DevisBloc(
+              devisRepo: sl.get<DevisRepo>(),
               database: sl.get<DatabaseCubit>(),
             ),
           ),
@@ -107,12 +104,6 @@ class AppContent extends StatelessWidget {
             create: (BuildContext context) => UserBloc(
                 userRepo: sl.get<UserRepo>(),
                 database: sl.get<DatabaseCubit>()),
-          ),
-          BlocProvider<TcontrollerBloc>(
-            create: (BuildContext context) => TcontrollerBloc(
-              tcontrollerRepo: sl.get<TcontrollerRepo>(),
-              database: sl.get<DatabaseCubit>(),
-            ),
           ),
           BlocProvider<SplashBloc>(
             create: (BuildContext context) =>

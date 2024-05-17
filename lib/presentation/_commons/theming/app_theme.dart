@@ -1,6 +1,5 @@
 import '../../components/exportcomponent.dart';
 
-
 class TexteStyle {
   final errorStyle = TextStyle(
     fontFamily: 'Lato',
@@ -83,7 +82,6 @@ ThemeData lightTheme(context) => ThemeData(
         titleLarge: TexteStyle().largeTextStyle,
         titleMedium: TexteStyle().secondaryTextStyle,
         titleSmall: TexteStyle().largeTextStyle,
-     
       ),
       useMaterial3: true,
       appBarTheme: AppBarTheme(

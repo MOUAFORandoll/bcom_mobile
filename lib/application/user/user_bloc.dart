@@ -38,10 +38,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<UpdateUserInfo>(_UpdateData);
     on<GetVilleQuartier>(_getVilleQuartier);
     on<UpdateUserImage>(_updateUserProfile);
-    on<CompleteBikerInfo>(_CompleteBikerInfo);
+    on<CompleteDevisInfo>(_CompleteDevisInfo);
     on<SetCniImageAvant>(setCniImageAvant);
     on<SetCniImageArriere>(setCniImageArriere);
     on<SetCGImage>(setCGImage);
+    on<AddInfoEntreprise>(_addInfoEntreprise);
   }
 
   setCniImageArriere(SetCniImageArriere event, Emitter<UserState> emit) async {
@@ -123,12 +124,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }).catchError((error) {});
   }
 
-  _CompleteBikerInfo(CompleteBikerInfo event, Emitter<UserState> emit) async {
+  _CompleteDevisInfo(CompleteDevisInfo event, Emitter<UserState> emit) async {
     print(event.data);
 
     emit(state.copyWith(isLoading: null));
     emit(state.copyWith(isLoading: 1));
-    await userRepo.completeBikerInfo(event.data).then((response) async {
+    await userRepo.completeDevisInfo(event.data).then((response) async {
       if (response.statusCode == 201) {
         if (response.data['data'] != null) {
           emit(state.copyWith(
@@ -247,13 +248,58 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     });
   }
 
+  _addInfoEntreprise(AddInfoEntreprise event, Emitter<UserState> emit) async {
+    var id = await database.getId();
+
+    var data = {
+      'titre': event.titre,
+      'numRegCommerce': event.numRegCommerce,
+      'proprietaire': '/api/user_plateforms/${id}',
+    };
+    print(data);
+    emit(state.copyWith(isLoading: 1));
+    await userRepo.addEntreprise(data).then((response) async {
+      if (response.statusCode == 201) {
+        await userRepo.getUser().then((value) async {
+          if (value != null) {
+            print('------------------value----------${value.data}-');
+            if (value.data['data'] != null) {
+              emit(state.copyWith(
+                  isLoading: 2, authenticationFailedMessage: ''));
+              emit(UserState.authenticated());
+
+              var _UserSave = User.fromJson(value.data['data']);
+
+              await database.saveUser(_UserSave);
+            }
+          }
+        }).catchError((error) {
+          emit(state.copyWith(
+              isLoading: 3,
+              authenticationFailedMessage:
+                  'Une erreur est survenue recommencer'));
+        });
+      } else {
+        emit(state.copyWith(
+            isLoading: 3,
+            authenticationFailedMessage: response.data['message']));
+      }
+    }).onError((error, s) {
+      // print('----${s}-----');
+      // print('------${error}---');
+      emit(state.copyWith(
+          isLoading: 3,
+          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+    });
+  }
+
   _Register(RegisterEvent event, Emitter<UserState> emit) async {
     var data = {
       'phone': int.parse(event.phone),
       'password': event.password,
-      'nom': event.name,
-      'prenom': event.name,
-      'typeCompte': event.typeCompte,
+      'nom': event.nom,
+      'nationnalite': event.nationnalite,
+      'prenom': event.prenom,
     };
     print(data);
     emit(state.copyWith(isLoading: 1));

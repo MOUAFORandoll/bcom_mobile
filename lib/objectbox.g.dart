@@ -200,11 +200,6 @@ final _entities = <ModelEntity>[
             type: 9,
             flags: 0),
         ModelProperty(
-            id: const IdUid(5, 7104273356431650241),
-            name: 'email',
-            type: 9,
-            flags: 0),
-        ModelProperty(
             id: const IdUid(6, 7884356085899434437),
             name: 'profile',
             type: 9,
@@ -227,11 +222,6 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(11, 4088015423610740637),
             name: 'infoComplete',
-            type: 1,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(12, 1288215193080885177),
-            name: 'disponibilite',
             type: 1,
             flags: 0)
       ],
@@ -291,7 +281,11 @@ ModelDefinition getObjectBoxModel() {
       lastSequenceId: const IdUid(0, 0),
       retiredEntityUids: const [],
       retiredIndexUids: const [],
-      retiredPropertyUids: const [754203462009673773],
+      retiredPropertyUids: const [
+        754203462009673773,
+        7104273356431650241,
+        1288215193080885177
+      ],
       retiredRelationUids: const [],
       modelVersion: 5,
       modelVersionParserMinimum: 5,
@@ -511,7 +505,6 @@ ModelDefinition getObjectBoxModel() {
         objectToFB: (User object, fb.Builder fbb) {
           final nomOffset = fbb.writeString(object.nom);
           final prenomOffset = fbb.writeString(object.prenom);
-          final emailOffset = fbb.writeString(object.email);
           final profileOffset = fbb.writeString(object.profile);
           final phoneOffset = fbb.writeString(object.phone);
           final dateCreatedOffset = fbb.writeString(object.dateCreated);
@@ -520,13 +513,11 @@ ModelDefinition getObjectBoxModel() {
           fbb.addInt64(1, object.userId);
           fbb.addOffset(2, nomOffset);
           fbb.addOffset(3, prenomOffset);
-          fbb.addOffset(4, emailOffset);
           fbb.addOffset(5, profileOffset);
           fbb.addOffset(6, phoneOffset);
           fbb.addOffset(7, dateCreatedOffset);
           fbb.addInt64(8, object.typeUser);
           fbb.addBool(10, object.infoComplete);
-          fbb.addBool(11, object.disponibilite);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -541,8 +532,6 @@ ModelDefinition getObjectBoxModel() {
               .vTableGet(buffer, rootOffset, 10, '');
           final typeUserParam =
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 20, 0);
-          final emailParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 12, '');
           final profileParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 14, '');
           final phoneParam = const fb.StringReader(asciiOptimization: true)
@@ -552,19 +541,15 @@ ModelDefinition getObjectBoxModel() {
           final dateCreatedParam =
               const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 18, '');
-          final disponibiliteParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 26, false);
           final object = User(
               userId: userIdParam,
               nom: nomParam,
               prenom: prenomParam,
               typeUser: typeUserParam,
-              email: emailParam,
               profile: profileParam,
               phone: phoneParam,
               infoComplete: infoCompleteParam,
-              dateCreated: dateCreatedParam,
-              disponibilite: disponibiliteParam)
+              dateCreated: dateCreatedParam)
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 
           return object;
@@ -703,30 +688,23 @@ class User_ {
   /// see [User.prenom]
   static final prenom = QueryStringProperty<User>(_entities[6].properties[3]);
 
-  /// see [User.email]
-  static final email = QueryStringProperty<User>(_entities[6].properties[4]);
-
   /// see [User.profile]
-  static final profile = QueryStringProperty<User>(_entities[6].properties[5]);
+  static final profile = QueryStringProperty<User>(_entities[6].properties[4]);
 
   /// see [User.phone]
-  static final phone = QueryStringProperty<User>(_entities[6].properties[6]);
+  static final phone = QueryStringProperty<User>(_entities[6].properties[5]);
 
   /// see [User.dateCreated]
   static final dateCreated =
-      QueryStringProperty<User>(_entities[6].properties[7]);
+      QueryStringProperty<User>(_entities[6].properties[6]);
 
   /// see [User.typeUser]
   static final typeUser =
-      QueryIntegerProperty<User>(_entities[6].properties[8]);
+      QueryIntegerProperty<User>(_entities[6].properties[7]);
 
   /// see [User.infoComplete]
   static final infoComplete =
-      QueryBooleanProperty<User>(_entities[6].properties[9]);
-
-  /// see [User.disponibilite]
-  static final disponibilite =
-      QueryBooleanProperty<User>(_entities[6].properties[10]);
+      QueryBooleanProperty<User>(_entities[6].properties[8]);
 }
 
 /// [YourDataModel] entity fields to define ObjectBox queries.

@@ -1,5 +1,3 @@
- 
-
 class FormatData {
   bool present(args) {
     //print(args.toString());
@@ -14,7 +12,7 @@ class FormatData {
         (args.toString().split('')[0] == '6' ||
             args.toString().split('')[0] == '2'));
   }
-  
+
   String capitalizeFirstLetter(String text) {
     if (text.isEmpty) {
       return text;

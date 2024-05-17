@@ -1,59 +1,39 @@
-// To parse this JSON data, do
-//
-//     final userModel = userModelFromJson(jsonString);
-//545
-import 'dart:convert';
-
-UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
-
-String userModelToJson(UserModel data) => json.encode(data.toJson());
-
 class UserModel {
-  UserModel({
-    required this.id,
-    required this.nom,
-    required this.prenom,
-    this.email = '',
-    required this.phone,
-    this.status = true,
-    required this.profile,
-    required this.dateCreated,
-    required this.infoComplete,
-    required this.typeUser,
-  });
-
-  int id;
   String nom;
   String prenom;
-  var email;
-  String phone;
+  String nationalite;
+  int phone;
   bool status;
-  bool infoComplete;
-  String dateCreated;
-  String profile;
-  int typeUser;
+  String codeParrainage;
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json['id'] ?? json['userId'],
-        nom: json['nom'],
-        prenom: json['prenom'],
-        email: json['email'],
-        phone: json['phone'].toString(),
-        typeUser: json['typeUser'],
-        infoComplete: json['infoComplete'],
-        profile: json['profile'],
-        dateCreated: json['dateCreated'],
-      );
+  UserModel({
+    required this.nom,
+    required this.prenom,
+    required this.nationalite,
+    required this.phone,
+    required this.status,
+    required this.codeParrainage,
+  });
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'nom': nom,
-        'prenom': prenom,
-        'email': email,
-        'phone': phone,
-        'infoComplete': infoComplete,
-        'status': status,
-        'dateCreated': dateCreated,
-        'profile': profile,
-      };
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
+      nom: json['nom'] as String,
+      prenom: json['prenom'] as String,
+      nationalite: json['nationnalite'] as String,
+      phone: json['phone'] as int,
+      status: json['status'] as bool,
+      codeParrainage: json['codeParrainage'] as String,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'nom': nom,
+      'prenom': prenom,
+      'nationnalite': nationalite,
+      'phone': phone,
+      'status': status,
+      'codeParrainage': codeParrainage,
+    };
+  }
 }

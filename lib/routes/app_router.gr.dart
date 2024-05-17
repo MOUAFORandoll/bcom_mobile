@@ -9,13 +9,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i12;
-import 'package:Bcom/presentation/biker/mission_page.dart' as _i5;
-import 'package:Bcom/presentation/home/home_page.dart' as _i4;
+import 'package:Bcom/presentation/devis/command_devis_page.dart' as _i2;
+import 'package:Bcom/presentation/home/home_page.dart' as _i5;
 import 'package:Bcom/presentation/layer/onboardingpage.dart' as _i7;
 import 'package:Bcom/presentation/layer/splashpage.dart' as _i10;
 import 'package:Bcom/presentation/user/auth_page.dart' as _i1;
-import 'package:Bcom/presentation/user/complete_biker_info_page.dart' as _i2;
-import 'package:Bcom/presentation/user/forgot_password_page.dart' as _i3;
+import 'package:Bcom/presentation/user/complete_entreprise_info_page.dart'
+    as _i3;
+import 'package:Bcom/presentation/user/forgot_password_page.dart' as _i4;
 import 'package:Bcom/presentation/user/politique_page.dart' as _i8;
 import 'package:Bcom/presentation/user/register_page.dart' as _i9;
 import 'package:Bcom/presentation/user/user_info_page.dart' as _i11;
@@ -32,28 +33,28 @@ abstract class $AppRouter extends _i12.RootStackRouter {
         child: const _i1.AuthPage(),
       );
     },
-    CompleteBikerInfoRoute.name: (routeData) {
+    CommandDevisRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.CompleteBikerInfoPage(),
+        child: _i2.CommandDevisPage(),
+      );
+    },
+    CompleteEntrepriseInfoRoute.name: (routeData) {
+      return _i12.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i3.CompleteEntrepriseInfoPage(),
       );
     },
     ForgotPasswordRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.ForgotPasswordPage(),
+        child: _i4.ForgotPasswordPage(),
       );
     },
     HomeRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.HomePage(),
-      );
-    },
-    MissionSessionRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i5.MissionSessionPage(),
+        child: const _i5.HomePage(),
       );
     },
     MyTestRoute.name: (routeData) {
@@ -110,21 +111,35 @@ class AuthRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.CompleteBikerInfoPage]
-class CompleteBikerInfoRoute extends _i12.PageRouteInfo<void> {
-  const CompleteBikerInfoRoute({List<_i12.PageRouteInfo>? children})
+/// [_i2.CommandDevisPage]
+class CommandDevisRoute extends _i12.PageRouteInfo<void> {
+  const CommandDevisRoute({List<_i12.PageRouteInfo>? children})
       : super(
-          CompleteBikerInfoRoute.name,
+          CommandDevisRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'CompleteBikerInfoRoute';
+  static const String name = 'CommandDevisRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.ForgotPasswordPage]
+/// [_i3.CompleteEntrepriseInfoPage]
+class CompleteEntrepriseInfoRoute extends _i12.PageRouteInfo<void> {
+  const CompleteEntrepriseInfoRoute({List<_i12.PageRouteInfo>? children})
+      : super(
+          CompleteEntrepriseInfoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CompleteEntrepriseInfoRoute';
+
+  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.ForgotPasswordPage]
 class ForgotPasswordRoute extends _i12.PageRouteInfo<void> {
   const ForgotPasswordRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -138,7 +153,7 @@ class ForgotPasswordRoute extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.HomePage]
+/// [_i5.HomePage]
 class HomeRoute extends _i12.PageRouteInfo<void> {
   const HomeRoute({List<_i12.PageRouteInfo>? children})
       : super(
@@ -147,20 +162,6 @@ class HomeRoute extends _i12.PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
-
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i5.MissionSessionPage]
-class MissionSessionRoute extends _i12.PageRouteInfo<void> {
-  const MissionSessionRoute({List<_i12.PageRouteInfo>? children})
-      : super(
-          MissionSessionRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MissionSessionRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }

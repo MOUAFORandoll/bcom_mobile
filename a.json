@@ -1,0 +1,40 @@
+{
+  "@context": "/api/contexts/Pack",
+  "@id": "/api/packs",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/api/packs/2",
+      "@type": "Pack",
+      "id": 2,
+      "libelle": "Decouverte",
+      "devis": [],
+      "description": "Cillum nulla in fugiat eu id aute. Sit sit anim officia irure Lorem ad enim. Qui ipsum magna reprehenderit quis nisi magna sunt exercitation commodo est adipisicing culpa. Consectetur ullamco reprehenderit dolor veniam commodo ex laboris exercitation excepteur magna et minim et. Est Lorem occaecat fugiat excepteur proident anim ipsum cupidatat commodo irure quis."
+    },
+    {
+      "@id": "/api/packs/3",
+      "@type": "Pack",
+      "id": 3,
+      "libelle": "Preventive",
+      "devis": [],
+      "description": "Cillum nulla in fugiat eu id aute. Sit sit anim officia irure Lorem ad enim. Qui ipsum magna reprehenderit quis nisi magna sunt exercitation commodo est adipisicing culpa. Consectetur ullamco reprehenderit dolor veniam commodo ex laboris exercitation excepteur magna et minim et. Est Lorem occaecat fugiat excepteur proident anim ipsum cupidatat commodo irure quis."
+    },
+    {
+      "@id": "/api/packs/4",
+      "@type": "Pack",
+      "id": 4,
+      "libelle": "Produits",
+      "devis": [],
+      "description": "Cillum nulla in fugiat eu id aute. Sit sit anim officia irure Lorem ad enim. Qui ipsum magna reprehenderit quis nisi magna sunt exercitation commodo est adipisicing culpa. Consectetur ullamco reprehenderit dolor veniam commodo ex laboris exercitation excepteur magna et minim et. Est Lorem occaecat fugiat excepteur proident anim ipsum cupidatat commodo irure quis."
+    },
+    {
+      "@id": "/api/packs/5",
+      "@type": "Pack",
+      "id": 5,
+      "libelle": "Constante ",
+      "devis": [],
+      "description": "Cillum nulla in fugiat eu id aute. Sit sit anim officia irure Lorem ad enim. Qui ipsum magna reprehenderit quis nisi magna sunt exercitation commodo est adipisicing culpa. Consectetur ullamco reprehenderit dolor veniam commodo ex laboris exercitation excepteur magna et minim et. Est Lorem occaecat fugiat excepteur proident anim ipsum cupidatat commodo irure quis."
+    }
+  ],
+  "hydra:totalItems": 4
+}

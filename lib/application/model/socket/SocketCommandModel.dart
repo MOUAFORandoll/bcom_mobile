@@ -1,4 +1,3 @@
- 
 class SocketCommandModel {
   final int id;
   final String pdf;
@@ -31,12 +30,12 @@ class SocketCommandModel {
       );
 
   Map<String, dynamic> toJson() => {
-        'id':  id,
+        'id': id,
         'pdf': pdf,
-        'codeClient':  codeClient,
-        'status':   status,
-        'codeCommande':   codeCommande,
-        'message':   message,
+        'codeClient': codeClient,
+        'status': status,
+        'codeCommande': codeCommande,
+        'message': message,
         'date': date,
       };
 }

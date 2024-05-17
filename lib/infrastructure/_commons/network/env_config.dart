@@ -30,7 +30,7 @@ class EnvManager implements IEnvManager {
   static const Environment defaultEnv = Environment.dev;
   static const emailEnv = 'env@app.com';
   static const envKey = 'ENV_KEY';
-  
+
   init({Environment? env}) async {
     return _setEnvironment(env: env ?? await getEnvironment(), restart: false);
   }
@@ -56,7 +56,7 @@ class EnvManager implements IEnvManager {
       }
     }
   }
-  
+
   Future<void> _setEnvironment(
       {required Environment? env, required bool restart}) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();

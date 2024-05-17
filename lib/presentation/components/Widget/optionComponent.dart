@@ -1,4 +1,3 @@
- 
 import '../exportcomponent.dart';
 
 // ignore: must_be_immutable

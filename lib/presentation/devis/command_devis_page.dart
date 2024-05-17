@@ -16,12 +16,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
-class CompleteBikerInfoPage extends StatefulWidget {
+class CommandDevisPage extends StatefulWidget {
+  static const String routeName = '/cammand_devis';
+
   @override
-  State<CompleteBikerInfoPage> createState() => _CompleteBikerInfoPageState();
+  State<CommandDevisPage> createState() => _CommandDevisPageState();
 }
 
-class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
+class _CommandDevisPageState extends State<CommandDevisPage> {
   var loader = AppLoader.bounceLargeColorLoaderController();
 
   TextEditingController phone = TextEditingController();
@@ -51,7 +53,8 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
     return BlocConsumer<UserBloc, UserState>(
         listener: (context, state) {
           if (state.isLoading == 1) {
-            EasyLoading.show(    status: 'En cours', maskType: EasyLoadingMaskType.black);
+            EasyLoading.show(
+                status: 'En cours', maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);
@@ -63,7 +66,13 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
             print('-----44--------*********');
           }
         },
-        builder: (context, state) => Container(
+        builder: (context, state) => Scaffold(
+            appBar: AppBar(
+              leading: AppBackButton(),
+              title: Text('Commander un devis'),
+              centerTitle: true,
+            ),
+            body: Container(
                 child: Column(children: [
               Container(
                 margin: EdgeInsets.symmetric(horizontal: kMarginX),
@@ -80,7 +89,7 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                       top: kMarginY,
                                     ),
                                     child: Text(
-                                      'Mettons en place quelques details personnels'
+                                      'Renseignez nous les informations de votre devis'
                                           .tr(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -95,22 +104,22 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                           top: kMarginY, bottom: kMarginY),
                                       child: Column(
                                         children: [
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                              top: kMarginY,
-                                            ),
-                                            child: AppInput(
-                                              controller: age,
-                                              onChanged: (value) {},
-                                              textInputType:
-                                                  TextInputType.number,
-                                              placeholder: 'Votre Age'.tr(),
-                                              validator: (value) {
-                                                return Validators
-                                                    .isValidUsername(value!);
-                                              },
-                                            ),
-                                          ),
+                                          // Padding(
+                                          //   padding: EdgeInsets.only(
+                                          //     top: kMarginY,
+                                          //   ),
+                                          //   child: AppInput(
+                                          //     controller: titre,
+                                          //     onChanged: (value) {},
+                                          //     placeholder:
+                                          //         'Le nom de votre entreprise'
+                                          //             .tr(),
+                                          //     validator: (value) {
+                                          //       return Validators
+                                          //           .isValidUsername(value!);
+                                          //     },
+                                          //   ),
+                                          // ),
                                           AppInput(
                                             controller: nationalite,
                                             onChanged: (value) {},
@@ -1037,9 +1046,9 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                             'handicap': handicat == 0,
                                             'handicap_description':
                                                 handicatText.text,
-                                            'is_biker': motoman == 0,
-                                            'is_biker_yes': zoneActivite.text,
-                                            'is_biker_no': activite.text,
+                                            'is_User': motoman == 0,
+                                            'is_User_yes': zoneActivite.text,
+                                            'is_User_no': activite.text,
                                             'is_syndicat': symdicat == 0,
                                             'is_syndicat_yes': age.text,
                                             'have_moto': havemoto == 0,
@@ -1069,11 +1078,11 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                                                   filename: 'carte_grise.jpg',
                                                 )));
                                           print(formData);
-                                          context.read<UserBloc>().add(
-                                              CompleteBikerInfo(
-                                                  data: formData));
-                                          BlocProvider.of<HomeBloc>(context)
-                                              .add(UserDataEvent());
+                                          // context.read<UserBloc>().add(
+                                          //     CompleteUserInfo(
+                                          //         data: formData));
+                                          // BlocProvider.of<HomeBloc>(context)
+                                          //     .add(UserDataEvent());
                                         }
                                       }),
                                 )
@@ -1081,6 +1090,6 @@ class _CompleteBikerInfoPageState extends State<CompleteBikerInfoPage> {
                   ],
                 ),
               )
-            ])));
+            ]))));
   }
 }

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'bounce_loader.dart';
@@ -124,12 +123,10 @@ class LoaderDialogController {
 
   LoaderDialogController({required this.loader});
 
-
   void open(BuildContext context) {
     _streamController = StreamController<String>();
     _LoaderDialog(loader: loader, controller: _streamController).open(context);
   }
-
 
   StreamController<String> close() {
     if (_streamController.isClosed) {

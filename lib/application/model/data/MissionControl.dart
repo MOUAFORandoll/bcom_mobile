@@ -5,7 +5,7 @@ class MissionControl {
   final Mission mission;
   final Controller controller;
   final String dateCreated;
-  final Map<String, dynamic>? bikerPosition;
+  final Map<String, dynamic>? devisPosition;
   final String? dateEnd;
   final String? dateStart;
 
@@ -16,7 +16,7 @@ class MissionControl {
     required this.mission,
     required this.controller,
     required this.dateCreated,
-    this.bikerPosition,
+    this.devisPosition,
     this.dateEnd,
     this.dateStart,
   });
@@ -28,7 +28,7 @@ class MissionControl {
         mission: Mission.fromJson(json['mission']),
         controller: Controller.fromJson(json['controller']),
         dateCreated: json['date_created'],
-        bikerPosition: json['biker_position'],
+        devisPosition: json['devis_position'],
         dateEnd: json['date_end'],
         dateStart: json['date_start'],
       );

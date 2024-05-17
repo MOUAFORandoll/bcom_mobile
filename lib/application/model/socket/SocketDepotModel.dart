@@ -1,4 +1,3 @@
- 
 class SocketDepotModel {
   final String message;
   final bool status;
@@ -15,7 +14,7 @@ class SocketDepotModel {
       );
 
   Map<String, dynamic> toJson() => {
-        'status':   status,
-        'message':  message,
+        'status': status,
+        'message': message,
       };
 }

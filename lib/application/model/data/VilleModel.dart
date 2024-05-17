@@ -1,4 +1,3 @@
- 
 class VilleModel {
   VilleModel({
     required this.id,
@@ -14,7 +13,7 @@ class VilleModel {
       );
 
   Map<String, dynamic> toJson() => {
-        'id':  id,
-        'libelle':   libelle,
+        'id': id,
+        'libelle': libelle,
       };
 }

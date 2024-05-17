@@ -1,8 +1,6 @@
-import 'package:Bcom/presentation/biker/biker_home_page.dart';
-import 'package:Bcom/presentation/components/Button/themeButton.dart';
-import 'package:Bcom/presentation/layer/no_authorisation_page.dart';
-import 'package:Bcom/presentation/tcontroller/tcontroller_home_page.dart';
-import 'package:Bcom/presentation/user/complete_biker_info_page.dart';
+import 'package:Bcom/presentation/devis/devis_home_page.dart';
+import 'package:Bcom/presentation/user/complete_entreprise_info_page.dart';
+
 import 'package:Bcom/routes/app_router.gr.dart';
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -12,24 +10,12 @@ import '../../presentation/components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'dart:async';
 
-import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
-import 'package:Bcom/presentation/components/Widget/missionsComponent.dart';
-import 'package:Bcom/routes/app_router.gr.dart';
-import 'package:Bcom/utils/constants/assets.dart';
-import 'package:cron/cron.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
-import 'package:Bcom/presentation/biker/first_biker_view.dart';
-import 'package:Bcom/presentation/biker/list_missions_view.dart';
-import 'package:Bcom/utils/constants/assets.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../components/exportcomponent.dart';
-import 'package:Bcom/application/export_bloc.dart';
 
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -81,7 +67,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<BikerBloc, BikerState>(
+    return BlocConsumer<DevisBloc, DevisState>(
         listener: (context0, state0) {
           if (state0.updateData == true) {
             print('---------8888');
@@ -101,255 +87,118 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
           }
         },
         builder: (context0, state0) => BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) => RefreshIndicator(
-                color: ColorsApp.second,
-                onRefresh: () => Future.delayed(Duration(seconds: 5), () {
-                      if (state.user!.typeUser == 4) {
-                        if (state.index == 0) {
-                          BlocProvider.of<BikerBloc>(context)
-                            ..add(GetListMissionBiker())
-                            ..add(GetListSecteurBiker());
-                        } else {
-                          BlocProvider.of<BikerBloc>(context)
-                              .add(GetListMissionBikerEffectue());
-                        }
-                      }
-                      if (state.user!.typeUser == 3) {
-                        if (state.index == 0) {
-                          BlocProvider.of<TcontrollerBloc>(context)
-                              .add(GetListMissionTcontroller());
-                        } else {
-                          BlocProvider.of<TcontrollerBloc>(context)
-                              .add(GetListMissionTcontrollerDone());
-                        }
-                      }
+            builder: (context, state) => Scaffold(
+                backgroundColor: ColorsApp.bg,
+                drawer: CustomDrawer(user: state.user),
+                // floatingActionButton:
+                //     state.user == null || !state.user!.infoComplete
+                //         ? null
+                //         : state.user!.typeUser == 4
+                //             ? state.user!.disponibilite == false
+                //                 ? FloatingActionButton(
+                //                     backgroundColor: ColorsApp.second,
+                //                     child: Icon(
+                //                       Icons.play_arrow,
+                //                       color: Colors.white,
+                //                     ),
+                //                     onPressed: () {
+                //                       BlocProvider.of<DevisBloc>(context)
+                //                           .add(StartDisponibiliteDevis());
+                //                     })
+                //                 : FloatingActionButton(
+                //                     backgroundColor: Colors.red,
+                //                     child: Icon(
+                //                       Icons.stop,
+                //                       color: Colors.white,
+                //                     ),
+                //                     onPressed: () {
+                //                       BlocProvider.of<DevisBloc>(context)
+                //                           .add(EndDisponibiliteDevis());
+                //                     })
+                //             : null,
+                body: Container(
+                    child: CustomScrollView(slivers: [
+                  SliverAppBar(
+                    automaticallyImplyLeading: false,
+                    leading: Builder(builder: (context) {
+                      return GestureDetector(
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          child: SvgPicture.asset(Assets.menu,
+                              color: ColorsApp.white, fit: BoxFit.none),
+                        ),
+                        onTap: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                      );
                     }),
-                child: Scaffold(
-                    backgroundColor: ColorsApp.bg,
-                    drawer: CustomDrawer(user: state.user),
-                    bottomNavigationBar: state.user == null ||
-                            !state.user!.infoComplete
-                        ? null
-                        : state.user!.typeUser == 4 || state.user!.typeUser == 3
-                            ? CustomNavigationBar(
-                                iconSize: 30.0,
-                                // elevation: 0.0,
-                                scaleFactor: 0.4,
-                                selectedColor: Color(0xff0c18fb),
-                                strokeColor: Color(0x300c18fb),
-                                unSelectedColor: Colors.grey[600],
-                                backgroundColor:
-                                    /*     state.index == 2 ? ColorsApp.second : */ ColorsApp
-                                        .bg,
-                                // borderRadius: Radius.circular(15.0),
-                                // isFloating: true,
-                                // blurEffect: true,
-                                items: [
-                                  CustomNavigationBarItem(
-                                      icon: Container(
-                                        height: getHeight(context) / 1.7,
-                                        width: getWith(context) / 4.2,
-                                        child: SvgPicture.asset(
-                                          Assets.home,
-                                          width: 90,
-                                          height: 90,
-                                          // ignore: deprecated_member_use
-                                          color: state.index == 0
-                                              ? ColorsApp.second
-                                              : ColorsApp.grey,
-                                        ),
-                                      ),
-                                      title: Container(
-                                          padding: EdgeInsets.only(bottom: 3),
-                                          decoration: BoxDecoration(
-                                              border: Border(
-                                                  bottom: state.index == 0
-                                                      ? BorderSide(
-                                                          color:
-                                                              ColorsApp.second,
-                                                          width: 2)
-                                                      : BorderSide.none,
-                                                  top: BorderSide.none)),
-                                          child: Text('home'.tr(),
-                                              style: TextStyle(
-                                                fontSize: kMin,
-                                                fontWeight: FontWeight.w600,
-                                                color: state.index == 0
-                                                    ? ColorsApp.second
-                                                    : ColorsApp.grey,
-                                              )))), // CustomNavigationBarItem(
+                    title: Text(
+                      'Bcom Assist ',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          color: ColorsApp.white,
+                          fontFamily: 'Lato',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    centerTitle: true,
 
-                                  CustomNavigationBarItem(
-                                    icon: Container(
-                                      height: getHeight(context) / 1.7,
-                                      width: getWith(context) / 4.2,
-                                      child: SvgPicture.asset(
-                                        Assets.grid1,
-                                        width: 80,
-                                        height: 80,
-                                        // ignore: deprecated_member_use
-                                        color: state.index == 1
-                                            ? ColorsApp.second
-                                            : ColorsApp.grey,
-                                      ),
-                                    ),
-                                    title: Container(
-                                        padding: EdgeInsets.only(bottom: 3),
-                                        decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: state.index == 1
-                                                    ? BorderSide(
-                                                        color: ColorsApp.second,
-                                                        width: 2)
-                                                    : BorderSide.none,
-                                                top: BorderSide.none)),
-                                        child: Text('historique'.tr(),
-                                            style: TextStyle(
-                                              fontSize: kMin,
-                                              fontWeight: FontWeight.w600,
-                                              color: state.index == 1
-                                                  ? ColorsApp.second
-                                                  : ColorsApp.grey,
-                                            ))),
-                                  ),
-                                ],
-                                currentIndex: state.index,
-                                onTap: (index) {
-                                  print(index);
-                                  context
-                                      .read<HomeBloc>()
-                                      .add(SetIndexEvent(index: index));
-                                },
-                              )
-                            : null,
-                    floatingActionButton:
-                        state.user == null || !state.user!.infoComplete
-                            ? null
-                            : state.user!.typeUser == 4
-                                ? state.user!.disponibilite == false
-                                    ? FloatingActionButton(
-                                        backgroundColor: ColorsApp.second,
-                                        child: Icon(
-                                          Icons.play_arrow,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {
-                                          BlocProvider.of<BikerBloc>(context)
-                                              .add(StartDisponibiliteBiker());
-                                        })
-                                    : FloatingActionButton(
-                                        backgroundColor: Colors.red,
-                                        child: Icon(
-                                          Icons.stop,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {
-                                          BlocProvider.of<BikerBloc>(context)
-                                              .add(EndDisponibiliteBiker());
-                                        })
-                                : null,
-                    body: Container(
-                        child: CustomScrollView(slivers: [
-                      SliverAppBar(
-                        automaticallyImplyLeading: false,
-                        leading: Builder(builder: (context) {
-                          return GestureDetector(
-                            child: Container(
-                              width: 10,
-                              height: 10,
-                              child: SvgPicture.asset(Assets.menu,
-                                  color: ColorsApp.white, fit: BoxFit.none),
-                            ),
-                            onTap: () {
-                              Scaffold.of(context).openDrawer();
-                            },
-                          );
-                        }),
-                        title: Text(
-                          'Bcom ',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: ColorsApp.white,
-                              fontFamily: 'Lato',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        centerTitle: true,
-                        // flexibleSpace: Container(
-                        //   margin:
-                        //       EdgeInsets.symmetric(horizontal: getWith(context) / 2.5,
-                        //       vertical: getHeight(context)/2.5),
-                        //   child: Text(
-                        //     'Bcom',
-                        //     overflow: TextOverflow.ellipsis,
-                        //     style: TextStyle(
-                        //         color: ColorsApp.white,
-                        //         fontFamily: 'Lato',
-                        //         fontSize: 20,
-                        //         fontWeight: FontWeight.w600),
-                        //   ),
-                        // ),
-                        actions: [
-                          InkWell(
-                              child: Container(
-                                  margin: EdgeInsets.only(right: kMarginX * 2),
-                                  child: SvgIcon(
-                                    icon: Assets.bell,
-                                    color: ColorsApp.white,
-                                  )),
-                              onTap: () => showModalBottomSheet(
-                                  context: context,
-                                  builder: (BuildContext context) => SafeArea(
-                                        minimum: EdgeInsets.only(top: 30),
-                                        child: Container(
-                                            height: getHeight(context) * .9,
-                                            width: getWith(context),
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(30),
-                                                topRight: Radius.circular(30),
-                                              ),
-                                              color: ColorsApp.white,
-                                            ),
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: kMarginX),
-                                            child: Column(children: [
-                                              Expanded(
-                                                  child: SingleChildScrollView(
-                                                      child: Container(
-                                                          child: Text(
-                                                              'Module en cours de developpement')))),
-                                            ])),
-                                      ))),
-                        ],
-                        bottom: PreferredSize(
-                          preferredSize:
-                              Size.fromHeight(getHeight(context) * .10),
+                    actions: [
+                      InkWell(
                           child: Container(
-                            margin: EdgeInsets.symmetric(
-                              horizontal: kMarginX,
-                            ).add(EdgeInsets.only(
-                              bottom: kMarginY * 3,
-                              right: kMarginX,
-                            )),
-                            child: KHomeInfo(user: state.user),
-                          ),
-                        ),
-                        pinned: true,
-                        expandedHeight: getHeight(context) * .22,
-                        elevation: 10.0,
-                        backgroundColor: ColorsApp.primary, //
+                              margin: EdgeInsets.only(right: kMarginX * 2),
+                              child: SvgIcon(
+                                icon: Assets.bell,
+                                color: ColorsApp.white,
+                              )),
+                          onTap: () => showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) => SafeArea(
+                                    minimum: EdgeInsets.only(top: 30),
+                                    child: Container(
+                                        height: getHeight(context) * .9,
+                                        width: getWith(context),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(30),
+                                            topRight: Radius.circular(30),
+                                          ),
+                                          color: ColorsApp.white,
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: kMarginX),
+                                        child: Column(children: [
+                                          Expanded(
+                                              child: SingleChildScrollView(
+                                                  child: Container(
+                                                      child: Text(
+                                                          'Module en cours de developpement')))),
+                                        ])),
+                                  ))),
+                    ],
+                    bottom: PreferredSize(
+                      preferredSize: Size.fromHeight(getHeight(context) * .10),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: kMarginX,
+                        ).add(EdgeInsets.only(
+                          bottom: kMarginY * 3,
+                          right: kMarginX,
+                        )),
+                        child: KHomeInfo(user: state.user),
                       ),
-                      SliverToBoxAdapter(
-                          child: SafeArea(
-                              child: state.user!.typeUser == 4
-                                  ? state.user!.infoComplete
-                                      ? BikerHomePage()
-                                      : CompleteBikerInfoPage()
-                                  : state.user!.typeUser == 3
-                                      ? TcontrollerHomePage()
-                                      : NoAuthorisation()))
-                    ]))))));
+                    ),
+                    pinned: true,
+                    expandedHeight: getHeight(context) * .22,
+                    elevation: 10.0,
+                    backgroundColor: ColorsApp.primary, //
+                  ),
+                  SliverToBoxAdapter(
+                      child: state.user!.infoComplete
+                          ? PresentationPage()
+                          : CompleteEntrepriseInfoPage())
+                ])))));
   }
 }
 
