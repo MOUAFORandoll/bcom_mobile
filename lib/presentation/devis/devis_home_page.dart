@@ -99,10 +99,9 @@ class _PresentationPageState extends State<PresentationPage>
                                         vertical: 10.0, horizontal: 4.0),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(30),
-                                        color: state.index == entry.key
-                                            ? Colors.white
-                                            : ColorsApp.second
-                                                .withOpacity(0.2)),
+                                        color: state.index != entry.key
+                                            ? Colors.grey.withOpacity(0.2)
+                                            : ColorsApp.second),
                                   ));
                             }).toList(),
                           ),
