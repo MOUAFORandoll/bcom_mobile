@@ -1,6 +1,6 @@
 import 'dart:async';
-
-import 'package:Bcom/main.dart';
+ 
+import 'package:Bcom/main_prod.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:rxdart/subjects.dart';
 
