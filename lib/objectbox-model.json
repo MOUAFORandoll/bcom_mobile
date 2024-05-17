@@ -184,11 +184,6 @@
           "type": 9
         },
         {
-          "id": "5:7104273356431650241",
-          "name": "email",
-          "type": 9
-        },
-        {
           "id": "6:7884356085899434437",
           "name": "profile",
           "type": 9
@@ -211,11 +206,6 @@
         {
           "id": "11:4088015423610740637",
           "name": "infoComplete",
-          "type": 1
-        },
-        {
-          "id": "12:1288215193080885177",
-          "name": "disponibilite",
           "type": 1
         }
       ],
@@ -250,7 +240,9 @@
   "retiredEntityUids": [],
   "retiredIndexUids": [],
   "retiredPropertyUids": [
-    754203462009673773
+    754203462009673773,
+    7104273356431650241,
+    1288215193080885177
   ],
   "retiredRelationUids": [],
   "version": 1

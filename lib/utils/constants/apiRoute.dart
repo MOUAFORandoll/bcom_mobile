@@ -1,5 +1,5 @@
 class ApiRoutes {
-  static const Biker = '/biker';
+  static const Pack = '/api/packs';
   static const Tcontroller = '/cterrain';
 
   static const CATEGORY = '/category';
@@ -8,6 +8,7 @@ class ApiRoutes {
   static const LIVREUR = '/livreur/read/ville';
   static const LIVRAISON_POINT = '/point_localisations';
 
+  static const Entreprise = '/api/entreprises';
   static const LOGIN = '/auth/user';
 
   static const SEND_CODE = '/auth/send-code';
@@ -16,7 +17,7 @@ class ApiRoutes {
   static const SIGNUP = '/auth/create-user';
 
   static const UPDATE_USER = '/auth/user-update';
-  static const InfoBiker = '/info-biker';
+  static const InfoDevis = '/info-devis';
 
   static const Refresh = '/api/token/refresh';
   static const SEARCH = '/search';

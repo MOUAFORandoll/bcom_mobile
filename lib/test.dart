@@ -1,5 +1,4 @@
 import 'package:Bcom/presentation/components/exportcomponent.dart';
- 
 
 @RoutePage()
 class MyTestPage extends StatefulWidget {
@@ -11,7 +10,7 @@ class MyTestPage extends StatefulWidget {
   @override
   State<MyTestPage> createState() => _MyTestPageState();
 }
- 
+
 class _MyTestPageState extends State<MyTestPage> {
   @override
   Widget build(BuildContext context) {
@@ -37,8 +36,7 @@ class _MyTestPageState extends State<MyTestPage> {
                     size: MainAxisSize.max,
                     // border: Border.all(color: ColorsApp.primary),
                     text: 'Telecharger facture',
-                    onTap: () async {
-                      },
+                    onTap: () async {},
                   ),
                 ),
                 Column(

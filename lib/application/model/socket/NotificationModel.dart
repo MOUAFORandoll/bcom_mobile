@@ -1,12 +1,11 @@
- 
 class NotificationModel {
   final int id;
   bool read;
-  final String ? title;
-  final String ? description;
-  final String ? date;
-  final String ? profile;
-  final int ? type_notification;
+  final String? title;
+  final String? description;
+  final String? date;
+  final String? profile;
+  final int? type_notification;
   int short;
 
   NotificationModel({

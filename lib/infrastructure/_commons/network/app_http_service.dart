@@ -19,6 +19,7 @@ class AppHttpService {
           ..options.followRedirects = false
           ..options.connectTimeout = const Duration(minutes: 5)
           ..options.receiveTimeout = const Duration(minutes: 5)
+          // ..options.headers = const Duration(minutes: 5)
           ..options.validateStatus = (status) {
             return status! < 501;
           }

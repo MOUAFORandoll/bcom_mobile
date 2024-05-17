@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
- 
 
 enum ContentType { json, formData, wwwFormUrlEncode }
 
@@ -26,7 +25,6 @@ void _perforlInterceptor(RequestOptions options,
   }
 
   options.headers['Content-Type'] = optionHeaderContentType;
- 
 
   // final String? token = await UserSession().getAuthToken();
   // if (token != null) {

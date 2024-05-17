@@ -2,16 +2,14 @@ import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/export_bloc.dart';
 
-import 'package:Bcom/application/biker/repositories/biker_repo.dart';
+import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
-import 'package:Bcom/application/tcontroller/tcontroller_bloc.dart';
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:Bcom/application/tcontroller/repositories/tcontroller_repo.dart';
 
 import 'package:Bcom/infrastructure/_commons/network/network_info.dart';
 
@@ -34,12 +32,8 @@ Future<void> init() async {
   sl..registerFactory(() => HomeBloc(database: sl()));
 
   sl
-    ..registerFactory(() => BikerBloc(bikerRepo: sl(), database: sl()))
-    ..registerLazySingleton(() => BikerRepo(apiClient: sl()));
-  sl
-    ..registerFactory(
-        () => TcontrollerBloc(tcontrollerRepo: sl(), database: sl()))
-    ..registerLazySingleton(() => TcontrollerRepo(apiClient: sl()));
+    ..registerFactory(() => DevisBloc(devisRepo: sl(), database: sl()))
+    ..registerLazySingleton(() => DevisRepo(apiClient: sl()));
   requestPermission();
   initConnected();
 }
@@ -53,21 +47,11 @@ Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context)
     ..add(GetUserEvent())
     ..add(GetVilleQuartier());
-  initLoadBiker(context);
-  initLoadTControl(context);
+  initLoadDevis(context);
 }
 
-Future<void> initLoadTControl(context) async {
-  BlocProvider.of<TcontrollerBloc>(context)
-    ..add(GetListMissionTcontroller())
-    ..add(GetListMissionTcontrollerDone());
-}
-
-Future<void> initLoadBiker(context) async {
-  BlocProvider.of<BikerBloc>(context)
-    ..add(GetListMissionBiker())
-    ..add(GetListMissionBikerEffectue())
-    ..add(GetListSecteurBiker());
+Future<void> initLoadDevis(context) async {
+  BlocProvider.of<DevisBloc>(context);
 }
 
 Future<void> requestPermission() async {

@@ -1,4 +1,4 @@
-class MissionBiker {
+class MissionDevis {
   int id;
   String libelle;
   String description;
@@ -7,7 +7,7 @@ class MissionBiker {
   int nbre_session;
   bool status;
 
-  MissionBiker({
+  MissionDevis({
     required this.libelle,
     required this.id,
     required this.description,
@@ -17,7 +17,7 @@ class MissionBiker {
     required this.nbre_session,
   });
 
-  MissionBiker.fromJson(Map<String, dynamic> json)
+  MissionDevis.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         libelle = json['libelle'],
         description = json['description'],

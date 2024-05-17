@@ -3,143 +3,30 @@ import 'package:dio/dio.dart';
 
 import '../../../utils/constants/apiRoute.dart';
 
-class BikerRepo {
+class DevisRepo {
   final IAppRequests apiClient;
-  BikerRepo({required this.apiClient});
+  DevisRepo({required this.apiClient});
   final key = 'AIzaSyB2lLkho9yRrZ9DgZ4btFOZ6x22-zZTJ38';
 
   Future demandeMission(keySecret) async {
     Response a = await apiClient
-        .getRequest(ApiRoutes.Biker + '/demande?keySecret=${keySecret}');
+        .getRequest(ApiRoutes.Pack + '/demande?keySecret=${keySecret}');
 
     return a;
   }
+    
 
-  Future startDisponibiliteBiker(data) async {
-    Response a = await apiClient
-        .postRequest(ApiRoutes.Biker + '/start-disponibilite', body: data);
-
-    return a;
-  }
-
-  Future endDisponibiliteBiker(data) async {
-    Response a = await apiClient
-        .postRequest(ApiRoutes.Biker + '/end-disponibilite', body: data);
+  Future getlistPack() async {
+    Response a = await apiClient.getRequest(ApiRoutes.Pack);
 
     return a;
   }
-
-  Future startMissionBiker(data) async {
-    Response a = await apiClient.postRequest(ApiRoutes.Biker + '/start-mission',
-        body: data);
-
-    return a;
-  }
-
-  Future endMissionBiker(data) async {
-    Response a = await apiClient.postRequest(ApiRoutes.Biker + '/end-mission',
-        body: data);
-
-    return a;
-  }
-
-  Future saveMissionLocationPointBiker(data) async {
-    Response a = await apiClient.postRequest(
-        ApiRoutes.Biker + '/save-mission-location-point',
-        body: data);
-
-    return a;
-  }
-
-  Future getlistMissionBiker(keySecret) async {
-    Response a = await apiClient
-        .getRequest(ApiRoutes.Biker + '/list-mission?keySecret=${keySecret}');
-
-    return a;
-  }
-
-  Future getlistSecteurBiker() async {
+  
+  Future getlistSecteurDevis() async {
     Response a = await apiClient.getRequest('/secteur/read');
 
     return a;
   }
-
-  Future getlistMissionBikerSession(keySecret, mission_id) async {
-    Response a = await apiClient.getRequest(ApiRoutes.Biker +
-        '/list-mission-session?keySecret=${keySecret}&mission_id=${mission_id}');
-
-    return a;
-  }
-
-  Future getListMissionBikerEffectue(keySecret) async {
-    Response a = await apiClient.getRequest(
-        ApiRoutes.Biker + '/list-mission-done?keySecret=${keySecret}');
-
-    return a;
-  }
-
-  Future getlistMissionBikerEncours(keySecret) async {
-    Response a = await apiClient.getRequest(
-        ApiRoutes.Biker + '/list-mission-done?keySecret=${keySecret}');
-
-    return a;
-  }
-
-  // Future calculFraisBiker(data) async {
-  //   Response a = await apiClient.postRequest(ApiRoutes.Biker + '/frais',
-  //       body: data);
-
-  //   return a;
-  // }
-
-  // Future recuperationColis(data) async {
-  //   Response a = await apiClient
-  //       .patchRequest(ApiRoutes.Biker + '/recuperation', body: data);
-
-  //   return a;
-  // }
-
-  // Future receptionColis(data) async {
-  //   Response a = await apiClient
-  //       .patchRequest(ApiRoutes.Biker + '/reception', body: data);
-
-  //   return a;
-  // }
-
-  // Future getHistoryBiker(keySecret) async {
-  //   Response a = await apiClient
-  //       .getRequest(ApiRoutes.Biker + '/user?keySecret=${keySecret}');
-
-  //   return a;
-  // }
-
-  // Future getInfoBikerForHistory(keySecret) async {
-  //   Response a = await apiClient
-  //       .getRequest(ApiRoutes.Biker + '?keySecret=${keySecret}');
-
-  //   return a;
-  // }
-
-  // Future getInfoBikerForBabana(id) async {
-  //   Response a = await apiClient
-  //       .getRequest(ApiRoutes.Biker + 'babana/info?id=${id}');
-
-  //   return a;
-  // }
-
-  // Future getBikerPointByVille(id) async {
-  //   Response a =
-  //       await apiClient.getRequest(ApiRoutes.Biker_POINT + '?ville=${id}');
-
-  //   return a;
-  // }
-
-  // Future getPointRecuperationUser(keySecret) async {
-  //   Response a = await apiClient
-  //       .getRequest(ApiRoutes.Biker_POINT + '/user?keySecret=${keySecret}');
-
-  //   return a;
-  // }
 
   Future test(indexC) async {
     Response a = await apiClient.getRequest(

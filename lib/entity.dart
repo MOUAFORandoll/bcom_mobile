@@ -30,9 +30,6 @@ class User {
   String prenom;
 
   @Property()
-  String email;
-
-  @Property()
   String profile;
 
   @Property()
@@ -45,19 +42,15 @@ class User {
   int typeUser;
   @Property()
   bool infoComplete;
-  @Property()
-  bool disponibilite;
   User({
     required this.userId,
     required this.nom,
     required this.prenom,
     required this.typeUser,
-    required this.email,
     required this.profile,
     required this.phone,
     required this.infoComplete,
     required this.dateCreated,
-    required this.disponibilite,
   });
   Map<String, dynamic> toMap() {
     return {
@@ -65,12 +58,10 @@ class User {
       'nom': nom,
       'prenom': prenom,
       'typeUser': typeUser,
-      'email': email,
       'profile': profile,
       'phone': phone,
       'infoComplete': infoComplete,
       'dateCreated': dateCreated,
-      'disponibilite': disponibilite,
     };
   }
 
@@ -80,12 +71,10 @@ class User {
       typeUser: json['typeUser'],
       nom: json['nom'],
       prenom: json['prenom'],
-      email: json['email'],
       profile: json['profile'],
       phone: json['phone'],
       infoComplete: json['infoComplete'],
       dateCreated: json['date_created'],
-      disponibilite: json['disponibilite'],
     );
   }
 }

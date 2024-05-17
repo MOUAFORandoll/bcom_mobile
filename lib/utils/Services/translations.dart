@@ -1,4 +1,4 @@
-// 
+//
 
 // class Transalations extends Translations {
 //   @override

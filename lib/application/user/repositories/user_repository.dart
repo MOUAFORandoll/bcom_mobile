@@ -48,8 +48,9 @@ class UserRepo {
 
     return a;
   }
-  Future completeBikerInfo(data) async {
-    Response a = await apiClient.postRequest(ApiRoutes.InfoBiker, body: data);
+
+  Future completeDevisInfo(data) async {
+    Response a = await apiClient.postRequest(ApiRoutes.InfoDevis, body: data);
 
     return a;
   }
@@ -90,6 +91,12 @@ class UserRepo {
 
   Future Login(data) async {
     Response a = await apiClient.postRequest(ApiRoutes.LOGIN, body: data);
+
+    return a;
+  }
+
+  Future addEntreprise(data) async {
+    Response a = await apiClient.postRequest(ApiRoutes.Entreprise, body: data);
 
     return a;
   }

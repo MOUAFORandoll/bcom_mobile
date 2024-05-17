@@ -37,7 +37,7 @@ class SocketService {
         if (decodedData['recepteur'].toString() == recepteur.toString()) {
           print('---------------livraison_validate--');
           print(decodedData);
-         }
+        }
       }
     });
   }

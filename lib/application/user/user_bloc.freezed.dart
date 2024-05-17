@@ -19,9 +19,11 @@ mixin _$UserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -33,15 +35,16 @@ mixin _$UserEvent {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -53,15 +56,16 @@ mixin _$UserEvent {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -73,7 +77,7 @@ mixin _$UserEvent {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,6 +85,7 @@ mixin _$UserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -92,13 +97,14 @@ mixin _$UserEvent {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -110,13 +116,14 @@ mixin _$UserEvent {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -128,7 +135,7 @@ mixin _$UserEvent {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -225,9 +232,11 @@ class _$SignInEventImpl implements SignInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -239,7 +248,7 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return chooseExperience(phone, password);
   }
@@ -248,9 +257,10 @@ class _$SignInEventImpl implements SignInEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -262,7 +272,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return chooseExperience?.call(phone, password);
   }
@@ -271,9 +281,10 @@ class _$SignInEventImpl implements SignInEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -285,7 +296,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
@@ -299,6 +310,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -310,7 +322,7 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return chooseExperience(this);
   }
@@ -320,6 +332,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -331,7 +344,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return chooseExperience?.call(this);
   }
@@ -341,6 +354,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -352,7 +366,7 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
@@ -381,11 +395,12 @@ abstract class _$$RegisterEventImplCopyWith<$Res> {
       __$$RegisterEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {String name,
+      {String nom,
+      String prenom,
+      String nationnalite,
       String phone,
       String password,
-      String re_password,
-      int typeCompte});
+      String re_password});
 }
 
 /// @nodoc
@@ -399,16 +414,25 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? nom = null,
+    Object? prenom = null,
+    Object? nationnalite = null,
     Object? phone = null,
     Object? password = null,
     Object? re_password = null,
-    Object? typeCompte = null,
   }) {
     return _then(_$RegisterEventImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      nom: null == nom
+          ? _value.nom
+          : nom // ignore: cast_nullable_to_non_nullable
+              as String,
+      prenom: null == prenom
+          ? _value.prenom
+          : prenom // ignore: cast_nullable_to_non_nullable
+              as String,
+      nationnalite: null == nationnalite
+          ? _value.nationnalite
+          : nationnalite // ignore: cast_nullable_to_non_nullable
               as String,
       phone: null == phone
           ? _value.phone
@@ -422,10 +446,6 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
           ? _value.re_password
           : re_password // ignore: cast_nullable_to_non_nullable
               as String,
-      typeCompte: null == typeCompte
-          ? _value.typeCompte
-          : typeCompte // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -434,26 +454,29 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
 
 class _$RegisterEventImpl implements RegisterEvent {
   const _$RegisterEventImpl(
-      {required this.name,
+      {required this.nom,
+      required this.prenom,
+      required this.nationnalite,
       required this.phone,
       required this.password,
-      required this.re_password,
-      required this.typeCompte});
+      required this.re_password});
 
   @override
-  final String name;
+  final String nom;
+  @override
+  final String prenom;
+  @override
+  final String nationnalite;
   @override
   final String phone;
   @override
   final String password;
   @override
   final String re_password;
-  @override
-  final int typeCompte;
 
   @override
   String toString() {
-    return 'UserEvent.register(name: $name, phone: $phone, password: $password, re_password: $re_password, typeCompte: $typeCompte)';
+    return 'UserEvent.register(nom: $nom, prenom: $prenom, nationnalite: $nationnalite, phone: $phone, password: $password, re_password: $re_password)';
   }
 
   @override
@@ -461,19 +484,20 @@ class _$RegisterEventImpl implements RegisterEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventImpl &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.nom, nom) || other.nom == nom) &&
+            (identical(other.prenom, prenom) || other.prenom == prenom) &&
+            (identical(other.nationnalite, nationnalite) ||
+                other.nationnalite == nationnalite) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.re_password, re_password) ||
-                other.re_password == re_password) &&
-            (identical(other.typeCompte, typeCompte) ||
-                other.typeCompte == typeCompte));
+                other.re_password == re_password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, phone, password, re_password, typeCompte);
+  int get hashCode => Object.hash(
+      runtimeType, nom, prenom, nationnalite, phone, password, re_password);
 
   @JsonKey(ignore: true)
   @override
@@ -485,9 +509,11 @@ class _$RegisterEventImpl implements RegisterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -499,18 +525,19 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return register(name, phone, password, re_password, typeCompte);
+    return register(nom, prenom, nationnalite, phone, password, re_password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -522,18 +549,20 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
-    return register?.call(name, phone, password, re_password, typeCompte);
+    return register?.call(
+        nom, prenom, nationnalite, phone, password, re_password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -545,11 +574,11 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (register != null) {
-      return register(name, phone, password, re_password, typeCompte);
+      return register(nom, prenom, nationnalite, phone, password, re_password);
     }
     return orElse();
   }
@@ -559,6 +588,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -570,7 +600,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return register(this);
   }
@@ -580,6 +610,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -591,7 +622,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return register?.call(this);
   }
@@ -601,6 +632,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -612,7 +644,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -624,19 +656,253 @@ class _$RegisterEventImpl implements RegisterEvent {
 
 abstract class RegisterEvent implements UserEvent {
   const factory RegisterEvent(
-      {required final String name,
+      {required final String nom,
+      required final String prenom,
+      required final String nationnalite,
       required final String phone,
       required final String password,
-      required final String re_password,
-      required final int typeCompte}) = _$RegisterEventImpl;
+      required final String re_password}) = _$RegisterEventImpl;
 
-  String get name;
+  String get nom;
+  String get prenom;
+  String get nationnalite;
   String get phone;
   String get password;
   String get re_password;
-  int get typeCompte;
   @JsonKey(ignore: true)
   _$$RegisterEventImplCopyWith<_$RegisterEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddInfoEntrepriseImplCopyWith<$Res> {
+  factory _$$AddInfoEntrepriseImplCopyWith(_$AddInfoEntrepriseImpl value,
+          $Res Function(_$AddInfoEntrepriseImpl) then) =
+      __$$AddInfoEntrepriseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String titre, String numRegCommerce});
+}
+
+/// @nodoc
+class __$$AddInfoEntrepriseImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$AddInfoEntrepriseImpl>
+    implements _$$AddInfoEntrepriseImplCopyWith<$Res> {
+  __$$AddInfoEntrepriseImplCopyWithImpl(_$AddInfoEntrepriseImpl _value,
+      $Res Function(_$AddInfoEntrepriseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? titre = null,
+    Object? numRegCommerce = null,
+  }) {
+    return _then(_$AddInfoEntrepriseImpl(
+      titre: null == titre
+          ? _value.titre
+          : titre // ignore: cast_nullable_to_non_nullable
+              as String,
+      numRegCommerce: null == numRegCommerce
+          ? _value.numRegCommerce
+          : numRegCommerce // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
+  const _$AddInfoEntrepriseImpl(
+      {required this.titre, required this.numRegCommerce});
+
+  @override
+  final String titre;
+  @override
+  final String numRegCommerce;
+
+  @override
+  String toString() {
+    return 'UserEvent.addInfoEntreprise(titre: $titre, numRegCommerce: $numRegCommerce)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddInfoEntrepriseImpl &&
+            (identical(other.titre, titre) || other.titre == titre) &&
+            (identical(other.numRegCommerce, numRegCommerce) ||
+                other.numRegCommerce == numRegCommerce));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, titre, numRegCommerce);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddInfoEntrepriseImplCopyWith<_$AddInfoEntrepriseImpl> get copyWith =>
+      __$$AddInfoEntrepriseImplCopyWithImpl<_$AddInfoEntrepriseImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone, String password) chooseExperience,
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
+        register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(String data, String password) resetpassword,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function() getVilleQuartier,
+    required TResult Function() updateUserImage,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeDevisInfo,
+  }) {
+    return addInfoEntreprise(titre, numRegCommerce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String phone, String password)? chooseExperience,
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
+        register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(String data, String password)? resetpassword,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function()? getVilleQuartier,
+    TResult? Function()? updateUserImage,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeDevisInfo,
+  }) {
+    return addInfoEntreprise?.call(titre, numRegCommerce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone, String password)? chooseExperience,
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
+        register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(String data, String password)? resetpassword,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function()? getVilleQuartier,
+    TResult Function()? updateUserImage,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeDevisInfo,
+    required TResult orElse(),
+  }) {
+    if (addInfoEntreprise != null) {
+      return addInfoEntreprise(titre, numRegCommerce);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(ResetPassword value) resetpassword,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(GetVilleQuartier value) getVilleQuartier,
+    required TResult Function(UpdateUserImage value) updateUserImage,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
+  }) {
+    return addInfoEntreprise(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(ResetPassword value)? resetpassword,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult? Function(UpdateUserImage value)? updateUserImage,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
+  }) {
+    return addInfoEntreprise?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(ResetPassword value)? resetpassword,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(GetVilleQuartier value)? getVilleQuartier,
+    TResult Function(UpdateUserImage value)? updateUserImage,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
+    required TResult orElse(),
+  }) {
+    if (addInfoEntreprise != null) {
+      return addInfoEntreprise(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddInfoEntreprise implements UserEvent {
+  const factory AddInfoEntreprise(
+      {required final String titre,
+      required final String numRegCommerce}) = _$AddInfoEntrepriseImpl;
+
+  String get titre;
+  String get numRegCommerce;
+  @JsonKey(ignore: true)
+  _$$AddInfoEntrepriseImplCopyWith<_$AddInfoEntrepriseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -705,9 +971,11 @@ class _$SendCodeImpl implements SendCode {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -719,7 +987,7 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return sendCode(data);
   }
@@ -728,9 +996,10 @@ class _$SendCodeImpl implements SendCode {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -742,7 +1011,7 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return sendCode?.call(data);
   }
@@ -751,9 +1020,10 @@ class _$SendCodeImpl implements SendCode {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -765,7 +1035,7 @@ class _$SendCodeImpl implements SendCode {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -779,6 +1049,7 @@ class _$SendCodeImpl implements SendCode {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -790,7 +1061,7 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return sendCode(this);
   }
@@ -800,6 +1071,7 @@ class _$SendCodeImpl implements SendCode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -811,7 +1083,7 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return sendCode?.call(this);
   }
@@ -821,6 +1093,7 @@ class _$SendCodeImpl implements SendCode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -832,7 +1105,7 @@ class _$SendCodeImpl implements SendCode {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (sendCode != null) {
@@ -924,9 +1197,11 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -938,7 +1213,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return updateUserInfo(data);
   }
@@ -947,9 +1222,10 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -961,7 +1237,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return updateUserInfo?.call(data);
   }
@@ -970,9 +1246,10 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -984,7 +1261,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (updateUserInfo != null) {
@@ -998,6 +1275,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1009,7 +1287,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return updateUserInfo(this);
   }
@@ -1019,6 +1297,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1030,7 +1309,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return updateUserInfo?.call(this);
   }
@@ -1040,6 +1319,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1051,7 +1331,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (updateUserInfo != null) {
@@ -1144,9 +1424,11 @@ class _$VerifyCodeImpl implements VerifyCode {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1158,7 +1440,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return verifyCode(data, code);
   }
@@ -1167,9 +1449,10 @@ class _$VerifyCodeImpl implements VerifyCode {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1181,7 +1464,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return verifyCode?.call(data, code);
   }
@@ -1190,9 +1473,10 @@ class _$VerifyCodeImpl implements VerifyCode {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1204,7 +1488,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -1218,6 +1502,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1229,7 +1514,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return verifyCode(this);
   }
@@ -1239,6 +1524,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1250,7 +1536,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return verifyCode?.call(this);
   }
@@ -1260,6 +1546,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1271,7 +1558,7 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -1367,9 +1654,11 @@ class _$ResetPasswordImpl implements ResetPassword {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1381,7 +1670,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return resetpassword(data, password);
   }
@@ -1390,9 +1679,10 @@ class _$ResetPasswordImpl implements ResetPassword {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1404,7 +1694,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return resetpassword?.call(data, password);
   }
@@ -1413,9 +1703,10 @@ class _$ResetPasswordImpl implements ResetPassword {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1427,7 +1718,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (resetpassword != null) {
@@ -1441,6 +1732,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1452,7 +1744,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return resetpassword(this);
   }
@@ -1462,6 +1754,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1473,7 +1766,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return resetpassword?.call(this);
   }
@@ -1483,6 +1776,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1494,7 +1788,7 @@ class _$ResetPasswordImpl implements ResetPassword {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (resetpassword != null) {
@@ -1581,9 +1875,11 @@ class _$SignOutEventImpl implements SignOutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1595,7 +1891,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return signOut(context);
   }
@@ -1604,9 +1900,10 @@ class _$SignOutEventImpl implements SignOutEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1618,7 +1915,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return signOut?.call(context);
   }
@@ -1627,9 +1924,10 @@ class _$SignOutEventImpl implements SignOutEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1641,7 +1939,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -1655,6 +1953,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1666,7 +1965,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return signOut(this);
   }
@@ -1676,6 +1975,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1687,7 +1987,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return signOut?.call(this);
   }
@@ -1697,6 +1997,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1708,7 +2009,7 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -1767,9 +2068,11 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1781,7 +2084,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return getUserEvent();
   }
@@ -1790,9 +2093,10 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1804,7 +2108,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return getUserEvent?.call();
   }
@@ -1813,9 +2117,10 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1827,7 +2132,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (getUserEvent != null) {
@@ -1841,6 +2146,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1852,7 +2158,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return getUserEvent(this);
   }
@@ -1862,6 +2168,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1873,7 +2180,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return getUserEvent?.call(this);
   }
@@ -1883,6 +2190,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1894,7 +2202,7 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (getUserEvent != null) {
@@ -1947,9 +2255,11 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1961,7 +2271,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return getVilleQuartier();
   }
@@ -1970,9 +2280,10 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1984,7 +2295,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return getVilleQuartier?.call();
   }
@@ -1993,9 +2304,10 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2007,7 +2319,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (getVilleQuartier != null) {
@@ -2021,6 +2333,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2032,7 +2345,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return getVilleQuartier(this);
   }
@@ -2042,6 +2355,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2053,7 +2367,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return getVilleQuartier?.call(this);
   }
@@ -2063,6 +2377,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2074,7 +2389,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (getVilleQuartier != null) {
@@ -2127,9 +2442,11 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2141,7 +2458,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return updateUserImage();
   }
@@ -2150,9 +2467,10 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2164,7 +2482,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return updateUserImage?.call();
   }
@@ -2173,9 +2491,10 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2187,7 +2506,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (updateUserImage != null) {
@@ -2201,6 +2520,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2212,7 +2532,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return updateUserImage(this);
   }
@@ -2222,6 +2542,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2233,7 +2554,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return updateUserImage?.call(this);
   }
@@ -2243,6 +2564,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2254,7 +2576,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (updateUserImage != null) {
@@ -2334,9 +2656,11 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2348,7 +2672,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return setCniImageAvant(image);
   }
@@ -2357,9 +2681,10 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2371,7 +2696,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return setCniImageAvant?.call(image);
   }
@@ -2380,9 +2705,10 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2394,7 +2720,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCniImageAvant != null) {
@@ -2408,6 +2734,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2419,7 +2746,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return setCniImageAvant(this);
   }
@@ -2429,6 +2756,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2440,7 +2768,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return setCniImageAvant?.call(this);
   }
@@ -2450,6 +2778,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2461,7 +2790,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCniImageAvant != null) {
@@ -2547,9 +2876,11 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2561,7 +2892,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return setCniImageArriere(image);
   }
@@ -2570,9 +2901,10 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2584,7 +2916,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return setCniImageArriere?.call(image);
   }
@@ -2593,9 +2925,10 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2607,7 +2940,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCniImageArriere != null) {
@@ -2621,6 +2954,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2632,7 +2966,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return setCniImageArriere(this);
   }
@@ -2642,6 +2976,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2653,7 +2988,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return setCniImageArriere?.call(this);
   }
@@ -2663,6 +2998,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2674,7 +3010,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCniImageArriere != null) {
@@ -2759,9 +3095,11 @@ class _$SetCGImageImpl implements SetCGImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2773,7 +3111,7 @@ class _$SetCGImageImpl implements SetCGImage {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
     return setCGImage(image);
   }
@@ -2782,9 +3120,10 @@ class _$SetCGImageImpl implements SetCGImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2796,7 +3135,7 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return setCGImage?.call(image);
   }
@@ -2805,9 +3144,10 @@ class _$SetCGImageImpl implements SetCGImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2819,7 +3159,7 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCGImage != null) {
@@ -2833,6 +3173,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2844,7 +3185,7 @@ class _$SetCGImageImpl implements SetCGImage {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
     return setCGImage(this);
   }
@@ -2854,6 +3195,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2865,7 +3207,7 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
     return setCGImage?.call(this);
   }
@@ -2875,6 +3217,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2886,7 +3229,7 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
     if (setCGImage != null) {
@@ -2906,20 +3249,20 @@ abstract class SetCGImage implements UserEvent {
 }
 
 /// @nodoc
-abstract class _$$CompleteBikerInfoImplCopyWith<$Res> {
-  factory _$$CompleteBikerInfoImplCopyWith(_$CompleteBikerInfoImpl value,
-          $Res Function(_$CompleteBikerInfoImpl) then) =
-      __$$CompleteBikerInfoImplCopyWithImpl<$Res>;
+abstract class _$$CompleteDevisInfoImplCopyWith<$Res> {
+  factory _$$CompleteDevisInfoImplCopyWith(_$CompleteDevisInfoImpl value,
+          $Res Function(_$CompleteDevisInfoImpl) then) =
+      __$$CompleteDevisInfoImplCopyWithImpl<$Res>;
   @useResult
   $Res call({FormData data});
 }
 
 /// @nodoc
-class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$CompleteBikerInfoImpl>
-    implements _$$CompleteBikerInfoImplCopyWith<$Res> {
-  __$$CompleteBikerInfoImplCopyWithImpl(_$CompleteBikerInfoImpl _value,
-      $Res Function(_$CompleteBikerInfoImpl) _then)
+class __$$CompleteDevisInfoImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$CompleteDevisInfoImpl>
+    implements _$$CompleteDevisInfoImplCopyWith<$Res> {
+  __$$CompleteDevisInfoImplCopyWithImpl(_$CompleteDevisInfoImpl _value,
+      $Res Function(_$CompleteDevisInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2927,7 +3270,7 @@ class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$CompleteBikerInfoImpl(
+    return _then(_$CompleteDevisInfoImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -2938,22 +3281,22 @@ class __$$CompleteBikerInfoImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
-  const _$CompleteBikerInfoImpl({required this.data});
+class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
+  const _$CompleteDevisInfoImpl({required this.data});
 
   @override
   final FormData data;
 
   @override
   String toString() {
-    return 'UserEvent.completeBikerInfo(data: $data)';
+    return 'UserEvent.completeDevisInfo(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CompleteBikerInfoImpl &&
+            other is _$CompleteDevisInfoImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -2963,17 +3306,19 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CompleteBikerInfoImplCopyWith<_$CompleteBikerInfoImpl> get copyWith =>
-      __$$CompleteBikerInfoImplCopyWithImpl<_$CompleteBikerInfoImpl>(
+  _$$CompleteDevisInfoImplCopyWith<_$CompleteDevisInfoImpl> get copyWith =>
+      __$$CompleteDevisInfoImplCopyWithImpl<_$CompleteDevisInfoImpl>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)
+    required TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)
         register,
+    required TResult Function(String titre, String numRegCommerce)
+        addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2985,18 +3330,19 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeBikerInfo,
+    required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return completeBikerInfo(data);
+    return completeDevisInfo(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult? Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -3008,18 +3354,19 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeBikerInfo,
+    TResult? Function(FormData data)? completeDevisInfo,
   }) {
-    return completeBikerInfo?.call(data);
+    return completeDevisInfo?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String name, String phone, String password,
-            String re_password, int typeCompte)?
+    TResult Function(String nom, String prenom, String nationnalite,
+            String phone, String password, String re_password)?
         register,
+    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -3031,11 +3378,11 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeBikerInfo,
+    TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
-    if (completeBikerInfo != null) {
-      return completeBikerInfo(data);
+    if (completeDevisInfo != null) {
+      return completeDevisInfo(data);
     }
     return orElse();
   }
@@ -3045,6 +3392,7 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -3056,9 +3404,9 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteBikerInfo value) completeBikerInfo,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
-    return completeBikerInfo(this);
+    return completeDevisInfo(this);
   }
 
   @override
@@ -3066,6 +3414,7 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -3077,9 +3426,9 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
-    return completeBikerInfo?.call(this);
+    return completeDevisInfo?.call(this);
   }
 
   @override
@@ -3087,6 +3436,7 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -3098,23 +3448,23 @@ class _$CompleteBikerInfoImpl implements CompleteBikerInfo {
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteBikerInfo value)? completeBikerInfo,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
-    if (completeBikerInfo != null) {
-      return completeBikerInfo(this);
+    if (completeDevisInfo != null) {
+      return completeDevisInfo(this);
     }
     return orElse();
   }
 }
 
-abstract class CompleteBikerInfo implements UserEvent {
-  const factory CompleteBikerInfo({required final FormData data}) =
-      _$CompleteBikerInfoImpl;
+abstract class CompleteDevisInfo implements UserEvent {
+  const factory CompleteDevisInfo({required final FormData data}) =
+      _$CompleteDevisInfoImpl;
 
   FormData get data;
   @JsonKey(ignore: true)
-  _$$CompleteBikerInfoImplCopyWith<_$CompleteBikerInfoImpl> get copyWith =>
+  _$$CompleteDevisInfoImplCopyWith<_$CompleteDevisInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
