@@ -4,9 +4,9 @@ part of 'devis_bloc.dart';
 class DevisState with _$DevisState {
   const factory DevisState({
     required LatLng? position,
-    required Mission? mission,
+    required PackModel? pack,
     required MissionSession? missionSession,
-    required int? missionsession_id,
+    required int? indexDevis,
     required List<PackModel>? list_pack,
     required List<MissionSession>? list_mission_session,
     required int indexHistory,
@@ -27,7 +27,7 @@ class DevisState with _$DevisState {
         list_secteur: [],
         load_list_secteur: null,
         secteur: null,
-        missionsession_id: null,
+        indexDevis: 0,
         time: 0,
         sendPosition: null,
         updateData: null,
@@ -39,7 +39,7 @@ class DevisState with _$DevisState {
         load_list_mission_session: null,
         isRequest: null,
         list_mission_session: [],
-        mission: null,
+        pack: null,
         position: null,
         list_pack: [],
       );

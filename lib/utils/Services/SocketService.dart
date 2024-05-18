@@ -11,51 +11,15 @@ class SocketService {
     'autoConnect': true,
   });
 
-  void HistoriqueUserLivraison(canal, Function action) {
-    socket.on('livraison', (data) {
-      print(data);
-      print(
-          '-----00-livraison----**********${canal}**********************-------');
-      if (data != null && data != 'null') {
-        print(jsonDecode(data));
-        if (jsonDecode(data)['recepteur'].toString() == canal.toString()) {
-          print('-----------------');
-          print(jsonDecode(data));
-          action(LivraisonModel.fromJson(jsonDecode(data)['data']));
-        }
-      }
-    });
-    // });
-    // print(socket.connected);
-  }
-
-  void livraisonValidate({required String recepteur}) {
-    socket.on('livraison_validate', (data) {
+  void callCenter({required String recepteur, required Function action}) {
+    socket.on('service_client', (data) {
       print(data);
       if (data != null && data != 'null') {
-        var decodedData = jsonDecode(data);
-        if (decodedData['recepteur'].toString() == recepteur.toString()) {
-          print('---------------livraison_validate--');
-          print(decodedData);
-        }
-      }
-    });
-  }
-
-  void livraisonFinish(canal, Function action) {
-    socket.on('livraison_finish', (data) {
-      print(data);
-      if (data != null && data != 'null') {
-        print(jsonDecode(data));
-        if (jsonDecode(data)['recepteur'].toString() == canal.toString()) {
-          print('-----------------');
-          print(jsonDecode(data));
+        if (jsonDecode(data)['recepteur'].toString() == recepteur.toString()) {
           action(jsonDecode(data)['data']);
         }
       }
     });
-    // });
-    // print(socket.connected);
   }
 
 //recepteur ici est l'id du user

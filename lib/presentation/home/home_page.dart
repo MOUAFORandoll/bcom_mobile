@@ -1,3 +1,4 @@
+import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/devis/devis_home_page.dart';
 import 'package:Bcom/presentation/user/complete_entreprise_info_page.dart';
 
@@ -15,7 +16,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
-import 'package:custom_navigation_bar/custom_navigation_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -31,11 +33,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+  VideoPlayerController? _controller;
   void initState() {
     super.initState();
     // _checkForUpdate();
 
     WidgetsBinding.instance.addObserver(this);
+
+    _controller = VideoPlayerController.networkUrl(
+        Uri.parse('https://www.youtube.com/watch?v=fS0aWtc1snM'))
+      ..initialize().then((_) {
+        setState(() {
+          _controller!.play();
+        });
+      });
   }
 
   Future<void> _checkForUpdate() async {
@@ -147,35 +158,45 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     actions: [
                       InkWell(
                           child: Container(
+                              alignment: Alignment.center,
                               margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: SvgIcon(
-                                icon: Assets.bell,
+                              child: Icon(
+                                FontAwesomeIcons.youtube,
+                                color: ColorsApp.red,
+                              )),
+                          onTap: () => GlobalBottomSheet.show(
+                              context: context,
+                              widget: Container(
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          if (_controller!.value.isPlaying) {
+                                            _controller!.pause();
+                                          } else {
+                                            _controller!.play();
+                                          }
+                                        });
+                                      },
+                                      child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 500),
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height,
+                                          child: AspectRatio(
+                                            aspectRatio: 9.7 / 17.7,
+                                            child: VideoPlayer(_controller!),
+                                          )))))),
+                      InkWell(
+                          child: Container(
+                              margin: EdgeInsets.only(right: kMarginX * 2),
+                              child: Icon(
+                                FontAwesomeIcons.whatsapp,
                                 color: ColorsApp.white,
                               )),
-                          onTap: () => showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) => SafeArea(
-                                    minimum: EdgeInsets.only(top: 30),
-                                    child: Container(
-                                        height: getHeight(context) * .9,
-                                        width: getWith(context),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(30),
-                                            topRight: Radius.circular(30),
-                                          ),
-                                          color: ColorsApp.white,
-                                        ),
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: kMarginX),
-                                        child: Column(children: [
-                                          Expanded(
-                                              child: SingleChildScrollView(
-                                                  child: Container(
-                                                      child: Text(
-                                                          'Module en cours de developpement')))),
-                                        ])),
-                                  ))),
+                          onTap: () => launchUrl(Uri.parse(
+                              'https://wa.me/690863838?text=Hello Je suis interesse par vos services'))),
                     ],
                     bottom: PreferredSize(
                       preferredSize: Size.fromHeight(getHeight(context) * .10),

@@ -1,5 +1,6 @@
 import 'dart:async';
- 
+
+import 'package:Bcom/application/model/data/MessageModel.dart';
 import 'package:Bcom/main_prod.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:rxdart/subjects.dart';
@@ -114,23 +115,22 @@ class NotificationService {
     );
   }
 
-  Future<void> emitServiceClient(content) async {
+  Future<void> callCenterNotification(
+      {required MessageModel content, required context}) async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
-      'Bcom_general_1', // Channel ID
-      'Bcom Service client', // Channel name
-      channelDescription: 'Information Service client', // Channel description
+      'Bcon Assist', // Channel ID
+      'Bcon Assist', // Channel name
+      channelDescription: 'Call Center', // Channel description
       importance: Importance.max,
       priority: Priority.high,
       // autoCancel: false,
       // setAsGroupSummary: true,
       styleInformation: BigTextStyleInformation(
-        '<Notification Content>', // Replace with your custom notification content
+        '<Notification Content>',
         htmlFormatBigText: true,
-        contentTitle:
-            'Service client', // Replace with your custom notification title
-        summaryText:
-            'Service client', // Replace with your custom notification summary
+        contentTitle: 'Call Center',
+        summaryText: 'Call Center',
       ),
       icon: 'launcher_icon',
       largeIcon: DrawableResourceAndroidBitmap(
@@ -144,48 +144,11 @@ class NotificationService {
     );
 
     await flutterLocalNotificationsPlugin.show(
-      1, // Notification ID (should be unique for each notification)
-      'Service_Client', // Notification title
-      content, // Notification body
+      2,
+      'Call Center',
+      content.message, // Notification body
       platformChannelSpecifics,
-      payload: 'Service_Client',
-    );
-  }
-
-  Future<void> emitNotificationGenearal(content) async {
-    const AndroidNotificationDetails androidPlatformChannelSpecifics =
-        AndroidNotificationDetails(
-      'Bcom_general_1', // Channel ID
-      'Bcom general', // Channel name
-      channelDescription: 'Information general', // Channel description
-      importance: Importance.max,
-      priority: Priority.high,
-      autoCancel: false,
-      // setAsGroupSummary: true,
-      styleInformation: BigTextStyleInformation(
-        '<Notification Content>', // Replace with your custom notification content
-        htmlFormatBigText: true,
-        contentTitle: 'General', // Replace with your custom notification title
-        summaryText:
-            'Information General', // Replace with your custom notification summary
-      ),
-      icon: 'launcher_icon',
-      largeIcon: DrawableResourceAndroidBitmap(
-          'launcher_icon'), // Replace with the name of your custom large icon file
-    );
-    const DarwinNotificationDetails iOSPlatformChannelSpecifics =
-        DarwinNotificationDetails(threadIdentifier: 'thread_id');
-    const NotificationDetails platformChannelSpecifics = NotificationDetails(
-      android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics,
-    );
-
-    await flutterLocalNotificationsPlugin.show(
-      1, // Notification ID (should be unique for each notification)
-      'General', // Notification title
-      content, // Notification body
-      platformChannelSpecifics,
-      payload: 'action1',
+      payload: 'Call Center',
     );
   }
 

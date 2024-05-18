@@ -1,4 +1,4 @@
-import 'package:Bcom/presentation/components/exportcomponent.dart';
+import '../exportcomponent.dart';
 
 // ignore: must_be_immutable
 class BoxInputMessaage extends StatelessWidget {
@@ -12,29 +12,28 @@ class BoxInputMessaage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
       padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(color: ColorsApp.grey),
+      // decoration: BoxDecoration(color: ColorsApp.grey),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          InkWell(
-            onTap: onTap,
-            child: Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: ColorsApp.tird,
-              ),
-              child: Icon(Icons.add, color: Colors.white, size: 22.0),
-            ),
-          ),
-          Flexible(
-            flex: 10,
+          // InkWell(
+          //   onTap: onTap,
+          //   child: Container(
+          //     padding: EdgeInsets.all(8),
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(8),
+          //       color: ColorsApp.primary,
+          //     ),
+          //     child: Icon(Icons.add, color: Colors.white, size: 22.0),
+          //   ),
+          // ),
+          Expanded(
+            // flex: 10,
             child: Container(
               constraints: BoxConstraints(
-                  maxHeight: getHeight(context) / 3, minHeight: 18),
+                  maxHeight: getHeight(context) / 5, minHeight: 18),
               margin: EdgeInsets.symmetric(horizontal: 2),
               child: TextField(
                 controller: controller,
@@ -53,7 +52,7 @@ class BoxInputMessaage extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontSize: 12,
                   ),
-                  counterText: '',
+                  counterText: "",
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.blue,
@@ -77,7 +76,7 @@ class BoxInputMessaage extends StatelessWidget {
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: ColorsApp.tird,
+                      color: ColorsApp.primary,
                     ),
                     child: Container(
                         width: 22,
@@ -90,13 +89,13 @@ class BoxInputMessaage extends StatelessWidget {
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: ColorsApp.tird,
+                    color: ColorsApp.primary,
                   ),
                   child: Container(
                     width: 22,
                     height: 22,
                     child: CircularProgressIndicator(
-                      color: ColorsApp.second,
+                      color: ColorsApp.white,
                     ),
                   ),
                 ),

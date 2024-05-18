@@ -87,7 +87,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                                     'Assist',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: ColorsApp.white,
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
                                   )),

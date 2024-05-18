@@ -24,13 +24,32 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     on<GetListPack>(_getListPack);
 
     on<GetListSecteurDevis>(_getListSecteurDevis);
-    on<IncrementTimer>(_incrementTimer);
-    on<DemandeMission>(_demandeMission);
     on<SelectSecteur>(selectSecteur);
+    on<SelectPack>(selectPack);
+    on<ChangeIndexDevis>(changeIndexDevis);
     on<SetIndexHistoryDevisEvent>((event, emit) async {
       print('-----------------SetindexHistory');
       emit(state.copyWith(indexHistory: event.index));
     });
+  }
+  changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
+    emit(state.copyWith(
+      indexDevis: event.val
+          ? getVal(state.indexDevis! + 1)
+          : getVal(state.indexDevis! - 1),
+    ));
+    print(state.pack!.libelle);
+  }
+
+  getVal(val) {
+    return val < 0 ? 0 : val;
+  }
+
+  selectPack(SelectPack event, Emitter<DevisState> emit) async {
+    emit(state.copyWith(
+      pack: event.pack,
+    ));
+    print(state.pack!.libelle);
   }
 
   selectSecteur(SelectSecteur event, Emitter<DevisState> emit) async {
@@ -39,56 +58,19 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     ));
   }
 
-  _demandeMission(DemandeMission event, Emitter<DevisState> emit) async {
-    var key = await database.getKey();
-
-    emit(state.copyWith(
-      isRequest: 0,
-    ));
-    await devisRepo.demandeMission(key).then((response) async {
-      print('-------------------------------------------------');
-      print(response.data);
-
-      if (response.statusCode == 200) {
-        print(response.data);
-
-        emit(state.copyWith(
-          isRequest: 1,
-        ));
-        emit(state.copyWith(
-          isRequest: null,
-        ));
-      } else {
-        emit(state.copyWith(isRequest: 2));
-      }
-    }).onError((e, s) async {
-      emit(state.copyWith(isRequest: 2));
-    }).catchError((e) async {
-      // await cron.close();
-
-      emit(state.copyWith(isRequest: 2));
-    });
-  }
-
-  _incrementTimer(IncrementTimer event, Emitter<DevisState> emit) async {
-    if (state.sendPosition == true) {
-      var time = state.time! + 1;
-      emit(state.copyWith(isRequest: null, time: time));
-    }
-  }
-
   _getListPack(GetListPack event, Emitter<DevisState> emit) async {
-    var key = await database.getKey();
     emit(state.copyWith(
       load_list_pack: 0,
     ));
     await devisRepo.getlistPack().then((response) {
+      print('---------list_pack------${response.data['hydra:member']}');
       if (response.data != null) {
         emit(state.copyWith(
             load_list_pack: 1,
-            list_pack: (response.data['data'] as List)
+            list_pack: (response.data['hydra:member'] as List)
                 .map((e) => PackModel.fromJson(e))
                 .toList()));
+        print('---------list_pack------${state.list_pack!.length}');
       } else {
         emit(state.copyWith(
           load_list_pack: 2,

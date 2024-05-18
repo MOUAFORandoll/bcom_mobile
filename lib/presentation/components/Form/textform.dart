@@ -34,17 +34,24 @@ class TextForm extends StatelessWidget {
         keyboardType: type,
         obscureText: obscureText!,
         decoration: new InputDecoration(
-          fillColor: ColorsApp.tird,
+          fillColor: ColorsApp.second.withOpacity(0.3),
+          focusColor: ColorsApp.second.withOpacity(0.3),
+          hoverColor: ColorsApp.second.withOpacity(0.3),
+          // label: Text(widget.placeholder!),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10.0),
-              borderSide: BorderSide(
-                color: ColorsApp.tird,
-              )),
+            borderSide: BorderSide(color: ColorsApp.second, width: 1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorsApp.red, width: 1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorsApp.grey, width: 1),
+            borderRadius: BorderRadius.circular(10),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color: ColorsApp.tird,
-            ),
           ),
           contentPadding: EdgeInsets.only(
             left: 15,

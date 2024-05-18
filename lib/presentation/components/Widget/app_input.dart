@@ -35,57 +35,74 @@ class _AppInputState extends State<AppInput> {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY),
-        child: TextFormField(
-          cursorColor: ColorsApp.tird, autofocus: false,
-          controller: widget.controller,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            // color: ColorsApp.tird,
-            fontSize: 12,
-            fontFamily: 'Lato',
-          ),
-
-          // maxLength: widget.maxLength,
-          onChanged: widget.onChanged,
-
-          decoration: InputDecoration(
-              fillColor: ColorsApp.second.withOpacity(0.3),
-              focusColor: ColorsApp.second.withOpacity(0.3),
-              hoverColor: ColorsApp.second.withOpacity(0.3),
-              // label: Text(widget.placeholder!),
-              contentPadding: EdgeInsets.all(15),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: ColorsApp.second, width: 1),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: ColorsApp.red, width: 1),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: ColorsApp.grey, width: 1),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              errorText: widget.errorText,
-              errorStyle: TextStyle(
-                fontFamily: 'Lato',
-                color: ColorsApp.red,
-              ),
-              prefixIcon: widget.prefix,
-              hintText: widget.placeholder,
-              hintStyle: TextStyle(
+        margin:
+            EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY / 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+                margin: EdgeInsets.symmetric(vertical: kMarginY),
+                child: Text(
+                  widget.placeholder!,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    // color: ColorsApp.tird,
+                    fontSize: 12,
+                    fontFamily: 'Lato',
+                  ),
+                )),
+            TextFormField(
+              cursorColor: ColorsApp.tird, autofocus: false,
+              controller: widget.controller,
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
+                // color: ColorsApp.tird,
                 fontSize: 12,
                 fontFamily: 'Lato',
               ),
-              suffixIcon: widget.icon),
-          validator: widget.validator,
-          obscureText: isVisible,
-          keyboardType: widget.textInputType,
+
+              // maxLength: widget.maxLength,
+              onChanged: widget.onChanged,
+
+              decoration: InputDecoration(
+                  fillColor: ColorsApp.second.withOpacity(0.3),
+                  focusColor: ColorsApp.second.withOpacity(0.3),
+                  hoverColor: ColorsApp.second.withOpacity(0.3),
+                  // label: Text(widget.placeholder!),
+                  contentPadding: EdgeInsets.all(15),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: ColorsApp.second, width: 1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: ColorsApp.red, width: 1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: ColorsApp.grey, width: 1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorText: widget.errorText,
+                  errorStyle: TextStyle(
+                    fontFamily: 'Lato',
+                    color: ColorsApp.red,
+                  ),
+                  prefixIcon: widget.prefix,
+                  // hintText: widget.placeholder,
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    fontFamily: 'Lato',
+                  ),
+                  suffixIcon: widget.icon),
+              validator: widget.validator,
+              obscureText: isVisible,
+              keyboardType: widget.textInputType,
+            ),
+          ],
         ));
   }
 }
@@ -144,18 +161,18 @@ class _AppInputPasswordState extends State<AppInputPassword> {
             contentPadding: EdgeInsets.all(15),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: ColorsApp.second, width: 1),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: ColorsApp.red, width: 1),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: ColorsApp.grey, width: 1),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             // errorText: widget.errorText,
             errorStyle: TextStyle(

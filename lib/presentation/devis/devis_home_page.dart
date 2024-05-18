@@ -39,14 +39,14 @@ class _PresentationPageState extends State<PresentationPage>
                           image: Assets.onb1,
                         ),
                         AppCarrousselItemSecond(
-                            title: 'ctitle2'.tr(),
+                            title: 'Marketing'.tr(),
                             description:
                                 'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'
                                     .tr(),
                             image: Assets.onb2,
                             index: state.index),
                         AppCarrousselItemSecond(
-                            title: 'ctitle2'.tr(),
+                            title: 'Commander un devis'.tr(),
                             description:
                                 'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'
                                     .tr(),

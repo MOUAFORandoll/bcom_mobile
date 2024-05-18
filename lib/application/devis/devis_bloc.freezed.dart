@@ -27,7 +27,8 @@ mixin _$DevisEvent {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -44,7 +45,8 @@ mixin _$DevisEvent {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -61,7 +63,8 @@ mixin _$DevisEvent {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -84,7 +87,8 @@ mixin _$DevisEvent {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -103,7 +107,8 @@ mixin _$DevisEvent {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -122,7 +127,8 @@ mixin _$DevisEvent {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -196,7 +202,8 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -216,7 +223,8 @@ class _$GetListPackImpl implements GetListPack {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -236,7 +244,8 @@ class _$GetListPackImpl implements GetListPack {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -265,7 +274,8 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -287,7 +297,8 @@ class _$GetListPackImpl implements GetListPack {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -309,7 +320,8 @@ class _$GetListPackImpl implements GetListPack {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -376,7 +388,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -396,7 +409,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -416,7 +430,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -445,7 +460,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -467,7 +483,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -489,7 +506,8 @@ class _$GetListMissionDevisEffectueImpl implements GetListMissionDevisEffectue {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -554,7 +572,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -574,7 +593,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -594,7 +614,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -623,7 +644,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -645,7 +667,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -667,7 +690,8 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -731,7 +755,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -751,7 +776,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -771,7 +797,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -800,7 +827,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -822,7 +850,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -844,7 +873,8 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -911,7 +941,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -931,7 +962,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -951,7 +983,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -980,7 +1013,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -1002,7 +1036,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -1024,7 +1059,8 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -1090,7 +1126,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -1110,7 +1147,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -1130,7 +1168,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -1159,7 +1198,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -1181,7 +1221,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -1203,7 +1244,8 @@ class _$EndDisponibiliteDevisImpl implements EndDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -1270,7 +1312,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -1290,7 +1333,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -1310,7 +1354,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -1339,7 +1384,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -1361,7 +1407,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -1383,7 +1430,8 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -1448,7 +1496,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -1468,7 +1517,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -1488,7 +1538,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -1517,7 +1568,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -1539,7 +1591,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -1561,7 +1614,8 @@ class _$IncrementTimerImpl implements IncrementTimer {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -1655,7 +1709,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -1675,7 +1730,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -1695,7 +1751,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -1724,7 +1781,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -1746,7 +1804,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -1768,7 +1827,8 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -1792,65 +1852,65 @@ abstract class SetIndexHistoryDevisEvent implements DevisEvent {
 }
 
 /// @nodoc
-abstract class _$$SelectMissionImplCopyWith<$Res> {
-  factory _$$SelectMissionImplCopyWith(
-          _$SelectMissionImpl value, $Res Function(_$SelectMissionImpl) then) =
-      __$$SelectMissionImplCopyWithImpl<$Res>;
+abstract class _$$SelectPackImplCopyWith<$Res> {
+  factory _$$SelectPackImplCopyWith(
+          _$SelectPackImpl value, $Res Function(_$SelectPackImpl) then) =
+      __$$SelectPackImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Mission mission});
+  $Res call({PackModel pack});
 }
 
 /// @nodoc
-class __$$SelectMissionImplCopyWithImpl<$Res>
-    extends _$DevisEventCopyWithImpl<$Res, _$SelectMissionImpl>
-    implements _$$SelectMissionImplCopyWith<$Res> {
-  __$$SelectMissionImplCopyWithImpl(
-      _$SelectMissionImpl _value, $Res Function(_$SelectMissionImpl) _then)
+class __$$SelectPackImplCopyWithImpl<$Res>
+    extends _$DevisEventCopyWithImpl<$Res, _$SelectPackImpl>
+    implements _$$SelectPackImplCopyWith<$Res> {
+  __$$SelectPackImplCopyWithImpl(
+      _$SelectPackImpl _value, $Res Function(_$SelectPackImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mission = null,
+    Object? pack = null,
   }) {
-    return _then(_$SelectMissionImpl(
-      mission: null == mission
-          ? _value.mission
-          : mission // ignore: cast_nullable_to_non_nullable
-              as Mission,
+    return _then(_$SelectPackImpl(
+      pack: null == pack
+          ? _value.pack
+          : pack // ignore: cast_nullable_to_non_nullable
+              as PackModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SelectMissionImpl implements SelectMission {
-  const _$SelectMissionImpl({required this.mission});
+class _$SelectPackImpl implements SelectPack {
+  const _$SelectPackImpl({required this.pack});
 
   @override
-  final Mission mission;
+  final PackModel pack;
 
   @override
   String toString() {
-    return 'DevisEvent.selectMission(mission: $mission)';
+    return 'DevisEvent.selectPack(pack: $pack)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectMissionImpl &&
-            (identical(other.mission, mission) || other.mission == mission));
+            other is _$SelectPackImpl &&
+            (identical(other.pack, pack) || other.pack == pack));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mission);
+  int get hashCode => Object.hash(runtimeType, pack);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectMissionImplCopyWith<_$SelectMissionImpl> get copyWith =>
-      __$$SelectMissionImplCopyWithImpl<_$SelectMissionImpl>(this, _$identity);
+  _$$SelectPackImplCopyWith<_$SelectPackImpl> get copyWith =>
+      __$$SelectPackImplCopyWithImpl<_$SelectPackImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1864,12 +1924,13 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
   }) {
-    return selectMission(mission);
+    return selectPack(pack);
   }
 
   @override
@@ -1884,12 +1945,13 @@ class _$SelectMissionImpl implements SelectMission {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
   }) {
-    return selectMission?.call(mission);
+    return selectPack?.call(pack);
   }
 
   @override
@@ -1904,14 +1966,15 @@ class _$SelectMissionImpl implements SelectMission {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
     required TResult orElse(),
   }) {
-    if (selectMission != null) {
-      return selectMission(mission);
+    if (selectPack != null) {
+      return selectPack(pack);
     }
     return orElse();
   }
@@ -1933,12 +1996,13 @@ class _$SelectMissionImpl implements SelectMission {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
   }) {
-    return selectMission(this);
+    return selectPack(this);
   }
 
   @override
@@ -1955,12 +2019,13 @@ class _$SelectMissionImpl implements SelectMission {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
   }) {
-    return selectMission?.call(this);
+    return selectPack?.call(this);
   }
 
   @override
@@ -1977,26 +2042,242 @@ class _$SelectMissionImpl implements SelectMission {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
     required TResult orElse(),
   }) {
-    if (selectMission != null) {
-      return selectMission(this);
+    if (selectPack != null) {
+      return selectPack(this);
     }
     return orElse();
   }
 }
 
-abstract class SelectMission implements DevisEvent {
-  const factory SelectMission({required final Mission mission}) =
-      _$SelectMissionImpl;
+abstract class SelectPack implements DevisEvent {
+  const factory SelectPack({required final PackModel pack}) = _$SelectPackImpl;
 
-  Mission get mission;
+  PackModel get pack;
   @JsonKey(ignore: true)
-  _$$SelectMissionImplCopyWith<_$SelectMissionImpl> get copyWith =>
+  _$$SelectPackImplCopyWith<_$SelectPackImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeIndexDevisImplCopyWith<$Res> {
+  factory _$$ChangeIndexDevisImplCopyWith(_$ChangeIndexDevisImpl value,
+          $Res Function(_$ChangeIndexDevisImpl) then) =
+      __$$ChangeIndexDevisImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool val});
+}
+
+/// @nodoc
+class __$$ChangeIndexDevisImplCopyWithImpl<$Res>
+    extends _$DevisEventCopyWithImpl<$Res, _$ChangeIndexDevisImpl>
+    implements _$$ChangeIndexDevisImplCopyWith<$Res> {
+  __$$ChangeIndexDevisImplCopyWithImpl(_$ChangeIndexDevisImpl _value,
+      $Res Function(_$ChangeIndexDevisImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? val = null,
+  }) {
+    return _then(_$ChangeIndexDevisImpl(
+      val: null == val
+          ? _value.val
+          : val // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
+  const _$ChangeIndexDevisImpl({required this.val});
+
+  @override
+  final bool val;
+
+  @override
+  String toString() {
+    return 'DevisEvent.changeIndexDevis(val: $val)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeIndexDevisImpl &&
+            (identical(other.val, val) || other.val == val));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, val);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeIndexDevisImplCopyWith<_$ChangeIndexDevisImpl> get copyWith =>
+      __$$ChangeIndexDevisImplCopyWithImpl<_$ChangeIndexDevisImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListPack,
+    required TResult Function() getListMissionDevisEffectue,
+    required TResult Function() startMissionDevis,
+    required TResult Function() endMissionDevis,
+    required TResult Function() startDisponibiliteDevis,
+    required TResult Function() endDisponibiliteDevis,
+    required TResult Function() savePositionForMissionDevis,
+    required TResult Function() incrementTimer,
+    required TResult Function(dynamic index) setIndexHistoryDevis,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
+    required TResult Function() demandeMission,
+    required TResult Function() getListSecteurDevis,
+    required TResult Function(Secteur secteur) selectSecteur,
+  }) {
+    return changeIndexDevis(val);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListPack,
+    TResult? Function()? getListMissionDevisEffectue,
+    TResult? Function()? startMissionDevis,
+    TResult? Function()? endMissionDevis,
+    TResult? Function()? startDisponibiliteDevis,
+    TResult? Function()? endDisponibiliteDevis,
+    TResult? Function()? savePositionForMissionDevis,
+    TResult? Function()? incrementTimer,
+    TResult? Function(dynamic index)? setIndexHistoryDevis,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
+    TResult? Function()? demandeMission,
+    TResult? Function()? getListSecteurDevis,
+    TResult? Function(Secteur secteur)? selectSecteur,
+  }) {
+    return changeIndexDevis?.call(val);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListPack,
+    TResult Function()? getListMissionDevisEffectue,
+    TResult Function()? startMissionDevis,
+    TResult Function()? endMissionDevis,
+    TResult Function()? startDisponibiliteDevis,
+    TResult Function()? endDisponibiliteDevis,
+    TResult Function()? savePositionForMissionDevis,
+    TResult Function()? incrementTimer,
+    TResult Function(dynamic index)? setIndexHistoryDevis,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
+    TResult Function()? demandeMission,
+    TResult Function()? getListSecteurDevis,
+    TResult Function(Secteur secteur)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (changeIndexDevis != null) {
+      return changeIndexDevis(val);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetListPack value) getListPack,
+    required TResult Function(GetListMissionDevisEffectue value)
+        getListMissionDevisEffectue,
+    required TResult Function(StartMissionDevis value) startMissionDevis,
+    required TResult Function(EndMissionDevis value) endMissionDevis,
+    required TResult Function(StartDisponibiliteDevis value)
+        startDisponibiliteDevis,
+    required TResult Function(EndDisponibiliteDevis value)
+        endDisponibiliteDevis,
+    required TResult Function(SavePositionForMissionDevis value)
+        savePositionForMissionDevis,
+    required TResult Function(IncrementTimer value) incrementTimer,
+    required TResult Function(SetIndexHistoryDevisEvent value)
+        setIndexHistoryDevis,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
+    required TResult Function(DemandeMission value) demandeMission,
+    required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
+    required TResult Function(SelectSecteur value) selectSecteur,
+  }) {
+    return changeIndexDevis(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetListPack value)? getListPack,
+    TResult? Function(GetListMissionDevisEffectue value)?
+        getListMissionDevisEffectue,
+    TResult? Function(StartMissionDevis value)? startMissionDevis,
+    TResult? Function(EndMissionDevis value)? endMissionDevis,
+    TResult? Function(StartDisponibiliteDevis value)? startDisponibiliteDevis,
+    TResult? Function(EndDisponibiliteDevis value)? endDisponibiliteDevis,
+    TResult? Function(SavePositionForMissionDevis value)?
+        savePositionForMissionDevis,
+    TResult? Function(IncrementTimer value)? incrementTimer,
+    TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
+    TResult? Function(DemandeMission value)? demandeMission,
+    TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
+    TResult? Function(SelectSecteur value)? selectSecteur,
+  }) {
+    return changeIndexDevis?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetListPack value)? getListPack,
+    TResult Function(GetListMissionDevisEffectue value)?
+        getListMissionDevisEffectue,
+    TResult Function(StartMissionDevis value)? startMissionDevis,
+    TResult Function(EndMissionDevis value)? endMissionDevis,
+    TResult Function(StartDisponibiliteDevis value)? startDisponibiliteDevis,
+    TResult Function(EndDisponibiliteDevis value)? endDisponibiliteDevis,
+    TResult Function(SavePositionForMissionDevis value)?
+        savePositionForMissionDevis,
+    TResult Function(IncrementTimer value)? incrementTimer,
+    TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
+    TResult Function(DemandeMission value)? demandeMission,
+    TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
+    TResult Function(SelectSecteur value)? selectSecteur,
+    required TResult orElse(),
+  }) {
+    if (changeIndexDevis != null) {
+      return changeIndexDevis(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeIndexDevis implements DevisEvent {
+  const factory ChangeIndexDevis({required final bool val}) =
+      _$ChangeIndexDevisImpl;
+
+  bool get val;
+  @JsonKey(ignore: true)
+  _$$ChangeIndexDevisImplCopyWith<_$ChangeIndexDevisImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2047,7 +2328,8 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -2067,7 +2349,8 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -2087,7 +2370,8 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -2116,7 +2400,8 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -2138,7 +2423,8 @@ class _$DemandeMissionImpl implements DemandeMission {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -2160,7 +2446,8 @@ class _$DemandeMissionImpl implements DemandeMission {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -2225,7 +2512,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -2245,7 +2533,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -2265,7 +2554,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -2294,7 +2584,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -2316,7 +2607,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -2338,7 +2630,8 @@ class _$GetListSecteurDevisImpl implements GetListSecteurDevis {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -2428,7 +2721,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() incrementTimer,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(Mission mission) selectMission,
+    required TResult Function(PackModel pack) selectPack,
+    required TResult Function(bool val) changeIndexDevis,
     required TResult Function() demandeMission,
     required TResult Function() getListSecteurDevis,
     required TResult Function(Secteur secteur) selectSecteur,
@@ -2448,7 +2742,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? incrementTimer,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(Mission mission)? selectMission,
+    TResult? Function(PackModel pack)? selectPack,
+    TResult? Function(bool val)? changeIndexDevis,
     TResult? Function()? demandeMission,
     TResult? Function()? getListSecteurDevis,
     TResult? Function(Secteur secteur)? selectSecteur,
@@ -2468,7 +2763,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? incrementTimer,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(Mission mission)? selectMission,
+    TResult Function(PackModel pack)? selectPack,
+    TResult Function(bool val)? changeIndexDevis,
     TResult Function()? demandeMission,
     TResult Function()? getListSecteurDevis,
     TResult Function(Secteur secteur)? selectSecteur,
@@ -2497,7 +2793,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
     required TResult Function(IncrementTimer value) incrementTimer,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectMission value) selectMission,
+    required TResult Function(SelectPack value) selectPack,
+    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListSecteurDevis value) getListSecteurDevis,
     required TResult Function(SelectSecteur value) selectSecteur,
@@ -2519,7 +2816,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
         savePositionForMissionDevis,
     TResult? Function(IncrementTimer value)? incrementTimer,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectMission value)? selectMission,
+    TResult? Function(SelectPack value)? selectPack,
+    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult? Function(SelectSecteur value)? selectSecteur,
@@ -2541,7 +2839,8 @@ class _$SelectSecteurImpl implements SelectSecteur {
         savePositionForMissionDevis,
     TResult Function(IncrementTimer value)? incrementTimer,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectMission value)? selectMission,
+    TResult Function(SelectPack value)? selectPack,
+    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListSecteurDevis value)? getListSecteurDevis,
     TResult Function(SelectSecteur value)? selectSecteur,
@@ -2567,9 +2866,9 @@ abstract class SelectSecteur implements DevisEvent {
 /// @nodoc
 mixin _$DevisState {
   LatLng? get position => throw _privateConstructorUsedError;
-  Mission? get mission => throw _privateConstructorUsedError;
+  PackModel? get pack => throw _privateConstructorUsedError;
   MissionSession? get missionSession => throw _privateConstructorUsedError;
-  int? get missionsession_id => throw _privateConstructorUsedError;
+  int? get indexDevis => throw _privateConstructorUsedError;
   List<PackModel>? get list_pack => throw _privateConstructorUsedError;
   List<MissionSession>? get list_mission_session =>
       throw _privateConstructorUsedError;
@@ -2599,9 +2898,9 @@ abstract class $DevisStateCopyWith<$Res> {
   @useResult
   $Res call(
       {LatLng? position,
-      Mission? mission,
+      PackModel? pack,
       MissionSession? missionSession,
-      int? missionsession_id,
+      int? indexDevis,
       List<PackModel>? list_pack,
       List<MissionSession>? list_mission_session,
       int indexHistory,
@@ -2632,9 +2931,9 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
   @override
   $Res call({
     Object? position = freezed,
-    Object? mission = freezed,
+    Object? pack = freezed,
     Object? missionSession = freezed,
-    Object? missionsession_id = freezed,
+    Object? indexDevis = freezed,
     Object? list_pack = freezed,
     Object? list_mission_session = freezed,
     Object? indexHistory = null,
@@ -2655,17 +2954,17 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as LatLng?,
-      mission: freezed == mission
-          ? _value.mission
-          : mission // ignore: cast_nullable_to_non_nullable
-              as Mission?,
+      pack: freezed == pack
+          ? _value.pack
+          : pack // ignore: cast_nullable_to_non_nullable
+              as PackModel?,
       missionSession: freezed == missionSession
           ? _value.missionSession
           : missionSession // ignore: cast_nullable_to_non_nullable
               as MissionSession?,
-      missionsession_id: freezed == missionsession_id
-          ? _value.missionsession_id
-          : missionsession_id // ignore: cast_nullable_to_non_nullable
+      indexDevis: freezed == indexDevis
+          ? _value.indexDevis
+          : indexDevis // ignore: cast_nullable_to_non_nullable
               as int?,
       list_pack: freezed == list_pack
           ? _value.list_pack
@@ -2737,9 +3036,9 @@ abstract class _$$DevisStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {LatLng? position,
-      Mission? mission,
+      PackModel? pack,
       MissionSession? missionSession,
-      int? missionsession_id,
+      int? indexDevis,
       List<PackModel>? list_pack,
       List<MissionSession>? list_mission_session,
       int indexHistory,
@@ -2768,9 +3067,9 @@ class __$$DevisStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? position = freezed,
-    Object? mission = freezed,
+    Object? pack = freezed,
     Object? missionSession = freezed,
-    Object? missionsession_id = freezed,
+    Object? indexDevis = freezed,
     Object? list_pack = freezed,
     Object? list_mission_session = freezed,
     Object? indexHistory = null,
@@ -2791,17 +3090,17 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as LatLng?,
-      mission: freezed == mission
-          ? _value.mission
-          : mission // ignore: cast_nullable_to_non_nullable
-              as Mission?,
+      pack: freezed == pack
+          ? _value.pack
+          : pack // ignore: cast_nullable_to_non_nullable
+              as PackModel?,
       missionSession: freezed == missionSession
           ? _value.missionSession
           : missionSession // ignore: cast_nullable_to_non_nullable
               as MissionSession?,
-      missionsession_id: freezed == missionsession_id
-          ? _value.missionsession_id
-          : missionsession_id // ignore: cast_nullable_to_non_nullable
+      indexDevis: freezed == indexDevis
+          ? _value.indexDevis
+          : indexDevis // ignore: cast_nullable_to_non_nullable
               as int?,
       list_pack: freezed == list_pack
           ? _value._list_pack
@@ -2868,9 +3167,9 @@ class __$$DevisStateImplCopyWithImpl<$Res>
 class _$DevisStateImpl implements _DevisState {
   const _$DevisStateImpl(
       {required this.position,
-      required this.mission,
+      required this.pack,
       required this.missionSession,
-      required this.missionsession_id,
+      required this.indexDevis,
       required final List<PackModel>? list_pack,
       required final List<MissionSession>? list_mission_session,
       required this.indexHistory,
@@ -2892,11 +3191,11 @@ class _$DevisStateImpl implements _DevisState {
   @override
   final LatLng? position;
   @override
-  final Mission? mission;
+  final PackModel? pack;
   @override
   final MissionSession? missionSession;
   @override
-  final int? missionsession_id;
+  final int? indexDevis;
   final List<PackModel>? _list_pack;
   @override
   List<PackModel>? get list_pack {
@@ -2953,7 +3252,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(position: $position, mission: $mission, missionSession: $missionSession, missionsession_id: $missionsession_id, list_pack: $list_pack, list_mission_session: $list_mission_session, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, sendPosition: $sendPosition, load_list_mission_session: $load_list_mission_session, time: $time, updateData: $updateData, list_secteur: $list_secteur, load_list_secteur: $load_list_secteur, secteur: $secteur)';
+    return 'DevisState(position: $position, pack: $pack, missionSession: $missionSession, indexDevis: $indexDevis, list_pack: $list_pack, list_mission_session: $list_mission_session, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_mission_done: $load_list_mission_done, load_list_mission_encours: $load_list_mission_encours, sendPosition: $sendPosition, load_list_mission_session: $load_list_mission_session, time: $time, updateData: $updateData, list_secteur: $list_secteur, load_list_secteur: $load_list_secteur, secteur: $secteur)';
   }
 
   @override
@@ -2963,11 +3262,11 @@ class _$DevisStateImpl implements _DevisState {
             other is _$DevisStateImpl &&
             (identical(other.position, position) ||
                 other.position == position) &&
-            (identical(other.mission, mission) || other.mission == mission) &&
+            (identical(other.pack, pack) || other.pack == pack) &&
             (identical(other.missionSession, missionSession) ||
                 other.missionSession == missionSession) &&
-            (identical(other.missionsession_id, missionsession_id) ||
-                other.missionsession_id == missionsession_id) &&
+            (identical(other.indexDevis, indexDevis) ||
+                other.indexDevis == indexDevis) &&
             const DeepCollectionEquality()
                 .equals(other._list_pack, _list_pack) &&
             const DeepCollectionEquality()
@@ -3002,9 +3301,9 @@ class _$DevisStateImpl implements _DevisState {
   int get hashCode => Object.hash(
       runtimeType,
       position,
-      mission,
+      pack,
       missionSession,
-      missionsession_id,
+      indexDevis,
       const DeepCollectionEquality().hash(_list_pack),
       const DeepCollectionEquality().hash(_list_mission_session),
       indexHistory,
@@ -3030,9 +3329,9 @@ class _$DevisStateImpl implements _DevisState {
 abstract class _DevisState implements DevisState {
   const factory _DevisState(
       {required final LatLng? position,
-      required final Mission? mission,
+      required final PackModel? pack,
       required final MissionSession? missionSession,
-      required final int? missionsession_id,
+      required final int? indexDevis,
       required final List<PackModel>? list_pack,
       required final List<MissionSession>? list_mission_session,
       required final int indexHistory,
@@ -3051,11 +3350,11 @@ abstract class _DevisState implements DevisState {
   @override
   LatLng? get position;
   @override
-  Mission? get mission;
+  PackModel? get pack;
   @override
   MissionSession? get missionSession;
   @override
-  int? get missionsession_id;
+  int? get indexDevis;
   @override
   List<PackModel>? get list_pack;
   @override

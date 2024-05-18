@@ -1,7 +1,8 @@
 class ApiRoutes {
   static const Pack = '/api/packs';
   static const Tcontroller = '/cterrain';
-
+  
+  static const CALLCENTERUSER = '/callcenter/user';
   static const CATEGORY = '/category';
   static const LOCATION_USER = '/user/location';
   static const USER = '/user/get';
