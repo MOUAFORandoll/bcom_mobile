@@ -30,8 +30,10 @@ class _InfoDevisState extends State<InfoDevis> {
   TextEditingController zoneActivite = TextEditingController();
 
   TextEditingController activite = TextEditingController();
-
+  List typeCommunication = ['Type1', 'Type2', ',Type3', ',Type4'];
+  String type = 'Type1';
   int timework = 1;
+  int inQuartier = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +65,11 @@ class _InfoDevisState extends State<InfoDevis> {
                         top: kMarginY,
                       ),
                       child: Text(
-                        'Renseignez nous les informations de votre devis'.tr(),
+                        'Renseignez nous les informations de votre commande'
+                            .tr(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 13,
+                          fontSize: 15,
                           // color: ColorsApp.orange,
                           fontWeight: FontWeight.w700,
                         ),
@@ -76,20 +79,6 @@ class _InfoDevisState extends State<InfoDevis> {
                         margin:
                             EdgeInsets.only(top: kMarginY, bottom: kMarginY),
                         child: Column(children: [
-                          Container(
-                            margin: EdgeInsets.only(
-                              top: kMarginY,
-                            ),
-                            child: Text(
-                              '1- Contenu de votre commande'.tr(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                                // color: ColorsApp.orange,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ),
                           AppInput(
                             controller: nmbre_biker,
                             textInputType: TextInputType.number,
@@ -110,153 +99,248 @@ class _InfoDevisState extends State<InfoDevis> {
                           ),
                           Container(
                               margin: EdgeInsets.symmetric(
-                                  horizontal: kMarginX, vertical: kMarginY),
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      child: Text(
-                                        'Zone d\'activite ?'.tr(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          // color: ColorsApp.tird,
-                                          fontSize: 12,
-                                          fontFamily: 'Lato',
-                                        ),
+                                  horizontal: kMarginX, vertical: kMarginY / 2),
+                              decoration: BoxDecoration(),
+                              child: SingleChildScrollView(
+                                  child: Column(children: [
+                                Container(
+                                    padding: EdgeInsets.only(
+                                      top: kMarginY,
+                                    ),
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Choisir le type de communication'.tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        // color: ColorsApp.tird,
+                                        fontSize: 12,
+                                        fontFamily: 'Lato',
+                                      ),
+                                    )),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: ColorsApp.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  height: getHeight(context) * .06,
+                                  width: getWith(context),
+                                  margin: EdgeInsets.only(
+                                    top: kMarginY * 1.5,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: DropdownButton(
+                                    value: type,
+                                    icon: Container(
+                                      // padding: EdgeInsets.only(top: 4),
+                                      child: Icon(
+                                        Icons.keyboard_arrow_down_outlined,
                                       ),
                                     ),
-                                    TextForm(
-                                      controller: zoneActivite,
-                                    )
-                                  ])),
-                        ])),
-                    Container(
-                      margin: EdgeInsets.only(top: kMarginY, bottom: kMarginY),
-                      child: Column(
-                        children: [
+                                    hint: Container(
+                                      width: getWith(context) * .65,
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 0,
+                                      ),
+                                      child: Text(
+                                        'Choisir le type de communication'.tr(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            // color: ColorsApp.tird,
+                                            fontSize: 12,
+                                            fontFamily: 'Lato',
+                                            overflow: TextOverflow.ellipsis),
+                                      ),
+                                    ),
+                                    iconSize: 25,
+                                    underline: SizedBox(),
+                                    style: TextStyle(
+                                        color: ColorsApp.primary, fontSize: 12),
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        type = newValue.toString();
+                                      });
+                                    },
+                                    items: typeCommunication!.map((value) {
+                                      return DropdownMenuItem(
+                                        value: value,
+                                        child: Center(
+                                          child: Text(
+                                            value!,
+                                          ),
+                                        ),
+                                      );
+                                    }).toList(),
+                                  ),
+                                )
+                              ]))),
                           Container(
-                            margin: EdgeInsets.only(
-                              top: kMarginY,
+                            margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    top: kMarginY,
+                                  ),
+                                  child: Text(
+                                    'Vous desirez un service de jour ou nuit ?'
+                                        .tr(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      // color: ColorsApp.tird,
+                                      fontSize: 12,
+                                      fontFamily: 'Lato',
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Radio(
+                                            value: 1,
+                                            activeColor: ColorsApp.second,
+                                            groupValue: timework,
+                                            onChanged: (int? value) {
+                                              setState(() {
+                                                timework = value!;
+                                              });
+                                              // BlocProvider.of<AlerteBloc>(
+                                              //         context)
+                                              //     .add(FieldChangedAlerte(
+                                              //         'sexeUser', '0'));
+                                            },
+                                          ),
+                                          Text('Jour'.tr()),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Radio(
+                                            value: 2,
+                                            activeColor: ColorsApp.second,
+                                            groupValue: timework,
+                                            onChanged: (int? value) {
+                                              setState(() {
+                                                timework = value!;
+                                              });
+                                              // BlocProvider.of<AlerteBloc>(
+                                              //         context)
+                                              //     .add(FieldChangedAlerte(
+                                              //         'sexeUser', '1'));
+                                            },
+                                          ),
+                                          Text('Nuit'.tr()),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Radio(
+                                            value: 3,
+                                            activeColor: ColorsApp.second,
+                                            groupValue: timework,
+                                            onChanged: (int? value) {
+                                              setState(() {
+                                                timework = value!;
+                                              });
+                                              // BlocProvider.of<AlerteBloc>(
+                                              //         context)
+                                              //     .add(FieldChangedAlerte(
+                                              //         'sexeUser', '1'));
+                                            },
+                                          ),
+                                          Text('Jour et Nuit'.tr()),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Text(
-                              '2- Votre Produit'.tr(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                                // color: ColorsApp.orange,
-                                fontWeight: FontWeight.w700,
-                              ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    top: kMarginY,
+                                  ),
+                                  child: Text(
+                                    'Vous desirez nos services dans le quartier ?'
+                                        .tr(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      // color: ColorsApp.tird,
+                                      fontSize: 12,
+                                      fontFamily: 'Lato',
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Radio(
+                                            value: 0,
+                                            activeColor: ColorsApp.second,
+                                            groupValue: inQuartier,
+                                            onChanged: (int? value) {
+                                              setState(() {
+                                                inQuartier = value!;
+                                              });
+                                              // BlocProvider.of<AlerteBloc>(
+                                              //         context)
+                                              //     .add(FieldChangedAlerte(
+                                              //         'sexeUser', '0'));
+                                            },
+                                          ),
+                                          Text('Oui'.tr()),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Radio(
+                                            value: 1,
+                                            activeColor: ColorsApp.second,
+                                            groupValue: inQuartier,
+                                            onChanged: (int? value) {
+                                              setState(() {
+                                                inQuartier = value!;
+                                              });
+                                              // BlocProvider.of<AlerteBloc>(
+                                              //         context)
+                                              //     .add(FieldChangedAlerte(
+                                              //         'sexeUser', '1'));
+                                            },
+                                          ),
+                                          Text('Non'.tr()),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           AppInput(
-                            controller: nom_produit,
+                            controller: zoneActivite,
                             onChanged: (value) {},
-                            placeholder: 'Nom de votre produit'.tr(),
+                            placeholder: 'Zone d\'activite ?'.tr(),
                             validator: (value) {
                               return Validators.isValidUsername(value!);
                             },
                           ),
-                          Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: kMarginX, vertical: kMarginY),
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        'Parlez nous de votre produit'.tr(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          // color: ColorsApp.tird,
-                                          fontSize: 12,
-                                          fontFamily: 'Lato',
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      child: TextForm(
-                                        controller: type_produit,
-                                      ),
-                                    )
-                                  ])),
-                          Container(
-                            margin: EdgeInsets.only(
-                              top: kMarginY,
-                            ),
-                            child: Text(
-                                'Vous desirez un service de jour ou nuit ?'
-                                    .tr()),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 1,
-                                    activeColor: ColorsApp.second,
-                                    groupValue: timework,
-                                    onChanged: (int? value) {
-                                      setState(() {
-                                        timework = value!;
-                                      });
-                                      // BlocProvider.of<AlerteBloc>(
-                                      //         context)
-                                      //     .add(FieldChangedAlerte(
-                                      //         'sexeUser', '0'));
-                                    },
-                                  ),
-                                  Text('Jour'.tr()),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 2,
-                                    activeColor: ColorsApp.second,
-                                    groupValue: timework,
-                                    onChanged: (int? value) {
-                                      setState(() {
-                                        timework = value!;
-                                      });
-                                      // BlocProvider.of<AlerteBloc>(
-                                      //         context)
-                                      //     .add(FieldChangedAlerte(
-                                      //         'sexeUser', '1'));
-                                    },
-                                  ),
-                                  Text('Nuit'.tr()),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 3,
-                                    activeColor: ColorsApp.second,
-                                    groupValue: timework,
-                                    onChanged: (int? value) {
-                                      setState(() {
-                                        timework = value!;
-                                      });
-                                      // BlocProvider.of<AlerteBloc>(
-                                      //         context)
-                                      //     .add(FieldChangedAlerte(
-                                      //         'sexeUser', '1'));
-                                    },
-                                  ),
-                                  Text('Jour et Nuit'.tr()),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                        ])),
                   ]),
             )));
   }

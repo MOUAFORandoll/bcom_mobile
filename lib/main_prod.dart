@@ -20,7 +20,7 @@ Future<void> main() async {
 
   await NotificationService().initializePlatformNotifications();
   configLoading();
-  
+
   runApp(
     EasyLocalization(
         supportedLocales: supportedLocales,

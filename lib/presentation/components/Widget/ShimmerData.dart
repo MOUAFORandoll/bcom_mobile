@@ -15,7 +15,7 @@ class ShimmerData extends StatelessWidget {
                 GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
+                        crossAxisCount: 2,
                         crossAxisSpacing: 0.0,
                         childAspectRatio: 10,
                         mainAxisExtent: 100,

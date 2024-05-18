@@ -6,6 +6,7 @@ import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/presentation/components/Form/textform.dart';
 import 'package:Bcom/presentation/components/Widget/bottom_sheet_choose_picture.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
+import 'package:Bcom/presentation/devis/infos_produit.dart';
 import 'package:Bcom/presentation/devis/select_package.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 
@@ -54,11 +55,57 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
             ),
             body: Container(
                 child: Column(children: [
+              Container(
+                alignment: Alignment.center,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: kMarginX, vertical: kMarginY),
+                      decoration: BoxDecoration(
+                          color: ColorsApp.primary,
+                          borderRadius: BorderRadius.circular(50)),
+                      height: 30,
+                      width: 30,
+                      alignment: Alignment.center,
+                      child: Text(
+                        '${state.indexDevis! + 1}',
+                        style: TextStyle(
+                          color: ColorsApp.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                ]),
+              ),
               Expanded(
                 child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                    child:
-                        state.indexDevis == 0 ? SelectPackage() : InfoDevis()),
+                  decoration: BoxDecoration(
+                      color: ColorsApp.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorsApp.primary.withOpacity(0.1),
+                          spreadRadius: 5,
+                          blurRadius: 5,
+                          offset: Offset(0, 2),
+                        ),
+                        BoxShadow(
+                          color: ColorsApp.grey.withOpacity(0.1),
+                          spreadRadius: 5,
+                          blurRadius: 5,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(8)),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: kMarginX, vertical: kMarginY),
+                  padding: EdgeInsets.all(kMarginX * 1.5),
+                  child: SingleChildScrollView(
+                      child: state.indexDevis == 0
+                          ? SelectPackage()
+                          : state.indexDevis == 1
+                              ? InfoDevis()
+                              : InfoProduit()),
+                ),
               ),
               if (state.indexDevis == 0)
                 Container(
@@ -89,8 +136,10 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                                 size: MainAxisSize.max,
                                 // bgColor: ColorsApp.primary,
                                 text: 'Suivant'.tr(),
-                                onTap: () => BlocProvider.of<DevisBloc>(context)
-                                    .add(ChangeIndexDevis(val: true))))
+                                onTap: () => state.indexDevis != 2
+                                    ? BlocProvider.of<DevisBloc>(context)
+                                        .add(ChangeIndexDevis(val: true))
+                                    : null))
                       ],
                     )),
               /*   Container(
