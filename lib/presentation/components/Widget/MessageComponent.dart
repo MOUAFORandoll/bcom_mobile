@@ -1,8 +1,6 @@
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/application/model/data/MessageModel.dart';
-import 'package:Bcom/core.dart';
 import 'package:Bcom/utils/constants/assets.dart';
-import 'package:Bcom/utils/functions/formatData.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../exportcomponent.dart';
@@ -16,7 +14,7 @@ class MessageComponent extends StatelessWidget {
     final alignment =
         message.isEmetteur ? Alignment.centerRight : Alignment.centerLeft;
     final color = message.isEmetteur ? ColorsApp.primary : ColorsApp.second;
-    var formatData = new FormatData();
+
     return Align(
         alignment: alignment,
         child: Row(

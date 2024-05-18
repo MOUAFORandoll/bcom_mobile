@@ -71,7 +71,10 @@ void initConnected() async {
 
 Future<void> initLoad(context) async {
   BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
-  BlocProvider.of<DevisBloc>(context).add(GetListPack());
+  BlocProvider.of<DevisBloc>(context)
+    ..add(GetListPack())
+    ..add(GetListDevis())
+    ..add(GetListVille());
   BlocProvider.of<UserBloc>(context)
     ..add(GetUserEvent())
     ..add(GetVilleQuartier());

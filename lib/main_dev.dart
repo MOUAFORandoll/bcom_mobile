@@ -17,7 +17,7 @@ Future<void> main() async {
   await EnvManager().init(env: Environment.dev);
 
   co.init();
-  
+
   await NotificationService().initializePlatformNotifications();
   configLoading();
 

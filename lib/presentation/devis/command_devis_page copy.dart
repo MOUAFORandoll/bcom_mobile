@@ -54,7 +54,9 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
         listener: (context, state) {
           if (state.isLoading == 1) {
             EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);

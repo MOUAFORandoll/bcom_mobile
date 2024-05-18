@@ -33,8 +33,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   TextEditingController re_password = TextEditingController();
 
-  int _typeCompte = 3;
-
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -74,7 +72,9 @@ class _RegisterPageState extends State<RegisterPage> {
             listener: (context, state) {
               if (state.isLoading == 1) {
                 EasyLoading.show(
-                    status: 'En cours', maskType: EasyLoadingMaskType.black);
+                    dismissOnTap: true,
+                    status: 'En cours',
+                    maskType: EasyLoadingMaskType.black);
               } else if (state.isLoading == 3) {
                 EasyLoading.dismiss();
                 showError(state.authenticationFailedMessage!, context);

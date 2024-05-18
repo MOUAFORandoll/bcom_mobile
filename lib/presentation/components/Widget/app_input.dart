@@ -140,70 +140,86 @@ class _AppInputPasswordState extends State<AppInputPassword> {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY),
-      child: TextFormField(
-        autofocus: false,
-        controller: widget.controller,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          // color: ColorsApp.tird,
-          fontSize: 12,
-          fontFamily: 'Lato',
-        ),
-        cursorColor: ColorsApp.tird,
-        // maxLength: widget.maxLength,
-        onChanged: widget.onChanged,
-
-        decoration: InputDecoration(
-            fillColor: ColorsApp.second.withOpacity(0.3),
-            focusColor: ColorsApp.second.withOpacity(0.3),
-            hoverColor: ColorsApp.second.withOpacity(0.3),
-            // label: Text(widget.placeholder),
-            contentPadding: EdgeInsets.all(15),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: ColorsApp.second, width: 1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: ColorsApp.red, width: 1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: ColorsApp.grey, width: 1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            // errorText: widget.errorText,
-            errorStyle: TextStyle(
-              fontFamily: 'Lato',
-              color: ColorsApp.red,
-            ),
-            hintText: widget.placeholder,
-            hintStyle: TextStyle(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+              margin: EdgeInsets.only(bottom: kMarginY),
+              child: Text(
+                widget.placeholder!,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  // color: ColorsApp.tird,
+                  fontSize: 12,
+                  fontFamily: 'Lato',
+                ),
+              )),
+          TextFormField(
+            autofocus: false,
+            controller: widget.controller,
+            style: TextStyle(
               fontWeight: FontWeight.w500,
+              // color: ColorsApp.tird,
               fontSize: 12,
               fontFamily: 'Lato',
             ),
-            suffixIcon: widget.obscureText == true
-                ? IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isVisible = !isVisible;
-                      });
-                    },
-                    icon: Icon(
-                        isVisible
-                            ? Icons.remove_red_eye
-                            : FontAwesomeIcons.eyeSlash,
-                        size: isVisible ? 22 : 19
-                        /*     */
-                        ),
-                  )
-                : null),
-        validator: widget.validator,
-        obscureText: isVisible,
-        keyboardType: widget.textInputType,
+            cursorColor: ColorsApp.tird,
+            // maxLength: widget.maxLength,
+            onChanged: widget.onChanged,
+
+            decoration: InputDecoration(
+                fillColor: ColorsApp.second.withOpacity(0.3),
+                focusColor: ColorsApp.second.withOpacity(0.3),
+                hoverColor: ColorsApp.second.withOpacity(0.3),
+                // label: Text(widget.placeholder),
+                contentPadding: EdgeInsets.all(15),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: ColorsApp.second, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: ColorsApp.red, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: ColorsApp.grey, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                // errorText: widget.errorText,
+                errorStyle: TextStyle(
+                  fontFamily: 'Lato',
+                  color: ColorsApp.red,
+                ),
+                // hintText: widget.placeholder,
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                  fontFamily: 'Lato',
+                ),
+                suffixIcon: widget.obscureText == true
+                    ? IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isVisible = !isVisible;
+                          });
+                        },
+                        icon: Icon(
+                            isVisible
+                                ? Icons.remove_red_eye
+                                : FontAwesomeIcons.eyeSlash,
+                            size: isVisible ? 22 : 19
+                            /*     */
+                            ),
+                      )
+                    : null),
+            validator: widget.validator,
+            obscureText: isVisible,
+            keyboardType: widget.textInputType,
+          ),
+        ],
       ),
     );
   }

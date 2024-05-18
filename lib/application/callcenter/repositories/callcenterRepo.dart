@@ -1,8 +1,5 @@
-import 'package:Bcom/infrastructure/_commons/exceptions.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
-import 'package:Bcom/infrastructure/_commons/throw_error.dart';
 import 'package:dio/dio.dart';
-import 'package:path_provider/path_provider.dart';
 
 import '../../../utils/constants/apiRoute.dart';
 

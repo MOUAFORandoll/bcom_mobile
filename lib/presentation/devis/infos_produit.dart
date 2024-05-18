@@ -1,18 +1,12 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:io';
-
-import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/presentation/components/Form/textform.dart';
-import 'package:Bcom/presentation/components/Widget/bottom_sheet_choose_picture.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class InfoProduit extends StatefulWidget {
@@ -41,7 +35,9 @@ class _InfoProduitState extends State<InfoProduit> {
         listener: (context, state) {
           if (state.isLoading == 1) {
             EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);

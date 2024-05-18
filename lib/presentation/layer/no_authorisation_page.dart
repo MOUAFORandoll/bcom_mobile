@@ -1,10 +1,9 @@
- 
 import '../components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 
 class NoAuthorisation extends StatelessWidget {
   const NoAuthorisation({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(

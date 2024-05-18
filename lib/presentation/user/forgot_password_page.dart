@@ -51,7 +51,9 @@ class ForgotPasswordPage extends StatelessWidget {
         listener: (context, state) {
           if (state.isLoadingForgot == 1) {
             EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
           } else if (state.isLoadingForgot == 3) {
             EasyLoading.dismiss();
             showError(state.authenticationFailedMessage!, context);

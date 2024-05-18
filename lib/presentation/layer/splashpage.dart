@@ -2,7 +2,6 @@ import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/utils/constants/assets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../application/export_bloc.dart';
 import '../../core.dart';

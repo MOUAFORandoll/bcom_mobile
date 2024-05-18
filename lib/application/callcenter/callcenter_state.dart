@@ -6,8 +6,7 @@ class CallCenterState with _$CallCenterState {
     TextEditingController? messageText,
     int? isLoadMessageCallCenter,
     int? isLoadSend,
-    
-   ScrollController? callcenterSrollController,
+    ScrollController? callcenterSrollController,
     int? message_target,
     List<MessageModel>? messages,
   }) = _CallCenterState;
@@ -16,7 +15,7 @@ class CallCenterState with _$CallCenterState {
         isLoadMessageCallCenter: 0,
         isLoadSend: null,
         message_target: null,
-    callcenterSrollController :  new ScrollController(),
+        callcenterSrollController: new ScrollController(),
         messageText: TextEditingController(),
       );
 }

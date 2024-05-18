@@ -1,19 +1,11 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:io';
-
-import 'package:Bcom/application/database/database_cubit.dart';
-import 'package:Bcom/presentation/components/Form/textform.dart';
-import 'package:Bcom/presentation/components/Widget/bottom_sheet_choose_picture.dart';
+import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/presentation/components/Widget/entry_time_field.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-
-import 'package:Bcom/core.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class InfoDevis extends StatefulWidget {
   @override
@@ -21,37 +13,27 @@ class InfoDevis extends StatefulWidget {
 }
 
 class _InfoDevisState extends State<InfoDevis> {
-  TextEditingController nom_produit = TextEditingController();
-
-  TextEditingController type_produit = TextEditingController();
-
-  TextEditingController nmbre_biker = TextEditingController();
-
-  TextEditingController zoneActivite = TextEditingController();
-
   TextEditingController activite = TextEditingController();
-  List typeCommunication = ['Type1', 'Type2', ',Type3', ',Type4'];
-  String type = 'Type1';
-  int timework = 1;
-  int inQuartier = 0;
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<UserBloc, UserState>(
+    return BlocConsumer<DevisBloc, DevisState>(
         listener: (context, state) {
-          if (state.isLoading == 1) {
-            EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
-          } else if (state.isLoading == 3) {
-            EasyLoading.dismiss();
-            showError(state.authenticationFailedMessage!, context);
-          } else if (state.isLoading == 2) {
-            EasyLoading.dismiss();
+          // if (state.isLoading == 1) {
+          //   EasyLoading.show(
+          //       dismissOnTap: true,
+          //       status: 'En cours',
+          //       maskType: EasyLoadingMaskType.black);
+          // } else if (state.isLoading == 3) {
+          //   EasyLoading.dismiss();
+          //   showError(state.authenticationFailedMessage!, context);
+          // } else if (state.isLoading == 2) {
+          //   EasyLoading.dismiss();
 
-            showSuccess('Mise a jour effectuee', context);
-            initLoad(context);
-            print('-----44--------*********');
-          }
+          //   showSuccess('Mise a jour effectuee', context);
+          //   initLoad(context);
+          //   print('-----44--------*********');
+          // }
         },
         builder: (context, state) => Container(
             margin: EdgeInsets.symmetric(horizontal: kMarginX),
@@ -80,7 +62,7 @@ class _InfoDevisState extends State<InfoDevis> {
                             EdgeInsets.only(top: kMarginY, bottom: kMarginY),
                         child: Column(children: [
                           AppInput(
-                            controller: nmbre_biker,
+                            controller: state.nombreBiker,
                             textInputType: TextInputType.number,
                             onChanged: (value) {},
                             placeholder: 'Nombre de biker'.tr(),
@@ -89,13 +71,61 @@ class _InfoDevisState extends State<InfoDevis> {
                             },
                           ),
                           AppInput(
-                            controller: nmbre_biker,
+                            controller: state.dureeTravail,
                             textInputType: TextInputType.number,
                             onChanged: (value) {},
-                            placeholder: 'Horaire de travail'.tr(),
+                            placeholder: 'Duree du travail(en jours )'.tr(),
                             validator: (value) {
                               return Validators.isValidUsername(value!);
                             },
+                          ),
+                          Container(
+                              alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.symmetric(
+                                  vertical: kMarginY, horizontal: kMarginX),
+                              child: Text(
+                                'Horaire de travail'.tr(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  // color: ColorsApp.tird,
+                                  fontSize: 12,
+                                  fontFamily: 'Lato',
+                                ),
+                              )),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 15.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  width: getWith(context) * .35,
+                                  child: EntryTimeField(
+                                    label: 'Debut',
+                                    initialeTime: state.horaireStart!,
+                                    onPressed: (time) {
+                                      BlocProvider.of<DevisBloc>(context).add(
+                                          FieldChanged(
+                                              fieldKey: 'horaireStart',
+                                              value: time!.format(context)));
+                                    },
+                                  ),
+                                ),
+                                Container(
+                                  width: getWith(context) * .35,
+                                  child: EntryTimeField(
+                                    label: 'Fin',
+                                    initialeTime: state.horaireEnd!,
+                                    onPressed: (time) {
+                                      BlocProvider.of<DevisBloc>(context).add(
+                                          FieldChanged(
+                                              fieldKey: 'horaireEnd',
+                                              value: time!.format(context)));
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                           Container(
                               margin: EdgeInsets.symmetric(
@@ -130,7 +160,7 @@ class _InfoDevisState extends State<InfoDevis> {
                                   ),
                                   alignment: Alignment.center,
                                   child: DropdownButton(
-                                    value: type,
+                                    value: state.typeCommunication,
                                     icon: Container(
                                       // padding: EdgeInsets.only(top: 4),
                                       child: Icon(
@@ -158,16 +188,88 @@ class _InfoDevisState extends State<InfoDevis> {
                                     style: TextStyle(
                                         color: ColorsApp.primary, fontSize: 12),
                                     onChanged: (newValue) {
-                                      setState(() {
-                                        type = newValue.toString();
-                                      });
+                                      BlocProvider.of<DevisBloc>(context).add(
+                                          FieldChanged(
+                                              fieldKey: 'typeCommunication',
+                                              value: newValue.toString()));
                                     },
-                                    items: typeCommunication!.map((value) {
+                                    items: state.listTypeCommunication!
+                                        .map((value) {
                                       return DropdownMenuItem(
                                         value: value,
                                         child: Center(
                                           child: Text(
                                             value!,
+                                          ),
+                                        ),
+                                      );
+                                    }).toList(),
+                                  ),
+                                ),
+                                Container(
+                                    padding: EdgeInsets.only(
+                                      top: kMarginY,
+                                    ),
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Choisir votre ville'.tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        // color: ColorsApp.tird,
+                                        fontSize: 12,
+                                        fontFamily: 'Lato',
+                                      ),
+                                    )),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: ColorsApp.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  height: getHeight(context) * .06,
+                                  width: getWith(context),
+                                  margin: EdgeInsets.only(
+                                    top: kMarginY * 1.5,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: DropdownButton(
+                                    value: state.ville,
+                                    icon: Container(
+                                      // padding: EdgeInsets.only(top: 4),
+                                      child: Icon(
+                                        Icons.keyboard_arrow_down_outlined,
+                                      ),
+                                    ),
+                                    hint: Container(
+                                      width: getWith(context) * .65,
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 0,
+                                      ),
+                                      child: Text(
+                                        'Choisir votre ville'.tr(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            // color: ColorsApp.tird,
+                                            fontSize: 12,
+                                            fontFamily: 'Lato',
+                                            overflow: TextOverflow.ellipsis),
+                                      ),
+                                    ),
+                                    iconSize: 25,
+                                    underline: SizedBox(),
+                                    style: TextStyle(
+                                        color: ColorsApp.primary, fontSize: 12),
+                                    onChanged: (VilleModel? newValue) {
+                                      BlocProvider.of<DevisBloc>(context)
+                                          .add(SelectVille(ville: newValue!));
+                                    },
+                                    items: state.list_ville!.map((value) {
+                                      return DropdownMenuItem(
+                                        value: value,
+                                        child: Center(
+                                          child: Text(
+                                            value!.libelle,
                                           ),
                                         ),
                                       );
@@ -205,15 +307,13 @@ class _InfoDevisState extends State<InfoDevis> {
                                           Radio(
                                             value: 1,
                                             activeColor: ColorsApp.second,
-                                            groupValue: timework,
+                                            groupValue: state.typeTravail,
                                             onChanged: (int? value) {
-                                              setState(() {
-                                                timework = value!;
-                                              });
-                                              // BlocProvider.of<AlerteBloc>(
-                                              //         context)
-                                              //     .add(FieldChangedAlerte(
-                                              //         'sexeUser', '0'));
+                                              BlocProvider.of<DevisBloc>(
+                                                      context)
+                                                  .add(FieldChanged(
+                                                      fieldKey: 'typeTravail',
+                                                      value: value.toString()));
                                             },
                                           ),
                                           Text('Jour'.tr()),
@@ -224,15 +324,13 @@ class _InfoDevisState extends State<InfoDevis> {
                                           Radio(
                                             value: 2,
                                             activeColor: ColorsApp.second,
-                                            groupValue: timework,
+                                            groupValue: state.typeTravail,
                                             onChanged: (int? value) {
-                                              setState(() {
-                                                timework = value!;
-                                              });
-                                              // BlocProvider.of<AlerteBloc>(
-                                              //         context)
-                                              //     .add(FieldChangedAlerte(
-                                              //         'sexeUser', '1'));
+                                              BlocProvider.of<DevisBloc>(
+                                                      context)
+                                                  .add(FieldChanged(
+                                                      fieldKey: 'typeTravail',
+                                                      value: value.toString()));
                                             },
                                           ),
                                           Text('Nuit'.tr()),
@@ -243,15 +341,13 @@ class _InfoDevisState extends State<InfoDevis> {
                                           Radio(
                                             value: 3,
                                             activeColor: ColorsApp.second,
-                                            groupValue: timework,
+                                            groupValue: state.typeTravail,
                                             onChanged: (int? value) {
-                                              setState(() {
-                                                timework = value!;
-                                              });
-                                              // BlocProvider.of<AlerteBloc>(
-                                              //         context)
-                                              //     .add(FieldChangedAlerte(
-                                              //         'sexeUser', '1'));
+                                              BlocProvider.of<DevisBloc>(
+                                                      context)
+                                                  .add(FieldChanged(
+                                                      fieldKey: 'typeTravail',
+                                                      value: value.toString()));
                                             },
                                           ),
                                           Text('Jour et Nuit'.tr()),
@@ -293,15 +389,13 @@ class _InfoDevisState extends State<InfoDevis> {
                                           Radio(
                                             value: 0,
                                             activeColor: ColorsApp.second,
-                                            groupValue: inQuartier,
+                                            groupValue: state.inQuartier,
                                             onChanged: (int? value) {
-                                              setState(() {
-                                                inQuartier = value!;
-                                              });
-                                              // BlocProvider.of<AlerteBloc>(
-                                              //         context)
-                                              //     .add(FieldChangedAlerte(
-                                              //         'sexeUser', '0'));
+                                              BlocProvider.of<DevisBloc>(
+                                                      context)
+                                                  .add(FieldChanged(
+                                                      fieldKey: 'inQuartier',
+                                                      value: value.toString()));
                                             },
                                           ),
                                           Text('Oui'.tr()),
@@ -312,15 +406,13 @@ class _InfoDevisState extends State<InfoDevis> {
                                           Radio(
                                             value: 1,
                                             activeColor: ColorsApp.second,
-                                            groupValue: inQuartier,
+                                            groupValue: state.inQuartier,
                                             onChanged: (int? value) {
-                                              setState(() {
-                                                inQuartier = value!;
-                                              });
-                                              // BlocProvider.of<AlerteBloc>(
-                                              //         context)
-                                              //     .add(FieldChangedAlerte(
-                                              //         'sexeUser', '1'));
+                                              BlocProvider.of<DevisBloc>(
+                                                      context)
+                                                  .add(FieldChanged(
+                                                      fieldKey: 'inQuartier',
+                                                      value: value.toString()));
                                             },
                                           ),
                                           Text('Non'.tr()),
@@ -333,7 +425,7 @@ class _InfoDevisState extends State<InfoDevis> {
                             ),
                           ),
                           AppInput(
-                            controller: zoneActivite,
+                            controller: state.zone,
                             onChanged: (value) {},
                             placeholder: 'Zone d\'activite ?'.tr(),
                             validator: (value) {

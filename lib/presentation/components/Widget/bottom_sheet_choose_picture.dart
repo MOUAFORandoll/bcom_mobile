@@ -1,13 +1,7 @@
 import 'dart:io';
 
-import 'package:Bcom/presentation/components/Widget/custom_alert.dart';
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-import 'package:auto_route/auto_route.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 
 bottomSheetChoosePicture({required BuildContext context, required action}) {
   return GlobalBottomSheet.show(

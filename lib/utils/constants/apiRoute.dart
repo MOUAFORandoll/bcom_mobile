@@ -1,21 +1,23 @@
 class ApiRoutes {
   static const Pack = '/api/packs';
+  static const VILLE = '/api/villes';
+  static const DEVIS = '/api/devis';
   static const Tcontroller = '/cterrain';
-  
+  static const SIGNUP = '/auth/create-user';
+
+  static const Entreprise = '/api/entreprises';
+  static const LOGIN = '/auth/user';
   static const CALLCENTERUSER = '/callcenter/user';
+
   static const CATEGORY = '/category';
   static const LOCATION_USER = '/user/location';
   static const USER = '/user/get';
   static const LIVREUR = '/livreur/read/ville';
   static const LIVRAISON_POINT = '/point_localisations';
 
-  static const Entreprise = '/api/entreprises';
-  static const LOGIN = '/auth/user';
-
   static const SEND_CODE = '/auth/send-code';
   static const VERIFY_CODE = '/auth/verify-code';
   static const REST_PASSWORD = '/auth/new-password';
-  static const SIGNUP = '/auth/create-user';
 
   static const UPDATE_USER = '/auth/user-update';
   static const InfoDevis = '/info-devis';
@@ -37,7 +39,6 @@ class ApiRoutes {
   static const READ_NOTIFICATIONS = '/notifications/read';
   static const READ_SHORT_FOR_BOUTIQUE = '/short/for/boutique/read';
   static const HOME = '/home';
-  static const VILLE = '/villes';
   static const MEDICAMENT_SEARCH = '/medicament-search';
   static const LIVRAISON_MEDICAMENT = '/livraisons/medicament';
 }

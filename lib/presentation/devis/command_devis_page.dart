@@ -1,21 +1,10 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:io';
-
-import 'package:Bcom/application/database/database_cubit.dart';
-import 'package:Bcom/presentation/components/Form/textform.dart';
-import 'package:Bcom/presentation/components/Widget/bottom_sheet_choose_picture.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
 import 'package:Bcom/presentation/devis/infos_produit.dart';
 import 'package:Bcom/presentation/devis/select_package.dart';
-import 'package:Bcom/utils/Services/validators.dart';
-
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-
-import 'package:Bcom/core.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
@@ -33,19 +22,21 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<DevisBloc, DevisState>(
         listener: (context, state) {
-          // if (state.isLoading == 1) {
-          //   EasyLoading.show(
-          //       status: 'En cours', maskType: EasyLoadingMaskType.black);
-          // } else if (state.isLoading == 3) {
-          //   EasyLoading.dismiss();
-          //   showError(state.authenticationFailedMessage!, context);
-          // } else if (state.isLoading == 2) {
-          //   EasyLoading.dismiss();
+          if (state.isRequest == 0) {
+            EasyLoading.show(
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
+          } else if (state.isRequest == 1) {
+            showSuccess('Demande devis envoye', context);
+            EasyLoading.dismiss();
+          } else if (state.isRequest == 2) {
+            EasyLoading.dismiss();
 
-          //   showSuccess('Mise a jour effectuee', context);
-          //   initLoad(context);
-          //   print('-----44--------*********');
-          // }
+            showError('Une erreur est survenue', context);
+
+            print('-----44--------*********');
+          }
         },
         builder: (context, state) => Scaffold(
             appBar: AppBar(
@@ -112,6 +103,7 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                     margin: EdgeInsets.symmetric(horizontal: kMarginX),
                     child: AppButton(
                         size: MainAxisSize.max,
+                        disabled: state.pack == null,
                         // bgColor: ColorsApp.primary,
                         text: 'Suivant'.tr(),
                         onTap: () => BlocProvider.of<DevisBloc>(context)
@@ -136,10 +128,16 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                                 size: MainAxisSize.max,
                                 // bgColor: ColorsApp.primary,
                                 text: 'Suivant'.tr(),
-                                onTap: () => state.indexDevis != 2
-                                    ? BlocProvider.of<DevisBloc>(context)
-                                        .add(ChangeIndexDevis(val: true))
-                                    : null))
+                                onTap: () {
+                                  if (state.indexDevis != 2) {
+                                    BlocProvider.of<DevisBloc>(context)
+                                        .add(ChangeIndexDevis(val: true));
+                                  }
+                                  if (state.indexDevis == 2) {
+                                    BlocProvider.of<DevisBloc>(context)
+                                        .add(NewDevis());
+                                  }
+                                }))
                       ],
                     )),
               /*   Container(

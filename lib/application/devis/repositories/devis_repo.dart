@@ -1,27 +1,35 @@
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
 import 'package:dio/dio.dart';
+import 'package:Bcom/core.dart';
 
 import '../../../utils/constants/apiRoute.dart';
+import 'package:Bcom/application/database/database_cubit.dart';
 
 class DevisRepo {
   final IAppRequests apiClient;
   DevisRepo({required this.apiClient});
-  final key = 'AIzaSyB2lLkho9yRrZ9DgZ4btFOZ6x22-zZTJ38';
-
-  Future demandeMission(keySecret) async {
-    Response a = await apiClient
-        .getRequest(ApiRoutes.Pack + '/demande?keySecret=${keySecret}');
+  var dababase = sl.get<DatabaseCubit>();
+  Future newDevis(data) async {
+    Response a = await apiClient.postRequest(ApiRoutes.DEVIS, body: data);
 
     return a;
   }
-    
+
+  Future getlistDevis() async {
+    var idClient = await dababase.getId();
+
+    Response a =
+        await apiClient.getRequest(ApiRoutes.DEVIS + '?client=${idClient}');
+
+    return a;
+  }
 
   Future getlistPack() async {
     Response a = await apiClient.getRequest(ApiRoutes.Pack);
 
     return a;
   }
-  
+
   Future getlistSecteurDevis() async {
     Response a = await apiClient.getRequest('/secteur/read');
 

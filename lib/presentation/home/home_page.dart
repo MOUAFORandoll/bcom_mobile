@@ -10,10 +10,10 @@ import 'package:new_version_plus/new_version_plus.dart';
 import '../../presentation/components/exportcomponent.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'dart:async';
+import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:Bcom/presentation/components/Widget/icon_svg.dart';
 
 export 'package:Bcom/application/home/home_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -88,7 +88,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
           if (state0.isRequest == 0) {
             EasyLoading.show(
-                status: 'En cours', maskType: EasyLoadingMaskType.black);
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
           } else if (state0.isRequest == 2) {
             EasyLoading.dismiss();
             showError('Une erreur est survenue', context);
@@ -101,32 +103,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             builder: (context, state) => Scaffold(
                 backgroundColor: ColorsApp.bg,
                 drawer: CustomDrawer(user: state.user),
-                // floatingActionButton:
-                //     state.user == null || !state.user!.infoComplete
-                //         ? null
-                //         : state.user!.typeUser == 4
-                //             ? state.user!.disponibilite == false
-                //                 ? FloatingActionButton(
-                //                     backgroundColor: ColorsApp.second,
-                //                     child: Icon(
-                //                       Icons.play_arrow,
-                //                       color: Colors.white,
-                //                     ),
-                //                     onPressed: () {
-                //                       BlocProvider.of<DevisBloc>(context)
-                //                           .add(StartDisponibiliteDevis());
-                //                     })
-                //                 : FloatingActionButton(
-                //                     backgroundColor: Colors.red,
-                //                     child: Icon(
-                //                       Icons.stop,
-                //                       color: Colors.white,
-                //                     ),
-                //                     onPressed: () {
-                //                       BlocProvider.of<DevisBloc>(context)
-                //                           .add(EndDisponibiliteDevis());
-                //                     })
-                //             : null,
                 body: Container(
                     child: CustomScrollView(slivers: [
                   SliverAppBar(
@@ -217,9 +193,100 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   ),
                   SliverToBoxAdapter(
                       child: state.user!.infoComplete
-                          ? PresentationPage()
+                          ? state.index == 0
+                              ? PresentationPage()
+                              : Container()
                           : CompleteEntrepriseInfoPage())
-                ])))));
+                ])),
+                bottomNavigationBar: CustomNavigationBar(
+                  iconSize: 30.0,
+                  // elevation: 0.0,
+                  scaleFactor: 0.4,
+                  selectedColor: ColorsApp.primary,
+                  strokeColor: ColorsApp.grey,
+                  unSelectedColor: Colors.grey[600],
+                  backgroundColor:
+                      /*     state.index == 2 ? ColorsApp.primary : */ ColorsApp
+                          .white,
+                  // borderRadius: Radius.circular(15.0),
+                  // isFloating: true,
+                  // blurEffect: true,
+                  items: [
+                    CustomNavigationBarItem(
+                        icon: Container(
+                          height: getHeight(context) / 1.7,
+                          width: getWith(context) / 4.2,
+                          child: SvgPicture.asset(
+                            Assets.home,
+                            width: 90,
+                            height: 90,
+                            // ignore: deprecated_member_use
+                            color: state.index == 0
+                                ? ColorsApp.primary
+                                : ColorsApp.grey,
+                          ),
+                        ),
+                        title: Container(
+                            padding: EdgeInsets.only(bottom: 3),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom: state.index == 0
+                                        ? BorderSide(
+                                            color: ColorsApp.primary, width: 2)
+                                        : BorderSide.none,
+                                    top: BorderSide.none)),
+                            child: Text('Home'.tr(),
+                                style: TextStyle(
+                                  fontSize: kMin,
+                                  fontWeight: FontWeight.w600,
+                                  color: state.index == 0
+                                      ? ColorsApp.primary
+                                      : ColorsApp.grey,
+                                )))), // CustomNavigationBarItem(
+
+                    CustomNavigationBarItem(
+                      icon: Container(
+                        height: getHeight(context) / 1.7,
+                        width: getWith(context) / 4.2,
+                        child: SvgPicture.asset(
+                          Assets.grid1,
+                          width: 80,
+                          height: 80,
+                          // ignore: deprecated_member_use
+                          color: state.index == 1
+                              ? ColorsApp.primary
+                              : ColorsApp.grey,
+                        ),
+                      ),
+                      title: Container(
+                          padding: EdgeInsets.only(bottom: 3),
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: state.index == 1
+                                      ? BorderSide(
+                                          color: ColorsApp.primary, width: 2)
+                                      : BorderSide.none,
+                                  top: BorderSide.none)),
+                          child: Text('Demandes'.tr(),
+                              style: TextStyle(
+                                fontSize: kMin,
+                                fontWeight: FontWeight.w600,
+                                color: state.index == 1
+                                    ? ColorsApp.primary
+                                    : ColorsApp.grey,
+                              ))),
+                    ),
+                  ],
+                  currentIndex: state.index,
+                  onTap: (index) {
+                    print(index);
+                    context.read<HomeBloc>().add(SetIndexEvent(index: index));
+                    // if (index == 0 && (index == state.index)) {
+                    //   BlocProvider.of<LivraisonBloc>(context)
+                    //       .add(HistoriqueUserLivraison());
+                    // }
+                  },
+                ))));
   }
 }
 
@@ -233,7 +300,9 @@ class CustomDrawer extends StatelessWidget {
       listener: (context, state) {
         if (state.isUpdateUserImage == 1) {
           EasyLoading.show(
-              status: 'En cours', maskType: EasyLoadingMaskType.black);
+              dismissOnTap: true,
+              status: 'En cours',
+              maskType: EasyLoadingMaskType.black);
         } else if (state.isUpdateUserImage == 3) {
           EasyLoading.dismiss();
           showError(state.authenticationFailedMessage!, context);
