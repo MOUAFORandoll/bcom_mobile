@@ -27,7 +27,7 @@ class SelectPackage extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: kMarginX),
                 height: getHeight(context) * .7,
                 child: Stack(children: [
-                  state.list_pack == 0
+                  state.load_list_pack == 0
                       ? ShimmerData()
                       : GridView.builder(
                           physics: NeverScrollableScrollPhysics(),

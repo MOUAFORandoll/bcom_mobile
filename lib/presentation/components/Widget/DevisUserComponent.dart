@@ -22,10 +22,9 @@ class DevisUserComponent extends StatelessWidget {
     // description.text = devis.description;
     return InkWell(
       child: Container(
-          height: getHeight(context) * .20,
-          padding: EdgeInsets.symmetric(vertical: kMarginY),
-          margin: EdgeInsets.symmetric(
-              /*   horizontal: kMarginX, */ vertical: kMarginY),
+          padding:
+              EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY),
+          margin: EdgeInsets.symmetric(vertical: kMarginY),
           decoration: BoxDecoration(
               color: ColorsApp.white,
               boxShadow: [
@@ -40,9 +39,6 @@ class DevisUserComponent extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: kMarginX,
-                ).add(EdgeInsets.only(bottom: kMarginY / 2)),
                 margin: EdgeInsets.only(bottom: kMarginY * 1.3),
                 decoration: BoxDecoration(
                     border: Border(
@@ -75,106 +71,107 @@ class DevisUserComponent extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Row(
+                      children: [
+                        Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                                color: ColorsApp.primary,
+                                borderRadius: BorderRadius.circular(30))),
+                        Container(
+                          margin: EdgeInsets.only(left: kMarginY),
+                          child: Text(
+                              FormatDateTime().dateToSimpleDate(
+                                  devis.dateCreated.toString()),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: ColorsApp.primary,
+                              )),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                        margin: EdgeInsets.symmetric(
-                            horizontal: kMarginX, vertical: kMarginY / 2),
-                        child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              width: getWith(context) * .34,
-                              child: Text(devis.pack.libelle.toString(),
-                                  maxLines: 2,
-                                  // overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      color: ColorsApp.primary,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700)),
-                            ),
-
-                            Container(
-                              child: Text(devis.montant.toString() + ' XAF',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      color: ColorsApp.primary,
-                                      fontWeight: FontWeight.w600)),
-                            ),
-                            // Container(
-                            //     child: Text('yDate'.tr(),
-                            //         overflow: TextOverflow.ellipsis,
-                            //         style: TextStyle(
-                            //             color: ColorsApp.black,
-                            //             fontSize: 9))),
-                            // Container(
-                            //     child: Text(devis.date,
-                            //         overflow: TextOverflow.ellipsis,
-                            //         style: TextStyle(
-                            //             color: ColorsApp.black,
-                            //             fontWeight:
-                            //                 FontWeight.w600))),
-                            // Container(
-                            //   child: Text(
-                            //       devis.status == 0
-                            //           ? 'En attente de validation'
-                            //           : devis.status == 1
-                            //               ? 'En cours de devis'
-                            //               : 'Colis livres',
-                            //       overflow:
-                            //           TextOverflow.ellipsis,
-                            //       style: TextStyle(
-                            //         fontSize: 14,
-                            //         color: ColorsApp.black,
-                            //       )),
-                            // ),
-                          ],
-                        )),
-                  ]),
-              Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: kMarginX,
-                  ).add(EdgeInsets.only(top: kMarginY / 2)),
-                  margin: EdgeInsets.only(top: kMarginY * 1.3),
-                  decoration: BoxDecoration(
-                      border: Border(
-                          top: BorderSide(color: ColorsApp.grey, width: .5))),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: kMarginX * 1.5, vertical: 1),
-                    decoration: BoxDecoration(
-                        color: ColorsApp.primary,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Text(
-                      'Ville : ${devis.ville.libelle}',
-                      style: TextStyle(color: ColorsApp.white),
+                                margin: EdgeInsets.symmetric(
+                                    vertical: kMarginY / 2),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: getWith(context) * .34,
+                                      child: Text(
+                                          devis.pack!.libelle.toString(),
+                                          maxLines: 2,
+                                          // overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: ColorsApp.primary,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700)),
+                                    ),
+                                    Container(
+                                      child: Text(
+                                          devis.montant.toString() + ' XAF',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              color: ColorsApp.primary,
+                                              fontWeight: FontWeight.w600)),
+                                    ),
+                                  ],
+                                )),
+                          ]),
+                    ],
+                  ),
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: kMarginX / 2),
+                                child: Icon(Icons.timelapse,
+                                    size: 20.0, color: Colors.grey),
+                              ),
+                              Container(
+                                  child: Text(
+                                'Horaire : ${devis.horaire}',
+                              )),
+                            ],
+                          ),
+                        ),
+                        Container(
+                            padding: EdgeInsets.symmetric()
+                                .add(EdgeInsets.only(top: kMarginY / 2)),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: kMarginX * 1.5, vertical: 1),
+                              decoration: BoxDecoration(
+                                  color: ColorsApp.primary,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Text(
+                                'Ville : ${devis.ville!.libelle}',
+                                style: TextStyle(color: ColorsApp.white),
+                              ),
+                            )),
+                      ],
                     ),
-                  )),
-              Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: kMarginX,
-                  ).add(EdgeInsets.only(top: kMarginY / 2)),
-                  margin: EdgeInsets.only(top: kMarginY * 1.3),
-                  decoration: BoxDecoration(
-                      border: Border(
-                          top: BorderSide(color: ColorsApp.grey, width: .5))),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: kMarginX * 1.5, vertical: 1),
-                    decoration: BoxDecoration(
-                        color: ColorsApp.primary,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Text(
-                      'Horaire : ${devis.horaire}',
-                      style: TextStyle(color: ColorsApp.white),
-                    ),
-                  )),
+                  )
+                ],
+              ),
             ],
           ) /* ) */),
       /* onTap: () =>

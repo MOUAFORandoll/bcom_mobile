@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Bcom/presentation/devis/SuccesDevisPage.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
 import 'package:Bcom/presentation/devis/infos_produit.dart';
 import 'package:Bcom/presentation/devis/select_package.dart';
@@ -30,6 +31,7 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
           } else if (state.isRequest == 1) {
             showSuccess('Demande devis envoye', context);
             EasyLoading.dismiss();
+            AutoRouter.of(context).pushNamed(SuccesDevisPage.routeName);
           } else if (state.isRequest == 2) {
             EasyLoading.dismiss();
 

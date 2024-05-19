@@ -154,6 +154,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
           '${state.horaireStart.hour}:${state.horaireStart.minute} - ${state.horaireEnd.hour}:${state.horaireEnd.minute}',
       'pack': 'api/packs/${state.pack!.id}',
       'client': 'api/user_plateforms/${id}',
+      'ville': 'api/villes/${state.ville!.id}',
       'dureeTravail': state.dureeTravail.text
     };
     emit(state.copyWith(
@@ -164,14 +165,15 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       print('---------list_pack------${response.data['hydra:member']}');
       if (response.data != null) {
         emit(state.copyWith(
-            isRequest: 1,
-            list_pack: (response.data['hydra:member'] as List)
+          isRequest: 1,
+          /* list_pack: (response.data['hydra:member'] as List)
                 .map((e) => PackModel.fromJson(e))
-                .toList()));
+                .toList() */
+        ));
         emit(state.copyWith(
           isRequest: null,
         ));
-        // add(GetListDevis());
+        add(GetListDevis());
         print('---------list_pack------${state.list_pack!.length}');
       } else {
         emit(state.copyWith(
@@ -224,7 +226,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       if (response.data != null) {
         emit(state.copyWith(
             load_list_devis: 1,
-            list_devis: (response.data['data'] as List)
+            list_devis: (response.data['hydra:member'] as List)
                 .map((e) => DevisModel.fromJson(e))
                 .toList()));
       } else {

@@ -14,12 +14,12 @@ class DevisRepo {
 
     return a;
   }
-
+  
   Future getlistDevis() async {
     var idClient = await dababase.getId();
 
     Response a =
-        await apiClient.getRequest(ApiRoutes.DEVIS + '?client=${idClient}');
+        await apiClient.getRequest(ApiRoutes.DEVIS + '?client.id=${idClient}');
 
     return a;
   }

@@ -6,6 +6,7 @@ import 'package:Bcom/presentation/user/forgot_password_page.dart';
 import 'package:Bcom/presentation/user/register_page.dart';
 import 'package:auto_route/auto_route.dart';
 
+import '../presentation/devis/SuccesDevisPage.dart';
 import '../presentation/layer/splashpage.dart';
 import 'app_router.gr.dart';
 
@@ -24,5 +25,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: HomeRoute.page, path: HomePage.routeName),
         AutoRoute(
             page: CommandDevisRoute.page, path: CommandDevisPage.routeName),
+        AutoRoute(page: SuccesDevisRoute.page, path: SuccesDevisPage.routeName),
       ];
 }

@@ -1,5 +1,6 @@
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/devis/devis_home_page.dart';
+import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/user/complete_entreprise_info_page.dart';
 
 import 'package:Bcom/routes/app_router.gr.dart';
@@ -195,7 +196,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                       child: state.user!.infoComplete
                           ? state.index == 0
                               ? PresentationPage()
-                              : Container()
+                              : HistoriqueDemandeDevisPage()
                           : CompleteEntrepriseInfoPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
