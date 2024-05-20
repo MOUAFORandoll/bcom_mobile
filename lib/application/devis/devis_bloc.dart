@@ -47,21 +47,22 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   _getListVille(GetListVille event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
-      load_list_pack: 0,
+      load_list_ville: 0,
     ));
     await devisRepo.getVille().then((response) {
       print('---------list_ville------${response.data['hydra:member']}');
       if (response.data != null) {
         emit(state.copyWith(
+          load_list_ville:1,
             list_ville: (response.data['hydra:member'] as List)
                 .map((e) => VilleModel.fromJson(e))
                 .toList()));
         print('---------list_ville------${state.list_ville!.length}');
       } else {
-        emit(state.copyWith());
+        emit(state.copyWith(  load_list_ville:2,));
       }
     }).onError((e, s) {
-      emit(state.copyWith());
+      emit(state.copyWith(load_list_ville: 2));
     });
   }
 

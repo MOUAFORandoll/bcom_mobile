@@ -40,109 +40,121 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
             print('-----44--------*********');
           }
         },
-        builder: (context, state) => Scaffold(
-            appBar: AppBar(
-              leading: AppBackButton(),
-              title: Text('Commander un devis'),
-              centerTitle: true,
-            ),
-            body: Container(
-                child: Column(children: [
-              Container(
-                alignment: Alignment.center,
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        builder: (context, state) => RefreshIndicator(
+            child: Scaffold(
+                appBar: AppBar(
+                  leading: AppBackButton(),
+                  title: Text('Commander un devis'),
+                  centerTitle: true,
+                ),
+                body: Container(
+                    child: Column(children: [
                   Container(
+                    alignment: Alignment.center,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: kMarginX, vertical: kMarginY),
+                              decoration: BoxDecoration(
+                                  color: ColorsApp.primary,
+                                  borderRadius: BorderRadius.circular(50)),
+                              height: 30,
+                              width: 30,
+                              alignment: Alignment.center,
+                              child: Text(
+                                '${state.indexDevis! + 1}',
+                                style: TextStyle(
+                                  color: ColorsApp.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )),
+                        ]),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: ColorsApp.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: ColorsApp.primary.withOpacity(0.1),
+                              spreadRadius: 5,
+                              blurRadius: 5,
+                              offset: Offset(0, 2),
+                            ),
+                            BoxShadow(
+                              color: ColorsApp.grey.withOpacity(0.1),
+                              spreadRadius: 5,
+                              blurRadius: 5,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(8)),
                       margin: EdgeInsets.symmetric(
                           horizontal: kMarginX, vertical: kMarginY),
-                      decoration: BoxDecoration(
-                          color: ColorsApp.primary,
-                          borderRadius: BorderRadius.circular(50)),
-                      height: 30,
-                      width: 30,
-                      alignment: Alignment.center,
-                      child: Text(
-                        '${state.indexDevis! + 1}',
-                        style: TextStyle(
-                          color: ColorsApp.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
-                ]),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: ColorsApp.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorsApp.primary.withOpacity(0.1),
-                          spreadRadius: 5,
-                          blurRadius: 5,
-                          offset: Offset(0, 2),
-                        ),
-                        BoxShadow(
-                          color: ColorsApp.grey.withOpacity(0.1),
-                          spreadRadius: 5,
-                          blurRadius: 5,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(8)),
-                  margin: EdgeInsets.symmetric(
-                      horizontal: kMarginX, vertical: kMarginY),
-                  padding: EdgeInsets.all(kMarginX * 1.5),
-                  child: SingleChildScrollView(
-                      child: state.indexDevis == 0
-                          ? SelectPackage()
-                          : state.indexDevis == 1
-                              ? InfoDevis()
-                              : InfoProduit()),
-                ),
-              ),
-              if (state.indexDevis == 0)
-                Container(
-                    margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                    child: AppButton(
-                        size: MainAxisSize.max,
-                        disabled: state.pack == null,
-                        // bgColor: ColorsApp.primary,
-                        text: 'Suivant'.tr(),
-                        onTap: () => BlocProvider.of<DevisBloc>(context)
-                            .add(ChangeIndexDevis(val: true)))),
-              if (state.indexDevis != 0)
-                Container(
-                    margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                            width: getWith(context) * .45,
-                            child: AppButton(
-                                size: MainAxisSize.max,
-                                // bgColor: ColorsApp.primary,
-                                text: 'Retour'.tr(),
-                                onTap: () => BlocProvider.of<DevisBloc>(context)
-                                    .add(ChangeIndexDevis(val: false)))),
-                        Container(
-                            width: getWith(context) * .45,
-                            child: AppButton(
-                                size: MainAxisSize.max,
-                                // bgColor: ColorsApp.primary,
-                                text: 'Suivant'.tr(),
-                                onTap: () {
-                                  if (state.indexDevis != 2) {
-                                    BlocProvider.of<DevisBloc>(context)
-                                        .add(ChangeIndexDevis(val: true));
-                                  }
-                                  if (state.indexDevis == 2) {
-                                    BlocProvider.of<DevisBloc>(context)
-                                        .add(NewDevis());
-                                  }
-                                }))
-                      ],
-                    )),
-              /*   Container(
+                      padding: EdgeInsets.all(kMarginX * 1.5),
+                      child: SingleChildScrollView(
+                          child: state.indexDevis == 0
+                              ? SelectPackage()
+                              : state.indexDevis == 1
+                                  ? InfoDevis()
+                                  : InfoProduit()),
+                    ),
+                  ),
+                  if (state.indexDevis == 0)
+                    Container(
+                        margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                        child: AppButton(
+                            size: MainAxisSize.max,
+                            disabled: state.pack == null,
+                            // bgColor: ColorsApp.primary,
+                            text: 'Suivant'.tr(),
+                            onTap: () => BlocProvider.of<DevisBloc>(context)
+                                .add(ChangeIndexDevis(val: true)))),
+                  if (state.indexDevis != 0)
+                    Container(
+                        margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                                width: getWith(context) * .45,
+                                child: AppButton(
+                                    size: MainAxisSize.max,
+                                    // bgColor: ColorsApp.primary,
+                                    text: 'Retour'.tr(),
+                                    onTap: () =>
+                                        BlocProvider.of<DevisBloc>(context).add(
+                                            ChangeIndexDevis(val: false)))),
+                            Container(
+                                width: getWith(context) * .45,
+                                child: AppButton(
+                                    size: MainAxisSize.max,
+                                    disabled: (state.indexDevis == 1)
+                                        ? state.nombreBiker.text.isEmpty ||
+                                            state.dureeTravail.text.isEmpty ||
+                                            state.zone.text.isEmpty ||
+                                            state.typeCommunication == null ||
+                                            state.ville == null ||
+                                            state.inQuartier == null ||
+                                            state.typeTravail == null
+                                        : false,
+                                    // bgColor: ColorsApp.primary,
+                                    text: 'Suivant'.tr(),
+                                    onTap: () {
+                                      if (state.indexDevis != 2) {
+                                        BlocProvider.of<DevisBloc>(context)
+                                            .add(ChangeIndexDevis(val: true));
+                                      }
+                                      if (state.indexDevis == 2) {
+                                        BlocProvider.of<DevisBloc>(context)
+                                            .add(NewDevis());
+                                      }
+                                    }))
+                          ],
+                        )),
+                  /*   Container(
                 width: getWith(context) * .4,
                 child: AppButton(
                     size: MainAxisSize.max,
@@ -213,6 +225,12 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                     }),
               )
             */
-            ]))));
+                ]))),
+            onRefresh: () => Future.delayed(
+                Duration(seconds: 5),
+                () => BlocProvider.of<DevisBloc>(context)
+                  ..add(GetListPack())
+                  ..add(GetListDevis())
+                  ..add(GetListVille()))));
   }
 }

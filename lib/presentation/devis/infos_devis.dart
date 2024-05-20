@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/presentation/components/Widget/ErrorReloadUnitComponent.dart';
 import 'package:Bcom/presentation/components/Widget/entry_time_field.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 
@@ -147,6 +148,12 @@ class _InfoDevisState extends State<InfoDevis> {
                                         fontFamily: 'Lato',
                                       ),
                                     )),
+                                /* state.isLoadedVCategory == 0
+                                    ? CircularProgressIndicator(
+                                        color: ColorsApp.primary)
+                                    : state.isLoadedVCategory == 2
+                                        ? Text('Error')
+                                        :  */
                                 Container(
                                   decoration: BoxDecoration(
                                     border: Border.all(
@@ -220,62 +227,82 @@ class _InfoDevisState extends State<InfoDevis> {
                                         fontFamily: 'Lato',
                                       ),
                                     )),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: ColorsApp.grey, width: 1),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  height: getHeight(context) * .06,
-                                  width: getWith(context),
-                                  margin: EdgeInsets.only(
-                                    top: kMarginY * 1.5,
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: DropdownButton(
-                                    value: state.ville,
-                                    icon: Container(
-                                      // padding: EdgeInsets.only(top: 4),
-                                      child: Icon(
-                                        Icons.keyboard_arrow_down_outlined,
-                                      ),
-                                    ),
-                                    hint: Container(
-                                      width: getWith(context) * .65,
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 0,
-                                      ),
-                                      child: Text(
-                                        'Choisir votre ville'.tr(),
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            // color: ColorsApp.tird,
-                                            fontSize: 12,
-                                            fontFamily: 'Lato',
-                                            overflow: TextOverflow.ellipsis),
-                                      ),
-                                    ),
-                                    iconSize: 25,
-                                    underline: SizedBox(),
-                                    style: TextStyle(
-                                        color: ColorsApp.primary, fontSize: 12),
-                                    onChanged: (VilleModel? newValue) {
-                                      BlocProvider.of<DevisBloc>(context)
-                                          .add(SelectVille(ville: newValue!));
-                                    },
-                                    items: state.list_ville!.map((value) {
-                                      return DropdownMenuItem(
-                                        value: value,
-                                        child: Center(
-                                          child: Text(
-                                            value!.libelle,
-                                          ),
-                                        ),
-                                      );
-                                    }).toList(),
-                                  ),
-                                )
+                                state.load_list_ville == 0
+                                    ? CircularProgressIndicator(
+                                        color: ColorsApp.primary)
+                                    : state.load_list_ville == 2
+                                        ? ErrorReloadUnitComponent(
+                                            onTap: () =>
+                                                BlocProvider.of<DevisBloc>(
+                                                        context)
+                                                    .add(GetListVille()),
+                                          )
+                                        : Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: ColorsApp.grey,
+                                                  width: 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            height: getHeight(context) * .06,
+                                            width: getWith(context),
+                                            margin: EdgeInsets.only(
+                                              top: kMarginY * 1.5,
+                                            ),
+                                            alignment: Alignment.center,
+                                            child: DropdownButton(
+                                              value: state.ville,
+                                              icon: Container(
+                                                // padding: EdgeInsets.only(top: 4),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_outlined,
+                                                ),
+                                              ),
+                                              hint: Container(
+                                                width: getWith(context) * .65,
+                                                alignment: Alignment.center,
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 0,
+                                                ),
+                                                child: Text(
+                                                  'Choisir votre ville'.tr(),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      // color: ColorsApp.tird,
+                                                      fontSize: 12,
+                                                      fontFamily: 'Lato',
+                                                      overflow: TextOverflow
+                                                          .ellipsis),
+                                                ),
+                                              ),
+                                              iconSize: 25,
+                                              underline: SizedBox(),
+                                              style: TextStyle(
+                                                  color: ColorsApp.primary,
+                                                  fontSize: 12),
+                                              onChanged:
+                                                  (VilleModel? newValue) {
+                                                BlocProvider.of<DevisBloc>(
+                                                        context)
+                                                    .add(SelectVille(
+                                                        ville: newValue!));
+                                              },
+                                              items: state.list_ville!
+                                                  .map((value) {
+                                                return DropdownMenuItem(
+                                                  value: value,
+                                                  child: Center(
+                                                    child: Text(
+                                                      value!.libelle,
+                                                    ),
+                                                  ),
+                                                );
+                                              }).toList(),
+                                            ),
+                                          )
                               ]))),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: kMarginX),

@@ -34,21 +34,21 @@ class _PresentationPageState extends State<PresentationPage>
                         AppCarrousselItemSecond(
                           title: 'ctitle1'.tr(),
                           description:
-                              'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'
+                              'Bcom est une plateforme numérique conçue pour connecter les annonceurs avec des motocyclistes ou des entreprises de services de livraison à moto pour promouvoir des produits, des services ou des événements.'
                                   .tr(),
                           image: Assets.onb1,
                         ),
                         AppCarrousselItemSecond(
                             title: 'Marketing'.tr(),
                             description:
-                                'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'
+                                'Bcom offre une application de publicité par moto moyen pratique et efficace pour les annonceurs qui cherchent à promouvoir leurs produits ou services de manière innovante en utilisant des motocyclistes comme support publicitaire mobile.'
                                     .tr(),
                             image: Assets.onb2,
                             index: state.index),
                         AppCarrousselItemSecond(
                             title: 'Commander un devis'.tr(),
                             description:
-                                'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'
+                                'A partir de vos propositions nous mettons a votre disposition un devis pour vos besoin de marketing et de publicité.'
                                     .tr(),
                             image: Assets.onb3,
                             index: state.index)

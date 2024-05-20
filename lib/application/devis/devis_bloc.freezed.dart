@@ -3450,7 +3450,7 @@ mixin _$DevisState {
   int? get isRequest => throw _privateConstructorUsedError;
   int? get load_list_pack => throw _privateConstructorUsedError;
   int? get load_list_devis => throw _privateConstructorUsedError;
-  int? get load_list_mission_encours => throw _privateConstructorUsedError;
+  int? get load_list_ville => throw _privateConstructorUsedError;
   bool? get updateData => throw _privateConstructorUsedError;
   List<Secteur>? get list_secteur => throw _privateConstructorUsedError;
   int? get load_list_secteur => throw _privateConstructorUsedError;
@@ -3495,7 +3495,7 @@ abstract class $DevisStateCopyWith<$Res> {
       int? isRequest,
       int? load_list_pack,
       int? load_list_devis,
-      int? load_list_mission_encours,
+      int? load_list_ville,
       bool? updateData,
       List<Secteur>? list_secteur,
       int? load_list_secteur,
@@ -3540,7 +3540,7 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
     Object? isRequest = freezed,
     Object? load_list_pack = freezed,
     Object? load_list_devis = freezed,
-    Object? load_list_mission_encours = freezed,
+    Object? load_list_ville = freezed,
     Object? updateData = freezed,
     Object? list_secteur = freezed,
     Object? load_list_secteur = freezed,
@@ -3611,9 +3611,9 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.load_list_devis
           : load_list_devis // ignore: cast_nullable_to_non_nullable
               as int?,
-      load_list_mission_encours: freezed == load_list_mission_encours
-          ? _value.load_list_mission_encours
-          : load_list_mission_encours // ignore: cast_nullable_to_non_nullable
+      load_list_ville: freezed == load_list_ville
+          ? _value.load_list_ville
+          : load_list_ville // ignore: cast_nullable_to_non_nullable
               as int?,
       updateData: freezed == updateData
           ? _value.updateData
@@ -3705,7 +3705,7 @@ abstract class _$$DevisStateImplCopyWith<$Res>
       int? isRequest,
       int? load_list_pack,
       int? load_list_devis,
-      int? load_list_mission_encours,
+      int? load_list_ville,
       bool? updateData,
       List<Secteur>? list_secteur,
       int? load_list_secteur,
@@ -3748,7 +3748,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
     Object? isRequest = freezed,
     Object? load_list_pack = freezed,
     Object? load_list_devis = freezed,
-    Object? load_list_mission_encours = freezed,
+    Object? load_list_ville = freezed,
     Object? updateData = freezed,
     Object? list_secteur = freezed,
     Object? load_list_secteur = freezed,
@@ -3819,9 +3819,9 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.load_list_devis
           : load_list_devis // ignore: cast_nullable_to_non_nullable
               as int?,
-      load_list_mission_encours: freezed == load_list_mission_encours
-          ? _value.load_list_mission_encours
-          : load_list_mission_encours // ignore: cast_nullable_to_non_nullable
+      load_list_ville: freezed == load_list_ville
+          ? _value.load_list_ville
+          : load_list_ville // ignore: cast_nullable_to_non_nullable
               as int?,
       updateData: freezed == updateData
           ? _value.updateData
@@ -3908,7 +3908,7 @@ class _$DevisStateImpl implements _DevisState {
       required this.isRequest,
       required this.load_list_pack,
       required this.load_list_devis,
-      required this.load_list_mission_encours,
+      required this.load_list_ville,
       required this.updateData,
       required final List<Secteur>? list_secteur,
       required this.load_list_secteur,
@@ -3991,7 +3991,7 @@ class _$DevisStateImpl implements _DevisState {
   @override
   final int? load_list_devis;
   @override
-  final int? load_list_mission_encours;
+  final int? load_list_ville;
   @override
   final bool? updateData;
   final List<Secteur>? _list_secteur;
@@ -4036,7 +4036,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(position: $position, pack: $pack, missionSession: $missionSession, indexDevis: $indexDevis, list_pack: $list_pack, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, load_list_mission_encours: $load_list_mission_encours, updateData: $updateData, list_secteur: $list_secteur, load_list_secteur: $load_list_secteur, secteur: $secteur, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(position: $position, pack: $pack, missionSession: $missionSession, indexDevis: $indexDevis, list_pack: $list_pack, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, load_list_ville: $load_list_ville, updateData: $updateData, list_secteur: $list_secteur, load_list_secteur: $load_list_secteur, secteur: $secteur, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
   }
 
   @override
@@ -4068,9 +4068,8 @@ class _$DevisStateImpl implements _DevisState {
                 other.load_list_pack == load_list_pack) &&
             (identical(other.load_list_devis, load_list_devis) ||
                 other.load_list_devis == load_list_devis) &&
-            (identical(other.load_list_mission_encours,
-                    load_list_mission_encours) ||
-                other.load_list_mission_encours == load_list_mission_encours) &&
+            (identical(other.load_list_ville, load_list_ville) ||
+                other.load_list_ville == load_list_ville) &&
             (identical(other.updateData, updateData) ||
                 other.updateData == updateData) &&
             const DeepCollectionEquality()
@@ -4119,7 +4118,7 @@ class _$DevisStateImpl implements _DevisState {
         isRequest,
         load_list_pack,
         load_list_devis,
-        load_list_mission_encours,
+        load_list_ville,
         updateData,
         const DeepCollectionEquality().hash(_list_secteur),
         load_list_secteur,
@@ -4160,7 +4159,7 @@ abstract class _DevisState implements DevisState {
           required final int? isRequest,
           required final int? load_list_pack,
           required final int? load_list_devis,
-          required final int? load_list_mission_encours,
+          required final int? load_list_ville,
           required final bool? updateData,
           required final List<Secteur>? list_secteur,
           required final int? load_list_secteur,
@@ -4206,7 +4205,7 @@ abstract class _DevisState implements DevisState {
   @override
   int? get load_list_devis;
   @override
-  int? get load_list_mission_encours;
+  int? get load_list_ville;
   @override
   bool? get updateData;
   @override
