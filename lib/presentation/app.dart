@@ -1,5 +1,4 @@
-import 'package:Bcom/application/callcenter/callcenter_bloc.dart';
-import 'package:Bcom/application/callcenter/repositories/callcenterRepo.dart';
+ 
 import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
@@ -48,11 +47,7 @@ class AppContent extends StatelessWidget {
                       userRepo: sl.get<UserRepo>(),
                       database: sl.get<DatabaseCubit>()),
                 ),
-                BlocProvider<CallCenterBloc>(
-                  create: (BuildContext context) => CallCenterBloc(
-                      callcenterRepo: sl.get<CallCenterRepo>(),
-                      database: sl.get<DatabaseCubit>()),
-                ),
+            
                 BlocProvider<DevisBloc>(
                   create: (BuildContext context) => DevisBloc(
                       devisRepo: sl.get<DevisRepo>(),

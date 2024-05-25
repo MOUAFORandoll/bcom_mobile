@@ -6,10 +6,8 @@ import 'package:Bcom/application/model/data/DevisModel.dart';
 import 'package:Bcom/application/model/data/MissionSession.dart';
 import 'package:Bcom/application/model/data/PackModel.dart';
 import 'package:Bcom/application/model/data/Secteur.dart';
-import 'package:Bcom/application/model/exportmodel.dart';
-import 'package:Bcom/entity.dart';
+import 'package:Bcom/application/model/exportmodel.dart'; 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-import 'package:cron/cron.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -53,13 +51,15 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       print('---------list_ville------${response.data['hydra:member']}');
       if (response.data != null) {
         emit(state.copyWith(
-          load_list_ville:1,
+            load_list_ville: 1,
             list_ville: (response.data['hydra:member'] as List)
                 .map((e) => VilleModel.fromJson(e))
                 .toList()));
         print('---------list_ville------${state.list_ville!.length}');
       } else {
-        emit(state.copyWith(  load_list_ville:2,));
+        emit(state.copyWith(
+          load_list_ville: 2,
+        ));
       }
     }).onError((e, s) {
       emit(state.copyWith(load_list_ville: 2));
@@ -144,7 +144,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     emit(state.copyWith(
       load_list_pack: 0,
     ));
-    var id = await database.getId();
+    var user = await database.getUser();
     var data = {
       'inQuartier': state.inQuartier == 0,
       'typeTravail': state.typeTravail,
@@ -154,7 +154,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       'horaire':
           '${state.horaireStart.hour}:${state.horaireStart.minute} - ${state.horaireEnd.hour}:${state.horaireEnd.minute}',
       'pack': 'api/packs/${state.pack!.id}',
-      'client': 'api/user_plateforms/${id}',
+      'client': user!.id,
       'ville': 'api/villes/${state.ville!.id}',
       'dureeTravail': state.dureeTravail.text
     };

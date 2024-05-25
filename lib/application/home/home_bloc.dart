@@ -20,12 +20,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       print('---------UserD-------------------------');
       var user = await database.getUser();
       print(
-          '---------UserD-----*${user!.id}--------------------*${user.phone}');
+          '---------UserD-----*${user!.toMap()}--------------------*${user.phone}');
 
       emit(state.copyWith(user: user));
-
-      print(
-          '---------UserD-------------------------*ataEvent***${state.user!.profile}');
     });
 
     on<SetIndexEvent>((event, emit) async {

@@ -40,7 +40,7 @@ class _InfoProduitState extends State<InfoProduit> {
                 maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
-            showError(state.authenticationFailedMessage!, context);
+            showError(state.eventMessage!, context);
           } else if (state.isLoading == 2) {
             EasyLoading.dismiss();
 

@@ -20,163 +20,9 @@ export 'package:objectbox/objectbox.dart'; // so that callers only have to impor
 
 final _entities = <ModelEntity>[
   ModelEntity(
-      id: const IdUid(1, 4969518057203688213),
-      name: 'Commande',
-      lastPropertyId: const IdUid(4, 1395444994505962781),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 5127329087435583877),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 3733723678809820577),
-            name: 'codeCommande',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(3, 3733861273943814581),
-            name: 'codeClient',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(4, 1395444994505962781),
-            name: 'date',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
-      id: const IdUid(2, 8984566840537087468),
-      name: 'KeyUser',
-      lastPropertyId: const IdUid(5, 3050349477534242606),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 6348612253164974944),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 3624252355606891287),
-            name: 'keySecret',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(3, 8832846444064727260),
-            name: 'token',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(4, 34511884449713588),
-            name: 'refreshToken',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(5, 3050349477534242606),
-            name: 'userId',
-            type: 6,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
-      id: const IdUid(3, 528970694863214740),
-      name: 'Lang',
-      lastPropertyId: const IdUid(2, 7392225789609482597),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 5758480994236200392),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 7392225789609482597),
-            name: 'name',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
-      id: const IdUid(4, 5589971371954137280),
-      name: 'Localisation',
-      lastPropertyId: const IdUid(5, 421267395549205444),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 576028652935433197),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 7973789328410402377),
-            name: 'ville',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(3, 3296741169851625451),
-            name: 'longitude',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(4, 994297135078503455),
-            name: 'latitude',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(5, 421267395549205444),
-            name: 'ip',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
-      id: const IdUid(5, 1113314405807969848),
-      name: 'Second',
-      lastPropertyId: const IdUid(2, 1939509048529786318),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 4893917620272064576),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 1939509048529786318),
-            name: 'name',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
-      id: const IdUid(6, 8515091795137785474),
-      name: 'Theme',
-      lastPropertyId: const IdUid(2, 5624160313008426624),
-      flags: 0,
-      properties: <ModelProperty>[
-        ModelProperty(
-            id: const IdUid(1, 898959819284985380),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        ModelProperty(
-            id: const IdUid(2, 5624160313008426624),
-            name: 'value',
-            type: 6,
-            flags: 0)
-      ],
-      relations: <ModelRelation>[],
-      backlinks: <ModelBacklink>[]),
-  ModelEntity(
       id: const IdUid(7, 3111042122288968254),
       name: 'User',
-      lastPropertyId: const IdUid(12, 1288215193080885177),
+      lastPropertyId: const IdUid(43, 3741596495629289161),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
@@ -190,57 +36,177 @@ final _entities = <ModelEntity>[
             type: 6,
             flags: 0),
         ModelProperty(
-            id: const IdUid(3, 7194923917911908307),
-            name: 'nom',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(4, 1981058460113358940),
-            name: 'prenom',
-            type: 9,
-            flags: 0),
-        ModelProperty(
-            id: const IdUid(6, 7884356085899434437),
-            name: 'profile',
-            type: 9,
-            flags: 0),
-        ModelProperty(
             id: const IdUid(7, 6408305374337865876),
             name: 'phone',
             type: 9,
             flags: 0),
         ModelProperty(
-            id: const IdUid(8, 1202883639022673218),
-            name: 'dateCreated',
+            id: const IdUid(13, 3401001642855875827),
+            name: 'status',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(14, 3355045850498575016),
+            name: 'isSick',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(15, 3980216349361617791),
+            name: 'isMotoMan',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(16, 5933979292144529071),
+            name: 'isSyndicat',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(17, 4852188744492943690),
+            name: 'isYourBike',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(18, 7561429368695529717),
+            name: 'isDeleted',
+            type: 1,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(19, 8151415384646149008),
+            name: 'fullName',
             type: 9,
             flags: 0),
         ModelProperty(
-            id: const IdUid(9, 4427249840446802544),
-            name: 'typeUser',
+            id: const IdUid(20, 4326069741753645873),
+            name: 'email',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(21, 3819392880965898699),
+            name: 'userName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(23, 6909793690198580869),
+            name: 'userTypeId',
             type: 6,
             flags: 0),
         ModelProperty(
-            id: const IdUid(11, 4088015423610740637),
-            name: 'infoComplete',
-            type: 1,
+            id: const IdUid(24, 7291341806094837529),
+            name: 'updatedAt',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(25, 5487290923813258841),
+            name: 'createdAt',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(26, 5878281319523098560),
+            name: 'sex',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(27, 927519925250964199),
+            name: 'age',
+            type: 6,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(28, 4420995561681679708),
+            name: 'town',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(29, 5718868332370359433),
+            name: 'country',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(30, 5152416787481922316),
+            name: 'address',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(31, 1935959962171727176),
+            name: 'numCni',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(32, 5813072405661990015),
+            name: 'workingMoment',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(33, 5302669955350977623),
+            name: 'birthDate',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(34, 7674517704743556602),
+            name: 'syndicatName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(35, 5342707977424880096),
+            name: 'sickDescription',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(36, 7477666607877275040),
+            name: 'cni1',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(37, 124146307760606359),
+            name: 'cni2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(38, 3943172827936421611),
+            name: 'photoMoto',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(39, 979007762512491111),
+            name: 'profile',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(40, 5621906145725468218),
+            name: 'carteGrise',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(41, 8583686043951833615),
+            name: 'serviceZoneId',
+            type: 6,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(42, 4097326965834676569),
+            name: 'nuiNumber',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(43, 3741596495629289161),
+            name: 'wokingPlace',
+            type: 9,
             flags: 0)
       ],
       relations: <ModelRelation>[],
       backlinks: <ModelBacklink>[]),
   ModelEntity(
-      id: const IdUid(8, 6314683099039113893),
-      name: 'YourDataModel',
-      lastPropertyId: const IdUid(2, 4387494669297644908),
+      id: const IdUid(9, 7658565384930245975),
+      name: 'KeyUser',
+      lastPropertyId: const IdUid(2, 6746820073982925451),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
-            id: const IdUid(1, 550131433720045414),
+            id: const IdUid(1, 2274870744129174688),
             name: 'id',
             type: 6,
             flags: 1),
         ModelProperty(
-            id: const IdUid(2, 4387494669297644908),
-            name: 'name',
+            id: const IdUid(2, 6746820073982925451),
+            name: 'accessToken',
             type: 9,
             flags: 0)
       ],
@@ -275,16 +241,53 @@ Future<Store> openStore(
 ModelDefinition getObjectBoxModel() {
   final model = ModelInfo(
       entities: _entities,
-      lastEntityId: const IdUid(8, 6314683099039113893),
+      lastEntityId: const IdUid(9, 7658565384930245975),
       lastIndexId: const IdUid(0, 0),
       lastRelationId: const IdUid(0, 0),
       lastSequenceId: const IdUid(0, 0),
-      retiredEntityUids: const [],
+      retiredEntityUids: const [
+        4969518057203688213,
+        8984566840537087468,
+        528970694863214740,
+        5589971371954137280,
+        1113314405807969848,
+        8515091795137785474,
+        6314683099039113893
+      ],
       retiredIndexUids: const [],
       retiredPropertyUids: const [
         754203462009673773,
         7104273356431650241,
-        1288215193080885177
+        1288215193080885177,
+        7194923917911908307,
+        1981058460113358940,
+        7884356085899434437,
+        1202883639022673218,
+        4427249840446802544,
+        4088015423610740637,
+        5127329087435583877,
+        3733723678809820577,
+        3733861273943814581,
+        1395444994505962781,
+        6348612253164974944,
+        3624252355606891287,
+        8832846444064727260,
+        34511884449713588,
+        3050349477534242606,
+        5758480994236200392,
+        7392225789609482597,
+        576028652935433197,
+        7973789328410402377,
+        3296741169851625451,
+        994297135078503455,
+        421267395549205444,
+        4893917620272064576,
+        1939509048529786318,
+        898959819284985380,
+        5624160313008426624,
+        550131433720045414,
+        4387494669297644908,
+        6670894605406842718
       ],
       retiredRelationUids: const [],
       modelVersion: 5,
@@ -292,43 +295,188 @@ ModelDefinition getObjectBoxModel() {
       version: 1);
 
   final bindings = <Type, EntityDefinition>{
-    Commande: EntityDefinition<Commande>(
+    User: EntityDefinition<User>(
         model: _entities[0],
-        toOneRelations: (Commande object) => [],
-        toManyRelations: (Commande object) => {},
-        getId: (Commande object) => object.id,
-        setId: (Commande object, int id) {
+        toOneRelations: (User object) => [],
+        toManyRelations: (User object) => {},
+        getId: (User object) => object.id,
+        setId: (User object, int id) {
           object.id = id;
         },
-        objectToFB: (Commande object, fb.Builder fbb) {
-          final codeCommandeOffset = fbb.writeString(object.codeCommande);
-          final codeClientOffset = fbb.writeString(object.codeClient);
-          final dateOffset = fbb.writeString(object.date);
-          fbb.startTable(5);
+        objectToFB: (User object, fb.Builder fbb) {
+          final phoneOffset = fbb.writeString(object.phone);
+          final fullNameOffset = fbb.writeString(object.fullName);
+          final emailOffset = fbb.writeString(object.email);
+          final userNameOffset = fbb.writeString(object.userName);
+          final updatedAtOffset = fbb.writeString(object.updatedAt);
+          final createdAtOffset = fbb.writeString(object.createdAt);
+          final sexOffset = fbb.writeString(object.sex);
+          final townOffset = fbb.writeString(object.town);
+          final countryOffset = fbb.writeString(object.country);
+          final addressOffset = fbb.writeString(object.address);
+          final numCniOffset = fbb.writeString(object.numCni);
+          final workingMomentOffset = fbb.writeString(object.workingMoment);
+          final birthDateOffset = fbb.writeString(object.birthDate);
+          final syndicatNameOffset = fbb.writeString(object.syndicatName);
+          final sickDescriptionOffset = object.sickDescription == null
+              ? null
+              : fbb.writeString(object.sickDescription!);
+          final cni1Offset = fbb.writeString(object.cni1);
+          final cni2Offset = fbb.writeString(object.cni2);
+          final photoMotoOffset = object.photoMoto == null
+              ? null
+              : fbb.writeString(object.photoMoto!);
+          final profileOffset =
+              object.profile == null ? null : fbb.writeString(object.profile!);
+          final carteGriseOffset = object.carteGrise == null
+              ? null
+              : fbb.writeString(object.carteGrise!);
+          final nuiNumberOffset = object.nuiNumber == null
+              ? null
+              : fbb.writeString(object.nuiNumber!);
+          final wokingPlaceOffset = fbb.writeString(object.wokingPlace);
+          fbb.startTable(44);
           fbb.addInt64(0, object.id);
-          fbb.addOffset(1, codeCommandeOffset);
-          fbb.addOffset(2, codeClientOffset);
-          fbb.addOffset(3, dateOffset);
+          fbb.addInt64(1, object.userId);
+          fbb.addOffset(6, phoneOffset);
+          fbb.addBool(12, object.status);
+          fbb.addBool(13, object.isSick);
+          fbb.addBool(14, object.isMotoMan);
+          fbb.addBool(15, object.isSyndicat);
+          fbb.addBool(16, object.isYourBike);
+          fbb.addBool(17, object.isDeleted);
+          fbb.addOffset(18, fullNameOffset);
+          fbb.addOffset(19, emailOffset);
+          fbb.addOffset(20, userNameOffset);
+          fbb.addInt64(22, object.userTypeId);
+          fbb.addOffset(23, updatedAtOffset);
+          fbb.addOffset(24, createdAtOffset);
+          fbb.addOffset(25, sexOffset);
+          fbb.addInt64(26, object.age);
+          fbb.addOffset(27, townOffset);
+          fbb.addOffset(28, countryOffset);
+          fbb.addOffset(29, addressOffset);
+          fbb.addOffset(30, numCniOffset);
+          fbb.addOffset(31, workingMomentOffset);
+          fbb.addOffset(32, birthDateOffset);
+          fbb.addOffset(33, syndicatNameOffset);
+          fbb.addOffset(34, sickDescriptionOffset);
+          fbb.addOffset(35, cni1Offset);
+          fbb.addOffset(36, cni2Offset);
+          fbb.addOffset(37, photoMotoOffset);
+          fbb.addOffset(38, profileOffset);
+          fbb.addOffset(39, carteGriseOffset);
+          fbb.addInt64(40, object.serviceZoneId);
+          fbb.addOffset(41, nuiNumberOffset);
+          fbb.addOffset(42, wokingPlaceOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
         objectFromFB: (Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final codeCommandeParam =
+          final fullNameParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 40, '');
+          final emailParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 42, '');
+          final userNameParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 44, '');
+          final sexParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 54, '');
+          final ageParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 56, 0);
+          final townParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 58, '');
+          final userIdParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 6, 0);
+          final countryParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 60, '');
+          final phoneParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 16, '');
+          final addressParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 62, '');
+          final numCniParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 64, '');
+          final statusParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 28, false);
+          final workingMomentParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 6, '');
-          final codeClientParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final dateParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final object = Commande(
-              id: idParam,
-              codeCommande: codeCommandeParam,
-              codeClient: codeClientParam,
-              date: dateParam);
+                  .vTableGet(buffer, rootOffset, 66, '');
+          final birthDateParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 68, '');
+          final isSickParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 30, false);
+          final isMotoManParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 32, false);
+          final isSyndicatParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 34, false);
+          final isYourBikeParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 36, false);
+          final syndicatNameParam =
+              const fb.StringReader(asciiOptimization: true)
+                  .vTableGet(buffer, rootOffset, 70, '');
+          final sickDescriptionParam =
+              const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 72);
+          final cni1Param = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 74, '');
+          final cni2Param = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 76, '');
+          final photoMotoParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGetNullable(buffer, rootOffset, 78);
+          final profileParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGetNullable(buffer, rootOffset, 80);
+          final carteGriseParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGetNullable(buffer, rootOffset, 82);
+          final userTypeIdParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 48, 0);
+          final serviceZoneIdParam =
+              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 84);
+          final isDeletedParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 38, false);
+          final nuiNumberParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGetNullable(buffer, rootOffset, 86);
+          final wokingPlaceParam =
+              const fb.StringReader(asciiOptimization: true)
+                  .vTableGet(buffer, rootOffset, 88, '');
+          final createdAtParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 52, '');
+          final updatedAtParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 50, '');
+          final object = User(
+              fullName: fullNameParam,
+              email: emailParam,
+              userName: userNameParam,
+              sex: sexParam,
+              age: ageParam,
+              town: townParam,
+              userId: userIdParam,
+              country: countryParam,
+              phone: phoneParam,
+              address: addressParam,
+              numCni: numCniParam,
+              status: statusParam,
+              workingMoment: workingMomentParam,
+              birthDate: birthDateParam,
+              isSick: isSickParam,
+              isMotoMan: isMotoManParam,
+              isSyndicat: isSyndicatParam,
+              isYourBike: isYourBikeParam,
+              syndicatName: syndicatNameParam,
+              sickDescription: sickDescriptionParam,
+              cni1: cni1Param,
+              cni2: cni2Param,
+              photoMoto: photoMotoParam,
+              profile: profileParam,
+              carteGrise: carteGriseParam,
+              userTypeId: userTypeIdParam,
+              serviceZoneId: serviceZoneIdParam,
+              isDeleted: isDeletedParam,
+              nuiNumber: nuiNumberParam,
+              wokingPlace: wokingPlaceParam,
+              createdAt: createdAtParam,
+              updatedAt: updatedAtParam)
+            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 
           return object;
         }),
@@ -341,243 +489,21 @@ ModelDefinition getObjectBoxModel() {
           object.id = id;
         },
         objectToFB: (KeyUser object, fb.Builder fbb) {
-          final keySecretOffset = fbb.writeString(object.keySecret);
-          final tokenOffset = fbb.writeString(object.token);
-          final refreshTokenOffset = fbb.writeString(object.refreshToken);
-          fbb.startTable(6);
+          final accessTokenOffset = fbb.writeString(object.accessToken);
+          fbb.startTable(3);
           fbb.addInt64(0, object.id);
-          fbb.addOffset(1, keySecretOffset);
-          fbb.addOffset(2, tokenOffset);
-          fbb.addOffset(3, refreshTokenOffset);
-          fbb.addInt64(4, object.userId);
+          fbb.addOffset(1, accessTokenOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
         objectFromFB: (Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final keySecretParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final userIdParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 12, 0);
-          final tokenParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final refreshTokenParam =
+          final accessTokenParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 10, '');
-          final object = KeyUser(
-              keySecret: keySecretParam,
-              userId: userIdParam,
-              token: tokenParam,
-              refreshToken: refreshTokenParam)
+                  .vTableGet(buffer, rootOffset, 6, '');
+          final object = KeyUser(accessToken: accessTokenParam)
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-
-          return object;
-        }),
-    Lang: EntityDefinition<Lang>(
-        model: _entities[2],
-        toOneRelations: (Lang object) => [],
-        toManyRelations: (Lang object) => {},
-        getId: (Lang object) => object.id,
-        setId: (Lang object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Lang object, fb.Builder fbb) {
-          final nameOffset = fbb.writeString(object.name);
-          fbb.startTable(3);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, nameOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final object = Lang(name: nameParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-
-          return object;
-        }),
-    Localisation: EntityDefinition<Localisation>(
-        model: _entities[3],
-        toOneRelations: (Localisation object) => [],
-        toManyRelations: (Localisation object) => {},
-        getId: (Localisation object) => object.id,
-        setId: (Localisation object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Localisation object, fb.Builder fbb) {
-          final villeOffset = fbb.writeString(object.ville);
-          final longitudeOffset = fbb.writeString(object.longitude);
-          final latitudeOffset = fbb.writeString(object.latitude);
-          final ipOffset = fbb.writeString(object.ip);
-          fbb.startTable(6);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, villeOffset);
-          fbb.addOffset(2, longitudeOffset);
-          fbb.addOffset(3, latitudeOffset);
-          fbb.addOffset(4, ipOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final villeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final longitudeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final latitudeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final ipParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 12, '');
-          final object = Localisation(
-              ville: villeParam,
-              longitude: longitudeParam,
-              latitude: latitudeParam,
-              ip: ipParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-
-          return object;
-        }),
-    Second: EntityDefinition<Second>(
-        model: _entities[4],
-        toOneRelations: (Second object) => [],
-        toManyRelations: (Second object) => {},
-        getId: (Second object) => object.id,
-        setId: (Second object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Second object, fb.Builder fbb) {
-          final nameOffset = fbb.writeString(object.name);
-          fbb.startTable(3);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, nameOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final object = Second(id: idParam, name: nameParam);
-
-          return object;
-        }),
-    Theme: EntityDefinition<Theme>(
-        model: _entities[5],
-        toOneRelations: (Theme object) => [],
-        toManyRelations: (Theme object) => {},
-        getId: (Theme object) => object.id,
-        setId: (Theme object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Theme object, fb.Builder fbb) {
-          fbb.startTable(3);
-          fbb.addInt64(0, object.id);
-          fbb.addInt64(1, object.value);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final valueParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 6, 0);
-          final object = Theme(value: valueParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-
-          return object;
-        }),
-    User: EntityDefinition<User>(
-        model: _entities[6],
-        toOneRelations: (User object) => [],
-        toManyRelations: (User object) => {},
-        getId: (User object) => object.id,
-        setId: (User object, int id) {
-          object.id = id;
-        },
-        objectToFB: (User object, fb.Builder fbb) {
-          final nomOffset = fbb.writeString(object.nom);
-          final prenomOffset = fbb.writeString(object.prenom);
-          final profileOffset = fbb.writeString(object.profile);
-          final phoneOffset = fbb.writeString(object.phone);
-          final dateCreatedOffset = fbb.writeString(object.dateCreated);
-          fbb.startTable(13);
-          fbb.addInt64(0, object.id);
-          fbb.addInt64(1, object.userId);
-          fbb.addOffset(2, nomOffset);
-          fbb.addOffset(3, prenomOffset);
-          fbb.addOffset(5, profileOffset);
-          fbb.addOffset(6, phoneOffset);
-          fbb.addOffset(7, dateCreatedOffset);
-          fbb.addInt64(8, object.typeUser);
-          fbb.addBool(10, object.infoComplete);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final userIdParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 6, 0);
-          final nomParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final prenomParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final typeUserParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 20, 0);
-          final profileParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 14, '');
-          final phoneParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 16, '');
-          final infoCompleteParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 24, false);
-          final dateCreatedParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 18, '');
-          final object = User(
-              userId: userIdParam,
-              nom: nomParam,
-              prenom: prenomParam,
-              typeUser: typeUserParam,
-              profile: profileParam,
-              phone: phoneParam,
-              infoComplete: infoCompleteParam,
-              dateCreated: dateCreatedParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-
-          return object;
-        }),
-    YourDataModel: EntityDefinition<YourDataModel>(
-        model: _entities[7],
-        toOneRelations: (YourDataModel object) => [],
-        toManyRelations: (YourDataModel object) => {},
-        getId: (YourDataModel object) => object.id,
-        setId: (YourDataModel object, int id) {
-          object.id = id;
-        },
-        objectToFB: (YourDataModel object, fb.Builder fbb) {
-          final nameOffset = fbb.writeString(object.name);
-          fbb.startTable(3);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, nameOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final object = YourDataModel(id: idParam, name: nameParam);
 
           return object;
         })
@@ -586,21 +512,123 @@ ModelDefinition getObjectBoxModel() {
   return ModelDefinition(model, bindings);
 }
 
-/// [Commande] entity fields to define ObjectBox queries.
-class Commande_ {
-  /// see [Commande.id]
-  static final id = QueryIntegerProperty<Commande>(_entities[0].properties[0]);
+/// [User] entity fields to define ObjectBox queries.
+class User_ {
+  /// see [User.id]
+  static final id = QueryIntegerProperty<User>(_entities[0].properties[0]);
 
-  /// see [Commande.codeCommande]
-  static final codeCommande =
-      QueryStringProperty<Commande>(_entities[0].properties[1]);
+  /// see [User.userId]
+  static final userId = QueryIntegerProperty<User>(_entities[0].properties[1]);
 
-  /// see [Commande.codeClient]
-  static final codeClient =
-      QueryStringProperty<Commande>(_entities[0].properties[2]);
+  /// see [User.phone]
+  static final phone = QueryStringProperty<User>(_entities[0].properties[2]);
 
-  /// see [Commande.date]
-  static final date = QueryStringProperty<Commande>(_entities[0].properties[3]);
+  /// see [User.status]
+  static final status = QueryBooleanProperty<User>(_entities[0].properties[3]);
+
+  /// see [User.isSick]
+  static final isSick = QueryBooleanProperty<User>(_entities[0].properties[4]);
+
+  /// see [User.isMotoMan]
+  static final isMotoMan =
+      QueryBooleanProperty<User>(_entities[0].properties[5]);
+
+  /// see [User.isSyndicat]
+  static final isSyndicat =
+      QueryBooleanProperty<User>(_entities[0].properties[6]);
+
+  /// see [User.isYourBike]
+  static final isYourBike =
+      QueryBooleanProperty<User>(_entities[0].properties[7]);
+
+  /// see [User.isDeleted]
+  static final isDeleted =
+      QueryBooleanProperty<User>(_entities[0].properties[8]);
+
+  /// see [User.fullName]
+  static final fullName = QueryStringProperty<User>(_entities[0].properties[9]);
+
+  /// see [User.email]
+  static final email = QueryStringProperty<User>(_entities[0].properties[10]);
+
+  /// see [User.userName]
+  static final userName =
+      QueryStringProperty<User>(_entities[0].properties[11]);
+
+  /// see [User.userTypeId]
+  static final userTypeId =
+      QueryIntegerProperty<User>(_entities[0].properties[12]);
+
+  /// see [User.updatedAt]
+  static final updatedAt =
+      QueryStringProperty<User>(_entities[0].properties[13]);
+
+  /// see [User.createdAt]
+  static final createdAt =
+      QueryStringProperty<User>(_entities[0].properties[14]);
+
+  /// see [User.sex]
+  static final sex = QueryStringProperty<User>(_entities[0].properties[15]);
+
+  /// see [User.age]
+  static final age = QueryIntegerProperty<User>(_entities[0].properties[16]);
+
+  /// see [User.town]
+  static final town = QueryStringProperty<User>(_entities[0].properties[17]);
+
+  /// see [User.country]
+  static final country = QueryStringProperty<User>(_entities[0].properties[18]);
+
+  /// see [User.address]
+  static final address = QueryStringProperty<User>(_entities[0].properties[19]);
+
+  /// see [User.numCni]
+  static final numCni = QueryStringProperty<User>(_entities[0].properties[20]);
+
+  /// see [User.workingMoment]
+  static final workingMoment =
+      QueryStringProperty<User>(_entities[0].properties[21]);
+
+  /// see [User.birthDate]
+  static final birthDate =
+      QueryStringProperty<User>(_entities[0].properties[22]);
+
+  /// see [User.syndicatName]
+  static final syndicatName =
+      QueryStringProperty<User>(_entities[0].properties[23]);
+
+  /// see [User.sickDescription]
+  static final sickDescription =
+      QueryStringProperty<User>(_entities[0].properties[24]);
+
+  /// see [User.cni1]
+  static final cni1 = QueryStringProperty<User>(_entities[0].properties[25]);
+
+  /// see [User.cni2]
+  static final cni2 = QueryStringProperty<User>(_entities[0].properties[26]);
+
+  /// see [User.photoMoto]
+  static final photoMoto =
+      QueryStringProperty<User>(_entities[0].properties[27]);
+
+  /// see [User.profile]
+  static final profile = QueryStringProperty<User>(_entities[0].properties[28]);
+
+  /// see [User.carteGrise]
+  static final carteGrise =
+      QueryStringProperty<User>(_entities[0].properties[29]);
+
+  /// see [User.serviceZoneId]
+  static final serviceZoneId =
+      QueryIntegerProperty<User>(_entities[0].properties[30]);
+
+  /// see [User.nuiNumber]
+  static final nuiNumber =
+      QueryStringProperty<User>(_entities[0].properties[31]);
+
+  /// see [User.wokingPlace]
+  static final wokingPlace =
+      QueryStringProperty<User>(_entities[0].properties[32]);
 }
 
 /// [KeyUser] entity fields to define ObjectBox queries.
@@ -608,112 +636,7 @@ class KeyUser_ {
   /// see [KeyUser.id]
   static final id = QueryIntegerProperty<KeyUser>(_entities[1].properties[0]);
 
-  /// see [KeyUser.keySecret]
-  static final keySecret =
+  /// see [KeyUser.accessToken]
+  static final accessToken =
       QueryStringProperty<KeyUser>(_entities[1].properties[1]);
-
-  /// see [KeyUser.token]
-  static final token = QueryStringProperty<KeyUser>(_entities[1].properties[2]);
-
-  /// see [KeyUser.refreshToken]
-  static final refreshToken =
-      QueryStringProperty<KeyUser>(_entities[1].properties[3]);
-
-  /// see [KeyUser.userId]
-  static final userId =
-      QueryIntegerProperty<KeyUser>(_entities[1].properties[4]);
-}
-
-/// [Lang] entity fields to define ObjectBox queries.
-class Lang_ {
-  /// see [Lang.id]
-  static final id = QueryIntegerProperty<Lang>(_entities[2].properties[0]);
-
-  /// see [Lang.name]
-  static final name = QueryStringProperty<Lang>(_entities[2].properties[1]);
-}
-
-/// [Localisation] entity fields to define ObjectBox queries.
-class Localisation_ {
-  /// see [Localisation.id]
-  static final id =
-      QueryIntegerProperty<Localisation>(_entities[3].properties[0]);
-
-  /// see [Localisation.ville]
-  static final ville =
-      QueryStringProperty<Localisation>(_entities[3].properties[1]);
-
-  /// see [Localisation.longitude]
-  static final longitude =
-      QueryStringProperty<Localisation>(_entities[3].properties[2]);
-
-  /// see [Localisation.latitude]
-  static final latitude =
-      QueryStringProperty<Localisation>(_entities[3].properties[3]);
-
-  /// see [Localisation.ip]
-  static final ip =
-      QueryStringProperty<Localisation>(_entities[3].properties[4]);
-}
-
-/// [Second] entity fields to define ObjectBox queries.
-class Second_ {
-  /// see [Second.id]
-  static final id = QueryIntegerProperty<Second>(_entities[4].properties[0]);
-
-  /// see [Second.name]
-  static final name = QueryStringProperty<Second>(_entities[4].properties[1]);
-}
-
-/// [Theme] entity fields to define ObjectBox queries.
-class Theme_ {
-  /// see [Theme.id]
-  static final id = QueryIntegerProperty<Theme>(_entities[5].properties[0]);
-
-  /// see [Theme.value]
-  static final value = QueryIntegerProperty<Theme>(_entities[5].properties[1]);
-}
-
-/// [User] entity fields to define ObjectBox queries.
-class User_ {
-  /// see [User.id]
-  static final id = QueryIntegerProperty<User>(_entities[6].properties[0]);
-
-  /// see [User.userId]
-  static final userId = QueryIntegerProperty<User>(_entities[6].properties[1]);
-
-  /// see [User.nom]
-  static final nom = QueryStringProperty<User>(_entities[6].properties[2]);
-
-  /// see [User.prenom]
-  static final prenom = QueryStringProperty<User>(_entities[6].properties[3]);
-
-  /// see [User.profile]
-  static final profile = QueryStringProperty<User>(_entities[6].properties[4]);
-
-  /// see [User.phone]
-  static final phone = QueryStringProperty<User>(_entities[6].properties[5]);
-
-  /// see [User.dateCreated]
-  static final dateCreated =
-      QueryStringProperty<User>(_entities[6].properties[6]);
-
-  /// see [User.typeUser]
-  static final typeUser =
-      QueryIntegerProperty<User>(_entities[6].properties[7]);
-
-  /// see [User.infoComplete]
-  static final infoComplete =
-      QueryBooleanProperty<User>(_entities[6].properties[8]);
-}
-
-/// [YourDataModel] entity fields to define ObjectBox queries.
-class YourDataModel_ {
-  /// see [YourDataModel.id]
-  static final id =
-      QueryIntegerProperty<YourDataModel>(_entities[7].properties[0]);
-
-  /// see [YourDataModel.name]
-  static final name =
-      QueryStringProperty<YourDataModel>(_entities[7].properties[1]);
 }

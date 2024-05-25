@@ -1,11 +1,12 @@
+import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import '../../../application/export_bloc.dart';
 
 // ignore: must_be_immutable
 class KHomeInfo extends StatelessWidget {
-  KHomeInfo({required this.user});
-  final user;
+  KHomeInfo({required User this.user});
+  final User user;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -118,7 +119,7 @@ class KHomeInfo extends StatelessWidget {
                   ))),
                   // width: getWith(context) * .35,
                   padding: EdgeInsets.symmetric(vertical: kMarginY / 4),
-                  child: Text('Hey, ' + user.nom,
+                  child: Text('Hey, ' + user.userName,
                       style: TextStyle(
                         color: ColorsApp.white,
                         fontWeight: FontWeight.w800,

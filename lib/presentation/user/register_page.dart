@@ -22,14 +22,14 @@ class _RegisterPageState extends State<RegisterPage> {
   var loader = AppLoader.bounceLargeColorLoaderController();
 
   TextEditingController phone = TextEditingController();
-  TextEditingController nationnalite = TextEditingController();
+  TextEditingController email = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
   TextEditingController password = TextEditingController();
 
-  TextEditingController nom = TextEditingController();
-  TextEditingController prenom = TextEditingController();
+  TextEditingController userName = TextEditingController();
+  TextEditingController fullName = TextEditingController();
 
   TextEditingController re_password = TextEditingController();
 
@@ -77,13 +77,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     maskType: EasyLoadingMaskType.black);
               } else if (state.isLoading == 3) {
                 EasyLoading.dismiss();
-                showError(state.authenticationFailedMessage!, context);
+                showError(state.authenticationMessage!, context);
               } else if (state.isLoading == 2) {
                 EasyLoading.dismiss();
-                AutoRouter.of(context).replaceAll([HomeRoute()]);
+                AutoRouter.of(context).replaceAll([AuthRoute()]);
+                
+                showSuccess(state.authenticationMessage!, context);
 
-                showSuccess('Connecte', context);
-                initLoad(context);
                 print('-----44--------*********');
               }
             },
@@ -124,9 +124,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                       top: kMarginY,
                                     ),
                                     child: AppInput(
-                                      controller: nom,
+                                      controller: userName,
                                       onChanged: (value) {},
-                                      placeholder: 'labelname'.tr(),
+                                      placeholder: 'labelusername'.tr(),
                                       validator: (value) {
                                         return Validators.isValidUsername(
                                             value!);
@@ -134,9 +134,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ),
                                   ),
                                   AppInput(
-                                    controller: prenom,
+                                    controller: fullName,
                                     onChanged: (value) {},
-                                    placeholder: 'labelsurname'.tr(),
+                                    placeholder: 'name'.tr(),
                                     validator: (value) {
                                       return Validators.isValidUsername(value!);
                                     },
@@ -151,11 +151,11 @@ class _RegisterPageState extends State<RegisterPage> {
                                     },
                                   ),
                                   AppInput(
-                                    controller: nationnalite,
+                                    controller: email,
                                     onChanged: (value) {},
-                                    placeholder: 'Nationalite'.tr(),
+                                    placeholder: 'labelemail'.tr(),
                                     validator: (value) {
-                                      return Validators.isValidUsername(value!);
+                                      return Validators.isValidEmail(value!);
                                     },
                                   ),
                                   AppInputPassword(
@@ -202,12 +202,17 @@ class _RegisterPageState extends State<RegisterPage> {
                                       text: 'regbtn'.tr(),
                                       onTap: () async {
                                         if (formKey.currentState!.validate()) {
+                                          if (password.text !=
+                                              re_password.text) {
+                                            showError(
+                                                'difpassword'.tr(), context);
+                                            return;
+                                          }
                                           context.read<UserBloc>().add(
                                               RegisterEvent(
-                                                  nom: nom.text,
-                                                  prenom: prenom.text,
-                                                  nationnalite:
-                                                      nationnalite.text,
+                                                  userName: userName.text,
+                                                  fullName: fullName.text,
+                                                  email: email.text,
                                                   phone: phone.text,
                                                   password: password.text,
                                                   re_password:

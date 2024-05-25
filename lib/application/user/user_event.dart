@@ -3,21 +3,31 @@ part of 'user_bloc.dart';
 @freezed
 class UserEvent with _$UserEvent {
   const factory UserEvent.chooseExperience({
-    required String phone,
+    required String userName,
     required String password,
   }) = SignInEvent;
 
   const factory UserEvent.register(
-      {required String nom,
-      required String prenom,
-      required String nationnalite,
+      {required String fullName,
+      required String userName,
       required String phone,
+      required String email,
       required String password,
       required String re_password}) = RegisterEvent;
-  const factory UserEvent.addInfoEntreprise({
-    required String titre,
-    required String numRegCommerce,
-  }) = AddInfoEntreprise;
+  const factory UserEvent.addInfoEntreprise(
+      /* {
+    required String name,
+    required String email,
+    required String phone,
+    required String adress,
+    required String city,
+    required String numImpot,
+    required String numContribuable,
+    required String registreCommerce,
+    required String webSite,
+    required String country,
+  } */
+      ) = AddInfoClient;
 
   const factory UserEvent.sendCode({required String data}) = SendCode;
   const factory UserEvent.updateUserInfo({required Map data}) = UpdateUserInfo;

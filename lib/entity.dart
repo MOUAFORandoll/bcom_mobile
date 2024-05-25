@@ -1,179 +1,211 @@
-import 'package:jwt_decode/jwt_decode.dart';
 import 'package:objectbox/objectbox.dart';
-
-@Entity()
-class YourDataModel {
-  int id;
-  String name;
-
-  YourDataModel({this.id = 0, required this.name});
-}
-
-@Entity()
-class Second {
-  int id;
-  String name;
-
-  Second({this.id = 0, required this.name});
-}
 
 @Entity()
 class User {
   int id = 0;
-  @Property()
-  int userId = 0;
 
   @Property()
-  String nom;
+  String fullName;
 
   @Property()
-  String prenom;
+  String email;
 
   @Property()
-  String profile;
+  String userName;
+
+  @Property()
+  String sex;
+
+  @Property()
+  int age;
+
+  @Property()
+  String town;
+
+  @Property()
+  String country;
 
   @Property()
   String phone;
 
   @Property()
-  String dateCreated;
+  String address;
 
   @Property()
-  int typeUser;
+  String numCni;
+
   @Property()
-  bool infoComplete;
+  bool status;
+
+  @Property()
+  String workingMoment;
+
+  @Property()
+  String birthDate;
+
+  @Property()
+  bool isSick;
+
+  @Property()
+  bool isMotoMan;
+
+  @Property()
+  bool isSyndicat;
+
+  @Property()
+  bool isYourBike;
+
+  @Property()
+  String syndicatName;
+
+  @Property()
+  String? sickDescription;
+
+  @Property()
+  String cni1;
+
+  @Property()
+  String cni2;
+
+  @Property()
+  String? photoMoto;
+
+  @Property()
+  String? profile;
+
+  @Property()
+  String? carteGrise;
+
+  @Property()
+  int userTypeId;
+
+  @Property()
+  int? serviceZoneId;
+
+  @Property()
+  bool isDeleted;
+
+  @Property()
+  int userId;
+
+  @Property()
+  String? nuiNumber;
+
+  @Property()
+  String wokingPlace;
+
+  @Property()
+  String createdAt;
+
+  @Property()
+  String updatedAt;
+
   User({
+    required this.fullName,
+    required this.email,
+    required this.userName,
+    required this.sex,
+    required this.age,
+    required this.town,
     required this.userId,
-    required this.nom,
-    required this.prenom,
-    required this.typeUser,
-    required this.profile,
+    required this.country,
     required this.phone,
-    required this.infoComplete,
-    required this.dateCreated,
+    required this.address,
+    required this.numCni,
+    required this.status,
+    required this.workingMoment,
+    required this.birthDate,
+    required this.isSick,
+    required this.isMotoMan,
+    required this.isSyndicat,
+    required this.isYourBike,
+    required this.syndicatName,
+    this.sickDescription,
+    required this.cni1,
+    required this.cni2,
+    this.photoMoto,
+    this.profile,
+    this.carteGrise,
+    required this.userTypeId,
+    this.serviceZoneId,
+    required this.isDeleted,
+    this.nuiNumber,
+    required this.wokingPlace,
+    required this.createdAt,
+    required this.updatedAt,
   });
+
   Map<String, dynamic> toMap() {
     return {
+      'fullName': fullName,
+      'email': email,
+      'userName': userName,
+      'sex': sex,
+      'age': age,
       'userId': userId,
-      'nom': nom,
-      'prenom': prenom,
-      'typeUser': typeUser,
-      'profile': profile,
+      'town': town,
+      'country': country,
       'phone': phone,
-      'infoComplete': infoComplete,
-      'dateCreated': dateCreated,
+      'address': address,
+      'numCni': numCni,
+      'status': status,
+      'workingMoment': workingMoment,
+      'birthDate': birthDate,
+      'isSick': isSick,
+      'isMotoMan': isMotoMan,
+      'isSyndicat': isSyndicat,
+      'isYourBike': isYourBike,
+      'syndicatName': syndicatName,
+      'sickDescription': sickDescription,
+      'cni1': cni1,
+      'cni2': cni2,
+      'photoMoto': photoMoto,
+      'profile': profile,
+      'carteGrise': carteGrise,
+      'userTypeId': userTypeId,
+      'serviceZoneId': serviceZoneId,
+      'isDeleted': isDeleted,
+      'nuiNumber': nuiNumber,
+      'wokingPlace': wokingPlace,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
     };
   }
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      userId: json['id'],
-      typeUser: json['typeUser'],
-      nom: json['nom'],
-      prenom: json['prenom'],
-      profile: json['profile'],
+      fullName: json['fullName'],
+      email: json['email'],
+      userName: json['userName'],
+      sex: json['sex'],
+      age: json['age'],
+      town: json['town'],
+      country: json['country'],
       phone: json['phone'],
-      infoComplete: json['infoComplete'],
-      dateCreated: json['date_created'],
-    );
-  }
-}
-
-@Entity()
-class Lang {
-  int id = 0;
-
-  @Property()
-  String name;
-
-  Lang({required this.name});
-}
-
-@Entity()
-class Theme {
-  int id = 0;
-
-  @Property()
-  int value;
-
-  Theme({required this.value});
-}
-
-@Entity()
-class Localisation {
-  int id = 0;
-
-  @Property()
-  String ville;
-
-  @Property()
-  String longitude;
-
-  @Property()
-  String latitude;
-
-  @Property()
-  String ip;
-
-  Localisation({
-    required this.ville,
-    required this.longitude,
-    required this.latitude,
-    required this.ip,
-  });
-
-  Map<String, dynamic> toMap() {
-    return {
-      'ville': ville,
-      'longitude': longitude.toString(),
-      'latitude': latitude.toString(),
-      'ip': ip,
-    };
-  }
-
-  factory Localisation.fromJson(Map<String, dynamic> json) {
-    return Localisation(
-      ville: json['ville'],
-      longitude: json['longitude'].toString(),
-      latitude: json['latitude'].toString(),
-      ip: json['ip'],
-    );
-  }
-}
-
-@Entity()
-class Commande {
-  int id = 0;
-
-  @Property()
-  String codeCommande;
-
-  @Property()
-  String codeClient;
-
-  @Property()
-  String date;
-
-  Commande(
-      {this.id = 0,
-      required this.codeCommande,
-      required this.codeClient,
-      required this.date});
-
-  Map<String, dynamic> toMap() {
-    return {
-      'codeCommande': codeCommande,
-      'codeClient': codeClient,
-      'date': date,
-    };
-  }
-
-  factory Commande.fromJson(Map<String, dynamic> json) {
-    return Commande(
-      id: json['id'],
-      codeCommande: json['codeCommande'],
-      codeClient: json['codeClient'],
-      date: json['date'],
+      userId: json['id'],
+      address: json['address'],
+      numCni: json['numCni'] ?? '',
+      status: json['status'],
+      workingMoment: json['workingMoment'],
+      birthDate: json['birthDate'] ?? '',
+      isSick: json['isSick'],
+      isMotoMan: json['isMotoMan'],
+      isSyndicat: json['isSyndicat'],
+      isYourBike: json['isYourBike'],
+      syndicatName: json['syndicatName'],
+      sickDescription: json['sickDescription'],
+      cni1: json['cni1'],
+      cni2: json['cni2'],
+      photoMoto: json['photoMoto'],
+      profile: json['profile'],
+      carteGrise: json['carteGrise'],
+      userTypeId: json['userTypeId'],
+      serviceZoneId: json['serviceZoneId'],
+      isDeleted: json['isDeleted'],
+      nuiNumber: json['nuiNumber'],
+      wokingPlace: json['wokingPlace'] ?? '',
+      createdAt: json['createdAt'],
+      updatedAt: json['updatedAt'],
     );
   }
 }
@@ -183,38 +215,21 @@ class KeyUser {
   int id = 0;
 
   @Property()
-  int userId = 0;
-  @Property()
-  String keySecret;
-
-  @Property()
-  String token;
-
-  @Property()
-  String refreshToken;
+  String accessToken;
 
   KeyUser({
-    required this.keySecret,
-    required this.userId,
-    required this.token,
-    required this.refreshToken,
+    required this.accessToken,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'userId': userId,
-      'keySecret': keySecret,
-      'token': token,
-      'refreshToken': refreshToken,
+      'accessToken': accessToken,
     };
   }
 
   factory KeyUser.fromJson(Map<String, dynamic> json) {
     return KeyUser(
-      userId: Jwt.parseJwt(json['token'])['id'],
-      keySecret: Jwt.parseJwt(json['token'])['keySecret'],
-      token: json['token'],
-      refreshToken: json['refreshToken'],
+      accessToken: json['accessToken'],
     );
   }
 }

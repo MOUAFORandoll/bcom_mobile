@@ -1,3 +1,2 @@
 NAME=production
-BASE_URL=https://api.bcom.cm
-SOCKET_URL=http://192.168.43.134:3000
+BASE_URL=http://testapi.bcom-kpks.com 

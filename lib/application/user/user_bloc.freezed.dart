@@ -18,12 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -40,11 +40,11 @@ mixin _$UserEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -61,11 +61,11 @@ mixin _$UserEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -85,7 +85,7 @@ mixin _$UserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -104,7 +104,7 @@ mixin _$UserEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -123,7 +123,7 @@ mixin _$UserEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -164,7 +164,7 @@ abstract class _$$SignInEventImplCopyWith<$Res> {
           _$SignInEventImpl value, $Res Function(_$SignInEventImpl) then) =
       __$$SignInEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String phone, String password});
+  $Res call({String userName, String password});
 }
 
 /// @nodoc
@@ -178,13 +178,13 @@ class __$$SignInEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = null,
+    Object? userName = null,
     Object? password = null,
   }) {
     return _then(_$SignInEventImpl(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -197,16 +197,16 @@ class __$$SignInEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignInEventImpl implements SignInEvent {
-  const _$SignInEventImpl({required this.phone, required this.password});
+  const _$SignInEventImpl({required this.userName, required this.password});
 
   @override
-  final String phone;
+  final String userName;
   @override
   final String password;
 
   @override
   String toString() {
-    return 'UserEvent.chooseExperience(phone: $phone, password: $password)';
+    return 'UserEvent.chooseExperience(userName: $userName, password: $password)';
   }
 
   @override
@@ -214,13 +214,14 @@ class _$SignInEventImpl implements SignInEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInEventImpl &&
-            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, phone, password);
+  int get hashCode => Object.hash(runtimeType, userName, password);
 
   @JsonKey(ignore: true)
   @override
@@ -231,12 +232,12 @@ class _$SignInEventImpl implements SignInEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -250,17 +251,17 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(File? image) setCGImage,
     required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return chooseExperience(phone, password);
+    return chooseExperience(userName, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -274,17 +275,17 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(File? image)? setCGImage,
     TResult? Function(FormData data)? completeDevisInfo,
   }) {
-    return chooseExperience?.call(phone, password);
+    return chooseExperience?.call(userName, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -300,7 +301,7 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult orElse(),
   }) {
     if (chooseExperience != null) {
-      return chooseExperience(phone, password);
+      return chooseExperience(userName, password);
     }
     return orElse();
   }
@@ -310,7 +311,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -332,7 +333,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -354,7 +355,7 @@ class _$SignInEventImpl implements SignInEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -378,10 +379,10 @@ class _$SignInEventImpl implements SignInEvent {
 
 abstract class SignInEvent implements UserEvent {
   const factory SignInEvent(
-      {required final String phone,
+      {required final String userName,
       required final String password}) = _$SignInEventImpl;
 
-  String get phone;
+  String get userName;
   String get password;
   @JsonKey(ignore: true)
   _$$SignInEventImplCopyWith<_$SignInEventImpl> get copyWith =>
@@ -395,10 +396,10 @@ abstract class _$$RegisterEventImplCopyWith<$Res> {
       __$$RegisterEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {String nom,
-      String prenom,
-      String nationnalite,
+      {String fullName,
+      String userName,
       String phone,
+      String email,
       String password,
       String re_password});
 }
@@ -414,29 +415,29 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nom = null,
-    Object? prenom = null,
-    Object? nationnalite = null,
+    Object? fullName = null,
+    Object? userName = null,
     Object? phone = null,
+    Object? email = null,
     Object? password = null,
     Object? re_password = null,
   }) {
     return _then(_$RegisterEventImpl(
-      nom: null == nom
-          ? _value.nom
-          : nom // ignore: cast_nullable_to_non_nullable
+      fullName: null == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
               as String,
-      prenom: null == prenom
-          ? _value.prenom
-          : prenom // ignore: cast_nullable_to_non_nullable
-              as String,
-      nationnalite: null == nationnalite
-          ? _value.nationnalite
-          : nationnalite // ignore: cast_nullable_to_non_nullable
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
               as String,
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -454,21 +455,21 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
 
 class _$RegisterEventImpl implements RegisterEvent {
   const _$RegisterEventImpl(
-      {required this.nom,
-      required this.prenom,
-      required this.nationnalite,
+      {required this.fullName,
+      required this.userName,
       required this.phone,
+      required this.email,
       required this.password,
       required this.re_password});
 
   @override
-  final String nom;
+  final String fullName;
   @override
-  final String prenom;
-  @override
-  final String nationnalite;
+  final String userName;
   @override
   final String phone;
+  @override
+  final String email;
   @override
   final String password;
   @override
@@ -476,7 +477,7 @@ class _$RegisterEventImpl implements RegisterEvent {
 
   @override
   String toString() {
-    return 'UserEvent.register(nom: $nom, prenom: $prenom, nationnalite: $nationnalite, phone: $phone, password: $password, re_password: $re_password)';
+    return 'UserEvent.register(fullName: $fullName, userName: $userName, phone: $phone, email: $email, password: $password, re_password: $re_password)';
   }
 
   @override
@@ -484,11 +485,12 @@ class _$RegisterEventImpl implements RegisterEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterEventImpl &&
-            (identical(other.nom, nom) || other.nom == nom) &&
-            (identical(other.prenom, prenom) || other.prenom == prenom) &&
-            (identical(other.nationnalite, nationnalite) ||
-                other.nationnalite == nationnalite) &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
             (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.re_password, re_password) ||
@@ -497,7 +499,7 @@ class _$RegisterEventImpl implements RegisterEvent {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, nom, prenom, nationnalite, phone, password, re_password);
+      runtimeType, fullName, userName, phone, email, password, re_password);
 
   @JsonKey(ignore: true)
   @override
@@ -508,12 +510,12 @@ class _$RegisterEventImpl implements RegisterEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -527,17 +529,17 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(File? image) setCGImage,
     required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return register(nom, prenom, nationnalite, phone, password, re_password);
+    return register(fullName, userName, phone, email, password, re_password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -552,17 +554,17 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(FormData data)? completeDevisInfo,
   }) {
     return register?.call(
-        nom, prenom, nationnalite, phone, password, re_password);
+        fullName, userName, phone, email, password, re_password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -578,7 +580,7 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult orElse(),
   }) {
     if (register != null) {
-      return register(nom, prenom, nationnalite, phone, password, re_password);
+      return register(fullName, userName, phone, email, password, re_password);
     }
     return orElse();
   }
@@ -588,7 +590,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -610,7 +612,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -632,7 +634,7 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -656,17 +658,17 @@ class _$RegisterEventImpl implements RegisterEvent {
 
 abstract class RegisterEvent implements UserEvent {
   const factory RegisterEvent(
-      {required final String nom,
-      required final String prenom,
-      required final String nationnalite,
+      {required final String fullName,
+      required final String userName,
       required final String phone,
+      required final String email,
       required final String password,
       required final String re_password}) = _$RegisterEventImpl;
 
-  String get nom;
-  String get prenom;
-  String get nationnalite;
+  String get fullName;
+  String get userName;
   String get phone;
+  String get email;
   String get password;
   String get re_password;
   @JsonKey(ignore: true)
@@ -675,86 +677,49 @@ abstract class RegisterEvent implements UserEvent {
 }
 
 /// @nodoc
-abstract class _$$AddInfoEntrepriseImplCopyWith<$Res> {
-  factory _$$AddInfoEntrepriseImplCopyWith(_$AddInfoEntrepriseImpl value,
-          $Res Function(_$AddInfoEntrepriseImpl) then) =
-      __$$AddInfoEntrepriseImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String titre, String numRegCommerce});
+abstract class _$$AddInfoClientImplCopyWith<$Res> {
+  factory _$$AddInfoClientImplCopyWith(
+          _$AddInfoClientImpl value, $Res Function(_$AddInfoClientImpl) then) =
+      __$$AddInfoClientImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddInfoEntrepriseImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$AddInfoEntrepriseImpl>
-    implements _$$AddInfoEntrepriseImplCopyWith<$Res> {
-  __$$AddInfoEntrepriseImplCopyWithImpl(_$AddInfoEntrepriseImpl _value,
-      $Res Function(_$AddInfoEntrepriseImpl) _then)
+class __$$AddInfoClientImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$AddInfoClientImpl>
+    implements _$$AddInfoClientImplCopyWith<$Res> {
+  __$$AddInfoClientImplCopyWithImpl(
+      _$AddInfoClientImpl _value, $Res Function(_$AddInfoClientImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? titre = null,
-    Object? numRegCommerce = null,
-  }) {
-    return _then(_$AddInfoEntrepriseImpl(
-      titre: null == titre
-          ? _value.titre
-          : titre // ignore: cast_nullable_to_non_nullable
-              as String,
-      numRegCommerce: null == numRegCommerce
-          ? _value.numRegCommerce
-          : numRegCommerce // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
-  const _$AddInfoEntrepriseImpl(
-      {required this.titre, required this.numRegCommerce});
-
-  @override
-  final String titre;
-  @override
-  final String numRegCommerce;
+class _$AddInfoClientImpl implements AddInfoClient {
+  const _$AddInfoClientImpl();
 
   @override
   String toString() {
-    return 'UserEvent.addInfoEntreprise(titre: $titre, numRegCommerce: $numRegCommerce)';
+    return 'UserEvent.addInfoEntreprise()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddInfoEntrepriseImpl &&
-            (identical(other.titre, titre) || other.titre == titre) &&
-            (identical(other.numRegCommerce, numRegCommerce) ||
-                other.numRegCommerce == numRegCommerce));
+        (other.runtimeType == runtimeType && other is _$AddInfoClientImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, titre, numRegCommerce);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddInfoEntrepriseImplCopyWith<_$AddInfoEntrepriseImpl> get copyWith =>
-      __$$AddInfoEntrepriseImplCopyWithImpl<_$AddInfoEntrepriseImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -768,17 +733,17 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
     required TResult Function(File? image) setCGImage,
     required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return addInfoEntreprise(titre, numRegCommerce);
+    return addInfoEntreprise();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -792,17 +757,17 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
     TResult? Function(File? image)? setCGImage,
     TResult? Function(FormData data)? completeDevisInfo,
   }) {
-    return addInfoEntreprise?.call(titre, numRegCommerce);
+    return addInfoEntreprise?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -818,7 +783,7 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
     required TResult orElse(),
   }) {
     if (addInfoEntreprise != null) {
-      return addInfoEntreprise(titre, numRegCommerce);
+      return addInfoEntreprise();
     }
     return orElse();
   }
@@ -828,7 +793,7 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -850,7 +815,7 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -872,7 +837,7 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -894,16 +859,8 @@ class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
   }
 }
 
-abstract class AddInfoEntreprise implements UserEvent {
-  const factory AddInfoEntreprise(
-      {required final String titre,
-      required final String numRegCommerce}) = _$AddInfoEntrepriseImpl;
-
-  String get titre;
-  String get numRegCommerce;
-  @JsonKey(ignore: true)
-  _$$AddInfoEntrepriseImplCopyWith<_$AddInfoEntrepriseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class AddInfoClient implements UserEvent {
+  const factory AddInfoClient() = _$AddInfoClientImpl;
 }
 
 /// @nodoc
@@ -970,12 +927,12 @@ class _$SendCodeImpl implements SendCode {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -995,11 +952,11 @@ class _$SendCodeImpl implements SendCode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1019,11 +976,11 @@ class _$SendCodeImpl implements SendCode {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1049,7 +1006,7 @@ class _$SendCodeImpl implements SendCode {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1071,7 +1028,7 @@ class _$SendCodeImpl implements SendCode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1093,7 +1050,7 @@ class _$SendCodeImpl implements SendCode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1196,12 +1153,12 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1221,11 +1178,11 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1245,11 +1202,11 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1275,7 +1232,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1297,7 +1254,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1319,7 +1276,7 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1423,12 +1380,12 @@ class _$VerifyCodeImpl implements VerifyCode {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1448,11 +1405,11 @@ class _$VerifyCodeImpl implements VerifyCode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1472,11 +1429,11 @@ class _$VerifyCodeImpl implements VerifyCode {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1502,7 +1459,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1524,7 +1481,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1546,7 +1503,7 @@ class _$VerifyCodeImpl implements VerifyCode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1653,12 +1610,12 @@ class _$ResetPasswordImpl implements ResetPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1678,11 +1635,11 @@ class _$ResetPasswordImpl implements ResetPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1702,11 +1659,11 @@ class _$ResetPasswordImpl implements ResetPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1732,7 +1689,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1754,7 +1711,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1776,7 +1733,7 @@ class _$ResetPasswordImpl implements ResetPassword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -1874,12 +1831,12 @@ class _$SignOutEventImpl implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -1899,11 +1856,11 @@ class _$SignOutEventImpl implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -1923,11 +1880,11 @@ class _$SignOutEventImpl implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -1953,7 +1910,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -1975,7 +1932,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -1997,7 +1954,7 @@ class _$SignOutEventImpl implements SignOutEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2067,12 +2024,12 @@ class _$GetUserEventImpl implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2092,11 +2049,11 @@ class _$GetUserEventImpl implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2116,11 +2073,11 @@ class _$GetUserEventImpl implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2146,7 +2103,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2168,7 +2125,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2190,7 +2147,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2254,12 +2211,12 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2279,11 +2236,11 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2303,11 +2260,11 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2333,7 +2290,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2355,7 +2312,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2377,7 +2334,7 @@ class _$GetVilleQuartierImpl implements GetVilleQuartier {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2441,12 +2398,12 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2466,11 +2423,11 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2490,11 +2447,11 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2520,7 +2477,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2542,7 +2499,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2564,7 +2521,7 @@ class _$UpdateUserImageImpl implements UpdateUserImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2655,12 +2612,12 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2680,11 +2637,11 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2704,11 +2661,11 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2734,7 +2691,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2756,7 +2713,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2778,7 +2735,7 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -2875,12 +2832,12 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -2900,11 +2857,11 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -2924,11 +2881,11 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -2954,7 +2911,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -2976,7 +2933,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -2998,7 +2955,7 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -3094,12 +3051,12 @@ class _$SetCGImageImpl implements SetCGImage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -3119,11 +3076,11 @@ class _$SetCGImageImpl implements SetCGImage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -3143,11 +3100,11 @@ class _$SetCGImageImpl implements SetCGImage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -3173,7 +3130,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -3195,7 +3152,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -3217,7 +3174,7 @@ class _$SetCGImageImpl implements SetCGImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -3313,12 +3270,12 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String phone, String password) chooseExperience,
-    required TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
         register,
-    required TResult Function(String titre, String numRegCommerce)
-        addInfoEntreprise,
+    required TResult Function() addInfoEntreprise,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
@@ -3338,11 +3295,11 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String phone, String password)? chooseExperience,
-    TResult? Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult? Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult? Function()? addInfoEntreprise,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
@@ -3362,11 +3319,11 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String phone, String password)? chooseExperience,
-    TResult Function(String nom, String prenom, String nationnalite,
-            String phone, String password, String re_password)?
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
         register,
-    TResult Function(String titre, String numRegCommerce)? addInfoEntreprise,
+    TResult Function()? addInfoEntreprise,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
@@ -3392,7 +3349,7 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoEntreprise,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
@@ -3414,7 +3371,7 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoEntreprise,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
@@ -3436,7 +3393,7 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoEntreprise,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
@@ -3471,7 +3428,8 @@ abstract class CompleteDevisInfo implements UserEvent {
 /// @nodoc
 mixin _$UserState {
   int? get isLoading => throw _privateConstructorUsedError;
-  String? get authenticationFailedMessage => throw _privateConstructorUsedError;
+  String? get authenticationMessage => throw _privateConstructorUsedError;
+  String? get eventMessage => throw _privateConstructorUsedError;
   String? get registerFailedMessage => throw _privateConstructorUsedError;
   String? get villeUser => throw _privateConstructorUsedError;
   String? get quartierUser => throw _privateConstructorUsedError;
@@ -3486,6 +3444,19 @@ mixin _$UserState {
   int? get isVilleQuartier => throw _privateConstructorUsedError;
   bool? get successReset => throw _privateConstructorUsedError;
   bool? get updating => throw _privateConstructorUsedError;
+  TextEditingController? get name => throw _privateConstructorUsedError;
+  TextEditingController? get email => throw _privateConstructorUsedError;
+  TextEditingController? get phone => throw _privateConstructorUsedError;
+  TextEditingController? get adress => throw _privateConstructorUsedError;
+  TextEditingController? get city => throw _privateConstructorUsedError;
+  TextEditingController? get numImpot => throw _privateConstructorUsedError;
+  TextEditingController? get numContribuable =>
+      throw _privateConstructorUsedError;
+  TextEditingController? get webSite => throw _privateConstructorUsedError;
+  TextEditingController? get country => throw _privateConstructorUsedError;
+  TextEditingController? get registreCommerce =>
+      throw _privateConstructorUsedError;
+  FormState? get formKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -3499,7 +3470,8 @@ abstract class $UserStateCopyWith<$Res> {
   @useResult
   $Res call(
       {int? isLoading,
-      String? authenticationFailedMessage,
+      String? authenticationMessage,
+      String? eventMessage,
       String? registerFailedMessage,
       String? villeUser,
       String? quartierUser,
@@ -3513,7 +3485,18 @@ abstract class $UserStateCopyWith<$Res> {
       int? isCorrectCode,
       int? isVilleQuartier,
       bool? successReset,
-      bool? updating});
+      bool? updating,
+      TextEditingController? name,
+      TextEditingController? email,
+      TextEditingController? phone,
+      TextEditingController? adress,
+      TextEditingController? city,
+      TextEditingController? numImpot,
+      TextEditingController? numContribuable,
+      TextEditingController? webSite,
+      TextEditingController? country,
+      TextEditingController? registreCommerce,
+      FormState? formKey});
 }
 
 /// @nodoc
@@ -3530,7 +3513,8 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? authenticationFailedMessage = freezed,
+    Object? authenticationMessage = freezed,
+    Object? eventMessage = freezed,
     Object? registerFailedMessage = freezed,
     Object? villeUser = freezed,
     Object? quartierUser = freezed,
@@ -3545,15 +3529,30 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? isVilleQuartier = freezed,
     Object? successReset = freezed,
     Object? updating = freezed,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? adress = freezed,
+    Object? city = freezed,
+    Object? numImpot = freezed,
+    Object? numContribuable = freezed,
+    Object? webSite = freezed,
+    Object? country = freezed,
+    Object? registreCommerce = freezed,
+    Object? formKey = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: freezed == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as int?,
-      authenticationFailedMessage: freezed == authenticationFailedMessage
-          ? _value.authenticationFailedMessage
-          : authenticationFailedMessage // ignore: cast_nullable_to_non_nullable
+      authenticationMessage: freezed == authenticationMessage
+          ? _value.authenticationMessage
+          : authenticationMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventMessage: freezed == eventMessage
+          ? _value.eventMessage
+          : eventMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       registerFailedMessage: freezed == registerFailedMessage
           ? _value.registerFailedMessage
@@ -3611,6 +3610,50 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.updating
           : updating // ignore: cast_nullable_to_non_nullable
               as bool?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      adress: freezed == adress
+          ? _value.adress
+          : adress // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      city: freezed == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      numImpot: freezed == numImpot
+          ? _value.numImpot
+          : numImpot // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      numContribuable: freezed == numContribuable
+          ? _value.numContribuable
+          : numContribuable // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      webSite: freezed == webSite
+          ? _value.webSite
+          : webSite // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      registreCommerce: freezed == registreCommerce
+          ? _value.registreCommerce
+          : registreCommerce // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      formKey: freezed == formKey
+          ? _value.formKey
+          : formKey // ignore: cast_nullable_to_non_nullable
+              as FormState?,
     ) as $Val);
   }
 }
@@ -3625,7 +3668,8 @@ abstract class _$$UserStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? isLoading,
-      String? authenticationFailedMessage,
+      String? authenticationMessage,
+      String? eventMessage,
       String? registerFailedMessage,
       String? villeUser,
       String? quartierUser,
@@ -3639,7 +3683,18 @@ abstract class _$$UserStateImplCopyWith<$Res>
       int? isCorrectCode,
       int? isVilleQuartier,
       bool? successReset,
-      bool? updating});
+      bool? updating,
+      TextEditingController? name,
+      TextEditingController? email,
+      TextEditingController? phone,
+      TextEditingController? adress,
+      TextEditingController? city,
+      TextEditingController? numImpot,
+      TextEditingController? numContribuable,
+      TextEditingController? webSite,
+      TextEditingController? country,
+      TextEditingController? registreCommerce,
+      FormState? formKey});
 }
 
 /// @nodoc
@@ -3654,7 +3709,8 @@ class __$$UserStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? authenticationFailedMessage = freezed,
+    Object? authenticationMessage = freezed,
+    Object? eventMessage = freezed,
     Object? registerFailedMessage = freezed,
     Object? villeUser = freezed,
     Object? quartierUser = freezed,
@@ -3669,15 +3725,30 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? isVilleQuartier = freezed,
     Object? successReset = freezed,
     Object? updating = freezed,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? adress = freezed,
+    Object? city = freezed,
+    Object? numImpot = freezed,
+    Object? numContribuable = freezed,
+    Object? webSite = freezed,
+    Object? country = freezed,
+    Object? registreCommerce = freezed,
+    Object? formKey = freezed,
   }) {
     return _then(_$UserStateImpl(
       isLoading: freezed == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as int?,
-      authenticationFailedMessage: freezed == authenticationFailedMessage
-          ? _value.authenticationFailedMessage
-          : authenticationFailedMessage // ignore: cast_nullable_to_non_nullable
+      authenticationMessage: freezed == authenticationMessage
+          ? _value.authenticationMessage
+          : authenticationMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventMessage: freezed == eventMessage
+          ? _value.eventMessage
+          : eventMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       registerFailedMessage: freezed == registerFailedMessage
           ? _value.registerFailedMessage
@@ -3735,6 +3806,50 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.updating
           : updating // ignore: cast_nullable_to_non_nullable
               as bool?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      adress: freezed == adress
+          ? _value.adress
+          : adress // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      city: freezed == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      numImpot: freezed == numImpot
+          ? _value.numImpot
+          : numImpot // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      numContribuable: freezed == numContribuable
+          ? _value.numContribuable
+          : numContribuable // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      webSite: freezed == webSite
+          ? _value.webSite
+          : webSite // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      registreCommerce: freezed == registreCommerce
+          ? _value.registreCommerce
+          : registreCommerce // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      formKey: freezed == formKey
+          ? _value.formKey
+          : formKey // ignore: cast_nullable_to_non_nullable
+              as FormState?,
     ));
   }
 }
@@ -3744,7 +3859,8 @@ class __$$UserStateImplCopyWithImpl<$Res>
 class _$UserStateImpl implements _UserState {
   const _$UserStateImpl(
       {this.isLoading,
-      this.authenticationFailedMessage,
+      this.authenticationMessage,
+      this.eventMessage,
       this.registerFailedMessage,
       this.villeUser,
       this.quartierUser,
@@ -3758,12 +3874,25 @@ class _$UserStateImpl implements _UserState {
       this.isCorrectCode,
       this.isVilleQuartier,
       this.successReset,
-      this.updating});
+      this.updating,
+      this.name,
+      this.email,
+      this.phone,
+      this.adress,
+      this.city,
+      this.numImpot,
+      this.numContribuable,
+      this.webSite,
+      this.country,
+      this.registreCommerce,
+      this.formKey});
 
   @override
   final int? isLoading;
   @override
-  final String? authenticationFailedMessage;
+  final String? authenticationMessage;
+  @override
+  final String? eventMessage;
   @override
   final String? registerFailedMessage;
   @override
@@ -3792,10 +3921,32 @@ class _$UserStateImpl implements _UserState {
   final bool? successReset;
   @override
   final bool? updating;
+  @override
+  final TextEditingController? name;
+  @override
+  final TextEditingController? email;
+  @override
+  final TextEditingController? phone;
+  @override
+  final TextEditingController? adress;
+  @override
+  final TextEditingController? city;
+  @override
+  final TextEditingController? numImpot;
+  @override
+  final TextEditingController? numContribuable;
+  @override
+  final TextEditingController? webSite;
+  @override
+  final TextEditingController? country;
+  @override
+  final TextEditingController? registreCommerce;
+  @override
+  final FormState? formKey;
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, authenticationFailedMessage: $authenticationFailedMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating)';
+    return 'UserState(isLoading: $isLoading, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce, formKey: $formKey)';
   }
 
   @override
@@ -3805,10 +3956,10 @@ class _$UserStateImpl implements _UserState {
             other is _$UserStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.authenticationFailedMessage,
-                    authenticationFailedMessage) ||
-                other.authenticationFailedMessage ==
-                    authenticationFailedMessage) &&
+            (identical(other.authenticationMessage, authenticationMessage) ||
+                other.authenticationMessage == authenticationMessage) &&
+            (identical(other.eventMessage, eventMessage) ||
+                other.eventMessage == eventMessage) &&
             (identical(other.registerFailedMessage, registerFailedMessage) ||
                 other.registerFailedMessage == registerFailedMessage) &&
             (identical(other.villeUser, villeUser) ||
@@ -3835,28 +3986,55 @@ class _$UserStateImpl implements _UserState {
             (identical(other.successReset, successReset) ||
                 other.successReset == successReset) &&
             (identical(other.updating, updating) ||
-                other.updating == updating));
+                other.updating == updating) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.adress, adress) || other.adress == adress) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.numImpot, numImpot) ||
+                other.numImpot == numImpot) &&
+            (identical(other.numContribuable, numContribuable) ||
+                other.numContribuable == numContribuable) &&
+            (identical(other.webSite, webSite) || other.webSite == webSite) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.registreCommerce, registreCommerce) ||
+                other.registreCommerce == registreCommerce) &&
+            (identical(other.formKey, formKey) || other.formKey == formKey));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      isLoading,
-      authenticationFailedMessage,
-      registerFailedMessage,
-      villeUser,
-      quartierUser,
-      newPassword,
-      isCode,
-      cniImageAvant,
-      cniImageArriere,
-      cartegriseImage,
-      isLoadingForgot,
-      isUpdateUserImage,
-      isCorrectCode,
-      isVilleQuartier,
-      successReset,
-      updating);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        isLoading,
+        authenticationMessage,
+        eventMessage,
+        registerFailedMessage,
+        villeUser,
+        quartierUser,
+        newPassword,
+        isCode,
+        cniImageAvant,
+        cniImageArriere,
+        cartegriseImage,
+        isLoadingForgot,
+        isUpdateUserImage,
+        isCorrectCode,
+        isVilleQuartier,
+        successReset,
+        updating,
+        name,
+        email,
+        phone,
+        adress,
+        city,
+        numImpot,
+        numContribuable,
+        webSite,
+        country,
+        registreCommerce,
+        formKey
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -3868,7 +4046,8 @@ class _$UserStateImpl implements _UserState {
 abstract class _UserState implements UserState {
   const factory _UserState(
       {final int? isLoading,
-      final String? authenticationFailedMessage,
+      final String? authenticationMessage,
+      final String? eventMessage,
       final String? registerFailedMessage,
       final String? villeUser,
       final String? quartierUser,
@@ -3882,12 +4061,25 @@ abstract class _UserState implements UserState {
       final int? isCorrectCode,
       final int? isVilleQuartier,
       final bool? successReset,
-      final bool? updating}) = _$UserStateImpl;
+      final bool? updating,
+      final TextEditingController? name,
+      final TextEditingController? email,
+      final TextEditingController? phone,
+      final TextEditingController? adress,
+      final TextEditingController? city,
+      final TextEditingController? numImpot,
+      final TextEditingController? numContribuable,
+      final TextEditingController? webSite,
+      final TextEditingController? country,
+      final TextEditingController? registreCommerce,
+      final FormState? formKey}) = _$UserStateImpl;
 
   @override
   int? get isLoading;
   @override
-  String? get authenticationFailedMessage;
+  String? get authenticationMessage;
+  @override
+  String? get eventMessage;
   @override
   String? get registerFailedMessage;
   @override
@@ -3916,6 +4108,28 @@ abstract class _UserState implements UserState {
   bool? get successReset;
   @override
   bool? get updating;
+  @override
+  TextEditingController? get name;
+  @override
+  TextEditingController? get email;
+  @override
+  TextEditingController? get phone;
+  @override
+  TextEditingController? get adress;
+  @override
+  TextEditingController? get city;
+  @override
+  TextEditingController? get numImpot;
+  @override
+  TextEditingController? get numContribuable;
+  @override
+  TextEditingController? get webSite;
+  @override
+  TextEditingController? get country;
+  @override
+  TextEditingController? get registreCommerce;
+  @override
+  FormState? get formKey;
   @override
   @JsonKey(ignore: true)
   _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>

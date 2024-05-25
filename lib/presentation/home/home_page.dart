@@ -1,7 +1,8 @@
+import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/devis/devis_home_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
-import 'package:Bcom/presentation/user/complete_entreprise_info_page.dart';
+import 'package:Bcom/presentation/user/complete_info_page.dart';
 
 import 'package:Bcom/routes/app_router.gr.dart';
 import 'package:Bcom/utils/constants/assets.dart';
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         builder: (context0, state0) => BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) => Scaffold(
                 backgroundColor: ColorsApp.bg,
-                drawer: CustomDrawer(user: state.user),
+                drawer: CustomDrawer(user: state.user!),
                 body: Container(
                     child: CustomScrollView(slivers: [
                   SliverAppBar(
@@ -184,7 +185,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                           bottom: kMarginY * 3,
                           right: kMarginX,
                         )),
-                        child: KHomeInfo(user: state.user),
+                        child: KHomeInfo(user: state.user!),
                       ),
                     ),
                     pinned: true,
@@ -193,11 +194,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     backgroundColor: ColorsApp.primary, //
                   ),
                   SliverToBoxAdapter(
-                      child: state.user!.infoComplete
+                      child: /*  state.user!.status
                           ? state.index == 0
                               ? PresentationPage()
                               : HistoriqueDemandeDevisPage()
-                          : CompleteEntrepriseInfoPage())
+                          : */
+                          CompleteEntrepriseInfoPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,
@@ -293,8 +295,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
 // ignore: must_be_immutable
 class CustomDrawer extends StatelessWidget {
-  CustomDrawer({required this.user});
-  final user;
+  CustomDrawer({required User this.user});
+  final User user;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UserBloc, UserState>(
@@ -306,7 +308,7 @@ class CustomDrawer extends StatelessWidget {
               maskType: EasyLoadingMaskType.black);
         } else if (state.isUpdateUserImage == 3) {
           EasyLoading.dismiss();
-          showError(state.authenticationFailedMessage!, context);
+          showError(state.eventMessage!, context);
         } else if (state.isUpdateUserImage == 2) {
           showSuccess('Profil mis a jour', context);
 
@@ -339,7 +341,7 @@ class CustomDrawer extends StatelessWidget {
                             height: getHeight(context) / 10,
                             width: getHeight(context) / 10,
                             fit: BoxFit.cover,
-                            imageUrl: user.profile,
+                            imageUrl: "user.profile",
                             imageBuilder: (context, imageProvider) {
                               return Container(
                                 decoration: BoxDecoration(
@@ -377,7 +379,8 @@ class CustomDrawer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              ViewFunctions().capitalizeFirstLetter(user.nom),
+                              ViewFunctions()
+                                  .capitalizeFirstLetter(user.userName),
                               style: TextStyle(
                                   color: ColorsApp.grey,
                                   fontSize: 15,
@@ -429,16 +432,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            ListTile(
-              leading: Icon(Icons.policy),
-              title: Text(
-                'Politique',
-                style: TextStyle(color: ColorsApp.primary, fontSize: kBasics),
-              ),
-              onTap: () {
-                AutoRouter.of(context).replaceAll([PolitiqueRoute()]);
-              },
-            ),
+
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text(

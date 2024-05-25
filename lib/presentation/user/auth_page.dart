@@ -21,7 +21,7 @@ class AuthPage extends StatefulWidget {
 class _AuthPageState extends State<AuthPage> {
   var loader = AppLoader.bounceLargeColorLoaderController();
 
-  TextEditingController phone = TextEditingController();
+  TextEditingController userName = TextEditingController();
 
   TextEditingController password = TextEditingController();
 
@@ -39,10 +39,10 @@ class _AuthPageState extends State<AuthPage> {
                 maskType: EasyLoadingMaskType.black);
           } else if (state.isLoading == 3) {
             EasyLoading.dismiss();
-            showError(state.authenticationFailedMessage!, context);
+            showError(state.authenticationMessage!, context);
           } else if (state.isLoading == 2) {
             AutoRouter.of(context).replaceAll([HomeRoute()]);
-            showSuccess('Connecte', context);
+            showSuccess(state.authenticationMessage!, context);
             initLoad(context);
             EasyLoading.dismiss();
             print('-----44--------*********');
@@ -54,7 +54,7 @@ class _AuthPageState extends State<AuthPage> {
               automaticallyImplyLeading: false,
 
               title: Text(
-                'Babana Express',
+                'Bcom Assist',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                     color: ColorsApp.white,
@@ -143,12 +143,12 @@ class _AuthPageState extends State<AuthPage> {
                                     vertical: kMarginY * 2,
                                   ),
                                   child: AppInput(
-                                    controller: phone,
-                                    textInputType: TextInputType.phone,
+                                    controller: userName,
                                     onChanged: (value) {},
-                                    placeholder: 'labelphone'.tr(),
+                                    placeholder: 'labelusername'.tr(),
                                     validator: (value) {
-                                      return Validators.usPhoneValid(value!);
+                                      return Validators.required(
+                                          'labelusername', value!);
                                     },
                                   ),
                                 ),
@@ -188,7 +188,7 @@ class _AuthPageState extends State<AuthPage> {
                                     onTap: () async {
                                       print({
                                         'password': password.text,
-                                        'phone': phone.text,
+                                        'userName': userName.text,
                                       });
 
                                       if (formKey.currentState!.validate()) {
@@ -196,7 +196,7 @@ class _AuthPageState extends State<AuthPage> {
                                             .read<UserBloc>()
                                             .add(SignInEvent(
                                               password: password.text,
-                                              phone: phone.text,
+                                              userName: userName.text,
                                             ));
                                       }
                                     }),

@@ -22,27 +22,17 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   final DatabaseCubit database;
   UserBloc({required this.userRepo, required this.database})
       : super(UserState.initial()) {
-    // on<GetDataBateEvent>((event, emit) async {
-    //   print('okkof');
-    //   // final database = await DataBaseController.getInstance();
-    //   // emit(GetDataBateState(database: database));
-    // });
     on<SignInEvent>(_Login);
     on<SignOutEvent>(_OnSignOut);
     on<RegisterEvent>(_Register);
-    on<SendCode>(_SendCode);
-    on<VerifyCode>(_VerifyCode);
-    on<ResetPassword>(_ResetPassword);
+    on<GetUserEvent>(_GetUser);
 
-    on<GetUserEvent>(_GetUserEvent);
-    on<UpdateUserInfo>(_UpdateData);
     on<GetVilleQuartier>(_getVilleQuartier);
-    on<UpdateUserImage>(_updateUserProfile);
     on<CompleteDevisInfo>(_CompleteDevisInfo);
     on<SetCniImageAvant>(setCniImageAvant);
     on<SetCniImageArriere>(setCniImageArriere);
     on<SetCGImage>(setCGImage);
-    on<AddInfoEntreprise>(_addInfoEntreprise);
+    on<AddInfoClient>(_addInfoClient);
   }
 
   setCniImageArriere(SetCniImageArriere event, Emitter<UserState> emit) async {
@@ -57,6 +47,29 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     emit(state.copyWith(cartegriseImage: event.image));
   }
 
+  _GetUser(GetUserEvent event, Emitter<UserState> emit) async {
+    await userRepo.getUser().then((response) async {
+      if (response.statusCode == 200) {
+        print(response.data);
+        var _UserSave = User.fromJson(response.data['data']);
+
+        await database.saveUser(_UserSave);
+      } else {}
+    }).onError((error, s) {});
+  }
+
+  getState1() =>
+      state.name!.text.isEmpty ||
+      state.email!.text.isEmpty ||
+      state.phone!.text.isEmpty ||
+      state.adress!.text.isEmpty ||
+      state.webSite!.text.isEmpty;
+  getState2() =>
+      state.city!.text.isEmpty ||
+      state.numImpot!.text.isEmpty ||
+      state.numContribuable!.text.isEmpty ||
+      state.registreCommerce!.text.isEmpty ||
+      state.country!.text.isEmpty;
   Future<void> _getVilleQuartier(
       GetVilleQuartier event, Emitter<UserState> emit) async {
     emit(state.copyWith(isVilleQuartier: 0));
@@ -113,17 +126,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     } catch (e) {}
   }
 
-  _GetUserEvent(GetUserEvent event, Emitter<UserState> emit) async {
-    await userRepo.getUser().then((value) async {
-      if (value.data['data'] != null) {
-        print('------------------saveee----------${value.data}-');
-        var _UserSave = User.fromJson(value.data['data']);
-
-        await database.saveUser(_UserSave);
-      }
-    }).catchError((error) {});
-  }
-
   _CompleteDevisInfo(CompleteDevisInfo event, Emitter<UserState> emit) async {
     print(event.data);
 
@@ -132,8 +134,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     await userRepo.completeDevisInfo(event.data).then((response) async {
       if (response.statusCode == 201) {
         if (response.data['data'] != null) {
-          emit(state.copyWith(
-              updating: false, isLoading: 2, authenticationFailedMessage: ''));
+          emit(state.copyWith(updating: false, isLoading: 2, eventMessage: ''));
           emit(UserState.authenticated());
 
           var _UserSave = User.fromJson(response.data['data']);
@@ -142,164 +143,100 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         }
       } else {
         emit(state.copyWith(
-            isLoading: 3,
-            authenticationFailedMessage: 'Une erreur s\'est produite'));
+            isLoading: 3, eventMessage: 'Une erreur s\'est produite'));
       }
     }).onError((error, s) {
       print('----${s}-----');
       print('------${error}---');
       emit(state.copyWith(
-          isLoading: 3,
-          authenticationFailedMessage: 'Une erreur s\'est produite'));
-    });
-  }
-
-  _UpdateData(UpdateUserInfo event, Emitter<UserState> emit) async {
-    var key = await database.getKey();
-    var data = Map.from(
-        event.data); // Create a new modifiable map from the existing data
-    data['keySecret'] = key;
-
-    print(data);
-
-    emit(state.copyWith(updating: true));
-    await userRepo.updateUser(data).then((response) async {
-      if (response.statusCode == 201) {
-        database.saveKeyKen(response.data);
-
-        await userRepo.getUser().then((value) async {
-          if (value != null) {
-            print('------------------value----------${value.data}-');
-            if (value.data['data'] != null) {
-              emit(state.copyWith(
-                  updating: false,
-                  isLoading: 2,
-                  authenticationFailedMessage: ''));
-              emit(UserState.authenticated());
-
-              var _UserSave = User.fromJson(value.data['data']);
-
-              await database.saveUser(_UserSave);
-            }
-          }
-        }).catchError((error) {
-          emit(state.copyWith(
-              updating: false,
-              isLoading: 3,
-              authenticationFailedMessage:
-                  'Une erreur est survenue recommencer'));
-        });
-      } else {
-        emit(state.copyWith(
-            updating: false,
-            isLoading: 3,
-            authenticationFailedMessage: response.data['message']));
-      }
-    }).onError((error, s) {
-      // print('----${s}-----');
-      // print('------${error}---');
-      emit(state.copyWith(
-          isLoading: 3,
-          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+          isLoading: 3, eventMessage: 'Une erreur s\'est produite'));
     });
   }
 
   _Login(SignInEvent event, Emitter<UserState> emit) async {
     var data = {
-      'phone': event.phone,
+      'userName': event.userName,
       'password': event.password,
     };
     print(data);
     emit(state.copyWith(isLoading: 1));
     await userRepo.Login(data).then((response) async {
-      if (response.statusCode == 201) {
-        database.saveKeyKen(response.data);
+      if (response.statusCode == 200) {
+        emit(state.copyWith(
+            isLoading: 2, authenticationMessage: response.data['message']));
+        emit(UserState.authenticated());
 
-        await userRepo.getUser().then((value) async {
-          if (value != null) {
-            print('------------------value----------${value.data}-');
-            if (value.data['data'] != null) {
-              emit(state.copyWith(
-                  isLoading: 2, authenticationFailedMessage: ''));
-              emit(UserState.authenticated());
+        var _UserSave = User.fromJson(response.data['data']);
 
-              var _UserSave = User.fromJson(value.data['data']);
-
-              await database.saveUser(_UserSave);
-            }
-          }
-        }).catchError((error) {
-          emit(state.copyWith(
-              isLoading: 3,
-              authenticationFailedMessage:
-                  'Une erreur est survenue recommencer'));
-        });
+        await database.saveKeyKen(response.data);
+        emit(state.copyWith(authenticationMessage: '', isLoading: null));
+        await database.saveUser(_UserSave);
       } else {
         emit(state.copyWith(
-            isLoading: 3,
-            authenticationFailedMessage: response.data['message']));
+            isLoading: 3, authenticationMessage: response.data['message']));
+        emit(state.copyWith(authenticationMessage: '', isLoading: null));
       }
     }).onError((error, s) {
       // print('----${s}-----');
       // print('------${error}---');
       emit(state.copyWith(
           isLoading: 3,
-          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+          authenticationMessage: 'Phone ou mot de passe incorrect'));
+      emit(state.copyWith(authenticationMessage: '', isLoading: null));
     });
   }
 
-  _addInfoEntreprise(AddInfoEntreprise event, Emitter<UserState> emit) async {
-    var id = await database.getId();
+  _addInfoClient(AddInfoClient event, Emitter<UserState> emit) async {
+    var user = await database.getUser();
 
     var data = {
-      'titre': event.titre,
-      'numRegCommerce': event.numRegCommerce,
-      'proprietaire': '/api/user_plateforms/${id}',
+      'name': state.name,
+      'email': state.email,
+      'phone': state.phone,
+      'adress': state.adress,
+      'webSite': state.webSite,
+      'city': state.city,
+      'numImpot': state.numImpot,
+      'numContribuable': state.numContribuable,
+      'registreCommerce': state.registreCommerce,
+      'country': state.country,
+      'userId': user!.userId,
     };
     print(data);
     emit(state.copyWith(isLoading: 1));
-    await userRepo.addEntreprise(data).then((response) async {
+    await userRepo.addInfoClient(data).then((response) async {
       if (response.statusCode == 201) {
-        await userRepo.getUser().then((value) async {
-          if (value != null) {
-            print('------------------value----------${value.data}-');
-            if (value.data['data'] != null) {
-              emit(state.copyWith(
-                  isLoading: 2, authenticationFailedMessage: ''));
-              emit(UserState.authenticated());
+        if (response.data['data'] != null) {
+          emit(state.copyWith(isLoading: 2, eventMessage: ''));
+          emit(UserState.authenticated());
 
-              var _UserSave = User.fromJson(value.data['data']);
+          var _UserSave = User.fromJson(response.data['data']);
 
-              await database.saveUser(_UserSave);
-            }
-          }
-        }).catchError((error) {
-          emit(state.copyWith(
-              isLoading: 3,
-              authenticationFailedMessage:
-                  'Une erreur est survenue recommencer'));
-        });
+          await database.saveUser(_UserSave);
+          emit(state.copyWith(eventMessage: '', isLoading: null));
+        }
       } else {
         emit(state.copyWith(
-            isLoading: 3,
-            authenticationFailedMessage: response.data['message']));
+            isLoading: 3, eventMessage: response.data['message']));
+        emit(state.copyWith(eventMessage: '', isLoading: null));
       }
     }).onError((error, s) {
       // print('----${s}-----');
       // print('------${error}---');
       emit(state.copyWith(
-          isLoading: 3,
-          authenticationFailedMessage: 'Phone ou mot de passe incorrect'));
+          isLoading: 3, eventMessage: 'Phone ou mot de passe incorrect'));
+      emit(state.copyWith(eventMessage: '', isLoading: null));
     });
   }
 
   _Register(RegisterEvent event, Emitter<UserState> emit) async {
     var data = {
+      'userName': event.userName,
+      'fullName': event.fullName,
+      'email': event.email,
       'phone': int.parse(event.phone),
       'password': event.password,
-      'nom': event.nom,
-      'nationnalite': event.nationnalite,
-      'prenom': event.prenom,
+      'userTypeId': 5,
     };
     print(data);
     emit(state.copyWith(isLoading: 1));
@@ -309,190 +246,19 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       Response response = await userRepo.SignUp(data);
 
       if (response.statusCode == 201) {
-        database.saveKeyKen(response.data);
-
-        await userRepo.getUser().then((value) async {
-          print('------------------value----------${value.data}-');
-          if (value.data['data'] != null &&
-              value.data['data'] != [] &&
-              value.data['data'].length != 0) {
-            emit(state.copyWith(isLoading: 2, authenticationFailedMessage: ''));
-            emit(UserState.authenticated());
-
-            var _UserSave = User.fromJson(value.data['data']);
-
-            await database.saveUser(_UserSave);
-          }
-        }).catchError((error) {
-          emit(state.copyWith(
-              isLoading: 3,
-              authenticationFailedMessage:
-                  'Une erreur est survenue recommencer'));
-        });
+        emit(state.copyWith(
+            isLoading: 2, authenticationMessage: response.data['message']));
+        emit(state.copyWith(authenticationMessage: '', isLoading: null));
       } else {
         emit(state.copyWith(
-            isLoading: 3,
-            authenticationFailedMessage: response.data['message']));
+            isLoading: 3, authenticationMessage: response.data['message']));
+        emit(state.copyWith(authenticationMessage: '', isLoading: null));
       }
     } catch (e) {
       emit(state.copyWith(
           isLoading: 3,
-          authenticationFailedMessage: 'Une erreur est survenue recommencer'));
-    }
-  }
-
-  _SendCode(SendCode event, Emitter<UserState> emit) async {
-    var data = {
-      'data': event.data,
-    };
-    print(data);
-    emit(state.copyWith(
-      isLoadingForgot: 1,
-      isCode: 0,
-      successReset: false,
-    ));
-    await userRepo.SendCode(data).then((response) async {
-      if (response.statusCode == 201) {
-        emit(state.copyWith(
-          isLoadingForgot: 2,
-          isCode: 1,
-        ));
-      } else {
-        emit(state.copyWith(
-            isLoadingForgot: 3,
-            isCode: 2,
-            authenticationFailedMessage: response.data['message']));
-      }
-    }).onError((error, s) {
-      emit(state.copyWith(
-          isCode: 2,
-          isLoadingForgot: 3,
-          authenticationFailedMessage: 'System error'));
-    });
-  }
-
-  _VerifyCode(VerifyCode event, Emitter<UserState> emit) async {
-    var data = {
-      'code': event.code,
-      'data': event.data,
-    };
-    print(data);
-    emit(state.copyWith(
-      isLoadingForgot: 1,
-    ));
-    await userRepo.VerifyCode(data).then((response) async {
-      if (response.statusCode == 201) {
-        emit(state.copyWith(
-          isLoadingForgot: 2,
-          isCorrectCode: 1,
-        ));
-      } else {
-        emit(state.copyWith(
-            isLoadingForgot: 3,
-            isCorrectCode: 2,
-            authenticationFailedMessage: response.data['message']));
-      }
-    }).onError((error, s) {
-      emit(state.copyWith(
-          isCorrectCode: 3,
-          isLoadingForgot: 3,
-          authenticationFailedMessage: 'System error'));
-    });
-  }
-
-  _ResetPassword(ResetPassword event, Emitter<UserState> emit) async {
-    var data = {
-      'data': event.data,
-      'password': event.password,
-    };
-    print(data);
-    emit(state.copyWith(
-      isLoadingForgot: 1,
-    ));
-    await userRepo.ResetPassword(data).then((response) async {
-      if (response.statusCode == 201) {
-        database.saveKeyKen(response.data);
-        await userRepo.getUser().then((value) async {
-          print('------------------value----------${value.data}-');
-          if (value.data['data'] != null &&
-              value.data['data'] != [] &&
-              value.data['data'].length != 0) {
-            emit(state.copyWith(
-              isLoadingForgot: 2,
-              successReset: true,
-            ));
-
-            var _UserSave = User.fromJson(value.data['data']);
-
-            await database.saveUser(_UserSave);
-          }
-        }).catchError((error) {
-          emit(state.copyWith(
-              isCorrectCode: 3,
-              successReset: false,
-              isLoadingForgot: 3,
-              authenticationFailedMessage: 'System error'));
-        });
-      } else {
-        emit(state.copyWith(
-          isLoadingForgot: 3,
-          successReset: false,
-        ));
-      }
-    }).onError((error, s) {
-      emit(state.copyWith(
-          isCorrectCode: 3,
-          successReset: false,
-          isLoadingForgot: 3,
-          authenticationFailedMessage: 'System error'));
-    });
-  }
-
-  _updateUserProfile(UpdateUserImage event, Emitter<UserState> emit) async {
-    try {
-      emit(state.copyWith(isUpdateUserImage: 0));
-      var key = await database.getKey();
-      print('----------***********-----adding');
-      var image = await ImagePicker().pickImage(
-        source: ImageSource.camera,
-        imageQuality: 100,
-        maxHeight: 500,
-        maxWidth: 500,
-      );
-      if (image != null) {
-        emit(state.copyWith(isUpdateUserImage: 1));
-        FormData formData = FormData.fromMap({'keySecret': key});
-        formData.files.add(MapEntry(
-            'file',
-            await MultipartFile.fromFile(
-              image.path,
-              filename: 'Image.jpg',
-            )));
-        Response response = await userRepo.updateImageUser(formData);
-        print(response.data);
-        if (response.statusCode == 201) {
-          database.saveKeyKen(response.data);
-          await userRepo.getUser().then((value) async {
-            print('------------------value----------${value.data}-');
-            if (value.data['data'] != null) {
-              emit(state.copyWith(isUpdateUserImage: 2));
-
-              var _UserSave = User.fromJson(value.data['data']);
-
-              await database.saveUser(_UserSave);
-            }
-          }).catchError((error) {
-            emit(state.copyWith(
-                isLoading: 3,
-                authenticationFailedMessage:
-                    'Une erreur est survenue recommencer'));
-          });
-        } else {
-          emit(state.copyWith(isUpdateUserImage: 3));
-        }
-      }
-    } catch (e) {
-      print('Error getting image: $e');
+          authenticationMessage: 'Une erreur est survenue recommencer'));
+      emit(state.copyWith(authenticationMessage: '', isLoading: null));
     }
   }
 
