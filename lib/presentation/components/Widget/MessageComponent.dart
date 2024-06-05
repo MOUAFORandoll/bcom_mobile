@@ -52,7 +52,7 @@ class MessageComponent extends StatelessWidget {
                     radius: 20,
                     child: CachedNetworkImage(
                       fit: BoxFit.cover,
-                      imageUrl: "state.user!.",
+                      imageUrl: 'state.user!.',
                       imageBuilder: (context, imageProvider) {
                         return Container(
                           decoration: BoxDecoration(

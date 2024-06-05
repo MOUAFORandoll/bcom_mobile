@@ -8,64 +8,64 @@ class User {
   String fullName;
 
   @Property()
-  String email;
+  String? email;
 
   @Property()
   String userName;
 
   @Property()
-  String sex;
+  String? sex;
 
   @Property()
-  int age;
+  int? age;
 
   @Property()
-  String town;
+  String? town;
 
   @Property()
-  String country;
+  String? country;
 
   @Property()
   String phone;
 
   @Property()
-  String address;
+  String? address;
 
   @Property()
-  String numCni;
+  String? numCni;
 
   @Property()
-  bool status;
+  bool? status;
 
   @Property()
-  String workingMoment;
+  String? workingMoment;
 
   @Property()
-  String birthDate;
+  String? birthDate;
 
   @Property()
-  bool isSick;
+  bool? isSick;
 
   @Property()
-  bool isMotoMan;
+  bool? isMotoMan;
 
   @Property()
-  bool isSyndicat;
+  bool? isSyndicat;
 
   @Property()
-  bool isYourBike;
+  bool? isYourBike;
 
   @Property()
-  String syndicatName;
+  String? syndicatName;
 
   @Property()
   String? sickDescription;
 
   @Property()
-  String cni1;
+  String? cni1;
 
   @Property()
-  String cni2;
+  String? cni2;
 
   @Property()
   String? photoMoto;
@@ -77,62 +77,62 @@ class User {
   String? carteGrise;
 
   @Property()
-  int userTypeId;
+  int? userTypeId;
 
   @Property()
   int? serviceZoneId;
 
   @Property()
-  bool isDeleted;
+  bool? isDeleted;
 
   @Property()
-  int userId;
+  int? userId;
 
   @Property()
   String? nuiNumber;
 
   @Property()
-  String wokingPlace;
+  String? wokingPlace;
 
   @Property()
-  String createdAt;
+  String? createdAt;
 
   @Property()
-  String updatedAt;
+  String? updatedAt;
 
   User({
     required this.fullName,
-    required this.email,
+    /* required */ this.email,
     required this.userName,
-    required this.sex,
-    required this.age,
-    required this.town,
-    required this.userId,
-    required this.country,
+    /* required */ this.sex,
+    /* required */ this.age,
+    /* required */ this.town,
+    /* required */ this.userId,
+    /* required */ this.country,
     required this.phone,
-    required this.address,
-    required this.numCni,
-    required this.status,
-    required this.workingMoment,
-    required this.birthDate,
-    required this.isSick,
-    required this.isMotoMan,
-    required this.isSyndicat,
-    required this.isYourBike,
-    required this.syndicatName,
+    /* required */ this.address,
+    /* required */ this.numCni,
+    /* required */ this.status,
+    /* required */ this.workingMoment,
+    /* required */ this.birthDate,
+    /* required */ this.isSick,
+    /* required */ this.isMotoMan,
+    /* required */ this.isSyndicat,
+    /* required */ this.isYourBike,
+    /* required */ this.syndicatName,
     this.sickDescription,
-    required this.cni1,
-    required this.cni2,
+    /* required */ this.cni1,
+    /* required */ this.cni2,
     this.photoMoto,
     this.profile,
     this.carteGrise,
-    required this.userTypeId,
+    /* required */ this.userTypeId,
     this.serviceZoneId,
-    required this.isDeleted,
+    /* required */ this.isDeleted,
     this.nuiNumber,
-    required this.wokingPlace,
-    required this.createdAt,
-    required this.updatedAt,
+    /* required */ this.wokingPlace,
+    /* required */ this.createdAt,
+    /* required */ this.updatedAt,
   });
 
   Map<String, dynamic> toMap() {
@@ -184,10 +184,10 @@ class User {
       phone: json['phone'],
       userId: json['id'],
       address: json['address'],
-      numCni: json['numCni'] ?? '',
+      numCni: json['numCni'],
       status: json['status'],
       workingMoment: json['workingMoment'],
-      birthDate: json['birthDate'] ?? '',
+      birthDate: json['birthDate'],
       isSick: json['isSick'],
       isMotoMan: json['isMotoMan'],
       isSyndicat: json['isSyndicat'],
@@ -215,7 +215,7 @@ class KeyUser {
   int id = 0;
 
   @Property()
-  String accessToken;
+  String? accessToken;
 
   KeyUser({
     required this.accessToken,

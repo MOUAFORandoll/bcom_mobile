@@ -1,10 +1,5 @@
-import 'package:Bcom/application/model/exportmodel.dart';
-import 'package:Bcom/routes/app_router.gr.dart';
-import 'package:Bcom/utils/constants/assets.dart';
 import 'package:Bcom/utils/functions/datetime_format_utils.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
-
-import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 

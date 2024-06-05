@@ -1,27 +1,31 @@
 class PackModel {
   int id;
-  String libelle;
+  String title;
   String description;
+  String filePackage;
 
   PackModel({
     required this.id,
-    required this.libelle,
+    required this.title,
     required this.description,
+    required this.filePackage,
   });
 
   factory PackModel.fromJson(Map<String, dynamic> json) {
     return PackModel(
       id: json['id'] as int,
-      libelle: json['libelle'] as String,
+      title: json['title'] as String,
       description: json['description'] as String,
+      filePackage: json['filePackage'] as String,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'libelle': libelle,
+      'title': title,
       'description': description,
+      'filePackage': filePackage,
     };
   }
 }

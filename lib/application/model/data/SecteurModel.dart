@@ -1,18 +1,18 @@
 import 'package:intl/intl.dart';
 
-class SecteurModel {
+class ParametreModel {
   int id;
   String libelle;
   DateTime dateCreated;
 
-  SecteurModel({
+  ParametreModel({
     required this.id,
     required this.libelle,
     required this.dateCreated,
   });
 
-  factory SecteurModel.fromJson(Map<String, dynamic> json) {
-    return SecteurModel(
+  factory ParametreModel.fromJson(Map<String, dynamic> json) {
+    return ParametreModel(
       id: json['id'] as int,
       libelle: json['libelle'] as String,
       dateCreated: DateTime.parse(json['dateCreated']),

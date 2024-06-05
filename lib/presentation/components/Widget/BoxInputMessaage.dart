@@ -52,7 +52,7 @@ class BoxInputMessaage extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontSize: 12,
                   ),
-                  counterText: "",
+                  counterText: '',
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.blue,

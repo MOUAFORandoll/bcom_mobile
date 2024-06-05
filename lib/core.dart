@@ -3,7 +3,6 @@ import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/export_bloc.dart';
 
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
-import 'package:Bcom/application/model/data/MessageModel.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
@@ -49,12 +48,12 @@ void initConnected() async {
 Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context).add(GetUserEvent());
   BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
-  // BlocProvider.of<DevisBloc>(context)
-  //   ..add(GetListPack())
-  //   ..add(GetListDevis())
-  //   ..add(GetListVille());
-  //   ..add(GetVilleQuartier());
-
+  BlocProvider.of<DevisBloc>(context)
+    ..add(GetListPack())
+    ..add(GetListDevis())
+    ..add(GetListVille());
+  // ..add(GetVilleQuartier());
+  
   // initLoadDevis(context);
 }
 

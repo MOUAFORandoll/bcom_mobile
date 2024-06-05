@@ -52,7 +52,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       if (response.statusCode == 200) {
         print(response.data);
         var _UserSave = User.fromJson(response.data['data']);
-
+        
         await database.saveUser(_UserSave);
       } else {}
     }).onError((error, s) {});
@@ -190,19 +190,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     var user = await database.getUser();
 
     var data = {
-      'name': state.name,
-      'email': state.email,
-      'phone': state.phone,
-      'adress': state.adress,
-      'webSite': state.webSite,
-      'city': state.city,
-      'numImpot': state.numImpot,
-      'numContribuable': state.numContribuable,
-      'registreCommerce': state.registreCommerce,
-      'country': state.country,
+      'name': state.name!.text,
+      'email': state.email!.text,
+      'phone': state.phone!.text,
+      'adress': state.adress!.text,
+      'webSite': state.webSite!.text,
+      'city': state.city!.text,
+      'numImpot': state.numImpot!.text,
+      'numContribuable': state.numContribuable!.text,
+      'registreCommerce': state.registreCommerce!.text,
+      'country': state.country!.text,
       'userId': user!.userId,
     };
     print(data);
+    emit(state.copyWith(isLoading: null));
     emit(state.copyWith(isLoading: 1));
     await userRepo.addInfoClient(data).then((response) async {
       if (response.statusCode == 201) {
@@ -221,10 +222,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(state.copyWith(eventMessage: '', isLoading: null));
       }
     }).onError((error, s) {
-      // print('----${s}-----');
-      // print('------${error}---');
+      print('----${s}-----');
+      print('------${error}---');
       emit(state.copyWith(
-          isLoading: 3, eventMessage: 'Phone ou mot de passe incorrect'));
+          isLoading: 3, eventMessage: 'Une erreur est servenue'));
       emit(state.copyWith(eventMessage: '', isLoading: null));
     });
   }

@@ -1,8 +1,6 @@
 import 'package:Bcom/presentation/components/Widget/app_carroussel_item_second.dart';
-import 'package:Bcom/presentation/devis/command_devis_page.dart';
-import 'package:Bcom/routes/app_router.gr.dart';
+import 'package:Bcom/presentation/devis/command_devis_page.dart'; 
 import 'package:Bcom/utils/constants/assets.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../components/exportcomponent.dart';

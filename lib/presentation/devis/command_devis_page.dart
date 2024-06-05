@@ -1,9 +1,8 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Bcom/presentation/devis/PaiementPage.dart';
 import 'package:Bcom/presentation/devis/SuccesDevisPage.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
-import 'package:Bcom/presentation/devis/infos_produit.dart';
-import 'package:Bcom/presentation/devis/select_package.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -29,6 +28,7 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                 status: 'En cours',
                 maskType: EasyLoadingMaskType.black);
           } else if (state.isRequest == 1) {
+            AutoRouter.of(context).pushNamed(PaimentPage.routeName);
             showSuccess('Demande devis envoye', context);
             EasyLoading.dismiss();
             AutoRouter.of(context).pushNamed(SuccesDevisPage.routeName);
@@ -95,11 +95,13 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                           horizontal: kMarginX, vertical: kMarginY),
                       padding: EdgeInsets.all(kMarginX * 1.5),
                       child: SingleChildScrollView(
-                          child: state.indexDevis == 0
+                          child:
+                              InfoDevis() /* state.indexDevis == 0
                               ? SelectPackage()
                               : state.indexDevis == 1
                                   ? InfoDevis()
-                                  : InfoProduit()),
+                                  : InfoProduit() */
+                          ),
                     ),
                   ),
                   if (state.indexDevis == 0)

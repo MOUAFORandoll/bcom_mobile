@@ -6,7 +6,7 @@ import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
-import 'package:Bcom/utils/constants/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SelectPackage extends StatelessWidget {
   @override
@@ -60,25 +60,54 @@ class SelectPackage extends StatelessWidget {
                                         children: [
                                           Column(
                                             children: [
-                                              Container(
-                                                height:
-                                                    getHeight(context) * .10,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                  image: DecorationImage(
-                                                    image:
-                                                        AssetImage(Assets.onb1),
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
+                                              CachedNetworkImage(
+                                                height: getHeight(context) / 10,
+                                                width: getHeight(context) / 10,
+                                                fit: BoxFit.cover,
+                                                imageUrl: state
+                                                    .list_pack![index]
+                                                    .filePackage,
+                                                imageBuilder:
+                                                    (context, imageProvider) {
+                                                  return Container(
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: DecorationImage(
+                                                        image: imageProvider,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                                placeholder: (context, url) {
+                                                  return Container(
+                                                    decoration: BoxDecoration(
+                                                        color: ColorsApp.grey,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50)),
+                                                    child: Center(
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                                color: ColorsApp
+                                                                    .second)),
+                                                  );
+                                                },
+                                                errorWidget:
+                                                    (context, url, error) {
+                                                  return CircleAvatar(
+                                                      // backgroundColor: ColorsApp.tird,
+                                                      radius: 150,
+                                                      backgroundImage: AssetImage(
+                                                          'assets/images/user.jpg'));
+                                                },
                                               ),
                                               Container(
                                                   margin: EdgeInsets.only(
                                                       top: kMarginY),
                                                   child: Text(
                                                     state.list_pack![index]
-                                                        .libelle,
+                                                        .title,
                                                     style: TextStyle(
                                                         fontSize: 16,
                                                         fontWeight:

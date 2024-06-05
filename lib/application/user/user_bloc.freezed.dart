@@ -3456,7 +3456,6 @@ mixin _$UserState {
   TextEditingController? get country => throw _privateConstructorUsedError;
   TextEditingController? get registreCommerce =>
       throw _privateConstructorUsedError;
-  FormState? get formKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -3495,8 +3494,7 @@ abstract class $UserStateCopyWith<$Res> {
       TextEditingController? numContribuable,
       TextEditingController? webSite,
       TextEditingController? country,
-      TextEditingController? registreCommerce,
-      FormState? formKey});
+      TextEditingController? registreCommerce});
 }
 
 /// @nodoc
@@ -3539,7 +3537,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? webSite = freezed,
     Object? country = freezed,
     Object? registreCommerce = freezed,
-    Object? formKey = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: freezed == isLoading
@@ -3650,10 +3647,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.registreCommerce
           : registreCommerce // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
-      formKey: freezed == formKey
-          ? _value.formKey
-          : formKey // ignore: cast_nullable_to_non_nullable
-              as FormState?,
     ) as $Val);
   }
 }
@@ -3693,8 +3686,7 @@ abstract class _$$UserStateImplCopyWith<$Res>
       TextEditingController? numContribuable,
       TextEditingController? webSite,
       TextEditingController? country,
-      TextEditingController? registreCommerce,
-      FormState? formKey});
+      TextEditingController? registreCommerce});
 }
 
 /// @nodoc
@@ -3735,7 +3727,6 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? webSite = freezed,
     Object? country = freezed,
     Object? registreCommerce = freezed,
-    Object? formKey = freezed,
   }) {
     return _then(_$UserStateImpl(
       isLoading: freezed == isLoading
@@ -3846,10 +3837,6 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.registreCommerce
           : registreCommerce // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
-      formKey: freezed == formKey
-          ? _value.formKey
-          : formKey // ignore: cast_nullable_to_non_nullable
-              as FormState?,
     ));
   }
 }
@@ -3884,8 +3871,7 @@ class _$UserStateImpl implements _UserState {
       this.numContribuable,
       this.webSite,
       this.country,
-      this.registreCommerce,
-      this.formKey});
+      this.registreCommerce});
 
   @override
   final int? isLoading;
@@ -3941,12 +3927,10 @@ class _$UserStateImpl implements _UserState {
   final TextEditingController? country;
   @override
   final TextEditingController? registreCommerce;
-  @override
-  final FormState? formKey;
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce, formKey: $formKey)';
+    return 'UserState(isLoading: $isLoading, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce)';
   }
 
   @override
@@ -3999,8 +3983,7 @@ class _$UserStateImpl implements _UserState {
             (identical(other.webSite, webSite) || other.webSite == webSite) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.registreCommerce, registreCommerce) ||
-                other.registreCommerce == registreCommerce) &&
-            (identical(other.formKey, formKey) || other.formKey == formKey));
+                other.registreCommerce == registreCommerce));
   }
 
   @override
@@ -4032,8 +4015,7 @@ class _$UserStateImpl implements _UserState {
         numContribuable,
         webSite,
         country,
-        registreCommerce,
-        formKey
+        registreCommerce
       ]);
 
   @JsonKey(ignore: true)
@@ -4071,8 +4053,7 @@ abstract class _UserState implements UserState {
       final TextEditingController? numContribuable,
       final TextEditingController? webSite,
       final TextEditingController? country,
-      final TextEditingController? registreCommerce,
-      final FormState? formKey}) = _$UserStateImpl;
+      final TextEditingController? registreCommerce}) = _$UserStateImpl;
 
   @override
   int? get isLoading;
@@ -4128,8 +4109,6 @@ abstract class _UserState implements UserState {
   TextEditingController? get country;
   @override
   TextEditingController? get registreCommerce;
-  @override
-  FormState? get formKey;
   @override
   @JsonKey(ignore: true)
   _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>

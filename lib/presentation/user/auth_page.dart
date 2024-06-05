@@ -31,7 +31,7 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocConsumer<UserBloc, UserState>(
-        listener: (context, state) {
+        listener: (context, state) async {
           if (state.isLoading == 1) {
             EasyLoading.show(
                 dismissOnTap: true,
@@ -41,9 +41,9 @@ class _AuthPageState extends State<AuthPage> {
             EasyLoading.dismiss();
             showError(state.authenticationMessage!, context);
           } else if (state.isLoading == 2) {
+            await initLoad(context);
             AutoRouter.of(context).replaceAll([HomeRoute()]);
             showSuccess(state.authenticationMessage!, context);
-            initLoad(context);
             EasyLoading.dismiss();
             print('-----44--------*********');
           }

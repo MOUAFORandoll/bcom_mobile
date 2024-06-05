@@ -1,3 +1,4 @@
+import 'package:Bcom/presentation/devis/PaiementPage.dart';
 import 'package:Bcom/presentation/devis/command_devis_page.dart';
 import 'package:Bcom/presentation/home/home_page.dart';
 import 'package:Bcom/presentation/layer/onboardingpage.dart';
@@ -26,5 +27,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(
             page: CommandDevisRoute.page, path: CommandDevisPage.routeName),
         AutoRoute(page: SuccesDevisRoute.page, path: SuccesDevisPage.routeName),
+        AutoRoute(page: PaimentRoute.page, path: PaimentPage.routeName),
+      
       ];
 }

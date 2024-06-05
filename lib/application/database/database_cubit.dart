@@ -1,6 +1,5 @@
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/objectbox.g.dart';
-import 'package:jwt_decode/jwt_decode.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:get_storage/get_storage.dart';

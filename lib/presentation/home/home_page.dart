@@ -4,7 +4,6 @@ import 'package:Bcom/presentation/devis/devis_home_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
 
-import 'package:Bcom/routes/app_router.gr.dart';
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/svg.dart';
@@ -50,7 +49,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         });
       });
   }
-
+  
+  // ignore: unused_element
   Future<void> _checkForUpdate() async {
     final newVersionPlus = NewVersionPlus(
       iOSId: null,
@@ -194,11 +194,11 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     backgroundColor: ColorsApp.primary, //
                   ),
                   SliverToBoxAdapter(
-                      child: /*  state.user!.status
+                      child:  state.user!.status!
                           ? state.index == 0
                               ? PresentationPage()
                               : HistoriqueDemandeDevisPage()
-                          : */
+                          :  
                           CompleteEntrepriseInfoPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
@@ -341,7 +341,7 @@ class CustomDrawer extends StatelessWidget {
                             height: getHeight(context) / 10,
                             width: getHeight(context) / 10,
                             fit: BoxFit.cover,
-                            imageUrl: "user.profile",
+                            imageUrl: 'user.profile',
                             imageBuilder: (context, imageProvider) {
                               return Container(
                                 decoration: BoxDecoration(

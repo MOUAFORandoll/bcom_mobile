@@ -5,9 +5,13 @@ import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
 import 'package:Bcom/application/model/data/MissionSession.dart';
 import 'package:Bcom/application/model/data/PackModel.dart';
-import 'package:Bcom/application/model/data/Secteur.dart';
-import 'package:Bcom/application/model/exportmodel.dart'; 
+import 'package:Bcom/application/model/data/Parametre.dart';
+import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/presentation/components/Widget/InputComment.dart';
+import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
+import 'package:Bcom/presentation/components/Widget/app_input_description.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -23,11 +27,11 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     on<GetListPack>(_getListPack);
     on<FieldChanged>(_fieldChanged);
 
-    on<GetListSecteurDevis>(_getListSecteurDevis);
+    on<GetListParametre>(_getListParametre);
     on<GetListDevis>(_getListDevis);
-    on<GetListVille>(_getListVille);
+    // on<GetListVille>(_getListVille);
     on<NewDevis>(_newDevis);
-    on<SelectSecteur>(selectSecteur);
+    on<SelectParametre>(selectParametre);
     on<SelectVille>(selectVille);
     on<SelectPack>(selectPack);
     on<ChangeIndexDevis>(changeIndexDevis);
@@ -43,28 +47,28 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     ));
   }
 
-  _getListVille(GetListVille event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      load_list_ville: 0,
-    ));
-    await devisRepo.getVille().then((response) {
-      print('---------list_ville------${response.data['hydra:member']}');
-      if (response.data != null) {
-        emit(state.copyWith(
-            load_list_ville: 1,
-            list_ville: (response.data['hydra:member'] as List)
-                .map((e) => VilleModel.fromJson(e))
-                .toList()));
-        print('---------list_ville------${state.list_ville!.length}');
-      } else {
-        emit(state.copyWith(
-          load_list_ville: 2,
-        ));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(load_list_ville: 2));
-    });
-  }
+  // _getListVille(GetListVille event, Emitter<DevisState> emit) async {
+  //   emit(state.copyWith(
+  //     load_list_ville: 0,
+  //   ));
+  //   await devisRepo.getVille().then((response) {
+  //     print('---------list_ville------${response.data['hydra:member']}');
+  //     if (response.data != null) {
+  //       emit(state.copyWith(
+  //           load_list_ville: 1,
+  //           list_ville: (response.data['hydra:member'] as List)
+  //               .map((e) => VilleModel.fromJson(e))
+  //               .toList()));
+  //       print('---------list_ville------${state.list_ville!.length}');
+  //     } else {
+  //       emit(state.copyWith(
+  //         load_list_ville: 2,
+  //       ));
+  //     }
+  //   }).onError((e, s) {
+  //     emit(state.copyWith(load_list_ville: 2));
+  //   });
+  // }
 
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     String? value = event.value;
@@ -114,13 +118,75 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     }
   }
 
+  Widget createWidget({required String field, required String title}) {
+    switch (field) {
+      case 'INPUTTEXT':
+        TextEditingController _controller = TextEditingController();
+        return AppInput(
+          controller: _controller,
+          textInputType: TextInputType.text,
+          onChanged: (value) {},
+          placeholder: title,
+          validator: (value) {
+            return Validators.isValidUsername(value!);
+          },
+        );
+
+      case 'INPUTDESCRIPTION':
+        TextEditingController _controller = TextEditingController();
+        return AppInputDescription(
+          controller: _controller,
+          textInputType: TextInputType.text,
+          onChanged: (value) {},
+          placeholder: title,
+          validator: (value) {
+            return Validators.isValidUsername(value!);
+          },
+        );
+
+      case 'INPUTNUMBER':
+        TextEditingController _controller = TextEditingController();
+        return AppInput(
+          controller: _controller,
+          textInputType: TextInputType.number,
+          onChanged: (value) {},
+          placeholder: title,
+          validator: (value) {
+            return Validators.isValidNumber(value!);
+          },
+        );
+
+      case 'INPUTDROPDOWN':
+        var value = 'Option 1';
+        var items = ['Option 1', 'Option 2', 'Option 3'];
+        return AppDropdown(
+          value: value,
+          items: items,
+          onChanged: (value) {},
+          label: title,
+        );
+      case 'INPUTRADIO':
+        var value = 'Option 1';
+        var items = ['Option 1', 'Option 2', 'Option 3'];
+        return AppDropdown(
+          value: value,
+          items: items,
+          onChanged: (value) {},
+          label: title,
+        );
+
+      default:
+        return SizedBox.shrink();
+    }
+  }
+
   changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
       indexDevis: event.val
           ? getVal(state.indexDevis! + 1)
           : getVal(state.indexDevis! - 1),
     ));
-    print(state.pack!.libelle);
+    print(state.pack!.title);
   }
 
   getVal(val) {
@@ -131,12 +197,12 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     emit(state.copyWith(
       pack: event.pack,
     ));
-    print(state.pack!.libelle);
+    print(state.pack!.title);
   }
 
-  selectSecteur(SelectSecteur event, Emitter<DevisState> emit) async {
+  selectParametre(SelectParametre event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
-      secteur: event.secteur,
+      parametre: event.parametre,
     ));
   }
 
@@ -174,6 +240,10 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         emit(state.copyWith(
           isRequest: null,
         ));
+        //  emit(state.copyWith(
+        //     isRequest: 5,
+        //     isDownloadFacture: 0,
+        //     paiement_url: response.data['paiement_url']));
         add(GetListDevis());
         print('---------list_pack------${state.list_pack!.length}');
       } else {
@@ -199,11 +269,11 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       load_list_pack: 0,
     ));
     await devisRepo.getlistPack().then((response) {
-      print('---------list_pack------${response.data['hydra:member']}');
+      print('---------list_pack------${response.data['data']}');
       if (response.data != null) {
         emit(state.copyWith(
             load_list_pack: 1,
-            list_pack: (response.data['hydra:member'] as List)
+            list_pack: (response.data['data'] as List)
                 .map((e) => PackModel.fromJson(e))
                 .toList()));
         print('---------list_pack------${state.list_pack!.length}');
@@ -242,26 +312,33 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     });
   }
 
-  _getListSecteurDevis(
-      GetListSecteurDevis event, Emitter<DevisState> emit) async {
+  _getListParametre(GetListParametre event, Emitter<DevisState> emit) async {
+    emit(state.copyWith(list_parametre: [
+      new Parametre(
+          title: 'Nombre de Biker', inputType: 'INPUTDROPDOWN', value: '1,2,3'),
+      new Parametre(title: 'Biker', inputType: 'INPUTDESCRIPTION', value: ''),
+      new Parametre(title: 'Biker', inputType: 'INPUTNUMBER', value: ''),
+      new Parametre(title: 'Biker', inputType: 'INPUTTEXT', value: '')
+    ]));
+
     emit(state.copyWith(
-      load_list_secteur: 0,
+      load_list_parametre: 0,
     ));
-    await devisRepo.getlistSecteurDevis().then((response) {
+    await devisRepo.getlistParametre().then((response) {
       if (response.data != null) {
         emit(state.copyWith(
-            load_list_secteur: 1,
-            list_secteur: (response.data['data'] as List)
-                .map((e) => Secteur.fromJson(e))
+            load_list_parametre: 1,
+            list_parametre: (response.data['data'] as List)
+                .map((e) => Parametre.fromJson(e))
                 .toList()));
       } else {
         emit(state.copyWith(
-          load_list_secteur: 2,
+          load_list_parametre: 2,
         ));
       }
     }).onError((e, s) {
       emit(state.copyWith(
-        load_list_secteur: 2,
+        load_list_parametre: 2,
       ));
     });
   }

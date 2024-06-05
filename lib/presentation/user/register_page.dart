@@ -7,9 +7,7 @@ import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
-import 'package:Bcom/core.dart';
-
+ 
 @RoutePage()
 class RegisterPage extends StatefulWidget {
   static const routeName = '/register';

@@ -21,7 +21,7 @@ class DevisEvent with _$DevisEvent {
   const factory DevisEvent.fieldChanged(
       {required String fieldKey, required String? value}) = FieldChanged;
   const factory DevisEvent.demandeMission() = DemandeMission;
-  const factory DevisEvent.getListSecteurDevis() = GetListSecteurDevis;
-  const factory DevisEvent.selectSecteur({required Secteur secteur}) =
-      SelectSecteur;
+  const factory DevisEvent.getListParametre() = GetListParametre;
+  const factory DevisEvent.selectParametre({required Parametre parametre}) =
+      SelectParametre;
 }

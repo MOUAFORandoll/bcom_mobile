@@ -2,8 +2,7 @@
 import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
-import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/application/general_action/app_action_cubit.dart';
+import 'package:Bcom/application/export_bloc.dart'; 
 import 'package:Bcom/application/splash/splash_bloc.dart';
 
 import 'package:Bcom/application/user/repositories/user_repository.dart';
@@ -13,8 +12,7 @@ import 'package:Bcom/presentation/_commons/theming/app_theme.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/routes/app_router.dart';
 
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:responsive_framework/responsive_framework.dart'; 
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class AppContent extends StatelessWidget {

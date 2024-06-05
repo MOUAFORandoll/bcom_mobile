@@ -146,7 +146,7 @@ class _AppInputPasswordState extends State<AppInputPassword> {
           Container(
               margin: EdgeInsets.only(bottom: kMarginY),
               child: Text(
-                widget.placeholder!,
+                widget.placeholder,
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   // color: ColorsApp.tird,

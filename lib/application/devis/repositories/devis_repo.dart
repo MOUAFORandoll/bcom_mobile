@@ -25,30 +25,13 @@ class DevisRepo {
   }
 
   Future getlistPack() async {
-    Response a = await apiClient.getRequest(ApiRoutes.Pack);
+    Response a = await apiClient.postRequest(ApiRoutes.PACK);
 
     return a;
   }
 
-  Future getlistSecteurDevis() async {
-    Response a = await apiClient.getRequest('/secteur/read');
-
-    return a;
-  }
-
-  Future getCategory() async {
-    Response a = await apiClient.getRequest(
-      ApiRoutes.CATEGORY,
-    );
-
-    return a;
-  }
-
-  Future getVille() async {
-    Response a = await apiClient.getRequest(
-      ApiRoutes.VILLE,
-    );
-
+  Future getlistParametre() async {
+    Response a = await apiClient.getRequest(ApiRoutes.PARAMETRE);
     return a;
   }
 }

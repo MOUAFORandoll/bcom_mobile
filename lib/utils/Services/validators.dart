@@ -36,6 +36,16 @@ class Validators {
     return username.length > 3 ? null : 'invalidCaract'.tr();
   }
 
+  static isValidNumber(String input) {
+    // final RegExp phone = RegExp(r'^(?=.*[A-Za-z!])(?=.*\d)[A-Za-z\d]{8,}$');
+
+    if (int.tryParse(input) != null) {
+      return null;
+    } else {
+      return 'invalid'.tr();
+    }
+  }
+
   static usPhoneValid(String input) {
     // final RegExp phone = RegExp(r'^(?=.*[A-Za-z!])(?=.*\d)[A-Za-z\d]{8,}$');
 

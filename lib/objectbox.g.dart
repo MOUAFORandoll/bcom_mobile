@@ -306,23 +306,41 @@ ModelDefinition getObjectBoxModel() {
         objectToFB: (User object, fb.Builder fbb) {
           final phoneOffset = fbb.writeString(object.phone);
           final fullNameOffset = fbb.writeString(object.fullName);
-          final emailOffset = fbb.writeString(object.email);
+          final emailOffset =
+              object.email == null ? null : fbb.writeString(object.email!);
           final userNameOffset = fbb.writeString(object.userName);
-          final updatedAtOffset = fbb.writeString(object.updatedAt);
-          final createdAtOffset = fbb.writeString(object.createdAt);
-          final sexOffset = fbb.writeString(object.sex);
-          final townOffset = fbb.writeString(object.town);
-          final countryOffset = fbb.writeString(object.country);
-          final addressOffset = fbb.writeString(object.address);
-          final numCniOffset = fbb.writeString(object.numCni);
-          final workingMomentOffset = fbb.writeString(object.workingMoment);
-          final birthDateOffset = fbb.writeString(object.birthDate);
-          final syndicatNameOffset = fbb.writeString(object.syndicatName);
+          final updatedAtOffset = object.updatedAt == null
+              ? null
+              : fbb.writeString(object.updatedAt!);
+          final createdAtOffset = object.createdAt == null
+              ? null
+              : fbb.writeString(object.createdAt!);
+          final sexOffset =
+              object.sex == null ? null : fbb.writeString(object.sex!);
+          final townOffset =
+              object.town == null ? null : fbb.writeString(object.town!);
+          final countryOffset =
+              object.country == null ? null : fbb.writeString(object.country!);
+          final addressOffset =
+              object.address == null ? null : fbb.writeString(object.address!);
+          final numCniOffset =
+              object.numCni == null ? null : fbb.writeString(object.numCni!);
+          final workingMomentOffset = object.workingMoment == null
+              ? null
+              : fbb.writeString(object.workingMoment!);
+          final birthDateOffset = object.birthDate == null
+              ? null
+              : fbb.writeString(object.birthDate!);
+          final syndicatNameOffset = object.syndicatName == null
+              ? null
+              : fbb.writeString(object.syndicatName!);
           final sickDescriptionOffset = object.sickDescription == null
               ? null
               : fbb.writeString(object.sickDescription!);
-          final cni1Offset = fbb.writeString(object.cni1);
-          final cni2Offset = fbb.writeString(object.cni2);
+          final cni1Offset =
+              object.cni1 == null ? null : fbb.writeString(object.cni1!);
+          final cni2Offset =
+              object.cni2 == null ? null : fbb.writeString(object.cni2!);
           final photoMotoOffset = object.photoMoto == null
               ? null
               : fbb.writeString(object.photoMoto!);
@@ -334,7 +352,9 @@ ModelDefinition getObjectBoxModel() {
           final nuiNumberOffset = object.nuiNumber == null
               ? null
               : fbb.writeString(object.nuiNumber!);
-          final wokingPlaceOffset = fbb.writeString(object.wokingPlace);
+          final wokingPlaceOffset = object.wokingPlace == null
+              ? null
+              : fbb.writeString(object.wokingPlace!);
           fbb.startTable(44);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.userId);
@@ -378,50 +398,50 @@ ModelDefinition getObjectBoxModel() {
           final fullNameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 40, '');
           final emailParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 42, '');
+              .vTableGetNullable(buffer, rootOffset, 42);
           final userNameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 44, '');
           final sexParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 54, '');
+              .vTableGetNullable(buffer, rootOffset, 54);
           final ageParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 56, 0);
+              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 56);
           final townParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 58, '');
+              .vTableGetNullable(buffer, rootOffset, 58);
           final userIdParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 6, 0);
+              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
           final countryParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 60, '');
+              .vTableGetNullable(buffer, rootOffset, 60);
           final phoneParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 16, '');
           final addressParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 62, '');
+              .vTableGetNullable(buffer, rootOffset, 62);
           final numCniParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 64, '');
+              .vTableGetNullable(buffer, rootOffset, 64);
           final statusParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 28, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 28);
           final workingMomentParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 66, '');
+                  .vTableGetNullable(buffer, rootOffset, 66);
           final birthDateParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 68, '');
+              .vTableGetNullable(buffer, rootOffset, 68);
           final isSickParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 30, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 30);
           final isMotoManParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 32, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 32);
           final isSyndicatParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 34, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 34);
           final isYourBikeParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 36, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 36);
           final syndicatNameParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 70, '');
+                  .vTableGetNullable(buffer, rootOffset, 70);
           final sickDescriptionParam =
               const fb.StringReader(asciiOptimization: true)
                   .vTableGetNullable(buffer, rootOffset, 72);
           final cni1Param = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 74, '');
+              .vTableGetNullable(buffer, rootOffset, 74);
           final cni2Param = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 76, '');
+              .vTableGetNullable(buffer, rootOffset, 76);
           final photoMotoParam = const fb.StringReader(asciiOptimization: true)
               .vTableGetNullable(buffer, rootOffset, 78);
           final profileParam = const fb.StringReader(asciiOptimization: true)
@@ -429,20 +449,20 @@ ModelDefinition getObjectBoxModel() {
           final carteGriseParam = const fb.StringReader(asciiOptimization: true)
               .vTableGetNullable(buffer, rootOffset, 82);
           final userTypeIdParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 48, 0);
+              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 48);
           final serviceZoneIdParam =
               const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 84);
           final isDeletedParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 38, false);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 38);
           final nuiNumberParam = const fb.StringReader(asciiOptimization: true)
               .vTableGetNullable(buffer, rootOffset, 86);
           final wokingPlaceParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 88, '');
+                  .vTableGetNullable(buffer, rootOffset, 88);
           final createdAtParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 52, '');
+              .vTableGetNullable(buffer, rootOffset, 52);
           final updatedAtParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 50, '');
+              .vTableGetNullable(buffer, rootOffset, 50);
           final object = User(
               fullName: fullNameParam,
               email: emailParam,
@@ -489,7 +509,9 @@ ModelDefinition getObjectBoxModel() {
           object.id = id;
         },
         objectToFB: (KeyUser object, fb.Builder fbb) {
-          final accessTokenOffset = fbb.writeString(object.accessToken);
+          final accessTokenOffset = object.accessToken == null
+              ? null
+              : fbb.writeString(object.accessToken!);
           fbb.startTable(3);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, accessTokenOffset);
@@ -501,7 +523,7 @@ ModelDefinition getObjectBoxModel() {
           final rootOffset = buffer.derefObject(0);
           final accessTokenParam =
               const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 6, '');
+                  .vTableGetNullable(buffer, rootOffset, 6);
           final object = KeyUser(accessToken: accessTokenParam)
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 

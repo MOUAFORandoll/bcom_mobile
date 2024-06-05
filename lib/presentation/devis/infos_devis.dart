@@ -103,7 +103,7 @@ class _InfoDevisState extends State<InfoDevis> {
                                   width: getWith(context) * .35,
                                   child: EntryTimeField(
                                     label: 'Debut',
-                                    initialeTime: state.horaireStart!,
+                                    initialeTime: state.horaireStart,
                                     onPressed: (time) {
                                       BlocProvider.of<DevisBloc>(context).add(
                                           FieldChanged(
@@ -116,7 +116,7 @@ class _InfoDevisState extends State<InfoDevis> {
                                   width: getWith(context) * .35,
                                   child: EntryTimeField(
                                     label: 'Fin',
-                                    initialeTime: state.horaireEnd!,
+                                    initialeTime: state.horaireEnd,
                                     onPressed: (time) {
                                       BlocProvider.of<DevisBloc>(context).add(
                                           FieldChanged(
@@ -296,7 +296,7 @@ class _InfoDevisState extends State<InfoDevis> {
                                                   value: value,
                                                   child: Center(
                                                     child: Text(
-                                                      value!.libelle,
+                                                      value.libelle,
                                                     ),
                                                   ),
                                                 );

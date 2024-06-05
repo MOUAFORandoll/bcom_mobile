@@ -14,8 +14,7 @@ class UserRepo {
   Future getVilleQuartier(long, lat) async {
     Response response =
         await apiClient.getRequest('/location/user?long=${long}&lat=${lat}');
-    ;
-
+    
     return response;
   }
 
@@ -37,7 +36,7 @@ class UserRepo {
     var user = await dababase.getUser();
 
     Response response =
-        await apiClient.getRequest(ApiRoutes.USER + '/${user!.id}');
+        await apiClient.getRequest(ApiRoutes.USER + '/${user!.userId}');
 
     return response;
   }
