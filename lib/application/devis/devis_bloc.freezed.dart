@@ -3439,7 +3439,6 @@ abstract class SelectParametre implements DevisEvent {
 mixin _$DevisState {
   LatLng? get position => throw _privateConstructorUsedError;
   PackModel? get pack => throw _privateConstructorUsedError;
-  MissionSession? get missionSession => throw _privateConstructorUsedError;
   int? get indexDevis => throw _privateConstructorUsedError;
   List<PackModel>? get list_pack => throw _privateConstructorUsedError;
   List<DevisModel>? get list_devis => throw _privateConstructorUsedError;
@@ -3486,7 +3485,6 @@ abstract class $DevisStateCopyWith<$Res> {
   $Res call(
       {LatLng? position,
       PackModel? pack,
-      MissionSession? missionSession,
       int? indexDevis,
       List<PackModel>? list_pack,
       List<DevisModel>? list_devis,
@@ -3532,7 +3530,6 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
   $Res call({
     Object? position = freezed,
     Object? pack = freezed,
-    Object? missionSession = freezed,
     Object? indexDevis = freezed,
     Object? list_pack = freezed,
     Object? list_devis = freezed,
@@ -3571,10 +3568,6 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.pack
           : pack // ignore: cast_nullable_to_non_nullable
               as PackModel?,
-      missionSession: freezed == missionSession
-          ? _value.missionSession
-          : missionSession // ignore: cast_nullable_to_non_nullable
-              as MissionSession?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
@@ -3702,7 +3695,6 @@ abstract class _$$DevisStateImplCopyWith<$Res>
   $Res call(
       {LatLng? position,
       PackModel? pack,
-      MissionSession? missionSession,
       int? indexDevis,
       List<PackModel>? list_pack,
       List<DevisModel>? list_devis,
@@ -3746,7 +3738,6 @@ class __$$DevisStateImplCopyWithImpl<$Res>
   $Res call({
     Object? position = freezed,
     Object? pack = freezed,
-    Object? missionSession = freezed,
     Object? indexDevis = freezed,
     Object? list_pack = freezed,
     Object? list_devis = freezed,
@@ -3785,10 +3776,6 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.pack
           : pack // ignore: cast_nullable_to_non_nullable
               as PackModel?,
-      missionSession: freezed == missionSession
-          ? _value.missionSession
-          : missionSession // ignore: cast_nullable_to_non_nullable
-              as MissionSession?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
@@ -3911,7 +3898,6 @@ class _$DevisStateImpl implements _DevisState {
   const _$DevisStateImpl(
       {required this.position,
       required this.pack,
-      required this.missionSession,
       required this.indexDevis,
       required final List<PackModel>? list_pack,
       required final List<DevisModel>? list_devis,
@@ -3950,8 +3936,6 @@ class _$DevisStateImpl implements _DevisState {
   final LatLng? position;
   @override
   final PackModel? pack;
-  @override
-  final MissionSession? missionSession;
   @override
   final int? indexDevis;
   final List<PackModel>? _list_pack;
@@ -4053,7 +4037,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(position: $position, pack: $pack, missionSession: $missionSession, indexDevis: $indexDevis, list_pack: $list_pack, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(position: $position, pack: $pack, indexDevis: $indexDevis, list_pack: $list_pack, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
   }
 
   @override
@@ -4064,8 +4048,6 @@ class _$DevisStateImpl implements _DevisState {
             (identical(other.position, position) ||
                 other.position == position) &&
             (identical(other.pack, pack) || other.pack == pack) &&
-            (identical(other.missionSession, missionSession) ||
-                other.missionSession == missionSession) &&
             (identical(other.indexDevis, indexDevis) ||
                 other.indexDevis == indexDevis) &&
             const DeepCollectionEquality()
@@ -4127,7 +4109,6 @@ class _$DevisStateImpl implements _DevisState {
         runtimeType,
         position,
         pack,
-        missionSession,
         indexDevis,
         const DeepCollectionEquality().hash(_list_pack),
         const DeepCollectionEquality().hash(_list_devis),
@@ -4169,7 +4150,6 @@ abstract class _DevisState implements DevisState {
   const factory _DevisState(
           {required final LatLng? position,
           required final PackModel? pack,
-          required final MissionSession? missionSession,
           required final int? indexDevis,
           required final List<PackModel>? list_pack,
           required final List<DevisModel>? list_devis,
@@ -4204,8 +4184,6 @@ abstract class _DevisState implements DevisState {
   LatLng? get position;
   @override
   PackModel? get pack;
-  @override
-  MissionSession? get missionSession;
   @override
   int? get indexDevis;
   @override

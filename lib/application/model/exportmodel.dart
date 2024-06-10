@@ -1,8 +1,7 @@
 export 'package:Bcom/application/model/data/ImageModel.dart';
 export 'package:Bcom/application/model/data/LocalisationModel.dart';
 export 'package:Bcom/application/model/data/LivraisonModel.dart';
-export 'package:Bcom/application/model/data/CategoryModel.dart';
-export 'package:Bcom/application/model/data/Mission.dart';
+export 'package:Bcom/application/model/data/CategoryModel.dart'; 
 export 'package:Bcom/application/model/data/CompteModel.dart';
 export 'package:Bcom/application/model/data/LivreurModel.dart';
 export 'package:Bcom/application/model/data/ModePaiementModel.dart';
