@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
-import 'package:Bcom/application/model/data/MissionSession.dart';
 import 'package:Bcom/application/model/data/PackModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
