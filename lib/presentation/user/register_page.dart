@@ -7,7 +7,7 @@ import 'package:Bcom/utils/Services/validators.dart';
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
- 
+
 @RoutePage()
 class RegisterPage extends StatefulWidget {
   static const routeName = '/register';
@@ -79,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
               } else if (state.isLoading == 2) {
                 EasyLoading.dismiss();
                 AutoRouter.of(context).replaceAll([AuthRoute()]);
-                
+
                 showSuccess(state.authenticationMessage!, context);
 
                 print('-----44--------*********');

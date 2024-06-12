@@ -13,7 +13,6 @@ class DevisEvent with _$DevisEvent {
   const factory DevisEvent.newDevis() = NewDevis;
   const factory DevisEvent.setIndexHistoryDevis({required dynamic index}) =
       SetIndexHistoryDevisEvent;
-  const factory DevisEvent.selectPack({required PackModel pack}) = SelectPack;
   const factory DevisEvent.selectVille({required VilleModel ville}) =
       SelectVille;
   const factory DevisEvent.changeIndexDevis({required bool val}) =

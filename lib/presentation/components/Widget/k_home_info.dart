@@ -13,8 +13,8 @@ class KHomeInfo extends StatelessWidget {
         child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        BlocBuilder<UserBloc, UserState>(
-            builder: (context, state) => state.isVilleQuartier == 0
+        BlocBuilder<AbonnementBloc, AbonnementState>(
+            builder: (context, state) => state.loadUserAbonnement == 0
                 ? Shimmer.fromColors(
                     baseColor: ColorsApp.grey,
                     highlightColor: ColorsApp.primary,
@@ -31,13 +31,13 @@ class KHomeInfo extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                               Container(
-                                  child: Text('Votre quartier',
+                                  child: Text('Abonnement',
                                       style: TextStyle(
                                           color: ColorsApp.white,
                                           fontSize: 8,
                                           fontWeight: FontWeight.normal))),
                               Container(
-                                  child: Text('Votre ville',
+                                  child: Text('En cours de chargement',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w800,
                                         color: ColorsApp.white,
@@ -46,7 +46,7 @@ class KHomeInfo extends StatelessWidget {
                             ])),
                       ]),
                     ))
-                : state.isVilleQuartier == 1
+                : state.loadUserAbonnement == 1
                     ? Container(
                         child: Row(children: [
                           Container(
@@ -60,13 +60,18 @@ class KHomeInfo extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                 Container(
-                                    child: Text(state.quartierUser!,
+                                    child: Text('Abonnement',
                                         style: TextStyle(
                                             color: ColorsApp.white,
                                             fontSize: 8,
                                             fontWeight: FontWeight.normal))),
                                 Container(
-                                    child: Text(state.villeUser!,
+                                    child: Text(
+                                        state.userAbonnement != null
+                                            ? state.userAbonnement!.status == 1
+                                                ? 'Actif'
+                                                : 'Inactif'
+                                            : 'Inactif',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w800,
                                           color: ColorsApp.white,
@@ -77,8 +82,8 @@ class KHomeInfo extends StatelessWidget {
                       )
                     : InkWell(
                         onTap: () {
-                          BlocProvider.of<UserBloc>(context)
-                              .add(GetVilleQuartier());
+                          BlocProvider.of<AbonnementBloc>(context)
+                              .add(UserAbonnement());
                         },
                         child: Row(
                           children: [

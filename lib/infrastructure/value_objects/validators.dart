@@ -9,7 +9,7 @@ class Validators {
     if (email == null) return null;
     return _emailRegExp.hasMatch(email.trim()) ? null : 'invalidMail'.tr();
   }
-  
+
   static isValidEmailOrNum(String? data) {
     if (data == null) return null;
 
@@ -130,7 +130,7 @@ class Validators {
             ? null
             : 'At least 03 characters';
   }
-  
+
   static String? usPhoneValid(String input) {
     final RegExp phone =
         RegExp(r'^(\+0?1\s)?((\d{3})|(\(\d{3}\)))?(\s|-)\d{3}(\s|-)\d{4}$');

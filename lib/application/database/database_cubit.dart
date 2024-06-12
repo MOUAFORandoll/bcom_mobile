@@ -65,7 +65,7 @@ class DatabaseCubit extends Cubit<DatabaseState> {
     print('---------------------Jwt.parseJwt )');
     print(value);
     _store.box<KeyUser>().put(KeyUser.fromJson(value));
-    
+
     return true;
   }
 

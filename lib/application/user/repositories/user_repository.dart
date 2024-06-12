@@ -14,7 +14,7 @@ class UserRepo {
   Future getVilleQuartier(long, lat) async {
     Response response =
         await apiClient.getRequest('/location/user?long=${long}&lat=${lat}');
-    
+
     return response;
   }
 

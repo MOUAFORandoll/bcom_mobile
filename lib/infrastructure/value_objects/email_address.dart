@@ -1,5 +1,5 @@
 import 'package:Bcom/infrastructure/_commons/value_object.dart';
-import 'package:dartz/dartz.dart'; 
+import 'package:dartz/dartz.dart';
 import 'failures.dart';
 import 'value_validators.dart';
 

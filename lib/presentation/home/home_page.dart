@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         });
       });
   }
-  
+
   // ignore: unused_element
   Future<void> _checkForUpdate() async {
     final newVersionPlus = NewVersionPlus(
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             BlocProvider.of<HomeBloc>(context0).add(UserDataEvent());
           }
           if (state0.updateData == false) {}
-
+          
           if (state0.isRequest == 0) {
             EasyLoading.show(
                 dismissOnTap: true,
@@ -194,12 +194,11 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     backgroundColor: ColorsApp.primary, //
                   ),
                   SliverToBoxAdapter(
-                      child:  state.user!.status!
+                      child: state.user!.status!
                           ? state.index == 0
                               ? PresentationPage()
                               : HistoriqueDemandeDevisPage()
-                          :  
-                          CompleteEntrepriseInfoPage())
+                          : CompleteEntrepriseInfoPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,

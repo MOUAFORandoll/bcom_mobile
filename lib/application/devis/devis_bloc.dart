@@ -3,10 +3,8 @@ import 'dart:async';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
-import 'package:Bcom/application/model/data/PackModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
-import 'package:Bcom/presentation/components/Widget/InputComment.dart';
 import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
 import 'package:Bcom/presentation/components/Widget/app_input_description.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
@@ -14,16 +12,15 @@ import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'devis_bloc.freezed.dart';
 part 'devis_event.dart';
 part 'devis_state.dart';
-part 'devis_bloc.freezed.dart';
 
 class DevisBloc extends Bloc<DevisEvent, DevisState> {
   final DevisRepo devisRepo;
   final DatabaseCubit database;
   DevisBloc({required this.devisRepo, required this.database})
       : super(DevisState.initial()) {
-    on<GetListPack>(_getListPack);
     on<FieldChanged>(_fieldChanged);
 
     on<GetListParametre>(_getListParametre);
@@ -32,7 +29,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     on<NewDevis>(_newDevis);
     on<SelectParametre>(selectParametre);
     on<SelectVille>(selectVille);
-    on<SelectPack>(selectPack);
+
     on<ChangeIndexDevis>(changeIndexDevis);
     on<SetIndexHistoryDevisEvent>((event, emit) async {
       print('-----------------SetindexHistory');
@@ -185,18 +182,10 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
           ? getVal(state.indexDevis! + 1)
           : getVal(state.indexDevis! - 1),
     ));
-    print(state.pack!.title);
   }
 
   getVal(val) {
     return val < 0 ? 0 : val;
-  }
-
-  selectPack(SelectPack event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      pack: event.pack,
-    ));
-    print(state.pack!.title);
   }
 
   selectParametre(SelectParametre event, Emitter<DevisState> emit) async {
@@ -218,7 +207,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       'zone': state.zone.text,
       'horaire':
           '${state.horaireStart.hour}:${state.horaireStart.minute} - ${state.horaireEnd.hour}:${state.horaireEnd.minute}',
-      'pack': 'api/packs/${state.pack!.id}',
       'client': user!.id,
       'ville': 'api/villes/${state.ville!.id}',
       'dureeTravail': state.dureeTravail.text
@@ -244,7 +232,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         //     isDownloadFacture: 0,
         //     paiement_url: response.data['paiement_url']));
         add(GetListDevis());
-        print('---------list_pack------${state.list_pack!.length}');
       } else {
         emit(state.copyWith(
           isRequest: 2,
@@ -259,31 +246,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ));
       emit(state.copyWith(
         isRequest: null,
-      ));
-    });
-  }
-
-  _getListPack(GetListPack event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      load_list_pack: 0,
-    ));
-    await devisRepo.getlistPack().then((response) {
-      print('---------list_pack------${response.data['data']}');
-      if (response.data != null) {
-        emit(state.copyWith(
-            load_list_pack: 1,
-            list_pack: (response.data['data'] as List)
-                .map((e) => PackModel.fromJson(e))
-                .toList()));
-        print('---------list_pack------${state.list_pack!.length}');
-      } else {
-        emit(state.copyWith(
-          load_list_pack: 2,
-        ));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(
-        load_list_pack: 2,
       ));
     });
   }

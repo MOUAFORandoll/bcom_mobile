@@ -5,7 +5,7 @@ import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
 import 'package:Bcom/presentation/user/complete_info_steps/first_steps.dart';
-import 'package:Bcom/presentation/user/complete_info_steps/second_steps.dart'; 
+import 'package:Bcom/presentation/user/complete_info_steps/second_steps.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()

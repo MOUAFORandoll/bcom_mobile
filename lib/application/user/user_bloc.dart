@@ -52,7 +52,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       if (response.statusCode == 200) {
         print(response.data);
         var _UserSave = User.fromJson(response.data['data']);
-        
+
         await database.saveUser(_UserSave);
       } else {}
     }).onError((error, s) {});

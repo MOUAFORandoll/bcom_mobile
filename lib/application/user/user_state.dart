@@ -30,7 +30,6 @@ class UserState with _$UserState {
     TextEditingController? webSite,
     TextEditingController? country,
     TextEditingController? registreCommerce,
-    
   }) = _UserState;
 
   factory UserState.initial() => UserState(

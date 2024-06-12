@@ -3,13 +3,12 @@ class Parametre {
   final String? description;
   final String inputType;
   final String value;
-  
-  Parametre({
-    required this.title,
+
+  Parametre(
+      {required this.title,
       this.description,
-    required this.inputType,
-    required this.value
-  });
+      required this.inputType,
+      required this.value});
 
   Parametre.fromJson(Map<String, dynamic> json)
       : title = json['title'],

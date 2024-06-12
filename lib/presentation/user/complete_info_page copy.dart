@@ -211,7 +211,7 @@
 //                                   'Veuillez remplir tous les champs', context);
 //                             } else {
 //                               print('ok');
-                              
+
 //                               context.read<UserBloc>()
 //                                 ..add(AddInfoClient(
 //                                     name: name.text,

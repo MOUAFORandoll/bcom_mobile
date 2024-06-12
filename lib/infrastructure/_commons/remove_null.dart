@@ -1,4 +1,3 @@
-
 dynamic removeNull(dynamic params) {
   if (params is Map) {
     var customMap = {};

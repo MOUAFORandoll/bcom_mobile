@@ -1,22 +1,35 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/Widget/ErrorReloadUnitComponent.dart';
 import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
-
-import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-class SelectPackage extends StatelessWidget {
+class SelectAbonnementWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DevisBloc, DevisState>(
-        builder: (context, state) => Column(children: [
+    return BlocConsumer<AbonnementBloc, AbonnementState>(
+        listener: (context, state) {
+          if (state.loadRequest == 0) {
+            EasyLoading.show(
+                dismissOnTap: true,
+                status: 'En cours',
+                maskType: EasyLoadingMaskType.black);
+          } else if (state.loadRequest == 2) {
+            EasyLoading.dismiss();
+            showError('Une erreur est survenue', context);
+          } else if (state.loadRequest == 1) {
+            showSuccess('Operation reussi', context);
+            EasyLoading.dismiss();
+          }
+        },
+        builder: (context0, state) => Column(children: [
               Container(
                   margin: EdgeInsets.symmetric(vertical: kMarginY * 2),
                   child: Text(
-                    'Selectionner votre package',
+                    'Selectionner votre abonnement',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
@@ -26,14 +39,15 @@ class SelectPackage extends StatelessWidget {
                   )),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                height: getHeight(context) * .7,
+                height: getHeight(context) * .6,
                 child: Stack(children: [
-                  state.load_list_pack == 0
+                  state.loadListAbonnement == 0
                       ? ShimmerData()
-                      : state.load_list_pack == 2
+                      : state.loadListAbonnement == 2
                           ? ErrorReloadUnitComponent(
-                              onTap: () => BlocProvider.of<DevisBloc>(context)
-                                  .add(GetListPack()),
+                              onTap: () =>
+                                  BlocProvider.of<AbonnementBloc>(context)
+                                      .add(GetListAbonnement()),
                             )
                           : GridView.builder(
                               physics: NeverScrollableScrollPhysics(),
@@ -44,18 +58,20 @@ class SelectPackage extends StatelessWidget {
                                       childAspectRatio: 20,
                                       mainAxisExtent: 200,
                                       mainAxisSpacing: 20.0),
-                              itemCount: state.list_pack!.length,
+                              itemCount: state.listAbonnement!.length,
                               itemBuilder: (_ctx, index) => InkWell(
-                                    onTap: () =>
-                                        BlocProvider.of<DevisBloc>(context).add(
-                                            SelectPack(
-                                                pack: state.list_pack![index])),
+                                    onTap: () => BlocProvider.of<
+                                            AbonnementBloc>(context)
+                                        .add(AbonnementEvent.selectAbonnement(
+                                            abonnement:
+                                                state.listAbonnement![index])),
                                     child: Container(
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
                                           color: ColorsApp.grey.withOpacity(.3),
                                           borderRadius:
                                               BorderRadius.circular(8)),
+                                      padding: EdgeInsets.all(kMarginY),
                                       child: Stack(
                                         children: [
                                           Column(
@@ -65,8 +81,9 @@ class SelectPackage extends StatelessWidget {
                                                 width: getHeight(context) / 10,
                                                 fit: BoxFit.cover,
                                                 imageUrl: state
-                                                    .list_pack![index]
-                                                    .filePackage,
+                                                        .listAbonnement![index]
+                                                        .fileService ??
+                                                    '',
                                                 imageBuilder:
                                                     (context, imageProvider) {
                                                   return Container(
@@ -106,8 +123,8 @@ class SelectPackage extends StatelessWidget {
                                                   margin: EdgeInsets.only(
                                                       top: kMarginY),
                                                   child: Text(
-                                                    state.list_pack![index]
-                                                        .title,
+                                                    state.listAbonnement![index]
+                                                        .title!,
                                                     style: TextStyle(
                                                         fontSize: 16,
                                                         fontWeight:
@@ -117,8 +134,8 @@ class SelectPackage extends StatelessWidget {
                                                   padding:
                                                       EdgeInsets.all(kMarginX),
                                                   child: Text(
-                                                    state.list_pack![index]
-                                                        .description,
+                                                    state.listAbonnement![index]
+                                                        .description!,
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     style: TextStyle(),
@@ -132,8 +149,9 @@ class SelectPackage extends StatelessWidget {
                                                   BorderRadius.circular(8),
                                             ),
                                             child: Icon(Icons.verified_rounded,
-                                                color: state.pack ==
-                                                        state.list_pack![index]
+                                                color: state.abonnement ==
+                                                        state.listAbonnement![
+                                                            index]
                                                     ? Colors.greenAccent
                                                     : Colors.grey,
                                                 size: 30,
@@ -144,7 +162,17 @@ class SelectPackage extends StatelessWidget {
                                     ),
                                   ))
                 ]),
-              )
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(
+                    vertical: kMarginY, horizontal: kMarginX),
+                child: AppButton(
+                    size: MainAxisSize.max,
+                    // bgColor: ColorsApp.primary,
+                    text: 'Payer l\'abonnement'.tr(),
+                    onTap: () => BlocProvider.of<AbonnementBloc>(context)
+                        .add(NewAbonnement())),
+              ),
             ]));
   }
 }

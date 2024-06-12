@@ -28,6 +28,5 @@ class AppRouter extends $AppRouter {
             page: CommandDevisRoute.page, path: CommandDevisPage.routeName),
         AutoRoute(page: SuccesDevisRoute.page, path: SuccesDevisPage.routeName),
         AutoRoute(page: PaimentRoute.page, path: PaimentPage.routeName),
-      
       ];
 }

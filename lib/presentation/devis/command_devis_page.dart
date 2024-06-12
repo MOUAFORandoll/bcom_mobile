@@ -1,10 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Bcom/application/export_bloc.dart';
+import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/presentation/devis/PaiementPage.dart';
 import 'package:Bcom/presentation/devis/SuccesDevisPage.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
-import 'package:Bcom/application/export_bloc.dart';
-import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
@@ -97,23 +97,23 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                       child: SingleChildScrollView(
                           child:
                               InfoDevis() /* state.indexDevis == 0
-                              ? SelectPackage()
+                              ? SelectAbonnement()
                               : state.indexDevis == 1
                                   ? InfoDevis()
                                   : InfoProduit() */
                           ),
                     ),
                   ),
-                  if (state.indexDevis == 0)
-                    Container(
-                        margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                        child: AppButton(
-                            size: MainAxisSize.max,
-                            disabled: state.pack == null,
-                            // bgColor: ColorsApp.primary,
-                            text: 'Suivant'.tr(),
-                            onTap: () => BlocProvider.of<DevisBloc>(context)
-                                .add(ChangeIndexDevis(val: true)))),
+                  // if (state.indexDevis == 0)
+                  //   Container(
+                  //       margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                  //       child: AppButton(
+                  //           size: MainAxisSize.max,
+                  //           disabled: state.pack == null,
+                  //           // bgColor: ColorsApp.primary,
+                  //           text: 'Suivant'.tr(),
+                  //           onTap: () => BlocProvider.of<DevisBloc>(context)
+                  //               .add(ChangeIndexDevis(val: true)))),
                   if (state.indexDevis != 0)
                     Container(
                         margin: EdgeInsets.symmetric(horizontal: kMarginX),

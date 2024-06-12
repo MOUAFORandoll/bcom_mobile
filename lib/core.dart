@@ -1,18 +1,17 @@
+import 'package:Bcom/application/abonnement/repositories/abonnement_repo.dart';
 import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
-import 'package:Bcom/application/export_bloc.dart';
-
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
+import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
+import 'package:Bcom/infrastructure/_commons/network/network_info.dart';
 import 'package:Bcom/routes/app_router.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:connectivity/connectivity.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import 'package:Bcom/infrastructure/_commons/network/network_info.dart';
 
 final sl = GetIt.instance;
 
@@ -35,6 +34,12 @@ Future<void> init() async {
   sl
     ..registerFactory(() => DevisBloc(devisRepo: sl(), database: sl()))
     ..registerLazySingleton(() => DevisRepo(apiClient: sl()));
+
+  sl
+    ..registerFactory(
+        () => AbonnementBloc(abonnementRepo: sl(), database: sl()))
+    ..registerLazySingleton(() => AbonnementRepo(apiClient: sl()));
+
   sl.registerSingleton<AppRouter>(AppRouter());
 
   requestPermission();
@@ -48,17 +53,13 @@ void initConnected() async {
 Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context).add(GetUserEvent());
   BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
-  BlocProvider.of<DevisBloc>(context)
-    ..add(GetListPack())
-    ..add(GetListDevis())
-    ..add(GetListVille());
-  // ..add(GetVilleQuartier());
-  
-  // initLoadDevis(context);
-}
 
-Future<void> initLoadDevis(context) async {
-  BlocProvider.of<DevisBloc>(context);
+  BlocProvider.of<AbonnementBloc>(context)
+    ..add(UserAbonnement())
+    ..add(GetListAbonnement());
+  // BlocProvider.of<DevisBloc>(context)
+  //   ..add(GetListDevis())
+  //   ..add(GetListVille());
 }
 
 Future<void> requestPermission() async {

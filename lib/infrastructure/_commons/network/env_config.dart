@@ -86,7 +86,7 @@ class EnvManager implements IEnvManager {
 
   @override
   String getBaseUrl() => dotenv.env['BASE_URL']!;
-  
+
   @override
   String getEnvName() => dotenv.env['NAME']!;
 

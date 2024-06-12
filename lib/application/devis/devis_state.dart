@@ -4,9 +4,7 @@ part of 'devis_bloc.dart';
 class DevisState with _$DevisState {
   const factory DevisState({
     required LatLng? position,
-    required PackModel? pack, 
     required int? indexDevis,
-    required List<PackModel>? list_pack,
     required List<DevisModel>? list_devis,
     required List<VilleModel>? list_ville,
     VilleModel? ville,
@@ -55,14 +53,12 @@ class DevisState with _$DevisState {
         typeTravail: 0,
         inQuartier: null,
         updateData: null,
-        load_list_pack: 0, 
+        load_list_pack: 0,
         load_list_devis: 0,
         load_list_ville: null,
         indexHistory: 0,
         isRequest: null,
         list_devis: [],
-        pack: null,
         position: null,
-        list_pack: [],
       );
 }

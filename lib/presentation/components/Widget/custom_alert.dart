@@ -1,5 +1,5 @@
 import 'package:Bcom/presentation/_commons/theming/app_size.dart';
-import 'package:Bcom/presentation/components/exportcomponent.dart'; 
+import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class CustomArlert {

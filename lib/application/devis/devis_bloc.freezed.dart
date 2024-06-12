@@ -27,7 +27,6 @@ mixin _$DevisEvent {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -47,7 +46,6 @@ mixin _$DevisEvent {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -67,7 +65,6 @@ mixin _$DevisEvent {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -91,7 +88,6 @@ mixin _$DevisEvent {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -112,7 +108,6 @@ mixin _$DevisEvent {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -133,7 +128,6 @@ mixin _$DevisEvent {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -210,7 +204,6 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -233,7 +226,6 @@ class _$GetListPackImpl implements GetListPack {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -256,7 +248,6 @@ class _$GetListPackImpl implements GetListPack {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -286,7 +277,6 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -310,7 +300,6 @@ class _$GetListPackImpl implements GetListPack {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -334,7 +323,6 @@ class _$GetListPackImpl implements GetListPack {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -401,7 +389,6 @@ class _$GetListDevisImpl implements GetListDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -424,7 +411,6 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -447,7 +433,6 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -477,7 +462,6 @@ class _$GetListDevisImpl implements GetListDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -501,7 +485,6 @@ class _$GetListDevisImpl implements GetListDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -525,7 +508,6 @@ class _$GetListDevisImpl implements GetListDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -592,7 +574,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -615,7 +596,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -638,7 +618,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -668,7 +647,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -692,7 +670,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -716,7 +693,6 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -783,7 +759,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -806,7 +781,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -829,7 +803,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -859,7 +832,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -883,7 +855,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -907,7 +878,6 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -977,7 +947,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -1000,7 +969,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -1023,7 +991,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -1053,7 +1020,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -1077,7 +1043,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -1101,7 +1066,6 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -1168,7 +1132,6 @@ class _$GetListVilleImpl implements GetListVille {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -1191,7 +1154,6 @@ class _$GetListVilleImpl implements GetListVille {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -1214,7 +1176,6 @@ class _$GetListVilleImpl implements GetListVille {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -1244,7 +1205,6 @@ class _$GetListVilleImpl implements GetListVille {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -1268,7 +1228,6 @@ class _$GetListVilleImpl implements GetListVille {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -1292,7 +1251,6 @@ class _$GetListVilleImpl implements GetListVille {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -1362,7 +1320,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -1385,7 +1342,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -1408,7 +1364,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -1438,7 +1393,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -1462,7 +1416,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -1486,7 +1439,6 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -1554,7 +1506,6 @@ class _$NewDevisImpl implements NewDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -1577,7 +1528,6 @@ class _$NewDevisImpl implements NewDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -1600,7 +1550,6 @@ class _$NewDevisImpl implements NewDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -1630,7 +1579,6 @@ class _$NewDevisImpl implements NewDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -1654,7 +1602,6 @@ class _$NewDevisImpl implements NewDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -1678,7 +1625,6 @@ class _$NewDevisImpl implements NewDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -1775,7 +1721,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -1798,7 +1743,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -1821,7 +1765,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -1851,7 +1794,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -1875,7 +1817,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -1899,7 +1840,6 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -1923,228 +1863,6 @@ abstract class SetIndexHistoryDevisEvent implements DevisEvent {
   @JsonKey(ignore: true)
   _$$SetIndexHistoryDevisEventImplCopyWith<_$SetIndexHistoryDevisEventImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SelectPackImplCopyWith<$Res> {
-  factory _$$SelectPackImplCopyWith(
-          _$SelectPackImpl value, $Res Function(_$SelectPackImpl) then) =
-      __$$SelectPackImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PackModel pack});
-}
-
-/// @nodoc
-class __$$SelectPackImplCopyWithImpl<$Res>
-    extends _$DevisEventCopyWithImpl<$Res, _$SelectPackImpl>
-    implements _$$SelectPackImplCopyWith<$Res> {
-  __$$SelectPackImplCopyWithImpl(
-      _$SelectPackImpl _value, $Res Function(_$SelectPackImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? pack = null,
-  }) {
-    return _then(_$SelectPackImpl(
-      pack: null == pack
-          ? _value.pack
-          : pack // ignore: cast_nullable_to_non_nullable
-              as PackModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SelectPackImpl implements SelectPack {
-  const _$SelectPackImpl({required this.pack});
-
-  @override
-  final PackModel pack;
-
-  @override
-  String toString() {
-    return 'DevisEvent.selectPack(pack: $pack)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SelectPackImpl &&
-            (identical(other.pack, pack) || other.pack == pack));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, pack);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SelectPackImplCopyWith<_$SelectPackImpl> get copyWith =>
-      __$$SelectPackImplCopyWithImpl<_$SelectPackImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getListPack,
-    required TResult Function() getListDevis,
-    required TResult Function() startMissionDevis,
-    required TResult Function() endMissionDevis,
-    required TResult Function() startDisponibiliteDevis,
-    required TResult Function() getListVille,
-    required TResult Function() savePositionForMissionDevis,
-    required TResult Function() newDevis,
-    required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
-    required TResult Function(VilleModel ville) selectVille,
-    required TResult Function(bool val) changeIndexDevis,
-    required TResult Function(String fieldKey, String? value) fieldChanged,
-    required TResult Function() demandeMission,
-    required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
-  }) {
-    return selectPack(pack);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getListPack,
-    TResult? Function()? getListDevis,
-    TResult? Function()? startMissionDevis,
-    TResult? Function()? endMissionDevis,
-    TResult? Function()? startDisponibiliteDevis,
-    TResult? Function()? getListVille,
-    TResult? Function()? savePositionForMissionDevis,
-    TResult? Function()? newDevis,
-    TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
-    TResult? Function(VilleModel ville)? selectVille,
-    TResult? Function(bool val)? changeIndexDevis,
-    TResult? Function(String fieldKey, String? value)? fieldChanged,
-    TResult? Function()? demandeMission,
-    TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
-  }) {
-    return selectPack?.call(pack);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getListPack,
-    TResult Function()? getListDevis,
-    TResult Function()? startMissionDevis,
-    TResult Function()? endMissionDevis,
-    TResult Function()? startDisponibiliteDevis,
-    TResult Function()? getListVille,
-    TResult Function()? savePositionForMissionDevis,
-    TResult Function()? newDevis,
-    TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
-    TResult Function(VilleModel ville)? selectVille,
-    TResult Function(bool val)? changeIndexDevis,
-    TResult Function(String fieldKey, String? value)? fieldChanged,
-    TResult Function()? demandeMission,
-    TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
-    required TResult orElse(),
-  }) {
-    if (selectPack != null) {
-      return selectPack(pack);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetListPack value) getListPack,
-    required TResult Function(GetListDevis value) getListDevis,
-    required TResult Function(StartMissionDevis value) startMissionDevis,
-    required TResult Function(EndMissionDevis value) endMissionDevis,
-    required TResult Function(StartDisponibiliteDevis value)
-        startDisponibiliteDevis,
-    required TResult Function(GetListVille value) getListVille,
-    required TResult Function(SavePositionForMissionDevis value)
-        savePositionForMissionDevis,
-    required TResult Function(NewDevis value) newDevis,
-    required TResult Function(SetIndexHistoryDevisEvent value)
-        setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
-    required TResult Function(SelectVille value) selectVille,
-    required TResult Function(ChangeIndexDevis value) changeIndexDevis,
-    required TResult Function(FieldChanged value) fieldChanged,
-    required TResult Function(DemandeMission value) demandeMission,
-    required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
-  }) {
-    return selectPack(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetListPack value)? getListPack,
-    TResult? Function(GetListDevis value)? getListDevis,
-    TResult? Function(StartMissionDevis value)? startMissionDevis,
-    TResult? Function(EndMissionDevis value)? endMissionDevis,
-    TResult? Function(StartDisponibiliteDevis value)? startDisponibiliteDevis,
-    TResult? Function(GetListVille value)? getListVille,
-    TResult? Function(SavePositionForMissionDevis value)?
-        savePositionForMissionDevis,
-    TResult? Function(NewDevis value)? newDevis,
-    TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
-    TResult? Function(SelectVille value)? selectVille,
-    TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
-    TResult? Function(FieldChanged value)? fieldChanged,
-    TResult? Function(DemandeMission value)? demandeMission,
-    TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
-  }) {
-    return selectPack?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetListPack value)? getListPack,
-    TResult Function(GetListDevis value)? getListDevis,
-    TResult Function(StartMissionDevis value)? startMissionDevis,
-    TResult Function(EndMissionDevis value)? endMissionDevis,
-    TResult Function(StartDisponibiliteDevis value)? startDisponibiliteDevis,
-    TResult Function(GetListVille value)? getListVille,
-    TResult Function(SavePositionForMissionDevis value)?
-        savePositionForMissionDevis,
-    TResult Function(NewDevis value)? newDevis,
-    TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
-    TResult Function(SelectVille value)? selectVille,
-    TResult Function(ChangeIndexDevis value)? changeIndexDevis,
-    TResult Function(FieldChanged value)? fieldChanged,
-    TResult Function(DemandeMission value)? demandeMission,
-    TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
-    required TResult orElse(),
-  }) {
-    if (selectPack != null) {
-      return selectPack(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SelectPack implements DevisEvent {
-  const factory SelectPack({required final PackModel pack}) = _$SelectPackImpl;
-
-  PackModel get pack;
-  @JsonKey(ignore: true)
-  _$$SelectPackImplCopyWith<_$SelectPackImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2220,7 +1938,6 @@ class _$SelectVilleImpl implements SelectVille {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -2243,7 +1960,6 @@ class _$SelectVilleImpl implements SelectVille {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -2266,7 +1982,6 @@ class _$SelectVilleImpl implements SelectVille {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -2296,7 +2011,6 @@ class _$SelectVilleImpl implements SelectVille {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -2320,7 +2034,6 @@ class _$SelectVilleImpl implements SelectVille {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -2344,7 +2057,6 @@ class _$SelectVilleImpl implements SelectVille {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -2444,7 +2156,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -2467,7 +2178,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -2490,7 +2200,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -2520,7 +2229,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -2544,7 +2252,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -2568,7 +2275,6 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -2676,7 +2382,6 @@ class _$FieldChangedImpl implements FieldChanged {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -2699,7 +2404,6 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -2722,7 +2426,6 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -2752,7 +2455,6 @@ class _$FieldChangedImpl implements FieldChanged {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -2776,7 +2478,6 @@ class _$FieldChangedImpl implements FieldChanged {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -2800,7 +2501,6 @@ class _$FieldChangedImpl implements FieldChanged {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -2875,7 +2575,6 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -2898,7 +2597,6 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -2921,7 +2619,6 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -2951,7 +2648,6 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -2975,7 +2671,6 @@ class _$DemandeMissionImpl implements DemandeMission {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -2999,7 +2694,6 @@ class _$DemandeMissionImpl implements DemandeMission {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -3066,7 +2760,6 @@ class _$GetListParametreImpl implements GetListParametre {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -3089,7 +2782,6 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -3112,7 +2804,6 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -3142,7 +2833,6 @@ class _$GetListParametreImpl implements GetListParametre {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -3166,7 +2856,6 @@ class _$GetListParametreImpl implements GetListParametre {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -3190,7 +2879,6 @@ class _$GetListParametreImpl implements GetListParametre {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -3285,7 +2973,6 @@ class _$SelectParametreImpl implements SelectParametre {
     required TResult Function() savePositionForMissionDevis,
     required TResult Function() newDevis,
     required TResult Function(dynamic index) setIndexHistoryDevis,
-    required TResult Function(PackModel pack) selectPack,
     required TResult Function(VilleModel ville) selectVille,
     required TResult Function(bool val) changeIndexDevis,
     required TResult Function(String fieldKey, String? value) fieldChanged,
@@ -3308,7 +2995,6 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult? Function()? savePositionForMissionDevis,
     TResult? Function()? newDevis,
     TResult? Function(dynamic index)? setIndexHistoryDevis,
-    TResult? Function(PackModel pack)? selectPack,
     TResult? Function(VilleModel ville)? selectVille,
     TResult? Function(bool val)? changeIndexDevis,
     TResult? Function(String fieldKey, String? value)? fieldChanged,
@@ -3331,7 +3017,6 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult Function()? savePositionForMissionDevis,
     TResult Function()? newDevis,
     TResult Function(dynamic index)? setIndexHistoryDevis,
-    TResult Function(PackModel pack)? selectPack,
     TResult Function(VilleModel ville)? selectVille,
     TResult Function(bool val)? changeIndexDevis,
     TResult Function(String fieldKey, String? value)? fieldChanged,
@@ -3361,7 +3046,6 @@ class _$SelectParametreImpl implements SelectParametre {
     required TResult Function(NewDevis value) newDevis,
     required TResult Function(SetIndexHistoryDevisEvent value)
         setIndexHistoryDevis,
-    required TResult Function(SelectPack value) selectPack,
     required TResult Function(SelectVille value) selectVille,
     required TResult Function(ChangeIndexDevis value) changeIndexDevis,
     required TResult Function(FieldChanged value) fieldChanged,
@@ -3385,7 +3069,6 @@ class _$SelectParametreImpl implements SelectParametre {
         savePositionForMissionDevis,
     TResult? Function(NewDevis value)? newDevis,
     TResult? Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult? Function(SelectPack value)? selectPack,
     TResult? Function(SelectVille value)? selectVille,
     TResult? Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult? Function(FieldChanged value)? fieldChanged,
@@ -3409,7 +3092,6 @@ class _$SelectParametreImpl implements SelectParametre {
         savePositionForMissionDevis,
     TResult Function(NewDevis value)? newDevis,
     TResult Function(SetIndexHistoryDevisEvent value)? setIndexHistoryDevis,
-    TResult Function(SelectPack value)? selectPack,
     TResult Function(SelectVille value)? selectVille,
     TResult Function(ChangeIndexDevis value)? changeIndexDevis,
     TResult Function(FieldChanged value)? fieldChanged,
@@ -3438,9 +3120,7 @@ abstract class SelectParametre implements DevisEvent {
 /// @nodoc
 mixin _$DevisState {
   LatLng? get position => throw _privateConstructorUsedError;
-  PackModel? get pack => throw _privateConstructorUsedError;
   int? get indexDevis => throw _privateConstructorUsedError;
-  List<PackModel>? get list_pack => throw _privateConstructorUsedError;
   List<DevisModel>? get list_devis => throw _privateConstructorUsedError;
   List<VilleModel>? get list_ville => throw _privateConstructorUsedError;
   VilleModel? get ville => throw _privateConstructorUsedError;
@@ -3484,9 +3164,7 @@ abstract class $DevisStateCopyWith<$Res> {
   @useResult
   $Res call(
       {LatLng? position,
-      PackModel? pack,
       int? indexDevis,
-      List<PackModel>? list_pack,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
       VilleModel? ville,
@@ -3529,9 +3207,7 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
   @override
   $Res call({
     Object? position = freezed,
-    Object? pack = freezed,
     Object? indexDevis = freezed,
-    Object? list_pack = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
     Object? ville = freezed,
@@ -3564,18 +3240,10 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as LatLng?,
-      pack: freezed == pack
-          ? _value.pack
-          : pack // ignore: cast_nullable_to_non_nullable
-              as PackModel?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
               as int?,
-      list_pack: freezed == list_pack
-          ? _value.list_pack
-          : list_pack // ignore: cast_nullable_to_non_nullable
-              as List<PackModel>?,
       list_devis: freezed == list_devis
           ? _value.list_devis
           : list_devis // ignore: cast_nullable_to_non_nullable
@@ -3694,9 +3362,7 @@ abstract class _$$DevisStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {LatLng? position,
-      PackModel? pack,
       int? indexDevis,
-      List<PackModel>? list_pack,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
       VilleModel? ville,
@@ -3737,9 +3403,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? position = freezed,
-    Object? pack = freezed,
     Object? indexDevis = freezed,
-    Object? list_pack = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
     Object? ville = freezed,
@@ -3772,18 +3436,10 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as LatLng?,
-      pack: freezed == pack
-          ? _value.pack
-          : pack // ignore: cast_nullable_to_non_nullable
-              as PackModel?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
               as int?,
-      list_pack: freezed == list_pack
-          ? _value._list_pack
-          : list_pack // ignore: cast_nullable_to_non_nullable
-              as List<PackModel>?,
       list_devis: freezed == list_devis
           ? _value._list_devis
           : list_devis // ignore: cast_nullable_to_non_nullable
@@ -3897,9 +3553,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
 class _$DevisStateImpl implements _DevisState {
   const _$DevisStateImpl(
       {required this.position,
-      required this.pack,
       required this.indexDevis,
-      required final List<PackModel>? list_pack,
       required final List<DevisModel>? list_devis,
       required final List<VilleModel>? list_ville,
       this.ville,
@@ -3926,8 +3580,7 @@ class _$DevisStateImpl implements _DevisState {
       required this.nom_produit,
       required this.type_produit,
       required this.description_produit})
-      : _list_pack = list_pack,
-        _list_devis = list_devis,
+      : _list_devis = list_devis,
         _list_ville = list_ville,
         _listTypeCommunication = listTypeCommunication,
         _list_parametre = list_parametre;
@@ -3935,19 +3588,7 @@ class _$DevisStateImpl implements _DevisState {
   @override
   final LatLng? position;
   @override
-  final PackModel? pack;
-  @override
   final int? indexDevis;
-  final List<PackModel>? _list_pack;
-  @override
-  List<PackModel>? get list_pack {
-    final value = _list_pack;
-    if (value == null) return null;
-    if (_list_pack is EqualUnmodifiableListView) return _list_pack;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   final List<DevisModel>? _list_devis;
   @override
   List<DevisModel>? get list_devis {
@@ -4037,7 +3678,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(position: $position, pack: $pack, indexDevis: $indexDevis, list_pack: $list_pack, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(position: $position, indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
   }
 
   @override
@@ -4047,11 +3688,8 @@ class _$DevisStateImpl implements _DevisState {
             other is _$DevisStateImpl &&
             (identical(other.position, position) ||
                 other.position == position) &&
-            (identical(other.pack, pack) || other.pack == pack) &&
             (identical(other.indexDevis, indexDevis) ||
                 other.indexDevis == indexDevis) &&
-            const DeepCollectionEquality()
-                .equals(other._list_pack, _list_pack) &&
             const DeepCollectionEquality()
                 .equals(other._list_devis, _list_devis) &&
             const DeepCollectionEquality()
@@ -4108,9 +3746,7 @@ class _$DevisStateImpl implements _DevisState {
   int get hashCode => Object.hashAll([
         runtimeType,
         position,
-        pack,
         indexDevis,
-        const DeepCollectionEquality().hash(_list_pack),
         const DeepCollectionEquality().hash(_list_devis),
         const DeepCollectionEquality().hash(_list_ville),
         ville,
@@ -4149,9 +3785,7 @@ class _$DevisStateImpl implements _DevisState {
 abstract class _DevisState implements DevisState {
   const factory _DevisState(
           {required final LatLng? position,
-          required final PackModel? pack,
           required final int? indexDevis,
-          required final List<PackModel>? list_pack,
           required final List<DevisModel>? list_devis,
           required final List<VilleModel>? list_ville,
           final VilleModel? ville,
@@ -4183,11 +3817,7 @@ abstract class _DevisState implements DevisState {
   @override
   LatLng? get position;
   @override
-  PackModel? get pack;
-  @override
   int? get indexDevis;
-  @override
-  List<PackModel>? get list_pack;
   @override
   List<DevisModel>? get list_devis;
   @override

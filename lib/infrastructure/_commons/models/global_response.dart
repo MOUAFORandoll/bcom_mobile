@@ -12,7 +12,7 @@ String globleResponseToMap(GlobalResponse data) => json.encode(data.toMap());
 class GlobalResponse {
   String? messageFr;
   String? messageEn;
-  
+
   GlobalResponse({
     this.messageFr,
     this.messageEn,
