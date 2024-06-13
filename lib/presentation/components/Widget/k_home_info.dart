@@ -88,7 +88,7 @@ class KHomeInfo extends StatelessWidget {
                         child: Row(
                           children: [
                             Container(
-                                child: Text('Refresh',
+                                child: Text('Refresh Abonnement',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w800,
                                       color: ColorsApp.grey,

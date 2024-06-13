@@ -154,21 +154,82 @@ class _PresentationPageState extends State<PresentationPage>
                               : state.loadUserAbonnement == 1
                                   ? state.userAbonnement != null
                                       ? state.userAbonnement!.status == 1
-                                          ? Container(
-                                              margin: EdgeInsets.symmetric(
-                                                  vertical: kMarginY,
-                                                  horizontal: kMarginX),
-                                              child: AppButton(
-                                                  size: MainAxisSize.max,
-                                                  // bgColor: ColorsApp.primary,
-                                                  text: 'Commander'.tr(),
-                                                  onTap: () async {
-                                                    AutoRouter.of(context)
-                                                        .pushNamed(
-                                                            CommandDevisPage
-                                                                .routeName);
-                                                  }),
-                                            )
+                                          ? state.userAbonnement!.isPay == 1 &&
+                                                  DateTime.now().isBefore(
+                                                      DateTime.parse(state
+                                                          .userAbonnement!
+                                                          .endDate))
+                                              ? Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      vertical: kMarginY,
+                                                      horizontal: kMarginX),
+                                                  child: AppButton(
+                                                      size: MainAxisSize.max,
+                                                      // bgColor: ColorsApp.primary,
+                                                      text: 'Commander'.tr(),
+                                                      onTap: () async {
+                                                        AutoRouter.of(context)
+                                                            .pushNamed(
+                                                                CommandDevisPage
+                                                                    .routeName);
+                                                      }),
+                                                )
+                                              : Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                              vertical:
+                                                                  kMarginY,
+                                                              horizontal:
+                                                                  kMarginX),
+                                                      constraints:
+                                                          BoxConstraints(
+                                                              minWidth: getWith(
+                                                                      context) *
+                                                                  .7),
+                                                      child: AppButton(
+                                                          size:
+                                                              MainAxisSize.max,
+                                                          // bgColor: ColorsApp.primary,
+                                                          text:
+                                                              'Payer / Renouveller'
+                                                                  .tr(),
+                                                          onTap: () =>
+                                                              abonnement(
+                                                                  context)),
+                                                    ),
+                                                    Container(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15),
+                                                        margin: EdgeInsets.only(
+                                                            right:
+                                                                kMarginX * 2),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          color: ColorsApp.red,
+                                                        ),
+                                                        child: InkWell(
+                                                            child: Icon(
+                                                                Icons.refresh,
+                                                                color: ColorsApp
+                                                                    .white),
+                                                            onTap: () async {
+                                                              BlocProvider.of<
+                                                                          AbonnementBloc>(
+                                                                      context)
+                                                                  .add(
+                                                                      UserAbonnement());
+                                                            }))
+                                                  ],
+                                                )
                                           : Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment

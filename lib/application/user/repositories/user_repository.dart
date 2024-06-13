@@ -1,15 +1,14 @@
+import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/core.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
-import 'package:dio/dio.dart';
 import 'package:Bcom/utils/constants/apiRoute.dart';
-
-import 'package:Bcom/application/database/database_cubit.dart';
+import 'package:dio/dio.dart';
 
 class UserRepo {
   final IAppRequests apiClient;
 
   UserRepo({required this.apiClient});
-  var dababase = sl.get<DatabaseCubit>();
+  var database = sl.get<DatabaseCubit>();
 
   Future getVilleQuartier(long, lat) async {
     Response response =
@@ -33,7 +32,7 @@ class UserRepo {
   }
 
   Future getUser() async {
-    var user = await dababase.getUser();
+    var user = await database.getUser();
 
     Response response =
         await apiClient.getRequest(ApiRoutes.USER + '/${user!.userId}');

@@ -7,11 +7,13 @@ class AbonnementState with _$AbonnementState {
       required AbonnementModel? abonnement,
       required UserAbonnementModel? userAbonnement,
       required int? loadListAbonnement,
+      String? paiement_url,
       required int? loadUserAbonnement,
       required int? loadRequest}) = _AbonnementState;
   factory AbonnementState.initial() => AbonnementState(
       listAbonnement: [],
       userAbonnement: null,
+      paiement_url: '',
       loadListAbonnement: 0,
       loadUserAbonnement: 0,
       loadRequest: null,

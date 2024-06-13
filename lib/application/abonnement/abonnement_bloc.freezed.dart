@@ -733,6 +733,7 @@ mixin _$AbonnementState {
   AbonnementModel? get abonnement => throw _privateConstructorUsedError;
   UserAbonnementModel? get userAbonnement => throw _privateConstructorUsedError;
   int? get loadListAbonnement => throw _privateConstructorUsedError;
+  String? get paiement_url => throw _privateConstructorUsedError;
   int? get loadUserAbonnement => throw _privateConstructorUsedError;
   int? get loadRequest => throw _privateConstructorUsedError;
 
@@ -752,6 +753,7 @@ abstract class $AbonnementStateCopyWith<$Res> {
       AbonnementModel? abonnement,
       UserAbonnementModel? userAbonnement,
       int? loadListAbonnement,
+      String? paiement_url,
       int? loadUserAbonnement,
       int? loadRequest});
 }
@@ -773,6 +775,7 @@ class _$AbonnementStateCopyWithImpl<$Res, $Val extends AbonnementState>
     Object? abonnement = freezed,
     Object? userAbonnement = freezed,
     Object? loadListAbonnement = freezed,
+    Object? paiement_url = freezed,
     Object? loadUserAbonnement = freezed,
     Object? loadRequest = freezed,
   }) {
@@ -793,6 +796,10 @@ class _$AbonnementStateCopyWithImpl<$Res, $Val extends AbonnementState>
           ? _value.loadListAbonnement
           : loadListAbonnement // ignore: cast_nullable_to_non_nullable
               as int?,
+      paiement_url: freezed == paiement_url
+          ? _value.paiement_url
+          : paiement_url // ignore: cast_nullable_to_non_nullable
+              as String?,
       loadUserAbonnement: freezed == loadUserAbonnement
           ? _value.loadUserAbonnement
           : loadUserAbonnement // ignore: cast_nullable_to_non_nullable
@@ -818,6 +825,7 @@ abstract class _$$AbonnementStateImplCopyWith<$Res>
       AbonnementModel? abonnement,
       UserAbonnementModel? userAbonnement,
       int? loadListAbonnement,
+      String? paiement_url,
       int? loadUserAbonnement,
       int? loadRequest});
 }
@@ -837,6 +845,7 @@ class __$$AbonnementStateImplCopyWithImpl<$Res>
     Object? abonnement = freezed,
     Object? userAbonnement = freezed,
     Object? loadListAbonnement = freezed,
+    Object? paiement_url = freezed,
     Object? loadUserAbonnement = freezed,
     Object? loadRequest = freezed,
   }) {
@@ -857,6 +866,10 @@ class __$$AbonnementStateImplCopyWithImpl<$Res>
           ? _value.loadListAbonnement
           : loadListAbonnement // ignore: cast_nullable_to_non_nullable
               as int?,
+      paiement_url: freezed == paiement_url
+          ? _value.paiement_url
+          : paiement_url // ignore: cast_nullable_to_non_nullable
+              as String?,
       loadUserAbonnement: freezed == loadUserAbonnement
           ? _value.loadUserAbonnement
           : loadUserAbonnement // ignore: cast_nullable_to_non_nullable
@@ -877,6 +890,7 @@ class _$AbonnementStateImpl implements _AbonnementState {
       required this.abonnement,
       required this.userAbonnement,
       required this.loadListAbonnement,
+      this.paiement_url,
       required this.loadUserAbonnement,
       required this.loadRequest})
       : _listAbonnement = listAbonnement;
@@ -898,13 +912,15 @@ class _$AbonnementStateImpl implements _AbonnementState {
   @override
   final int? loadListAbonnement;
   @override
+  final String? paiement_url;
+  @override
   final int? loadUserAbonnement;
   @override
   final int? loadRequest;
 
   @override
   String toString() {
-    return 'AbonnementState(listAbonnement: $listAbonnement, abonnement: $abonnement, userAbonnement: $userAbonnement, loadListAbonnement: $loadListAbonnement, loadUserAbonnement: $loadUserAbonnement, loadRequest: $loadRequest)';
+    return 'AbonnementState(listAbonnement: $listAbonnement, abonnement: $abonnement, userAbonnement: $userAbonnement, loadListAbonnement: $loadListAbonnement, paiement_url: $paiement_url, loadUserAbonnement: $loadUserAbonnement, loadRequest: $loadRequest)';
   }
 
   @override
@@ -920,6 +936,8 @@ class _$AbonnementStateImpl implements _AbonnementState {
                 other.userAbonnement == userAbonnement) &&
             (identical(other.loadListAbonnement, loadListAbonnement) ||
                 other.loadListAbonnement == loadListAbonnement) &&
+            (identical(other.paiement_url, paiement_url) ||
+                other.paiement_url == paiement_url) &&
             (identical(other.loadUserAbonnement, loadUserAbonnement) ||
                 other.loadUserAbonnement == loadUserAbonnement) &&
             (identical(other.loadRequest, loadRequest) ||
@@ -933,6 +951,7 @@ class _$AbonnementStateImpl implements _AbonnementState {
       abonnement,
       userAbonnement,
       loadListAbonnement,
+      paiement_url,
       loadUserAbonnement,
       loadRequest);
 
@@ -950,6 +969,7 @@ abstract class _AbonnementState implements AbonnementState {
       required final AbonnementModel? abonnement,
       required final UserAbonnementModel? userAbonnement,
       required final int? loadListAbonnement,
+      final String? paiement_url,
       required final int? loadUserAbonnement,
       required final int? loadRequest}) = _$AbonnementStateImpl;
 
@@ -961,6 +981,8 @@ abstract class _AbonnementState implements AbonnementState {
   UserAbonnementModel? get userAbonnement;
   @override
   int? get loadListAbonnement;
+  @override
+  String? get paiement_url;
   @override
   int? get loadUserAbonnement;
   @override

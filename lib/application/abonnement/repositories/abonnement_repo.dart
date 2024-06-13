@@ -8,7 +8,7 @@ import '../../../utils/constants/apiRoute.dart';
 class AbonnementRepo {
   final IAppRequests apiClient;
   AbonnementRepo({required this.apiClient});
-  var dababase = sl.get<DatabaseCubit>();
+  var database = sl.get<DatabaseCubit>();
   Future newAbonnement(data) async {
     Response a =
         await apiClient.postRequest(ApiRoutes.ABONNEMENT_USER, body: data);
@@ -22,11 +22,9 @@ class AbonnementRepo {
     return a;
   }
 
-  Future userAbonnement() async {
-    var user = await dababase.getUser();
-
+  Future userAbonnement(data) async {
     Response a =
-        await apiClient.getRequest(ApiRoutes.ABONNEMENT_USER + '/${user!.id}');
+        await apiClient.postRequest(ApiRoutes.ABONNEMENT_USER, body: data);
     print(a.data);
     return a;
   }

@@ -28,7 +28,6 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                 status: 'En cours',
                 maskType: EasyLoadingMaskType.black);
           } else if (state.isRequest == 1) {
-            AutoRouter.of(context).pushNamed(PaimentPage.routeName);
             showSuccess('Demande devis envoye', context);
             EasyLoading.dismiss();
             AutoRouter.of(context).pushNamed(SuccesDevisPage.routeName);

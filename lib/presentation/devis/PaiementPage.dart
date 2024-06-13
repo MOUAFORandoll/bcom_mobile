@@ -1,8 +1,7 @@
 import 'package:Bcom/application/export_bloc.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../presentation/components/exportcomponent.dart';
-
-import 'package:webview_flutter/webview_flutter.dart';
 
 @RoutePage()
 class PaimentPage extends StatefulWidget {
@@ -49,20 +48,20 @@ class _PaimentPageState extends State<PaimentPage> {
             },
           ),
         )
-        ..loadRequest(
-            Uri.parse(BlocProvider.of<DevisBloc>(context).state.paiement_url!));
+        ..loadRequest(Uri.parse(
+            BlocProvider.of<AbonnementBloc>(context).state.paiement_url!));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<DevisBloc, DevisState>(
+    return BlocConsumer<AbonnementBloc, AbonnementState>(
         listener: (ctx, state) {},
         builder: (context, state) {
           return Scaffold(
               appBar: AppBar(
                 leading: AppBackButton(),
-                title: const Text('Paiement de votre livraison'),
+                title: const Text('Paiement de votre abonnement'),
                 centerTitle: true,
               ),
               // backgroundColor: ColorsApp.bg,

@@ -52,12 +52,15 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
       ));
     });
   }
-
+  
   userAbonnement(UserAbonnement event, Emitter<AbonnementState> emit) async {
     emit(state.copyWith(
       loadUserAbonnement: 0,
     ));
-    await abonnementRepo.userAbonnement().then((response) {
+
+    var user = await database.getUser();
+    var data = {'userId': user!.id};
+    await abonnementRepo.userAbonnement(data).then((response) {
       print('---------listAbonnement------${response.data['data']}');
       if (response.data != null) {
         emit(state.copyWith(

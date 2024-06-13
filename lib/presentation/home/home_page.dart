@@ -1,26 +1,26 @@
+import 'dart:async';
+import 'dart:developer';
+
+import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
+import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:Bcom/presentation/devis/devis_home_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
-
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:custom_navigation_bar/custom_navigation_bar.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:new_version_plus/new_version_plus.dart';
-import '../../presentation/components/exportcomponent.dart';
-import 'package:Bcom/application/export_bloc.dart';
-import 'dart:async';
-import 'package:custom_navigation_bar/custom_navigation_bar.dart';
-
-import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-export 'package:Bcom/application/home/home_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import '../../presentation/components/exportcomponent.dart';
+
+export 'package:Bcom/application/home/home_bloc.dart';
 
 var loader = AppLoader.bounceLargeColorLoaderController();
 
@@ -39,12 +39,14 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     super.initState();
     // _checkForUpdate();
 
-    WidgetsBinding.instance.addObserver(this);
+    // WidgetsBinding.instance.addObserver(this);
 
+    log('https://www.youtube.com/watch?v=fS0aWtc1snM');
     _controller = VideoPlayerController.networkUrl(
         Uri.parse('https://www.youtube.com/watch?v=fS0aWtc1snM'))
       ..initialize().then((_) {
         setState(() {
+          log('---------------------play');
           _controller!.play();
         });
       });
@@ -87,7 +89,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             BlocProvider.of<HomeBloc>(context0).add(UserDataEvent());
           }
           if (state0.updateData == false) {}
-          
+
           if (state0.isRequest == 0) {
             EasyLoading.show(
                 dismissOnTap: true,
