@@ -5,6 +5,7 @@ import 'package:Bcom/presentation/components/Widget/AbonnentComponent.dart';
 import 'package:Bcom/presentation/components/Widget/ErrorReloadUnitComponent.dart';
 import 'package:Bcom/presentation/components/Widget/ShimmerData.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:Bcom/presentation/devis/PaiementPage.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class SelectAbonnementWidget extends StatelessWidget {
@@ -23,8 +24,9 @@ class SelectAbonnementWidget extends StatelessWidget {
             showError('Une erreur est survenue', context);
           } else if (state.loadRequest == 1) {
             AutoRouter.of(context).pop();
-            showSuccess('Operation reussi', context);
-            // PaimentPage
+            // showSuccess('Operation reussi', context);
+            AutoRouter.of(context).pushNamed(PaimentPage.routeName);
+            
             EasyLoading.dismiss();
           }
         },
@@ -77,11 +79,12 @@ class SelectAbonnementWidget extends StatelessWidget {
                 margin: EdgeInsets.symmetric(
                     vertical: kMarginY, horizontal: kMarginX),
                 child: AppButton(
+                    disabled: state.abonnement == null,
                     size: MainAxisSize.max,
                     // bgColor: ColorsApp.primary,
                     text: 'Payer l\'abonnement'.tr(),
                     onTap: () => BlocProvider.of<AbonnementBloc>(context)
-                        .add(NewAbonnement())),
+                        .add(PayAbonnement())),
               ),
             ]));
   }

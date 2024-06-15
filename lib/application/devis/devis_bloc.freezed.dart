@@ -3119,7 +3119,6 @@ abstract class SelectParametre implements DevisEvent {
 
 /// @nodoc
 mixin _$DevisState {
-  LatLng? get position => throw _privateConstructorUsedError;
   int? get indexDevis => throw _privateConstructorUsedError;
   List<DevisModel>? get list_devis => throw _privateConstructorUsedError;
   List<VilleModel>? get list_ville => throw _privateConstructorUsedError;
@@ -3163,8 +3162,7 @@ abstract class $DevisStateCopyWith<$Res> {
       _$DevisStateCopyWithImpl<$Res, DevisState>;
   @useResult
   $Res call(
-      {LatLng? position,
-      int? indexDevis,
+      {int? indexDevis,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
       VilleModel? ville,
@@ -3206,7 +3204,6 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = freezed,
     Object? indexDevis = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
@@ -3236,10 +3233,6 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
     Object? description_produit = null,
   }) {
     return _then(_value.copyWith(
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as LatLng?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
@@ -3361,8 +3354,7 @@ abstract class _$$DevisStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {LatLng? position,
-      int? indexDevis,
+      {int? indexDevis,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
       VilleModel? ville,
@@ -3402,7 +3394,6 @@ class __$$DevisStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = freezed,
     Object? indexDevis = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
@@ -3432,10 +3423,6 @@ class __$$DevisStateImplCopyWithImpl<$Res>
     Object? description_produit = null,
   }) {
     return _then(_$DevisStateImpl(
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as LatLng?,
       indexDevis: freezed == indexDevis
           ? _value.indexDevis
           : indexDevis // ignore: cast_nullable_to_non_nullable
@@ -3552,8 +3539,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
 
 class _$DevisStateImpl implements _DevisState {
   const _$DevisStateImpl(
-      {required this.position,
-      required this.indexDevis,
+      {required this.indexDevis,
       required final List<DevisModel>? list_devis,
       required final List<VilleModel>? list_ville,
       this.ville,
@@ -3585,8 +3571,6 @@ class _$DevisStateImpl implements _DevisState {
         _listTypeCommunication = listTypeCommunication,
         _list_parametre = list_parametre;
 
-  @override
-  final LatLng? position;
   @override
   final int? indexDevis;
   final List<DevisModel>? _list_devis;
@@ -3678,7 +3662,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(position: $position, indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
   }
 
   @override
@@ -3686,8 +3670,6 @@ class _$DevisStateImpl implements _DevisState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DevisStateImpl &&
-            (identical(other.position, position) ||
-                other.position == position) &&
             (identical(other.indexDevis, indexDevis) ||
                 other.indexDevis == indexDevis) &&
             const DeepCollectionEquality()
@@ -3745,7 +3727,6 @@ class _$DevisStateImpl implements _DevisState {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        position,
         indexDevis,
         const DeepCollectionEquality().hash(_list_devis),
         const DeepCollectionEquality().hash(_list_ville),
@@ -3784,8 +3765,7 @@ class _$DevisStateImpl implements _DevisState {
 
 abstract class _DevisState implements DevisState {
   const factory _DevisState(
-          {required final LatLng? position,
-          required final int? indexDevis,
+          {required final int? indexDevis,
           required final List<DevisModel>? list_devis,
           required final List<VilleModel>? list_ville,
           final VilleModel? ville,
@@ -3814,8 +3794,6 @@ abstract class _DevisState implements DevisState {
           required final TextEditingController description_produit}) =
       _$DevisStateImpl;
 
-  @override
-  LatLng? get position;
   @override
   int? get indexDevis;
   @override

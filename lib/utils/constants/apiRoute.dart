@@ -6,6 +6,7 @@ class ApiRoutes {
   static const ABONNEMENT_ALL = '/api/v1/subscription/all';
   static const ABONNEMENT_USER =
       '/api/v1/userHasSubscription/getAllUserSubscriptionByUserId';
+  static const ABONNEMENT_PAY = '/api/v1/pay';
   static const PARAMETRE = '/api/v1/parameter/all';
   static const USER = '/api/v1/user';
   static const InfoDevis = '/info-devis';

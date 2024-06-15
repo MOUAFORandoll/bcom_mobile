@@ -2,7 +2,6 @@
 
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-import 'package:Bcom/presentation/devis/PaiementPage.dart';
 import 'package:Bcom/presentation/devis/SuccesDevisPage.dart';
 import 'package:Bcom/presentation/devis/infos_devis.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';

@@ -29,7 +29,5 @@ export 'package:Bcom/application/model/data/MedicamentModel.dart';
 export 'package:Bcom/presentation/components/Button/app_button.dart';
 
 export 'package:image_picker/image_picker.dart';
-
-export 'package:geolocator/geolocator.dart';
-export 'package:google_maps_flutter/google_maps_flutter.dart';
+ 
 export 'package:Bcom/utils/functions/showToast.dart';

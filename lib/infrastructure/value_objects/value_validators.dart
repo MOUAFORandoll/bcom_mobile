@@ -1,16 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:email_validator/email_validator.dart';
+import 'package:easy_localization/easy_localization.dart'; 
 
 import 'failures.dart';
-
-Either<ValueFailure<String>, String> validateEmailAddress(String input) {
-  if (EmailValidator.validate(input)) {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidEmail(failedValue: input));
-  }
-}
+ 
 
 Either<ValueFailure<String>, String> validatePhone(String input) {
   final RegExp phone = RegExp(r'^[0-9]+$');

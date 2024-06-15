@@ -9,4 +9,14 @@ class AbonnementEvent with _$AbonnementEvent {
   const factory AbonnementEvent.getListAbonnement() = GetListAbonnement;
   const factory AbonnementEvent.userAbonnement() = UserAbonnement;
   const factory AbonnementEvent.newAbonnement() = NewAbonnement;
+  const factory AbonnementEvent.payAbonnement() = PayAbonnement;
+  const factory AbonnementEvent.eventPayementView({required bool value}) =
+      EventPayementView;
+
+  const factory AbonnementEvent.verifyPayement() = VerifyPayement;
+  const factory AbonnementEvent.renouvellerAbonnement() =
+      RenouvellerPayAbonnement;
+
+  const factory AbonnementEvent.verifyRenouvellementPayement() =
+      VerifyRenouvellementPayement;
 }

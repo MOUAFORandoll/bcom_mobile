@@ -22,7 +22,6 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       // box.write('first', 0);
     });
     on<StartLoading>((event, emit) async {
-      GetStorage box = sl.get<GetStorage>();
       var isConnected = await database.getUser() != null;
 
       await Future.delayed(Duration(seconds: 5), () {

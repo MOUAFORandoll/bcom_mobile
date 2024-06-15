@@ -9,9 +9,37 @@ class AbonnementRepo {
   final IAppRequests apiClient;
   AbonnementRepo({required this.apiClient});
   var database = sl.get<DatabaseCubit>();
+  Future payAbonnement(data) async {
+    Response a =
+        await apiClient.postRequest(ApiRoutes.ABONNEMENT_PAY, body: data);
+
+    return a;
+  }
+
+  Future verifyPayement(data) async {
+    Response a = await apiClient
+        .postRequest(ApiRoutes.ABONNEMENT_PAY + '/verifyPayement', body: data);
+
+    return a;
+  }
+
   Future newAbonnement(data) async {
     Response a =
         await apiClient.postRequest(ApiRoutes.ABONNEMENT_USER, body: data);
+
+    return a;
+  }
+
+  Future renouvellerAbonnement(data) async {
+    Response a =
+        await apiClient.postRequest(ApiRoutes.ABONNEMENT_PAY, body: data);
+
+    return a;
+  }
+
+  Future verifyRenouvellementPayement(data) async {
+    Response a = await apiClient
+        .postRequest(ApiRoutes.ABONNEMENT_PAY + '/verifyPayement', body: data);
 
     return a;
   }

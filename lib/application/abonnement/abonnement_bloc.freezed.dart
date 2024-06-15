@@ -23,6 +23,11 @@ mixin _$AbonnementEvent {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +37,11 @@ mixin _$AbonnementEvent {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +51,11 @@ mixin _$AbonnementEvent {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +66,13 @@ mixin _$AbonnementEvent {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +82,12 @@ mixin _$AbonnementEvent {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +97,12 @@ mixin _$AbonnementEvent {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +169,11 @@ class _$StartedImpl implements _Started {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) {
     return started();
   }
@@ -147,6 +186,11 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) {
     return started?.call();
   }
@@ -159,6 +203,11 @@ class _$StartedImpl implements _Started {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -175,6 +224,13 @@ class _$StartedImpl implements _Started {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) {
     return started(this);
   }
@@ -187,6 +243,12 @@ class _$StartedImpl implements _Started {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) {
     return started?.call(this);
   }
@@ -199,6 +261,12 @@ class _$StartedImpl implements _Started {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -283,6 +351,11 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) {
     return selectAbonnement(abonnement);
   }
@@ -295,6 +368,11 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) {
     return selectAbonnement?.call(abonnement);
   }
@@ -307,6 +385,11 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (selectAbonnement != null) {
@@ -323,6 +406,13 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) {
     return selectAbonnement(this);
   }
@@ -335,6 +425,12 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) {
     return selectAbonnement?.call(this);
   }
@@ -347,6 +443,12 @@ class _$SelectAbonnementImpl implements SelectAbonnement {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (selectAbonnement != null) {
@@ -409,6 +511,11 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) {
     return getListAbonnement();
   }
@@ -421,6 +528,11 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) {
     return getListAbonnement?.call();
   }
@@ -433,6 +545,11 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (getListAbonnement != null) {
@@ -449,6 +566,13 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) {
     return getListAbonnement(this);
   }
@@ -461,6 +585,12 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) {
     return getListAbonnement?.call(this);
   }
@@ -473,6 +603,12 @@ class _$GetListAbonnementImpl implements GetListAbonnement {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (getListAbonnement != null) {
@@ -529,6 +665,11 @@ class _$UserAbonnementImpl implements UserAbonnement {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) {
     return userAbonnement();
   }
@@ -541,6 +682,11 @@ class _$UserAbonnementImpl implements UserAbonnement {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) {
     return userAbonnement?.call();
   }
@@ -553,6 +699,11 @@ class _$UserAbonnementImpl implements UserAbonnement {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (userAbonnement != null) {
@@ -569,6 +720,13 @@ class _$UserAbonnementImpl implements UserAbonnement {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) {
     return userAbonnement(this);
   }
@@ -581,6 +739,12 @@ class _$UserAbonnementImpl implements UserAbonnement {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) {
     return userAbonnement?.call(this);
   }
@@ -593,6 +757,12 @@ class _$UserAbonnementImpl implements UserAbonnement {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (userAbonnement != null) {
@@ -649,6 +819,11 @@ class _$NewAbonnementImpl implements NewAbonnement {
     required TResult Function() getListAbonnement,
     required TResult Function() userAbonnement,
     required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
   }) {
     return newAbonnement();
   }
@@ -661,6 +836,11 @@ class _$NewAbonnementImpl implements NewAbonnement {
     TResult? Function()? getListAbonnement,
     TResult? Function()? userAbonnement,
     TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
   }) {
     return newAbonnement?.call();
   }
@@ -673,6 +853,11 @@ class _$NewAbonnementImpl implements NewAbonnement {
     TResult Function()? getListAbonnement,
     TResult Function()? userAbonnement,
     TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (newAbonnement != null) {
@@ -689,6 +874,13 @@ class _$NewAbonnementImpl implements NewAbonnement {
     required TResult Function(GetListAbonnement value) getListAbonnement,
     required TResult Function(UserAbonnement value) userAbonnement,
     required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
   }) {
     return newAbonnement(this);
   }
@@ -701,6 +893,12 @@ class _$NewAbonnementImpl implements NewAbonnement {
     TResult? Function(GetListAbonnement value)? getListAbonnement,
     TResult? Function(UserAbonnement value)? userAbonnement,
     TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
   }) {
     return newAbonnement?.call(this);
   }
@@ -713,6 +911,12 @@ class _$NewAbonnementImpl implements NewAbonnement {
     TResult Function(GetListAbonnement value)? getListAbonnement,
     TResult Function(UserAbonnement value)? userAbonnement,
     TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
     required TResult orElse(),
   }) {
     if (newAbonnement != null) {
@@ -727,14 +931,829 @@ abstract class NewAbonnement implements AbonnementEvent {
 }
 
 /// @nodoc
+abstract class _$$PayAbonnementImplCopyWith<$Res> {
+  factory _$$PayAbonnementImplCopyWith(
+          _$PayAbonnementImpl value, $Res Function(_$PayAbonnementImpl) then) =
+      __$$PayAbonnementImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PayAbonnementImplCopyWithImpl<$Res>
+    extends _$AbonnementEventCopyWithImpl<$Res, _$PayAbonnementImpl>
+    implements _$$PayAbonnementImplCopyWith<$Res> {
+  __$$PayAbonnementImplCopyWithImpl(
+      _$PayAbonnementImpl _value, $Res Function(_$PayAbonnementImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PayAbonnementImpl implements PayAbonnement {
+  const _$PayAbonnementImpl();
+
+  @override
+  String toString() {
+    return 'AbonnementEvent.payAbonnement()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PayAbonnementImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AbonnementModel abonnement) selectAbonnement,
+    required TResult Function() getListAbonnement,
+    required TResult Function() userAbonnement,
+    required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
+  }) {
+    return payAbonnement();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult? Function()? getListAbonnement,
+    TResult? Function()? userAbonnement,
+    TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
+  }) {
+    return payAbonnement?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult Function()? getListAbonnement,
+    TResult Function()? userAbonnement,
+    TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (payAbonnement != null) {
+      return payAbonnement();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(SelectAbonnement value) selectAbonnement,
+    required TResult Function(GetListAbonnement value) getListAbonnement,
+    required TResult Function(UserAbonnement value) userAbonnement,
+    required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
+  }) {
+    return payAbonnement(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(SelectAbonnement value)? selectAbonnement,
+    TResult? Function(GetListAbonnement value)? getListAbonnement,
+    TResult? Function(UserAbonnement value)? userAbonnement,
+    TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+  }) {
+    return payAbonnement?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(SelectAbonnement value)? selectAbonnement,
+    TResult Function(GetListAbonnement value)? getListAbonnement,
+    TResult Function(UserAbonnement value)? userAbonnement,
+    TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (payAbonnement != null) {
+      return payAbonnement(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PayAbonnement implements AbonnementEvent {
+  const factory PayAbonnement() = _$PayAbonnementImpl;
+}
+
+/// @nodoc
+abstract class _$$EventPayementViewImplCopyWith<$Res> {
+  factory _$$EventPayementViewImplCopyWith(_$EventPayementViewImpl value,
+          $Res Function(_$EventPayementViewImpl) then) =
+      __$$EventPayementViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool value});
+}
+
+/// @nodoc
+class __$$EventPayementViewImplCopyWithImpl<$Res>
+    extends _$AbonnementEventCopyWithImpl<$Res, _$EventPayementViewImpl>
+    implements _$$EventPayementViewImplCopyWith<$Res> {
+  __$$EventPayementViewImplCopyWithImpl(_$EventPayementViewImpl _value,
+      $Res Function(_$EventPayementViewImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EventPayementViewImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EventPayementViewImpl implements EventPayementView {
+  const _$EventPayementViewImpl({required this.value});
+
+  @override
+  final bool value;
+
+  @override
+  String toString() {
+    return 'AbonnementEvent.eventPayementView(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EventPayementViewImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EventPayementViewImplCopyWith<_$EventPayementViewImpl> get copyWith =>
+      __$$EventPayementViewImplCopyWithImpl<_$EventPayementViewImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AbonnementModel abonnement) selectAbonnement,
+    required TResult Function() getListAbonnement,
+    required TResult Function() userAbonnement,
+    required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
+  }) {
+    return eventPayementView(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult? Function()? getListAbonnement,
+    TResult? Function()? userAbonnement,
+    TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
+  }) {
+    return eventPayementView?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult Function()? getListAbonnement,
+    TResult Function()? userAbonnement,
+    TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (eventPayementView != null) {
+      return eventPayementView(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(SelectAbonnement value) selectAbonnement,
+    required TResult Function(GetListAbonnement value) getListAbonnement,
+    required TResult Function(UserAbonnement value) userAbonnement,
+    required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
+  }) {
+    return eventPayementView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(SelectAbonnement value)? selectAbonnement,
+    TResult? Function(GetListAbonnement value)? getListAbonnement,
+    TResult? Function(UserAbonnement value)? userAbonnement,
+    TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+  }) {
+    return eventPayementView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(SelectAbonnement value)? selectAbonnement,
+    TResult Function(GetListAbonnement value)? getListAbonnement,
+    TResult Function(UserAbonnement value)? userAbonnement,
+    TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (eventPayementView != null) {
+      return eventPayementView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EventPayementView implements AbonnementEvent {
+  const factory EventPayementView({required final bool value}) =
+      _$EventPayementViewImpl;
+
+  bool get value;
+  @JsonKey(ignore: true)
+  _$$EventPayementViewImplCopyWith<_$EventPayementViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyPayementImplCopyWith<$Res> {
+  factory _$$VerifyPayementImplCopyWith(_$VerifyPayementImpl value,
+          $Res Function(_$VerifyPayementImpl) then) =
+      __$$VerifyPayementImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyPayementImplCopyWithImpl<$Res>
+    extends _$AbonnementEventCopyWithImpl<$Res, _$VerifyPayementImpl>
+    implements _$$VerifyPayementImplCopyWith<$Res> {
+  __$$VerifyPayementImplCopyWithImpl(
+      _$VerifyPayementImpl _value, $Res Function(_$VerifyPayementImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyPayementImpl implements VerifyPayement {
+  const _$VerifyPayementImpl();
+
+  @override
+  String toString() {
+    return 'AbonnementEvent.verifyPayement()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyPayementImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AbonnementModel abonnement) selectAbonnement,
+    required TResult Function() getListAbonnement,
+    required TResult Function() userAbonnement,
+    required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
+  }) {
+    return verifyPayement();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult? Function()? getListAbonnement,
+    TResult? Function()? userAbonnement,
+    TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
+  }) {
+    return verifyPayement?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult Function()? getListAbonnement,
+    TResult Function()? userAbonnement,
+    TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (verifyPayement != null) {
+      return verifyPayement();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(SelectAbonnement value) selectAbonnement,
+    required TResult Function(GetListAbonnement value) getListAbonnement,
+    required TResult Function(UserAbonnement value) userAbonnement,
+    required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
+  }) {
+    return verifyPayement(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(SelectAbonnement value)? selectAbonnement,
+    TResult? Function(GetListAbonnement value)? getListAbonnement,
+    TResult? Function(UserAbonnement value)? userAbonnement,
+    TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+  }) {
+    return verifyPayement?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(SelectAbonnement value)? selectAbonnement,
+    TResult Function(GetListAbonnement value)? getListAbonnement,
+    TResult Function(UserAbonnement value)? userAbonnement,
+    TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (verifyPayement != null) {
+      return verifyPayement(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyPayement implements AbonnementEvent {
+  const factory VerifyPayement() = _$VerifyPayementImpl;
+}
+
+/// @nodoc
+abstract class _$$RenouvellerPayAbonnementImplCopyWith<$Res> {
+  factory _$$RenouvellerPayAbonnementImplCopyWith(
+          _$RenouvellerPayAbonnementImpl value,
+          $Res Function(_$RenouvellerPayAbonnementImpl) then) =
+      __$$RenouvellerPayAbonnementImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RenouvellerPayAbonnementImplCopyWithImpl<$Res>
+    extends _$AbonnementEventCopyWithImpl<$Res, _$RenouvellerPayAbonnementImpl>
+    implements _$$RenouvellerPayAbonnementImplCopyWith<$Res> {
+  __$$RenouvellerPayAbonnementImplCopyWithImpl(
+      _$RenouvellerPayAbonnementImpl _value,
+      $Res Function(_$RenouvellerPayAbonnementImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RenouvellerPayAbonnementImpl implements RenouvellerPayAbonnement {
+  const _$RenouvellerPayAbonnementImpl();
+
+  @override
+  String toString() {
+    return 'AbonnementEvent.renouvellerAbonnement()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenouvellerPayAbonnementImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AbonnementModel abonnement) selectAbonnement,
+    required TResult Function() getListAbonnement,
+    required TResult Function() userAbonnement,
+    required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
+  }) {
+    return renouvellerAbonnement();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult? Function()? getListAbonnement,
+    TResult? Function()? userAbonnement,
+    TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
+  }) {
+    return renouvellerAbonnement?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult Function()? getListAbonnement,
+    TResult Function()? userAbonnement,
+    TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (renouvellerAbonnement != null) {
+      return renouvellerAbonnement();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(SelectAbonnement value) selectAbonnement,
+    required TResult Function(GetListAbonnement value) getListAbonnement,
+    required TResult Function(UserAbonnement value) userAbonnement,
+    required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
+  }) {
+    return renouvellerAbonnement(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(SelectAbonnement value)? selectAbonnement,
+    TResult? Function(GetListAbonnement value)? getListAbonnement,
+    TResult? Function(UserAbonnement value)? userAbonnement,
+    TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+  }) {
+    return renouvellerAbonnement?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(SelectAbonnement value)? selectAbonnement,
+    TResult Function(GetListAbonnement value)? getListAbonnement,
+    TResult Function(UserAbonnement value)? userAbonnement,
+    TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (renouvellerAbonnement != null) {
+      return renouvellerAbonnement(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RenouvellerPayAbonnement implements AbonnementEvent {
+  const factory RenouvellerPayAbonnement() = _$RenouvellerPayAbonnementImpl;
+}
+
+/// @nodoc
+abstract class _$$VerifyRenouvellementPayementImplCopyWith<$Res> {
+  factory _$$VerifyRenouvellementPayementImplCopyWith(
+          _$VerifyRenouvellementPayementImpl value,
+          $Res Function(_$VerifyRenouvellementPayementImpl) then) =
+      __$$VerifyRenouvellementPayementImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyRenouvellementPayementImplCopyWithImpl<$Res>
+    extends _$AbonnementEventCopyWithImpl<$Res,
+        _$VerifyRenouvellementPayementImpl>
+    implements _$$VerifyRenouvellementPayementImplCopyWith<$Res> {
+  __$$VerifyRenouvellementPayementImplCopyWithImpl(
+      _$VerifyRenouvellementPayementImpl _value,
+      $Res Function(_$VerifyRenouvellementPayementImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyRenouvellementPayementImpl
+    implements VerifyRenouvellementPayement {
+  const _$VerifyRenouvellementPayementImpl();
+
+  @override
+  String toString() {
+    return 'AbonnementEvent.verifyRenouvellementPayement()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyRenouvellementPayementImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AbonnementModel abonnement) selectAbonnement,
+    required TResult Function() getListAbonnement,
+    required TResult Function() userAbonnement,
+    required TResult Function() newAbonnement,
+    required TResult Function() payAbonnement,
+    required TResult Function(bool value) eventPayementView,
+    required TResult Function() verifyPayement,
+    required TResult Function() renouvellerAbonnement,
+    required TResult Function() verifyRenouvellementPayement,
+  }) {
+    return verifyRenouvellementPayement();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult? Function()? getListAbonnement,
+    TResult? Function()? userAbonnement,
+    TResult? Function()? newAbonnement,
+    TResult? Function()? payAbonnement,
+    TResult? Function(bool value)? eventPayementView,
+    TResult? Function()? verifyPayement,
+    TResult? Function()? renouvellerAbonnement,
+    TResult? Function()? verifyRenouvellementPayement,
+  }) {
+    return verifyRenouvellementPayement?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AbonnementModel abonnement)? selectAbonnement,
+    TResult Function()? getListAbonnement,
+    TResult Function()? userAbonnement,
+    TResult Function()? newAbonnement,
+    TResult Function()? payAbonnement,
+    TResult Function(bool value)? eventPayementView,
+    TResult Function()? verifyPayement,
+    TResult Function()? renouvellerAbonnement,
+    TResult Function()? verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (verifyRenouvellementPayement != null) {
+      return verifyRenouvellementPayement();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(SelectAbonnement value) selectAbonnement,
+    required TResult Function(GetListAbonnement value) getListAbonnement,
+    required TResult Function(UserAbonnement value) userAbonnement,
+    required TResult Function(NewAbonnement value) newAbonnement,
+    required TResult Function(PayAbonnement value) payAbonnement,
+    required TResult Function(EventPayementView value) eventPayementView,
+    required TResult Function(VerifyPayement value) verifyPayement,
+    required TResult Function(RenouvellerPayAbonnement value)
+        renouvellerAbonnement,
+    required TResult Function(VerifyRenouvellementPayement value)
+        verifyRenouvellementPayement,
+  }) {
+    return verifyRenouvellementPayement(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(SelectAbonnement value)? selectAbonnement,
+    TResult? Function(GetListAbonnement value)? getListAbonnement,
+    TResult? Function(UserAbonnement value)? userAbonnement,
+    TResult? Function(NewAbonnement value)? newAbonnement,
+    TResult? Function(PayAbonnement value)? payAbonnement,
+    TResult? Function(EventPayementView value)? eventPayementView,
+    TResult? Function(VerifyPayement value)? verifyPayement,
+    TResult? Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult? Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+  }) {
+    return verifyRenouvellementPayement?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(SelectAbonnement value)? selectAbonnement,
+    TResult Function(GetListAbonnement value)? getListAbonnement,
+    TResult Function(UserAbonnement value)? userAbonnement,
+    TResult Function(NewAbonnement value)? newAbonnement,
+    TResult Function(PayAbonnement value)? payAbonnement,
+    TResult Function(EventPayementView value)? eventPayementView,
+    TResult Function(VerifyPayement value)? verifyPayement,
+    TResult Function(RenouvellerPayAbonnement value)? renouvellerAbonnement,
+    TResult Function(VerifyRenouvellementPayement value)?
+        verifyRenouvellementPayement,
+    required TResult orElse(),
+  }) {
+    if (verifyRenouvellementPayement != null) {
+      return verifyRenouvellementPayement(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyRenouvellementPayement implements AbonnementEvent {
+  const factory VerifyRenouvellementPayement() =
+      _$VerifyRenouvellementPayementImpl;
+}
+
+/// @nodoc
 mixin _$AbonnementState {
   List<AbonnementModel>? get listAbonnement =>
       throw _privateConstructorUsedError;
   AbonnementModel? get abonnement => throw _privateConstructorUsedError;
   UserAbonnementModel? get userAbonnement => throw _privateConstructorUsedError;
   int? get loadListAbonnement => throw _privateConstructorUsedError;
+  String? get ref_transactiopn => throw _privateConstructorUsedError;
   String? get paiement_url => throw _privateConstructorUsedError;
   int? get loadUserAbonnement => throw _privateConstructorUsedError;
+  bool get isClosePaiementView => throw _privateConstructorUsedError;
+  int? get loadsuccessPay => throw _privateConstructorUsedError;
   int? get loadRequest => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -753,8 +1772,11 @@ abstract class $AbonnementStateCopyWith<$Res> {
       AbonnementModel? abonnement,
       UserAbonnementModel? userAbonnement,
       int? loadListAbonnement,
+      String? ref_transactiopn,
       String? paiement_url,
       int? loadUserAbonnement,
+      bool isClosePaiementView,
+      int? loadsuccessPay,
       int? loadRequest});
 }
 
@@ -775,8 +1797,11 @@ class _$AbonnementStateCopyWithImpl<$Res, $Val extends AbonnementState>
     Object? abonnement = freezed,
     Object? userAbonnement = freezed,
     Object? loadListAbonnement = freezed,
+    Object? ref_transactiopn = freezed,
     Object? paiement_url = freezed,
     Object? loadUserAbonnement = freezed,
+    Object? isClosePaiementView = null,
+    Object? loadsuccessPay = freezed,
     Object? loadRequest = freezed,
   }) {
     return _then(_value.copyWith(
@@ -796,6 +1821,10 @@ class _$AbonnementStateCopyWithImpl<$Res, $Val extends AbonnementState>
           ? _value.loadListAbonnement
           : loadListAbonnement // ignore: cast_nullable_to_non_nullable
               as int?,
+      ref_transactiopn: freezed == ref_transactiopn
+          ? _value.ref_transactiopn
+          : ref_transactiopn // ignore: cast_nullable_to_non_nullable
+              as String?,
       paiement_url: freezed == paiement_url
           ? _value.paiement_url
           : paiement_url // ignore: cast_nullable_to_non_nullable
@@ -803,6 +1832,14 @@ class _$AbonnementStateCopyWithImpl<$Res, $Val extends AbonnementState>
       loadUserAbonnement: freezed == loadUserAbonnement
           ? _value.loadUserAbonnement
           : loadUserAbonnement // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isClosePaiementView: null == isClosePaiementView
+          ? _value.isClosePaiementView
+          : isClosePaiementView // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadsuccessPay: freezed == loadsuccessPay
+          ? _value.loadsuccessPay
+          : loadsuccessPay // ignore: cast_nullable_to_non_nullable
               as int?,
       loadRequest: freezed == loadRequest
           ? _value.loadRequest
@@ -825,8 +1862,11 @@ abstract class _$$AbonnementStateImplCopyWith<$Res>
       AbonnementModel? abonnement,
       UserAbonnementModel? userAbonnement,
       int? loadListAbonnement,
+      String? ref_transactiopn,
       String? paiement_url,
       int? loadUserAbonnement,
+      bool isClosePaiementView,
+      int? loadsuccessPay,
       int? loadRequest});
 }
 
@@ -845,8 +1885,11 @@ class __$$AbonnementStateImplCopyWithImpl<$Res>
     Object? abonnement = freezed,
     Object? userAbonnement = freezed,
     Object? loadListAbonnement = freezed,
+    Object? ref_transactiopn = freezed,
     Object? paiement_url = freezed,
     Object? loadUserAbonnement = freezed,
+    Object? isClosePaiementView = null,
+    Object? loadsuccessPay = freezed,
     Object? loadRequest = freezed,
   }) {
     return _then(_$AbonnementStateImpl(
@@ -866,6 +1909,10 @@ class __$$AbonnementStateImplCopyWithImpl<$Res>
           ? _value.loadListAbonnement
           : loadListAbonnement // ignore: cast_nullable_to_non_nullable
               as int?,
+      ref_transactiopn: freezed == ref_transactiopn
+          ? _value.ref_transactiopn
+          : ref_transactiopn // ignore: cast_nullable_to_non_nullable
+              as String?,
       paiement_url: freezed == paiement_url
           ? _value.paiement_url
           : paiement_url // ignore: cast_nullable_to_non_nullable
@@ -873,6 +1920,14 @@ class __$$AbonnementStateImplCopyWithImpl<$Res>
       loadUserAbonnement: freezed == loadUserAbonnement
           ? _value.loadUserAbonnement
           : loadUserAbonnement // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isClosePaiementView: null == isClosePaiementView
+          ? _value.isClosePaiementView
+          : isClosePaiementView // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadsuccessPay: freezed == loadsuccessPay
+          ? _value.loadsuccessPay
+          : loadsuccessPay // ignore: cast_nullable_to_non_nullable
               as int?,
       loadRequest: freezed == loadRequest
           ? _value.loadRequest
@@ -890,8 +1945,11 @@ class _$AbonnementStateImpl implements _AbonnementState {
       required this.abonnement,
       required this.userAbonnement,
       required this.loadListAbonnement,
+      this.ref_transactiopn,
       this.paiement_url,
       required this.loadUserAbonnement,
+      required this.isClosePaiementView,
+      required this.loadsuccessPay,
       required this.loadRequest})
       : _listAbonnement = listAbonnement;
 
@@ -912,15 +1970,21 @@ class _$AbonnementStateImpl implements _AbonnementState {
   @override
   final int? loadListAbonnement;
   @override
+  final String? ref_transactiopn;
+  @override
   final String? paiement_url;
   @override
   final int? loadUserAbonnement;
+  @override
+  final bool isClosePaiementView;
+  @override
+  final int? loadsuccessPay;
   @override
   final int? loadRequest;
 
   @override
   String toString() {
-    return 'AbonnementState(listAbonnement: $listAbonnement, abonnement: $abonnement, userAbonnement: $userAbonnement, loadListAbonnement: $loadListAbonnement, paiement_url: $paiement_url, loadUserAbonnement: $loadUserAbonnement, loadRequest: $loadRequest)';
+    return 'AbonnementState(listAbonnement: $listAbonnement, abonnement: $abonnement, userAbonnement: $userAbonnement, loadListAbonnement: $loadListAbonnement, ref_transactiopn: $ref_transactiopn, paiement_url: $paiement_url, loadUserAbonnement: $loadUserAbonnement, isClosePaiementView: $isClosePaiementView, loadsuccessPay: $loadsuccessPay, loadRequest: $loadRequest)';
   }
 
   @override
@@ -936,10 +2000,16 @@ class _$AbonnementStateImpl implements _AbonnementState {
                 other.userAbonnement == userAbonnement) &&
             (identical(other.loadListAbonnement, loadListAbonnement) ||
                 other.loadListAbonnement == loadListAbonnement) &&
+            (identical(other.ref_transactiopn, ref_transactiopn) ||
+                other.ref_transactiopn == ref_transactiopn) &&
             (identical(other.paiement_url, paiement_url) ||
                 other.paiement_url == paiement_url) &&
             (identical(other.loadUserAbonnement, loadUserAbonnement) ||
                 other.loadUserAbonnement == loadUserAbonnement) &&
+            (identical(other.isClosePaiementView, isClosePaiementView) ||
+                other.isClosePaiementView == isClosePaiementView) &&
+            (identical(other.loadsuccessPay, loadsuccessPay) ||
+                other.loadsuccessPay == loadsuccessPay) &&
             (identical(other.loadRequest, loadRequest) ||
                 other.loadRequest == loadRequest));
   }
@@ -951,8 +2021,11 @@ class _$AbonnementStateImpl implements _AbonnementState {
       abonnement,
       userAbonnement,
       loadListAbonnement,
+      ref_transactiopn,
       paiement_url,
       loadUserAbonnement,
+      isClosePaiementView,
+      loadsuccessPay,
       loadRequest);
 
   @JsonKey(ignore: true)
@@ -969,8 +2042,11 @@ abstract class _AbonnementState implements AbonnementState {
       required final AbonnementModel? abonnement,
       required final UserAbonnementModel? userAbonnement,
       required final int? loadListAbonnement,
+      final String? ref_transactiopn,
       final String? paiement_url,
       required final int? loadUserAbonnement,
+      required final bool isClosePaiementView,
+      required final int? loadsuccessPay,
       required final int? loadRequest}) = _$AbonnementStateImpl;
 
   @override
@@ -982,9 +2058,15 @@ abstract class _AbonnementState implements AbonnementState {
   @override
   int? get loadListAbonnement;
   @override
+  String? get ref_transactiopn;
+  @override
   String? get paiement_url;
   @override
   int? get loadUserAbonnement;
+  @override
+  bool get isClosePaiementView;
+  @override
+  int? get loadsuccessPay;
   @override
   int? get loadRequest;
   @override

@@ -68,9 +68,13 @@ class KHomeInfo extends StatelessWidget {
                                 Container(
                                     child: Text(
                                         state.userAbonnement != null
-                                            ? state.userAbonnement!.status == 1
-                                                ? 'Actif'
-                                                : 'Inactif'
+                                            ? state.userAbonnement!.isPay != 1
+                                                ? 'En attente de payement'
+                                                : state.userAbonnement!
+                                                            .status ==
+                                                        1
+                                                    ? 'Actif'
+                                                    : 'Inactif'
                                             : 'Inactif',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w800,

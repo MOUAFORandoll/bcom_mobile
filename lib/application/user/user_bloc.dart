@@ -26,8 +26,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<SignOutEvent>(_OnSignOut);
     on<RegisterEvent>(_Register);
     on<GetUserEvent>(_GetUser);
-
-    on<GetVilleQuartier>(_getVilleQuartier);
+ 
     on<CompleteDevisInfo>(_CompleteDevisInfo);
     on<SetCniImageAvant>(setCniImageAvant);
     on<SetCniImageArriere>(setCniImageArriere);
@@ -70,48 +69,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       state.numContribuable!.text.isEmpty ||
       state.registreCommerce!.text.isEmpty ||
       state.country!.text.isEmpty;
-  Future<void> _getVilleQuartier(
-      GetVilleQuartier event, Emitter<UserState> emit) async {
-    emit(state.copyWith(isVilleQuartier: 0));
-    var position;
-
-    bool serviceEnabled;
-    LocationPermission permission;
-
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {}
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.always ||
-          permission == LocationPermission.unableToDetermine ||
-          permission == LocationPermission.whileInUse) {
-        position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high,
-        );
-      }
-    }
-    position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
-    position = await Geolocator.getCurrentPosition();
-    await userRepo
-        .getVilleQuartier(position.longitude, position.latitude)
-        .then((response) {
-      print(response.data);
-      if (response.data != null) {
-        emit(state.copyWith(
-            quartierUser: response.data['quartier'],
-            villeUser: response.data['ville'],
-            isVilleQuartier: 1));
-      } else {
-        emit(state.copyWith(isVilleQuartier: 2));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(isVilleQuartier: 2));
-    });
-  }
+  
 
   _OnSignOut(SignOutEvent event, Emitter<UserState> emit) async {
     var loader = AppLoader.bounceLargeColorLoaderController();

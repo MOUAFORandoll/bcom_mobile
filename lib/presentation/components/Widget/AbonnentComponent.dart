@@ -29,7 +29,8 @@ class AbonnentComponent extends StatelessWidget {
                   height: getHeight(context) / 10,
                   width: getHeight(context) / 10,
                   fit: BoxFit.cover,
-                  imageUrl: abonnement.fileService ?? '',
+                  imageUrl: abonnement.fileService ??
+                      'https://cdn4.cdn-telegram.org/file/aSHPZn-4dqsMogBbjS6gzhyNtLfxQbwY7qMOR7NFDd2LPqBz6xdhaSw4yufoKwzaUIqs5AUzzSR3bLEWaMVeA9bTFJWzznx3zFAF6dw61RxFc_f-hUkMltUAOygMtuXuQvRWX8dQTHibMDjBF-qdlWphvTo9pHWx3PGGapWRLzNmBCjaN2xIDfpESuBdIL1FKL5eTWjzJgAsjiGact1AIIdZWs91lZLSMoEUnySWxQ3wKUFBAX1ckJl3foroe5JrYitSi8numOFIk9jcalIdZUkxOJcUCBMwAL1PIUOKgfrsdqcamNBWwrrVXlHVMgXZcXtcCYoawlRWJAMnTltImw.jpg',
                   imageBuilder: (context, imageProvider) {
                     return Container(
                       decoration: BoxDecoration(

@@ -17,15 +17,10 @@ dependencies:
   flutter_spinkit: any
   flutter_svg: any
   font_awesome_flutter: ^10.4.0
-  geolocator: ^10.1.0
   get_storage: any
-  google_maps_flutter: ^2.2.8
   image_cropper: any
   image_gallery_saver: null
   image_picker: any
-  intl: null
-  intl_phone_field: ^3.2.0
-  intl_translation: any
   jwt_decode: null
   loading_indicator: ^3.1.1
   new_version_plus: ^0.0.11
@@ -33,19 +28,16 @@ dependencies:
   objectbox_flutter_libs: any
   path_provider: any
   permission_handler: any
-  webview_flutter: ^4.2.3
+  webview_flutter: ^4.8.0
   carousel_slider: ^4.2.1
   provider: ^6.0.5
   shimmer: ^3.0.0
-  socket_io_client: any
   toast: ^0.3.0
   auto_route: ^7.8.3
   flutter_bloc: ^8.0.1
   freezed_annotation: ^2.0.3
   get_it: ^7.2.0
   easy_localization: ^3.0.0
-  email_validator: ^2.0.1
-  google_fonts: ^6.1.0
   json_annotation: ^4.3.0
   shared_preferences: ^2.0.5
   dio: ^5.0.1
@@ -60,8 +52,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   url_launcher:
   video_player: ^2.0.0
-  
-  flutter_rating_stars: ^1.0.3+4
+
   rxdart: ^0.27.7
   cron: ^0.6.0
 dev_dependencies:
@@ -72,7 +63,6 @@ dev_dependencies:
   build_runner: "^2.1.4"
   freezed: ^2.0.3+1
   json_serializable: ^6.0.1
-  mockito: ^5.4.2
   bloc_test: ^9.1.4
   objectbox_generator: any
 
