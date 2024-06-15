@@ -120,36 +120,45 @@ class _PresentationPageState extends State<PresentationPage>
                                   baseColor: ColorsApp.grey,
                                   highlightColor: ColorsApp.primary,
                                   child: Container(
-                                    child: Row(children: [
-                                      Container(
-                                          child: Icon(
-                                        Icons.location_on,
-                                        color: ColorsApp.white,
-                                        size: 25,
-                                      )),
-                                      Container(
-                                          child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                            Container(
-                                                child: Text('Abonnement',
-                                                    style: TextStyle(
-                                                        color: ColorsApp.white,
-                                                        fontSize: 8,
-                                                        fontWeight: FontWeight
-                                                            .normal))),
-                                            Container(
-                                                child: Text(
-                                                    'En cours de chargement',
-                                                    style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: ColorsApp.white,
-                                                      fontSize: 11,
-                                                    ))),
-                                          ])),
-                                    ]),
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                              child: Icon(
+                                            Icons.location_on,
+                                            color: ColorsApp.white,
+                                            size: 25,
+                                          )),
+                                          Container(
+                                              child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                Container(
+                                                    child: Text('Abonnement',
+                                                        style: TextStyle(
+                                                            color:
+                                                                ColorsApp.white,
+                                                            fontSize: 8,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal))),
+                                                Container(
+                                                    child: Text(
+                                                        'En cours de chargement',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color:
+                                                              ColorsApp.white,
+                                                          fontSize: 11,
+                                                        ))),
+                                              ])),
+                                        ]),
                                   ))
                               : state.loadUserAbonnement == 1
                                   ? state.userAbonnement != null
@@ -165,7 +174,6 @@ class _PresentationPageState extends State<PresentationPage>
                                                       horizontal: kMarginX),
                                                   child: AppButton(
                                                       size: MainAxisSize.max,
-                                                      // bgColor: ColorsApp.primary,
                                                       text: 'Commander'.tr(),
                                                       onTap: () async {
                                                         AutoRouter.of(context)
@@ -174,202 +182,81 @@ class _PresentationPageState extends State<PresentationPage>
                                                                     .routeName);
                                                       }),
                                                 )
-                                              : Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Container(
-                                                      margin:
-                                                          EdgeInsets.symmetric(
-                                                              vertical:
-                                                                  kMarginY,
-                                                              horizontal:
-                                                                  kMarginX),
-                                                      constraints:
-                                                          BoxConstraints(
-                                                              minWidth: getWith(
-                                                                      context) *
-                                                                  .7),
-                                                      child: AppButton(
-                                                          size:
-                                                              MainAxisSize.max,
-                                                          // bgColor: ColorsApp.primary,
-                                                          text:
-                                                              'Payer / Renouveller'
-                                                                  .tr(),
-                                                          onTap: () =>
-                                                              abonnement(
-                                                                  context)),
-                                                    ),
-                                                    Container(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(15),
-                                                        margin: EdgeInsets.only(
-                                                            right:
-                                                                kMarginX * 2),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(10),
-                                                          color: ColorsApp.red,
-                                                        ),
-                                                        child: InkWell(
-                                                            child: Icon(
-                                                                Icons.refresh,
-                                                                color: ColorsApp
-                                                                    .white),
-                                                            onTap: () async {
-                                                              BlocProvider.of<
-                                                                          AbonnementBloc>(
-                                                                      context)
-                                                                  .add(
-                                                                      UserAbonnement());
-                                                            }))
-                                                  ],
-                                                )
-                                          : Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Container(
-                                                  margin: EdgeInsets.symmetric(
-                                                      vertical: kMarginY,
-                                                      horizontal: kMarginX),
-                                                  constraints: BoxConstraints(
-                                                      minWidth:
-                                                          getWith(context) *
-                                                              .7),
-                                                  child: AppButton(
-                                                      size: MainAxisSize.max,
-                                                      // bgColor: ColorsApp.primary,
-                                                      text: 'S\'abonner'.tr(),
-                                                      onTap: () =>
-                                                          abonnement(context)),
-                                                ),
-                                                Container(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            15),
-                                                    margin: EdgeInsets.only(
-                                                        right: kMarginX * 2),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10),
-                                                      color: ColorsApp.red,
-                                                    ),
-                                                    child: InkWell(
-                                                        child: Icon(
-                                                            Icons.refresh,
-                                                            color: ColorsApp
-                                                                .white),
-                                                        onTap: () async {
-                                                          BlocProvider.of<
-                                                                      AbonnementBloc>(
-                                                                  context)
-                                                              .add(
-                                                                  UserAbonnement());
-                                                        }))
-                                              ],
-                                            )
-                                      : Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Container(
-                                              margin: EdgeInsets.symmetric(
-                                                  vertical: kMarginY,
-                                                  horizontal: kMarginX),
-                                              constraints: BoxConstraints(
-                                                  minWidth:
-                                                      getWith(context) * .7),
-                                              child: AppButton(
-                                                  size: MainAxisSize.max,
-                                                  // bgColor: ColorsApp.primary,
-                                                  text: 'S\'abonner'.tr(),
-                                                  onTap: () =>
-                                                      abonnement(context)),
-                                            ),
-                                            Container(
-                                                padding:
-                                                    const EdgeInsets.all(15),
-                                                margin: EdgeInsets.only(
-                                                    right: kMarginX * 2),
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  color: ColorsApp.red,
-                                                ),
-                                                child: InkWell(
-                                                    child: Icon(Icons.refresh,
-                                                        color: ColorsApp.white),
-                                                    onTap: () async {
-                                                      BlocProvider.of<
-                                                                  AbonnementBloc>(
-                                                              context)
-                                                          .add(
-                                                              UserAbonnement());
-                                                    }))
-                                          ],
-                                        )
-                                  : Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.symmetric(
-                                              vertical: kMarginY,
-                                              horizontal: kMarginX),
-                                          constraints: BoxConstraints(
-                                              minWidth: getWith(context) * .7),
-                                          child: AppButton(
-                                              size: MainAxisSize.max,
-                                              // bgColor: ColorsApp.primary,
-                                              text: 'S\'abonner'.tr(),
-                                              onTap: () => abonnement(context)),
-                                        ),
-                                        Container(
-                                            padding: const EdgeInsets.all(15),
-                                            margin: EdgeInsets.only(
-                                                right: kMarginX * 2),
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              color: ColorsApp.red,
-                                            ),
-                                            child: InkWell(
-                                                child: Icon(Icons.refresh,
-                                                    color: ColorsApp.white),
-                                                onTap: () async {
-                                                  BlocProvider.of<
-                                                              AbonnementBloc>(
-                                                          context)
-                                                      .add(UserAbonnement());
-                                                }))
-                                      ],
-                                    )),
+                                              : !(DateTime.now().isBefore(
+                                                      DateTime.parse(state
+                                                          .userAbonnement!
+                                                          .endDate)))
+                                                  ? renouvellerWidget(context)
+                                                  : abonnerWidget(context)
+                                          : abonnerWidget(context)
+                                      : abonnerWidget(context)
+                                  : abonnerWidget(context)),
                     ),
                   ],
                 ),
               ),
-
-              // Container(
-              //   height: getHeight(context) * .5,
-              //   child: Column(
-              //     children: [
-              //       Icon(Icons.access_alarm, size: 50),
-              //       Container(child: Text('Do cillum nisi fugiat irure.')),
-              //       Container(
-              //           child: Text(
-              //               'Excepteur aliqua irure incididunt consequat sit anim sit consectetur ut aute. Ut esse irure et cillum. Ipsum adipisicing quis deserunt non irure ullamco pariatur nostrud ut excepteur occaecat. Consequat occaecat reprehenderit dolor est duis do cillum nisi fugiat irure.'))
-              //     ],
-              //   ),
-              // ),
             ])));
+  }
+
+  Row renouvellerWidget(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          margin:
+              EdgeInsets.symmetric(vertical: kMarginY, horizontal: kMarginX),
+          constraints: BoxConstraints(minWidth: getWith(context) * .7),
+          child: AppButton(
+              size: MainAxisSize.max,
+              text: 'Renouveller'.tr(),
+              onTap: () => BlocProvider.of<AbonnementBloc>(context)
+                  .add(RenouvellerPayAbonnement())),
+        ),
+        Container(
+            padding: const EdgeInsets.all(15),
+            margin: EdgeInsets.only(right: kMarginX * 2),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: ColorsApp.red,
+            ),
+            child: InkWell(
+                child: Icon(Icons.refresh, color: ColorsApp.white),
+                onTap: () async {
+                  BlocProvider.of<AbonnementBloc>(context)
+                      .add(UserAbonnement());
+                }))
+      ],
+    );
+  }
+
+  Row abonnerWidget(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          margin:
+              EdgeInsets.symmetric(vertical: kMarginY, horizontal: kMarginX),
+          constraints: BoxConstraints(minWidth: getWith(context) * .7),
+          child: AppButton(
+              size: MainAxisSize.max,
+              text: 'S\'abonner'.tr(),
+              onTap: () => abonnement(context)),
+        ),
+        Container(
+            padding: const EdgeInsets.all(15),
+            margin: EdgeInsets.only(right: kMarginX * 2),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: ColorsApp.red,
+            ),
+            child: InkWell(
+                child: Icon(Icons.refresh, color: ColorsApp.white),
+                onTap: () async {
+                  BlocProvider.of<AbonnementBloc>(context)
+                      .add(UserAbonnement());
+                }))
+      ],
+    );
   }
 
   abonnement(context) => GlobalBottomSheet.show(

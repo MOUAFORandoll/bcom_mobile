@@ -22,7 +22,8 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
     on<SelectAbonnement>(abonnement);
     on<PayAbonnement>(payAbonnement);
     on<VerifyPayement>(verifyPayement);
-    on<EventPayementView>(eventPayementView);
+    on<RenouvellerPayAbonnement>(renouvellerAbonnement);
+    on<VerifyRenouvellementPayement>(verifyRenouvellementPayement);
   }
 
   abonnement(SelectAbonnement event, Emitter<AbonnementState> emit) async {
