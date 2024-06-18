@@ -3,10 +3,10 @@ part of 'devis_bloc.dart';
 @freezed
 class DevisState with _$DevisState {
   const factory DevisState({
-    
     required int? indexDevis,
     required List<DevisModel>? list_devis,
     required List<VilleModel>? list_ville,
+    required List<Widget>? list_widget_devis,
     VilleModel? ville,
     required List? listTypeCommunication,
     required int indexHistory,
@@ -59,6 +59,6 @@ class DevisState with _$DevisState {
         indexHistory: 0,
         isRequest: null,
         list_devis: [],
-     
+        list_widget_devis: [],
       );
 }

@@ -16,7 +16,6 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
   final AbonnementRepo abonnementRepo;
   AbonnementBloc({required this.abonnementRepo, required this.database})
       : super(AbonnementState.initial()) {
-    on<NewAbonnement>(newAbonnement);
     on<UserAbonnement>(userAbonnement);
     on<GetListAbonnement>(getListAbonnement);
     on<SelectAbonnement>(abonnement);
@@ -157,18 +156,6 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
     });
   }
 
-  eventPayementView(
-      EventPayementView event, Emitter<AbonnementState> emit) async {
-    emit(state.copyWith(
-      isClosePaiementView: event.value,
-    ));
-    emit(state.copyWith(
-      isClosePaiementView: false,
-    ));
-
-    // print(state.abonnement!.title);
-  }
-
   verifyPayement(VerifyPayement event, Emitter<AbonnementState> emit) async {
     emit(state.copyWith(
       loadsuccessPay: 0,
@@ -180,11 +167,20 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
       if (response.data != null) {
         if (response.data['data'] != null) {
           if (response.data['data']['status'] == 'complete') {
-            add(NewAbonnement());
-            add(UserAbonnement());
+            print('------ddddd---listAbonnement------${response.data['data']}');
+            print(
+                '------ddddd---listAbonnem[0]ent------${response.data['data'][0]}');
             emit(state.copyWith(
-              paiement_url: null,
-              loadsuccessPay: 1,
+                paiement_url: null,
+                loadsuccessPay: 1,
+                loadRequest: 1,
+                loadUserAbonnement: 1,
+                userAbonnement:
+                    UserAbonnementModel.fromJson(response.data['data'][0])));
+            emit(state.copyWith(
+              loadRequest: null,
+              loadsuccessPay: null,
+              loadUserAbonnement: null,
             ));
           } else if (response.data['data']['status'] == 'pending') {
             emit(state.copyWith(
@@ -206,45 +202,6 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
     }).onError((e, s) {
       emit(state.copyWith(
         loadsuccessPay: 2,
-      ));
-    });
-  }
-
-  newAbonnement(NewAbonnement event, Emitter<AbonnementState> emit) async {
-    emit(state.copyWith(
-      loadRequest: 0,
-    ));
-    var data = {
-      'userId': database.getUser()!.userId,
-      'subscriptionId': state.abonnement!.id,
-    };
-    print(data);
-    await abonnementRepo.newAbonnement(data).then((response) {
-      print('------ddddd---listAbonnement------${response.data['data']}');
-      print('------ddddd---listAbonnem[0]ent------${response.data['data'][0]}');
-      if (response.data != null) {
-        emit(state.copyWith(
-            loadRequest: 1,
-            loadUserAbonnement: 1,
-            userAbonnement:
-                UserAbonnementModel.fromJson(response.data['data'][0])));
-        emit(state.copyWith(
-          loadRequest: null,
-        ));
-        print('---------loadUserAbonnement------${state.loadUserAbonnement}');
-        print(
-            '---------loadUserAbonnement------${state.listAbonnement!.length}');
-      } else {
-        emit(state.copyWith(
-          loadRequest: 2,
-        ));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(
-        loadRequest: 2,
-      ));
-      emit(state.copyWith(
-        loadRequest: null,
       ));
     });
   }
@@ -331,11 +288,20 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
       if (response.data != null) {
         if (response.data['data'] != null) {
           if (response.data['data']['status'] == 'complete') {
-            add(NewAbonnement());
-            add(UserAbonnement());
+            print('------ddddd---listAbonnement------${response.data['data']}');
+            print(
+                '------ddddd---listAbonnem[0]ent------${response.data['data'][0]}');
             emit(state.copyWith(
-              paiement_url: null,
-              loadsuccessPay: 1,
+                paiement_url: null,
+                loadsuccessPay: 1,
+                loadRequest: 1,
+                loadUserAbonnement: 1,
+                userAbonnement:
+                    UserAbonnementModel.fromJson(response.data['data'][0])));
+            emit(state.copyWith(
+              loadRequest: null,
+              loadsuccessPay: null,
+              loadUserAbonnement: null,
             ));
           } else if (response.data['data']['status'] == 'pending') {
             emit(state.copyWith(

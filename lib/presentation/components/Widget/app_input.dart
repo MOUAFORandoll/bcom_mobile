@@ -46,7 +46,7 @@ class _AppInputState extends State<AppInput> {
                   widget.placeholder!,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    // color: ColorsApp.tird,
+                   
                     fontSize: 12,
                     fontFamily: 'Lato',
                   ),

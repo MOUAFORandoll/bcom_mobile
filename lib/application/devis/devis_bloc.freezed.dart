@@ -3122,6 +3122,7 @@ mixin _$DevisState {
   int? get indexDevis => throw _privateConstructorUsedError;
   List<DevisModel>? get list_devis => throw _privateConstructorUsedError;
   List<VilleModel>? get list_ville => throw _privateConstructorUsedError;
+  List<Widget>? get list_widget_devis => throw _privateConstructorUsedError;
   VilleModel? get ville => throw _privateConstructorUsedError;
   List<dynamic>? get listTypeCommunication =>
       throw _privateConstructorUsedError;
@@ -3165,6 +3166,7 @@ abstract class $DevisStateCopyWith<$Res> {
       {int? indexDevis,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
+      List<Widget>? list_widget_devis,
       VilleModel? ville,
       List<dynamic>? listTypeCommunication,
       int indexHistory,
@@ -3207,6 +3209,7 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
     Object? indexDevis = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
+    Object? list_widget_devis = freezed,
     Object? ville = freezed,
     Object? listTypeCommunication = freezed,
     Object? indexHistory = null,
@@ -3245,6 +3248,10 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.list_ville
           : list_ville // ignore: cast_nullable_to_non_nullable
               as List<VilleModel>?,
+      list_widget_devis: freezed == list_widget_devis
+          ? _value.list_widget_devis
+          : list_widget_devis // ignore: cast_nullable_to_non_nullable
+              as List<Widget>?,
       ville: freezed == ville
           ? _value.ville
           : ville // ignore: cast_nullable_to_non_nullable
@@ -3357,6 +3364,7 @@ abstract class _$$DevisStateImplCopyWith<$Res>
       {int? indexDevis,
       List<DevisModel>? list_devis,
       List<VilleModel>? list_ville,
+      List<Widget>? list_widget_devis,
       VilleModel? ville,
       List<dynamic>? listTypeCommunication,
       int indexHistory,
@@ -3397,6 +3405,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
     Object? indexDevis = freezed,
     Object? list_devis = freezed,
     Object? list_ville = freezed,
+    Object? list_widget_devis = freezed,
     Object? ville = freezed,
     Object? listTypeCommunication = freezed,
     Object? indexHistory = null,
@@ -3435,6 +3444,10 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value._list_ville
           : list_ville // ignore: cast_nullable_to_non_nullable
               as List<VilleModel>?,
+      list_widget_devis: freezed == list_widget_devis
+          ? _value._list_widget_devis
+          : list_widget_devis // ignore: cast_nullable_to_non_nullable
+              as List<Widget>?,
       ville: freezed == ville
           ? _value.ville
           : ville // ignore: cast_nullable_to_non_nullable
@@ -3542,6 +3555,7 @@ class _$DevisStateImpl implements _DevisState {
       {required this.indexDevis,
       required final List<DevisModel>? list_devis,
       required final List<VilleModel>? list_ville,
+      required final List<Widget>? list_widget_devis,
       this.ville,
       required final List<dynamic>? listTypeCommunication,
       required this.indexHistory,
@@ -3568,6 +3582,7 @@ class _$DevisStateImpl implements _DevisState {
       required this.description_produit})
       : _list_devis = list_devis,
         _list_ville = list_ville,
+        _list_widget_devis = list_widget_devis,
         _listTypeCommunication = listTypeCommunication,
         _list_parametre = list_parametre;
 
@@ -3589,6 +3604,17 @@ class _$DevisStateImpl implements _DevisState {
     final value = _list_ville;
     if (value == null) return null;
     if (_list_ville is EqualUnmodifiableListView) return _list_ville;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Widget>? _list_widget_devis;
+  @override
+  List<Widget>? get list_widget_devis {
+    final value = _list_widget_devis;
+    if (value == null) return null;
+    if (_list_widget_devis is EqualUnmodifiableListView)
+      return _list_widget_devis;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -3662,7 +3688,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, list_widget_devis: $list_widget_devis, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
   }
 
   @override
@@ -3676,6 +3702,8 @@ class _$DevisStateImpl implements _DevisState {
                 .equals(other._list_devis, _list_devis) &&
             const DeepCollectionEquality()
                 .equals(other._list_ville, _list_ville) &&
+            const DeepCollectionEquality()
+                .equals(other._list_widget_devis, _list_widget_devis) &&
             (identical(other.ville, ville) || other.ville == ville) &&
             const DeepCollectionEquality()
                 .equals(other._listTypeCommunication, _listTypeCommunication) &&
@@ -3730,6 +3758,7 @@ class _$DevisStateImpl implements _DevisState {
         indexDevis,
         const DeepCollectionEquality().hash(_list_devis),
         const DeepCollectionEquality().hash(_list_ville),
+        const DeepCollectionEquality().hash(_list_widget_devis),
         ville,
         const DeepCollectionEquality().hash(_listTypeCommunication),
         indexHistory,
@@ -3768,6 +3797,7 @@ abstract class _DevisState implements DevisState {
           {required final int? indexDevis,
           required final List<DevisModel>? list_devis,
           required final List<VilleModel>? list_ville,
+          required final List<Widget>? list_widget_devis,
           final VilleModel? ville,
           required final List<dynamic>? listTypeCommunication,
           required final int indexHistory,
@@ -3800,6 +3830,8 @@ abstract class _DevisState implements DevisState {
   List<DevisModel>? get list_devis;
   @override
   List<VilleModel>? get list_ville;
+  @override
+  List<Widget>? get list_widget_devis;
   @override
   VilleModel? get ville;
   @override

@@ -147,8 +147,6 @@ class _PaimentPageState extends State<PaimentPage> {
                         child: Icon(Icons.close,
                             color: ColorsApp.primary, weight: 50),
                         onTap: () {
-                          BlocProvider.of<AbonnementBloc>(context)
-                              .add(EventPayementView(value: false));
                           AutoRouter.of(context).pop();
                         })
                   ],

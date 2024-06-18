@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
@@ -7,6 +8,7 @@ import 'package:Bcom/application/model/data/Parametre.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
 import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
 import 'package:Bcom/presentation/components/Widget/app_input_description.dart';
+import 'package:Bcom/presentation/components/Widget/app_radio.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,10 +27,9 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
     on<GetListParametre>(_getListParametre);
     on<GetListDevis>(_getListDevis);
-    // on<GetListVille>(_getListVille);
+
     on<NewDevis>(_newDevis);
     on<SelectParametre>(selectParametre);
-    on<SelectVille>(selectVille);
 
     on<ChangeIndexDevis>(changeIndexDevis);
     on<SetIndexHistoryDevisEvent>((event, emit) async {
@@ -42,29 +43,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ville: event.ville,
     ));
   }
-
-  // _getListVille(GetListVille event, Emitter<DevisState> emit) async {
-  //   emit(state.copyWith(
-  //     load_list_ville: 0,
-  //   ));
-  //   await devisRepo.getVille().then((response) {
-  //     print('---------list_ville------${response.data['hydra:member']}');
-  //     if (response.data != null) {
-  //       emit(state.copyWith(
-  //           load_list_ville: 1,
-  //           list_ville: (response.data['hydra:member'] as List)
-  //               .map((e) => VilleModel.fromJson(e))
-  //               .toList()));
-  //       print('---------list_ville------${state.list_ville!.length}');
-  //     } else {
-  //       emit(state.copyWith(
-  //         load_list_ville: 2,
-  //       ));
-  //     }
-  //   }).onError((e, s) {
-  //     emit(state.copyWith(load_list_ville: 2));
-  //   });
-  // }
 
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     String? value = event.value;
@@ -111,68 +89,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         }
 
         break;
-    }
-  }
-
-  Widget createWidget({required String field, required String title}) {
-    switch (field) {
-      case 'INPUTTEXT':
-        TextEditingController _controller = TextEditingController();
-        return AppInput(
-          controller: _controller,
-          textInputType: TextInputType.text,
-          onChanged: (value) {},
-          placeholder: title,
-          validator: (value) {
-            return Validators.isValidUsername(value!);
-          },
-        );
-
-      case 'INPUTDESCRIPTION':
-        TextEditingController _controller = TextEditingController();
-        return AppInputDescription(
-          controller: _controller,
-          textInputType: TextInputType.text,
-          onChanged: (value) {},
-          placeholder: title,
-          validator: (value) {
-            return Validators.isValidUsername(value!);
-          },
-        );
-
-      case 'INPUTNUMBER':
-        TextEditingController _controller = TextEditingController();
-        return AppInput(
-          controller: _controller,
-          textInputType: TextInputType.number,
-          onChanged: (value) {},
-          placeholder: title,
-          validator: (value) {
-            return Validators.isValidNumber(value!);
-          },
-        );
-
-      case 'INPUTDROPDOWN':
-        var value = 'Option 1';
-        var items = ['Option 1', 'Option 2', 'Option 3'];
-        return AppDropdown(
-          value: value,
-          items: items,
-          onChanged: (value) {},
-          label: title,
-        );
-      case 'INPUTRADIO':
-        var value = 'Option 1';
-        var items = ['Option 1', 'Option 2', 'Option 3'];
-        return AppDropdown(
-          value: value,
-          items: items,
-          onChanged: (value) {},
-          label: title,
-        );
-
-      default:
-        return SizedBox.shrink();
     }
   }
 
@@ -274,34 +190,110 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   }
 
   _getListParametre(GetListParametre event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(list_parametre: [
-      new Parametre(
-          title: 'Nombre de Biker', inputType: 'INPUTDROPDOWN', value: '1,2,3'),
-      new Parametre(title: 'Biker', inputType: 'INPUTDESCRIPTION', value: ''),
-      new Parametre(title: 'Biker', inputType: 'INPUTNUMBER', value: ''),
-      new Parametre(title: 'Biker', inputType: 'INPUTTEXT', value: '')
-    ]));
-
     emit(state.copyWith(
       load_list_parametre: 0,
     ));
-    await devisRepo.getlistParametre().then((response) {
-      if (response.data != null) {
-        emit(state.copyWith(
-            load_list_parametre: 1,
-            list_parametre: (response.data['data'] as List)
-                .map((e) => Parametre.fromJson(e))
-                .toList()));
-      } else {
-        emit(state.copyWith(
-          load_list_parametre: 2,
-        ));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(
-        load_list_parametre: 2,
-      ));
-    });
+    emit(state.copyWith(list_parametre: [
+      new Parametre(
+          title: 'Nombre de Biker', inputType: 'DROPDOWN', value: '1,2,3'),
+      new Parametre(title: 'Ville', inputType: 'TEXT', value: ''),
+      new Parametre(title: 'Quartier', inputType: 'TEXT', value: ''),
+      new Parametre(
+          title: 'Choisir',
+          inputType: 'RADIO',
+          value: 'Option 1,Option 2,Option 3')
+    ]));
+    log('--${state.list_parametre!.length}');
+    List<Widget> _data = state.list_parametre!.map((element) {
+      return createWidget(
+          inputType: element.inputType,
+          title: element.title,
+          value: element.value);
+    }).toList();
+    emit(state.copyWith(
+      list_widget_devis: _data,
+    ));
+    log('----${state.list_widget_devis!.length}');
+
+    emit(state.copyWith(
+      load_list_parametre: 1,
+    ));
+    // await devisRepo.getlistParametre().then((response) {
+    //   if (response.data != null) {
+    //     emit(state.copyWith(
+    //         load_list_parametre: 1,
+    //         list_parametre: (response.data['data'] as List)
+    //             .map((e) => Parametre.fromJson(e))
+    //             .toList()));
+
+    //     List<Widget> _data = state.list_parametre!.map((element) {
+    //       return createWidget(
+    //           inputType: element.inputType,
+    //           title: element.title,
+    //           value: element.value);
+    //     }).toList();
+    //     emit(state.copyWith(
+    //       list_widget_devis: _data,
+    //     ));
+    //   } else {
+    //     emit(state.copyWith(
+    //       load_list_parametre: 2,
+    //     ));
+    //   }
+    // }).onError((e, s) {
+    //   emit(state.copyWith(
+    //     load_list_parametre: 2,
+    //   ));
+    // });
+  }
+  
+  Widget createWidget(
+      {required String inputType,
+      required String title,
+      required String value}) {
+    switch (inputType) {
+      case 'TEXT':
+        TextEditingController _controller = TextEditingController();
+        return AppInput(
+          controller: _controller,
+          key: ValueKey(title),
+          textInputType: TextInputType.text,
+          onChanged: (value) {
+            print('Text changed: $value');
+            print('Text changed:---- ${_controller.text}');
+          },
+          placeholder: title,
+          validator: (value) {
+            return Validators.isValidUsername(value!);
+          },
+        );
+
+      case 'DROPDOWN':
+        List<String> items = value.split(',');
+        print(items);
+        return AppDropdown(
+          value: value,
+          key: ValueKey(title),
+          items: items,
+          onChanged: (value) {},
+          label: title,
+        );
+      case 'RADIO':
+        List<String> items = value.split(',');
+        print('RADIO');
+        print(items);
+
+        return AppRadioGroup(
+          key: ValueKey(title),
+          value: value,
+          items: items,
+          onChanged: (value) {},
+          label: title,
+        );
+
+      default:
+        return SizedBox.shrink();
+    }
   }
 }
 // context.read<DevisBloc>().add(GetImageColisGalerie())

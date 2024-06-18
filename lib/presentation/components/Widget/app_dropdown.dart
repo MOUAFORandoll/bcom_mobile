@@ -1,69 +1,86 @@
 import '../exportcomponent.dart';
 
 class AppDropdown extends StatelessWidget {
-  final value;
-  final items;
+  final String value;
+  final List<String> items;
   final ValueChanged<String>? onChanged;
   final String? label;
+
   const AppDropdown({
     Key? key,
-    this.value,
+    required this.value,
     this.label,
-    this.items,
+    required this.items,
     this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: ColorsApp.grey, width: 1),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      height: getHeight(context) * .06,
-      width: getWith(context),
-      margin: EdgeInsets.only(
-        top: kMarginY * 1.5,
-      ),
-      alignment: Alignment.center,
-      child: DropdownButton(
-        value: value,
-        icon: Container(
-          // padding: EdgeInsets.only(top: 4),
-          child: Icon(
-            Icons.keyboard_arrow_down_outlined,
-          ),
-        ),
-        hint: Container(
-          width: getWith(context) * .65,
-          alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(
-            horizontal: 0,
-          ),
-          child: Text(
-            'Choisir le type de communication'.tr(),
-            style: TextStyle(
+      margin:
+          EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY / 2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            child: Text(
+              label!,
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
-                // color: ColorsApp.tird,
                 fontSize: 12,
                 fontFamily: 'Lato',
-                overflow: TextOverflow.ellipsis),
-          ),
-        ),
-        iconSize: 25,
-        underline: SizedBox(),
-        style: TextStyle(color: ColorsApp.primary, fontSize: 12),
-        onChanged: (newValue) {},
-        items: items.map((value) {
-          return DropdownMenuItem(
-            value: value,
-            child: Center(
-              child: Text(
-                value!,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
-          );
-        }).toList(),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorsApp.grey, width: 1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            height: getHeight(context) * .06,
+            width: getWith(context),
+            margin: EdgeInsets.only(
+              top: kMarginY * 1.5,
+            ),
+            alignment: Alignment.center,
+            child: DropdownButton<String>(
+              value: items.contains(value) ? value : items.first,
+              icon: Icon(
+                Icons.keyboard_arrow_down_outlined,
+              ),
+              hint: Container(
+                width: getWith(context) * .65,
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                child: Text(
+                  label!,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    fontFamily: 'Lato',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ),
+              iconSize: 25,
+              underline: SizedBox(),
+              style: TextStyle(color: ColorsApp.primary, fontSize: 12),
+              isExpanded: true,
+              onChanged: (v) => onChanged,
+              items: items.map((item) {
+                return DropdownMenuItem<String>(
+                  value: item,
+                  child: Container(
+                      width: getWith(context) * .65,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: kMarginX),
+                      child: Text(item)),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }

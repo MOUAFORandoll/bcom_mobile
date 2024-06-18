@@ -1,70 +1,58 @@
-import '../exportcomponent.dart';
+import 'package:Bcom/presentation/_commons/theming/textStyle.dart';
+import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:flutter/material.dart';
 
-class AppDropdown extends StatefulWidget {
-  final value;
-  final List<int>? items;
+class AppRadioGroup extends StatelessWidget {
+  final String value;
+  final List<String> items;
   final ValueChanged<String>? onChanged;
   final String? label;
-  const AppDropdown({
+
+  const AppRadioGroup({
     Key? key,
-    this.value,
-    this.label,
-    this.items,
+    required this.value,
+    required this.items,
     this.onChanged,
+    this.label,
   }) : super(key: key);
-
-  @override
-  State<AppDropdown> createState() => _AppDropdownState();
-}
-
-class _AppDropdownState extends State<AppDropdown> {
-  late int valueData;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: kMarginX),
+      margin:
+          EdgeInsets.symmetric(horizontal: kMarginX, vertical: kMarginY / 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: EdgeInsets.only(
-              top: kMarginY,
-            ),
-            child: Text(
-              widget.label!,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                // color: ColorsApp.tird,
-                fontSize: 12,
-                fontFamily: 'Lato',
+          if (label != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text(
+                label!,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                  fontFamily: 'Lato',
+                ),
               ),
             ),
-          ),
           Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                widget.items!.map(
-                  (value) => Row(
-                    children: [
-                      Radio(
-                        value: value,
-                        activeColor: ColorsApp.second,
-                        groupValue: valueData,
-                        onChanged: (value) {
-                          setState(() {
-                            valueData = value as int;
-                          });
-                        },
-                      ),
-                      Text('Jour'.tr()),
-                    ],
-                  ),
-                ) as Widget
-              ],
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorsApp.grey, width: 1),
+              borderRadius: BorderRadius.circular(10),
             ),
-          ),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              ...items.map((item) {
+                return RadioListTile<String>(
+                  value: item,
+                  groupValue: value,
+                  onChanged: (item) => onChanged,
+                  title: Text(item),
+                );
+              }).toList(),
+            ]),
+          )
         ],
       ),
     );
