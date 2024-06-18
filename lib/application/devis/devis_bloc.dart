@@ -263,9 +263,8 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
           key: ValueKey(title),
           controller: _controller,
           textInputType: TextInputType.text,
-          onChanged: (newValue) {
-            add(UpdateParametre(label: title, value: newValue));
-          },
+          onChanged: (newValue) =>
+              add(UpdateParametre(label: title, value: newValue)),
           placeholder: title,
           validator: (newValue) {
             return Validators.isValidUsername(newValue!);
@@ -278,9 +277,8 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
           key: ValueKey(title),
           value: value,
           items: items,
-          onChanged: (newValue) {
-            add(UpdateParametre(label: title, value: newValue));
-          },
+          onChanged: (newValue) =>
+              add(UpdateParametre(label: title, value: newValue)),
           label: title,
         );
 
@@ -290,11 +288,8 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
           value: value,
           key: ValueKey(title),
           items: items,
-          onChanged: (newValue) {
-            add(UpdateParametre(
-                label: title,
-                value: newValue)); 
-          },
+          onChanged: (newValue) =>
+              add(UpdateParametre(label: title, value: newValue)),
           label: title,
         );
 
@@ -305,7 +300,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   void updateParametre(UpdateParametre event, Emitter<DevisState> emit) {
     List<Widget> updatedList = List.from(state.list_widget_devis!);
-    
+
     int foundIndex = updatedList.indexWhere((widget) =>
         (widget is AppInput) && (widget.key as ValueKey).value == event.label);
     if (foundIndex != -1) {

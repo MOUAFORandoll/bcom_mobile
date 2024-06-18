@@ -19,7 +19,7 @@ class _InfoDevisState extends State<InfoDevis> {
     return BlocBuilder<DevisBloc, DevisState>(
       builder: (context, state) {
         List<Widget> children;
-        
+
         if (state.load_list_parametre == 0) {
           children = [CircularProgressIndicator()];
         } else if (state.list_widget_devis != null &&
@@ -31,11 +31,14 @@ class _InfoDevisState extends State<InfoDevis> {
 
         return Container(
           margin: EdgeInsets.symmetric(horizontal: kMarginX),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: children,
+          child: BlocProvider.value(
+            value: context.watch<DevisBloc>(),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: children,
+              ),
             ),
           ),
         );
