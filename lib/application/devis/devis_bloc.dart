@@ -41,7 +41,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ville: event.ville,
     ));
   }
-
+  
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     String? value = event.value;
     /*   switch (event.fieldKey) {
