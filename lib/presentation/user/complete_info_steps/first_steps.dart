@@ -93,6 +93,7 @@ class FirstStep extends StatelessWidget {
                                     ),
                                     AppInput(
                                       controller: state.phone!,
+                                      textInputType: TextInputType.phone,
                                       onChanged: (value) {},
                                       placeholder: 'labelphoneEntreprise'.tr(),
                                       validator: (value) {

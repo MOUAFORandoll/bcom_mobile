@@ -29,7 +29,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     on<GetListDevis>(_getListDevis);
 
     on<NewDevis>(_newDevis);
-    on<SelectParametre>(selectParametre);
+    on<UpdateParametre>(updateParametre);
 
     on<ChangeIndexDevis>(changeIndexDevis);
     on<SetIndexHistoryDevisEvent>((event, emit) async {
@@ -46,8 +46,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     String? value = event.value;
-    if (value == null) return;
-    switch (event.fieldKey) {
+    /*   switch (event.fieldKey) {
       case 'inQuartier':
         if (value.isEmpty) {
         } else {
@@ -90,6 +89,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
         break;
     }
+  */
   }
 
   changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
@@ -102,12 +102,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   getVal(val) {
     return val < 0 ? 0 : val;
-  }
-
-  selectParametre(SelectParametre event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      parametre: event.parametre,
-    ));
   }
 
   _newDevis(NewDevis event, Emitter<DevisState> emit) async {
@@ -195,20 +189,28 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     ));
     emit(state.copyWith(list_parametre: [
       new Parametre(
-          title: 'Nombre de Biker', inputType: 'DROPDOWN', value: '1,2,3'),
-      new Parametre(title: 'Ville', inputType: 'TEXT', value: ''),
-      new Parametre(title: 'Quartier', inputType: 'TEXT', value: ''),
+          title: 'Nombre de Biker',
+          inputType: 'DROPDOWN',
+          itemsValue: '1,2,3',
+          value: '1,2,3'),
+      new Parametre(
+          title: 'Ville', inputType: 'TEXT', itemsValue: '', value: ''),
+      new Parametre(
+          title: 'Quartier', inputType: 'TEXT', itemsValue: '', value: ''),
       new Parametre(
           title: 'Choisir',
           inputType: 'RADIO',
-          value: 'Option 1,Option 2,Option 3')
+          itemsValue: 'Option 1,Option 2,Option 3',
+          value: '')
     ]));
     log('--${state.list_parametre!.length}');
     List<Widget> _data = state.list_parametre!.map((element) {
       return createWidget(
           inputType: element.inputType,
           title: element.title,
-          value: element.value);
+          itemsValue: element.itemsValue,
+          value: element.value,
+          emit: emit);
     }).toList();
     emit(state.copyWith(
       list_widget_devis: _data,
@@ -246,54 +248,87 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     //   ));
     // });
   }
-  
-  Widget createWidget(
-      {required String inputType,
-      required String title,
-      required String value}) {
+
+  Widget createWidget({
+    required String inputType,
+    required String title,
+    required String itemsValue,
+    required String value,
+    required Emitter<DevisState> emit,
+  }) {
     switch (inputType) {
       case 'TEXT':
-        TextEditingController _controller = TextEditingController();
+        TextEditingController _controller = TextEditingController(text: value);
         return AppInput(
-          controller: _controller,
           key: ValueKey(title),
+          controller: _controller,
           textInputType: TextInputType.text,
-          onChanged: (value) {
-            print('Text changed: $value');
-            print('Text changed:---- ${_controller.text}');
+          onChanged: (newValue) {
+            add(UpdateParametre(label: title, value: newValue));
           },
           placeholder: title,
-          validator: (value) {
-            return Validators.isValidUsername(value!);
+          validator: (newValue) {
+            return Validators.isValidUsername(newValue!);
           },
         );
 
       case 'DROPDOWN':
-        List<String> items = value.split(',');
-        print(items);
+        List<String> items = itemsValue.split(',');
         return AppDropdown(
-          value: value,
           key: ValueKey(title),
+          value: value,
           items: items,
-          onChanged: (value) {},
+          onChanged: (newValue) {
+            add(UpdateParametre(label: title, value: newValue));
+          },
           label: title,
         );
-      case 'RADIO':
-        List<String> items = value.split(',');
-        print('RADIO');
-        print(items);
 
+      case 'RADIO':
+        List<String> items = itemsValue.split(',');
         return AppRadioGroup(
-          key: ValueKey(title),
           value: value,
+          key: ValueKey(title),
           items: items,
-          onChanged: (value) {},
+          onChanged: (newValue) {
+            add(UpdateParametre(
+                label: title,
+                value: newValue)); 
+          },
           label: title,
         );
 
       default:
         return SizedBox.shrink();
     }
+  }
+
+  void updateParametre(UpdateParametre event, Emitter<DevisState> emit) {
+    List<Widget> updatedList = List.from(state.list_widget_devis!);
+    
+    int foundIndex = updatedList.indexWhere((widget) =>
+        (widget is AppInput) && (widget.key as ValueKey).value == event.label);
+    if (foundIndex != -1) {
+      (updatedList[foundIndex] as AppInput).controller.text = event.value;
+    }
+
+    int foundIndex0 = updatedList.indexWhere((widget) =>
+        (widget is AppDropdown) &&
+        (widget.key as ValueKey).value == event.label);
+    if (foundIndex0 != -1) {
+      (updatedList[foundIndex0] as AppDropdown).value = event.value;
+    }
+
+    int foundIndex1 = updatedList.indexWhere((widget) =>
+        (widget is AppRadioGroup) &&
+        (widget.key as ValueKey).value == event.label);
+    if (foundIndex1 != -1) {
+      (updatedList[foundIndex1] as AppRadioGroup).value = event.value;
+    }
+
+    // Émettre une seule fois après les mises à jour
+    emit(state.copyWith(list_widget_devis: updatedList));
+    state.list_widget_devis != updatedList;
   }
 }
 // context.read<DevisBloc>().add(GetImageColisGalerie())

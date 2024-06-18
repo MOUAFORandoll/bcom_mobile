@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                           ? state.index == 0
                               ? PresentationPage()
                               : HistoriqueDemandeDevisPage()
-                          : CompleteEntrepriseInfoPage())
+                          : PresentationPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,

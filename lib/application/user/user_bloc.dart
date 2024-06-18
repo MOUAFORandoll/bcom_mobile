@@ -26,7 +26,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<SignOutEvent>(_OnSignOut);
     on<RegisterEvent>(_Register);
     on<GetUserEvent>(_GetUser);
- 
+
     on<CompleteDevisInfo>(_CompleteDevisInfo);
     on<SetCniImageAvant>(setCniImageAvant);
     on<SetCniImageArriere>(setCniImageArriere);
@@ -61,15 +61,15 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       state.name!.text.isEmpty ||
       state.email!.text.isEmpty ||
       state.phone!.text.isEmpty ||
-      state.adress!.text.isEmpty ||
-      state.webSite!.text.isEmpty;
+      state.adress!.text.isEmpty /* ||
+      state.webSite!.text.isEmpty */
+      ;
   getState2() =>
       state.city!.text.isEmpty ||
       state.numImpot!.text.isEmpty ||
       state.numContribuable!.text.isEmpty ||
       state.registreCommerce!.text.isEmpty ||
       state.country!.text.isEmpty;
-  
 
   _OnSignOut(SignOutEvent event, Emitter<UserState> emit) async {
     var loader = AppLoader.bounceLargeColorLoaderController();
@@ -152,7 +152,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       'email': state.email!.text,
       'phone': state.phone!.text,
       'adress': state.adress!.text,
-      'webSite': state.webSite!.text,
+      'webSite': state.webSite!.text.isEmpty ? 'aucun' : state.webSite!.text,
       'city': state.city!.text,
       'numImpot': state.numImpot!.text,
       'numContribuable': state.numContribuable!.text,
@@ -170,7 +170,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           emit(UserState.authenticated());
 
           var _UserSave = User.fromJson(response.data['data']);
-
+          
           await database.saveUser(_UserSave);
           emit(state.copyWith(eventMessage: '', isLoading: null));
         }
@@ -187,7 +187,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(state.copyWith(eventMessage: '', isLoading: null));
     });
   }
-
+  
   _Register(RegisterEvent event, Emitter<UserState> emit) async {
     var data = {
       'userName': event.userName,

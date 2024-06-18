@@ -16,31 +16,30 @@ class InfoDevis extends StatefulWidget {
 class _InfoDevisState extends State<InfoDevis> {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<DevisBloc, DevisState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            List<Widget> children;
+    return BlocBuilder<DevisBloc, DevisState>(
+      builder: (context, state) {
+        List<Widget> children;
+        
+        if (state.load_list_parametre == 0) {
+          children = [CircularProgressIndicator()];
+        } else if (state.list_widget_devis != null &&
+            state.list_widget_devis!.isNotEmpty) {
+          children = state.list_widget_devis!;
+        } else {
+          children = [Text('Aucun paramètre trouvé')];
+        }
 
-            if (state.load_list_parametre == 0) {
-              children = [CircularProgressIndicator()];
-            } else if (state.list_widget_devis != null &&
-                state.list_widget_devis!.isNotEmpty) {
-              children = state.list_widget_devis!;
-            } else {
-              children = [Text('Aucun paramètre trouvé')];
-            }
-
-            return Container(
-              margin: EdgeInsets.symmetric(horizontal: kMarginX),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: children,
-                ),
-              ),
-            );
-          },
-       );
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: kMarginX),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: children,
+            ),
+          ),
+        );
+      },
+    );
   }
 }

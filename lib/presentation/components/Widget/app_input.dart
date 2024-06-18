@@ -1,7 +1,7 @@
 import '../exportcomponent.dart';
 
 class AppInput extends StatefulWidget {
-  final TextEditingController controller;
+    TextEditingController controller;
   final String? Function(String? value)? validator;
   final String? label;
   final String? errorText;
@@ -11,7 +11,7 @@ class AppInput extends StatefulWidget {
   final TextInputType? textInputType;
   final Icon? icon;
   final prefix;
-  const AppInput(
+    AppInput(
       {Key? key,
       required this.controller,
       this.label,

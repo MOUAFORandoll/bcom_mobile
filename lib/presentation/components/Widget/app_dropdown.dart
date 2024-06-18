@@ -1,12 +1,12 @@
 import '../exportcomponent.dart';
 
 class AppDropdown extends StatelessWidget {
-  final String value;
+  var value;
   final List<String> items;
   final ValueChanged<String>? onChanged;
   final String? label;
 
-  const AppDropdown({
+    AppDropdown({
     Key? key,
     required this.value,
     this.label,
@@ -67,7 +67,7 @@ class AppDropdown extends StatelessWidget {
               underline: SizedBox(),
               style: TextStyle(color: ColorsApp.primary, fontSize: 12),
               isExpanded: true,
-              onChanged: (v) => onChanged,
+              onChanged: (v) => onChanged!(v!),
               items: items.map((item) {
                 return DropdownMenuItem<String>(
                   value: item,

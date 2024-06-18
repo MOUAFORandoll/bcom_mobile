@@ -32,7 +32,7 @@ mixin _$DevisEvent {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,7 +51,7 @@ mixin _$DevisEvent {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,7 +70,7 @@ mixin _$DevisEvent {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,7 +93,7 @@ mixin _$DevisEvent {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -113,7 +113,7 @@ mixin _$DevisEvent {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,7 +133,7 @@ mixin _$DevisEvent {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -209,7 +209,7 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return getListPack();
   }
@@ -231,7 +231,7 @@ class _$GetListPackImpl implements GetListPack {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return getListPack?.call();
   }
@@ -253,7 +253,7 @@ class _$GetListPackImpl implements GetListPack {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListPack != null) {
@@ -282,7 +282,7 @@ class _$GetListPackImpl implements GetListPack {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return getListPack(this);
   }
@@ -305,7 +305,7 @@ class _$GetListPackImpl implements GetListPack {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return getListPack?.call(this);
   }
@@ -328,7 +328,7 @@ class _$GetListPackImpl implements GetListPack {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListPack != null) {
@@ -394,7 +394,7 @@ class _$GetListDevisImpl implements GetListDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return getListDevis();
   }
@@ -416,7 +416,7 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return getListDevis?.call();
   }
@@ -438,7 +438,7 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListDevis != null) {
@@ -467,7 +467,7 @@ class _$GetListDevisImpl implements GetListDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return getListDevis(this);
   }
@@ -490,7 +490,7 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return getListDevis?.call(this);
   }
@@ -513,7 +513,7 @@ class _$GetListDevisImpl implements GetListDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListDevis != null) {
@@ -579,7 +579,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return startMissionDevis();
   }
@@ -601,7 +601,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return startMissionDevis?.call();
   }
@@ -623,7 +623,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (startMissionDevis != null) {
@@ -652,7 +652,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return startMissionDevis(this);
   }
@@ -675,7 +675,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return startMissionDevis?.call(this);
   }
@@ -698,7 +698,7 @@ class _$StartMissionDevisImpl implements StartMissionDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (startMissionDevis != null) {
@@ -764,7 +764,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return endMissionDevis();
   }
@@ -786,7 +786,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return endMissionDevis?.call();
   }
@@ -808,7 +808,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (endMissionDevis != null) {
@@ -837,7 +837,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return endMissionDevis(this);
   }
@@ -860,7 +860,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return endMissionDevis?.call(this);
   }
@@ -883,7 +883,7 @@ class _$EndMissionDevisImpl implements EndMissionDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (endMissionDevis != null) {
@@ -952,7 +952,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return startDisponibiliteDevis();
   }
@@ -974,7 +974,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return startDisponibiliteDevis?.call();
   }
@@ -996,7 +996,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (startDisponibiliteDevis != null) {
@@ -1025,7 +1025,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return startDisponibiliteDevis(this);
   }
@@ -1048,7 +1048,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return startDisponibiliteDevis?.call(this);
   }
@@ -1071,7 +1071,7 @@ class _$StartDisponibiliteDevisImpl implements StartDisponibiliteDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (startDisponibiliteDevis != null) {
@@ -1137,7 +1137,7 @@ class _$GetListVilleImpl implements GetListVille {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return getListVille();
   }
@@ -1159,7 +1159,7 @@ class _$GetListVilleImpl implements GetListVille {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return getListVille?.call();
   }
@@ -1181,7 +1181,7 @@ class _$GetListVilleImpl implements GetListVille {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListVille != null) {
@@ -1210,7 +1210,7 @@ class _$GetListVilleImpl implements GetListVille {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return getListVille(this);
   }
@@ -1233,7 +1233,7 @@ class _$GetListVilleImpl implements GetListVille {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return getListVille?.call(this);
   }
@@ -1256,7 +1256,7 @@ class _$GetListVilleImpl implements GetListVille {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListVille != null) {
@@ -1325,7 +1325,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return savePositionForMissionDevis();
   }
@@ -1347,7 +1347,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return savePositionForMissionDevis?.call();
   }
@@ -1369,7 +1369,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (savePositionForMissionDevis != null) {
@@ -1398,7 +1398,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return savePositionForMissionDevis(this);
   }
@@ -1421,7 +1421,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return savePositionForMissionDevis?.call(this);
   }
@@ -1444,7 +1444,7 @@ class _$SavePositionForMissionDevisImpl implements SavePositionForMissionDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (savePositionForMissionDevis != null) {
@@ -1511,7 +1511,7 @@ class _$NewDevisImpl implements NewDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return newDevis();
   }
@@ -1533,7 +1533,7 @@ class _$NewDevisImpl implements NewDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return newDevis?.call();
   }
@@ -1555,7 +1555,7 @@ class _$NewDevisImpl implements NewDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (newDevis != null) {
@@ -1584,7 +1584,7 @@ class _$NewDevisImpl implements NewDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return newDevis(this);
   }
@@ -1607,7 +1607,7 @@ class _$NewDevisImpl implements NewDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return newDevis?.call(this);
   }
@@ -1630,7 +1630,7 @@ class _$NewDevisImpl implements NewDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (newDevis != null) {
@@ -1726,7 +1726,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return setIndexHistoryDevis(index);
   }
@@ -1748,7 +1748,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return setIndexHistoryDevis?.call(index);
   }
@@ -1770,7 +1770,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (setIndexHistoryDevis != null) {
@@ -1799,7 +1799,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return setIndexHistoryDevis(this);
   }
@@ -1822,7 +1822,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return setIndexHistoryDevis?.call(this);
   }
@@ -1845,7 +1845,7 @@ class _$SetIndexHistoryDevisEventImpl implements SetIndexHistoryDevisEvent {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (setIndexHistoryDevis != null) {
@@ -1943,7 +1943,7 @@ class _$SelectVilleImpl implements SelectVille {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return selectVille(ville);
   }
@@ -1965,7 +1965,7 @@ class _$SelectVilleImpl implements SelectVille {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return selectVille?.call(ville);
   }
@@ -1987,7 +1987,7 @@ class _$SelectVilleImpl implements SelectVille {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (selectVille != null) {
@@ -2016,7 +2016,7 @@ class _$SelectVilleImpl implements SelectVille {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return selectVille(this);
   }
@@ -2039,7 +2039,7 @@ class _$SelectVilleImpl implements SelectVille {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return selectVille?.call(this);
   }
@@ -2062,7 +2062,7 @@ class _$SelectVilleImpl implements SelectVille {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (selectVille != null) {
@@ -2161,7 +2161,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return changeIndexDevis(val);
   }
@@ -2183,7 +2183,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return changeIndexDevis?.call(val);
   }
@@ -2205,7 +2205,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (changeIndexDevis != null) {
@@ -2234,7 +2234,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return changeIndexDevis(this);
   }
@@ -2257,7 +2257,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return changeIndexDevis?.call(this);
   }
@@ -2280,7 +2280,7 @@ class _$ChangeIndexDevisImpl implements ChangeIndexDevis {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (changeIndexDevis != null) {
@@ -2387,7 +2387,7 @@ class _$FieldChangedImpl implements FieldChanged {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return fieldChanged(fieldKey, value);
   }
@@ -2409,7 +2409,7 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return fieldChanged?.call(fieldKey, value);
   }
@@ -2431,7 +2431,7 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (fieldChanged != null) {
@@ -2460,7 +2460,7 @@ class _$FieldChangedImpl implements FieldChanged {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return fieldChanged(this);
   }
@@ -2483,7 +2483,7 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return fieldChanged?.call(this);
   }
@@ -2506,7 +2506,7 @@ class _$FieldChangedImpl implements FieldChanged {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (fieldChanged != null) {
@@ -2580,7 +2580,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return demandeMission();
   }
@@ -2602,7 +2602,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return demandeMission?.call();
   }
@@ -2624,7 +2624,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (demandeMission != null) {
@@ -2653,7 +2653,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return demandeMission(this);
   }
@@ -2676,7 +2676,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return demandeMission?.call(this);
   }
@@ -2699,7 +2699,7 @@ class _$DemandeMissionImpl implements DemandeMission {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (demandeMission != null) {
@@ -2765,7 +2765,7 @@ class _$GetListParametreImpl implements GetListParametre {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
     return getListParametre();
   }
@@ -2787,7 +2787,7 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
     return getListParametre?.call();
   }
@@ -2809,7 +2809,7 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListParametre != null) {
@@ -2838,7 +2838,7 @@ class _$GetListParametreImpl implements GetListParametre {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
     return getListParametre(this);
   }
@@ -2861,7 +2861,7 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
     return getListParametre?.call(this);
   }
@@ -2884,7 +2884,7 @@ class _$GetListParametreImpl implements GetListParametre {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
     if (getListParametre != null) {
@@ -2899,66 +2899,73 @@ abstract class GetListParametre implements DevisEvent {
 }
 
 /// @nodoc
-abstract class _$$SelectParametreImplCopyWith<$Res> {
-  factory _$$SelectParametreImplCopyWith(_$SelectParametreImpl value,
-          $Res Function(_$SelectParametreImpl) then) =
-      __$$SelectParametreImplCopyWithImpl<$Res>;
+abstract class _$$UpdateParametreImplCopyWith<$Res> {
+  factory _$$UpdateParametreImplCopyWith(_$UpdateParametreImpl value,
+          $Res Function(_$UpdateParametreImpl) then) =
+      __$$UpdateParametreImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Parametre parametre});
+  $Res call({String label, String value});
 }
 
 /// @nodoc
-class __$$SelectParametreImplCopyWithImpl<$Res>
-    extends _$DevisEventCopyWithImpl<$Res, _$SelectParametreImpl>
-    implements _$$SelectParametreImplCopyWith<$Res> {
-  __$$SelectParametreImplCopyWithImpl(
-      _$SelectParametreImpl _value, $Res Function(_$SelectParametreImpl) _then)
+class __$$UpdateParametreImplCopyWithImpl<$Res>
+    extends _$DevisEventCopyWithImpl<$Res, _$UpdateParametreImpl>
+    implements _$$UpdateParametreImplCopyWith<$Res> {
+  __$$UpdateParametreImplCopyWithImpl(
+      _$UpdateParametreImpl _value, $Res Function(_$UpdateParametreImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? parametre = null,
+    Object? label = null,
+    Object? value = null,
   }) {
-    return _then(_$SelectParametreImpl(
-      parametre: null == parametre
-          ? _value.parametre
-          : parametre // ignore: cast_nullable_to_non_nullable
-              as Parametre,
+    return _then(_$UpdateParametreImpl(
+      label: null == label
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SelectParametreImpl implements SelectParametre {
-  const _$SelectParametreImpl({required this.parametre});
+class _$UpdateParametreImpl implements UpdateParametre {
+  const _$UpdateParametreImpl({required this.label, required this.value});
 
   @override
-  final Parametre parametre;
+  final String label;
+  @override
+  final String value;
 
   @override
   String toString() {
-    return 'DevisEvent.selectParametre(parametre: $parametre)';
+    return 'DevisEvent.updateParametre(label: $label, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectParametreImpl &&
-            (identical(other.parametre, parametre) ||
-                other.parametre == parametre));
+            other is _$UpdateParametreImpl &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, parametre);
+  int get hashCode => Object.hash(runtimeType, label, value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectParametreImplCopyWith<_$SelectParametreImpl> get copyWith =>
-      __$$SelectParametreImplCopyWithImpl<_$SelectParametreImpl>(
+  _$$UpdateParametreImplCopyWith<_$UpdateParametreImpl> get copyWith =>
+      __$$UpdateParametreImplCopyWithImpl<_$UpdateParametreImpl>(
           this, _$identity);
 
   @override
@@ -2978,9 +2985,9 @@ class _$SelectParametreImpl implements SelectParametre {
     required TResult Function(String fieldKey, String? value) fieldChanged,
     required TResult Function() demandeMission,
     required TResult Function() getListParametre,
-    required TResult Function(Parametre parametre) selectParametre,
+    required TResult Function(String label, String value) updateParametre,
   }) {
-    return selectParametre(parametre);
+    return updateParametre(label, value);
   }
 
   @override
@@ -3000,9 +3007,9 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult? Function(String fieldKey, String? value)? fieldChanged,
     TResult? Function()? demandeMission,
     TResult? Function()? getListParametre,
-    TResult? Function(Parametre parametre)? selectParametre,
+    TResult? Function(String label, String value)? updateParametre,
   }) {
-    return selectParametre?.call(parametre);
+    return updateParametre?.call(label, value);
   }
 
   @override
@@ -3022,11 +3029,11 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult Function(String fieldKey, String? value)? fieldChanged,
     TResult Function()? demandeMission,
     TResult Function()? getListParametre,
-    TResult Function(Parametre parametre)? selectParametre,
+    TResult Function(String label, String value)? updateParametre,
     required TResult orElse(),
   }) {
-    if (selectParametre != null) {
-      return selectParametre(parametre);
+    if (updateParametre != null) {
+      return updateParametre(label, value);
     }
     return orElse();
   }
@@ -3051,9 +3058,9 @@ class _$SelectParametreImpl implements SelectParametre {
     required TResult Function(FieldChanged value) fieldChanged,
     required TResult Function(DemandeMission value) demandeMission,
     required TResult Function(GetListParametre value) getListParametre,
-    required TResult Function(SelectParametre value) selectParametre,
+    required TResult Function(UpdateParametre value) updateParametre,
   }) {
-    return selectParametre(this);
+    return updateParametre(this);
   }
 
   @override
@@ -3074,9 +3081,9 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult? Function(FieldChanged value)? fieldChanged,
     TResult? Function(DemandeMission value)? demandeMission,
     TResult? Function(GetListParametre value)? getListParametre,
-    TResult? Function(SelectParametre value)? selectParametre,
+    TResult? Function(UpdateParametre value)? updateParametre,
   }) {
-    return selectParametre?.call(this);
+    return updateParametre?.call(this);
   }
 
   @override
@@ -3097,23 +3104,25 @@ class _$SelectParametreImpl implements SelectParametre {
     TResult Function(FieldChanged value)? fieldChanged,
     TResult Function(DemandeMission value)? demandeMission,
     TResult Function(GetListParametre value)? getListParametre,
-    TResult Function(SelectParametre value)? selectParametre,
+    TResult Function(UpdateParametre value)? updateParametre,
     required TResult orElse(),
   }) {
-    if (selectParametre != null) {
-      return selectParametre(this);
+    if (updateParametre != null) {
+      return updateParametre(this);
     }
     return orElse();
   }
 }
 
-abstract class SelectParametre implements DevisEvent {
-  const factory SelectParametre({required final Parametre parametre}) =
-      _$SelectParametreImpl;
+abstract class UpdateParametre implements DevisEvent {
+  const factory UpdateParametre(
+      {required final String label,
+      required final String value}) = _$UpdateParametreImpl;
 
-  Parametre get parametre;
+  String get label;
+  String get value;
   @JsonKey(ignore: true)
-  _$$SelectParametreImplCopyWith<_$SelectParametreImpl> get copyWith =>
+  _$$UpdateParametreImplCopyWith<_$UpdateParametreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

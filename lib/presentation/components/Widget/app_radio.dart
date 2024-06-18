@@ -3,12 +3,12 @@ import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:flutter/material.dart';
 
 class AppRadioGroup extends StatelessWidget {
-  final String value;
+  String value;
   final List<String> items;
   final ValueChanged<String>? onChanged;
   final String? label;
 
-  const AppRadioGroup({
+  AppRadioGroup({
     Key? key,
     required this.value,
     required this.items,
@@ -47,7 +47,7 @@ class AppRadioGroup extends StatelessWidget {
                 return RadioListTile<String>(
                   value: item,
                   groupValue: value,
-                  onChanged: (item) => onChanged,
+                  onChanged: (item) => onChanged!(item!),
                   title: Text(item),
                 );
               }).toList(),
