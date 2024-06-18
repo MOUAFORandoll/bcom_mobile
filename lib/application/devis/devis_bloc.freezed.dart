@@ -3159,6 +3159,7 @@ mixin _$DevisState {
   TextEditingController get type_produit => throw _privateConstructorUsedError;
   TextEditingController get description_produit =>
       throw _privateConstructorUsedError;
+  dynamic get formKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DevisStateCopyWith<DevisState> get copyWith =>
@@ -3199,7 +3200,8 @@ abstract class $DevisStateCopyWith<$Res> {
       TextEditingController dureeTravail,
       TextEditingController nom_produit,
       TextEditingController type_produit,
-      TextEditingController description_produit});
+      TextEditingController description_produit,
+      dynamic formKey});
 }
 
 /// @nodoc
@@ -3243,6 +3245,7 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
     Object? nom_produit = null,
     Object? type_produit = null,
     Object? description_produit = null,
+    Object? formKey = freezed,
   }) {
     return _then(_value.copyWith(
       indexDevis: freezed == indexDevis
@@ -3357,6 +3360,10 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.description_produit
           : description_produit // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
+      formKey: freezed == formKey
+          ? _value.formKey
+          : formKey // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 }
@@ -3397,7 +3404,8 @@ abstract class _$$DevisStateImplCopyWith<$Res>
       TextEditingController dureeTravail,
       TextEditingController nom_produit,
       TextEditingController type_produit,
-      TextEditingController description_produit});
+      TextEditingController description_produit,
+      dynamic formKey});
 }
 
 /// @nodoc
@@ -3439,6 +3447,7 @@ class __$$DevisStateImplCopyWithImpl<$Res>
     Object? nom_produit = null,
     Object? type_produit = null,
     Object? description_produit = null,
+    Object? formKey = freezed,
   }) {
     return _then(_$DevisStateImpl(
       indexDevis: freezed == indexDevis
@@ -3553,6 +3562,10 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.description_produit
           : description_produit // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
+      formKey: freezed == formKey
+          ? _value.formKey
+          : formKey // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -3588,7 +3601,8 @@ class _$DevisStateImpl implements _DevisState {
       required this.dureeTravail,
       required this.nom_produit,
       required this.type_produit,
-      required this.description_produit})
+      required this.description_produit,
+      this.formKey})
       : _list_devis = list_devis,
         _list_ville = list_ville,
         _list_widget_devis = list_widget_devis,
@@ -3694,10 +3708,12 @@ class _$DevisStateImpl implements _DevisState {
   final TextEditingController type_produit;
   @override
   final TextEditingController description_produit;
+  @override
+  final dynamic formKey;
 
   @override
   String toString() {
-    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, list_widget_devis: $list_widget_devis, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit)';
+    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, list_widget_devis: $list_widget_devis, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit, formKey: $formKey)';
   }
 
   @override
@@ -3758,7 +3774,8 @@ class _$DevisStateImpl implements _DevisState {
             (identical(other.type_produit, type_produit) ||
                 other.type_produit == type_produit) &&
             (identical(other.description_produit, description_produit) ||
-                other.description_produit == description_produit));
+                other.description_produit == description_produit) &&
+            const DeepCollectionEquality().equals(other.formKey, formKey));
   }
 
   @override
@@ -3791,7 +3808,8 @@ class _$DevisStateImpl implements _DevisState {
         dureeTravail,
         nom_produit,
         type_produit,
-        description_produit
+        description_produit,
+        const DeepCollectionEquality().hash(formKey)
       ]);
 
   @JsonKey(ignore: true)
@@ -3803,35 +3821,35 @@ class _$DevisStateImpl implements _DevisState {
 
 abstract class _DevisState implements DevisState {
   const factory _DevisState(
-          {required final int? indexDevis,
-          required final List<DevisModel>? list_devis,
-          required final List<VilleModel>? list_ville,
-          required final List<Widget>? list_widget_devis,
-          final VilleModel? ville,
-          required final List<dynamic>? listTypeCommunication,
-          required final int indexHistory,
-          required final int? isRequest,
-          required final int? load_list_pack,
-          required final int? load_list_devis,
-          final String? paiement_url,
-          required final int? load_list_ville,
-          required final bool? updateData,
-          required final List<Parametre>? list_parametre,
-          required final int? load_list_parametre,
-          required final Parametre? parametre,
-          required final int? inQuartier,
-          required final TimeOfDay horaireStart,
-          required final TimeOfDay horaireEnd,
-          final String? typeCommunication,
-          required final int? typeTravail,
-          required final TextEditingController typeProjet,
-          required final TextEditingController nombreBiker,
-          required final TextEditingController zone,
-          required final TextEditingController dureeTravail,
-          required final TextEditingController nom_produit,
-          required final TextEditingController type_produit,
-          required final TextEditingController description_produit}) =
-      _$DevisStateImpl;
+      {required final int? indexDevis,
+      required final List<DevisModel>? list_devis,
+      required final List<VilleModel>? list_ville,
+      required final List<Widget>? list_widget_devis,
+      final VilleModel? ville,
+      required final List<dynamic>? listTypeCommunication,
+      required final int indexHistory,
+      required final int? isRequest,
+      required final int? load_list_pack,
+      required final int? load_list_devis,
+      final String? paiement_url,
+      required final int? load_list_ville,
+      required final bool? updateData,
+      required final List<Parametre>? list_parametre,
+      required final int? load_list_parametre,
+      required final Parametre? parametre,
+      required final int? inQuartier,
+      required final TimeOfDay horaireStart,
+      required final TimeOfDay horaireEnd,
+      final String? typeCommunication,
+      required final int? typeTravail,
+      required final TextEditingController typeProjet,
+      required final TextEditingController nombreBiker,
+      required final TextEditingController zone,
+      required final TextEditingController dureeTravail,
+      required final TextEditingController nom_produit,
+      required final TextEditingController type_produit,
+      required final TextEditingController description_produit,
+      final dynamic formKey}) = _$DevisStateImpl;
 
   @override
   int? get indexDevis;
@@ -3889,6 +3907,8 @@ abstract class _DevisState implements DevisState {
   TextEditingController get type_produit;
   @override
   TextEditingController get description_produit;
+  @override
+  dynamic get formKey;
   @override
   @JsonKey(ignore: true)
   _$$DevisStateImplCopyWith<_$DevisStateImpl> get copyWith =>

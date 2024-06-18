@@ -1,8 +1,8 @@
 class Parametre {
-  final String title;
+  String title;
   final String? description;
   final String inputType;
-  final String value;
+  String value;
   final String itemsValue;
 
   Parametre(

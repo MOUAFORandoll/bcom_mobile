@@ -31,13 +31,11 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     on<NewDevis>(_newDevis);
     on<UpdateParametre>(updateParametre);
 
-    on<ChangeIndexDevis>(changeIndexDevis);
     on<SetIndexHistoryDevisEvent>((event, emit) async {
       print('-----------------SetindexHistory');
       emit(state.copyWith(indexHistory: event.index));
     });
   }
-
   selectVille(SelectVille event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
       ville: event.ville,
@@ -92,13 +90,13 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   */
   }
 
-  changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      indexDevis: event.val
-          ? getVal(state.indexDevis! + 1)
-          : getVal(state.indexDevis! - 1),
-    ));
-  }
+  // changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
+  //   emit(state.copyWith(
+  //     indexDevis: event.val
+  //         ? getVal(state.indexDevis! + 1)
+  //         : getVal(state.indexDevis! - 1),
+  //   ));
+  // }
 
   getVal(val) {
     return val < 0 ? 0 : val;
@@ -109,6 +107,9 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       load_list_pack: 0,
     ));
     var user = await database.getUser();
+    var _data = formatDataToDevis();
+
+    log(_data.toString());
     var data = {
       'inQuartier': state.inQuartier == 0,
       'typeTravail': state.typeTravail,
@@ -206,11 +207,11 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     log('--${state.list_parametre!.length}');
     List<Widget> _data = state.list_parametre!.map((element) {
       return createWidget(
-          inputType: element.inputType,
-          title: element.title,
-          itemsValue: element.itemsValue,
-          value: element.value,
-          emit: emit);
+        inputType: element.inputType,
+        title: element.title,
+        itemsValue: element.itemsValue,
+        value: element.value,
+      );
     }).toList();
     emit(state.copyWith(
       list_widget_devis: _data,
@@ -254,7 +255,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     required String title,
     required String itemsValue,
     required String value,
-    required Emitter<DevisState> emit,
   }) {
     switch (inputType) {
       case 'TEXT':
@@ -281,7 +281,6 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
               add(UpdateParametre(label: title, value: newValue)),
           label: title,
         );
-
       case 'RADIO':
         List<String> items = itemsValue.split(',');
         return AppRadioGroup(
@@ -300,11 +299,13 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   void updateParametre(UpdateParametre event, Emitter<DevisState> emit) {
     List<Widget> updatedList = List.from(state.list_widget_devis!);
-
+    log('----${event.label}---------${event.value}---');
     int foundIndex = updatedList.indexWhere((widget) =>
         (widget is AppInput) && (widget.key as ValueKey).value == event.label);
     if (foundIndex != -1) {
       (updatedList[foundIndex] as AppInput).controller.text = event.value;
+
+      emit(state.copyWith(list_widget_devis: updatedList));
     }
 
     int foundIndex0 = updatedList.indexWhere((widget) =>
@@ -312,6 +313,10 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         (widget.key as ValueKey).value == event.label);
     if (foundIndex0 != -1) {
       (updatedList[foundIndex0] as AppDropdown).value = event.value;
+      emit(state.copyWith(list_widget_devis: updatedList));
+      state.formKey.currentState!.save();
+      emit(state.copyWith(formKey: state.formKey.currentState!.save()));
+      emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
 
     int foundIndex1 = updatedList.indexWhere((widget) =>
@@ -319,11 +324,45 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         (widget.key as ValueKey).value == event.label);
     if (foundIndex1 != -1) {
       (updatedList[foundIndex1] as AppRadioGroup).value = event.value;
+      emit(state.copyWith(list_widget_devis: updatedList));
+      state.formKey.currentState!.save();
+      emit(state.copyWith(formKey: state.formKey.currentState!.save()));
+      emit(state.copyWith(formKey: GlobalKey<FormState>()));
+    }
+  }
+
+  formatDataToDevis() {
+    Map<String, dynamic> _data = {};
+
+    state.list_parametre!.forEach((element) {
+      var value = findWidget(element.title);
+      if (value != null) {
+        _data[element.title] = value;
+      }
+    });
+
+    return _data;
+  }
+
+  findWidget(label) {
+    log('----${label}--------- ---');
+    int foundIndex = state.list_widget_devis!.indexWhere((widget) =>
+        (widget is AppInput) && (widget.key as ValueKey).value == label);
+    if (foundIndex != -1) {
+      return (state.list_widget_devis![foundIndex] as AppInput).controller.text;
     }
 
-    // Émettre une seule fois après les mises à jour
-    emit(state.copyWith(list_widget_devis: updatedList));
-    state.list_widget_devis != updatedList;
+    int foundIndex0 = state.list_widget_devis!.indexWhere((widget) =>
+        (widget is AppDropdown) && (widget.key as ValueKey).value == label);
+    if (foundIndex0 != -1) {
+      return (state.list_widget_devis![foundIndex0] as AppDropdown).value;
+    }
+
+    int foundIndex1 = state.list_widget_devis!.indexWhere((widget) =>
+        (widget is AppRadioGroup) && (widget.key as ValueKey).value == label);
+    if (foundIndex1 != -1) {
+      return (state.list_widget_devis![foundIndex1] as AppRadioGroup).value;
+    }
   }
 }
 // context.read<DevisBloc>().add(GetImageColisGalerie())
