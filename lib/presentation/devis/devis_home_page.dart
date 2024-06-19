@@ -170,36 +170,31 @@ class _PresentationPageState extends State<PresentationPage>
                                     ))
                                 : state.loadUserAbonnement == 1
                                     ? state.userAbonnement != null
-                                        ? state.userAbonnement!.status == 1
-                                            ? state.userAbonnement!.isPay ==
-                                                        1 &&
-                                                    DateTime.now().isBefore(
-                                                        DateTime.parse(state
-                                                            .userAbonnement!
-                                                            .endDate))
-                                                ? Container(
-                                                    margin:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: kMarginY,
-                                                            horizontal:
-                                                                kMarginX),
-                                                    child: AppButton(
-                                                        size: MainAxisSize.max,
-                                                        text: 'Commander'.tr(),
-                                                        onTap: () async {
-                                                          AutoRouter.of(context)
-                                                              .pushNamed(
-                                                                  CommandDevisPage
-                                                                      .routeName);
-                                                        }),
-                                                  )
-                                                : !(DateTime.now().isBefore(
-                                                        DateTime.parse(state
-                                                            .userAbonnement!
-                                                            .endDate)))
-                                                    ? renouvellerWidget(context)
-                                                    : abonnerWidget(context)
-                                            : abonnerWidget(context)
+                                        ? state.userAbonnement!.isPay == 1 &&
+                                                DateTime.now().isBefore(
+                                                    DateTime.parse(state
+                                                        .userAbonnement!
+                                                        .endDate))
+                                            ? Container(
+                                                margin: EdgeInsets.symmetric(
+                                                    vertical: kMarginY,
+                                                    horizontal: kMarginX),
+                                                child: AppButton(
+                                                    size: MainAxisSize.max,
+                                                    text: 'Commander'.tr(),
+                                                    onTap: () async {
+                                                      AutoRouter.of(context)
+                                                          .pushNamed(
+                                                              CommandDevisPage
+                                                                  .routeName);
+                                                    }),
+                                              )
+                                            : !(DateTime.now().isBefore(
+                                                    DateTime.parse(state
+                                                        .userAbonnement!
+                                                        .endDate)))
+                                                ? renouvellerWidget(context)
+                                                : abonnerWidget(context)
                                         : abonnerWidget(context)
                                     : abonnerWidget(context)),
                       ),
@@ -222,7 +217,7 @@ class _PresentationPageState extends State<PresentationPage>
               size: MainAxisSize.max,
               text: 'Renouveller'.tr(),
               onTap: () => BlocProvider.of<AbonnementBloc>(context)
-                  .add(RenouvellerPayAbonnement())),
+                  .add(ReNewCurrentAbonnement())),
         ),
         Container(
             padding: const EdgeInsets.all(15),

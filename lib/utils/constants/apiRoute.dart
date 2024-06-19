@@ -9,6 +9,7 @@ class ApiRoutes {
   static const ABONNEMENT_PAY = '/api/v1/pay';
   static const PARAMETRE = '/api/v1/parameter/all';
   static const USER = '/api/v1/user';
-  static const InfoDevis = '/info-devis';
-  static const DEVIS = '/info-devis';
+  static const DEVISCONTENT = '/api/v1/devisContent';
+  static const DEVIS = '/api/v1/devis';
+  static const TRANSACTION = '/api/v1/pay/allUserTransaction';
 }

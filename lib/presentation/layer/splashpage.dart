@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
@@ -29,25 +31,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               if (state is Loaded) {
                 if (state.isLogin == true) {
                   initLoad(context);
-                  //   if (stateH.user != null) {
-                  //     if (stateH.user!.typeUser == 3 ||
-                  //         stateH.user!.typeUser == '3') {
-                  //       print(
-                  //           '**------------stateH.user!.typeUser   ${stateH.user!.typeUser}');
-                  //       initLoadTControl(context);
-                  //     }
-                  //     if (stateH.user!.typeUser == 4 ||
-                  //         stateH.user!.typeUser == '4') {
-                  //       print('**------------initLoadDevis');
-                  //       initLoadDevis(context);
-                  //     }
-                  //   } else {
-                  //     print(
-                  //         '**------------stateH.user!.typeUser   ${stateH.user!.typeUser}');
-
-                  //     print(
-                  //         '**------------                AutoRouter.of(context).replace(state.route);');
-                  //   }
+                  log('*---------*-initLoad---');
                 }
 
                 print('**----');

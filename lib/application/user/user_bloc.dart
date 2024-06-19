@@ -27,7 +27,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<RegisterEvent>(_Register);
     on<GetUserEvent>(_GetUser);
 
-    on<CompleteDevisInfo>(_CompleteDevisInfo);
     on<SetCniImageAvant>(setCniImageAvant);
     on<SetCniImageArriere>(setCniImageArriere);
     on<SetCGImage>(setCGImage);
@@ -82,33 +81,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     try {
       // database.saveKeyKen( );
     } catch (e) {}
-  }
-
-  _CompleteDevisInfo(CompleteDevisInfo event, Emitter<UserState> emit) async {
-    print(event.data);
-
-    emit(state.copyWith(isLoading: null));
-    emit(state.copyWith(isLoading: 1));
-    await userRepo.completeDevisInfo(event.data).then((response) async {
-      if (response.statusCode == 201) {
-        if (response.data['data'] != null) {
-          emit(state.copyWith(updating: false, isLoading: 2, eventMessage: ''));
-          emit(UserState.authenticated());
-
-          var _UserSave = User.fromJson(response.data['data']);
-
-          await database.saveUser(_UserSave);
-        }
-      } else {
-        emit(state.copyWith(
-            isLoading: 3, eventMessage: 'Une erreur s\'est produite'));
-      }
-    }).onError((error, s) {
-      print('----${s}-----');
-      print('------${error}---');
-      emit(state.copyWith(
-          isLoading: 3, eventMessage: 'Une erreur s\'est produite'));
-    });
   }
 
   _Login(SignInEvent event, Emitter<UserState> emit) async {
@@ -170,7 +142,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           emit(UserState.authenticated());
 
           var _UserSave = User.fromJson(response.data['data']);
-          
+
           await database.saveUser(_UserSave);
           emit(state.copyWith(eventMessage: '', isLoading: null));
         }
@@ -187,7 +159,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(state.copyWith(eventMessage: '', isLoading: null));
     });
   }
-  
+
   _Register(RegisterEvent event, Emitter<UserState> emit) async {
     var data = {
       'userName': event.userName,

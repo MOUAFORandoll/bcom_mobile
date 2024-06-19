@@ -68,6 +68,7 @@ class DatabaseCubit extends Cubit<DatabaseState> {
 
     return true;
   }
+   
 
   Future<void> disconnect() async {
     _store.box<KeyUser>().removeAll();

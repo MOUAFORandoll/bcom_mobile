@@ -4,8 +4,10 @@ import 'dart:developer';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
+import 'package:Bcom/application/model/data/ParamSaveModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/objectbox.g.dart';
 import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
 import 'package:Bcom/presentation/components/Widget/app_input_description.dart';
 import 'package:Bcom/presentation/components/Widget/app_radio.dart';
@@ -30,6 +32,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
     on<NewDevis>(_newDevis);
     on<UpdateParametre>(updateParametre);
+    on<ChangeIndexDevis>(changeIndexDevis);
 
     on<SetIndexHistoryDevisEvent>((event, emit) async {
       print('-----------------SetindexHistory');
@@ -41,7 +44,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ville: event.ville,
     ));
   }
-  
+
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     String? value = event.value;
     /*   switch (event.fieldKey) {
@@ -90,58 +93,51 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   */
   }
 
-  // changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
-  //   emit(state.copyWith(
-  //     indexDevis: event.val
-  //         ? getVal(state.indexDevis! + 1)
-  //         : getVal(state.indexDevis! - 1),
-  //   ));
-  // }
-
-  getVal(val) {
-    return val < 0 ? 0 : val;
-  }
-
-  _newDevis(NewDevis event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      load_list_pack: 0,
-    ));
-    var user = await database.getUser();
+  changeIndexDevis(ChangeIndexDevis event, Emitter<DevisState> emit) async {
     var _data = formatDataToDevis();
 
     log(_data.toString());
+    emit(state.copyWith(indexDevis: event.val ? 1 : 0));
+  }
+
+  _newDevis(NewDevis event, Emitter<DevisState> emit) async {
+    var user = await database.getUser();
+    var _data = formatDataToDevis();
+    _data.forEach((e) {
+      log(e['id'].toString());
+      log(e['value'].toString());
+    });
+    log(_data.toString());
     var data = {
-      'inQuartier': state.inQuartier == 0,
-      'typeTravail': state.typeTravail,
-      'typeProjet': state.typeProjet.text,
-      'nombreBiker': state.nombreBiker.text,
-      'zone': state.zone.text,
-      'horaire':
-          '${state.horaireStart.hour}:${state.horaireStart.minute} - ${state.horaireEnd.hour}:${state.horaireEnd.minute}',
-      'client': user!.id,
-      'ville': 'api/villes/${state.ville!.id}',
-      'dureeTravail': state.dureeTravail.text
+      'idClient': user!.userId,
+      'amount': state.montantDevis,
+      'desciption': state.description_produit.text
     };
     emit(state.copyWith(
       isRequest: 0,
     ));
-    print(data);
-    await devisRepo.newDevis(data).then((response) {
-      print('---------list_pack------${response.data['hydra:member']}');
+
+    await devisRepo.addDevis(data).then((response) async {
+      print('---------addDevis------${response.data['data']}');
       if (response.data != null) {
+        _data.forEach((e) async {
+          log(e['id'].toString());
+          log(e['value'].toString());
+
+          var dataDevisContent = {
+            'idDevis': response.data['data']['id'],
+            'idParameter': e['id'],
+            'value': e['value'],
+          };
+          await devisRepo.addDevisContent(dataDevisContent).then((response) {});
+        });
         emit(state.copyWith(
           isRequest: 1,
-          /* list_pack: (response.data['hydra:member'] as List)
-                .map((e) => PackModel.fromJson(e))
-                .toList() */
         ));
         emit(state.copyWith(
           isRequest: null,
         ));
-        //  emit(state.copyWith(
-        //     isRequest: 5,
-        //     isDownloadFacture: 0,
-        //     paiement_url: response.data['paiement_url']));
+
         add(GetListDevis());
       } else {
         emit(state.copyWith(
@@ -169,7 +165,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       if (response.data != null) {
         emit(state.copyWith(
             load_list_devis: 1,
-            list_devis: (response.data['hydra:member'] as List)
+            list_devis: (response.data['data'] as List)
                 .map((e) => DevisModel.fromJson(e))
                 .toList()));
       } else {
@@ -187,22 +183,34 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   _getListParametre(GetListParametre event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
       load_list_parametre: 0,
+      montantDevis: 0,
+      listdataSave: [],
     ));
     emit(state.copyWith(list_parametre: [
       new Parametre(
+          id: 1,
           title: 'Nombre de Biker',
           inputType: 'DROPDOWN',
           itemsValue: '1,2,3',
-          value: '1,2,3'),
+          montants: '1000,2000,3000'),
       new Parametre(
-          title: 'Ville', inputType: 'TEXT', itemsValue: '', value: ''),
+          id: 2,
+          title: 'Ville',
+          inputType: 'TEXT',
+          itemsValue: '',
+          montants: ''),
       new Parametre(
-          title: 'Quartier', inputType: 'TEXT', itemsValue: '', value: ''),
+          id: 3,
+          title: 'Quartier',
+          inputType: 'TEXT',
+          itemsValue: '',
+          montants: ''),
       new Parametre(
+          id: 4,
           title: 'Choisir',
           inputType: 'RADIO',
           itemsValue: 'Option 1,Option 2,Option 3',
-          value: '')
+          montants: '500,2000,30000')
     ]));
     log('--${state.list_parametre!.length}');
     List<Widget> _data = state.list_parametre!.map((element) {
@@ -210,7 +218,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         inputType: element.inputType,
         title: element.title,
         itemsValue: element.itemsValue,
-        value: element.value,
+        montants: element.montants,
       );
     }).toList();
     emit(state.copyWith(
@@ -254,11 +262,24 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     required String inputType,
     required String title,
     required String itemsValue,
-    required String value,
+    required String montants,
   }) {
     switch (inputType) {
       case 'TEXT':
-        TextEditingController _controller = TextEditingController(text: value);
+        TextEditingController _controller = TextEditingController(text: '');
+        return AppInput(
+          key: ValueKey(title),
+          controller: _controller,
+          textInputType: TextInputType.text,
+          onChanged: (newValue) =>
+              add(UpdateParametre(label: title, value: newValue)),
+          placeholder: title,
+          validator: (newValue) {
+            return Validators.isValidUsername(newValue!);
+          },
+        );
+      case 'null':
+        TextEditingController _controller = TextEditingController(text: '');
         return AppInput(
           key: ValueKey(title),
           controller: _controller,
@@ -275,7 +296,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         List<String> items = itemsValue.split(',');
         return AppDropdown(
           key: ValueKey(title),
-          value: value,
+          value: '',
           items: items,
           onChanged: (newValue) =>
               add(UpdateParametre(label: title, value: newValue)),
@@ -284,7 +305,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       case 'RADIO':
         List<String> items = itemsValue.split(',');
         return AppRadioGroup(
-          value: value,
+          value: '',
           key: ValueKey(title),
           items: items,
           onChanged: (newValue) =>
@@ -311,10 +332,41 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     int foundIndex0 = updatedList.indexWhere((widget) =>
         (widget is AppDropdown) &&
         (widget.key as ValueKey).value == event.label);
+
     if (foundIndex0 != -1) {
       (updatedList[foundIndex0] as AppDropdown).value = event.value;
       emit(state.copyWith(list_widget_devis: updatedList));
-      state.formKey.currentState!.save();
+
+      emit(state.copyWith(formKey: GlobalKey<FormState>()));
+      int index = state.list_parametre!
+          .indexWhere((param) => param.title == event.label);
+
+      var datta = state.list_parametre![index];
+      var indexFind = datta.itemsValue.split(',').indexOf(event.value);
+      List<ParamSaveModel>? listdataSave = List.from(state.listdataSave!);
+      if (indexFind != -1) {
+        var indexFindParam =
+            listdataSave.indexWhere((element) => element.title == event.label);
+        if (indexFindParam != -1) {
+          log('-find----${listdataSave.length}');
+          emit(state.copyWith(
+              montantDevis: state.montantDevis! -
+                  int.parse(listdataSave[indexFindParam].value)));
+          listdataSave.removeAt(indexFindParam);
+        }
+        var montantDevis = state.montantDevis!.toString();
+        var montant = datta.montants.split(',')[indexFind];
+        emit(state.copyWith(
+            montantDevis: int.parse(montantDevis) +
+                int.parse((montant.length == 0 ? 0 : montant).toString())));
+        listdataSave
+            .add(new ParamSaveModel(title: event.label, value: montant));
+        emit(state.copyWith(
+          listdataSave: listdataSave,
+        ));
+        log('-find----${listdataSave.toList()}');
+      }
+
       emit(state.copyWith(formKey: state.formKey.currentState!.save()));
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
@@ -326,22 +378,50 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       (updatedList[foundIndex1] as AppRadioGroup).value = event.value;
       emit(state.copyWith(list_widget_devis: updatedList));
       state.formKey.currentState!.save();
+
+      int index = state.list_parametre!
+          .indexWhere((param) => param.title == event.label);
+
+      var datta = state.list_parametre![index];
+      var indexFind = datta.itemsValue.split(',').indexOf(event.value);
+      List<ParamSaveModel>? listdataSave = List.from(state.listdataSave!);
+      if (indexFind != -1) {
+        var indexFindParam =
+            listdataSave.indexWhere((element) => element.title == event.label);
+        if (indexFindParam != -1) {
+          emit(state.copyWith(
+              montantDevis: state.montantDevis! -
+                  int.parse(listdataSave[indexFindParam].value)));
+          listdataSave.removeAt(indexFindParam);
+        }
+        var montantDevis = state.montantDevis!.toString();
+        var montant = datta.montants.split(',')[indexFind];
+        emit(state.copyWith(
+            montantDevis: int.parse(montantDevis) +
+                int.parse((montant.length == 0 ? 0 : montant).toString())));
+        listdataSave
+            .add(new ParamSaveModel(title: event.label, value: montant));
+        emit(state.copyWith(
+          listdataSave: listdataSave,
+        ));
+      }
+
       emit(state.copyWith(formKey: state.formKey.currentState!.save()));
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
   }
 
-  formatDataToDevis() {
-    Map<String, dynamic> _data = {};
+  List<Map<dynamic, dynamic>> formatDataToDevis() {
+    List<Map<dynamic, dynamic>> dataList = [];
 
     state.list_parametre!.forEach((element) {
       var value = findWidget(element.title);
       if (value != null) {
-        _data[element.title] = value;
+        dataList.add({'id': element.id, 'value': value});
       }
     });
 
-    return _data;
+    return dataList;
   }
 
   findWidget(label) {

@@ -74,9 +74,10 @@ class AbonnentComponent extends StatelessWidget {
                 )),
                 Container(
                     child: Text(
-                  abonnement.description!,
+                  'Valable ${abonnement.duration!}  Jour',
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(),
+                  style: TextStyle(
+                      color: ColorsApp.second, fontWeight: FontWeight.w800),
                 ))
               ],
             ),

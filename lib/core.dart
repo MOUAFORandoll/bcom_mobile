@@ -55,6 +55,7 @@ Future<void> initLoad(context) async {
   BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
 
   BlocProvider.of<AbonnementBloc>(context)
+    ..add(GetListTransaction())
     ..add(UserAbonnement())
     ..add(GetListAbonnement());
   BlocProvider.of<DevisBloc>(context)..add(GetListParametre());

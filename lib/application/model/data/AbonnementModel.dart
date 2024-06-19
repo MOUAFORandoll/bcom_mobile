@@ -4,26 +4,30 @@ class AbonnementModel {
   dynamic fileService;
   String? description;
   String? amount;
+  String? duration;
   bool? isDeleted;
   DateTime? createdAt;
   DateTime? updatedAt;
 
   AbonnementModel({
-   required this.id,
-   required this.title,
-   required this.fileService,
-   required this.description,
-   required this.amount,
-   required this.isDeleted,
-   required this.createdAt,
-   required this.updatedAt,
+    required this.id,
+    required this.title,
+    required this.fileService,
+    required this.description,
+    required this.duration,
+    required this.amount,
+    required this.isDeleted,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
-  factory AbonnementModel.fromJson(Map<String, dynamic> json) => AbonnementModel(
+  factory AbonnementModel.fromJson(Map<String, dynamic> json) =>
+      AbonnementModel(
         id: json['id'] as int,
         title: json['title'] as String,
         fileService: json['fileService'] as dynamic,
         description: json['description'] as String,
+        duration: json['duration'] == null ? '1' : json['duration'] as String,
         amount: json['amount'] as String,
         isDeleted: json['isDeleted'] as bool,
         createdAt: json['createdAt'] == null
@@ -38,6 +42,7 @@ class AbonnementModel {
         'id': id,
         'title': title,
         'fileService': fileService,
+        'duration': duration,
         'description': description,
         'amount': amount,
         'isDeleted': isDeleted,

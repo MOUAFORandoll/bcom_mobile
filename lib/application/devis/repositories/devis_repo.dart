@@ -9,8 +9,15 @@ class DevisRepo {
   final IAppRequests apiClient;
   DevisRepo({required this.apiClient});
   var database = sl.get<DatabaseCubit>();
-  Future newDevis(data) async {
+  Future addDevis(data) async {
     Response a = await apiClient.postRequest(ApiRoutes.DEVIS, body: data);
+
+    return a;
+  }
+
+  Future addDevisContent(data) async {
+    Response a =
+        await apiClient.postRequest(ApiRoutes.DEVISCONTENT, body: data);
 
     return a;
   }
@@ -18,8 +25,8 @@ class DevisRepo {
   Future getlistDevis() async {
     var user = await database.getUser();
 
-    Response a =
-        await apiClient.getRequest(ApiRoutes.DEVIS + '?client.id=${user!.id}');
+    Response a = await apiClient
+        .getRequest(ApiRoutes.DEVIS + '?client.id=${user!.userId}');
 
     return a;
   }

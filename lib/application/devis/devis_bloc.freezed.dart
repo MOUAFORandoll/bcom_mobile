@@ -3133,12 +3133,14 @@ mixin _$DevisState {
   List<VilleModel>? get list_ville => throw _privateConstructorUsedError;
   List<Widget>? get list_widget_devis => throw _privateConstructorUsedError;
   VilleModel? get ville => throw _privateConstructorUsedError;
+  List<ParamSaveModel>? get listdataSave => throw _privateConstructorUsedError;
   List<dynamic>? get listTypeCommunication =>
       throw _privateConstructorUsedError;
   int get indexHistory => throw _privateConstructorUsedError;
   int? get isRequest => throw _privateConstructorUsedError;
   int? get load_list_pack => throw _privateConstructorUsedError;
   int? get load_list_devis => throw _privateConstructorUsedError;
+  int? get montantDevis => throw _privateConstructorUsedError;
   String? get paiement_url => throw _privateConstructorUsedError;
   int? get load_list_ville => throw _privateConstructorUsedError;
   bool? get updateData => throw _privateConstructorUsedError;
@@ -3178,11 +3180,13 @@ abstract class $DevisStateCopyWith<$Res> {
       List<VilleModel>? list_ville,
       List<Widget>? list_widget_devis,
       VilleModel? ville,
+      List<ParamSaveModel>? listdataSave,
       List<dynamic>? listTypeCommunication,
       int indexHistory,
       int? isRequest,
       int? load_list_pack,
       int? load_list_devis,
+      int? montantDevis,
       String? paiement_url,
       int? load_list_ville,
       bool? updateData,
@@ -3222,11 +3226,13 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
     Object? list_ville = freezed,
     Object? list_widget_devis = freezed,
     Object? ville = freezed,
+    Object? listdataSave = freezed,
     Object? listTypeCommunication = freezed,
     Object? indexHistory = null,
     Object? isRequest = freezed,
     Object? load_list_pack = freezed,
     Object? load_list_devis = freezed,
+    Object? montantDevis = freezed,
     Object? paiement_url = freezed,
     Object? load_list_ville = freezed,
     Object? updateData = freezed,
@@ -3268,6 +3274,10 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
           ? _value.ville
           : ville // ignore: cast_nullable_to_non_nullable
               as VilleModel?,
+      listdataSave: freezed == listdataSave
+          ? _value.listdataSave
+          : listdataSave // ignore: cast_nullable_to_non_nullable
+              as List<ParamSaveModel>?,
       listTypeCommunication: freezed == listTypeCommunication
           ? _value.listTypeCommunication
           : listTypeCommunication // ignore: cast_nullable_to_non_nullable
@@ -3287,6 +3297,10 @@ class _$DevisStateCopyWithImpl<$Res, $Val extends DevisState>
       load_list_devis: freezed == load_list_devis
           ? _value.load_list_devis
           : load_list_devis // ignore: cast_nullable_to_non_nullable
+              as int?,
+      montantDevis: freezed == montantDevis
+          ? _value.montantDevis
+          : montantDevis // ignore: cast_nullable_to_non_nullable
               as int?,
       paiement_url: freezed == paiement_url
           ? _value.paiement_url
@@ -3382,11 +3396,13 @@ abstract class _$$DevisStateImplCopyWith<$Res>
       List<VilleModel>? list_ville,
       List<Widget>? list_widget_devis,
       VilleModel? ville,
+      List<ParamSaveModel>? listdataSave,
       List<dynamic>? listTypeCommunication,
       int indexHistory,
       int? isRequest,
       int? load_list_pack,
       int? load_list_devis,
+      int? montantDevis,
       String? paiement_url,
       int? load_list_ville,
       bool? updateData,
@@ -3424,11 +3440,13 @@ class __$$DevisStateImplCopyWithImpl<$Res>
     Object? list_ville = freezed,
     Object? list_widget_devis = freezed,
     Object? ville = freezed,
+    Object? listdataSave = freezed,
     Object? listTypeCommunication = freezed,
     Object? indexHistory = null,
     Object? isRequest = freezed,
     Object? load_list_pack = freezed,
     Object? load_list_devis = freezed,
+    Object? montantDevis = freezed,
     Object? paiement_url = freezed,
     Object? load_list_ville = freezed,
     Object? updateData = freezed,
@@ -3470,6 +3488,10 @@ class __$$DevisStateImplCopyWithImpl<$Res>
           ? _value.ville
           : ville // ignore: cast_nullable_to_non_nullable
               as VilleModel?,
+      listdataSave: freezed == listdataSave
+          ? _value._listdataSave
+          : listdataSave // ignore: cast_nullable_to_non_nullable
+              as List<ParamSaveModel>?,
       listTypeCommunication: freezed == listTypeCommunication
           ? _value._listTypeCommunication
           : listTypeCommunication // ignore: cast_nullable_to_non_nullable
@@ -3489,6 +3511,10 @@ class __$$DevisStateImplCopyWithImpl<$Res>
       load_list_devis: freezed == load_list_devis
           ? _value.load_list_devis
           : load_list_devis // ignore: cast_nullable_to_non_nullable
+              as int?,
+      montantDevis: freezed == montantDevis
+          ? _value.montantDevis
+          : montantDevis // ignore: cast_nullable_to_non_nullable
               as int?,
       paiement_url: freezed == paiement_url
           ? _value.paiement_url
@@ -3579,11 +3605,13 @@ class _$DevisStateImpl implements _DevisState {
       required final List<VilleModel>? list_ville,
       required final List<Widget>? list_widget_devis,
       this.ville,
+      required final List<ParamSaveModel>? listdataSave,
       required final List<dynamic>? listTypeCommunication,
       required this.indexHistory,
       required this.isRequest,
       required this.load_list_pack,
       required this.load_list_devis,
+      required this.montantDevis,
       this.paiement_url,
       required this.load_list_ville,
       required this.updateData,
@@ -3606,6 +3634,7 @@ class _$DevisStateImpl implements _DevisState {
       : _list_devis = list_devis,
         _list_ville = list_ville,
         _list_widget_devis = list_widget_devis,
+        _listdataSave = listdataSave,
         _listTypeCommunication = listTypeCommunication,
         _list_parametre = list_parametre;
 
@@ -3644,6 +3673,16 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   final VilleModel? ville;
+  final List<ParamSaveModel>? _listdataSave;
+  @override
+  List<ParamSaveModel>? get listdataSave {
+    final value = _listdataSave;
+    if (value == null) return null;
+    if (_listdataSave is EqualUnmodifiableListView) return _listdataSave;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<dynamic>? _listTypeCommunication;
   @override
   List<dynamic>? get listTypeCommunication {
@@ -3663,6 +3702,8 @@ class _$DevisStateImpl implements _DevisState {
   final int? load_list_pack;
   @override
   final int? load_list_devis;
+  @override
+  final int? montantDevis;
   @override
   final String? paiement_url;
   @override
@@ -3713,7 +3754,7 @@ class _$DevisStateImpl implements _DevisState {
 
   @override
   String toString() {
-    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, list_widget_devis: $list_widget_devis, ville: $ville, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit, formKey: $formKey)';
+    return 'DevisState(indexDevis: $indexDevis, list_devis: $list_devis, list_ville: $list_ville, list_widget_devis: $list_widget_devis, ville: $ville, listdataSave: $listdataSave, listTypeCommunication: $listTypeCommunication, indexHistory: $indexHistory, isRequest: $isRequest, load_list_pack: $load_list_pack, load_list_devis: $load_list_devis, montantDevis: $montantDevis, paiement_url: $paiement_url, load_list_ville: $load_list_ville, updateData: $updateData, list_parametre: $list_parametre, load_list_parametre: $load_list_parametre, parametre: $parametre, inQuartier: $inQuartier, horaireStart: $horaireStart, horaireEnd: $horaireEnd, typeCommunication: $typeCommunication, typeTravail: $typeTravail, typeProjet: $typeProjet, nombreBiker: $nombreBiker, zone: $zone, dureeTravail: $dureeTravail, nom_produit: $nom_produit, type_produit: $type_produit, description_produit: $description_produit, formKey: $formKey)';
   }
 
   @override
@@ -3731,6 +3772,8 @@ class _$DevisStateImpl implements _DevisState {
                 .equals(other._list_widget_devis, _list_widget_devis) &&
             (identical(other.ville, ville) || other.ville == ville) &&
             const DeepCollectionEquality()
+                .equals(other._listdataSave, _listdataSave) &&
+            const DeepCollectionEquality()
                 .equals(other._listTypeCommunication, _listTypeCommunication) &&
             (identical(other.indexHistory, indexHistory) ||
                 other.indexHistory == indexHistory) &&
@@ -3740,6 +3783,8 @@ class _$DevisStateImpl implements _DevisState {
                 other.load_list_pack == load_list_pack) &&
             (identical(other.load_list_devis, load_list_devis) ||
                 other.load_list_devis == load_list_devis) &&
+            (identical(other.montantDevis, montantDevis) ||
+                other.montantDevis == montantDevis) &&
             (identical(other.paiement_url, paiement_url) ||
                 other.paiement_url == paiement_url) &&
             (identical(other.load_list_ville, load_list_ville) ||
@@ -3786,11 +3831,13 @@ class _$DevisStateImpl implements _DevisState {
         const DeepCollectionEquality().hash(_list_ville),
         const DeepCollectionEquality().hash(_list_widget_devis),
         ville,
+        const DeepCollectionEquality().hash(_listdataSave),
         const DeepCollectionEquality().hash(_listTypeCommunication),
         indexHistory,
         isRequest,
         load_list_pack,
         load_list_devis,
+        montantDevis,
         paiement_url,
         load_list_ville,
         updateData,
@@ -3826,11 +3873,13 @@ abstract class _DevisState implements DevisState {
       required final List<VilleModel>? list_ville,
       required final List<Widget>? list_widget_devis,
       final VilleModel? ville,
+      required final List<ParamSaveModel>? listdataSave,
       required final List<dynamic>? listTypeCommunication,
       required final int indexHistory,
       required final int? isRequest,
       required final int? load_list_pack,
       required final int? load_list_devis,
+      required final int? montantDevis,
       final String? paiement_url,
       required final int? load_list_ville,
       required final bool? updateData,
@@ -3862,6 +3911,8 @@ abstract class _DevisState implements DevisState {
   @override
   VilleModel? get ville;
   @override
+  List<ParamSaveModel>? get listdataSave;
+  @override
   List<dynamic>? get listTypeCommunication;
   @override
   int get indexHistory;
@@ -3871,6 +3922,8 @@ abstract class _DevisState implements DevisState {
   int? get load_list_pack;
   @override
   int? get load_list_devis;
+  @override
+  int? get montantDevis;
   @override
   String? get paiement_url;
   @override

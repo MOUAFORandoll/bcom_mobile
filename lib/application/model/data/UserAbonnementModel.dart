@@ -4,14 +4,12 @@ class UserAbonnementModel {
   String startDate;
   String endDate;
   int isPay;
-  int status;
 
   UserAbonnementModel({
     required this.userId,
     required this.subscriptionId,
     required this.startDate,
     required this.endDate,
-    required this.status,
     required this.isPay,
   });
 
@@ -22,7 +20,6 @@ class UserAbonnementModel {
       subscriptionId: json['subscriptionId'],
       startDate: json['startDate'],
       endDate: json['endDate'],
-      status: json['status'],
       isPay: json['isPay'],
     );
   }
@@ -34,7 +31,6 @@ class UserAbonnementModel {
       'subscriptionId': subscriptionId,
       'startDate': startDate,
       'endDate': endDate,
-      'status': status,
       'isPay': isPay,
     };
   }

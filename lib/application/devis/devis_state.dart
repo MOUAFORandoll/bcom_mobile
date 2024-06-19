@@ -8,11 +8,13 @@ class DevisState with _$DevisState {
       required List<VilleModel>? list_ville,
       required List<Widget>? list_widget_devis,
       VilleModel? ville,
+      required List<ParamSaveModel>? listdataSave,
       required List? listTypeCommunication,
       required int indexHistory,
       required int? isRequest,
       required int? load_list_pack,
       required int? load_list_devis,
+      required int? montantDevis,
       String? paiement_url,
       required int? load_list_ville,
       required bool? updateData,
@@ -35,6 +37,8 @@ class DevisState with _$DevisState {
 
   factory DevisState.initial() => DevisState(
         formKey: GlobalKey<FormState>(),
+        montantDevis: 0,
+        listdataSave: [],
         horaireStart: TimeOfDay(hour: 08, minute: 00),
         horaireEnd: TimeOfDay(hour: 18, minute: 00),
         dureeTravail: new TextEditingController(),

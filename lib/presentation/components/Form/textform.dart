@@ -25,8 +25,8 @@ class TextForm extends StatelessWidget {
         onChanged: (String value) {
           if (onChange != null) onChange!(value);
         },
-        minLines: 5,
-        maxLines: 15,
+        minLines: 10,
+        maxLines: 30,
         controller: controller,
         validator: (value) {
           return value!.isEmpty ? 'veillez remplir se champs' : null;

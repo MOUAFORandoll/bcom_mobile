@@ -140,9 +140,16 @@ class _PaimentPageState extends State<PaimentPage> {
                   children: [
                     Container(
                         width: getWith(context) * .6,
-                        child: Text(
-                          'Verifier le payement de votre abonnement'.tr(),
-                        )),
+                        child: state.abonnement != null
+                            ? Text(
+                                'Verifier le payement de votre abonnement'
+                                        .tr() +
+                                    ' ${state.abonnement!.title}',
+                              )
+                            : Text(
+                                'Verifier le renouvellement de votre abonnement'
+                                    .tr(),
+                              )),
                     InkWell(
                         child: Icon(Icons.close,
                             color: ColorsApp.primary, weight: 50),
@@ -157,7 +164,7 @@ class _PaimentPageState extends State<PaimentPage> {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: ColorsApp.primary),
+                            color: ColorsApp.red),
                         child: Row(mainAxisSize: MainAxisSize.min, children: [
                           Text(
                             'Sortir'.tr(),
@@ -166,7 +173,7 @@ class _PaimentPageState extends State<PaimentPage> {
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13),
                           ),
-                          Icon(Icons.check, color: ColorsApp.white, weight: 50)
+                          Icon(Icons.close, color: ColorsApp.white, weight: 50)
                         ]),
                       ),
                       onTap: () {

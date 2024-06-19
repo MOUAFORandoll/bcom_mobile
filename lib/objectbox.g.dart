@@ -241,7 +241,7 @@ Future<Store> openStore(
 ModelDefinition getObjectBoxModel() {
   final model = ModelInfo(
       entities: _entities,
-      lastEntityId: const IdUid(9, 7658565384930245975),
+      lastEntityId: const IdUid(10, 8899201739597507893),
       lastIndexId: const IdUid(0, 0),
       lastRelationId: const IdUid(0, 0),
       lastSequenceId: const IdUid(0, 0),
@@ -252,7 +252,8 @@ ModelDefinition getObjectBoxModel() {
         5589971371954137280,
         1113314405807969848,
         8515091795137785474,
-        6314683099039113893
+        6314683099039113893,
+        8899201739597507893
       ],
       retiredIndexUids: const [],
       retiredPropertyUids: const [
@@ -287,7 +288,24 @@ ModelDefinition getObjectBoxModel() {
         5624160313008426624,
         550131433720045414,
         4387494669297644908,
-        6670894605406842718
+        6670894605406842718,
+        1509680790224191184,
+        2560470044517921973,
+        6338740718429916425,
+        6217688676215822727,
+        7163034638511889011,
+        5175539475605427876,
+        3212464330244885857,
+        9145508182850300113,
+        5475977313222324397,
+        257011986480393541,
+        1425822161837993090,
+        6119797536734163294,
+        9088981042465626974,
+        2333780439405209537,
+        3854914792433894787,
+        8203948045681915454,
+        8699453427446297518
       ],
       retiredRelationUids: const [],
       modelVersion: 5,

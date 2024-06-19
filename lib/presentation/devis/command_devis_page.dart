@@ -3,6 +3,7 @@
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/presentation/devis/SuccesDevisPage.dart';
+import 'package:Bcom/presentation/devis/infos_produit.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
@@ -14,8 +15,6 @@ class CommandDevisPage extends StatefulWidget {
 }
 
 class _CommandDevisPageState extends State<CommandDevisPage> {
-  int indexDevisPage = 0;
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<DevisBloc, DevisState>(listener: (context, state) {
@@ -81,6 +80,45 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                             )),
                       ]),
                 ),
+                Container(
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          child: Text(
+                            'Etape',
+                            style: TextStyle(color: ColorsApp.second),
+                          ),
+                        ),
+                        Container(
+                            decoration: BoxDecoration(
+                                color: ColorsApp.second,
+                                borderRadius: BorderRadius.circular(90)),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 3),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: kMarginX,
+                            ),
+                            child: Text(
+                              '${state.indexDevis! + 1}',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorsApp.white),
+                            )),
+                      ],
+                    )),
+                if (state.indexDevis == 1)
+                  Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: kMarginX, vertical: kMarginY),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Le montant de votre devis est de ${state.montantDevis} FCFA',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: ColorsApp.second),
+                      )),
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
@@ -108,38 +146,52 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: children,
+                          children: state.indexDevis == 0
+                              ? [InfoProduit()]
+                              : children,
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
-                    margin: EdgeInsets.symmetric(horizontal: kMarginX),
-                    width: getWith(context),
-                    child: AppButton(
-                        size: MainAxisSize.max,
-                        disabled: (state.indexDevis == 1)
-                            ? state.nombreBiker.text.isEmpty ||
-                                state.dureeTravail.text.isEmpty ||
-                                state.zone.text.isEmpty ||
-                                state.typeCommunication == null ||
-                                state.ville == null ||
-                                state.inQuartier == null ||
-                                state.typeTravail == null
-                            : false,
-                        text: 'Suivant'.tr(),
-                        onTap: () {
-                          BlocProvider.of<DevisBloc>(context)
-                              .add(ChangeIndexDevis(val: true));
-                          // if (state.indexDevis != 2) {
-                          //   BlocProvider.of<DevisBloc>(context)
-                          //       .add(ChangeIndexDevis(val: true));
-                          // }
-                          // if (state.indexDevis == 2) {
-                          //   BlocProvider.of<DevisBloc>(context).add(NewDevis());
-                          // }
-                        }))
+                state.indexDevis == 1
+                    ? Row(
+                        children: [
+                          Container(
+                              margin:
+                                  EdgeInsets.symmetric(horizontal: kMarginX),
+                              width: getWith(context) * .4,
+                              child: AppButton(
+                                  size: MainAxisSize.max,
+                                  text: 'Back'.tr(),
+                                  onTap: () {
+                                    BlocProvider.of<DevisBloc>(context)
+                                        .add(ChangeIndexDevis(val: false));
+                                  })),
+                          Container(
+                              margin:
+                                  EdgeInsets.symmetric(horizontal: kMarginX),
+                              width: getWith(context) * .4,
+                              child: AppButton(
+                                  size: MainAxisSize.max,
+                                  text: 'Envoyer'.tr(),
+                                  onTap: () {
+                                    BlocProvider.of<DevisBloc>(context)
+                                        .add(NewDevis());
+                                  })),
+                        ],
+                      )
+                    : Container(
+                        margin: EdgeInsets.symmetric(horizontal: kMarginX),
+                        width: getWith(context),
+                        child: AppButton(
+                            size: MainAxisSize.max,
+                            disabled: state.description_produit.text.isEmpty,
+                            text: 'Suivant'.tr(),
+                            onTap: () {
+                              BlocProvider.of<DevisBloc>(context)
+                                  .add(ChangeIndexDevis(val: true));
+                            }))
               ]))));
     });
   }

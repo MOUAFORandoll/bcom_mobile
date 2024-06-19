@@ -16,14 +16,7 @@ class UserRepo {
 
     return response;
   }
-
-  Future completeDevisInfo(data) async {
-    Response response =
-        await apiClient.postRequest(ApiRoutes.InfoDevis, body: data);
-
-    return response;
-  }
-
+   
   Future Login(data) async {
     Response response =
         await apiClient.postRequest(ApiRoutes.LOGIN, body: data);

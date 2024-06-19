@@ -1,31 +1,37 @@
 class Parametre {
+  int id;
+
   String title;
   final String? description;
   final String inputType;
-  String value;
   final String itemsValue;
+  final String montants;
 
-  Parametre(
-      {required this.title,
-      this.description,
-      required this.inputType,
-      required this.itemsValue,
-      required this.value});
+  Parametre({
+    required this.id,
+    required this.title,
+    this.description,
+    required this.inputType,
+    required this.itemsValue,
+    required this.montants,
+  });
 
   Parametre.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
+      : id = json['id'],
+        title = json['title'],
         description = json['description'],
-        inputType = json['inputType'],
+        inputType = json['inputType'].toString(),
         itemsValue = json['value'],
-        value = '';
+        montants = json['amount'];
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'title': title,
       'description': description,
       'inputType': inputType,
       'itemsValue': itemsValue,
-      'value': value,
+      'montants': montants
     };
   }
 }

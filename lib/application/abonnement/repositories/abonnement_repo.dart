@@ -23,6 +23,14 @@ class AbonnementRepo {
     return a;
   }
 
+  Future getlistTransactions() async {
+    var user = await database.getUser();
+    var data = {'userId': user!.userId};
+    Response a = await apiClient.postRequest(ApiRoutes.TRANSACTION, body: data);
+
+    return a;
+  }
+
   Future newAbonnement(data) async {
     Response a =
         await apiClient.postRequest(ApiRoutes.ABONNEMENT_USER, body: data);
