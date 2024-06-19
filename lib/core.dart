@@ -58,7 +58,9 @@ Future<void> initLoad(context) async {
     ..add(GetListTransaction())
     ..add(UserAbonnement())
     ..add(GetListAbonnement());
-  BlocProvider.of<DevisBloc>(context)..add(GetListParametre());
+  BlocProvider.of<DevisBloc>(context)
+    ..add(GetListParametre())
+    ..add(GetListDevis());
 }
 
 Future<void> requestPermission() async {

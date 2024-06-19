@@ -24,9 +24,9 @@ class DevisRepo {
 
   Future getlistDevis() async {
     var user = await database.getUser();
-
+    var data = {'userId': user!.userId};
     Response a = await apiClient
-        .getRequest(ApiRoutes.DEVIS + '?client.id=${user!.userId}');
+        .postRequest(ApiRoutes.DEVIS + '/getDevisByClientId', body: data);
 
     return a;
   }

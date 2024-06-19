@@ -8,6 +8,7 @@ import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:Bcom/presentation/devis/devis_home_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
+import 'package:Bcom/routes/app_router.dart';
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
@@ -200,7 +201,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                           ? state.index == 0
                               ? PresentationPage()
                               : HistoriqueDemandeDevisPage()
-                          : PresentationPage())
+                          : CompleteEntrepriseInfoPage())
+
+                  // SliverToBoxAdapter(child: HistoriqueDemandeDevisPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,
@@ -284,11 +287,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   currentIndex: state.index,
                   onTap: (index) {
                     print(index);
-                    context.read<HomeBloc>().add(SetIndexEvent(index: index));
-                    // if (index == 0 && (index == state.index)) {
-                    //   BlocProvider.of<LivraisonBloc>(context)
-                    //       .add(HistoriqueUserLivraison());
-                    // }
+
+                    if (index == 1) {
+                      print(index);
+                      AutoRouter.of(context)
+                          .pushNamed(HistoriqueDemandeDevisPage.routeName);
+                    }
                   },
                 ))));
   }

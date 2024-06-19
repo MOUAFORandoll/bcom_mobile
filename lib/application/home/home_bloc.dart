@@ -26,7 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<SetIndexEvent>((event, emit) async {
-      print('-----------------SetIndexEvent');
+      print('--------${event.index}---------SetIndexEvent');
       emit(state.copyWith(index: event.index));
     });
     on<SetIndexHistoryEvent>((event, emit) async {

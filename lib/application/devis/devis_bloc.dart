@@ -159,23 +159,23 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
 
   _getListDevis(GetListDevis event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
-      load_list_devis: 0,
+      load_listDevis: 0,
     ));
     await devisRepo.getlistDevis().then((response) {
       if (response.data != null) {
         emit(state.copyWith(
-            load_list_devis: 1,
-            list_devis: (response.data['data'] as List)
+            load_listDevis: 1,
+            listDevis: (response.data['data'] as List)
                 .map((e) => DevisModel.fromJson(e))
                 .toList()));
       } else {
         emit(state.copyWith(
-          load_list_devis: 2,
+          load_listDevis: 2,
         ));
       }
     }).onError((e, s) {
       emit(state.copyWith(
-        load_list_devis: 2,
+        load_listDevis: 2,
       ));
     });
   }

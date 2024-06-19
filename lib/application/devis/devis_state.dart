@@ -4,7 +4,7 @@ part of 'devis_bloc.dart';
 class DevisState with _$DevisState {
   const factory DevisState(
       {required int? indexDevis,
-      required List<DevisModel>? list_devis,
+      required List<DevisModel>? listDevis,
       required List<VilleModel>? list_ville,
       required List<Widget>? list_widget_devis,
       VilleModel? ville,
@@ -13,7 +13,7 @@ class DevisState with _$DevisState {
       required int indexHistory,
       required int? isRequest,
       required int? load_list_pack,
-      required int? load_list_devis,
+      required int? load_listDevis,
       required int? montantDevis,
       String? paiement_url,
       required int? load_list_ville,
@@ -59,11 +59,11 @@ class DevisState with _$DevisState {
         inQuartier: null,
         updateData: null,
         load_list_pack: 0,
-        load_list_devis: 0,
+        load_listDevis: 0,
         load_list_ville: null,
         indexHistory: 0,
         isRequest: null,
-        list_devis: [],
+        listDevis: [],
         list_widget_devis: [],
       );
 }
