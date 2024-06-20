@@ -41,97 +41,80 @@ class DevisUserComponent extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Text(FormatDateTime().dateToStringNew(devis.date)),
-                    Row(
-                      children: [
-                        Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                                color: ColorsApp.primary,
-                                borderRadius: BorderRadius.circular(30))),
-                        Container(
-                          margin: EdgeInsets.only(left: kMarginY),
-                          child: Text(
-                              devis.status == 0
-                                  ? 'En attente de validation'
-                                  : devis.status == 1
-                                      ? 'En cours de verification'
-                                      : 'Devis Valide',
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: ColorsApp.primary,
-                              )),
-                        ),
-                      ],
+                    Container(
+                      child: Text('Demande de devis du : ',
+
+                          // overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: ColorsApp.primary,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700)),
                     ),
-                    Row(
-                      children: [
-                        Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                                color: ColorsApp.primary,
-                                borderRadius: BorderRadius.circular(30))),
-                        Container(
-                          margin: EdgeInsets.only(left: kMarginY),
-                          child: Text(
-                              FormatDateTime().dateToSimpleDate(
-                                  devis.dateCreated.toString()),
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: ColorsApp.primary,
-                              )),
-                        ),
-                      ],
+                    Container(
+                      child: Text(
+                          FormatDateTime()
+                              .dateToSimpleDate(devis.createdAt.toString())
+                              .toString(),
+
+                          // overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: ColorsApp.primary,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700)),
                     ),
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Column(
                 children: [
-                  Column(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                                margin: EdgeInsets.symmetric(
-                                    vertical: kMarginY / 2),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      width: getWith(context) * .34,
-                                      child: Text(
-                                          devis.pack!.libelle.toString(),
-                                          maxLines: 2,
-                                          // overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              color: ColorsApp.primary,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w700)),
-                                    ),
-                                    Container(
-                                      child: Text(
-                                          devis.montant.toString() + ' XAF',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              color: ColorsApp.primary,
-                                              fontWeight: FontWeight.w600)),
-                                    ),
-                                  ],
-                                )),
-                          ]),
+                      Container(
+                        child: Text('Numero de devis : ',
+
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: ColorsApp.primary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500)),
+                      ),
+                      Container(
+                        child: Text(devis.devisNumber.toString(),
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: ColorsApp.primary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700)),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Text('Montant du devis : ',
+
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: ColorsApp.primary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500)),
+                      ),
+                      Container(
+                        child: Text(devis.amount.toString() + ' XAF',
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: ColorsApp.primary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700)),
+                      ),
                     ],
                   ),
                   Container(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           child: Row(
@@ -143,32 +126,24 @@ class DevisUserComponent extends StatelessWidget {
                               ),
                               Container(
                                   child: Text(
-                                'Horaire : ${devis.horaire}',
+                                'desciption  ',
                               )),
                             ],
                           ),
                         ),
                         Container(
-                            padding: EdgeInsets.symmetric()
-                                .add(EdgeInsets.only(top: kMarginY / 2)),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: kMarginX * 1.5, vertical: 1),
-                              decoration: BoxDecoration(
-                                  color: ColorsApp.primary,
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: Text(
-                                'Ville : ${devis.ville!.libelle}',
-                                style: TextStyle(color: ColorsApp.white),
-                              ),
-                            )),
+                            child: Text(devis.desciption!,
+                                style: TextStyle(
+                                    color: ColorsApp.primary,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600))),
                       ],
                     ),
                   )
                 ],
               ),
             ],
-          ) /* ) */),
+          )),
       /* onTap: () =>
             AutoRouter.of(context).push(devisDataRoute(livraison: livraison)) */
     );

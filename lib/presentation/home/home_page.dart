@@ -5,7 +5,7 @@ import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
-import 'package:Bcom/presentation/devis/devis_home_page.dart';
+import 'package:Bcom/presentation/devis/presentation_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
 import 'package:Bcom/routes/app_router.dart';
@@ -196,14 +196,14 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     elevation: 10.0,
                     backgroundColor: ColorsApp.primary, //
                   ),
-                  SliverToBoxAdapter(
-                      child: state.user!.status!
-                          ? state.index == 0
-                              ? PresentationPage()
-                              : HistoriqueDemandeDevisPage()
-                          : CompleteEntrepriseInfoPage())
+                  // SliverToBoxAdapter(
+                  //     child: state.user!.status!
+                  //         ? state.index == 0
+                  //             ? PresentationPage()
+                  //             : HistoriqueDemandeDevisPage()
+                  //         : CompleteEntrepriseInfoPage())
 
-                  // SliverToBoxAdapter(child: HistoriqueDemandeDevisPage())
+                  SliverToBoxAdapter(child: PresentationPage())
                 ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,

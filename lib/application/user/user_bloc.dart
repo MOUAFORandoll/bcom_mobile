@@ -170,7 +170,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       'userTypeId': 5,
     };
     print(data);
-    emit(state.copyWith(isLoading: 1));
+    emit(state.copyWith(isLoadingReg: 1));
     // emit(UserState.loginIngUser());
 
     try {
@@ -178,18 +178,18 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
       if (response.statusCode == 201) {
         emit(state.copyWith(
-            isLoading: 2, authenticationMessage: response.data['message']));
-        emit(state.copyWith(authenticationMessage: '', isLoading: null));
+            isLoadingReg: 2, authenticationMessage: response.data['message']));
+        emit(state.copyWith(authenticationMessage: '', isLoadingReg: null));
       } else {
         emit(state.copyWith(
-            isLoading: 3, authenticationMessage: response.data['message']));
-        emit(state.copyWith(authenticationMessage: '', isLoading: null));
+            isLoadingReg: 3, authenticationMessage: response.data['message']));
+        emit(state.copyWith(authenticationMessage: '', isLoadingReg: null));
       }
     } catch (e) {
       emit(state.copyWith(
-          isLoading: 3,
+          isLoadingReg: 3,
           authenticationMessage: 'Une erreur est survenue recommencer'));
-      emit(state.copyWith(authenticationMessage: '', isLoading: null));
+      emit(state.copyWith(authenticationMessage: '', isLoadingReg: null));
     }
   }
 

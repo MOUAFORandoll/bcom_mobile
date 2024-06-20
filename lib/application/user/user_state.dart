@@ -4,6 +4,7 @@ part of 'user_bloc.dart';
 class UserState with _$UserState {
   const factory UserState({
     int? isLoading,
+    int? isLoadingReg,
     String? authenticationMessage,
     String? eventMessage,
     String? registerFailedMessage,
@@ -41,6 +42,7 @@ class UserState with _$UserState {
         cniImageArriere: null,
         cartegriseImage: null,
         isLoading: 0,
+        isLoadingReg: 0,
         isUpdateUserImage: 0,
         villeUser: '',
         quartierUser: '',

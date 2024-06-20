@@ -162,24 +162,24 @@ class _AuthPageState extends State<AuthPage> {
                                         'Mot de passe', value!);
                                   },
                                 ),
-                                Container(
-                                  margin: EdgeInsets.only(bottom: kMarginY),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      TextButton(
-                                        onPressed: () => AutoRouter.of(context)
-                                            .pushNamed(
-                                                ForgotPasswordPage.routeName),
-                                        child: Text('forgotpass'.tr(),
-                                            style: TextStyle(
-                                              fontFamily: 'Lato',
-                                              color: ColorsApp.second,
-                                            )),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                // Container(
+                                //   margin: EdgeInsets.only(bottom: kMarginY),
+                                //   child: Row(
+                                //     mainAxisAlignment: MainAxisAlignment.end,
+                                //     children: [
+                                //       TextButton(
+                                //         onPressed: () => AutoRouter.of(context)
+                                //             .pushNamed(
+                                //                 ForgotPasswordPage.routeName),
+                                //         child: Text('forgotpass'.tr(),
+                                //             style: TextStyle(
+                                //               fontFamily: 'Lato',
+                                //               color: ColorsApp.second,
+                                //             )),
+                                //       )
+                                //     ],
+                                //   ),
+                                // ),
                                 AppButton(
                                     size: MainAxisSize.max,
                                     // loading: _userState.isLoading,

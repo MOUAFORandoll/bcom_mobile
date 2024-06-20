@@ -68,15 +68,15 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           body: BlocConsumer<UserBloc, UserState>(
             listener: (context, state) {
-              if (state.isLoading == 1) {
+              if (state.isLoadingReg == 1) {
                 EasyLoading.show(
                     dismissOnTap: true,
                     status: 'En cours',
                     maskType: EasyLoadingMaskType.black);
-              } else if (state.isLoading == 3) {
+              } else if (state.isLoadingReg == 3) {
                 EasyLoading.dismiss();
                 showError(state.authenticationMessage!, context);
-              } else if (state.isLoading == 2) {
+              } else if (state.isLoadingReg == 2) {
                 EasyLoading.dismiss();
                 AutoRouter.of(context).replaceAll([AuthRoute()]);
 

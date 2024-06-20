@@ -156,6 +156,7 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
                 ),
                 state.indexDevis == 1
                     ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
                               margin:

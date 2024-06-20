@@ -20,13 +20,12 @@ class HistoriqueDemandeDevisPage extends StatelessWidget {
                 length: 2,
                 child: Scaffold(
                   appBar: AppBar(
+                    leading: AppBackButton(),
                     bottom: TabBar(
                       tabs: [
+                        Tab(icon: Icon(Icons.list), text: 'Devis'),
                         Tab(
-                            icon: Icon(Icons.directions_transit),
-                            text: 'Devis'),
-                        Tab(
-                            icon: Icon(Icons.directions_car),
+                            icon: Icon(Icons.attach_money),
                             text: 'Transactions'),
                       ],
                     ),
