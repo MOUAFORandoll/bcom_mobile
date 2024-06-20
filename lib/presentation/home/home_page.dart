@@ -7,6 +7,7 @@ import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
 import 'package:Bcom/presentation/devis/presentation_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
+import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
 import 'package:Bcom/routes/app_router.dart';
 import 'package:Bcom/utils/constants/assets.dart';
@@ -109,102 +110,109 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                 backgroundColor: ColorsApp.bg,
                 drawer: CustomDrawer(user: state.user!),
                 body: Container(
-                    child: CustomScrollView(slivers: [
-                  SliverAppBar(
-                    automaticallyImplyLeading: false,
-                    leading: Builder(builder: (context) {
-                      return GestureDetector(
-                        child: Container(
-                          width: 10,
-                          height: 10,
-                          child: SvgPicture.asset(Assets.menu,
-                              color: ColorsApp.white, fit: BoxFit.none),
-                        ),
-                        onTap: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                      );
-                    }),
-                    title: Text(
-                      'Bcom Assist ',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: ColorsApp.white,
-                          fontFamily: 'Lato',
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    centerTitle: true,
-
-                    actions: [
-                      InkWell(
-                          child: Container(
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: Icon(
-                                FontAwesomeIcons.youtube,
-                                color: ColorsApp.red,
-                              )),
-                          onTap: () => GlobalBottomSheet.show(
-                              context: context,
-                              widget: Container(
-                                  child: GestureDetector(
-                                      onTap: () {
-                                        setState(() {
-                                          if (_controller!.value.isPlaying) {
-                                            _controller!.pause();
-                                          } else {
-                                            _controller!.play();
-                                          }
-                                        });
-                                      },
-                                      child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 500),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          height: MediaQuery.of(context)
-                                              .size
-                                              .height,
-                                          child: AspectRatio(
-                                            aspectRatio: 9.7 / 17.7,
-                                            child: VideoPlayer(_controller!),
-                                          )))))),
-                      InkWell(
-                          child: Container(
-                              margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: Icon(
-                                FontAwesomeIcons.whatsapp,
+                        child: CustomScrollView(slivers: [
+                        SliverAppBar(
+                          automaticallyImplyLeading: false,
+                          leading: Builder(builder: (context) {
+                            return GestureDetector(
+                              child: Container(
+                                width: 10,
+                                height: 10,
+                                child: SvgPicture.asset(Assets.menu,
+                                    color: ColorsApp.white, fit: BoxFit.none),
+                              ),
+                              onTap: () {
+                                Scaffold.of(context).openDrawer();
+                              },
+                            );
+                          }),
+                          title: Text(
+                            'Bcom Assist ',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
                                 color: ColorsApp.white,
-                              )),
-                          onTap: () => launchUrl(Uri.parse(
-                              'https://wa.me/690863838?text=Hello Je suis interesse par vos services'))),
-                    ],
-                    bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(getHeight(context) * .10),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: kMarginX,
-                        ).add(EdgeInsets.only(
-                          bottom: kMarginY * 3,
-                          right: kMarginX,
-                        )),
-                        child: KHomeInfo(user: state.user!),
-                      ),
-                    ),
-                    pinned: true,
-                    expandedHeight: getHeight(context) * .22,
-                    elevation: 10.0,
-                    backgroundColor: ColorsApp.primary, //
-                  ),
-                  // SliverToBoxAdapter(
-                  //     child: state.user!.status!
-                  //         ? state.index == 0
-                  //             ? PresentationPage()
-                  //             : HistoriqueDemandeDevisPage()
-                  //         : CompleteEntrepriseInfoPage())
+                                fontFamily: 'Lato',
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          centerTitle: true,
 
-                  SliverToBoxAdapter(child: PresentationPage())
-                ])),
+                          actions: [
+                            InkWell(
+                                child: Container(
+                                    alignment: Alignment.center,
+                                    margin:
+                                        EdgeInsets.only(right: kMarginX * 2),
+                                    child: Icon(
+                                      FontAwesomeIcons.youtube,
+                                      color: ColorsApp.red,
+                                    )),
+                                onTap: () => GlobalBottomSheet.show(
+                                    context: context,
+                                    widget: Container(
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                if (_controller!
+                                                    .value.isPlaying) {
+                                                  _controller!.pause();
+                                                } else {
+                                                  _controller!.play();
+                                                }
+                                              });
+                                            },
+                                            child: AnimatedContainer(
+                                                duration:
+                                                    Duration(milliseconds: 500),
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height,
+                                                child: AspectRatio(
+                                                  aspectRatio: 9.7 / 17.7,
+                                                  child:
+                                                      VideoPlayer(_controller!),
+                                                )))))),
+                            InkWell(
+                                child: Container(
+                                    margin:
+                                        EdgeInsets.only(right: kMarginX * 2),
+                                    child: Icon(
+                                      FontAwesomeIcons.whatsapp,
+                                      color: ColorsApp.white,
+                                    )),
+                                onTap: () => launchUrl(Uri.parse(
+                                    'https://wa.me/${state.homeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
+                          ],
+                          bottom: PreferredSize(
+                            preferredSize:
+                                Size.fromHeight(getHeight(context) * .10),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                horizontal: kMarginX,
+                              ).add(EdgeInsets.only(
+                                bottom: kMarginY * 3,
+                                right: kMarginX,
+                              )),
+                              child: KHomeInfo(user: state.user!),
+                            ),
+                          ),
+                          pinned: true,
+                          expandedHeight: getHeight(context) * .22,
+                          elevation: 10.0,
+                          backgroundColor: ColorsApp.primary, //
+                        ),
+                        // SliverToBoxAdapter(
+                        //     child: state.user!.status!
+                        //         ? state.index == 0
+                        //             ? PresentationPage()
+                        //             : HistoriqueDemandeDevisPage()
+                        //         : CompleteEntrepriseInfoPage())
+
+                        SliverToBoxAdapter(child: PresentationPage())
+                      ])),
                 bottomNavigationBar: CustomNavigationBar(
                   iconSize: 30.0,
                   // elevation: 0.0,

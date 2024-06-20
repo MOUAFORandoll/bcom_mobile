@@ -156,7 +156,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ));
     });
   }
-
+  
   _getListDevis(GetListDevis event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
       load_listDevis: 0,

@@ -3,6 +3,7 @@ import 'package:Bcom/application/connected/connected_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/export_bloc.dart';
+import 'package:Bcom/application/home/repositories/home_repo.dart';
 import 'package:Bcom/application/splash/splash_bloc.dart';
 import 'package:Bcom/application/user/repositories/user_repository.dart';
 import 'package:Bcom/infrastructure/_commons/network/app_requests.dart';
@@ -29,7 +30,9 @@ Future<void> init() async {
     ..registerFactory(() => UserBloc(userRepo: sl(), database: sl()))
     ..registerLazySingleton(() => UserRepo(apiClient: sl()));
 
-  sl..registerFactory(() => HomeBloc(database: sl()));
+  sl
+    ..registerFactory(() => HomeBloc(database: sl(), homeRepo: sl()))
+    ..registerLazySingleton(() => HomeRepo(apiClient: sl()));
 
   sl
     ..registerFactory(() => DevisBloc(devisRepo: sl(), database: sl()))
@@ -52,6 +55,8 @@ void initConnected() async {
 
 Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context).add(GetUserEvent());
+  BlocProvider.of<HomeBloc>(context).add(GetHomeInfo());
+
   BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
 
   BlocProvider.of<AbonnementBloc>(context)

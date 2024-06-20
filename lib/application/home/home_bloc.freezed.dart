@@ -27,6 +27,7 @@ mixin _$HomeEvent {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +40,7 @@ mixin _$HomeEvent {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +53,7 @@ mixin _$HomeEvent {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +67,7 @@ mixin _$HomeEvent {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +80,7 @@ mixin _$HomeEvent {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +93,7 @@ mixin _$HomeEvent {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,6 +189,7 @@ class _$ErrorEventImpl implements ErrorEvent {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return error(this.error);
   }
@@ -198,6 +205,7 @@ class _$ErrorEventImpl implements ErrorEvent {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return error?.call(this.error);
   }
@@ -213,6 +221,7 @@ class _$ErrorEventImpl implements ErrorEvent {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -232,6 +241,7 @@ class _$ErrorEventImpl implements ErrorEvent {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return error(this);
   }
@@ -247,6 +257,7 @@ class _$ErrorEventImpl implements ErrorEvent {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return error?.call(this);
   }
@@ -262,6 +273,7 @@ class _$ErrorEventImpl implements ErrorEvent {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -327,6 +339,7 @@ class _$UserDataEventImpl implements UserDataEvent {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return userData();
   }
@@ -342,6 +355,7 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return userData?.call();
   }
@@ -357,6 +371,7 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (userData != null) {
@@ -376,6 +391,7 @@ class _$UserDataEventImpl implements UserDataEvent {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return userData(this);
   }
@@ -391,6 +407,7 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return userData?.call(this);
   }
@@ -406,6 +423,7 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (userData != null) {
@@ -493,6 +511,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return setIndex(index);
   }
@@ -508,6 +527,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return setIndex?.call(index);
   }
@@ -523,6 +543,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (setIndex != null) {
@@ -542,6 +563,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return setIndex(this);
   }
@@ -557,6 +579,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return setIndex?.call(this);
   }
@@ -572,6 +595,7 @@ class _$SetIndexEventImpl implements SetIndexEvent {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (setIndex != null) {
@@ -667,6 +691,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return setIndexHistory(index);
   }
@@ -682,6 +707,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return setIndexHistory?.call(index);
   }
@@ -697,6 +723,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (setIndexHistory != null) {
@@ -716,6 +743,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return setIndexHistory(this);
   }
@@ -731,6 +759,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return setIndexHistory?.call(this);
   }
@@ -746,6 +775,7 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (setIndexHistory != null) {
@@ -840,6 +870,7 @@ class _$SelectCategoryImpl implements SelectCategory {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return selectCategory(category);
   }
@@ -855,6 +886,7 @@ class _$SelectCategoryImpl implements SelectCategory {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return selectCategory?.call(category);
   }
@@ -870,6 +902,7 @@ class _$SelectCategoryImpl implements SelectCategory {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (selectCategory != null) {
@@ -889,6 +922,7 @@ class _$SelectCategoryImpl implements SelectCategory {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return selectCategory(this);
   }
@@ -904,6 +938,7 @@ class _$SelectCategoryImpl implements SelectCategory {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return selectCategory?.call(this);
   }
@@ -919,6 +954,7 @@ class _$SelectCategoryImpl implements SelectCategory {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (selectCategory != null) {
@@ -1021,6 +1057,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return updateListCategory(categoryList);
   }
@@ -1036,6 +1073,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return updateListCategory?.call(categoryList);
   }
@@ -1051,6 +1089,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (updateListCategory != null) {
@@ -1070,6 +1109,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return updateListCategory(this);
   }
@@ -1085,6 +1125,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return updateListCategory?.call(this);
   }
@@ -1100,6 +1141,7 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (updateListCategory != null) {
@@ -1167,6 +1209,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return getCategoryList();
   }
@@ -1182,6 +1225,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return getCategoryList?.call();
   }
@@ -1197,6 +1241,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (getCategoryList != null) {
@@ -1216,6 +1261,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return getCategoryList(this);
   }
@@ -1231,6 +1277,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return getCategoryList?.call(this);
   }
@@ -1246,6 +1293,7 @@ class _$GetCategoryListImpl implements GetCategoryList {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (getCategoryList != null) {
@@ -1306,6 +1354,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
         updateListCategory,
     required TResult Function() getCategoryList,
     required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
   }) {
     return openLivraisonModal();
   }
@@ -1321,6 +1370,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
     TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult? Function()? getCategoryList,
     TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
   }) {
     return openLivraisonModal?.call();
   }
@@ -1336,6 +1386,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
     TResult Function(List<CategoryModel> categoryList)? updateListCategory,
     TResult Function()? getCategoryList,
     TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
     required TResult orElse(),
   }) {
     if (openLivraisonModal != null) {
@@ -1355,6 +1406,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
     required TResult Function(UpdateListCategory value) updateListCategory,
     required TResult Function(GetCategoryList value) getCategoryList,
     required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
   }) {
     return openLivraisonModal(this);
   }
@@ -1370,6 +1422,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
     TResult? Function(UpdateListCategory value)? updateListCategory,
     TResult? Function(GetCategoryList value)? getCategoryList,
     TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
   }) {
     return openLivraisonModal?.call(this);
   }
@@ -1385,6 +1438,7 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
     TResult Function(UpdateListCategory value)? updateListCategory,
     TResult Function(GetCategoryList value)? getCategoryList,
     TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
     required TResult orElse(),
   }) {
     if (openLivraisonModal != null) {
@@ -1399,10 +1453,160 @@ abstract class OpenLivraisonModal implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetHomeInfoImplCopyWith<$Res> {
+  factory _$$GetHomeInfoImplCopyWith(
+          _$GetHomeInfoImpl value, $Res Function(_$GetHomeInfoImpl) then) =
+      __$$GetHomeInfoImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetHomeInfoImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetHomeInfoImpl>
+    implements _$$GetHomeInfoImplCopyWith<$Res> {
+  __$$GetHomeInfoImplCopyWithImpl(
+      _$GetHomeInfoImpl _value, $Res Function(_$GetHomeInfoImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetHomeInfoImpl implements GetHomeInfo {
+  const _$GetHomeInfoImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getHomeInfo()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetHomeInfoImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String error) error,
+    required TResult Function() userData,
+    required TResult Function(dynamic index) setIndex,
+    required TResult Function(dynamic index) setIndexHistory,
+    required TResult Function(CategoryModel category) selectCategory,
+    required TResult Function(List<CategoryModel> categoryList)
+        updateListCategory,
+    required TResult Function() getCategoryList,
+    required TResult Function() openLivraisonModal,
+    required TResult Function() getHomeInfo,
+  }) {
+    return getHomeInfo();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String error)? error,
+    TResult? Function()? userData,
+    TResult? Function(dynamic index)? setIndex,
+    TResult? Function(dynamic index)? setIndexHistory,
+    TResult? Function(CategoryModel category)? selectCategory,
+    TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
+    TResult? Function()? getCategoryList,
+    TResult? Function()? openLivraisonModal,
+    TResult? Function()? getHomeInfo,
+  }) {
+    return getHomeInfo?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String error)? error,
+    TResult Function()? userData,
+    TResult Function(dynamic index)? setIndex,
+    TResult Function(dynamic index)? setIndexHistory,
+    TResult Function(CategoryModel category)? selectCategory,
+    TResult Function(List<CategoryModel> categoryList)? updateListCategory,
+    TResult Function()? getCategoryList,
+    TResult Function()? openLivraisonModal,
+    TResult Function()? getHomeInfo,
+    required TResult orElse(),
+  }) {
+    if (getHomeInfo != null) {
+      return getHomeInfo();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ErrorEvent value) error,
+    required TResult Function(UserDataEvent value) userData,
+    required TResult Function(SetIndexEvent value) setIndex,
+    required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
+    required TResult Function(SelectCategory value) selectCategory,
+    required TResult Function(UpdateListCategory value) updateListCategory,
+    required TResult Function(GetCategoryList value) getCategoryList,
+    required TResult Function(OpenLivraisonModal value) openLivraisonModal,
+    required TResult Function(GetHomeInfo value) getHomeInfo,
+  }) {
+    return getHomeInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ErrorEvent value)? error,
+    TResult? Function(UserDataEvent value)? userData,
+    TResult? Function(SetIndexEvent value)? setIndex,
+    TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
+    TResult? Function(SelectCategory value)? selectCategory,
+    TResult? Function(UpdateListCategory value)? updateListCategory,
+    TResult? Function(GetCategoryList value)? getCategoryList,
+    TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult? Function(GetHomeInfo value)? getHomeInfo,
+  }) {
+    return getHomeInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ErrorEvent value)? error,
+    TResult Function(UserDataEvent value)? userData,
+    TResult Function(SetIndexEvent value)? setIndex,
+    TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
+    TResult Function(SelectCategory value)? selectCategory,
+    TResult Function(UpdateListCategory value)? updateListCategory,
+    TResult Function(GetCategoryList value)? getCategoryList,
+    TResult Function(OpenLivraisonModal value)? openLivraisonModal,
+    TResult Function(GetHomeInfo value)? getHomeInfo,
+    required TResult orElse(),
+  }) {
+    if (getHomeInfo != null) {
+      return getHomeInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeInfo implements HomeEvent {
+  const factory GetHomeInfo() = _$GetHomeInfoImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   User? get user => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
-  int get indexHistory => throw _privateConstructorUsedError;
+  int get loadHomeInfo => throw _privateConstructorUsedError;
+  HomeInfoModel? get homeInfo => throw _privateConstructorUsedError;
+  List<OnBoardingModel>? get onboardingDataImage =>
+      throw _privateConstructorUsedError;
+  OnBoardingModel? get onboardingDataVideo =>
+      throw _privateConstructorUsedError;
   bool? get recupMailStatus => throw _privateConstructorUsedError;
   bool? get noOpen => throw _privateConstructorUsedError;
 
@@ -1419,7 +1623,10 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {User? user,
       int index,
-      int indexHistory,
+      int loadHomeInfo,
+      HomeInfoModel? homeInfo,
+      List<OnBoardingModel>? onboardingDataImage,
+      OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
       bool? noOpen});
 }
@@ -1439,7 +1646,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? user = freezed,
     Object? index = null,
-    Object? indexHistory = null,
+    Object? loadHomeInfo = null,
+    Object? homeInfo = freezed,
+    Object? onboardingDataImage = freezed,
+    Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
     Object? noOpen = freezed,
   }) {
@@ -1452,10 +1662,22 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      indexHistory: null == indexHistory
-          ? _value.indexHistory
-          : indexHistory // ignore: cast_nullable_to_non_nullable
+      loadHomeInfo: null == loadHomeInfo
+          ? _value.loadHomeInfo
+          : loadHomeInfo // ignore: cast_nullable_to_non_nullable
               as int,
+      homeInfo: freezed == homeInfo
+          ? _value.homeInfo
+          : homeInfo // ignore: cast_nullable_to_non_nullable
+              as HomeInfoModel?,
+      onboardingDataImage: freezed == onboardingDataImage
+          ? _value.onboardingDataImage
+          : onboardingDataImage // ignore: cast_nullable_to_non_nullable
+              as List<OnBoardingModel>?,
+      onboardingDataVideo: freezed == onboardingDataVideo
+          ? _value.onboardingDataVideo
+          : onboardingDataVideo // ignore: cast_nullable_to_non_nullable
+              as OnBoardingModel?,
       recupMailStatus: freezed == recupMailStatus
           ? _value.recupMailStatus
           : recupMailStatus // ignore: cast_nullable_to_non_nullable
@@ -1479,7 +1701,10 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {User? user,
       int index,
-      int indexHistory,
+      int loadHomeInfo,
+      HomeInfoModel? homeInfo,
+      List<OnBoardingModel>? onboardingDataImage,
+      OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
       bool? noOpen});
 }
@@ -1497,7 +1722,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
     Object? index = null,
-    Object? indexHistory = null,
+    Object? loadHomeInfo = null,
+    Object? homeInfo = freezed,
+    Object? onboardingDataImage = freezed,
+    Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
     Object? noOpen = freezed,
   }) {
@@ -1510,10 +1738,22 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      indexHistory: null == indexHistory
-          ? _value.indexHistory
-          : indexHistory // ignore: cast_nullable_to_non_nullable
+      loadHomeInfo: null == loadHomeInfo
+          ? _value.loadHomeInfo
+          : loadHomeInfo // ignore: cast_nullable_to_non_nullable
               as int,
+      homeInfo: freezed == homeInfo
+          ? _value.homeInfo
+          : homeInfo // ignore: cast_nullable_to_non_nullable
+              as HomeInfoModel?,
+      onboardingDataImage: freezed == onboardingDataImage
+          ? _value._onboardingDataImage
+          : onboardingDataImage // ignore: cast_nullable_to_non_nullable
+              as List<OnBoardingModel>?,
+      onboardingDataVideo: freezed == onboardingDataVideo
+          ? _value.onboardingDataVideo
+          : onboardingDataVideo // ignore: cast_nullable_to_non_nullable
+              as OnBoardingModel?,
       recupMailStatus: freezed == recupMailStatus
           ? _value.recupMailStatus
           : recupMailStatus // ignore: cast_nullable_to_non_nullable
@@ -1532,16 +1772,35 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {required this.user,
       required this.index,
-      required this.indexHistory,
+      required this.loadHomeInfo,
+      required this.homeInfo,
+      required final List<OnBoardingModel>? onboardingDataImage,
+      required this.onboardingDataVideo,
       required this.recupMailStatus,
-      required this.noOpen});
+      required this.noOpen})
+      : _onboardingDataImage = onboardingDataImage;
 
   @override
   final User? user;
   @override
   final int index;
   @override
-  final int indexHistory;
+  final int loadHomeInfo;
+  @override
+  final HomeInfoModel? homeInfo;
+  final List<OnBoardingModel>? _onboardingDataImage;
+  @override
+  List<OnBoardingModel>? get onboardingDataImage {
+    final value = _onboardingDataImage;
+    if (value == null) return null;
+    if (_onboardingDataImage is EqualUnmodifiableListView)
+      return _onboardingDataImage;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final OnBoardingModel? onboardingDataVideo;
   @override
   final bool? recupMailStatus;
   @override
@@ -1549,7 +1808,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(user: $user, index: $index, indexHistory: $indexHistory, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
+    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, homeInfo: $homeInfo, onboardingDataImage: $onboardingDataImage, onboardingDataVideo: $onboardingDataVideo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
   }
 
   @override
@@ -1559,8 +1818,14 @@ class _$HomeStateImpl implements _HomeState {
             other is _$HomeStateImpl &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.index, index) || other.index == index) &&
-            (identical(other.indexHistory, indexHistory) ||
-                other.indexHistory == indexHistory) &&
+            (identical(other.loadHomeInfo, loadHomeInfo) ||
+                other.loadHomeInfo == loadHomeInfo) &&
+            (identical(other.homeInfo, homeInfo) ||
+                other.homeInfo == homeInfo) &&
+            const DeepCollectionEquality()
+                .equals(other._onboardingDataImage, _onboardingDataImage) &&
+            (identical(other.onboardingDataVideo, onboardingDataVideo) ||
+                other.onboardingDataVideo == onboardingDataVideo) &&
             (identical(other.recupMailStatus, recupMailStatus) ||
                 other.recupMailStatus == recupMailStatus) &&
             (identical(other.noOpen, noOpen) || other.noOpen == noOpen));
@@ -1568,7 +1833,15 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, user, index, indexHistory, recupMailStatus, noOpen);
+      runtimeType,
+      user,
+      index,
+      loadHomeInfo,
+      homeInfo,
+      const DeepCollectionEquality().hash(_onboardingDataImage),
+      onboardingDataVideo,
+      recupMailStatus,
+      noOpen);
 
   @JsonKey(ignore: true)
   @override
@@ -1581,7 +1854,10 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final User? user,
       required final int index,
-      required final int indexHistory,
+      required final int loadHomeInfo,
+      required final HomeInfoModel? homeInfo,
+      required final List<OnBoardingModel>? onboardingDataImage,
+      required final OnBoardingModel? onboardingDataVideo,
       required final bool? recupMailStatus,
       required final bool? noOpen}) = _$HomeStateImpl;
 
@@ -1590,7 +1866,13 @@ abstract class _HomeState implements HomeState {
   @override
   int get index;
   @override
-  int get indexHistory;
+  int get loadHomeInfo;
+  @override
+  HomeInfoModel? get homeInfo;
+  @override
+  List<OnBoardingModel>? get onboardingDataImage;
+  @override
+  OnBoardingModel? get onboardingDataVideo;
   @override
   bool? get recupMailStatus;
   @override

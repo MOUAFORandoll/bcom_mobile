@@ -1,6 +1,9 @@
 import 'dart:async';
 
 import 'package:Bcom/application/database/database_cubit.dart';
+import 'package:Bcom/application/home/repositories/home_repo.dart';
+import 'package:Bcom/application/model/data/HomeInfoModel.dart';
+import 'package:Bcom/application/model/data/OnBoardingModel.dart';
 import 'package:Bcom/entity.dart';
 
 import 'package:Bcom/application/model/exportmodel.dart';
@@ -12,8 +15,10 @@ part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
+  final HomeRepo homeRepo;
   final DatabaseCubit database;
-  HomeBloc({required this.database}) : super(HomeState.initial()) {
+  HomeBloc({required this.homeRepo, required this.database})
+      : super(HomeState.initial()) {
     on<UserDataEvent>((event, emit) async {
       emit(state.copyWith(index: 0));
 
@@ -29,11 +34,62 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       print('--------${event.index}---------SetIndexEvent');
       emit(state.copyWith(index: event.index));
     });
-    on<SetIndexHistoryEvent>((event, emit) async {
-      print('-----------------SetindexHistory');
-      emit(state.copyWith(indexHistory: event.index));
+    on<GetHomeInfo>(getHomeInfo);
+  }
+
+  getHomeInfo(GetHomeInfo event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(
+      loadHomeInfo: 0,
+    ));
+    await homeRepo.getBcomInfo().then((response) {
+      if (response.data != null) {
+        emit(state.copyWith(
+            homeInfo: HomeInfoModel.fromJson(response.data['data'][0])));
+      } else {
+        emit(state.copyWith(
+          loadHomeInfo: 2,
+        ));
+      }
+    }).onError((e, s) {
+      emit(state.copyWith(
+        loadHomeInfo: 2,
+      ));
+    });
+    await homeRepo.AllOnbaordingImage().then((response) async {
+      if (response.data != null) {
+        emit(state.copyWith(
+            loadHomeInfo: 1,
+            onboardingDataImage: (response.data['data'] as List)
+                .map((e) => OnBoardingModel.fromJson(e))
+                .toList()));
+        await homeRepo.AllOnbaordingVideo().then((response) {
+          if (response.data != null) {
+            emit(state.copyWith(
+                loadHomeInfo: 1,
+                onboardingDataVideo:
+                    OnBoardingModel.fromJson(response.data['data'][0])));
+          } else {
+            emit(state.copyWith(
+              loadHomeInfo: 2,
+            ));
+          }
+        }).onError((e, s) {
+          emit(state.copyWith(
+            loadHomeInfo: 2,
+          ));
+        });
+      } else {
+        emit(state.copyWith(
+          loadHomeInfo: 2,
+        ));
+      }
+    }).onError((e, s) {
+      emit(state.copyWith(
+        loadHomeInfo: 2,
+      ));
     });
   }
+
   @override
   void onError(Object error, StackTrace stacktrace) {
     super.onError(error, stacktrace);

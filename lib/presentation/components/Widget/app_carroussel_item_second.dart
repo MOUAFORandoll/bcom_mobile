@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:Bcom/utils/constants/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class AppCarrousselItemSecond extends StatelessWidget {
   AppCarrousselItemSecond(
@@ -18,14 +20,41 @@ class AppCarrousselItemSecond extends StatelessWidget {
 
       child: Column(
         children: [
-          Container(
+          CachedNetworkImage(
             height: getHeight(context) * .40,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-              ),
-            ),
+            fit: BoxFit.cover,
+            imageUrl: image,
+            imageBuilder: (context, imageProvider) {
+              return Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
+            placeholder: (context, url) {
+              return Container(
+                decoration: BoxDecoration(
+                    color: ColorsApp.grey,
+                    borderRadius: BorderRadius.circular(50)),
+                child: Center(
+                    child: CircularProgressIndicator(color: ColorsApp.second)),
+              );
+            },
+            errorWidget: (context, url, error) {
+              return Container(
+                height: getHeight(context) * .40,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(Assets.logo),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
           ),
           Container(
               decoration: BoxDecoration(

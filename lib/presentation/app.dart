@@ -57,8 +57,8 @@ class AppContent extends StatelessWidget {
                       SplashBloc(database: sl.get<DatabaseCubit>()),
                 ),
                 BlocProvider<HomeBloc>(
-                  create: (BuildContext context) =>
-                      HomeBloc(database: sl.get<DatabaseCubit>()),
+                  create: (BuildContext context) => HomeBloc(
+                      homeRepo: sl(), database: sl.get<DatabaseCubit>()),
                 ),
               ],
               child: EasyLoading.init()(
