@@ -74,7 +74,7 @@ class BcomHomeInfo {
   int? isDeleted;
   String ?createdAt;
   String ?updatedAt;
-
+  
   BcomHomeInfo({
     required this.id,
     required this.phone,
