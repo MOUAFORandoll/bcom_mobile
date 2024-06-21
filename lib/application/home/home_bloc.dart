@@ -45,7 +45,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       if (response.data != null) {
         emit(state.copyWith(
           loadHomeInfo:
-              1, /* bcomInfo: BcomInfo.fromJson(response.data['data']) */
+              1, bcomInfo: BcomInfo.fromJson(response.data['data']) 
         ));
       } else {
         emit(state.copyWith(

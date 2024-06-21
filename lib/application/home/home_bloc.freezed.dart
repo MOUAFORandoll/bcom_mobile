@@ -1603,10 +1603,6 @@ mixin _$HomeState {
   int get index => throw _privateConstructorUsedError;
   int get loadHomeInfo => throw _privateConstructorUsedError;
   BcomInfo? get bcomInfo => throw _privateConstructorUsedError;
-  List<OnBoardingModel>? get onboardingDataImage =>
-      throw _privateConstructorUsedError;
-  OnBoardingModel? get onboardingDataVideo =>
-      throw _privateConstructorUsedError;
   bool? get recupMailStatus => throw _privateConstructorUsedError;
   bool? get noOpen => throw _privateConstructorUsedError;
 
@@ -1625,8 +1621,6 @@ abstract class $HomeStateCopyWith<$Res> {
       int index,
       int loadHomeInfo,
       BcomInfo? bcomInfo,
-      List<OnBoardingModel>? onboardingDataImage,
-      OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
       bool? noOpen});
 }
@@ -1648,8 +1642,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? index = null,
     Object? loadHomeInfo = null,
     Object? bcomInfo = freezed,
-    Object? onboardingDataImage = freezed,
-    Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
     Object? noOpen = freezed,
   }) {
@@ -1670,14 +1662,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.bcomInfo
           : bcomInfo // ignore: cast_nullable_to_non_nullable
               as BcomInfo?,
-      onboardingDataImage: freezed == onboardingDataImage
-          ? _value.onboardingDataImage
-          : onboardingDataImage // ignore: cast_nullable_to_non_nullable
-              as List<OnBoardingModel>?,
-      onboardingDataVideo: freezed == onboardingDataVideo
-          ? _value.onboardingDataVideo
-          : onboardingDataVideo // ignore: cast_nullable_to_non_nullable
-              as OnBoardingModel?,
       recupMailStatus: freezed == recupMailStatus
           ? _value.recupMailStatus
           : recupMailStatus // ignore: cast_nullable_to_non_nullable
@@ -1703,8 +1687,6 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       int index,
       int loadHomeInfo,
       BcomInfo? bcomInfo,
-      List<OnBoardingModel>? onboardingDataImage,
-      OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
       bool? noOpen});
 }
@@ -1724,8 +1706,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? index = null,
     Object? loadHomeInfo = null,
     Object? bcomInfo = freezed,
-    Object? onboardingDataImage = freezed,
-    Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
     Object? noOpen = freezed,
   }) {
@@ -1746,14 +1726,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.bcomInfo
           : bcomInfo // ignore: cast_nullable_to_non_nullable
               as BcomInfo?,
-      onboardingDataImage: freezed == onboardingDataImage
-          ? _value._onboardingDataImage
-          : onboardingDataImage // ignore: cast_nullable_to_non_nullable
-              as List<OnBoardingModel>?,
-      onboardingDataVideo: freezed == onboardingDataVideo
-          ? _value.onboardingDataVideo
-          : onboardingDataVideo // ignore: cast_nullable_to_non_nullable
-              as OnBoardingModel?,
       recupMailStatus: freezed == recupMailStatus
           ? _value.recupMailStatus
           : recupMailStatus // ignore: cast_nullable_to_non_nullable
@@ -1774,11 +1746,8 @@ class _$HomeStateImpl implements _HomeState {
       required this.index,
       required this.loadHomeInfo,
       required this.bcomInfo,
-      required final List<OnBoardingModel>? onboardingDataImage,
-      required this.onboardingDataVideo,
       required this.recupMailStatus,
-      required this.noOpen})
-      : _onboardingDataImage = onboardingDataImage;
+      required this.noOpen});
 
   @override
   final User? user;
@@ -1788,19 +1757,6 @@ class _$HomeStateImpl implements _HomeState {
   final int loadHomeInfo;
   @override
   final BcomInfo? bcomInfo;
-  final List<OnBoardingModel>? _onboardingDataImage;
-  @override
-  List<OnBoardingModel>? get onboardingDataImage {
-    final value = _onboardingDataImage;
-    if (value == null) return null;
-    if (_onboardingDataImage is EqualUnmodifiableListView)
-      return _onboardingDataImage;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final OnBoardingModel? onboardingDataVideo;
   @override
   final bool? recupMailStatus;
   @override
@@ -1808,7 +1764,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, bcomInfo: $bcomInfo, onboardingDataImage: $onboardingDataImage, onboardingDataVideo: $onboardingDataVideo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
+    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, bcomInfo: $bcomInfo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
   }
 
   @override
@@ -1822,26 +1778,14 @@ class _$HomeStateImpl implements _HomeState {
                 other.loadHomeInfo == loadHomeInfo) &&
             (identical(other.bcomInfo, bcomInfo) ||
                 other.bcomInfo == bcomInfo) &&
-            const DeepCollectionEquality()
-                .equals(other._onboardingDataImage, _onboardingDataImage) &&
-            (identical(other.onboardingDataVideo, onboardingDataVideo) ||
-                other.onboardingDataVideo == onboardingDataVideo) &&
             (identical(other.recupMailStatus, recupMailStatus) ||
                 other.recupMailStatus == recupMailStatus) &&
             (identical(other.noOpen, noOpen) || other.noOpen == noOpen));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      user,
-      index,
-      loadHomeInfo,
-      bcomInfo,
-      const DeepCollectionEquality().hash(_onboardingDataImage),
-      onboardingDataVideo,
-      recupMailStatus,
-      noOpen);
+  int get hashCode => Object.hash(runtimeType, user, index, loadHomeInfo,
+      bcomInfo, recupMailStatus, noOpen);
 
   @JsonKey(ignore: true)
   @override
@@ -1856,8 +1800,6 @@ abstract class _HomeState implements HomeState {
       required final int index,
       required final int loadHomeInfo,
       required final BcomInfo? bcomInfo,
-      required final List<OnBoardingModel>? onboardingDataImage,
-      required final OnBoardingModel? onboardingDataVideo,
       required final bool? recupMailStatus,
       required final bool? noOpen}) = _$HomeStateImpl;
 
@@ -1869,10 +1811,6 @@ abstract class _HomeState implements HomeState {
   int get loadHomeInfo;
   @override
   BcomInfo? get bcomInfo;
-  @override
-  List<OnBoardingModel>? get onboardingDataImage;
-  @override
-  OnBoardingModel? get onboardingDataVideo;
   @override
   bool? get recupMailStatus;
   @override

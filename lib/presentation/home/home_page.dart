@@ -47,10 +47,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     _controller = VideoPlayerController.networkUrl(Uri.parse(
         BlocProvider.of<HomeBloc>(context)
             .state
-            .homeInfo!
-            .bcomHomeInfo!
+            .bcomInfo!
             .onboardingVideo!
-            .linkFile))
+            .linkFile!))
       ..initialize().then((_) {
         setState(() {
           log('---------------------play');
@@ -183,7 +182,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                                 color: ColorsApp.white,
                               )),
                           onTap: () => launchUrl(Uri.parse(
-                              'https://wa.me/${state.homeInfo!.bcomHomeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
+                              'https://wa.me/${state.bcomInfo!.bcomHomeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
                     ],
                     bottom: PreferredSize(
                       preferredSize: Size.fromHeight(getHeight(context) * .10),
