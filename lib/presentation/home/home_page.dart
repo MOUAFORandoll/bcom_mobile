@@ -42,20 +42,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     // _checkForUpdate();
 
     // WidgetsBinding.instance.addObserver(this);
-
-    log('https://www.youtube.com/watch?v=fS0aWtc1snM');
-    _controller = VideoPlayerController.networkUrl(Uri.parse(
-        BlocProvider.of<HomeBloc>(context)
-            .state
-            .bcomInfo!
-            .onboardingVideo!
-            .linkFile!))
-      ..initialize().then((_) {
-        setState(() {
-          log('---------------------play');
-          _controller!.play();
-        });
-      });
   }
 
   // ignore: unused_element
@@ -77,7 +63,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     print('state*************************');
     print(AppLifecycleState.resumed);
-    if (state == AppLifecycleState.paused) {}
+    if (state == AppLifecycleState.paused) {
+      _controller!.pause();
+    }
   }
 
   @override
@@ -94,7 +82,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             print('---------8888');
             BlocProvider.of<HomeBloc>(context0).add(UserDataEvent());
           }
-          if (state0.updateData == false) {}
 
           if (state0.isRequest == 0) {
             EasyLoading.show(
@@ -109,7 +96,23 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             EasyLoading.dismiss();
           }
         },
-        builder: (context0, state0) => BlocBuilder<HomeBloc, HomeState>(
+        builder: (context0, state0) => BlocConsumer<HomeBloc, HomeState>(
+            listener: (context, state) {
+              if (state.loadHomeInfo != 0) {
+                if (state.bcomInfo != null) {
+                  setState(() {
+                    _controller = VideoPlayerController.networkUrl(
+                        Uri.parse(state.bcomInfo!.onboardingVideo!.linkFile!))
+                      ..initialize().then((_) {
+                        setState(() {
+                          log('---------------------play');
+                          _controller!.seekTo(Duration.zero);
+                        });
+                      });
+                  });
+                }
+              }
+            },
             builder: (context, state) => Scaffold(
                 backgroundColor: ColorsApp.bg,
                 drawer: CustomDrawer(user: state.user!),
@@ -150,30 +153,90 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                                 FontAwesomeIcons.youtube,
                                 color: ColorsApp.red,
                               )),
-                          onTap: () => GlobalBottomSheet.show(
-                              context: context,
-                              widget: Container(
-                                  child: GestureDetector(
-                                      onTap: () {
-                                        setState(() {
-                                          if (_controller!.value.isPlaying) {
-                                            _controller!.pause();
-                                          } else {
-                                            _controller!.play();
-                                          }
-                                        });
-                                      },
-                                      child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 500),
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          height: MediaQuery.of(context)
-                                              .size
-                                              .height,
-                                          child: AspectRatio(
-                                            aspectRatio: 9.7 / 17.7,
-                                            child: VideoPlayer(_controller!),
-                                          )))))),
+                          onTap: () {
+                            _controller!.play();
+                            setState(() {
+                              log('---------------------play');
+                              _controller!.seekTo(Duration.zero);
+                              _controller!.play();
+                              _controller!.position.then(
+                                  (e) => log('---------------------${e}'));
+                            });
+                            GlobalBottomSheet.show(
+                                context: context,
+                                widget: Container(
+                                    child: GestureDetector(
+                                        onTap: () {
+                                          _controller!.position.then((e) =>
+                                              log('---------------------${e}'));
+                                          setState(() {
+                                            if (_controller!.value.isPlaying) {
+                                              print('ffff-----');
+                                              _controller!.pause();
+                                            } else {
+                                              print('play-----');
+                                              _controller!.play();
+                                            }
+                                          });
+                                        },
+                                        child: Container(
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                padding: EdgeInsets.all(20),
+                                                decoration: BoxDecoration(
+                                                    color: ColorsApp.second),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Publicité',
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          color:
+                                                              ColorsApp.white,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    InkWell(
+                                                        onTap: () =>
+                                                            AutoRouter.of(
+                                                                    context)
+                                                                .pop(),
+                                                        child: Container(
+                                                            child: Icon(
+                                                                Icons.close,
+                                                                color: ColorsApp
+                                                                    .red,
+                                                                size: 30,
+                                                                weight: 30))),
+                                                  ],
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: AnimatedContainer(
+                                                    duration: Duration(
+                                                        milliseconds: 500),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
+                                                    child: AspectRatio(
+                                                      aspectRatio: 9.7 / 17.7,
+                                                      child: VideoPlayer(
+                                                          _controller!),
+                                                    )),
+                                              ),
+                                            ],
+                                          ),
+                                        ))));
+                          }),
                       InkWell(
                           child: Container(
                               margin: EdgeInsets.only(right: kMarginX * 2),
@@ -428,17 +491,6 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 // Navigate to the home page or perform an action
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                'Parametres',
-                style: TextStyle(color: ColorsApp.primary, fontSize: kBasics),
-              ),
-              onTap: () {
-                // Navigate to the settings page or perform an action
                 Navigator.pop(context);
               },
             ),

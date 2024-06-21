@@ -11,7 +11,7 @@ class HomeRepo {
   var database = sl.get<DatabaseCubit>();
 
   Future getBcomInfo() async {
-    Response a = await apiClient.postRequest('/api/v1/bcominfo/192.168.1.114');
+    Response a = await apiClient.postRequest('/api/v1/bcominfo/bcomdata');
 
     return a;
   }

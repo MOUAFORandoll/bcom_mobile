@@ -2,6 +2,7 @@
 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/utils/constants/assets.dart';
+import 'package:Bcom/utils/functions/formatData.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class AppCarrousselItemSecond extends StatelessWidget {
@@ -22,15 +23,14 @@ class AppCarrousselItemSecond extends StatelessWidget {
         children: [
           CachedNetworkImage(
             height: getHeight(context) * .40,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             imageUrl: image,
             imageBuilder: (context, imageProvider) {
               return Container(
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
                   image: DecorationImage(
                     image: imageProvider,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               );
@@ -38,8 +38,8 @@ class AppCarrousselItemSecond extends StatelessWidget {
             placeholder: (context, url) {
               return Container(
                 decoration: BoxDecoration(
-                    color: ColorsApp.grey,
-                    borderRadius: BorderRadius.circular(50)),
+                  color: ColorsApp.grey,
+                ),
                 child: Center(
                     child: CircularProgressIndicator(color: ColorsApp.second)),
               );
@@ -64,9 +64,9 @@ class AppCarrousselItemSecond extends StatelessWidget {
                 bottom: kMarginY,
               ),
               child: Text(
-                title,
+                FormatData().capitalizeFirstLetter(title),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               )),
           Container(
               decoration: BoxDecoration(
@@ -77,9 +77,11 @@ class AppCarrousselItemSecond extends StatelessWidget {
               ),
               padding: EdgeInsets.all(kMarginX),
               child: Text(
-                description,
+                FormatData().capitalizeFirstLetter(description),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                  fontSize: 15,
+                ),
               )),
         ],
       ),
