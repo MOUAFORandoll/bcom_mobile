@@ -44,8 +44,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     await homeRepo.getBcomInfo().then((response) {
       if (response.data != null) {
         emit(state.copyWith(
-            loadHomeInfo: 1,
-            bcomInfo: BcomInfo.fromJson(response.data['data'])));
+          loadHomeInfo:
+              1, /* bcomInfo: BcomInfo.fromJson(response.data['data']) */
+        ));
       } else {
         emit(state.copyWith(
           loadHomeInfo: 2,
@@ -56,7 +57,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         loadHomeInfo: 2,
       ));
     });
-    
   }
 
   @override

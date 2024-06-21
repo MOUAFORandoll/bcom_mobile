@@ -1602,7 +1602,7 @@ mixin _$HomeState {
   User? get user => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   int get loadHomeInfo => throw _privateConstructorUsedError;
-  HomeInfoModel? get homeInfo => throw _privateConstructorUsedError;
+  BcomInfo? get bcomInfo => throw _privateConstructorUsedError;
   List<OnBoardingModel>? get onboardingDataImage =>
       throw _privateConstructorUsedError;
   OnBoardingModel? get onboardingDataVideo =>
@@ -1624,7 +1624,7 @@ abstract class $HomeStateCopyWith<$Res> {
       {User? user,
       int index,
       int loadHomeInfo,
-      HomeInfoModel? homeInfo,
+      BcomInfo? bcomInfo,
       List<OnBoardingModel>? onboardingDataImage,
       OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
@@ -1647,7 +1647,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? user = freezed,
     Object? index = null,
     Object? loadHomeInfo = null,
-    Object? homeInfo = freezed,
+    Object? bcomInfo = freezed,
     Object? onboardingDataImage = freezed,
     Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
@@ -1666,10 +1666,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.loadHomeInfo
           : loadHomeInfo // ignore: cast_nullable_to_non_nullable
               as int,
-      homeInfo: freezed == homeInfo
-          ? _value.homeInfo
-          : homeInfo // ignore: cast_nullable_to_non_nullable
-              as HomeInfoModel?,
+      bcomInfo: freezed == bcomInfo
+          ? _value.bcomInfo
+          : bcomInfo // ignore: cast_nullable_to_non_nullable
+              as BcomInfo?,
       onboardingDataImage: freezed == onboardingDataImage
           ? _value.onboardingDataImage
           : onboardingDataImage // ignore: cast_nullable_to_non_nullable
@@ -1702,7 +1702,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       {User? user,
       int index,
       int loadHomeInfo,
-      HomeInfoModel? homeInfo,
+      BcomInfo? bcomInfo,
       List<OnBoardingModel>? onboardingDataImage,
       OnBoardingModel? onboardingDataVideo,
       bool? recupMailStatus,
@@ -1723,7 +1723,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? index = null,
     Object? loadHomeInfo = null,
-    Object? homeInfo = freezed,
+    Object? bcomInfo = freezed,
     Object? onboardingDataImage = freezed,
     Object? onboardingDataVideo = freezed,
     Object? recupMailStatus = freezed,
@@ -1742,10 +1742,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.loadHomeInfo
           : loadHomeInfo // ignore: cast_nullable_to_non_nullable
               as int,
-      homeInfo: freezed == homeInfo
-          ? _value.homeInfo
-          : homeInfo // ignore: cast_nullable_to_non_nullable
-              as HomeInfoModel?,
+      bcomInfo: freezed == bcomInfo
+          ? _value.bcomInfo
+          : bcomInfo // ignore: cast_nullable_to_non_nullable
+              as BcomInfo?,
       onboardingDataImage: freezed == onboardingDataImage
           ? _value._onboardingDataImage
           : onboardingDataImage // ignore: cast_nullable_to_non_nullable
@@ -1773,7 +1773,7 @@ class _$HomeStateImpl implements _HomeState {
       {required this.user,
       required this.index,
       required this.loadHomeInfo,
-      required this.homeInfo,
+      required this.bcomInfo,
       required final List<OnBoardingModel>? onboardingDataImage,
       required this.onboardingDataVideo,
       required this.recupMailStatus,
@@ -1787,7 +1787,7 @@ class _$HomeStateImpl implements _HomeState {
   @override
   final int loadHomeInfo;
   @override
-  final HomeInfoModel? homeInfo;
+  final BcomInfo? bcomInfo;
   final List<OnBoardingModel>? _onboardingDataImage;
   @override
   List<OnBoardingModel>? get onboardingDataImage {
@@ -1808,7 +1808,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, homeInfo: $homeInfo, onboardingDataImage: $onboardingDataImage, onboardingDataVideo: $onboardingDataVideo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
+    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, bcomInfo: $bcomInfo, onboardingDataImage: $onboardingDataImage, onboardingDataVideo: $onboardingDataVideo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
   }
 
   @override
@@ -1820,8 +1820,8 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.index, index) || other.index == index) &&
             (identical(other.loadHomeInfo, loadHomeInfo) ||
                 other.loadHomeInfo == loadHomeInfo) &&
-            (identical(other.homeInfo, homeInfo) ||
-                other.homeInfo == homeInfo) &&
+            (identical(other.bcomInfo, bcomInfo) ||
+                other.bcomInfo == bcomInfo) &&
             const DeepCollectionEquality()
                 .equals(other._onboardingDataImage, _onboardingDataImage) &&
             (identical(other.onboardingDataVideo, onboardingDataVideo) ||
@@ -1837,7 +1837,7 @@ class _$HomeStateImpl implements _HomeState {
       user,
       index,
       loadHomeInfo,
-      homeInfo,
+      bcomInfo,
       const DeepCollectionEquality().hash(_onboardingDataImage),
       onboardingDataVideo,
       recupMailStatus,
@@ -1855,7 +1855,7 @@ abstract class _HomeState implements HomeState {
       {required final User? user,
       required final int index,
       required final int loadHomeInfo,
-      required final HomeInfoModel? homeInfo,
+      required final BcomInfo? bcomInfo,
       required final List<OnBoardingModel>? onboardingDataImage,
       required final OnBoardingModel? onboardingDataVideo,
       required final bool? recupMailStatus,
@@ -1868,7 +1868,7 @@ abstract class _HomeState implements HomeState {
   @override
   int get loadHomeInfo;
   @override
-  HomeInfoModel? get homeInfo;
+  BcomInfo? get bcomInfo;
   @override
   List<OnBoardingModel>? get onboardingDataImage;
   @override

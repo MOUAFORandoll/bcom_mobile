@@ -44,8 +44,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     // WidgetsBinding.instance.addObserver(this);
 
     log('https://www.youtube.com/watch?v=fS0aWtc1snM');
-    _controller = VideoPlayerController.networkUrl(
-        Uri.parse(state.homeInfo!.bcomHomeInfo!.onboardingVideo!.linkFile))
+    _controller = VideoPlayerController.networkUrl(Uri.parse(
+        BlocProvider.of<HomeBloc>(context)
+            .state
+            .homeInfo!
+            .bcomHomeInfo!
+            .onboardingVideo!
+            .linkFile))
       ..initialize().then((_) {
         setState(() {
           log('---------------------play');

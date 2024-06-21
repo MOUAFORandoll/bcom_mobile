@@ -33,7 +33,7 @@ class _PresentationPageState extends State<PresentationPage>
                   children: [
                     CarouselSlider(
                       carouselController: controller,
-                      items: state.bcomInfo.onboardingDataImage!
+                      items: /* state.bcomInfo.onboardingDataImage! */ []
                           .map(
                             (e) => AppCarrousselItemSecond(
                               title: e.title,
