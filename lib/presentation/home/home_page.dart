@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
     log('https://www.youtube.com/watch?v=fS0aWtc1snM');
     _controller = VideoPlayerController.networkUrl(
-        Uri.parse('https://www.youtube.com/watch?v=fS0aWtc1snM'))
+        Uri.parse(state.homeInfo!.bcomHomeInfo!.onboardingVideo!.linkFile))
       ..initialize().then((_) {
         setState(() {
           log('---------------------play');
@@ -184,7 +184,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                                       color: ColorsApp.white,
                                     )),
                                 onTap: () => launchUrl(Uri.parse(
-                                    'https://wa.me/${state.homeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
+                                    'https://wa.me/${state.homeInfo!.bcomHomeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
                           ],
                           bottom: PreferredSize(
                             preferredSize:

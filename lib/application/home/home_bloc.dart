@@ -44,40 +44,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     await homeRepo.getBcomInfo().then((response) {
       if (response.data != null) {
         emit(state.copyWith(
-            homeInfo: HomeInfoModel.fromJson(response.data['data'][0])));
-      } else {
-        emit(state.copyWith(
-          loadHomeInfo: 2,
-        ));
-      }
-    }).onError((e, s) {
-      emit(state.copyWith(
-        loadHomeInfo: 2,
-      ));
-    });
-    await homeRepo.AllOnbaordingImage().then((response) async {
-      if (response.data != null) {
-        emit(state.copyWith(
             loadHomeInfo: 1,
-            onboardingDataImage: (response.data['data'] as List)
-                .map((e) => OnBoardingModel.fromJson(e))
-                .toList()));
-        await homeRepo.AllOnbaordingVideo().then((response) {
-          if (response.data != null) {
-            emit(state.copyWith(
-                loadHomeInfo: 1,
-                onboardingDataVideo:
-                    OnBoardingModel.fromJson(response.data['data'][0])));
-          } else {
-            emit(state.copyWith(
-              loadHomeInfo: 2,
-            ));
-          }
-        }).onError((e, s) {
-          emit(state.copyWith(
-            loadHomeInfo: 2,
-          ));
-        });
+            bcomInfo: BcomInfo.fromJson(response.data['data'])));
       } else {
         emit(state.copyWith(
           loadHomeInfo: 2,
@@ -88,6 +56,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         loadHomeInfo: 2,
       ));
     });
+    
   }
 
   @override
