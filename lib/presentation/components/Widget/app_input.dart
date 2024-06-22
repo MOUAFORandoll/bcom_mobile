@@ -1,7 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import '../exportcomponent.dart';
 
 class AppInput extends StatefulWidget {
-    TextEditingController controller;
+  TextEditingController controller;
   final String? Function(String? value)? validator;
   final String? label;
   final String? errorText;
@@ -11,7 +13,7 @@ class AppInput extends StatefulWidget {
   final TextInputType? textInputType;
   final Icon? icon;
   final prefix;
-    AppInput(
+  AppInput(
       {Key? key,
       required this.controller,
       this.label,
@@ -46,7 +48,6 @@ class _AppInputState extends State<AppInput> {
                   widget.placeholder!,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                   
                     fontSize: 12,
                     fontFamily: 'Lato',
                   ),

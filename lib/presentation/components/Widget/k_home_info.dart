@@ -1,4 +1,3 @@
-import 'package:Bcom/application/abonnement/abonnement_bloc.dart';
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/presentation/devis/PaiementPage.dart';
@@ -27,22 +26,24 @@ class KHomeInfo extends StatelessWidget {
         AutoRouter.of(context).pop();
         // showSuccess('Operation reussi', context);
         AutoRouter.of(context).pushNamed(PaimentPage.routeName);
-        
+
         EasyLoading.dismiss();
       }
     }, builder: (context, state) {
       int daysLeft = 0;
-      Widget userAbonnement = Container(
-        width: getWith(context) * .4,
-        child: Text(
-          'Vous n\'avez aucun abonnement en cours',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 11,
-              color: ColorsApp.white),
-        ),
-      );
+      Widget userAbonnement = state.loadUserAbonnement == 0
+          ? Container()
+          : Container(
+              width: getWith(context) * .4,
+              child: Text(
+                'Vous n\'avez aucun abonnement en cours',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 12,
+                    color: ColorsApp.white),
+              ),
+            );
       if (state.userAbonnement != null) {
         // Parse the end date of the subscription
         DateTime endDate = DateTime.parse(state.userAbonnement!.endDate);
@@ -69,7 +70,9 @@ class KHomeInfo extends StatelessWidget {
                 children: [
                   Container(
                     child: Text(
-                      'Votre abonnement expire dans $daysLeft jour${daysLeft > 1 ? 's' : ''}',
+                      daysLeft == 0 || daysLeft == 1
+                          ? 'Votre abonnement expire aujourd\'hui'
+                          : 'Votre abonnement expire dans $daysLeft jour${daysLeft > 1 ? 's' : ''}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
@@ -182,21 +185,24 @@ class KHomeInfo extends StatelessWidget {
                     )
                   : InkWell(
                       onTap: () {
+                        BlocProvider.of<UserBloc>(context).add(GetUserEvent());
+                        BlocProvider.of<UserBloc>(context).add(UserDataEvent());
+
                         BlocProvider.of<AbonnementBloc>(context)
                             .add(UserAbonnement());
                       },
                       child: Row(
                         children: [
                           Container(
-                              child: Text('Refresh ',
+                              child: Text('Rafraichir ',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w800,
-                                    color: ColorsApp.grey,
-                                    fontSize: 11,
+                                    color: ColorsApp.white,
+                                    fontSize: 13,
                                   ))),
                           Icon(
                             Icons.refresh,
-                            color: ColorsApp.grey,
+                            color: ColorsApp.white,
                           ),
                         ],
                       ),
@@ -229,7 +235,7 @@ class KHomeInfo extends StatelessWidget {
                         style: TextStyle(
                           color: ColorsApp.white,
                           fontWeight: FontWeight.w800,
-                          fontSize: 11,
+                          fontSize: 12,
                         ))),
               ],
             ),

@@ -19,7 +19,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -33,7 +32,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -46,7 +44,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -60,7 +57,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -73,7 +69,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -86,7 +81,6 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -181,7 +175,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -198,7 +191,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -214,7 +206,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -234,7 +225,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -250,7 +240,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -266,7 +255,6 @@ class _$ErrorEventImpl implements ErrorEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -290,151 +278,6 @@ abstract class ErrorEvent implements HomeEvent {
   @JsonKey(ignore: true)
   _$$ErrorEventImplCopyWith<_$ErrorEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UserDataEventImplCopyWith<$Res> {
-  factory _$$UserDataEventImplCopyWith(
-          _$UserDataEventImpl value, $Res Function(_$UserDataEventImpl) then) =
-      __$$UserDataEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UserDataEventImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$UserDataEventImpl>
-    implements _$$UserDataEventImplCopyWith<$Res> {
-  __$$UserDataEventImplCopyWithImpl(
-      _$UserDataEventImpl _value, $Res Function(_$UserDataEventImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UserDataEventImpl implements UserDataEvent {
-  const _$UserDataEventImpl();
-
-  @override
-  String toString() {
-    return 'HomeEvent.userData()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserDataEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String error) error,
-    required TResult Function() userData,
-    required TResult Function(dynamic index) setIndex,
-    required TResult Function(dynamic index) setIndexHistory,
-    required TResult Function(CategoryModel category) selectCategory,
-    required TResult Function(List<CategoryModel> categoryList)
-        updateListCategory,
-    required TResult Function() getCategoryList,
-    required TResult Function() openLivraisonModal,
-    required TResult Function() getHomeInfo,
-  }) {
-    return userData();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String error)? error,
-    TResult? Function()? userData,
-    TResult? Function(dynamic index)? setIndex,
-    TResult? Function(dynamic index)? setIndexHistory,
-    TResult? Function(CategoryModel category)? selectCategory,
-    TResult? Function(List<CategoryModel> categoryList)? updateListCategory,
-    TResult? Function()? getCategoryList,
-    TResult? Function()? openLivraisonModal,
-    TResult? Function()? getHomeInfo,
-  }) {
-    return userData?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String error)? error,
-    TResult Function()? userData,
-    TResult Function(dynamic index)? setIndex,
-    TResult Function(dynamic index)? setIndexHistory,
-    TResult Function(CategoryModel category)? selectCategory,
-    TResult Function(List<CategoryModel> categoryList)? updateListCategory,
-    TResult Function()? getCategoryList,
-    TResult Function()? openLivraisonModal,
-    TResult Function()? getHomeInfo,
-    required TResult orElse(),
-  }) {
-    if (userData != null) {
-      return userData();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
-    required TResult Function(SetIndexEvent value) setIndex,
-    required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
-    required TResult Function(SelectCategory value) selectCategory,
-    required TResult Function(UpdateListCategory value) updateListCategory,
-    required TResult Function(GetCategoryList value) getCategoryList,
-    required TResult Function(OpenLivraisonModal value) openLivraisonModal,
-    required TResult Function(GetHomeInfo value) getHomeInfo,
-  }) {
-    return userData(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
-    TResult? Function(SetIndexEvent value)? setIndex,
-    TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
-    TResult? Function(SelectCategory value)? selectCategory,
-    TResult? Function(UpdateListCategory value)? updateListCategory,
-    TResult? Function(GetCategoryList value)? getCategoryList,
-    TResult? Function(OpenLivraisonModal value)? openLivraisonModal,
-    TResult? Function(GetHomeInfo value)? getHomeInfo,
-  }) {
-    return userData?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
-    TResult Function(SetIndexEvent value)? setIndex,
-    TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
-    TResult Function(SelectCategory value)? selectCategory,
-    TResult Function(UpdateListCategory value)? updateListCategory,
-    TResult Function(GetCategoryList value)? getCategoryList,
-    TResult Function(OpenLivraisonModal value)? openLivraisonModal,
-    TResult Function(GetHomeInfo value)? getHomeInfo,
-    required TResult orElse(),
-  }) {
-    if (userData != null) {
-      return userData(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserDataEvent implements HomeEvent {
-  const factory UserDataEvent() = _$UserDataEventImpl;
 }
 
 /// @nodoc
@@ -503,7 +346,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -520,7 +362,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -536,7 +377,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -556,7 +396,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -572,7 +411,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -588,7 +426,6 @@ class _$SetIndexEventImpl implements SetIndexEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -683,7 +520,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -700,7 +536,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -716,7 +551,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -736,7 +570,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -752,7 +585,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -768,7 +600,6 @@ class _$SetIndexHistoryEventImpl implements SetIndexHistoryEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -862,7 +693,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -879,7 +709,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -895,7 +724,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -915,7 +743,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -931,7 +758,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -947,7 +773,6 @@ class _$SelectCategoryImpl implements SelectCategory {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -1049,7 +874,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -1066,7 +890,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -1082,7 +905,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -1102,7 +924,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -1118,7 +939,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -1134,7 +954,6 @@ class _$UpdateListCategoryImpl implements UpdateListCategory {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -1201,7 +1020,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -1218,7 +1036,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -1234,7 +1051,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -1254,7 +1070,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -1270,7 +1085,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -1286,7 +1100,6 @@ class _$GetCategoryListImpl implements GetCategoryList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -1346,7 +1159,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -1363,7 +1175,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -1379,7 +1190,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -1399,7 +1209,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -1415,7 +1224,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -1431,7 +1239,6 @@ class _$OpenLivraisonModalImpl implements OpenLivraisonModal {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -1491,7 +1298,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String error) error,
-    required TResult Function() userData,
     required TResult Function(dynamic index) setIndex,
     required TResult Function(dynamic index) setIndexHistory,
     required TResult Function(CategoryModel category) selectCategory,
@@ -1508,7 +1314,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String error)? error,
-    TResult? Function()? userData,
     TResult? Function(dynamic index)? setIndex,
     TResult? Function(dynamic index)? setIndexHistory,
     TResult? Function(CategoryModel category)? selectCategory,
@@ -1524,7 +1329,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String error)? error,
-    TResult Function()? userData,
     TResult Function(dynamic index)? setIndex,
     TResult Function(dynamic index)? setIndexHistory,
     TResult Function(CategoryModel category)? selectCategory,
@@ -1544,7 +1348,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ErrorEvent value) error,
-    required TResult Function(UserDataEvent value) userData,
     required TResult Function(SetIndexEvent value) setIndex,
     required TResult Function(SetIndexHistoryEvent value) setIndexHistory,
     required TResult Function(SelectCategory value) selectCategory,
@@ -1560,7 +1363,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ErrorEvent value)? error,
-    TResult? Function(UserDataEvent value)? userData,
     TResult? Function(SetIndexEvent value)? setIndex,
     TResult? Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult? Function(SelectCategory value)? selectCategory,
@@ -1576,7 +1378,6 @@ class _$GetHomeInfoImpl implements GetHomeInfo {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ErrorEvent value)? error,
-    TResult Function(UserDataEvent value)? userData,
     TResult Function(SetIndexEvent value)? setIndex,
     TResult Function(SetIndexHistoryEvent value)? setIndexHistory,
     TResult Function(SelectCategory value)? selectCategory,
@@ -1599,7 +1400,6 @@ abstract class GetHomeInfo implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  User? get user => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   int get loadHomeInfo => throw _privateConstructorUsedError;
   BcomInfo? get bcomInfo => throw _privateConstructorUsedError;
@@ -1617,8 +1417,7 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {User? user,
-      int index,
+      {int index,
       int loadHomeInfo,
       BcomInfo? bcomInfo,
       bool? recupMailStatus,
@@ -1638,7 +1437,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
     Object? index = null,
     Object? loadHomeInfo = null,
     Object? bcomInfo = freezed,
@@ -1646,10 +1444,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? noOpen = freezed,
   }) {
     return _then(_value.copyWith(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -1683,8 +1477,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {User? user,
-      int index,
+      {int index,
       int loadHomeInfo,
       BcomInfo? bcomInfo,
       bool? recupMailStatus,
@@ -1702,7 +1495,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
     Object? index = null,
     Object? loadHomeInfo = null,
     Object? bcomInfo = freezed,
@@ -1710,10 +1502,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? noOpen = freezed,
   }) {
     return _then(_$HomeStateImpl(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -1742,15 +1530,12 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
-      {required this.user,
-      required this.index,
+      {required this.index,
       required this.loadHomeInfo,
       required this.bcomInfo,
       required this.recupMailStatus,
       required this.noOpen});
 
-  @override
-  final User? user;
   @override
   final int index;
   @override
@@ -1764,7 +1549,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(user: $user, index: $index, loadHomeInfo: $loadHomeInfo, bcomInfo: $bcomInfo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
+    return 'HomeState(index: $index, loadHomeInfo: $loadHomeInfo, bcomInfo: $bcomInfo, recupMailStatus: $recupMailStatus, noOpen: $noOpen)';
   }
 
   @override
@@ -1772,7 +1557,6 @@ class _$HomeStateImpl implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.loadHomeInfo, loadHomeInfo) ||
                 other.loadHomeInfo == loadHomeInfo) &&
@@ -1784,8 +1568,8 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, index, loadHomeInfo,
-      bcomInfo, recupMailStatus, noOpen);
+  int get hashCode => Object.hash(
+      runtimeType, index, loadHomeInfo, bcomInfo, recupMailStatus, noOpen);
 
   @JsonKey(ignore: true)
   @override
@@ -1796,15 +1580,12 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required final User? user,
-      required final int index,
+      {required final int index,
       required final int loadHomeInfo,
       required final BcomInfo? bcomInfo,
       required final bool? recupMailStatus,
       required final bool? noOpen}) = _$HomeStateImpl;
 
-  @override
-  User? get user;
   @override
   int get index;
   @override

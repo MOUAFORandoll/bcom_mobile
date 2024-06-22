@@ -6,10 +6,8 @@ import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
 import 'package:Bcom/application/model/data/ParamSaveModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
-import 'package:Bcom/application/model/exportmodel.dart';
-import 'package:Bcom/objectbox.g.dart';
-import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
-import 'package:Bcom/presentation/components/Widget/app_input_description.dart';
+import 'package:Bcom/application/model/exportmodel.dart'; 
+import 'package:Bcom/presentation/components/Widget/app_dropdown.dart'; 
 import 'package:Bcom/presentation/components/Widget/app_radio.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/utils/Services/validators.dart';
@@ -44,9 +42,9 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ville: event.ville,
     ));
   }
-
+  
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
-    String? value = event.value;
+    // String? value = event.value;
     /*   switch (event.fieldKey) {
       case 'inQuartier':
         if (value.isEmpty) {

@@ -1,13 +1,11 @@
 import 'package:Bcom/routes/app_router.gr.dart';
 
-import 'package:auto_route/auto_route.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:auto_route/auto_route.dart'; 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Bcom/application/database/database_cubit.dart';
-
-import '../../core.dart';
+ 
 
 part 'splash_event.dart';
 part 'splash_state.dart';

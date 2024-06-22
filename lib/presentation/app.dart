@@ -40,7 +40,8 @@ class AppContent extends StatelessWidget {
                 BlocProvider<UserBloc>(
                   create: (BuildContext context) => UserBloc(
                       userRepo: sl.get<UserRepo>(),
-                      database: sl.get<DatabaseCubit>()),
+                      database: sl.get<DatabaseCubit>())
+                    ..add(UserDataEvent()),
                 ),
                 BlocProvider<DevisBloc>(
                   create: (BuildContext context) => DevisBloc(

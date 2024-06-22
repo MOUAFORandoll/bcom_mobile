@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:Bcom/application/database/database_cubit.dart';
 import 'package:Bcom/application/home/repositories/home_repo.dart';
-import 'package:Bcom/application/model/data/HomeInfoModel.dart';
-import 'package:Bcom/application/model/data/OnBoardingModel.dart';
-import 'package:Bcom/entity.dart';
+import 'package:Bcom/application/model/data/HomeInfoModel.dart'; 
 
 import 'package:Bcom/application/model/exportmodel.dart';
 import 'package:bloc/bloc.dart';
@@ -19,24 +17,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final DatabaseCubit database;
   HomeBloc({required this.homeRepo, required this.database})
       : super(HomeState.initial()) {
-    on<UserDataEvent>((event, emit) async {
-      emit(state.copyWith(index: 0));
-
-      print('---------UserD-------------------------');
-      var user = await database.getUser();
-      print(
-          '---------UserD-----*${user!.toMap()}--------------------*${user.phone}');
-
-      emit(state.copyWith(user: user));
-    });
-
+   
     on<SetIndexEvent>((event, emit) async {
       print('--------${event.index}---------SetIndexEvent');
       emit(state.copyWith(index: event.index));
     });
     on<GetHomeInfo>(getHomeInfo);
   }
-  
+
   getHomeInfo(GetHomeInfo event, Emitter<HomeState> emit) async {
     emit(state.copyWith(
       loadHomeInfo: 0,

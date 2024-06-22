@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/objectbox.g.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,6 +40,7 @@ class DatabaseCubit extends Cubit<DatabaseState> {
       _store.box<User>().put(user);
       final users = userBox.getAll();
       print(users);
+      log('----------------saveeeeeee-------------${users.last.toMap().toString()}');
       return true;
     } catch (e) {
       print('Error saving user: $e');
@@ -51,10 +54,11 @@ class DatabaseCubit extends Cubit<DatabaseState> {
 
     final users = userBox.getAll();
     print(users.length);
+    log('-----------22-----saveeeeeee-------------${users.last.toMap().toString()}');
 
     return users.isNotEmpty ? users.last : null;
   }
-
+  
   Future<Map<String, dynamic>?> getKeyKen() async {
     final keyUserBox = _store.box<KeyUser>();
     final keyUsers = keyUserBox.getAll();
@@ -68,7 +72,6 @@ class DatabaseCubit extends Cubit<DatabaseState> {
 
     return true;
   }
-   
 
   Future<void> disconnect() async {
     _store.box<KeyUser>().removeAll();

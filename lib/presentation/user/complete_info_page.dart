@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:developer';
+
 import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
@@ -24,7 +26,7 @@ class _CompleteEntrepriseInfoPageState
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UserBloc, UserState>(
-        listener: (context, state) {
+        listener: (context, state) async {
           if (state.isLoading == 1) {
             EasyLoading.show(
                 dismissOnTap: true,
@@ -34,11 +36,16 @@ class _CompleteEntrepriseInfoPageState
             EasyLoading.dismiss();
             showError(state.eventMessage!, context);
           } else if (state.isLoading == 2) {
-            EasyLoading.dismiss();
-
             showSuccess('Mise a jour effectuee', context);
             initLoad(context);
-            print('-----44--------*********');
+            await Future.delayed(Duration(seconds: 30));
+            log('-----attend 11--------*********ss');
+
+            BlocProvider.of<UserBloc>(context)
+              ..add(GetUserEvent())
+              ..add(UserDataEvent());
+            EasyLoading.dismiss();
+            log('-----44--------*********');
           }
         },
         builder: (context, state) => Container(
@@ -84,15 +91,63 @@ class _CompleteEntrepriseInfoPageState
                                   onTap: () async {
                                     context.read<UserBloc>()
                                       ..add(AddInfoClient())
-                                      ..add(GetUserEvent());
-                                    BlocProvider.of<HomeBloc>(context)
-                                        .add(UserDataEvent());
+                                      ..add(GetUserEvent())
+                                      ..add(UserDataEvent());
                                   }),
                             ),
                           ],
                         ),
                       ),
-              )
+              ),
+              state.isLoading == 1
+                  ? Shimmer.fromColors(
+                      baseColor: ColorsApp.grey,
+                      highlightColor: ColorsApp.primary,
+                      child: Container(
+                        child: Row(children: [
+                          Container(
+                              child: Icon(
+                            Icons.location_on,
+                            color: ColorsApp.white,
+                            size: 25,
+                          )),
+                          Container(
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                Container(
+                                    child: Text('En cours de chargement',
+                                        style: TextStyle(
+                                            color: ColorsApp.white,
+                                            fontSize: 8,
+                                            fontWeight: FontWeight.normal))),
+                              ])),
+                        ]),
+                      ))
+                  : InkWell(
+                      onTap: () {
+                        BlocProvider.of<UserBloc>(context)
+                          ..add(GetUserEvent())
+                          ..add(UserDataEvent());
+                        BlocProvider.of<AbonnementBloc>(context)
+                            .add(UserAbonnement());
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: Text('Rafraichir mes informations',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 16,
+                                    ))),
+                            Icon(Icons.refresh, size: 30),
+                          ],
+                        ),
+                      ),
+                    ),
             ])));
   }
 }

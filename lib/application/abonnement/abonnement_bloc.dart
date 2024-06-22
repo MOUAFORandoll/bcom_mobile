@@ -68,14 +68,26 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
     ));
     var data = {'userId': user!.userId};
     await abonnementRepo.userAbonnement(data).then((response) {
-      print(
-          '----userAbonnement-----listAbonnement------${response.data['data']}');
       if (response.data != null) {
-        emit(state.copyWith(
-            loadUserAbonnement: 1,
-            userAbonnement:
-                UserAbonnementModel.fromJson(response.data['data'][0])));
-        print('---------listAbonnement------${state.listAbonnement!.length}');
+        if (response.data['data'] != null &&
+            response.data['data'].length != 0) {
+          if (response.data['data'][0] != null) {
+            emit(state.copyWith(
+                loadUserAbonnement: 1,
+                userAbonnement:
+                    UserAbonnementModel.fromJson(response.data['data'][0])));
+            print(
+                '---------listAbonnement------${state.listAbonnement!.length}');
+          } else {
+            emit(state.copyWith(
+              loadUserAbonnement: 2,
+            ));
+          }
+        } else {
+          emit(state.copyWith(
+            loadUserAbonnement: 2,
+          ));
+        }
       } else {
         emit(state.copyWith(
           loadUserAbonnement: 2,
@@ -102,11 +114,11 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
             listTransaction: (response.data['data'] as List)
                 .map((e) => TransactionModel.fromJson(e))
                 .toList()));
-
-        emit(state.copyWith(
-          userHasSubscriptionId:
-              state.listTransaction!.last.userHasSubscriptionId,
-        ));
+        if (state.listTransaction!.isNotEmpty)
+          emit(state.copyWith(
+            userHasSubscriptionId:
+                state.listTransaction!.last.userHasSubscriptionId,
+          ));
         log('----userHasSubscriptionId---------------${state.userHasSubscriptionId}--');
       } else {
         emit(state.copyWith(

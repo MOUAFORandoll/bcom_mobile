@@ -3,7 +3,6 @@ part of 'home_bloc.dart';
 @freezed
 class HomeState with _$HomeState {
   const factory HomeState({
-    required User? user,
     required int index,
     required int loadHomeInfo,
     required BcomInfo? bcomInfo,
@@ -12,7 +11,6 @@ class HomeState with _$HomeState {
   }) = _HomeState;
 
   factory HomeState.initial() => HomeState(
-      user: null,
       bcomInfo: null,
       index: 0,
       loadHomeInfo: 0,

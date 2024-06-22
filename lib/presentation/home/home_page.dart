@@ -5,11 +5,9 @@ import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/entity.dart';
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/components/Widget/k_home_info.dart';
-import 'package:Bcom/presentation/devis/presentation_page.dart';
+import 'package:Bcom/presentation/home/presentation_page.dart';
 import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
-import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart';
 import 'package:Bcom/presentation/user/complete_info_page.dart';
-import 'package:Bcom/routes/app_router.dart';
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
@@ -80,7 +78,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         listener: (context0, state0) {
           if (state0.updateData == true) {
             print('---------8888');
-            BlocProvider.of<HomeBloc>(context0).add(UserDataEvent());
+            BlocProvider.of<UserBloc>(context0).add(UserDataEvent());
           }
 
           if (state0.isRequest == 0) {
@@ -104,265 +102,273 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     _controller = VideoPlayerController.networkUrl(
                         Uri.parse(state.bcomInfo!.onboardingVideo!.linkFile!))
                       ..initialize().then((_) {
-                        setState(() {
-                          log('---------------------play');
-                          _controller!.seekTo(Duration.zero);
-                        });
+                        log('---------------------play');
+                        _controller!.seekTo(Duration.zero);
                       });
                   });
                 }
               }
             },
-            builder: (context, state) => Scaffold(
-                backgroundColor: ColorsApp.bg,
-                drawer: CustomDrawer(user: state.user!),
-                body: Container(
-                    child: CustomScrollView(slivers: [
-                  SliverAppBar(
-                    automaticallyImplyLeading: false,
-                    leading: Builder(builder: (context) {
-                      return GestureDetector(
-                        child: Container(
-                          width: 10,
-                          height: 10,
-                          child: SvgPicture.asset(Assets.menu,
-                              color: ColorsApp.white, fit: BoxFit.none),
+            builder: (context, state) => BlocBuilder<UserBloc, UserState>(
+                builder: (context, stateUser) => Scaffold(
+                    backgroundColor: ColorsApp.bg,
+                    drawer: CustomDrawer(user: stateUser.user!),
+                    body: Container(
+                        child: CustomScrollView(slivers: [
+                      SliverAppBar(
+                        automaticallyImplyLeading: false,
+                        leading: Builder(builder: (context) {
+                          return GestureDetector(
+                            child: Container(
+                              width: 10,
+                              height: 10,
+                              child: SvgPicture.asset(Assets.menu,
+                                  color: ColorsApp.white, fit: BoxFit.none),
+                            ),
+                            onTap: () {
+                              Scaffold.of(context).openDrawer();
+                            },
+                          );
+                        }),
+                        title: Text(
+                          'Bcom Assist ',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: ColorsApp.white,
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
                         ),
-                        onTap: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                      );
-                    }),
-                    title: Text(
-                      'Bcom Assist ',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: ColorsApp.white,
-                          fontFamily: 'Lato',
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    centerTitle: true,
+                        centerTitle: true,
 
-                    actions: [
-                      InkWell(
-                          child: Container(
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: Icon(
-                                FontAwesomeIcons.youtube,
-                                color: ColorsApp.red,
-                              )),
-                          onTap: () {
-                            _controller!.play();
-                            setState(() {
-                              log('---------------------play');
-                              _controller!.seekTo(Duration.zero);
-                              _controller!.play();
-                              _controller!.position.then(
-                                  (e) => log('---------------------${e}'));
-                            });
-                            GlobalBottomSheet.show(
-                                context: context,
-                                widget: Container(
-                                    child: GestureDetector(
-                                        onTap: () {
-                                          _controller!.position.then((e) =>
-                                              log('---------------------${e}'));
-                                          setState(() {
-                                            if (_controller!.value.isPlaying) {
-                                              print('ffff-----');
-                                              _controller!.pause();
-                                            } else {
-                                              print('play-----');
-                                              _controller!.play();
-                                            }
-                                          });
-                                        },
-                                        child: Container(
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                padding: EdgeInsets.all(20),
-                                                decoration: BoxDecoration(
-                                                    color: ColorsApp.second),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      'Publicité',
-                                                      style: TextStyle(
-                                                          fontSize: 18,
-                                                          color:
-                                                              ColorsApp.white,
-                                                          fontWeight:
-                                                              FontWeight.w600),
+                        actions: [
+                          InkWell(
+                              child: Container(
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.only(right: kMarginX * 2),
+                                  child: Icon(
+                                    FontAwesomeIcons.youtube,
+                                    color: ColorsApp.red,
+                                  )),
+                              onTap: () {
+                                _controller!.play();
+                                setState(() {
+                                  log('---------------------play');
+                                  _controller!.seekTo(Duration.zero);
+                                  _controller!.play();
+                                  _controller!.position.then(
+                                      (e) => log('---------------------${e}'));
+                                });
+                                GlobalBottomSheet.show(
+                                    context: context,
+                                    widget: Container(
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              _controller!.position.then((e) =>
+                                                  log('---------------------${e}'));
+                                              setState(() {
+                                                if (_controller!
+                                                    .value.isPlaying) {
+                                                  print('ffff-----');
+                                                  _controller!.pause();
+                                                } else {
+                                                  print('play-----');
+                                                  _controller!.play();
+                                                }
+                                              });
+                                            },
+                                            child: Container(
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    padding: EdgeInsets.all(20),
+                                                    decoration: BoxDecoration(
+                                                        color:
+                                                            ColorsApp.second),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text(
+                                                          'Publicité',
+                                                          style: TextStyle(
+                                                              fontSize: 18,
+                                                              color: ColorsApp
+                                                                  .white,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
+                                                        ),
+                                                        InkWell(
+                                                            onTap: () =>
+                                                                AutoRouter.of(
+                                                                        context)
+                                                                    .pop(),
+                                                            child: Container(
+                                                                child: Icon(
+                                                                    Icons.close,
+                                                                    color:
+                                                                        ColorsApp
+                                                                            .red,
+                                                                    size: 30,
+                                                                    weight:
+                                                                        30))),
+                                                      ],
                                                     ),
-                                                    InkWell(
-                                                        onTap: () =>
-                                                            AutoRouter.of(
-                                                                    context)
-                                                                .pop(),
-                                                        child: Container(
-                                                            child: Icon(
-                                                                Icons.close,
-                                                                color: ColorsApp
-                                                                    .red,
-                                                                size: 30,
-                                                                weight: 30))),
-                                                  ],
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: AnimatedContainer(
-                                                    duration: Duration(
-                                                        milliseconds: 500),
-                                                    width:
-                                                        MediaQuery.of(context)
+                                                  ),
+                                                  Expanded(
+                                                    child: AnimatedContainer(
+                                                        duration: Duration(
+                                                            milliseconds: 500),
+                                                        width: MediaQuery.of(
+                                                                context)
                                                             .size
                                                             .width,
-                                                    height:
-                                                        MediaQuery.of(context)
+                                                        height: MediaQuery.of(
+                                                                context)
                                                             .size
                                                             .height,
-                                                    child: AspectRatio(
-                                                      aspectRatio: 9.7 / 17.7,
-                                                      child: VideoPlayer(
-                                                          _controller!),
-                                                    )),
+                                                        child: AspectRatio(
+                                                          aspectRatio:
+                                                              9.7 / 17.7,
+                                                          child: VideoPlayer(
+                                                              _controller!),
+                                                        )),
+                                                  ),
+                                                ],
                                               ),
-                                            ],
-                                          ),
-                                        ))));
-                          }),
-                      InkWell(
+                                            ))));
+                              }),
+                          InkWell(
+                              child: Container(
+                                  margin: EdgeInsets.only(right: kMarginX * 2),
+                                  child: Icon(
+                                    FontAwesomeIcons.whatsapp,
+                                    color: ColorsApp.white,
+                                  )),
+                              onTap: () => launchUrl(Uri.parse(
+                                  'https://wa.me/${state.bcomInfo!.bcomHomeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
+                        ],
+                        bottom: PreferredSize(
+                          preferredSize:
+                              Size.fromHeight(getHeight(context) * .10),
                           child: Container(
-                              margin: EdgeInsets.only(right: kMarginX * 2),
-                              child: Icon(
-                                FontAwesomeIcons.whatsapp,
-                                color: ColorsApp.white,
-                              )),
-                          onTap: () => launchUrl(Uri.parse(
-                              'https://wa.me/${state.bcomInfo!.bcomHomeInfo!.whatsappPhone}?text=Hello Je suis interesse par vos services'))),
-                    ],
-                    bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(getHeight(context) * .10),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: kMarginX,
-                        ).add(EdgeInsets.only(
-                          bottom: kMarginY * 3,
-                          right: kMarginX,
-                        )),
-                        child: KHomeInfo(user: state.user!),
-                      ),
-                    ),
-                    pinned: true,
-                    expandedHeight: getHeight(context) * .22,
-                    elevation: 10.0,
-                    backgroundColor: ColorsApp.primary, //
-                  ),
-                  // SliverToBoxAdapter(
-                  //     child: state.user!.status!
-                  //         ? state.index == 0
-                  //             ? PresentationPage()
-                  //             : HistoriqueDemandeDevisPage()
-                  //         : CompleteEntrepriseInfoPage())
-
-                  SliverToBoxAdapter(child: PresentationPage())
-                ])),
-                bottomNavigationBar: CustomNavigationBar(
-                  iconSize: 30.0,
-                  // elevation: 0.0,
-                  scaleFactor: 0.4,
-                  selectedColor: ColorsApp.primary,
-                  strokeColor: ColorsApp.grey,
-                  unSelectedColor: Colors.grey[600],
-                  backgroundColor:
-                      /*     state.index == 2 ? ColorsApp.primary : */ ColorsApp
-                          .white,
-                  // borderRadius: Radius.circular(15.0),
-                  // isFloating: true,
-                  // blurEffect: true,
-                  items: [
-                    CustomNavigationBarItem(
-                        icon: Container(
-                          height: getHeight(context) / 1.7,
-                          width: getWith(context) / 4.2,
-                          child: SvgPicture.asset(
-                            Assets.home,
-                            width: 90,
-                            height: 90,
-                            // ignore: deprecated_member_use
-                            color: state.index == 0
-                                ? ColorsApp.primary
-                                : ColorsApp.grey,
+                            margin: EdgeInsets.symmetric(
+                              horizontal: kMarginX,
+                            ).add(EdgeInsets.only(
+                              bottom: kMarginY * 3,
+                              right: kMarginX,
+                            )),
+                            child: KHomeInfo(user: stateUser.user!),
                           ),
                         ),
-                        title: Container(
-                            padding: EdgeInsets.only(bottom: 3),
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    bottom: state.index == 0
-                                        ? BorderSide(
-                                            color: ColorsApp.primary, width: 2)
-                                        : BorderSide.none,
-                                    top: BorderSide.none)),
-                            child: Text('Home'.tr(),
-                                style: TextStyle(
-                                  fontSize: kMin,
-                                  fontWeight: FontWeight.w600,
-                                  color: state.index == 0
-                                      ? ColorsApp.primary
-                                      : ColorsApp.grey,
-                                )))), // CustomNavigationBarItem(
-
-                    CustomNavigationBarItem(
-                      icon: Container(
-                        height: getHeight(context) / 1.7,
-                        width: getWith(context) / 4.2,
-                        child: SvgPicture.asset(
-                          Assets.grid1,
-                          width: 80,
-                          height: 80,
-                          // ignore: deprecated_member_use
-                          color: state.index == 1
-                              ? ColorsApp.primary
-                              : ColorsApp.grey,
-                        ),
+                        pinned: true,
+                        expandedHeight: getHeight(context) * .22,
+                        elevation: 10.0,
+                        backgroundColor: ColorsApp.primary, //
                       ),
-                      title: Container(
-                          padding: EdgeInsets.only(bottom: 3),
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: state.index == 1
-                                      ? BorderSide(
-                                          color: ColorsApp.primary, width: 2)
-                                      : BorderSide.none,
-                                  top: BorderSide.none)),
-                          child: Text('Demandes'.tr(),
-                              style: TextStyle(
-                                fontSize: kMin,
-                                fontWeight: FontWeight.w600,
-                                color: state.index == 1
+                      SliverToBoxAdapter(
+                          child: stateUser.user!.status!
+                              ? state.index == 0
+                                  ? PresentationPage()
+                                  : HistoriqueDemandeDevisPage()
+                              : CompleteEntrepriseInfoPage())
+
+                      // SliverToBoxAdapter(child: PresentationPage())
+                    ])),
+                    bottomNavigationBar: CustomNavigationBar(
+                      iconSize: 30.0,
+                      // elevation: 0.0,
+                      scaleFactor: 0.4,
+                      selectedColor: ColorsApp.primary,
+                      strokeColor: ColorsApp.grey,
+                      unSelectedColor: Colors.grey[600],
+                      backgroundColor:
+                          /*     state.index == 2 ? ColorsApp.primary : */ ColorsApp
+                              .white,
+                      // borderRadius: Radius.circular(15.0),
+                      // isFloating: true,
+                      // blurEffect: true,
+                      items: [
+                        CustomNavigationBarItem(
+                            icon: Container(
+                              height: getHeight(context) / 1.7,
+                              width: getWith(context) / 4.2,
+                              child: SvgPicture.asset(
+                                Assets.home,
+                                width: 90,
+                                height: 90,
+                                // ignore: deprecated_member_use
+                                color: state.index == 0
                                     ? ColorsApp.primary
                                     : ColorsApp.grey,
-                              ))),
-                    ),
-                  ],
-                  currentIndex: state.index,
-                  onTap: (index) {
-                    print(index);
+                              ),
+                            ),
+                            title: Container(
+                                padding: EdgeInsets.only(bottom: 3),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        bottom: state.index == 0
+                                            ? BorderSide(
+                                                color: ColorsApp.primary,
+                                                width: 2)
+                                            : BorderSide.none,
+                                        top: BorderSide.none)),
+                                child: Text('Home'.tr(),
+                                    style: TextStyle(
+                                      fontSize: kMin,
+                                      fontWeight: FontWeight.w600,
+                                      color: state.index == 0
+                                          ? ColorsApp.primary
+                                          : ColorsApp.grey,
+                                    )))), // CustomNavigationBarItem(
 
-                    if (index == 1) {
-                      print(index);
-                      AutoRouter.of(context)
-                          .pushNamed(HistoriqueDemandeDevisPage.routeName);
-                    }
-                  },
-                ))));
+                        CustomNavigationBarItem(
+                          icon: Container(
+                            height: getHeight(context) / 1.7,
+                            width: getWith(context) / 4.2,
+                            child: SvgPicture.asset(
+                              Assets.grid1,
+                              width: 80,
+                              height: 80,
+                              // ignore: deprecated_member_use
+                              color: state.index == 1
+                                  ? ColorsApp.primary
+                                  : ColorsApp.grey,
+                            ),
+                          ),
+                          title: Container(
+                              padding: EdgeInsets.only(bottom: 3),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: state.index == 1
+                                          ? BorderSide(
+                                              color: ColorsApp.primary,
+                                              width: 2)
+                                          : BorderSide.none,
+                                      top: BorderSide.none)),
+                              child: Text('Demandes'.tr(),
+                                  style: TextStyle(
+                                    fontSize: kMin,
+                                    fontWeight: FontWeight.w600,
+                                    color: state.index == 1
+                                        ? ColorsApp.primary
+                                        : ColorsApp.grey,
+                                  ))),
+                        ),
+                      ],
+                      currentIndex: state.index,
+                      onTap: (index) {
+                        print(index);
+
+                        if (index == 1) {
+                          print(index);
+                          AutoRouter.of(context)
+                              .pushNamed(HistoriqueDemandeDevisPage.routeName);
+                        }
+                      },
+                    )))));
   }
 }
 
@@ -386,7 +392,7 @@ class CustomDrawer extends StatelessWidget {
           showSuccess('Profil mis a jour', context);
 
           EasyLoading.dismiss();
-          BlocProvider.of<HomeBloc>(context).add(UserDataEvent());
+          BlocProvider.of<UserBloc>(context).add(UserDataEvent());
           print('-----44------find noe--446465465*******');
         }
       },

@@ -9,6 +9,7 @@ class UserState with _$UserState {
     String? eventMessage,
     String? registerFailedMessage,
     String? villeUser,
+    User? user,
     String? quartierUser,
     String? newPassword,
     int? isCode,
@@ -36,6 +37,7 @@ class UserState with _$UserState {
   factory UserState.initial() => UserState(
         isCode: 0,
         updating: false,
+        user: null,
         isCorrectCode: 0,
         successReset: false,
         cniImageAvant: null,

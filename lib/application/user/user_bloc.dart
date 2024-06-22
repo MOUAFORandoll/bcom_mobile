@@ -27,22 +27,17 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<RegisterEvent>(_Register);
     on<GetUserEvent>(_GetUser);
 
-    on<SetCniImageAvant>(setCniImageAvant);
-    on<SetCniImageArriere>(setCniImageArriere);
-    on<SetCGImage>(setCGImage);
     on<AddInfoClient>(_addInfoClient);
-  }
-
-  setCniImageArriere(SetCniImageArriere event, Emitter<UserState> emit) async {
-    emit(state.copyWith(cniImageArriere: event.image));
-  }
-
-  setCniImageAvant(SetCniImageAvant event, Emitter<UserState> emit) async {
-    emit(state.copyWith(cniImageAvant: event.image));
-  }
-
-  setCGImage(SetCGImage event, Emitter<UserState> emit) async {
-    emit(state.copyWith(cartegriseImage: event.image));
+    on<UserDataEvent>((event, emit) async {
+     
+      print('---------UserD-------------------------');
+      var user = await database.getUser();
+      emit(state.copyWith(user: user));
+      print(
+          '---------UserD-----*${user!.toMap()}--------------------*${user.phone}');
+      print(
+          '---------UserD-----*${user.toMap()}--------------------*${user.phone}');
+    });
   }
 
   _GetUser(GetUserEvent event, Emitter<UserState> emit) async {
@@ -52,6 +47,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         var _UserSave = User.fromJson(response.data['data']);
 
         await database.saveUser(_UserSave);
+        emit(state.copyWith(user: _UserSave));
       } else {}
     }).onError((error, s) {});
   }
@@ -137,13 +133,13 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     emit(state.copyWith(isLoading: 1));
     await userRepo.addInfoClient(data).then((response) async {
       if (response.statusCode == 201) {
+        add(GetUserEvent());
         if (response.data['data'] != null) {
           emit(state.copyWith(isLoading: 2, eventMessage: ''));
-          emit(UserState.authenticated());
+          add(GetUserEvent());
+          // var _UserSave = User.fromJson(response.data['data']);
 
-          var _UserSave = User.fromJson(response.data['data']);
-
-          await database.saveUser(_UserSave);
+          // await database.saveUser(_UserSave);
           emit(state.copyWith(eventMessage: '', isLoading: null));
         }
       } else {
@@ -152,8 +148,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(state.copyWith(eventMessage: '', isLoading: null));
       }
     }).onError((error, s) {
-      print('----${s}-----');
-      print('------${error}---');
       emit(state.copyWith(
           isLoading: 3, eventMessage: 'Une erreur est servenue'));
       emit(state.copyWith(eventMessage: '', isLoading: null));
@@ -192,8 +186,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(state.copyWith(authenticationMessage: '', isLoadingReg: null));
     }
   }
-
-  Stream<UserState> mapEventToState(UserEvent event) async* {}
 
   Future<bool> connected() async {
     var isConnected = await database.getUser() != null;

@@ -79,9 +79,6 @@ class SuccesDevisPage extends StatelessWidget {
                                   .read<HomeBloc>()
                                   .add(SetIndexEvent(index: 0));
 
-                              BlocProvider.of<HomeBloc>(context)
-                                  .add(UserDataEvent());
-
                               AutoRouter.of(context).replaceAll([HomeRoute()]);
                             },
                           ),

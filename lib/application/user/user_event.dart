@@ -6,6 +6,7 @@ class UserEvent with _$UserEvent {
     required String userName,
     required String password,
   }) = SignInEvent;
+  const factory UserEvent.userData() = UserDataEvent;
 
   const factory UserEvent.register(
       {required String fullName,

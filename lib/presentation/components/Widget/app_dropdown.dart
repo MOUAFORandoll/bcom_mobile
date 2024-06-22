@@ -1,5 +1,6 @@
 import '../exportcomponent.dart';
 
+// ignore: must_be_immutable
 class AppDropdown extends StatelessWidget {
   var value;
   final List<String> items;

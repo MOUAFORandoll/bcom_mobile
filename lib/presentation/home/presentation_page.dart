@@ -3,8 +3,7 @@ import 'package:Bcom/presentation/components/Widget/app_carroussel_item_second.d
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/devis/command_devis_page.dart';
 import 'package:Bcom/presentation/devis/select_abonnement.dart';
-import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart';
-import 'package:Bcom/utils/constants/assets.dart';
+import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart'; 
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../components/exportcomponent.dart';
@@ -31,32 +30,34 @@ class _PresentationPageState extends State<PresentationPage>
                 height: getHeight(context) * .80,
                 child: Stack(
                   children: [
-                    CarouselSlider(
-                      carouselController: controller,
-                      items: state.bcomInfo!.onboardingImage!
-                          .map(
-                            (e) => AppCarrousselItemSecond(
-                              title: e.title,
-                              description: e.description,
-                              image: e.linkFile,
-                            ),
-                          )
-                          .toList(),
-                      options: CarouselOptions(
-                          aspectRatio: 16 / 9,
-                          enlargeStrategy: CenterPageEnlargeStrategy.scale,
-                          initialPage: 0,
-                          enableInfiniteScroll: false,
-                          reverse: false,
-                          onPageChanged: (index, reason) {
-                            context.read<AppActionCubit>().setIndex(index);
-                          },
-                          disableCenter: true,
-                          height: getHeight(context),
-                          viewportFraction: 1.0,
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          scrollDirection: Axis.horizontal),
-                    ),
+                    if (state.bcomInfo != null)
+                      if (state.bcomInfo!.onboardingImage != null)
+                        CarouselSlider(
+                          carouselController: controller,
+                          items: state.bcomInfo!.onboardingImage!
+                              .map(
+                                (e) => AppCarrousselItemSecond(
+                                  title: e.title,
+                                  description: e.description,
+                                  image: e.linkFile,
+                                ),
+                              )
+                              .toList(),
+                          options: CarouselOptions(
+                              aspectRatio: 16 / 9,
+                              enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                              initialPage: 0,
+                              enableInfiniteScroll: false,
+                              reverse: false,
+                              onPageChanged: (index, reason) {
+                                context.read<AppActionCubit>().setIndex(index);
+                              },
+                              disableCenter: true,
+                              height: getHeight(context),
+                              viewportFraction: 1.0,
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              scrollDirection: Axis.horizontal),
+                        ),
                     // Positioned(
                     //   bottom: getHeight(context) / 5,
                     //   left: 0,
