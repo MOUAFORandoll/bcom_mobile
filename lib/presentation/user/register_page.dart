@@ -178,21 +178,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(bottom: kMarginY),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              AutoRouter.of(context).pushNamed(
-                                                  ForgotPasswordPage.routeName),
-                                          child: Text('forgotpass'.tr(),
-                                              style: TextStyle(
-                                                fontFamily: 'Lato',
-                                                color: ColorsApp.second,
-                                              )),
-                                        )
-                                      ],
-                                    ),
                                   ),
                                   AppButton(
                                       size: MainAxisSize.max,

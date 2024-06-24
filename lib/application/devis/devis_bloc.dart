@@ -101,10 +101,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   _newDevis(NewDevis event, Emitter<DevisState> emit) async {
     var user = await database.getUser();
     var _data = formatDataToDevis();
-    _data.forEach((e) {
-      log(e['id'].toString());
-      log(e['value'].toString());
-    });
+    
     log(_data.toString());
     var data = {
       'idClient': user!.userId,

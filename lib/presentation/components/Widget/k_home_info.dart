@@ -24,7 +24,7 @@ class KHomeInfo extends StatelessWidget {
         showError('Une erreur est survenue', context);
       } else if (state.loadRequest == 1) {
         AutoRouter.of(context).pop();
-        // showSuccess('Operation reussi', context);
+
         AutoRouter.of(context).pushNamed(PaimentPage.routeName);
 
         EasyLoading.dismiss();

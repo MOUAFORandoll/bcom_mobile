@@ -6,6 +6,7 @@ import 'package:Bcom/application/export_bloc.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
 import 'package:Bcom/core.dart';
+import 'package:Bcom/presentation/home/presentation_page.dart';
 import 'package:Bcom/presentation/user/complete_info_steps/first_steps.dart';
 import 'package:Bcom/presentation/user/complete_info_steps/second_steps.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -38,13 +39,20 @@ class _CompleteEntrepriseInfoPageState
           } else if (state.isLoading == 2) {
             showSuccess('Mise a jour effectuee', context);
             initLoad(context);
-            await Future.delayed(Duration(seconds: 30));
-            log('-----attend 11--------*********ss');
 
+            abonnement(context);
+            BlocProvider.of<UserBloc>(context)
+              ..add(GetUserEvent())
+              ..add(UserDataEvent());
+            await Future.delayed(Duration(seconds: 20));
+            log('-----attend 11--------*********ss');
             BlocProvider.of<UserBloc>(context)
               ..add(GetUserEvent())
               ..add(UserDataEvent());
             EasyLoading.dismiss();
+
+            abonnement(context);
+
             log('-----44--------*********');
           }
         },

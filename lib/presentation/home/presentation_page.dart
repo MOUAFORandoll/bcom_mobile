@@ -3,7 +3,7 @@ import 'package:Bcom/presentation/components/Widget/app_carroussel_item_second.d
 import 'package:Bcom/presentation/components/Widget/global_bottom_sheet.dart';
 import 'package:Bcom/presentation/devis/command_devis_page.dart';
 import 'package:Bcom/presentation/devis/select_abonnement.dart';
-import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart'; 
+import 'package:Bcom/presentation/components/Widget/shimmer_home_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../components/exportcomponent.dart';
@@ -157,12 +157,15 @@ class _PresentationPageState extends State<PresentationPage>
                                               child: AppButton(
                                                   size: MainAxisSize.max,
                                                   text: 'Commander'.tr(),
-                                                  onTap: () async {
+                                                  onTap:
+                                                      ()  async {
                                                     AutoRouter.of(context)
                                                         .pushNamed(
                                                             CommandDevisPage
                                                                 .routeName);
-                                                  }),
+                                                  }  
+                                                         /*  =>
+                                                          abonnement(context) */),
                                             )
                                           : !(DateTime.now().isBefore(
                                                   DateTime.parse(state
@@ -240,20 +243,20 @@ class _PresentationPageState extends State<PresentationPage>
       ],
     );
   }
-
-  abonnement(context) => GlobalBottomSheet.show(
-      context: context,
-      widget: Container(
-          height: getHeight(context) * .8,
-          padding: EdgeInsets.symmetric(horizontal: kMarginX),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-            color: ColorsApp.white,
-          ),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [SelectAbonnementWidget()])));
 }
+
+abonnement(context) => GlobalBottomSheet.show(
+    context: context,
+    widget: Container(
+        height: getHeight(context) * .8,
+        padding: EdgeInsets.symmetric(horizontal: kMarginX),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
+          color: ColorsApp.white,
+        ),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [SelectAbonnementWidget()])));

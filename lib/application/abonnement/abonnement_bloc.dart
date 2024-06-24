@@ -131,10 +131,12 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
       ));
     });
   }
-
+  
   payAbonnement(PayAbonnement event, Emitter<AbonnementState> emit) async {
     emit(state.copyWith(
       loadRequest: 0,
+      paiement_url: null,
+      ref_transactiopn: null,
     ));
     var data = {
       'currency': 'XAF',
@@ -293,8 +295,11 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
           emit(state.copyWith(
             paiement_url: null,
             loadsuccessPay: 1,
-            loadRequest: 1,
             loadUserAbonnement: 1,
+          ));
+          emit(state.copyWith(
+            loadRequest: null,
+            loadsuccessPay: null,
           ));
           add(UserAbonnement());
           add(GetListTransaction());
@@ -306,17 +311,29 @@ class AbonnementBloc extends Bloc<AbonnementEvent, AbonnementState> {
           emit(state.copyWith(
             loadsuccessPay: 3,
           ));
+          emit(state.copyWith(
+            loadsuccessPay: null,
+          ));
         } else {
           emit(state.copyWith(loadsuccessPay: 2));
+          emit(state.copyWith(
+            loadsuccessPay: null,
+          ));
         }
       } else {
         emit(state.copyWith(
           loadsuccessPay: 2,
         ));
+        emit(state.copyWith(
+          loadsuccessPay: null,
+        ));
       }
     }).onError((e, s) {
       emit(state.copyWith(
         loadsuccessPay: 2,
+      ));
+      emit(state.copyWith(
+        loadsuccessPay: null,
       ));
     });
   }

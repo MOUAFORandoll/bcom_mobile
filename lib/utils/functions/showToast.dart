@@ -8,8 +8,12 @@ showError(
     backgroundColor: ColorsApp.red,
     content: Row(
       children: [
-        Expanded(child: Text(message)),
-        const Icon(Icons.warning),
+        Expanded(
+            child: Text(
+          message,
+          style: TextStyle(color: ColorsApp.white),
+        )),
+        Icon(Icons.warning, color: ColorsApp.white),
       ],
     ),
   );
@@ -24,8 +28,12 @@ showSuccess(
     backgroundColor: ColorsApp.second,
     content: Row(
       children: [
-        Expanded(child: Text(message)),
-        const Icon(Icons.done),
+        Expanded(
+            child: Text(
+          message,
+          style: TextStyle(color: ColorsApp.white),
+        )),
+        const Icon(Icons.done, color: ColorsApp.white),
       ],
     ),
   );
