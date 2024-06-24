@@ -54,11 +54,10 @@ class DatabaseCubit extends Cubit<DatabaseState> {
 
     final users = userBox.getAll();
     print(users.length);
-    log('-----------22-----saveeeeeee-------------${users.last.toMap().toString()}');
 
     return users.isNotEmpty ? users.last : null;
   }
-  
+
   Future<Map<String, dynamic>?> getKeyKen() async {
     final keyUserBox = _store.box<KeyUser>();
     final keyUsers = keyUserBox.getAll();

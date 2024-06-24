@@ -25,9 +25,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       await Future.delayed(Duration(seconds: 5), () {
         PageRouteInfo<dynamic> route;
 
-        route = /* (box.read('first') != 1)
-            ? const OnBoardingRoute()
-            : */
+        route =  
             isConnected ? const HomeRoute() : const AuthRoute();
 
         emit(SplashState.loaded(isConnected, route));

@@ -56,7 +56,7 @@ void initConnected() async {
 Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context).add(GetUserEvent());
   BlocProvider.of<HomeBloc>(context).add(GetHomeInfo());
-
+  
   BlocProvider.of<UserBloc>(context).add(UserDataEvent());
 
   BlocProvider.of<AbonnementBloc>(context)

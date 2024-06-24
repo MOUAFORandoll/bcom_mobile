@@ -29,14 +29,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
     on<AddInfoClient>(_addInfoClient);
     on<UserDataEvent>((event, emit) async {
-     
-      print('---------UserD-------------------------');
       var user = await database.getUser();
       emit(state.copyWith(user: user));
-      print(
-          '---------UserD-----*${user!.toMap()}--------------------*${user.phone}');
-      print(
-          '---------UserD-----*${user.toMap()}--------------------*${user.phone}');
     });
   }
 
