@@ -269,11 +269,11 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                         backgroundColor: ColorsApp.primary, //
                       ),
                       SliverToBoxAdapter(
-                          child: stateUser.user!.status!
-                              ? state.index == 0
+                          child:/*  stateUser.user!.status!
+                              ? */ state.index == 0
                                   ? PresentationPage()
                                   : HistoriqueDemandeDevisPage()
-                              : CompleteEntrepriseInfoPage())
+                             /*  : CompleteEntrepriseInfoPage() */)
 
                       // SliverToBoxAdapter(child: PresentationPage())
                     ])),

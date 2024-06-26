@@ -13,6 +13,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 @RoutePage()
 class CompleteEntrepriseInfoPage extends StatefulWidget {
+  static const routeName = '/complete-profil';
+
   @override
   State<CompleteEntrepriseInfoPage> createState() =>
       _CompleteEntrepriseInfoPageState();
@@ -56,7 +58,35 @@ class _CompleteEntrepriseInfoPageState
             log('-----44--------*********');
           }
         },
-        builder: (context, state) => Container(
+        builder: (context, state) => Scaffold(
+            appBar: AppBar(
+              title: Text(
+                'Completer mon profil',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              centerTitle: true,
+              leading: InkWell(
+                  onTap: () {
+                    EasyLoading.dismiss();
+                    AutoRouter.of(context).pop();
+                  },
+                  child: Container(
+                    margin: EdgeInsets.zero,
+                    // padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+
+                        // borderRadius: BorderRadius.circular(20),
+                        ),
+                    child: Icon(Icons.arrow_back_ios_new, size: 25.0),
+                  )),
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+            ),
+            body: Container(
                 child: Column(children: [
               _state == 0 ? FirstStep() : SecondStep(),
               Container(
@@ -156,6 +186,6 @@ class _CompleteEntrepriseInfoPageState
                         ),
                       ),
                     ),
-            ])));
+            ]))));
   }
 }

@@ -99,7 +99,7 @@ class User {
 
   @Property()
   String? updatedAt;
-
+  
   User({
     required this.fullName,
     this.email,

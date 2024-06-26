@@ -4,6 +4,7 @@ import 'package:Bcom/presentation/devis/historique_demande_devis_page.dart';
 import 'package:Bcom/presentation/home/home_page.dart';
 import 'package:Bcom/presentation/layer/onboardingpage.dart';
 import 'package:Bcom/presentation/user/auth_page.dart';
+import 'package:Bcom/presentation/user/complete_info_page.dart';
 import 'package:Bcom/presentation/user/forgot_password_page.dart';
 import 'package:Bcom/presentation/user/register_page.dart';
 import 'package:auto_route/auto_route.dart';
@@ -29,6 +30,11 @@ class AppRouter extends $AppRouter {
             page: CommandDevisRoute.page, path: CommandDevisPage.routeName),
         AutoRoute(page: SuccesDevisRoute.page, path: SuccesDevisPage.routeName),
         AutoRoute(page: PaimentRoute.page, path: PaimentPage.routeName),
-        AutoRoute(page: HistoriqueDemandeDevisRoute.page, path: HistoriqueDemandeDevisPage.routeName),
+        AutoRoute(
+            page: HistoriqueDemandeDevisRoute.page,
+            path: HistoriqueDemandeDevisPage.routeName),
+        AutoRoute(
+            page: CompleteEntrepriseInfoRoute.page,
+            path: CompleteEntrepriseInfoPage.routeName),
       ];
 }

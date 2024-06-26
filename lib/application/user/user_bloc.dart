@@ -129,12 +129,50 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       if (response.statusCode == 201) {
         add(GetUserEvent());
         if (response.data['data'] != null) {
-          emit(state.copyWith(isLoading: 2, eventMessage: ''));
-          add(GetUserEvent());
-          // var _UserSave = User.fromJson(response.data['data']);
+          if (response.data['status'] == true) {
+            emit(state.copyWith(isLoading: 2, eventMessage: ''));
+            add(GetUserEvent());
+            User? _user = state.user;
+            var nUser = User(
+              fullName: _user?.fullName ?? '',
+              userName: _user?.userName ?? '',
+              phone: _user?.phone ?? '',
+              status: true,
+              email: _user?.email,
+              sex: _user?.sex,
+              age: _user?.age,
+              town: _user?.town,
+              userId: _user?.userId,
+              country: _user?.country,
+              address: _user?.address,
+              numCni: _user?.numCni,
+              workingMoment: _user?.workingMoment,
+              birthDate: _user?.birthDate,
+              isSick: _user?.isSick,
+              isMotoMan: _user?.isMotoMan,
+              isSyndicat: _user?.isSyndicat,
+              isYourBike: _user?.isYourBike,
+              syndicatName: _user?.syndicatName,
+              sickDescription: _user?.sickDescription,
+              cni1: _user?.cni1,
+              cni2: _user?.cni2,
+              photoMoto: _user?.photoMoto,
+              profile: _user?.profile,
+              carteGrise: _user?.carteGrise,
+              userTypeId: _user?.userTypeId,
+              serviceZoneId: _user?.serviceZoneId,
+              isDeleted: _user?.isDeleted,
+              nuiNumber: _user?.nuiNumber,
+              wokingPlace: _user?.wokingPlace,
+              createdAt: _user?.createdAt,
+              updatedAt: _user?.updatedAt,
+            );
 
-          // await database.saveUser(_UserSave);
-          emit(state.copyWith(eventMessage: '', isLoading: null));
+            await database.saveUser(nUser);
+            emit(state.copyWith(user: nUser));
+
+            emit(state.copyWith(eventMessage: '', isLoading: null));
+          }
         }
       } else {
         emit(state.copyWith(
