@@ -153,28 +153,26 @@ class _PresentationPageState extends State<PresentationPage>
                                                   ])),
                                             ]),
                                       ))
-                                  : state.loadUserAbonnement == 1
-                                      ? state.userAbonnement != null
-                                          ? !stateUser.user!.status!
-                                              ? Container(
-                                                  margin: EdgeInsets.symmetric(
-                                                      vertical: kMarginY,
-                                                      horizontal: kMarginX),
-                                                  child: AppButton(
-                                                      size: MainAxisSize.max,
-                                                      text:
-                                                          'Completer Mon Profil',
-                                                      onTap: () async {
-                                                        AutoRouter.of(context)
-                                                            .pushNamed(
-                                                                CompleteEntrepriseInfoPage
-                                                                    .routeName);
-                                                      }
-                                                      /*  =>
+                                  : !stateUser.user!.status!
+                                      ? Container(
+                                          margin: EdgeInsets.symmetric(
+                                              vertical: kMarginY,
+                                              horizontal: kMarginX),
+                                          child: AppButton(
+                                              size: MainAxisSize.max,
+                                              text: 'Completer Mon Profil',
+                                              onTap: () async {
+                                                AutoRouter.of(context).pushNamed(
+                                                    CompleteEntrepriseInfoPage
+                                                        .routeName);
+                                              }
+                                              /*  =>
                                                           abonnement(context) */
-                                                      ),
-                                                )
-                                              : state.userAbonnement!.isPay ==
+                                              ),
+                                        )
+                                      :  state.loadUserAbonnement == 1
+                                      ?  state.userAbonnement != null
+                                          ? state.userAbonnement!.isPay ==
                                                           1 &&
                                                       DateTime.now().isBefore(
                                                           DateTime.parse(state

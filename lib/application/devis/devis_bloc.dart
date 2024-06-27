@@ -312,7 +312,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         return SizedBox.shrink();
     }
   }
-
+  
   void updateParametre(UpdateParametre event, Emitter<DevisState> emit) {
     List<Widget> updatedList = List.from(state.list_widget_devis!);
     log('----${event.label}---------${event.value}---');
@@ -365,7 +365,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       emit(state.copyWith(formKey: state.formKey.currentState!.save()));
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
-
+    
     int foundIndex1 = updatedList.indexWhere((widget) =>
         (widget is AppRadioGroup) &&
         (widget.key as ValueKey).value == event.label);
@@ -405,7 +405,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
   }
-
+  
   List<Map<dynamic, dynamic>> formatDataToDevis() {
     List<Map<dynamic, dynamic>> dataList = [];
 

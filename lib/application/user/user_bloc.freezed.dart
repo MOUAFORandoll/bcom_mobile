@@ -3717,6 +3717,7 @@ abstract class CompleteDevisInfo implements UserEvent {
 /// @nodoc
 mixin _$UserState {
   int? get isLoading => throw _privateConstructorUsedError;
+  int? get isLoadingP => throw _privateConstructorUsedError;
   int? get isLoadingReg => throw _privateConstructorUsedError;
   String? get authenticationMessage => throw _privateConstructorUsedError;
   String? get eventMessage => throw _privateConstructorUsedError;
@@ -3760,6 +3761,7 @@ abstract class $UserStateCopyWith<$Res> {
   @useResult
   $Res call(
       {int? isLoading,
+      int? isLoadingP,
       int? isLoadingReg,
       String? authenticationMessage,
       String? eventMessage,
@@ -3804,6 +3806,7 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? isLoadingP = freezed,
     Object? isLoadingReg = freezed,
     Object? authenticationMessage = freezed,
     Object? eventMessage = freezed,
@@ -3837,6 +3840,10 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
       isLoading: freezed == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isLoadingP: freezed == isLoadingP
+          ? _value.isLoadingP
+          : isLoadingP // ignore: cast_nullable_to_non_nullable
               as int?,
       isLoadingReg: freezed == isLoadingReg
           ? _value.isLoadingReg
@@ -3964,6 +3971,7 @@ abstract class _$$UserStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? isLoading,
+      int? isLoadingP,
       int? isLoadingReg,
       String? authenticationMessage,
       String? eventMessage,
@@ -4006,6 +4014,7 @@ class __$$UserStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
+    Object? isLoadingP = freezed,
     Object? isLoadingReg = freezed,
     Object? authenticationMessage = freezed,
     Object? eventMessage = freezed,
@@ -4039,6 +4048,10 @@ class __$$UserStateImplCopyWithImpl<$Res>
       isLoading: freezed == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isLoadingP: freezed == isLoadingP
+          ? _value.isLoadingP
+          : isLoadingP // ignore: cast_nullable_to_non_nullable
               as int?,
       isLoadingReg: freezed == isLoadingReg
           ? _value.isLoadingReg
@@ -4161,6 +4174,7 @@ class __$$UserStateImplCopyWithImpl<$Res>
 class _$UserStateImpl implements _UserState {
   const _$UserStateImpl(
       {this.isLoading,
+      this.isLoadingP,
       this.isLoadingReg,
       this.authenticationMessage,
       this.eventMessage,
@@ -4192,6 +4206,8 @@ class _$UserStateImpl implements _UserState {
 
   @override
   final int? isLoading;
+  @override
+  final int? isLoadingP;
   @override
   final int? isLoadingReg;
   @override
@@ -4251,7 +4267,7 @@ class _$UserStateImpl implements _UserState {
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, isLoadingReg: $isLoadingReg, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, user: $user, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce)';
+    return 'UserState(isLoading: $isLoading, isLoadingP: $isLoadingP, isLoadingReg: $isLoadingReg, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, user: $user, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce)';
   }
 
   @override
@@ -4261,6 +4277,8 @@ class _$UserStateImpl implements _UserState {
             other is _$UserStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.isLoadingP, isLoadingP) ||
+                other.isLoadingP == isLoadingP) &&
             (identical(other.isLoadingReg, isLoadingReg) ||
                 other.isLoadingReg == isLoadingReg) &&
             (identical(other.authenticationMessage, authenticationMessage) ||
@@ -4314,6 +4332,7 @@ class _$UserStateImpl implements _UserState {
   int get hashCode => Object.hashAll([
         runtimeType,
         isLoading,
+        isLoadingP,
         isLoadingReg,
         authenticationMessage,
         eventMessage,
@@ -4354,6 +4373,7 @@ class _$UserStateImpl implements _UserState {
 abstract class _UserState implements UserState {
   const factory _UserState(
       {final int? isLoading,
+      final int? isLoadingP,
       final int? isLoadingReg,
       final String? authenticationMessage,
       final String? eventMessage,
@@ -4385,6 +4405,8 @@ abstract class _UserState implements UserState {
 
   @override
   int? get isLoading;
+  @override
+  int? get isLoadingP;
   @override
   int? get isLoadingReg;
   @override

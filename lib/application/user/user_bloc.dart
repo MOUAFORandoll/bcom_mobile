@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 import 'package:Bcom/application/database/database_cubit.dart';
 
@@ -123,15 +124,15 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       'userId': user!.userId,
     };
     print(data);
-    emit(state.copyWith(isLoading: null));
-    emit(state.copyWith(isLoading: 1));
+    emit(state.copyWith(isLoadingP: null));
+    emit(state.copyWith(isLoadingP: 1));
     await userRepo.addInfoClient(data).then((response) async {
-      if (response.statusCode == 201) {
-        add(GetUserEvent());
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        // add(GetUserEvent());
         if (response.data['data'] != null) {
-          if (response.data['status'] == true) {
-            emit(state.copyWith(isLoading: 2, eventMessage: ''));
-            add(GetUserEvent());
+          if (response.data['isSuccess'] == true) {
+            emit(state.copyWith(isLoadingP: 2, eventMessage: ''));
+            // add(GetUserEvent());
             User? _user = state.user;
             var nUser = User(
               fullName: _user?.fullName ?? '',
@@ -170,19 +171,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
             await database.saveUser(nUser);
             emit(state.copyWith(user: nUser));
-
-            emit(state.copyWith(eventMessage: '', isLoading: null));
+            log('-------${state.isLoadingP}');
+            emit(state.copyWith(eventMessage: '', isLoadingP: null));
+            log('-------${state.isLoadingP}');
           }
         }
       } else {
         emit(state.copyWith(
-            isLoading: 3, eventMessage: response.data['message']));
-        emit(state.copyWith(eventMessage: '', isLoading: null));
+            isLoadingP: 3, eventMessage: response.data['message']));
+        emit(state.copyWith(eventMessage: '', isLoadingP: null));
       }
     }).onError((error, s) {
       emit(state.copyWith(
-          isLoading: 3, eventMessage: 'Une erreur est servenue'));
-      emit(state.copyWith(eventMessage: '', isLoading: null));
+          isLoadingP: 3, eventMessage: 'Une erreur est servenue'));
+      emit(state.copyWith(eventMessage: '', isLoadingP: null));
     });
   }
 
