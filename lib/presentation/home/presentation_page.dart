@@ -160,7 +160,7 @@ class _PresentationPageState extends State<PresentationPage>
                                               horizontal: kMarginX),
                                           child: AppButton(
                                               size: MainAxisSize.max,
-                                              text: 'Completer Mon Profil',
+                                              text: 'Commander un devis',
                                               onTap: () async {
                                                 AutoRouter.of(context).pushNamed(
                                                     CompleteEntrepriseInfoPage
@@ -170,9 +170,9 @@ class _PresentationPageState extends State<PresentationPage>
                                                           abonnement(context) */
                                               ),
                                         )
-                                      :  state.loadUserAbonnement == 1
-                                      ?  state.userAbonnement != null
-                                          ? state.userAbonnement!.isPay ==
+                                      : state.loadUserAbonnement == 1
+                                          ? state.userAbonnement != null
+                                              ? state.userAbonnement!.isPay ==
                                                           1 &&
                                                       DateTime.now().isBefore(
                                                           DateTime.parse(state
@@ -189,7 +189,8 @@ class _PresentationPageState extends State<PresentationPage>
                                                           size:
                                                               MainAxisSize.max,
                                                           text:
-                                                              'Commander'.tr(),
+                                                              'Commander un devis'
+                                                                  .tr(),
                                                           onTap: () async {
                                                             AutoRouter.of(
                                                                     context)
@@ -208,8 +209,8 @@ class _PresentationPageState extends State<PresentationPage>
                                                       ? renouvellerWidget(
                                                           context)
                                                       : abonnerWidget(context)
-                                          : abonnerWidget(context)
-                                      : abonnerWidget(context)),
+                                              : abonnerWidget(context)
+                                          : abonnerWidget(context)),
                         ),
                       ],
                     ),
@@ -218,65 +219,23 @@ class _PresentationPageState extends State<PresentationPage>
     );
   }
 
-  Row renouvellerWidget(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          margin:
-              EdgeInsets.symmetric(vertical: kMarginY, horizontal: kMarginX),
-          constraints: BoxConstraints(minWidth: getWith(context) * .7),
-          child: AppButton(
-              size: MainAxisSize.max,
-              text: 'Renouveller'.tr(),
-              onTap: () => BlocProvider.of<AbonnementBloc>(context)
-                  .add(ReNewCurrentAbonnement())),
-        ),
-        Container(
-            padding: const EdgeInsets.all(15),
-            margin: EdgeInsets.only(right: kMarginX * 2),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: ColorsApp.red,
-            ),
-            child: InkWell(
-                child: Icon(Icons.refresh, color: ColorsApp.white),
-                onTap: () async {
-                  BlocProvider.of<AbonnementBloc>(context)
-                      .add(UserAbonnement());
-                }))
-      ],
+  renouvellerWidget(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: kMarginY, horizontal: kMarginX),
+      constraints: BoxConstraints(minWidth: getWith(context) * .7),
+      child: AppButton(
+          size: MainAxisSize.max,
+          text: 'Renouveller mon abonnement'.tr(),
+          onTap: () => BlocProvider.of<AbonnementBloc>(context)
+              .add(ReNewCurrentAbonnement())),
     );
   }
 
-  Row abonnerWidget(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          margin:
-              EdgeInsets.symmetric(vertical: kMarginY, horizontal: kMarginX),
-          constraints: BoxConstraints(minWidth: getWith(context) * .7),
-          child: AppButton(
-              size: MainAxisSize.max,
-              text: 'S\'abonner'.tr(),
-              onTap: () => abonnement(context)),
-        ),
-        Container(
-            padding: const EdgeInsets.all(15),
-            margin: EdgeInsets.only(right: kMarginX * 2),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: ColorsApp.red,
-            ),
-            child: InkWell(
-                child: Icon(Icons.refresh, color: ColorsApp.white),
-                onTap: () async {
-                  BlocProvider.of<AbonnementBloc>(context)
-                      .add(UserAbonnement());
-                }))
-      ],
-    );
+  abonnerWidget(BuildContext context) {
+    return AppButton(
+        size: MainAxisSize.max,
+        text: 'Commander un devis'.tr(),
+        onTap: () => abonnement(context));
   }
 }
 
