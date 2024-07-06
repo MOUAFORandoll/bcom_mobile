@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppActionState {
-  bool get isLogin => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   bool get isInternetConnection => throw _privateConstructorUsedError;
 
@@ -31,7 +30,7 @@ abstract class $AppActionStateCopyWith<$Res> {
           AppActionState value, $Res Function(AppActionState) then) =
       _$AppActionStateCopyWithImpl<$Res, AppActionState>;
   @useResult
-  $Res call({bool isLogin, int index, bool isInternetConnection});
+  $Res call({int index, bool isInternetConnection});
 }
 
 /// @nodoc
@@ -47,15 +46,10 @@ class _$AppActionStateCopyWithImpl<$Res, $Val extends AppActionState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLogin = null,
     Object? index = null,
     Object? isInternetConnection = null,
   }) {
     return _then(_value.copyWith(
-      isLogin: null == isLogin
-          ? _value.isLogin
-          : isLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -76,7 +70,7 @@ abstract class _$$AppActionStateImplCopyWith<$Res>
       __$$AppActionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLogin, int index, bool isInternetConnection});
+  $Res call({int index, bool isInternetConnection});
 }
 
 /// @nodoc
@@ -90,15 +84,10 @@ class __$$AppActionStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLogin = null,
     Object? index = null,
     Object? isInternetConnection = null,
   }) {
     return _then(_$AppActionStateImpl(
-      isLogin: null == isLogin
-          ? _value.isLogin
-          : isLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -115,12 +104,8 @@ class __$$AppActionStateImplCopyWithImpl<$Res>
 
 class _$AppActionStateImpl implements _AppActionState {
   const _$AppActionStateImpl(
-      {required this.isLogin,
-      required this.index,
-      required this.isInternetConnection});
+      {required this.index, required this.isInternetConnection});
 
-  @override
-  final bool isLogin;
   @override
   final int index;
   @override
@@ -128,7 +113,7 @@ class _$AppActionStateImpl implements _AppActionState {
 
   @override
   String toString() {
-    return 'AppActionState(isLogin: $isLogin, index: $index, isInternetConnection: $isInternetConnection)';
+    return 'AppActionState(index: $index, isInternetConnection: $isInternetConnection)';
   }
 
   @override
@@ -136,15 +121,13 @@ class _$AppActionStateImpl implements _AppActionState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppActionStateImpl &&
-            (identical(other.isLogin, isLogin) || other.isLogin == isLogin) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.isInternetConnection, isInternetConnection) ||
                 other.isInternetConnection == isInternetConnection));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLogin, index, isInternetConnection);
+  int get hashCode => Object.hash(runtimeType, index, isInternetConnection);
 
   @JsonKey(ignore: true)
   @override
@@ -156,12 +139,9 @@ class _$AppActionStateImpl implements _AppActionState {
 
 abstract class _AppActionState implements AppActionState {
   const factory _AppActionState(
-      {required final bool isLogin,
-      required final int index,
+      {required final int index,
       required final bool isInternetConnection}) = _$AppActionStateImpl;
 
-  @override
-  bool get isLogin;
   @override
   int get index;
   @override

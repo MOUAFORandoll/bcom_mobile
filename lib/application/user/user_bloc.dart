@@ -27,8 +27,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<SignOutEvent>(_OnSignOut);
     on<RegisterEvent>(_Register);
     on<GetUserEvent>(_GetUser);
+    on<AddInfoClient>(addInfoClient);
 
-    on<AddInfoClient>(_addInfoClient);
+    on<AddInfoEntreprise>(addInfoEntreprise);
     on<UserDataEvent>((event, emit) async {
       var user = await database.getUser();
       emit(state.copyWith(user: user));
@@ -85,7 +86,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       if (response.statusCode == 200) {
         emit(state.copyWith(
             isLoading: 2, authenticationMessage: response.data['message']));
-        emit(UserState.authenticated());
 
         var _UserSave = User.fromJson(response.data['data']);
 
@@ -107,7 +107,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     });
   }
 
-  _addInfoClient(AddInfoClient event, Emitter<UserState> emit) async {
+  addInfoEntreprise(AddInfoEntreprise event, Emitter<UserState> emit) async {
     var user = await database.getUser();
 
     var data = {
@@ -123,7 +123,85 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       'country': state.country!.text,
       'userId': user!.userId,
     };
+
     print(data);
+
+    emit(state.copyWith(isLoadingP: null));
+    emit(state.copyWith(isLoadingP: 1));
+    await userRepo.addInfoEntreprise(data).then((response) async {
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        // add(GetUserEvent());
+        if (response.data['data'] != null) {
+          if (response.data['isSuccess'] == true) {
+            emit(state.copyWith(isLoadingP: 2, eventMessage: ''));
+            // add(GetUserEvent());
+            User? _user = state.user;
+            var nUser = User(
+              fullName: _user?.fullName ?? '',
+              userName: _user?.userName ?? '',
+              phone: _user?.phone ?? '',
+              status: true,
+              email: _user?.email,
+              sex: _user?.sex,
+              age: _user?.age,
+              town: _user?.town,
+              userId: _user?.userId,
+              country: _user?.country,
+              address: _user?.address,
+              numCni: _user?.numCni,
+              workingMoment: _user?.workingMoment,
+              birthDate: _user?.birthDate,
+              isSick: _user?.isSick,
+              isMotoMan: _user?.isMotoMan,
+              isSyndicat: _user?.isSyndicat,
+              isYourBike: _user?.isYourBike,
+              syndicatName: _user?.syndicatName,
+              sickDescription: _user?.sickDescription,
+              cni1: _user?.cni1,
+              cni2: _user?.cni2,
+              photoMoto: _user?.photoMoto,
+              profile: _user?.profile,
+              carteGrise: _user?.carteGrise,
+              userTypeId: _user?.userTypeId,
+              serviceZoneId: _user?.serviceZoneId,
+              isDeleted: _user?.isDeleted,
+              nuiNumber: _user?.nuiNumber,
+              wokingPlace: _user?.wokingPlace,
+              createdAt: _user?.createdAt,
+              updatedAt: _user?.updatedAt,
+            );
+
+            await database.saveUser(nUser);
+            emit(state.copyWith(user: nUser));
+            log('-------${state.isLoadingP}');
+            emit(state.copyWith(eventMessage: '', isLoadingP: null));
+            log('-------${state.isLoadingP}');
+          }
+        }
+      } else {
+        emit(state.copyWith(
+            isLoadingP: 3, eventMessage: response.data['message']));
+        emit(state.copyWith(eventMessage: '', isLoadingP: null));
+      }
+    }).onError((error, s) {
+      emit(state.copyWith(
+          isLoadingP: 3, eventMessage: 'Une erreur est servenue'));
+      emit(state.copyWith(eventMessage: '', isLoadingP: null));
+    });
+  }
+
+  addInfoClient(AddInfoClient event, Emitter<UserState> emit) async {
+    var user = await database.getUser();
+
+    var data = {
+      'uaya': state.uaya!.text,
+      'rccaAA': state.rccaAA!.text,
+      'nuiUser': state.nuiUser!.text,
+      'userId': user!.userId,
+    };
+
+    print(data);
+
     emit(state.copyWith(isLoadingP: null));
     emit(state.copyWith(isLoadingP: 1));
     await userRepo.addInfoClient(data).then((response) async {

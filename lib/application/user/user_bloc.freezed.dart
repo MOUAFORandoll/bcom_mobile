@@ -25,14 +25,12 @@ mixin _$UserEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -47,14 +45,12 @@ mixin _$UserEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -69,14 +65,12 @@ mixin _$UserEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -89,15 +83,13 @@ mixin _$UserEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -109,15 +101,13 @@ mixin _$UserEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -129,15 +119,13 @@ mixin _$UserEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -245,14 +233,12 @@ class _$SignInEventImpl implements SignInEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -270,14 +256,12 @@ class _$SignInEventImpl implements SignInEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -295,14 +279,12 @@ class _$SignInEventImpl implements SignInEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -321,15 +303,13 @@ class _$SignInEventImpl implements SignInEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -344,15 +324,13 @@ class _$SignInEventImpl implements SignInEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -367,15 +345,13 @@ class _$SignInEventImpl implements SignInEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -446,14 +422,12 @@ class _$UserDataEventImpl implements UserDataEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -471,14 +445,12 @@ class _$UserDataEventImpl implements UserDataEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -496,14 +468,12 @@ class _$UserDataEventImpl implements UserDataEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -522,15 +492,13 @@ class _$UserDataEventImpl implements UserDataEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -545,15 +513,13 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -568,15 +534,13 @@ class _$UserDataEventImpl implements UserDataEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -722,14 +686,12 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -747,14 +709,12 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -773,14 +733,12 @@ class _$RegisterEventImpl implements RegisterEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -799,15 +757,13 @@ class _$RegisterEventImpl implements RegisterEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -822,15 +778,13 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -845,15 +799,13 @@ class _$RegisterEventImpl implements RegisterEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -888,6 +840,187 @@ abstract class RegisterEvent implements UserEvent {
 }
 
 /// @nodoc
+abstract class _$$AddInfoEntrepriseImplCopyWith<$Res> {
+  factory _$$AddInfoEntrepriseImplCopyWith(_$AddInfoEntrepriseImpl value,
+          $Res Function(_$AddInfoEntrepriseImpl) then) =
+      __$$AddInfoEntrepriseImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddInfoEntrepriseImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$AddInfoEntrepriseImpl>
+    implements _$$AddInfoEntrepriseImplCopyWith<$Res> {
+  __$$AddInfoEntrepriseImplCopyWithImpl(_$AddInfoEntrepriseImpl _value,
+      $Res Function(_$AddInfoEntrepriseImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddInfoEntrepriseImpl implements AddInfoEntreprise {
+  const _$AddInfoEntrepriseImpl();
+
+  @override
+  String toString() {
+    return 'UserEvent.addInfoEntreprise()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddInfoEntrepriseImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userName, String password)
+        chooseExperience,
+    required TResult Function() userData,
+    required TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)
+        register,
+    required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
+    required TResult Function(String data) sendCode,
+    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
+    required TResult Function(String data, String code) verifyCode,
+    required TResult Function(BuildContext context) signOut,
+    required TResult Function() getUserEvent,
+    required TResult Function(File? image) setCniImageAvant,
+    required TResult Function(File? image) setCniImageArriere,
+    required TResult Function(File? image) setCGImage,
+    required TResult Function(FormData data) completeDevisInfo,
+  }) {
+    return addInfoEntreprise();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userName, String password)? chooseExperience,
+    TResult? Function()? userData,
+    TResult? Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
+        register,
+    TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
+    TResult? Function(String data)? sendCode,
+    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult? Function(String data, String code)? verifyCode,
+    TResult? Function(BuildContext context)? signOut,
+    TResult? Function()? getUserEvent,
+    TResult? Function(File? image)? setCniImageAvant,
+    TResult? Function(File? image)? setCniImageArriere,
+    TResult? Function(File? image)? setCGImage,
+    TResult? Function(FormData data)? completeDevisInfo,
+  }) {
+    return addInfoEntreprise?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userName, String password)? chooseExperience,
+    TResult Function()? userData,
+    TResult Function(String fullName, String userName, String phone,
+            String email, String password, String re_password)?
+        register,
+    TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
+    TResult Function(String data)? sendCode,
+    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
+    TResult Function(String data, String code)? verifyCode,
+    TResult Function(BuildContext context)? signOut,
+    TResult Function()? getUserEvent,
+    TResult Function(File? image)? setCniImageAvant,
+    TResult Function(File? image)? setCniImageArriere,
+    TResult Function(File? image)? setCGImage,
+    TResult Function(FormData data)? completeDevisInfo,
+    required TResult orElse(),
+  }) {
+    if (addInfoEntreprise != null) {
+      return addInfoEntreprise();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInEvent value) chooseExperience,
+    required TResult Function(UserDataEvent value) userData,
+    required TResult Function(RegisterEvent value) register,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
+    required TResult Function(SendCode value) sendCode,
+    required TResult Function(UpdateUserInfo value) updateUserInfo,
+    required TResult Function(VerifyCode value) verifyCode,
+    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(GetUserEvent value) getUserEvent,
+    required TResult Function(SetCniImageAvant value) setCniImageAvant,
+    required TResult Function(SetCniImageArriere value) setCniImageArriere,
+    required TResult Function(SetCGImage value) setCGImage,
+    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
+  }) {
+    return addInfoEntreprise(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInEvent value)? chooseExperience,
+    TResult? Function(UserDataEvent value)? userData,
+    TResult? Function(RegisterEvent value)? register,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
+    TResult? Function(SendCode value)? sendCode,
+    TResult? Function(UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(VerifyCode value)? verifyCode,
+    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(GetUserEvent value)? getUserEvent,
+    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult? Function(SetCGImage value)? setCGImage,
+    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
+  }) {
+    return addInfoEntreprise?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInEvent value)? chooseExperience,
+    TResult Function(UserDataEvent value)? userData,
+    TResult Function(RegisterEvent value)? register,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
+    TResult Function(SendCode value)? sendCode,
+    TResult Function(UpdateUserInfo value)? updateUserInfo,
+    TResult Function(VerifyCode value)? verifyCode,
+    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(GetUserEvent value)? getUserEvent,
+    TResult Function(SetCniImageAvant value)? setCniImageAvant,
+    TResult Function(SetCniImageArriere value)? setCniImageArriere,
+    TResult Function(SetCGImage value)? setCGImage,
+    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
+    required TResult orElse(),
+  }) {
+    if (addInfoEntreprise != null) {
+      return addInfoEntreprise(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddInfoEntreprise implements UserEvent {
+  const factory AddInfoEntreprise() = _$AddInfoEntrepriseImpl;
+}
+
+/// @nodoc
 abstract class _$$AddInfoClientImplCopyWith<$Res> {
   factory _$$AddInfoClientImplCopyWith(
           _$AddInfoClientImpl value, $Res Function(_$AddInfoClientImpl) then) =
@@ -910,7 +1043,7 @@ class _$AddInfoClientImpl implements AddInfoClient {
 
   @override
   String toString() {
-    return 'UserEvent.addInfoEntreprise()';
+    return 'UserEvent.addInfoClient()';
   }
 
   @override
@@ -932,20 +1065,18 @@ class _$AddInfoClientImpl implements AddInfoClient {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
     required TResult Function(FormData data) completeDevisInfo,
   }) {
-    return addInfoEntreprise();
+    return addInfoClient();
   }
 
   @override
@@ -957,20 +1088,18 @@ class _$AddInfoClientImpl implements AddInfoClient {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
     TResult? Function(FormData data)? completeDevisInfo,
   }) {
-    return addInfoEntreprise?.call();
+    return addInfoClient?.call();
   }
 
   @override
@@ -982,22 +1111,20 @@ class _$AddInfoClientImpl implements AddInfoClient {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
     TResult Function(FormData data)? completeDevisInfo,
     required TResult orElse(),
   }) {
-    if (addInfoEntreprise != null) {
-      return addInfoEntreprise();
+    if (addInfoClient != null) {
+      return addInfoClient();
     }
     return orElse();
   }
@@ -1008,21 +1135,19 @@ class _$AddInfoClientImpl implements AddInfoClient {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
     required TResult Function(CompleteDevisInfo value) completeDevisInfo,
   }) {
-    return addInfoEntreprise(this);
+    return addInfoClient(this);
   }
 
   @override
@@ -1031,21 +1156,19 @@ class _$AddInfoClientImpl implements AddInfoClient {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
     TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
   }) {
-    return addInfoEntreprise?.call(this);
+    return addInfoClient?.call(this);
   }
 
   @override
@@ -1054,23 +1177,21 @@ class _$AddInfoClientImpl implements AddInfoClient {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
     TResult Function(CompleteDevisInfo value)? completeDevisInfo,
     required TResult orElse(),
   }) {
-    if (addInfoEntreprise != null) {
-      return addInfoEntreprise(this);
+    if (addInfoClient != null) {
+      return addInfoClient(this);
     }
     return orElse();
   }
@@ -1151,14 +1272,12 @@ class _$SendCodeImpl implements SendCode {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -1176,14 +1295,12 @@ class _$SendCodeImpl implements SendCode {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -1201,14 +1318,12 @@ class _$SendCodeImpl implements SendCode {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -1227,15 +1342,13 @@ class _$SendCodeImpl implements SendCode {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -1250,15 +1363,13 @@ class _$SendCodeImpl implements SendCode {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -1273,15 +1384,13 @@ class _$SendCodeImpl implements SendCode {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -1383,14 +1492,12 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -1408,14 +1515,12 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -1433,14 +1538,12 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -1459,15 +1562,13 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -1482,15 +1583,13 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -1505,15 +1604,13 @@ class _$UpdateUserInfoImpl implements UpdateUserInfo {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -1616,14 +1713,12 @@ class _$VerifyCodeImpl implements VerifyCode {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -1641,14 +1736,12 @@ class _$VerifyCodeImpl implements VerifyCode {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -1666,14 +1759,12 @@ class _$VerifyCodeImpl implements VerifyCode {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -1692,15 +1783,13 @@ class _$VerifyCodeImpl implements VerifyCode {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -1715,15 +1804,13 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -1738,15 +1825,13 @@ class _$VerifyCodeImpl implements VerifyCode {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -1769,242 +1854,6 @@ abstract class VerifyCode implements UserEvent {
   String get code;
   @JsonKey(ignore: true)
   _$$VerifyCodeImplCopyWith<_$VerifyCodeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ResetPasswordImplCopyWith<$Res> {
-  factory _$$ResetPasswordImplCopyWith(
-          _$ResetPasswordImpl value, $Res Function(_$ResetPasswordImpl) then) =
-      __$$ResetPasswordImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String data, String password});
-}
-
-/// @nodoc
-class __$$ResetPasswordImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$ResetPasswordImpl>
-    implements _$$ResetPasswordImplCopyWith<$Res> {
-  __$$ResetPasswordImplCopyWithImpl(
-      _$ResetPasswordImpl _value, $Res Function(_$ResetPasswordImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? password = null,
-  }) {
-    return _then(_$ResetPasswordImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResetPasswordImpl implements ResetPassword {
-  const _$ResetPasswordImpl({required this.data, required this.password});
-
-  @override
-  final String data;
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'UserEvent.resetpassword(data: $data, password: $password)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResetPasswordImpl &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data, password);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResetPasswordImplCopyWith<_$ResetPasswordImpl> get copyWith =>
-      __$$ResetPasswordImplCopyWithImpl<_$ResetPasswordImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String userName, String password)
-        chooseExperience,
-    required TResult Function() userData,
-    required TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)
-        register,
-    required TResult Function() addInfoEntreprise,
-    required TResult Function(String data) sendCode,
-    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
-    required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
-    required TResult Function(BuildContext context) signOut,
-    required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
-    required TResult Function(File? image) setCniImageAvant,
-    required TResult Function(File? image) setCniImageArriere,
-    required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeDevisInfo,
-  }) {
-    return resetpassword(data, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName, String password)? chooseExperience,
-    TResult? Function()? userData,
-    TResult? Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult? Function()? addInfoEntreprise,
-    TResult? Function(String data)? sendCode,
-    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
-    TResult? Function(BuildContext context)? signOut,
-    TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
-    TResult? Function(File? image)? setCniImageAvant,
-    TResult? Function(File? image)? setCniImageArriere,
-    TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeDevisInfo,
-  }) {
-    return resetpassword?.call(data, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName, String password)? chooseExperience,
-    TResult Function()? userData,
-    TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult Function()? addInfoEntreprise,
-    TResult Function(String data)? sendCode,
-    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
-    TResult Function(BuildContext context)? signOut,
-    TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
-    TResult Function(File? image)? setCniImageAvant,
-    TResult Function(File? image)? setCniImageArriere,
-    TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (resetpassword != null) {
-      return resetpassword(data, password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(SignInEvent value) chooseExperience,
-    required TResult Function(UserDataEvent value) userData,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
-    required TResult Function(SendCode value) sendCode,
-    required TResult Function(UpdateUserInfo value) updateUserInfo,
-    required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
-    required TResult Function(SignOutEvent value) signOut,
-    required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
-    required TResult Function(SetCniImageAvant value) setCniImageAvant,
-    required TResult Function(SetCniImageArriere value) setCniImageArriere,
-    required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
-  }) {
-    return resetpassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignInEvent value)? chooseExperience,
-    TResult? Function(UserDataEvent value)? userData,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
-    TResult? Function(SendCode value)? sendCode,
-    TResult? Function(UpdateUserInfo value)? updateUserInfo,
-    TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
-    TResult? Function(SignOutEvent value)? signOut,
-    TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
-    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
-  }) {
-    return resetpassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignInEvent value)? chooseExperience,
-    TResult Function(UserDataEvent value)? userData,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
-    TResult Function(SendCode value)? sendCode,
-    TResult Function(UpdateUserInfo value)? updateUserInfo,
-    TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
-    TResult Function(SignOutEvent value)? signOut,
-    TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
-    TResult Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (resetpassword != null) {
-      return resetpassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ResetPassword implements UserEvent {
-  const factory ResetPassword(
-      {required final String data,
-      required final String password}) = _$ResetPasswordImpl;
-
-  String get data;
-  String get password;
-  @JsonKey(ignore: true)
-  _$$ResetPasswordImplCopyWith<_$ResetPasswordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2079,14 +1928,12 @@ class _$SignOutEventImpl implements SignOutEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -2104,14 +1951,12 @@ class _$SignOutEventImpl implements SignOutEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -2129,14 +1974,12 @@ class _$SignOutEventImpl implements SignOutEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -2155,15 +1998,13 @@ class _$SignOutEventImpl implements SignOutEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -2178,15 +2019,13 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -2201,15 +2040,13 @@ class _$SignOutEventImpl implements SignOutEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -2278,14 +2115,12 @@ class _$GetUserEventImpl implements GetUserEvent {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -2303,14 +2138,12 @@ class _$GetUserEventImpl implements GetUserEvent {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -2328,14 +2161,12 @@ class _$GetUserEventImpl implements GetUserEvent {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -2354,15 +2185,13 @@ class _$GetUserEventImpl implements GetUserEvent {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -2377,15 +2206,13 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -2400,15 +2227,13 @@ class _$GetUserEventImpl implements GetUserEvent {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -2424,392 +2249,6 @@ class _$GetUserEventImpl implements GetUserEvent {
 
 abstract class GetUserEvent implements UserEvent {
   const factory GetUserEvent() = _$GetUserEventImpl;
-}
-
-/// @nodoc
-abstract class _$$GetVilleQuartierImplCopyWith<$Res> {
-  factory _$$GetVilleQuartierImplCopyWith(_$GetVilleQuartierImpl value,
-          $Res Function(_$GetVilleQuartierImpl) then) =
-      __$$GetVilleQuartierImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetVilleQuartierImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$GetVilleQuartierImpl>
-    implements _$$GetVilleQuartierImplCopyWith<$Res> {
-  __$$GetVilleQuartierImplCopyWithImpl(_$GetVilleQuartierImpl _value,
-      $Res Function(_$GetVilleQuartierImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetVilleQuartierImpl implements GetVilleQuartier {
-  const _$GetVilleQuartierImpl();
-
-  @override
-  String toString() {
-    return 'UserEvent.getVilleQuartier()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetVilleQuartierImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String userName, String password)
-        chooseExperience,
-    required TResult Function() userData,
-    required TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)
-        register,
-    required TResult Function() addInfoEntreprise,
-    required TResult Function(String data) sendCode,
-    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
-    required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
-    required TResult Function(BuildContext context) signOut,
-    required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
-    required TResult Function(File? image) setCniImageAvant,
-    required TResult Function(File? image) setCniImageArriere,
-    required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeDevisInfo,
-  }) {
-    return getVilleQuartier();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName, String password)? chooseExperience,
-    TResult? Function()? userData,
-    TResult? Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult? Function()? addInfoEntreprise,
-    TResult? Function(String data)? sendCode,
-    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
-    TResult? Function(BuildContext context)? signOut,
-    TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
-    TResult? Function(File? image)? setCniImageAvant,
-    TResult? Function(File? image)? setCniImageArriere,
-    TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeDevisInfo,
-  }) {
-    return getVilleQuartier?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName, String password)? chooseExperience,
-    TResult Function()? userData,
-    TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult Function()? addInfoEntreprise,
-    TResult Function(String data)? sendCode,
-    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
-    TResult Function(BuildContext context)? signOut,
-    TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
-    TResult Function(File? image)? setCniImageAvant,
-    TResult Function(File? image)? setCniImageArriere,
-    TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (getVilleQuartier != null) {
-      return getVilleQuartier();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(SignInEvent value) chooseExperience,
-    required TResult Function(UserDataEvent value) userData,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
-    required TResult Function(SendCode value) sendCode,
-    required TResult Function(UpdateUserInfo value) updateUserInfo,
-    required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
-    required TResult Function(SignOutEvent value) signOut,
-    required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
-    required TResult Function(SetCniImageAvant value) setCniImageAvant,
-    required TResult Function(SetCniImageArriere value) setCniImageArriere,
-    required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
-  }) {
-    return getVilleQuartier(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignInEvent value)? chooseExperience,
-    TResult? Function(UserDataEvent value)? userData,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
-    TResult? Function(SendCode value)? sendCode,
-    TResult? Function(UpdateUserInfo value)? updateUserInfo,
-    TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
-    TResult? Function(SignOutEvent value)? signOut,
-    TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
-    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
-  }) {
-    return getVilleQuartier?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignInEvent value)? chooseExperience,
-    TResult Function(UserDataEvent value)? userData,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
-    TResult Function(SendCode value)? sendCode,
-    TResult Function(UpdateUserInfo value)? updateUserInfo,
-    TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
-    TResult Function(SignOutEvent value)? signOut,
-    TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
-    TResult Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (getVilleQuartier != null) {
-      return getVilleQuartier(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetVilleQuartier implements UserEvent {
-  const factory GetVilleQuartier() = _$GetVilleQuartierImpl;
-}
-
-/// @nodoc
-abstract class _$$UpdateUserImageImplCopyWith<$Res> {
-  factory _$$UpdateUserImageImplCopyWith(_$UpdateUserImageImpl value,
-          $Res Function(_$UpdateUserImageImpl) then) =
-      __$$UpdateUserImageImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UpdateUserImageImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$UpdateUserImageImpl>
-    implements _$$UpdateUserImageImplCopyWith<$Res> {
-  __$$UpdateUserImageImplCopyWithImpl(
-      _$UpdateUserImageImpl _value, $Res Function(_$UpdateUserImageImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UpdateUserImageImpl implements UpdateUserImage {
-  const _$UpdateUserImageImpl();
-
-  @override
-  String toString() {
-    return 'UserEvent.updateUserImage()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateUserImageImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String userName, String password)
-        chooseExperience,
-    required TResult Function() userData,
-    required TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)
-        register,
-    required TResult Function() addInfoEntreprise,
-    required TResult Function(String data) sendCode,
-    required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
-    required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
-    required TResult Function(BuildContext context) signOut,
-    required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
-    required TResult Function(File? image) setCniImageAvant,
-    required TResult Function(File? image) setCniImageArriere,
-    required TResult Function(File? image) setCGImage,
-    required TResult Function(FormData data) completeDevisInfo,
-  }) {
-    return updateUserImage();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName, String password)? chooseExperience,
-    TResult? Function()? userData,
-    TResult? Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult? Function()? addInfoEntreprise,
-    TResult? Function(String data)? sendCode,
-    TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
-    TResult? Function(BuildContext context)? signOut,
-    TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
-    TResult? Function(File? image)? setCniImageAvant,
-    TResult? Function(File? image)? setCniImageArriere,
-    TResult? Function(File? image)? setCGImage,
-    TResult? Function(FormData data)? completeDevisInfo,
-  }) {
-    return updateUserImage?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName, String password)? chooseExperience,
-    TResult Function()? userData,
-    TResult Function(String fullName, String userName, String phone,
-            String email, String password, String re_password)?
-        register,
-    TResult Function()? addInfoEntreprise,
-    TResult Function(String data)? sendCode,
-    TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
-    TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
-    TResult Function(BuildContext context)? signOut,
-    TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
-    TResult Function(File? image)? setCniImageAvant,
-    TResult Function(File? image)? setCniImageArriere,
-    TResult Function(File? image)? setCGImage,
-    TResult Function(FormData data)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (updateUserImage != null) {
-      return updateUserImage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(SignInEvent value) chooseExperience,
-    required TResult Function(UserDataEvent value) userData,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
-    required TResult Function(SendCode value) sendCode,
-    required TResult Function(UpdateUserInfo value) updateUserInfo,
-    required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
-    required TResult Function(SignOutEvent value) signOut,
-    required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
-    required TResult Function(SetCniImageAvant value) setCniImageAvant,
-    required TResult Function(SetCniImageArriere value) setCniImageArriere,
-    required TResult Function(SetCGImage value) setCGImage,
-    required TResult Function(CompleteDevisInfo value) completeDevisInfo,
-  }) {
-    return updateUserImage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignInEvent value)? chooseExperience,
-    TResult? Function(UserDataEvent value)? userData,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
-    TResult? Function(SendCode value)? sendCode,
-    TResult? Function(UpdateUserInfo value)? updateUserInfo,
-    TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
-    TResult? Function(SignOutEvent value)? signOut,
-    TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
-    TResult? Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult? Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult? Function(SetCGImage value)? setCGImage,
-    TResult? Function(CompleteDevisInfo value)? completeDevisInfo,
-  }) {
-    return updateUserImage?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignInEvent value)? chooseExperience,
-    TResult Function(UserDataEvent value)? userData,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
-    TResult Function(SendCode value)? sendCode,
-    TResult Function(UpdateUserInfo value)? updateUserInfo,
-    TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
-    TResult Function(SignOutEvent value)? signOut,
-    TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
-    TResult Function(SetCniImageAvant value)? setCniImageAvant,
-    TResult Function(SetCniImageArriere value)? setCniImageArriere,
-    TResult Function(SetCGImage value)? setCGImage,
-    TResult Function(CompleteDevisInfo value)? completeDevisInfo,
-    required TResult orElse(),
-  }) {
-    if (updateUserImage != null) {
-      return updateUserImage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateUserImage implements UserEvent {
-  const factory UpdateUserImage() = _$UpdateUserImageImpl;
 }
 
 /// @nodoc
@@ -2884,14 +2323,12 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -2909,14 +2346,12 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -2934,14 +2369,12 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -2960,15 +2393,13 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -2983,15 +2414,13 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -3006,15 +2435,13 @@ class _$SetCniImageAvantImpl implements SetCniImageAvant {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -3110,14 +2537,12 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -3135,14 +2560,12 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -3160,14 +2583,12 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -3186,15 +2607,13 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -3209,15 +2628,13 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -3232,15 +2649,13 @@ class _$SetCniImageArriereImpl implements SetCniImageArriere {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -3335,14 +2750,12 @@ class _$SetCGImageImpl implements SetCGImage {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -3360,14 +2773,12 @@ class _$SetCGImageImpl implements SetCGImage {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -3385,14 +2796,12 @@ class _$SetCGImageImpl implements SetCGImage {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -3411,15 +2820,13 @@ class _$SetCGImageImpl implements SetCGImage {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -3434,15 +2841,13 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -3457,15 +2862,13 @@ class _$SetCGImageImpl implements SetCGImage {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -3560,14 +2963,12 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
             String email, String password, String re_password)
         register,
     required TResult Function() addInfoEntreprise,
+    required TResult Function() addInfoClient,
     required TResult Function(String data) sendCode,
     required TResult Function(Map<dynamic, dynamic> data) updateUserInfo,
     required TResult Function(String data, String code) verifyCode,
-    required TResult Function(String data, String password) resetpassword,
     required TResult Function(BuildContext context) signOut,
     required TResult Function() getUserEvent,
-    required TResult Function() getVilleQuartier,
-    required TResult Function() updateUserImage,
     required TResult Function(File? image) setCniImageAvant,
     required TResult Function(File? image) setCniImageArriere,
     required TResult Function(File? image) setCGImage,
@@ -3585,14 +2986,12 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
             String email, String password, String re_password)?
         register,
     TResult? Function()? addInfoEntreprise,
+    TResult? Function()? addInfoClient,
     TResult? Function(String data)? sendCode,
     TResult? Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult? Function(String data, String code)? verifyCode,
-    TResult? Function(String data, String password)? resetpassword,
     TResult? Function(BuildContext context)? signOut,
     TResult? Function()? getUserEvent,
-    TResult? Function()? getVilleQuartier,
-    TResult? Function()? updateUserImage,
     TResult? Function(File? image)? setCniImageAvant,
     TResult? Function(File? image)? setCniImageArriere,
     TResult? Function(File? image)? setCGImage,
@@ -3610,14 +3009,12 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
             String email, String password, String re_password)?
         register,
     TResult Function()? addInfoEntreprise,
+    TResult Function()? addInfoClient,
     TResult Function(String data)? sendCode,
     TResult Function(Map<dynamic, dynamic> data)? updateUserInfo,
     TResult Function(String data, String code)? verifyCode,
-    TResult Function(String data, String password)? resetpassword,
     TResult Function(BuildContext context)? signOut,
     TResult Function()? getUserEvent,
-    TResult Function()? getVilleQuartier,
-    TResult Function()? updateUserImage,
     TResult Function(File? image)? setCniImageAvant,
     TResult Function(File? image)? setCniImageArriere,
     TResult Function(File? image)? setCGImage,
@@ -3636,15 +3033,13 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
     required TResult Function(SignInEvent value) chooseExperience,
     required TResult Function(UserDataEvent value) userData,
     required TResult Function(RegisterEvent value) register,
-    required TResult Function(AddInfoClient value) addInfoEntreprise,
+    required TResult Function(AddInfoEntreprise value) addInfoEntreprise,
+    required TResult Function(AddInfoClient value) addInfoClient,
     required TResult Function(SendCode value) sendCode,
     required TResult Function(UpdateUserInfo value) updateUserInfo,
     required TResult Function(VerifyCode value) verifyCode,
-    required TResult Function(ResetPassword value) resetpassword,
     required TResult Function(SignOutEvent value) signOut,
     required TResult Function(GetUserEvent value) getUserEvent,
-    required TResult Function(GetVilleQuartier value) getVilleQuartier,
-    required TResult Function(UpdateUserImage value) updateUserImage,
     required TResult Function(SetCniImageAvant value) setCniImageAvant,
     required TResult Function(SetCniImageArriere value) setCniImageArriere,
     required TResult Function(SetCGImage value) setCGImage,
@@ -3659,15 +3054,13 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
     TResult? Function(SignInEvent value)? chooseExperience,
     TResult? Function(UserDataEvent value)? userData,
     TResult? Function(RegisterEvent value)? register,
-    TResult? Function(AddInfoClient value)? addInfoEntreprise,
+    TResult? Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult? Function(AddInfoClient value)? addInfoClient,
     TResult? Function(SendCode value)? sendCode,
     TResult? Function(UpdateUserInfo value)? updateUserInfo,
     TResult? Function(VerifyCode value)? verifyCode,
-    TResult? Function(ResetPassword value)? resetpassword,
     TResult? Function(SignOutEvent value)? signOut,
     TResult? Function(GetUserEvent value)? getUserEvent,
-    TResult? Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult? Function(UpdateUserImage value)? updateUserImage,
     TResult? Function(SetCniImageAvant value)? setCniImageAvant,
     TResult? Function(SetCniImageArriere value)? setCniImageArriere,
     TResult? Function(SetCGImage value)? setCGImage,
@@ -3682,15 +3075,13 @@ class _$CompleteDevisInfoImpl implements CompleteDevisInfo {
     TResult Function(SignInEvent value)? chooseExperience,
     TResult Function(UserDataEvent value)? userData,
     TResult Function(RegisterEvent value)? register,
-    TResult Function(AddInfoClient value)? addInfoEntreprise,
+    TResult Function(AddInfoEntreprise value)? addInfoEntreprise,
+    TResult Function(AddInfoClient value)? addInfoClient,
     TResult Function(SendCode value)? sendCode,
     TResult Function(UpdateUserInfo value)? updateUserInfo,
     TResult Function(VerifyCode value)? verifyCode,
-    TResult Function(ResetPassword value)? resetpassword,
     TResult Function(SignOutEvent value)? signOut,
     TResult Function(GetUserEvent value)? getUserEvent,
-    TResult Function(GetVilleQuartier value)? getVilleQuartier,
-    TResult Function(UpdateUserImage value)? updateUserImage,
     TResult Function(SetCniImageAvant value)? setCniImageAvant,
     TResult Function(SetCniImageArriere value)? setCniImageArriere,
     TResult Function(SetCGImage value)? setCGImage,
@@ -3722,9 +3113,7 @@ mixin _$UserState {
   String? get authenticationMessage => throw _privateConstructorUsedError;
   String? get eventMessage => throw _privateConstructorUsedError;
   String? get registerFailedMessage => throw _privateConstructorUsedError;
-  String? get villeUser => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
-  String? get quartierUser => throw _privateConstructorUsedError;
   String? get newPassword => throw _privateConstructorUsedError;
   int? get isCode => throw _privateConstructorUsedError;
   File? get cniImageAvant => throw _privateConstructorUsedError;
@@ -3733,7 +3122,6 @@ mixin _$UserState {
   int? get isLoadingForgot => throw _privateConstructorUsedError;
   int? get isUpdateUserImage => throw _privateConstructorUsedError;
   int? get isCorrectCode => throw _privateConstructorUsedError;
-  int? get isVilleQuartier => throw _privateConstructorUsedError;
   bool? get successReset => throw _privateConstructorUsedError;
   bool? get updating => throw _privateConstructorUsedError;
   TextEditingController? get name => throw _privateConstructorUsedError;
@@ -3748,6 +3136,9 @@ mixin _$UserState {
   TextEditingController? get country => throw _privateConstructorUsedError;
   TextEditingController? get registreCommerce =>
       throw _privateConstructorUsedError;
+  TextEditingController? get rccaAA => throw _privateConstructorUsedError;
+  TextEditingController? get nuiUser => throw _privateConstructorUsedError;
+  TextEditingController? get uaya => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -3766,9 +3157,7 @@ abstract class $UserStateCopyWith<$Res> {
       String? authenticationMessage,
       String? eventMessage,
       String? registerFailedMessage,
-      String? villeUser,
       User? user,
-      String? quartierUser,
       String? newPassword,
       int? isCode,
       File? cniImageAvant,
@@ -3777,7 +3166,6 @@ abstract class $UserStateCopyWith<$Res> {
       int? isLoadingForgot,
       int? isUpdateUserImage,
       int? isCorrectCode,
-      int? isVilleQuartier,
       bool? successReset,
       bool? updating,
       TextEditingController? name,
@@ -3789,7 +3177,10 @@ abstract class $UserStateCopyWith<$Res> {
       TextEditingController? numContribuable,
       TextEditingController? webSite,
       TextEditingController? country,
-      TextEditingController? registreCommerce});
+      TextEditingController? registreCommerce,
+      TextEditingController? rccaAA,
+      TextEditingController? nuiUser,
+      TextEditingController? uaya});
 }
 
 /// @nodoc
@@ -3811,9 +3202,7 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? authenticationMessage = freezed,
     Object? eventMessage = freezed,
     Object? registerFailedMessage = freezed,
-    Object? villeUser = freezed,
     Object? user = freezed,
-    Object? quartierUser = freezed,
     Object? newPassword = freezed,
     Object? isCode = freezed,
     Object? cniImageAvant = freezed,
@@ -3822,7 +3211,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? isLoadingForgot = freezed,
     Object? isUpdateUserImage = freezed,
     Object? isCorrectCode = freezed,
-    Object? isVilleQuartier = freezed,
     Object? successReset = freezed,
     Object? updating = freezed,
     Object? name = freezed,
@@ -3835,6 +3223,9 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? webSite = freezed,
     Object? country = freezed,
     Object? registreCommerce = freezed,
+    Object? rccaAA = freezed,
+    Object? nuiUser = freezed,
+    Object? uaya = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: freezed == isLoading
@@ -3861,18 +3252,10 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.registerFailedMessage
           : registerFailedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      villeUser: freezed == villeUser
-          ? _value.villeUser
-          : villeUser // ignore: cast_nullable_to_non_nullable
-              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
-      quartierUser: freezed == quartierUser
-          ? _value.quartierUser
-          : quartierUser // ignore: cast_nullable_to_non_nullable
-              as String?,
       newPassword: freezed == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
@@ -3904,10 +3287,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
       isCorrectCode: freezed == isCorrectCode
           ? _value.isCorrectCode
           : isCorrectCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isVilleQuartier: freezed == isVilleQuartier
-          ? _value.isVilleQuartier
-          : isVilleQuartier // ignore: cast_nullable_to_non_nullable
               as int?,
       successReset: freezed == successReset
           ? _value.successReset
@@ -3957,6 +3336,18 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.registreCommerce
           : registreCommerce // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
+      rccaAA: freezed == rccaAA
+          ? _value.rccaAA
+          : rccaAA // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      nuiUser: freezed == nuiUser
+          ? _value.nuiUser
+          : nuiUser // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      uaya: freezed == uaya
+          ? _value.uaya
+          : uaya // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
     ) as $Val);
   }
 }
@@ -3976,9 +3367,7 @@ abstract class _$$UserStateImplCopyWith<$Res>
       String? authenticationMessage,
       String? eventMessage,
       String? registerFailedMessage,
-      String? villeUser,
       User? user,
-      String? quartierUser,
       String? newPassword,
       int? isCode,
       File? cniImageAvant,
@@ -3987,7 +3376,6 @@ abstract class _$$UserStateImplCopyWith<$Res>
       int? isLoadingForgot,
       int? isUpdateUserImage,
       int? isCorrectCode,
-      int? isVilleQuartier,
       bool? successReset,
       bool? updating,
       TextEditingController? name,
@@ -3999,7 +3387,10 @@ abstract class _$$UserStateImplCopyWith<$Res>
       TextEditingController? numContribuable,
       TextEditingController? webSite,
       TextEditingController? country,
-      TextEditingController? registreCommerce});
+      TextEditingController? registreCommerce,
+      TextEditingController? rccaAA,
+      TextEditingController? nuiUser,
+      TextEditingController? uaya});
 }
 
 /// @nodoc
@@ -4019,9 +3410,7 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? authenticationMessage = freezed,
     Object? eventMessage = freezed,
     Object? registerFailedMessage = freezed,
-    Object? villeUser = freezed,
     Object? user = freezed,
-    Object? quartierUser = freezed,
     Object? newPassword = freezed,
     Object? isCode = freezed,
     Object? cniImageAvant = freezed,
@@ -4030,7 +3419,6 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? isLoadingForgot = freezed,
     Object? isUpdateUserImage = freezed,
     Object? isCorrectCode = freezed,
-    Object? isVilleQuartier = freezed,
     Object? successReset = freezed,
     Object? updating = freezed,
     Object? name = freezed,
@@ -4043,6 +3431,9 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? webSite = freezed,
     Object? country = freezed,
     Object? registreCommerce = freezed,
+    Object? rccaAA = freezed,
+    Object? nuiUser = freezed,
+    Object? uaya = freezed,
   }) {
     return _then(_$UserStateImpl(
       isLoading: freezed == isLoading
@@ -4069,18 +3460,10 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.registerFailedMessage
           : registerFailedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      villeUser: freezed == villeUser
-          ? _value.villeUser
-          : villeUser // ignore: cast_nullable_to_non_nullable
-              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
-      quartierUser: freezed == quartierUser
-          ? _value.quartierUser
-          : quartierUser // ignore: cast_nullable_to_non_nullable
-              as String?,
       newPassword: freezed == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
@@ -4112,10 +3495,6 @@ class __$$UserStateImplCopyWithImpl<$Res>
       isCorrectCode: freezed == isCorrectCode
           ? _value.isCorrectCode
           : isCorrectCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isVilleQuartier: freezed == isVilleQuartier
-          ? _value.isVilleQuartier
-          : isVilleQuartier // ignore: cast_nullable_to_non_nullable
               as int?,
       successReset: freezed == successReset
           ? _value.successReset
@@ -4165,6 +3544,18 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.registreCommerce
           : registreCommerce // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
+      rccaAA: freezed == rccaAA
+          ? _value.rccaAA
+          : rccaAA // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      nuiUser: freezed == nuiUser
+          ? _value.nuiUser
+          : nuiUser // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      uaya: freezed == uaya
+          ? _value.uaya
+          : uaya // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
     ));
   }
 }
@@ -4179,9 +3570,7 @@ class _$UserStateImpl implements _UserState {
       this.authenticationMessage,
       this.eventMessage,
       this.registerFailedMessage,
-      this.villeUser,
       this.user,
-      this.quartierUser,
       this.newPassword,
       this.isCode,
       this.cniImageAvant,
@@ -4190,7 +3579,6 @@ class _$UserStateImpl implements _UserState {
       this.isLoadingForgot,
       this.isUpdateUserImage,
       this.isCorrectCode,
-      this.isVilleQuartier,
       this.successReset,
       this.updating,
       this.name,
@@ -4202,7 +3590,10 @@ class _$UserStateImpl implements _UserState {
       this.numContribuable,
       this.webSite,
       this.country,
-      this.registreCommerce});
+      this.registreCommerce,
+      this.rccaAA,
+      this.nuiUser,
+      this.uaya});
 
   @override
   final int? isLoading;
@@ -4217,11 +3608,7 @@ class _$UserStateImpl implements _UserState {
   @override
   final String? registerFailedMessage;
   @override
-  final String? villeUser;
-  @override
   final User? user;
-  @override
-  final String? quartierUser;
   @override
   final String? newPassword;
   @override
@@ -4238,8 +3625,6 @@ class _$UserStateImpl implements _UserState {
   final int? isUpdateUserImage;
   @override
   final int? isCorrectCode;
-  @override
-  final int? isVilleQuartier;
   @override
   final bool? successReset;
   @override
@@ -4264,10 +3649,16 @@ class _$UserStateImpl implements _UserState {
   final TextEditingController? country;
   @override
   final TextEditingController? registreCommerce;
+  @override
+  final TextEditingController? rccaAA;
+  @override
+  final TextEditingController? nuiUser;
+  @override
+  final TextEditingController? uaya;
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, isLoadingP: $isLoadingP, isLoadingReg: $isLoadingReg, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, villeUser: $villeUser, user: $user, quartierUser: $quartierUser, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, isVilleQuartier: $isVilleQuartier, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce)';
+    return 'UserState(isLoading: $isLoading, isLoadingP: $isLoadingP, isLoadingReg: $isLoadingReg, authenticationMessage: $authenticationMessage, eventMessage: $eventMessage, registerFailedMessage: $registerFailedMessage, user: $user, newPassword: $newPassword, isCode: $isCode, cniImageAvant: $cniImageAvant, cniImageArriere: $cniImageArriere, cartegriseImage: $cartegriseImage, isLoadingForgot: $isLoadingForgot, isUpdateUserImage: $isUpdateUserImage, isCorrectCode: $isCorrectCode, successReset: $successReset, updating: $updating, name: $name, email: $email, phone: $phone, adress: $adress, city: $city, numImpot: $numImpot, numContribuable: $numContribuable, webSite: $webSite, country: $country, registreCommerce: $registreCommerce, rccaAA: $rccaAA, nuiUser: $nuiUser, uaya: $uaya)';
   }
 
   @override
@@ -4287,11 +3678,7 @@ class _$UserStateImpl implements _UserState {
                 other.eventMessage == eventMessage) &&
             (identical(other.registerFailedMessage, registerFailedMessage) ||
                 other.registerFailedMessage == registerFailedMessage) &&
-            (identical(other.villeUser, villeUser) ||
-                other.villeUser == villeUser) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.quartierUser, quartierUser) ||
-                other.quartierUser == quartierUser) &&
             (identical(other.newPassword, newPassword) ||
                 other.newPassword == newPassword) &&
             (identical(other.isCode, isCode) || other.isCode == isCode) &&
@@ -4307,8 +3694,6 @@ class _$UserStateImpl implements _UserState {
                 other.isUpdateUserImage == isUpdateUserImage) &&
             (identical(other.isCorrectCode, isCorrectCode) ||
                 other.isCorrectCode == isCorrectCode) &&
-            (identical(other.isVilleQuartier, isVilleQuartier) ||
-                other.isVilleQuartier == isVilleQuartier) &&
             (identical(other.successReset, successReset) ||
                 other.successReset == successReset) &&
             (identical(other.updating, updating) ||
@@ -4325,7 +3710,10 @@ class _$UserStateImpl implements _UserState {
             (identical(other.webSite, webSite) || other.webSite == webSite) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.registreCommerce, registreCommerce) ||
-                other.registreCommerce == registreCommerce));
+                other.registreCommerce == registreCommerce) &&
+            (identical(other.rccaAA, rccaAA) || other.rccaAA == rccaAA) &&
+            (identical(other.nuiUser, nuiUser) || other.nuiUser == nuiUser) &&
+            (identical(other.uaya, uaya) || other.uaya == uaya));
   }
 
   @override
@@ -4337,9 +3725,7 @@ class _$UserStateImpl implements _UserState {
         authenticationMessage,
         eventMessage,
         registerFailedMessage,
-        villeUser,
         user,
-        quartierUser,
         newPassword,
         isCode,
         cniImageAvant,
@@ -4348,7 +3734,6 @@ class _$UserStateImpl implements _UserState {
         isLoadingForgot,
         isUpdateUserImage,
         isCorrectCode,
-        isVilleQuartier,
         successReset,
         updating,
         name,
@@ -4360,7 +3745,10 @@ class _$UserStateImpl implements _UserState {
         numContribuable,
         webSite,
         country,
-        registreCommerce
+        registreCommerce,
+        rccaAA,
+        nuiUser,
+        uaya
       ]);
 
   @JsonKey(ignore: true)
@@ -4378,9 +3766,7 @@ abstract class _UserState implements UserState {
       final String? authenticationMessage,
       final String? eventMessage,
       final String? registerFailedMessage,
-      final String? villeUser,
       final User? user,
-      final String? quartierUser,
       final String? newPassword,
       final int? isCode,
       final File? cniImageAvant,
@@ -4389,7 +3775,6 @@ abstract class _UserState implements UserState {
       final int? isLoadingForgot,
       final int? isUpdateUserImage,
       final int? isCorrectCode,
-      final int? isVilleQuartier,
       final bool? successReset,
       final bool? updating,
       final TextEditingController? name,
@@ -4401,7 +3786,10 @@ abstract class _UserState implements UserState {
       final TextEditingController? numContribuable,
       final TextEditingController? webSite,
       final TextEditingController? country,
-      final TextEditingController? registreCommerce}) = _$UserStateImpl;
+      final TextEditingController? registreCommerce,
+      final TextEditingController? rccaAA,
+      final TextEditingController? nuiUser,
+      final TextEditingController? uaya}) = _$UserStateImpl;
 
   @override
   int? get isLoading;
@@ -4416,11 +3804,7 @@ abstract class _UserState implements UserState {
   @override
   String? get registerFailedMessage;
   @override
-  String? get villeUser;
-  @override
   User? get user;
-  @override
-  String? get quartierUser;
   @override
   String? get newPassword;
   @override
@@ -4437,8 +3821,6 @@ abstract class _UserState implements UserState {
   int? get isUpdateUserImage;
   @override
   int? get isCorrectCode;
-  @override
-  int? get isVilleQuartier;
   @override
   bool? get successReset;
   @override
@@ -4463,6 +3845,12 @@ abstract class _UserState implements UserState {
   TextEditingController? get country;
   @override
   TextEditingController? get registreCommerce;
+  @override
+  TextEditingController? get rccaAA;
+  @override
+  TextEditingController? get nuiUser;
+  @override
+  TextEditingController? get uaya;
   @override
   @JsonKey(ignore: true)
   _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>

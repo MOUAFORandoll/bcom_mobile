@@ -1,6 +1,7 @@
 class ApiRoutes {
   static const PACK = '/api/v1/bcomPackage/all';
   static const SIGNUP = '/api/v1/auth/register';
+  static const NEWENTREPRISE = '/api/v1/client';
   static const NEWCLIENT = '/api/v1/client';
   static const LOGIN = '/api/v1/auth/login';
   static const ABONNEMENT_ALL = '/api/v1/subscription/all';

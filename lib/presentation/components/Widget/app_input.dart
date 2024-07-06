@@ -88,6 +88,7 @@ class _AppInputState extends State<AppInput> {
                   ),
                   errorText: widget.errorText,
                   errorStyle: TextStyle(
+                    fontSize: 11,
                     fontFamily: 'Lato',
                     color: ColorsApp.red,
                   ),
@@ -191,6 +192,7 @@ class _AppInputPasswordState extends State<AppInputPassword> {
                 ),
                 // errorText: widget.errorText,
                 errorStyle: TextStyle(
+                  fontSize: 11,
                   fontFamily: 'Lato',
                   color: ColorsApp.red,
                 ),

@@ -1,7 +1,6 @@
 import 'package:Bcom/presentation/app.dart';
 
 import 'package:Bcom/presentation/components/exportcomponent.dart';
-import 'package:Bcom/utils/Services/NotificationService.dart';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'infrastructure/_commons/network/env_config.dart';
@@ -17,8 +16,7 @@ Future<void> main() async {
   await EnvManager().init(env: Environment.dev);
 
   co.init();
-
-  await NotificationService().initializePlatformNotifications();
+  
   configLoading();
 
   runApp(

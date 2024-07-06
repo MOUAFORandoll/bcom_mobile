@@ -285,12 +285,12 @@ class ForgotPasswordPage extends StatelessWidget {
                                         showError('invpass'.tr(), context);
                                         return;
                                       }
-                                      context
-                                          .read<UserBloc>()
-                                          .add(ResetPassword(
-                                            data: phoneormail.text,
-                                            password: password.text,
-                                          ));
+                                      // context
+                                      //     .read<UserBloc>()
+                                      //     .add(ResetPassword(
+                                      //       data: phoneormail.text,
+                                      //       password: password.text,
+                                      //     ));
                                     }),
                             ],
                           )),

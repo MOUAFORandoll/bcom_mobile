@@ -34,7 +34,6 @@ class AppRouter extends $AppRouter {
             page: HistoriqueDemandeDevisRoute.page,
             path: HistoriqueDemandeDevisPage.routeName),
         AutoRoute(
-            page: CompleteEntrepriseInfoRoute.page,
-            path: CompleteEntrepriseInfoPage.routeName),
+            page: CompleteInfoRoute.page, path: CompleteInfoPage.routeName),
       ];
 }

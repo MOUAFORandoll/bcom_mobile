@@ -8,7 +8,8 @@ import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class SecondStep extends StatelessWidget {
-  final formKey = GlobalKey<FormState>();
+  SecondStep({required this.formKey});
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,9 @@ class SecondStep extends StatelessWidget {
             print('-----44--------*********');
           }
         },
-        builder: (context, state) => Container(
+        builder: (context, state) => Form(
+            key: formKey,
+            child: Container(
                 child: Column(children: [
               Container(
                   // height: getHeight(context),
@@ -126,6 +129,6 @@ class SecondStep extends StatelessWidget {
                       ),
                     ),
                   ]))
-            ])));
+            ]))));
   }
 }

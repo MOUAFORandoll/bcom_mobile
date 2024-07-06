@@ -269,11 +269,11 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                         backgroundColor: ColorsApp.primary, //
                       ),
                       SliverToBoxAdapter(
-                          child:/*  stateUser.user!.status!
-                              ? */ state.index == 0
+                          child: /*  stateUser.user!.status!
+                              ? */
+                              state.index == 0
                                   ? PresentationPage()
-                                  : HistoriqueDemandeDevisPage()
-                             /*  : CompleteEntrepriseInfoPage() */)
+                                  : HistoriqueDemandeDevisPage() /*  : CompleteInfoPage() */)
 
                       // SliverToBoxAdapter(child: PresentationPage())
                     ])),
@@ -414,8 +414,7 @@ class CustomDrawer extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.white,
                         child: InkWell(
-                          onTap: () => BlocProvider.of<UserBloc>(context)
-                              .add(UpdateUserImage()),
+                         
                           child: CachedNetworkImage(
                             height: getHeight(context) / 10,
                             width: getHeight(context) / 10,

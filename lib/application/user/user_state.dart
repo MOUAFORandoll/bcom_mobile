@@ -9,9 +9,7 @@ class UserState with _$UserState {
     String? authenticationMessage,
     String? eventMessage,
     String? registerFailedMessage,
-    String? villeUser,
     User? user,
-    String? quartierUser,
     String? newPassword,
     int? isCode,
     File? cniImageAvant,
@@ -20,7 +18,6 @@ class UserState with _$UserState {
     int? isLoadingForgot,
     int? isUpdateUserImage,
     int? isCorrectCode,
-    int? isVilleQuartier,
     bool? successReset,
     bool? updating,
     TextEditingController? name,
@@ -33,6 +30,9 @@ class UserState with _$UserState {
     TextEditingController? webSite,
     TextEditingController? country,
     TextEditingController? registreCommerce,
+    TextEditingController? rccaAA,
+    TextEditingController? nuiUser,
+    TextEditingController? uaya,
   }) = _UserState;
 
   factory UserState.initial() => UserState(
@@ -48,9 +48,6 @@ class UserState with _$UserState {
         isLoading: 0,
         isLoadingReg: 0,
         isUpdateUserImage: 0,
-        villeUser: '',
-        quartierUser: '',
-        isVilleQuartier: 0,
         name: TextEditingController(),
         email: TextEditingController(),
         phone: TextEditingController(),
@@ -61,30 +58,8 @@ class UserState with _$UserState {
         webSite: TextEditingController(),
         country: TextEditingController(),
         registreCommerce: TextEditingController(),
+        nuiUser: TextEditingController(),
+        rccaAA: TextEditingController(),
+        uaya: TextEditingController(),
       );
-
-  factory UserState.authenticationFailed({
-    required String message,
-  }) =>
-      UserState(
-        authenticationMessage: message,
-      );
-
-  factory UserState.registerFailed({
-    required String message,
-  }) =>
-      UserState(
-        registerFailedMessage: message,
-      );
-
-  factory UserState.unauthenticated() => UserState.initial();
-
-  factory UserState.checkingUser() => UserState.initial();
-
-  factory UserState.loginIngUser() => UserState.initial();
-
-  factory UserState.loginIngFailed({required String message}) =>
-      UserState(authenticationMessage: message);
-
-  factory UserState.authenticated() => UserState.initial();
 }

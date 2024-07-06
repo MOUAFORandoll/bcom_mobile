@@ -21,7 +21,7 @@ class DevisRepo {
 
     return a;
   }
-
+  
   Future getlistDevis() async {
     var user = await database.getUser();
     var data = {'clientId': user!.userId};
@@ -30,7 +30,7 @@ class DevisRepo {
 
     return a;
   }
-
+  
   Future getlistPack() async {
     Response a = await apiClient.postRequest(ApiRoutes.PACK);
 

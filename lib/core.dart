@@ -17,6 +17,7 @@ import 'package:permission_handler/permission_handler.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
+  sl.registerSingleton<AppRouter>(AppRouter());
   final db = await new DatabaseCubit();
   GetStorage box = GetStorage();
   sl.registerFactory(() => Connectivity());
@@ -43,8 +44,6 @@ Future<void> init() async {
         () => AbonnementBloc(abonnementRepo: sl(), database: sl()))
     ..registerLazySingleton(() => AbonnementRepo(apiClient: sl()));
 
-  sl.registerSingleton<AppRouter>(AppRouter());
-
   requestPermission();
   initConnected();
 }
@@ -56,7 +55,7 @@ void initConnected() async {
 Future<void> initLoad(context) async {
   BlocProvider.of<UserBloc>(context).add(GetUserEvent());
   BlocProvider.of<HomeBloc>(context).add(GetHomeInfo());
-  
+
   BlocProvider.of<UserBloc>(context).add(UserDataEvent());
 
   BlocProvider.of<AbonnementBloc>(context)

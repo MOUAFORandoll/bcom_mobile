@@ -162,8 +162,8 @@ class _PresentationPageState extends State<PresentationPage>
                                               size: MainAxisSize.max,
                                               text: 'Commander un devis',
                                               onTap: () async {
-                                                AutoRouter.of(context).pushNamed(
-                                                    CompleteEntrepriseInfoPage
+                                                AutoRouter.of(context)
+                                                    .pushNamed(CompleteInfoPage
                                                         .routeName);
                                               }
                                               /*  =>

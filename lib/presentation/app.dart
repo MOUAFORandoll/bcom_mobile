@@ -15,7 +15,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 class AppContent extends StatelessWidget {
   AppContent({super.key});
   final _appRouter = sl.get<AppRouter>();
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

@@ -42,10 +42,10 @@ abstract class $AppRouter extends _i14.RootStackRouter {
         child: _i2.CommandDevisPage(),
       );
     },
-    CompleteEntrepriseInfoRoute.name: (routeData) {
+    CompleteInfoRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.CompleteEntrepriseInfoPage(),
+        child: _i3.CompleteInfoPage(),
       );
     },
     ForgotPasswordRoute.name: (routeData) {
@@ -140,15 +140,15 @@ class CommandDevisRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.CompleteEntrepriseInfoPage]
-class CompleteEntrepriseInfoRoute extends _i14.PageRouteInfo<void> {
-  const CompleteEntrepriseInfoRoute({List<_i14.PageRouteInfo>? children})
+/// [_i3.CompleteInfoPage]
+class CompleteInfoRoute extends _i14.PageRouteInfo<void> {
+  const CompleteInfoRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          CompleteEntrepriseInfoRoute.name,
+          CompleteInfoRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'CompleteEntrepriseInfoRoute';
+  static const String name = 'CompleteInfoRoute';
 
   static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
 }

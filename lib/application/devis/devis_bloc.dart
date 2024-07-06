@@ -6,8 +6,8 @@ import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
 import 'package:Bcom/application/model/data/ParamSaveModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
-import 'package:Bcom/application/model/exportmodel.dart'; 
-import 'package:Bcom/presentation/components/Widget/app_dropdown.dart'; 
+import 'package:Bcom/application/model/exportmodel.dart';
+import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
 import 'package:Bcom/presentation/components/Widget/app_radio.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 import 'package:Bcom/utils/Services/validators.dart';
@@ -37,12 +37,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       emit(state.copyWith(indexHistory: event.index));
     });
   }
-  selectVille(SelectVille event, Emitter<DevisState> emit) async {
-    emit(state.copyWith(
-      ville: event.ville,
-    ));
-  }
-  
+
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     // String? value = event.value;
     /*   switch (event.fieldKey) {
@@ -101,7 +96,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
   _newDevis(NewDevis event, Emitter<DevisState> emit) async {
     var user = await database.getUser();
     var _data = formatDataToDevis();
-    
+
     log(_data.toString());
     var data = {
       'idClient': user!.userId,
@@ -151,7 +146,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       ));
     });
   }
-  
+
   _getListDevis(GetListDevis event, Emitter<DevisState> emit) async {
     emit(state.copyWith(
       load_listDevis: 0,
@@ -312,7 +307,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         return SizedBox.shrink();
     }
   }
-  
+
   void updateParametre(UpdateParametre event, Emitter<DevisState> emit) {
     List<Widget> updatedList = List.from(state.list_widget_devis!);
     log('----${event.label}---------${event.value}---');
@@ -365,7 +360,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       emit(state.copyWith(formKey: state.formKey.currentState!.save()));
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
-    
+
     int foundIndex1 = updatedList.indexWhere((widget) =>
         (widget is AppRadioGroup) &&
         (widget.key as ValueKey).value == event.label);
@@ -405,7 +400,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       emit(state.copyWith(formKey: GlobalKey<FormState>()));
     }
   }
-  
+
   List<Map<dynamic, dynamic>> formatDataToDevis() {
     List<Map<dynamic, dynamic>> dataList = [];
 

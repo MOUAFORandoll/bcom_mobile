@@ -34,16 +34,6 @@ class AppActionCubit extends Cubit<AppActionState> {
     // languageCubit.setLanguage(locale);
     // emit(YourLanguageChangedState());
   }
-  void toLogin() {
-    emit(state.copyWith(isLogin: true));
-  }
-
-  void toRegister() {
-    print('..:');
-    emit(state.copyWith(isLogin: false));
-
-    print('..:');
-  }
 
   @override
   void onError(Object error, StackTrace stacktrace) {

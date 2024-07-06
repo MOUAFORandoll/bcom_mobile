@@ -144,17 +144,22 @@ class _AuthPageState extends State<AuthPage> {
                                   ),
                                   child: AppInput(
                                     controller: userName,
-                                    onChanged: (value) {},
+                                    onChanged: (value) {
+                                      formKey.currentState!.validate();
+                                    },
                                     placeholder: 'labelusername'.tr(),
                                     validator: (value) {
                                       return Validators.required(
-                                          'labelusername', value!);
+                                          'labelusername'.tr(), value!);
                                     },
                                   ),
                                 ),
                                 AppInputPassword(
                                   controller: password,
                                   placeholder: 'labelpassword'.tr(),
+                                  onChanged: (value) {
+                                    formKey.currentState!.validate();
+                                  },
                                   obscureText: true,
                                   validator: (value) {
                                     //print(value);

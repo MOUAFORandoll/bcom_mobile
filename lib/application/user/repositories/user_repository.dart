@@ -10,13 +10,6 @@ class UserRepo {
   UserRepo({required this.apiClient});
   var database = sl.get<DatabaseCubit>();
 
-  Future getVilleQuartier(long, lat) async {
-    Response response =
-        await apiClient.getRequest('/location/user?long=${long}&lat=${lat}');
-    
-    return response;
-  }
-   
   Future Login(data) async {
     Response response =
         await apiClient.postRequest(ApiRoutes.LOGIN, body: data);
@@ -29,6 +22,13 @@ class UserRepo {
 
     Response response =
         await apiClient.getRequest(ApiRoutes.USER + '/${user!.userId}');
+
+    return response;
+  }
+
+  Future addInfoEntreprise(data) async {
+    Response response =
+        await apiClient.postRequest(ApiRoutes.NEWENTREPRISE, body: data);
 
     return response;
   }

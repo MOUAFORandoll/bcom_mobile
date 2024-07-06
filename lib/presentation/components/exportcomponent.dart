@@ -25,9 +25,8 @@ export '../../../utils/functions/app_loader.dart';
 export 'package:auto_route/auto_route.dart';
 
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
-export 'package:Bcom/application/model/data/MedicamentModel.dart';
 export 'package:Bcom/presentation/components/Button/app_button.dart';
 
 export 'package:image_picker/image_picker.dart';
- 
+
 export 'package:Bcom/utils/functions/showToast.dart';

@@ -70,9 +70,11 @@ class KHomeInfo extends StatelessWidget {
                 children: [
                   Container(
                     child: Text(
-                      daysLeft == 0 || daysLeft == 1
-                          ? 'Votre abonnement expire aujourd\'hui'
-                          : 'Votre abonnement expire dans $daysLeft jour${daysLeft > 1 ? 's' : ''}',
+                      daysLeft > 0
+                          ? daysLeft == 0 || daysLeft == 1
+                              ? 'Votre abonnement expire aujourd\'hui'
+                              : 'Votre abonnement expire dans $daysLeft jour${daysLeft > 1 ? 's' : ''}'
+                          : 'Votre abonnement a expire il y\'a ${daysLeft * -1} jour${(daysLeft * -1) > 1 ? 's' : ''}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,

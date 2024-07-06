@@ -8,7 +8,8 @@ import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class FirstStep extends StatelessWidget {
-  final formKey = GlobalKey<FormState>();
+  FirstStep({required this.formKey});
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +32,9 @@ class FirstStep extends StatelessWidget {
           }
         },
         builder: (context, state) => Form(
-                // key: state.formKey,
-                child: Container(
-                    child: Column(children: [
+            key: formKey,
+            child: Container(
+                child: Column(children: [
               Container(
                   // height: getHeight(context),
                   margin: EdgeInsets.symmetric(horizontal: kMarginX),
@@ -75,7 +76,9 @@ class FirstStep extends StatelessWidget {
                                       ),
                                       child: AppInput(
                                         controller: state.name!,
-                                        onChanged: (value) {},
+                                        onChanged: (value) {
+                                          formKey.currentState!.validate();
+                                        },
                                         placeholder: 'labelnameEntreprise'.tr(),
                                         validator: (value) {
                                           return Validators.isValidUsername(
@@ -85,7 +88,9 @@ class FirstStep extends StatelessWidget {
                                     ),
                                     AppInput(
                                       controller: state.email!,
-                                      onChanged: (value) {},
+                                      onChanged: (value) {
+                                        formKey.currentState!.validate();
+                                      },
                                       placeholder: 'labelemailEntreprise'.tr(),
                                       validator: (value) {
                                         return Validators.isValidEmail(value!);
@@ -94,7 +99,9 @@ class FirstStep extends StatelessWidget {
                                     AppInput(
                                       controller: state.phone!,
                                       textInputType: TextInputType.phone,
-                                      onChanged: (value) {},
+                                      onChanged: (value) {
+                                        formKey.currentState!.validate();
+                                      },
                                       placeholder: 'labelphoneEntreprise'.tr(),
                                       validator: (value) {
                                         return Validators.usPhoneValid(value!);
@@ -102,17 +109,18 @@ class FirstStep extends StatelessWidget {
                                     ),
                                     AppInput(
                                       controller: state.webSite!,
-                                      onChanged: (value) {},
+                                      onChanged: (value) {
+                                        formKey.currentState!.validate();
+                                      },
                                       placeholder:
                                           'labelwebSiteEntreprise'.tr(),
-                                      validator: (value) {
-                                        return Validators.isValidUsername(
-                                            value!);
-                                      },
+                                      validator: (value) {},
                                     ),
                                     AppInput(
                                       controller: state.adress!,
-                                      onChanged: (value) {},
+                                      onChanged: (value) {
+                                        formKey.currentState!.validate();
+                                      },
                                       placeholder: 'labeladressEntreprise'.tr(),
                                       validator: (value) {
                                         return Validators.isValidUsername(

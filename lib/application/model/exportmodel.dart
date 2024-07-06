@@ -1,13 +1,4 @@
 export 'package:Bcom/application/model/data/ImageModel.dart';
-export 'package:Bcom/application/model/data/LocalisationModel.dart';
-export 'package:Bcom/application/model/data/LivraisonModel.dart';
-export 'package:Bcom/application/model/data/CategoryModel.dart';
-export 'package:Bcom/application/model/data/CompteModel.dart';
-export 'package:Bcom/application/model/data/LivreurModel.dart';
-export 'package:Bcom/application/model/data/ModePaiementModel.dart';
-export 'package:Bcom/application/model/data/PlaceModel.dart';
-export 'package:Bcom/application/model/data/PointLivraisonModel.dart';
 export 'package:Bcom/application/model/data/TransactionModel.dart';
 export 'package:Bcom/application/model/data/UserModel.dart';
-export 'package:Bcom/application/model/data/VilleModel.dart';
 export 'package:easy_localization/easy_localization.dart';

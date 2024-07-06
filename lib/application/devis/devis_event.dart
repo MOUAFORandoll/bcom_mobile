@@ -7,19 +7,18 @@ class DevisEvent with _$DevisEvent {
   const factory DevisEvent.startMissionDevis() = StartMissionDevis;
   const factory DevisEvent.endMissionDevis() = EndMissionDevis;
   const factory DevisEvent.startDisponibiliteDevis() = StartDisponibiliteDevis;
-  const factory DevisEvent.getListVille() = GetListVille;
+
   const factory DevisEvent.savePositionForMissionDevis() =
       SavePositionForMissionDevis;
   const factory DevisEvent.newDevis() = NewDevis;
   const factory DevisEvent.setIndexHistoryDevis({required dynamic index}) =
       SetIndexHistoryDevisEvent;
-  const factory DevisEvent.selectVille({required VilleModel ville}) =
-      SelectVille;
+
   const factory DevisEvent.changeIndexDevis({required bool val}) =
       ChangeIndexDevis;
   const factory DevisEvent.fieldChanged(
       {required String fieldKey, required String? value}) = FieldChanged;
-  const factory DevisEvent.demandeMission() = DemandeMission;
+
   const factory DevisEvent.getListParametre() = GetListParametre;
   const factory DevisEvent.updateParametre(
       {required String label, required String value}) = UpdateParametre;
