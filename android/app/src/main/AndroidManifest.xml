@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
-  package="com.app.bcom">
+  package="com.app.bcom.assist">
   <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" tools:node="remove" />
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -27,7 +27,7 @@ xmlns:tools="http://schemas.android.com/tools"
     <activity
       android:screenOrientation="portrait"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-      android:name="com.app.bcom.MainActivity"
+      android:name="com.app.bcom.assist.MainActivity"
       android:exported="true"
       android:launchMode="singleTop"
       android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -87,7 +87,7 @@ FOR DEV  : http://Bcom-shop.000webhostapp.com
     <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
    <!--  <provider
       android:name="androidx.core.content.FileProvider"
-      android:authorities="com.app.bcom.flutter_downloader.provider"
+      android:authorities="com.app.bcom.assist.flutter_downloader.provider"
       android:exported="false"
       android:grantUriPermissions="true">
       <meta-data
