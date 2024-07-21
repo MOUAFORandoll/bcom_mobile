@@ -52,6 +52,8 @@ dependencies:
   flutter_easyloading: ^3.0.5
   url_launcher:
   video_player: ^2.0.0
+  open_file: ^3.3.2
+  pdf: ^3.8.4
 
   rxdart: ^0.27.7
   cron: ^0.6.0
@@ -84,13 +86,13 @@ flutter:
         - asset: assets/fonts/Lato/Lato-Regular.ttf
         - asset: assets/fonts/Lato/Lato-Thin.ttf
         - asset: assets/fonts/Lato/Lato-ThinItalic.ttf
-
+  
   uses-material-design: true
 
   assets:
     - assets/env/
     - assets/translations/
-    - assets/images/
+    - assets/images/ 
     - assets/svg_icones/
     - assets/logo/logo.png
     - assets/images/bg_white.jpeg

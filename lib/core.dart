@@ -23,7 +23,7 @@ Future<void> init() async {
   sl.registerFactory(() => Connectivity());
   sl.registerLazySingleton<IAppRequests>(() => AppRequests());
   sl.registerLazySingleton<INetworkInfo>(() => NetworkInfo(connectivity: sl()));
-  sl.registerLazySingleton<GetStorage>(() => box);
+  sl.registerFactory<GetStorage>(() => box);
   sl.registerLazySingleton<DatabaseCubit>(() => db);
   sl..registerFactory(() => SplashBloc(database: sl()));
 

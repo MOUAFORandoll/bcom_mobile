@@ -48,9 +48,7 @@ class SuccesDevisPage extends StatelessWidget {
                               color: Colors.white, size: 40.0),
                         ),
                         Container(
-                            margin: EdgeInsets.symmetric(
-                              vertical: kMarginY * 2,
-                            ),
+                            margin: EdgeInsets.symmetric(vertical: kMarginY),
                             child: Text(
                                 'Demande de devis enregistrer avec success'
                                     .tr(),
@@ -58,8 +56,8 @@ class SuccesDevisPage extends StatelessWidget {
                                 style: TextStyle(color: ColorsApp.primary))),
                         Container(
                             margin: EdgeInsets.symmetric(
-                              vertical: kMarginY * 2,
-                            ),
+                                // vertical: kMarginY * 2,
+                                ),
                             child: Text(
                                 'Nous vous contactons dans les plus bref delais'
                                     .tr(),
@@ -80,6 +78,29 @@ class SuccesDevisPage extends StatelessWidget {
                                   .add(SetIndexEvent(index: 0));
 
                               AutoRouter.of(context).replaceAll([HomeRoute()]);
+                            },
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.symmetric(
+                              vertical: kMarginY * 2,
+                            ),
+                            child: Text('Facture Proformat'.tr(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: ColorsApp.grey, fontSize: 13))),
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                            vertical: kMarginY * 4,
+                          ),
+                          child: AppButton(
+                            size: MainAxisSize.max,
+                            // border: Border.all(color: ColorsApp.primary),
+                            text: 'Telecharger'.tr(),
+                            onTap: () async {
+                              context
+                                  .read<DevisBloc>()
+                                  .add(DownloadDevisProformat());
                             },
                           ),
                         )

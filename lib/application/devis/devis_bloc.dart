@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:developer';
 
 import 'package:Bcom/application/database/database_cubit.dart';
@@ -6,13 +7,17 @@ import 'package:Bcom/application/devis/repositories/devis_repo.dart';
 import 'package:Bcom/application/model/data/DevisModel.dart';
 import 'package:Bcom/application/model/data/ParamSaveModel.dart';
 import 'package:Bcom/application/model/data/Parametre.dart';
+import 'package:Bcom/application/model/data/ProformatModel.dart';
 import 'package:Bcom/application/model/exportmodel.dart';
 import 'package:Bcom/presentation/components/Widget/app_dropdown.dart';
 import 'package:Bcom/presentation/components/Widget/app_radio.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
+import 'package:Bcom/utils/Services/pdf_invoice_api.dart';
 import 'package:Bcom/utils/Services/validators.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:flutter/services.dart';
 
 part 'devis_bloc.freezed.dart';
 part 'devis_event.dart';
@@ -36,8 +41,9 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       print('-----------------SetindexHistory');
       emit(state.copyWith(indexHistory: event.index));
     });
-  }
 
+    on<DownloadDevisProformat>(_downloadDevisProformat);
+  }
   void _fieldChanged(FieldChanged event, Emitter<DevisState> emit) async {
     // String? value = event.value;
     /*   switch (event.fieldKey) {
@@ -127,7 +133,8 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         emit(state.copyWith(
           isRequest: null,
         ));
-
+        emit(state.copyWith(dataDevis: formatDataToDevisData()));
+        add(DownloadDevisProformat());
         add(GetListDevis());
       } else {
         emit(state.copyWith(
@@ -260,6 +267,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         return AppInput(
           key: ValueKey(title),
           controller: _controller,
+          isRequired: true,
           textInputType: TextInputType.text,
           onChanged: (newValue) =>
               add(UpdateParametre(label: title, value: newValue)),
@@ -272,6 +280,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
         TextEditingController _controller = TextEditingController(text: '');
         return AppInput(
           key: ValueKey(title),
+          isRequired: true,
           controller: _controller,
           textInputType: TextInputType.text,
           onChanged: (newValue) =>
@@ -285,6 +294,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       case 'DROPDOWN':
         List<String> items = itemsValue.split(',');
         return AppDropdown(
+          isRequired: true,
           key: ValueKey(title),
           value: '',
           items: items,
@@ -295,6 +305,7 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       case 'RADIO':
         List<String> items = itemsValue.split(',');
         return AppRadioGroup(
+          isRequired: true,
           value: '',
           key: ValueKey(title),
           items: items,
@@ -414,6 +425,19 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
     return dataList;
   }
 
+  List<Map<dynamic, dynamic>> formatDataToDevisData() {
+    List<Map<dynamic, dynamic>> dataDevis = [];
+
+    state.list_parametre!.forEach((element) {
+      var value = findWidget(element.title);
+      if (value != null) {
+        dataDevis.add({'title': element.title, 'value': value});
+      }
+    });
+
+    return dataDevis;
+  }
+
   findWidget(label) {
     log('----${label}--------- ---');
     int foundIndex = state.list_widget_devis!.indexWhere((widget) =>
@@ -434,5 +458,21 @@ class DevisBloc extends Bloc<DevisEvent, DevisState> {
       return (state.list_widget_devis![foundIndex1] as AppRadioGroup).value;
     }
   }
+
+  void _downloadDevisProformat(
+      DownloadDevisProformat event, Emitter<DevisState> emit) async {
+    var user = await database.getUser();
+
+    var data = {
+      'devisNumber': 'BCOMDEV422495',
+      'amount': 4000,
+      'desciption': 'fbhh',
+      'user': user!.toMap(),
+      'parametre': state.dataDevis
+    };
+    print(data);
+    ProformatModel dataProformat = ProformatModel.fromJson(data);
+    PdfInvoiceApi.generate(dataProformat: dataProformat);
+  }
 }
-// context.read<DevisBloc>().add(GetImageColisGalerie())
+// 

@@ -9,7 +9,7 @@ class AppInput extends StatefulWidget {
   final String? errorText;
   final String? placeholder;
   final ValueChanged<String>? onChanged;
-  final bool obscureText;
+  final bool isRequired;
   final TextInputType? textInputType;
   final Icon? icon;
   final prefix;
@@ -18,10 +18,10 @@ class AppInput extends StatefulWidget {
       required this.controller,
       this.label,
       this.validator,
-      this.placeholder,
+      this.placeholder = '',
       this.errorText,
       this.onChanged,
-      this.obscureText = false,
+      this.isRequired = false,
       this.textInputType,
       this.prefix,
       this.icon})
@@ -43,15 +43,34 @@ class _AppInputState extends State<AppInput> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                margin: EdgeInsets.symmetric(vertical: kMarginY),
-                child: Text(
-                  widget.placeholder!,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                    fontFamily: 'Lato',
-                  ),
-                )),
+              margin: EdgeInsets.only(bottom: kMarginY),
+              child: Row(
+                children: [
+                  Container(
+                      child: Text(
+                    widget.placeholder!,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      // color: ColorsApp.tird,
+                      fontSize: 12,
+                      fontFamily: 'Lato',
+                    ),
+                  )),
+                  if (widget.isRequired)
+                    Container(
+                        margin: EdgeInsets.only(left: kMarginX),
+                        child: Text(
+                          '*',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: ColorsApp.red,
+                            fontSize: 20,
+                            fontFamily: 'Lato',
+                          ),
+                        )),
+                ],
+              ),
+            ),
             TextFormField(
               cursorColor: ColorsApp.tird, autofocus: false,
               controller: widget.controller,
@@ -146,16 +165,33 @@ class _AppInputPasswordState extends State<AppInputPassword> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-              margin: EdgeInsets.only(bottom: kMarginY),
-              child: Text(
-                widget.placeholder,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  // color: ColorsApp.tird,
-                  fontSize: 12,
-                  fontFamily: 'Lato',
-                ),
-              )),
+            margin: EdgeInsets.only(bottom: kMarginY),
+            child: Row(
+              children: [
+                Container(
+                    child: Text(
+                  widget.placeholder,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    // color: ColorsApp.tird,
+                    fontSize: 12,
+                    fontFamily: 'Lato',
+                  ),
+                )),
+                Container(
+                    margin: EdgeInsets.only(left: kMarginX),
+                    child: Text(
+                      '*',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: ColorsApp.red,
+                        fontSize: 20,
+                        fontFamily: 'Lato',
+                      ),
+                    )),
+              ],
+            ),
+          ),
           TextFormField(
             autofocus: false,
             controller: widget.controller,

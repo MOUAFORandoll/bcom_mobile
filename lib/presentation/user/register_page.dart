@@ -123,6 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ),
                                     child: AppInput(
                                       controller: userName,
+                                      isRequired: true,
                                       onChanged: (value) {},
                                       placeholder: 'labelusername'.tr(),
                                       validator: (value) {
@@ -133,6 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                   AppInput(
                                     controller: fullName,
+                                    isRequired: true,
                                     onChanged: (value) {},
                                     placeholder: 'name'.tr(),
                                     validator: (value) {
@@ -141,6 +143,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                   AppInput(
                                     controller: phone,
+                                    isRequired: true,
                                     textInputType: TextInputType.phone,
                                     onChanged: (value) {},
                                     placeholder: 'labelphone'.tr(),
@@ -149,6 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     },
                                   ),
                                   AppInput(
+                                    isRequired: true,
                                     controller: email,
                                     onChanged: (value) {},
                                     placeholder: 'labelemail'.tr(),

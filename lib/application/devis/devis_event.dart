@@ -22,4 +22,5 @@ class DevisEvent with _$DevisEvent {
   const factory DevisEvent.getListParametre() = GetListParametre;
   const factory DevisEvent.updateParametre(
       {required String label, required String value}) = UpdateParametre;
+  const factory DevisEvent.DownloadDevisProformat() = DownloadDevisProformat;
 }

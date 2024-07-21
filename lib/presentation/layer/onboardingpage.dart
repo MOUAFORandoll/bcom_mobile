@@ -1,13 +1,13 @@
-import 'package:Bcom/presentation/components/Widget/app_carroussel_item.dart';
 import 'package:Bcom/core.dart';
+import 'package:Bcom/presentation/components/Widget/app_carroussel_item.dart';
 import 'package:Bcom/routes/app_router.gr.dart';
 
 import 'package:Bcom/utils/constants/assets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:Bcom/presentation/components/exportcomponent.dart';
 
-import 'package:get_storage/get_storage.dart';
 import 'package:Bcom/application/export_bloc.dart';
+import 'package:get_storage/get_storage.dart';
 
 @RoutePage()
 class OnBoardingPage extends StatelessWidget {

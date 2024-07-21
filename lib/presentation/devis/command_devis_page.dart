@@ -29,7 +29,7 @@ class _CommandDevisPageState extends State<CommandDevisPage> {
         AutoRouter.of(context).pushNamed(SuccesDevisPage.routeName);
       } else if (state.isRequest == 2) {
         EasyLoading.dismiss();
-
+        
         showError('Une erreur est survenue', context);
 
         print('-----44--------*********');

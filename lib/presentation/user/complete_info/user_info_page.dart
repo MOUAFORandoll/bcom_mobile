@@ -64,36 +64,39 @@ class UserInfoPage extends StatelessWidget {
                             top: kMarginY,
                           ),
                           child: AppInput(
+                            isRequired: true,
                             controller: state.nuiUser!,
                             onChanged: (value) {
                               formKey.currentState!.validate();
                             },
-                            placeholder: 'NUI USER',
+                            placeholder: 'Votre NIU',
                             validator: (value) {
-                              return Validators.isValidUsername(value!);
+                              return Validators.isValidUserNIU(value!);
                             },
                           ),
                         ),
-                        AppInput(
-                          controller: state.rccaAA!,
-                          onChanged: (value) {
-                            formKey.currentState!.validate();
-                          },
-                          placeholder: 'rccaAA'.tr(),
-                          validator: (value) {
-                            return Validators.isValidEmail(value!);
-                          },
-                        ),
-                        AppInput(
-                          controller: state.uaya!,
-                          onChanged: (value) {
-                            formKey.currentState!.validate();
-                          },
-                          placeholder: 'uaya'.tr(),
-                          validator: (value) {
-                            return Validators.usPhoneValid(value!);
-                          },
-                        ),
+                        // AppInput(
+                        //   isRequired: true,
+                        //   controller: state.rccaAA!,
+                        //   onChanged: (value) {
+                        //     formKey.currentState!.validate();
+                        //   },
+                        //   placeholder: 'rccaAA'.tr(),
+                        //   validator: (value) {
+                        //     return Validators.isValidEmail(value!);
+                        //   },
+                        // ),
+                        // AppInput(
+                        //   isRequired: true,
+                        //   controller: state.uaya!,
+                        //   onChanged: (value) {
+                        //     formKey.currentState!.validate();
+                        //   },
+                        //   placeholder: 'uaya'.tr(),
+                        //   validator: (value) {
+                        //     return Validators.usPhoneValid(value!);
+                        //   },
+                        // ),
                       ],
                     ),
                   ),

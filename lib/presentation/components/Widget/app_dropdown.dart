@@ -5,11 +5,13 @@ class AppDropdown extends StatelessWidget {
   var value;
   final List<String> items;
   final ValueChanged<String>? onChanged;
+  final bool isRequired;
   final String? label;
 
-    AppDropdown({
+  AppDropdown({
     Key? key,
     required this.value,
+    this.isRequired = false,
     this.label,
     required this.items,
     this.onChanged,
@@ -24,14 +26,33 @@ class AppDropdown extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            child: Text(
-              label!,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 12,
-                fontFamily: 'Lato',
-                overflow: TextOverflow.ellipsis,
-              ),
+            margin: EdgeInsets.only(bottom: kMarginY),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    label!,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      fontFamily: 'Lato',
+                    ),
+                  ),
+                ),
+                if (isRequired)
+                  Container(
+                      margin: EdgeInsets.only(left: kMarginX),
+                      child: Text(
+                        '*',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: ColorsApp.red,
+                          fontSize: 20,
+                          fontFamily: 'Lato',
+                        ),
+                      )),
+              ],
             ),
           ),
           Container(

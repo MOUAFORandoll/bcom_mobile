@@ -76,6 +76,7 @@ class FirstStep extends StatelessWidget {
                                       ),
                                       child: AppInput(
                                         controller: state.name!,
+                                        isRequired: true,
                                         onChanged: (value) {
                                           formKey.currentState!.validate();
                                         },
@@ -87,6 +88,7 @@ class FirstStep extends StatelessWidget {
                                       ),
                                     ),
                                     AppInput(
+                                      isRequired: true,
                                       controller: state.email!,
                                       onChanged: (value) {
                                         formKey.currentState!.validate();
@@ -98,6 +100,7 @@ class FirstStep extends StatelessWidget {
                                     ),
                                     AppInput(
                                       controller: state.phone!,
+                                      isRequired: true,
                                       textInputType: TextInputType.phone,
                                       onChanged: (value) {
                                         formKey.currentState!.validate();
@@ -117,6 +120,7 @@ class FirstStep extends StatelessWidget {
                                       validator: (value) {},
                                     ),
                                     AppInput(
+                                      isRequired: true,
                                       controller: state.adress!,
                                       onChanged: (value) {
                                         formKey.currentState!.validate();

@@ -19,9 +19,11 @@ class DevisState with _$DevisState {
       required int? load_list_parametre,
       required TextEditingController description_produit,
       required Parametre? parametre,
+      List<Map<dynamic, dynamic>>? dataDevis,
       dynamic formKey}) = _DevisState;
 
   factory DevisState.initial() => DevisState(
+        dataDevis: [],
         description_produit: new TextEditingController(),
         formKey: GlobalKey<FormState>(),
         montantDevis: 0,

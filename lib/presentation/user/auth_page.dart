@@ -144,6 +144,7 @@ class _AuthPageState extends State<AuthPage> {
                                   ),
                                   child: AppInput(
                                     controller: userName,
+                                    isRequired: true,
                                     onChanged: (value) {
                                       formKey.currentState!.validate();
                                     },

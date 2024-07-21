@@ -77,6 +77,7 @@ class SecondStep extends StatelessWidget {
                                       child: AppInput(
                                         controller: state.city!,
                                         onChanged: (value) {},
+                                        isRequired: true,
                                         placeholder: 'labelcityEntreprise'.tr(),
                                         validator: (value) {
                                           return Validators.isValidUsername(
@@ -86,6 +87,7 @@ class SecondStep extends StatelessWidget {
                                     ),
                                     AppInput(
                                       controller: state.country!,
+                                      isRequired: true,
                                       onChanged: (value) {},
                                       placeholder:
                                           'labelcountryEntreprise'.tr(),
@@ -95,33 +97,46 @@ class SecondStep extends StatelessWidget {
                                       },
                                     ),
                                     AppInput(
-                                      controller: state.numImpot!,
-                                      onChanged: (value) {},
-                                      placeholder: 'labelimpotEntreprise'.tr(),
-                                      validator: (value) {
-                                        return Validators.isValidUsername(
-                                            value!);
-                                      },
-                                    ),
-                                    AppInput(
-                                      controller: state.numContribuable!,
+                                      controller: state.registreCommerce!,
+                                      isRequired: true,
                                       onChanged: (value) {},
                                       placeholder:
-                                          'labelcontribEntreprise'.tr(),
+                                          'Le RCCM de votre entreprise'.tr(),
                                       validator: (value) {
-                                        return Validators.isValidUsername(
-                                            value!);
+                                        return Validators.isValidRCCM(value!);
                                       },
                                     ),
-                                    AppInput(
-                                      controller: state.registreCommerce!,
-                                      onChanged: (value) {},
-                                      placeholder: 'labelregEntreprise'.tr(),
-                                      validator: (value) {
-                                        return Validators.isValidUsername(
-                                            value!);
-                                      },
-                                    ),
+                                    // AppInput(
+                                    //   controller: state.numImpot!,
+                                    //   isRequired: true,
+                                    //   onChanged: (value) {},
+                                    //   placeholder: 'labelimpotEntreprise'.tr(),
+                                    //   validator: (value) {
+                                    //     return Validators.isValidUsername(
+                                    //         value!);
+                                    //   },
+                                    // ),
+                                    // AppInput(
+                                    //   controller: state.numContribuable!,
+                                    //   isRequired: true,
+                                    //   onChanged: (value) {},
+                                    //   placeholder:
+                                    //       'labelcontribEntreprise'.tr(),
+                                    //   validator: (value) {
+                                    //     return Validators.isValidUsername(
+                                    //         value!);
+                                    //   },
+                                    // ),
+                                    // AppInput(
+                                    //   isRequired: true,
+                                    //   controller: state.registreCommerce!,
+                                    //   onChanged: (value) {},
+                                    //   placeholder: 'labelregEntreprise'.tr(),
+                                    //   validator: (value) {
+                                    //     return Validators.isValidUsername(
+                                    //         value!);
+                                    //   },
+                                    // ),
                                   ],
                                 ),
                               ),

@@ -36,6 +36,29 @@ class Validators {
     return username.length > 3 ? null : 'invalidCaract'.tr();
   }
 
+  static String? isValidUserNIU(String username) {
+    // Expression régulière pour vérifier le format du NIU
+    final niuRegex = RegExp(r'^[PM][0-3][0-9][0-9][0-9]\d{8}[A-Za-z]$',
+        caseSensitive: false);
+
+    if (!niuRegex.hasMatch(username)) {
+      return 'invalidFormat'.tr();
+    }
+
+    return null;
+  }
+
+  static String? isValidRCCM(String username) {
+    // Expression régulière pour vérifier le format du RCCM
+    final rccmRegex = RegExp(r'^RC[A-Z ]{3}\d{4}B\d{4}$', caseSensitive: false);
+
+    if (!rccmRegex.hasMatch(username)) {
+      return 'invalidFormat'.tr();
+    }
+
+    return null;
+  }
+
   static isValidNumber(String input) {
     // final RegExp phone = RegExp(r'^(?=.*[A-Za-z!])(?=.*\d)[A-Za-z\d]{8,}$');
 

@@ -33,7 +33,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                   initLoad(context);
                   log('*---------*-initLoad---');
                 }
-
+                log('*---------*-initLoad---');
                 print('**----');
                 AutoRouter.of(context).replace(state.route);
               }

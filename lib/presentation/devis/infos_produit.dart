@@ -22,15 +22,31 @@ class _InfoProduitState extends State<InfoProduit> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Parlez nous de votre produit'.tr(),
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              // color: ColorsApp.tird,
-                              fontSize: 12,
-                              fontFamily: 'Lato',
-                            ),
+                          margin: EdgeInsets.only(bottom: kMarginY),
+                          child: Row(
+                            children: [
+                              Container(
+                                  child: Text(
+                                'Parlez nous de votre produit'.tr(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  // color: ColorsApp.tird,
+                                  fontSize: 12,
+                                  fontFamily: 'Lato',
+                                ),
+                              )),
+                              Container(
+                                  margin: EdgeInsets.only(left: kMarginX),
+                                  child: Text(
+                                    '*',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: ColorsApp.red,
+                                      fontSize: 20,
+                                      fontFamily: 'Lato',
+                                    ),
+                                  )),
+                            ],
                           ),
                         ),
                         Container(
